@@ -1,0 +1,30 @@
+module ALU #(parameter BIT_WIDTH    = 16,
+             parameter OPCODE_WIDTH =  8,
+             parameter FLAG_WIDTH   =  5
+            )
+            (
+                input wire [BIT_WIDTH-1:0]  Rsrc_Imm,
+                input wire [BIT_WIDTH-1:0]     Rdest,
+                input wire [OPCODE_WIDTH-1:0] Opcode,
+                output reg [FLAG_WIDTH-1:0]    Flags,
+                output reg [BIT_WIDTH-1:0]    Result 
+            );
+
+            localparam ADD    = 8'b0000_0101;
+            localparam ADDI   = 8'0101_xxxx;
+           
+
+            always@(*) begin
+                // Note: In a casex statement you can have opcodes with Don't Cares such as ADDI and also be able
+					 // to set Result or Flags to x as well (i.e. Flags[#] = 1'bx, Result = 16'bx).
+					 
+					 // ALWAYS SET ALL FLAGS AND RESULT OR YOU WILL GET LATCHING!!!!!!
+                
+                casex(Opcode)
+                    ADD, ADDI: begin
+                       
+                    end
+
+                endcase
+            end
+endmodule
