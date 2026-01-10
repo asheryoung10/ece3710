@@ -31,8 +31,12 @@ module ALU #(parameter BIT_WIDTH    = 16,
 				localparam ARSH 	= 8'b1000_0110;
 				localparam ARSHI 	= 8'b1000_001x;
 				localparam NOP		= 8'b0000_0000;
-           
 				
+				reg cFlag;
+				reg LFlag;
+				reg fFlag;
+				reg nFlag;
+				reg zFlag;
             always@(*) begin
                 // Note: In a casex statement you can have opcodes with Don't Cares such as ADDI and also be able
 					 // to set Result or Flags to x as well (i.e. Flags[#] = 1'bx, Result = 16'bx).
@@ -41,12 +45,68 @@ module ALU #(parameter BIT_WIDTH    = 16,
                 
                 casex(Opcode)
 						ADD, ADDI: begin
-							Rdest <= $signed(Rdest) + $signed(Rsrc_Imm);
-							if (Rdest == 16'b0000_0000_0000_0000)
-								Flags = {0,0,0,0,0};
-                       
+							Result = $signed(Rdest) + $signed(Rsrc_Imm);
+							
+							zFlag = Result == 0;
+							cFlag = 1'bx;
+							fFlag = (Rdest[15] == Rsrc_Imm[15]) && (Result[15] != Rdest[15]);
+							Lflag = 1'bx;
+							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
+							
+							Flags = {cFlag, LFlag, fFlag, zFlag, nFlag};
                   end
-
+						ADDU, ADDUI: begin
+							Result = Rdest + Rsrc_Imm;
+							
+							zFlag = Result == 0;
+							cFlag = Result > 2**15;
+							fFlag = 1'bx;
+							Lflag = Rdest < Rscr_Imm;
+							nFlag = 1'bx;
+							
+							Flags = {cFlag, LFlag, fFlag, zFlag, nFlag};
+						end
+						ADDC, ADDCI: begin
+							Result = cFlag + $signed(Rdest) + $signed(Rsrc_Imm);
+							
+							zFlag = Result == 0;
+							cFlag = 1'bx;
+							fFlag = (Rdest[15] == Rsrc_Imm[15]) && (Result[15] != Rdest[15]);
+							Lflag = 1'bx;
+							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
+							
+							Flags = {cFlag, LFlag, fFlag, zFlag, nFlag};
+						end
+						SUB, SUBI: begin
+							wire Rsrc2s = ~(Rsrc_Imm) + 1'b1;
+							Result = $signed(Rdest) + $signed(Rsrc2s);
+							
+							zFlag <= Result == 0;
+							cFlag = 1'bx;
+							fFlag = (Rdest[15] == Rsrc_Imm[15]) && (Result[15] != Rdest[15]);
+							Lflag = 1'bx;
+							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
+							
+							Flags = {cFlag, LFlag, fFlag, zFlag, nFlag};
+						end
+						CMP, CMPI: begin
+							Result = 16b'xxxx_xxxx_xxxx_xxxx;
+							zFlag = $signed(Rdest) == $signed(Rsrc_Imm);
+							cFlag = 1'bx;
+							fFlag = 1'bx;
+							Lflag = 1'bx;
+							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
+						end
+						AND: begin
+							Result = Rdest & Rsrc_Imm;
+							zFlag <= Result == 0;
+							cFlag = 1'bx;
+							fFlag = 1'bx;
+							Lflag = 1'bx;
+							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
+							
+							Flags = {cFlag, LFlag, fFlag, zFlag, nFlag};
+						end
                 endcase
             end
 endmodule
