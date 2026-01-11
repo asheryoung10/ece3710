@@ -37,6 +37,8 @@ module ALU #(parameter BIT_WIDTH    = 16,
 				reg fFlag;
 				reg nFlag;
 				reg zFlag;
+				
+				wire [BIT_WIDTH-1:0] shift_amt;
             always@(*) begin
                 // Note: In a casex statement you can have opcodes with Don't Cares such as ADDI and also be able
 					 // to set Result or Flags to x as well (i.e. Flags[#] = 1'bx, Result = 16'bx).
@@ -81,7 +83,7 @@ module ALU #(parameter BIT_WIDTH    = 16,
 							wire Rsrc2s = ~(Rsrc_Imm) + 1'b1;
 							Result = $signed(Rdest) + $signed(Rsrc2s);
 							
-							zFlag <= Result == 0;
+							zFlag = Result == 0;
 							cFlag = 1'bx;
 							fFlag = (Rdest[15] == Rsrc_Imm[15]) && (Result[15] != Rdest[15]);
 							Lflag = 1'bx;
@@ -96,16 +98,81 @@ module ALU #(parameter BIT_WIDTH    = 16,
 							fFlag = 1'bx;
 							Lflag = 1'bx;
 							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
+							
+							Flags = {cFlag, LFlag, fFlag, zFlag, nFlag};
 						end
 						AND: begin
 							Result = Rdest & Rsrc_Imm;
-							zFlag <= Result == 0;
+							zFlag = Result == 0;
 							cFlag = 1'bx;
 							fFlag = 1'bx;
 							Lflag = 1'bx;
 							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
 							
 							Flags = {cFlag, LFlag, fFlag, zFlag, nFlag};
+						end
+						OR: begin
+							Result = Rdest | Rsrc_Imm;
+							ZFlag = Result == 0;
+							cFlag = 1'bx;
+							fFlag = 1'bx;
+							Lflag = 1'bx;
+							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
+							
+							Flags = {cFlag, LFlag, fFlag, zFlag, nFlag};
+						
+						end
+						XOR: begin
+							Result = Rdest ^ Rsrc_Imm;
+							ZFlag = Result == 0;
+							cFlag = 1'bx;
+							fFlag = 1'bx;
+							Lflag = 1'bx;
+							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
+							
+							Flags = {cFlag, LFlag, fFlag, zFlag, nFlag};
+						end
+						NOT: begin
+							Result = ~Rsrc_Imm;
+							ZFlag = Result == 0;
+							cFlag = 1'bx;
+							fFlag = 1'bx;
+							Lflag = 1'bx;
+							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
+							
+							Flags = {cFlag, LFlag, fFlag, zFlag, nFlag};
+						end
+						LSH, LSHI: begin
+							shift_amt = $signed(Rsrc_Imm);
+							Result = (shift_amt >= 0) ? ($signed(Rdest) << shift_amt) : ($signed(Rdest) >> -shift_amt);
+							
+							ZFlag = Result == 0;
+							cFlag = 1'bx;
+							fFlag = 1'bx;
+							Lflag = 1'bx;
+							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
+							
+							Flags = {cFlag, LFlag, fFlag, zFlag, nFlag};
+						end
+						RSH, RSHI: begin
+							shift_amt = $signed(Rsrc_Imm);
+							Result = (shift_amt >= 0) ? ($signed(Rdest) >> shift_amt) : ($signed(Rdest) << -shift_amt);
+							
+							ZFlag = Result == 0;
+							cFlag = 1'bx;
+							fFlag = 1'bx;
+							Lflag = 1'bx;
+							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
+							
+							Flags = {cFlag, LFlag, fFlag, zFlag, nFlag};
+						end
+						ARSH, ARSHI: begin
+							
+						
+						end
+						NOP: begin
+						
+						
 						end
                 endcase
             end
