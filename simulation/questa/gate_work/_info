@@ -1,0 +1,97 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/u1462567/Desktop/3710/ece3710/simulation/questa
+T_opt
+Z2 !s110 1768260116
+VgYb:dQDDo;ZLF=^Y59izR2
+04 6 4 work tb_alu fast 0
+=1-7085c25f4d31-69658214-a29b5-47024
+R0
+!s12b OEM100
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L altera_lnsim_ver -L cyclonev_ver -L lpm_ver -L sgate_ver -L cyclonev_hssi_ver -L altera_mf_ver -L cyclonev_pcie_hip_ver -L gate_work -L work +acc
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+valu
+2/home/u1462567/Desktop/3710/ece3710/verilog/ALU.v
+R2
+!i10b 1
+!s100 b@bokZkb1YcknD>O<Bcfg1
+I7Sb?@]ACX=`FAc:H73;a03
+R1
+w1768259397
+8/home/u1462567/Desktop/3710/ece3710/verilog/ALU.v
+F/home/u1462567/Desktop/3710/ece3710/verilog/ALU.v
+!i122 2
+L0 2 211
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2023.3;77
+r1
+!s85 0
+31
+Z6 !s108 1768260116.000000
+!s107 /home/u1462567/Desktop/3710/ece3710/verilog/ALU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/3710/ece3710/verilog|/home/u1462567/Desktop/3710/ece3710/verilog/ALU.v|
+!i113 0
+Z7 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 !s92 -vlog01compat -work work +incdir+/home/u1462567/Desktop/3710/ece3710/verilog -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vlab1
+2/home/u1462567/Desktop/3710/ece3710/verilog/lab1.v
+R2
+!i10b 1
+!s100 0AD1oR;H5>1fn4=o8PocM0
+IPAVD6<7H6g@WJBDVJnaNN1
+R1
+w1768260054
+8/home/u1462567/Desktop/3710/ece3710/verilog/lab1.v
+F/home/u1462567/Desktop/3710/ece3710/verilog/lab1.v
+!i122 1
+L0 1 41
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/u1462567/Desktop/3710/ece3710/verilog/lab1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/3710/ece3710/verilog|/home/u1462567/Desktop/3710/ece3710/verilog/lab1.v|
+!i113 0
+R7
+R8
+R3
+vtb_alu
+2/home/u1462567/Desktop/3710/ece3710/verilog/tb_ALU.v
+R2
+!i10b 1
+!s100 ;E_=T07kFkE@fAlmZ1GEl3
+I_bc5B]JXU<oWK>Vhk]lNm2
+R1
+w1768259538
+8/home/u1462567/Desktop/3710/ece3710/verilog/tb_ALU.v
+F/home/u1462567/Desktop/3710/ece3710/verilog/tb_ALU.v
+!i122 3
+L0 3 278
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/u1462567/Desktop/3710/ece3710/verilog/tb_ALU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/3710/ece3710/verilog|/home/u1462567/Desktop/3710/ece3710/verilog/tb_ALU.v|
+!i113 0
+R7
+R8
+R3

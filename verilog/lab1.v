@@ -10,8 +10,8 @@ module lab1 (
 	 wire [15:0] result;
 	 
 	 alu Alu (
-    .Rsrc_Imm(16'b0),
-    .Rdest   (16'b0),
+    .Rsrc_Imm(16'b0000_0000_0000_0001),
+    .Rdest   (16'b0000_0000_0000_0001),
     .Opcode  (SW),
     .Flags   (flags),
     .Result  (result)

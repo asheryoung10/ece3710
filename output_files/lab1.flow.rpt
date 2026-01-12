@@ -1,6 +1,6 @@
 Flow report for lab1
-Mon Jan 12 08:34:44 2026
-Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Mon Jan 12 16:21:51 2026
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
 ---------------------
@@ -21,46 +21,46 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2025  Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
-the Altera IP License Agreement, or other applicable license
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
-Altera and sold by Altera or its authorized distributors.  Please
-refer to the Altera Software License Subscription Agreements 
-on the Quartus Prime software download page.
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Flow Summary                                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Mon Jan 12 08:34:44 2026           ;
-; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
-; Revision Name                   ; lab1                                            ;
-; Top-level Entity Name           ; lab1                                            ;
-; Family                          ; Cyclone V                                       ;
-; Device                          ; 5CSEMA5F31C6                                    ;
-; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 11 / 32,070 ( < 1 % )                           ;
-; Total registers                 ; 0                                               ;
-; Total pins                      ; 47 / 457 ( 10 % )                               ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                           ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                                  ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                                   ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                                   ;
-+---------------------------------+-------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++---------------------------------+------------------------------------------------+
+; Flow Status                     ; Successful - Mon Jan 12 16:21:51 2026          ;
+; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                   ; lab1                                           ;
+; Top-level Entity Name           ; lab1                                           ;
+; Family                          ; Cyclone V                                      ;
+; Device                          ; 5CSEMA5F31C6                                   ;
+; Timing Models                   ; Final                                          ;
+; Logic utilization (in ALMs)     ; 17 / 32,070 ( < 1 % )                          ;
+; Total registers                 ; 0                                              ;
+; Total pins                      ; 47 / 457 ( 10 % )                              ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                          ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                                 ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0 / 6 ( 0 % )                                  ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                  ;
++---------------------------------+------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -68,7 +68,7 @@ on the Quartus Prime software download page.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/12/2026 08:33:36 ;
+; Start date & time ; 01/12/2026 16:20:57 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab1                ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ on the Quartus Prime software download page.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 97640872116533.176823201623364         ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 123719793986865.176826005726435        ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_ALU                            ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
@@ -87,7 +87,8 @@ on the Quartus Prime software download page.
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_ALU                                 ; --            ; --          ; eda_simulation                    ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                  ; Questa Altera FPGA (Verilog)           ; <None>        ; --          ; --                                ;
+; EDA_RUN_TOOL_AUTOMATICALLY           ; On                                     ; --            ; --          ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (Verilog)            ; <None>        ; --          ; --                                ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_FILE                  ; verilog/lab1.v                         ; --            ; --          ; tb_ALU                            ;
 ; EDA_TEST_BENCH_FILE                  ; verilog/ALU.v                          ; --            ; --          ; tb_ALU                            ;
@@ -111,26 +112,26 @@ on the Quartus Prime software download page.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 13391 MB            ; 00:00:19                           ;
-; Fitter               ; 00:00:42     ; 1.0                     ; 16004 MB            ; 00:02:22                           ;
-; Assembler            ; 00:00:06     ; 1.0                     ; 13740 MB            ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.1                     ; 13882 MB            ; 00:00:05                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 13246 MB            ; 00:00:01                           ;
-; Total                ; 00:01:05     ; --                      ; --                  ; 00:02:53                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 451 MB              ; 00:00:14                           ;
+; Fitter               ; 00:00:31     ; 1.0                     ; 1764 MB             ; 00:00:47                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 512 MB              ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.1                     ; 831 MB              ; 00:00:04                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 664 MB              ; 00:00:01                           ;
+; Total                ; 00:00:49     ; --                      ; --                  ; 00:01:11                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; AsherARM         ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; AsherARM         ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; AsherARM         ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; AsherARM         ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; AsherARM         ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++----------------------+------------------+----------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
++----------------------+------------------+----------------+------------+----------------+
+; Analysis & Synthesis ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; Fitter               ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; Assembler            ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; Timing Analyzer      ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; EDA Netlist Writer   ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
++----------------------+------------------+----------------+------------+----------------+
 
 
 ------------

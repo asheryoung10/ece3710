@@ -30,13 +30,13 @@ module tb_alu;
     );
 
     // Local constants for opcodes
-    localparam ADD      = 8'b0000_0101;
-    localparam ADDI     = 8'b0101_xxxx;
-    localparam ADDU   	= 8'b0000_0110;
-    localparam ADDUI  	= 8'b0110_xxxx;
+   localparam ADD      = 8'b0000_0101;
+   localparam ADDI     = 8'b0101_xxxx;
+   localparam ADDU   	= 8'b0000_0110;
+   localparam ADDUI  	= 8'b0110_xxxx;
 	localparam ADDC   	= 8'b0000_0111;
 	localparam ADDCI  	= 8'b0111_xxxx;
-    localparam SUB    	= 8'b0000_1001;
+   localparam SUB    	= 8'b0000_1001;
 	localparam SUBI   	= 8'b1001_xxxx;
 	localparam CMP 		= 8'b0000_1011;
 	localparam CMPI		= 8'b1011_xxxx;
@@ -65,6 +65,34 @@ module tb_alu;
     reg lastBit;
     reg [FLAG_WIDTH-1:0] oldFlags;
 
+	 
+	 	 
+	 task apply_test_expected;
+        input [BIT_WIDTH-1:0] a;
+        input [BIT_WIDTH-1:0] b;
+        input [OPCODE_WIDTH-1:0] op;
+		  input [BIT_WIDTH-1:0] expected_result_in;
+		input [FLAG_WIDTH-1:0] expected_flags_in; // C, L, F, Z, N
+		  
+        begin
+				#1; // wait for combinational output
+            Rdest = a;
+            Rsrc_Imm = b;
+            Opcode = op;
+            oldFlags = Flags;
+				expected_flags = expected_flags_in;
+				expected_result = expected_result_in;
+            #1; // wait for combinational output
+
+            // Check result
+            if (Result !== expected_result || Flags !== expected_flags) begin
+                $display("FAIL: Opcode=%b, Rdest=%d, Rsrc_Imm=%d => Result=%d (exp %d), Flags(CLFZN)=%b (exp %b)",
+                         op, a, b, Result, expected_result, Flags, expected_flags);
+					 $stop;
+            end 
+        end
+    endtask
+	 
     // Task to apply test vectors
     task apply_test;
         input [BIT_WIDTH-1:0] a;
@@ -75,13 +103,13 @@ module tb_alu;
             Rsrc_Imm = b;
             Opcode = op;
             oldFlags = Flags;
-            #1; // wait for combinational output
+            
 
             // Compute expected result and flags
             casex(op)
                 ADD, ADDI: begin
-                    {lastBit, expected_result} = $signed(a) + $signed(b);
-                    expected_flags[cFlagIndex] = lastBit; // C for signed add
+                    expected_result = $signed(a) + $signed(b);
+                    expected_flags[cFlagIndex] = 1'b0; // C = 0 for signed add
                     expected_flags[lFlagIndex] = 1'bx; // L set to x when signed
                     expected_flags[fFlagIndex] = ($signed(a[BIT_WIDTH-1]) == $signed(b[BIT_WIDTH-1]) &&
                                          expected_result[BIT_WIDTH-1] != a[BIT_WIDTH-1]);
@@ -92,13 +120,13 @@ module tb_alu;
                     {lastBit, expected_result} = a + b;
                     expected_flags[cFlagIndex] = lastBit;
                     expected_flags[lFlagIndex] = a < b;
-                    expected_flags[fFlagIndex] = 1'bx;
+                    expected_flags[fFlagIndex] = 1'b0;
                     expected_flags[zFlagIndex] = (expected_result == 0);
                     expected_flags[nFlagIndex] = 1'bx;
                 end
                 ADDC, ADDCI: begin
-                    {lastBit, expected_result} = a + b + oldFlags[cFlagIndex];
-                    expected_flags[cFlagIndex] = lastBit;
+                    expected_result = a + b + oldFlags[cFlagIndex];
+                    expected_flags[cFlagIndex] = 1'b0;
                     expected_flags[lFlagIndex] = 1'bx;
                     expected_flags[fFlagIndex] = ($signed(a[BIT_WIDTH-1]) == $signed(b[BIT_WIDTH-1]) &&
                                          expected_result[BIT_WIDTH-1] != a[BIT_WIDTH-1]);
@@ -108,8 +136,8 @@ module tb_alu;
 
                 end
                 SUB, SUBI: begin
-                    {lastBit, expected_result} = $signed(a) - $signed(b);
-                    expected_flags[cFlagIndex] = lastBit;
+                    expected_result = $signed(a) - $signed(b);
+                    expected_flags[cFlagIndex] = 0;
                     expected_flags[lFlagIndex] = 1'bx;
                     expected_flags[fFlagIndex] = ($signed(a[BIT_WIDTH-1]) == $signed(b[BIT_WIDTH-1]) &&
                                          expected_result[BIT_WIDTH-1] != a[BIT_WIDTH-1]);
@@ -173,7 +201,7 @@ module tb_alu;
                     expected_flags[nFlagIndex] = $signed(a) < $signed(b);
                 end
                 ARSH, ARSHI: begin
-                    expected_result = ($signed(b) >= 0) ? ($signed(a) >> $signed(b)) : ($signed(a) << -$signed(b));
+                    expected_result = ($signed(b) >= 0) ? ($signed(a) >>> $signed(b)) : ($signed(a) << -$signed(b));
                     expected_flags[cFlagIndex] = 1'bx;
                     expected_flags[lFlagIndex] = 1'bx;
                     expected_flags[fFlagIndex] = 1'bx;
@@ -189,23 +217,20 @@ module tb_alu;
                 end
             endcase
 
-            // Check result
-            if (Result !== expected_result || Flags !== expected_flags) begin
-                $display("FAIL: Opcode=%b, Rdest=%d, Rsrc_Imm=%d => Result=%d (exp %d), Flags(CLFZN)=%b (exp %b)",
-                         op, a, b, Result, expected_result, Flags, expected_flags);
-            end 
-            //else begin
-            //    $display("PASS: Opcode=%b, Rdest=%d, Rsrc_Imm=%d => Result=%d, Flags=%b",
-            //             op, a, b, Result, Flags);
-            //end
+            apply_test_expected(a, b, op, expected_result, expected_flags);
         end
     endtask
 
-    integer i, j;
+	 
+	 
+	 
+	 
 
+    integer i, j;
+	
     initial begin
         $display("Starting ALU testbench...");
-
+		  
         // Exhaustive tests for ADD and ADDI with small numbers for demo
         for (i = -5; i <= 5; i = i + 1) begin
             for (j = -5; j <= 5; j = j + 1) begin
@@ -215,9 +240,38 @@ module tb_alu;
                 apply_test(i, j, ADDUI);
                 apply_test(i, j, ADDC);
                 apply_test(i, j, ADDCI);
-
+					 apply_test(i, j, SUB);
+                apply_test(i, j, SUBI);
+                apply_test(i, j, CMP);
+                apply_test(i, j, CMPI);
+                apply_test(i, j, AND);
+                apply_test(i, j, OR);
+					 apply_test(i, j, XOR);
+                apply_test(i, j, NOT);
+                apply_test(i, j, LSH);
+                apply_test(i, j, LSHI);
+                apply_test(i, j, RSH);
+                apply_test(i, j, RSHI);
+					 apply_test(i, j, ARSH);
+                apply_test(i, j, ARSHI);
+                apply_test(i, j, NOP);
             end
         end
+		  $display("Passed middle range tests, begining edge case testing.");
+		  
+		  $display("Testing ADD edge cases.");
+		  apply_test_expected(16'b0000_0000_0000_0000, 16'b0000_0000_0000_0000, ADD, 16'b0000_0000_0000_0000, 5'b0x010);
+		  apply_test_expected(16'b1000_0000_0000_0000, 16'b1000_0000_0000_0000, ADD, 16'b0000_0000_0000_0000, 5'b0x110);
+		  apply_test_expected(16'b1000_0000_0000_0000, 16'b0000_0000_0000_0000, ADD, 16'b1000_0000_0000_0000, 5'b0x001);
+		  $display("Add edge cases successfull.");
+		  // CLFZN
+		   $display("Testing ADDU edge cases.");
+		  apply_test_expected(16'b0000_0000_0000_0000, 16'b0000_0000_0000_0000, ADDU, 16'b0000_0000_0000_0000, 5'b0001x);
+		  apply_test_expected(16'b1000_0000_0000_0000, 16'b1000_0000_0000_0000, ADDU, 16'b0000_0000_0000_0000, 5'b1001x);
+		  apply_test_expected(16'b1000_0000_0000_0000, 16'b0000_0000_0000_0000, ADDU, 16'b1000_0000_0000_0000, 5'b0000x);
+		  $display("Add edge cases successfull.");
+		  
+	
 
         $display("ALU testbench completed.");
         $finish;

@@ -27,9 +27,9 @@ module alu #(parameter BIT_WIDTH    = 16,
 			localparam XOR		= 8'b0000_0011;
 			localparam NOT		= 8'b0000_0100;
 			localparam LSH		= 8'b1000_0100;
-			localparam LSHI		= 8'b1000_000x;
+			localparam LSHI	= 8'b1000_000x;
 			localparam RSH		= 8'b1000_100x;	
-		 	localparam RSHI		= 8'b1000_101x;
+		 	localparam RSHI	= 8'b1000_101x;
 			localparam ARSH 	= 8'b1000_0110;
 			localparam ARSHI 	= 9'b1000_001x;
 			localparam NOP		= 8'b0000_0000;
@@ -44,7 +44,7 @@ module alu #(parameter BIT_WIDTH    = 16,
 			
 				
 			// Wire for just holding shift amount for shift instructions.
-			reg [BIT_WIDTH-1:0] shift_amt;
+			integer shift_amt;
 
 			reg signed [BIT_WIDTH-1:0] negRsrc;
 			reg lastBit;
@@ -56,10 +56,10 @@ module alu #(parameter BIT_WIDTH    = 16,
 
 						// Signed addition operation.
 						ADD, ADDI: begin
-							{lastBit, Result} = $signed(Rdest) + $signed(Rsrc_Imm);
+							Result = $signed(Rdest) + $signed(Rsrc_Imm);
 							
 							zFlag = Result == 0;
-							cFlag = lastBit;
+							cFlag = 1'b0;
 							fFlag = (Rdest[15] == Rsrc_Imm[15]) && (Result[15] != Rdest[15]);
 							lFlag = 1'bx;
 							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
@@ -69,11 +69,10 @@ module alu #(parameter BIT_WIDTH    = 16,
 
 						// Unsigned addition operation.
 						ADDU, ADDUI: begin
-							Result = Rdest + Rsrc_Imm;
+							{cFlag, Result} = Rdest + Rsrc_Imm;
 							
 							zFlag = Result == 0;
-							{cFlag, Result} = Rdest + Rsrc_Imm;
-							fFlag = 1'bx;
+							fFlag = 1'b0;
 							lFlag = Rdest < Rsrc_Imm;
 							nFlag = 1'bx;
 							
@@ -82,10 +81,10 @@ module alu #(parameter BIT_WIDTH    = 16,
 
 						// Signed addition operation including carry.
 						ADDC, ADDCI: begin
-							{lastBit, Result} = cFlag + $signed(Rdest) + $signed(Rsrc_Imm);
+							Result = cFlag + $signed(Rdest) + $signed(Rsrc_Imm);
 							
 							zFlag = Result == 0;
-							cFlag = lastBit;
+							cFlag = 1'b0;
 							fFlag = (Rdest[15] == Rsrc_Imm[15]) && (Result[15] != Rdest[15]);
 							lFlag = 1'bx;
 							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
@@ -99,7 +98,7 @@ module alu #(parameter BIT_WIDTH    = 16,
 							Result = $signed(Rdest) + negRsrc;
 
 							zFlag = Result == 0;
-							cFlag = 1'bx;
+							cFlag = 1'b0;
 							fFlag = (Rdest[15] == Rsrc_Imm[15]) && (Result[15] != Rdest[15]);
 							lFlag = 1'bx;
 							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
@@ -195,7 +194,7 @@ module alu #(parameter BIT_WIDTH    = 16,
 						end
 						ARSH, ARSHI: begin
 							shift_amt = $signed(Rsrc_Imm);
-							Result = (shift_amt >= 0) ? ($signed(Rdest) >> shift_amt) : ($signed(Rdest) << -shift_amt);
+							Result = (shift_amt >= 0) ? ($signed(Rdest) >>> shift_amt) : ($signed(Rdest) <<< -shift_amt);
 							
 							zFlag = Result == 0;
 							cFlag = 1'bx;

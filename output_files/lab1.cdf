@@ -1,4 +1,4 @@
-/* Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition */
+/* Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("C:/School/ECE 3710/lab1/output_files/") File("lab1.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("/home/u1462567/Desktop/3710/ece3710/output_files/") File("lab1.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
