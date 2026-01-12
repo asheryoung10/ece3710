@@ -1,5 +1,5 @@
 Flow report for lab1
-Sun Jan 11 17:41:46 2026
+Mon Jan 12 08:34:44 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -41,16 +41,16 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Sun Jan 11 17:41:46 2026           ;
+; Flow Status                     ; Successful - Mon Jan 12 08:34:44 2026           ;
 ; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                   ; lab1                                            ;
 ; Top-level Entity Name           ; lab1                                            ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CSEMA5F31C6                                    ;
 ; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 4 / 32,070 ( < 1 % )                            ;
+; Logic utilization (in ALMs)     ; 11 / 32,070 ( < 1 % )                           ;
 ; Total registers                 ; 0                                               ;
-; Total pins                      ; 12 / 457 ( 3 % )                                ;
+; Total pins                      ; 47 / 457 ( 10 % )                               ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                           ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                                  ;
@@ -68,7 +68,7 @@ on the Quartus Prime software download page.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/11/2026 17:40:55 ;
+; Start date & time ; 01/12/2026 08:33:36 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab1                ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ on the Quartus Prime software download page.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 123818839319851.176817845523076        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 97640872116533.176823201623364         ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_ALU                            ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
@@ -92,7 +92,7 @@ on the Quartus Prime software download page.
 ; EDA_TEST_BENCH_FILE                  ; verilog/lab1.v                         ; --            ; --          ; tb_ALU                            ;
 ; EDA_TEST_BENCH_FILE                  ; verilog/ALU.v                          ; --            ; --          ; tb_ALU                            ;
 ; EDA_TEST_BENCH_FILE                  ; verilog/tb_ALU.v                       ; --            ; --          ; tb_ALU                            ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_ALU                                 ; --            ; --          ; tb_ALU                            ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_alu                                 ; --            ; --          ; tb_ALU                            ;
 ; EDA_TEST_BENCH_NAME                  ; tb_ALU                                 ; --            ; --          ; eda_simulation                    ;
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --                                ;
@@ -111,12 +111,12 @@ on the Quartus Prime software download page.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 4865 MB             ; 00:00:12                           ;
-; Fitter               ; 00:00:35     ; 1.0                     ; 7985 MB             ; 00:04:04                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 5227 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 5401 MB             ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4760 MB             ; 00:00:01                           ;
-; Total                ; 00:00:47     ; --                      ; --                  ; 00:04:24                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 13391 MB            ; 00:00:19                           ;
+; Fitter               ; 00:00:42     ; 1.0                     ; 16004 MB            ; 00:02:22                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 13740 MB            ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.1                     ; 13882 MB            ; 00:00:05                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 13246 MB            ; 00:00:01                           ;
+; Total                ; 00:01:05     ; --                      ; --                  ; 00:02:53                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -125,11 +125,11 @@ on the Quartus Prime software download page.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-JRGJE77  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-JRGJE77  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-JRGJE77  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-JRGJE77  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-JRGJE77  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; AsherARM         ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; AsherARM         ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; AsherARM         ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; AsherARM         ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; AsherARM         ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

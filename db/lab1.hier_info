@@ -3,6 +3,12 @@ SW[0] => SW[0].IN1
 SW[1] => SW[1].IN1
 SW[2] => SW[2].IN1
 SW[3] => SW[3].IN1
+SW[4] => SW[4].IN1
+SW[5] => SW[5].IN1
+SW[6] => SW[6].IN1
+SW[7] => SW[7].IN1
+SW[8] => SW[8].IN1
+SW[9] => SW[9].IN1
 HEX0[0] << seven_seg_decoder:u0.hex
 HEX0[1] << seven_seg_decoder:u0.hex
 HEX0[2] << seven_seg_decoder:u0.hex
@@ -11,21 +17,35 @@ HEX0[4] << seven_seg_decoder:u0.hex
 HEX0[5] << seven_seg_decoder:u0.hex
 HEX0[6] << seven_seg_decoder:u0.hex
 HEX0[7] << seven_seg_decoder:u0.hex
-
-
-|lab1|seven_seg_decoder:u0
-bin[0] => Decoder0.IN3
-bin[1] => Decoder0.IN2
-bin[2] => Decoder0.IN1
-bin[3] => Decoder0.IN0
-hex[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-hex[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-hex[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-hex[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-hex[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-hex[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-hex[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-hex[7] <= <VCC>
+HEX1[0] << seven_seg_decoder:u1.hex
+HEX1[1] << seven_seg_decoder:u1.hex
+HEX1[2] << seven_seg_decoder:u1.hex
+HEX1[3] << seven_seg_decoder:u1.hex
+HEX1[4] << seven_seg_decoder:u1.hex
+HEX1[5] << seven_seg_decoder:u1.hex
+HEX1[6] << seven_seg_decoder:u1.hex
+HEX1[7] << seven_seg_decoder:u1.hex
+HEX2[0] << seven_seg_decoder:u2.hex
+HEX2[1] << seven_seg_decoder:u2.hex
+HEX2[2] << seven_seg_decoder:u2.hex
+HEX2[3] << seven_seg_decoder:u2.hex
+HEX2[4] << seven_seg_decoder:u2.hex
+HEX2[5] << seven_seg_decoder:u2.hex
+HEX2[6] << seven_seg_decoder:u2.hex
+HEX2[7] << seven_seg_decoder:u2.hex
+HEX3[0] << seven_seg_decoder:u3.hex
+HEX3[1] << seven_seg_decoder:u3.hex
+HEX3[2] << seven_seg_decoder:u3.hex
+HEX3[3] << seven_seg_decoder:u3.hex
+HEX3[4] << seven_seg_decoder:u3.hex
+HEX3[5] << seven_seg_decoder:u3.hex
+HEX3[6] << seven_seg_decoder:u3.hex
+HEX3[7] << seven_seg_decoder:u3.hex
+flags[0] << alu:Alu.Flags
+flags[1] << alu:Alu.Flags
+flags[2] << alu:Alu.Flags
+flags[3] << alu:Alu.Flags
+flags[4] << alu:Alu.Flags
 
 
 |lab1|alu:Alu
@@ -529,5 +549,65 @@ Result[12] <= Result[12]$latch.DB_MAX_OUTPUT_PORT_TYPE
 Result[13] <= Result[13]$latch.DB_MAX_OUTPUT_PORT_TYPE
 Result[14] <= Result[14]$latch.DB_MAX_OUTPUT_PORT_TYPE
 Result[15] <= Result[15]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab1|seven_seg_decoder:u0
+bin[0] => Decoder0.IN3
+bin[1] => Decoder0.IN2
+bin[2] => Decoder0.IN1
+bin[3] => Decoder0.IN0
+hex[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+hex[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+hex[7] <= <VCC>
+
+
+|lab1|seven_seg_decoder:u1
+bin[0] => Decoder0.IN3
+bin[1] => Decoder0.IN2
+bin[2] => Decoder0.IN1
+bin[3] => Decoder0.IN0
+hex[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+hex[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+hex[7] <= <VCC>
+
+
+|lab1|seven_seg_decoder:u2
+bin[0] => Decoder0.IN3
+bin[1] => Decoder0.IN2
+bin[2] => Decoder0.IN1
+bin[3] => Decoder0.IN0
+hex[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+hex[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+hex[7] <= <VCC>
+
+
+|lab1|seven_seg_decoder:u3
+bin[0] => Decoder0.IN3
+bin[1] => Decoder0.IN2
+bin[2] => Decoder0.IN1
+bin[3] => Decoder0.IN0
+hex[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+hex[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+hex[7] <= <VCC>
 
 
