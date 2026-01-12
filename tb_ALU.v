@@ -1,16 +1,35 @@
-`timescale 1ps/1ps
+`timescale 1ns/1ps
 
-module tb_ALU;
-    parameter BIT_WIDTH    = 16;
-    parameter OPCODE_WIDTH =  8;
-    parameter FLAG_WIDTH   =  5;
+module tb_alu;
 
-    reg  [BIT_WIDTH-1:0]  Rsrc_Imm;
-    reg  [BIT_WIDTH-1:0]     Rdest;
-    reg  [OPCODE_WIDTH-1:0] Opcode;
-    wire [FLAG_WIDTH-1:0]    Flags;
-    wire [BIT_WIDTH-1:0]    Result; 
+    // Parameters
+    parameter BIT_WIDTH = 16;
+    parameter OPCODE_WIDTH = 8;
+    parameter FLAG_WIDTH = 5;
 
+    // Inputs
+    reg [BIT_WIDTH-1:0] Rsrc_Imm;
+    reg [BIT_WIDTH-1:0] Rdest;
+    reg [OPCODE_WIDTH-1:0] Opcode;
+
+    // Outputs
+    wire [BIT_WIDTH-1:0] Result;
+    wire [FLAG_WIDTH-1:0] Flags;
+
+    // Instantiate the ALU
+    alu #(
+        .BIT_WIDTH(BIT_WIDTH),
+        .OPCODE_WIDTH(OPCODE_WIDTH),
+        .FLAG_WIDTH(FLAG_WIDTH)
+    ) uut (
+        .Rsrc_Imm(Rsrc_Imm),
+        .Rdest(Rdest),
+        .Opcode(Opcode),
+        .Result(Result),
+        .Flags(Flags)
+    );
+
+    // Local constants for opcodes
     localparam ADD      = 8'b0000_0101;
     localparam ADDI     = 8'b0101_xxxx;
     localparam ADDU   	= 8'b0000_0110;
@@ -33,75 +52,132 @@ module tb_ALU;
 	localparam ARSHI 	= 8'b1000_001x;
 	localparam NOP		= 8'b0000_0000;
 
-    reg [OPCODE_WIDTH-1: 0] opcodes [0:21];
 
-    // You can use integers for exhaustive testing though you may have to use a bit mask since your data is 16-bits.
-	// Look into for-loops and $stop in Verilog if you want to create self-checking testbenches as I demonstrated -- 
-	// though that is notrequired. Also, don't forget to include just a bit of delay time (#1;) for a display.
+    localparam cFlagIndex = 4;
+    localparam lFlagIndex = 3;
+    localparam fFlagIndex = 2;
+    localparam zFlagIndex = 1;
+    localparam nFlagIndex = 0;
 
-    integer i, j, k;
-    wire [FLAG_WIDTH-1:0]   expectedFlags;
-    wire [BIT_WIDTH-1:0]    expectedResult; 
+    // Variables for checking
+    reg [BIT_WIDTH-1:0] expected_result;
+    reg [FLAG_WIDTH-1:0] expected_flags; // C, L, F, Z, N
+    reg lastBit;
+    reg [FLAG_WIDTH-1:0] oldFlags;
 
-    ALU #(.BIT_WIDTH(BIT_WIDTH),
-          .OPCODE_WIDTH(OPCODE_WIDTH),
-          .FLAG_WIDTH(FLAG_WIDTH)
-         )
-         uut
-         (
-          .Rsrc_Imm(Rsrc_Imm),
-          .Rdest(Rdest),
-          .Opcode(Opcode),
-          .Flags(Flags),
-          .Result(Result) 
-         );
+    // Task to apply test vectors
+    task apply_test;
+        input [BIT_WIDTH-1:0] a;
+        input [BIT_WIDTH-1:0] b;
+        input [OPCODE_WIDTH-1:0] op;
+        begin
+            Rdest = a;
+            Rsrc_Imm = b;
+            Opcode = op;
+            oldFlags = Flags;
+            #1; // wait for combinational output
+
+            // Compute expected result and flags
+            casex(op)
+                ADD, ADDI: begin
+                    {lastBit, expected_result} = $signed(a) + $signed(b);
+                    expected_flags[cFlagIndex] = lastBit; // C for signed add
+                    expected_flags[lFlagIndex] = 1'bx; // L set to x when signed
+                    expected_flags[fFlagIndex] = ($signed(a[BIT_WIDTH-1]) == $signed(b[BIT_WIDTH-1]) &&
+                                         expected_result[BIT_WIDTH-1] != a[BIT_WIDTH-1]);
+                    expected_flags[zFlagIndex] = (expected_result == 0);
+                    expected_flags[nFlagIndex] = $signed(a) < $signed(b);
+                end
+                ADDU, ADDUI: begin
+                    {lastBit, expected_result} = a + b;
+                    expected_flags[cFlagIndex] = lastBit;
+                    expected_flags[lFlagIndex] = a < b;
+                    expected_flags[fFlagIndex] = 1'bx;
+                    expected_flags[zFlagIndex] = (expected_result == 0);
+                    expected_flags[nFlagIndex] = 1'bx;
+                end
+                ADDC, ADDCI: begin
+                    {lastBit, expected_result} = a + b + oldFlags[cFlagIndex];
+                    expected_flags[cFlagIndex] = lastBit;
+                    expected_flags[lFlagIndex] = 1'bx;
+                    expected_flags[fFlagIndex] = ($signed(a[BIT_WIDTH-1]) == $signed(b[BIT_WIDTH-1]) &&
+                                         expected_result[BIT_WIDTH-1] != a[BIT_WIDTH-1]);
+                    
+                    expected_flags[zFlagIndex] = (expected_result == 0);
+                    expected_flags[nFlagIndex] = $signed(a) < $signed(b);
+
+                end
+                SUB, SUBI: begin
+                    {lastBit, expected_result} = $signed(a) - $signed(b);
+                    expected_flags[cFlagIndex] = lastBit;
+                    expected_flags[lFlagIndex] = 1'bx;
+                    expected_flags[fFlagIndex] = ($signed(a[BIT_WIDTH-1]) == $signed(b[BIT_WIDTH-1]) &&
+                                         expected_result[BIT_WIDTH-1] != a[BIT_WIDTH-1]);
+                    expected_flags[zFlagIndex] = (expected_result == 0);
+                    expected_flags[nFlagIndex] = $signed(a) < $signed(b);
+                end
+                CMP, CMPI: begin
+                    expected_result = 0;
+                    expected_flags[cFlagIndex] = 1'bx;
+                    expected_flags[lFlagIndex] = a < b;
+                    expected_flags[fFlagIndex] = 1'bx;
+                    expected_flags[zFlagIndex] = $signed(a) == $signed(b);
+                    expected_flags[nFlagIndex] = $signed(a) < $signed(b);
+                end
+                AND: begin
+                end
+                OR: begin
+                end
+                XOR: begin
+                end
+                NOT: begin
+                end
+                LSH, LSHI: begin
+                end
+                RSH, RSHI: begin
+                end
+                ARSH, ARSHI: begin
+                end
+                NOP: begin
+                end
+                default: begin
+                    expected_result = 0;
+                    expected_flags = 5'bxxxxx;
+                end
+            endcase
+
+            // Check result
+            if (Result !== expected_result || Flags !== expected_flags) begin
+                $display("FAIL: Opcode=%b, Rdest=%d, Rsrc_Imm=%d => Result=%d (exp %d), Flags(CLFZN)=%b (exp %b)",
+                         op, a, b, Result, expected_result, Flags, expected_flags);
+            end 
+            //else begin
+            //    $display("PASS: Opcode=%b, Rdest=%d, Rsrc_Imm=%d => Result=%d, Flags=%b",
+            //             op, a, b, Result, Flags);
+            //end
+        end
+    endtask
+
+    integer i, j;
 
     initial begin
-        opcodes[0] = ADD;
-        opcdoes[1] = ADDI;
-        opcodes[2] = ADDU;
-        opcodes[3] = ADDUI;
-        opcodes[4] = ADDC;
-        opcodes[5] = ADDCI;
-        opcodes[6] = SUB;
-        opcodes[7] = SUBI;
-        opcodes[8] = CMP;
-        opcodes[9] = CMPI;
-        opcodes[10] = AND;
-        opcodes[11] = OR;
-        opcodes[12] = XOR;
-        opcodes[13] = NOT;
-        opcodes[14] = LSH;
-        opcodes[15] = LSHI;
-        opcodes[16] = RSH;
-        opcodes[17] = RSHI;
-        opcodes[18] = ARSH;
-        opcodes[19] = ARSHI;
-        opcodes[20] = NOP;
+        $display("Starting ALU testbench...");
 
-        $monitor("Rsrc_Imm: %0d, Rdest: %0d, Result: %0d, Flags[1:0]: %b, time:%0d", Rsrc_Imm, Rdest, Result, Flags[15:0], $time);
-        for (i = 0; i < 21 i += 1;) begin
-            Opcode = opcodes[i];
-            for (j = 0; j < 2**16; j += 1;) begin
-                Rsrc_Imm = j;
-                for (k = 0; k < 2**16; k += 1;) begin
-                    Rdest = k;
-                    
-                end
+        // Exhaustive tests for ADD and ADDI with small numbers for demo
+        for (i = -5; i <= 5; i = i + 1) begin
+            for (j = -5; j <= 5; j = j + 1) begin
+                apply_test(i, j, ADD);
+                apply_test(i, j, ADDI);
+                apply_test(i, j, ADDU);
+                apply_test(i, j, ADDUI);
+                apply_test(i, j, ADDC);
+                apply_test(i, j, ADDCI);
+
             end
         end
 
-        #1; $display("ADD TEST"); #1; 
-        Opcode = ADD;
-		  Rsrc_Imm = 16'd5;
-		  Rdest = 16'd32;
-        if(Result != 16'd37) begin
-				#1; $display("Failure -- Incorrect result"); #1;
-				#1; $display("Expect: %d, Actual: %d", Result, Rsrc_Imm + Rdest); #1;
-				$stop; // This stops the sim so you can look at waveforms at the point of failure or continue the sim from this point.
-		  end
-        #1; $display("ADD PASSING"); #1; 
-        
+        $display("ALU testbench completed.");
+        $finish;
     end
 
 endmodule
