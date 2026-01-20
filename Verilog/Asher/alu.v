@@ -1,4 +1,3 @@
-// ALU module that handles opcodes
 module alu #(parameter BIT_WIDTH    = 16,
              parameter OPCODE_WIDTH =  8,
              parameter FLAG_WIDTH   =  5
@@ -12,8 +11,8 @@ module alu #(parameter BIT_WIDTH    = 16,
             );
 
 			// Instruction opcodes
-         localparam ADD    	= 8'b0000_0101;
-         localparam ADDI   	= 8'b0101_xxxx;
+			localparam ADD    	= 8'b0000_0101;
+			localparam ADDI   	= 8'b0101_xxxx;
 			localparam ADDU   	= 8'b0000_0110;
 			localparam ADDUI  	= 8'b0110_xxxx;
 			localparam ADDC   	= 8'b0000_0111;
@@ -27,9 +26,9 @@ module alu #(parameter BIT_WIDTH    = 16,
 			localparam XOR		= 8'b0000_0011;
 			localparam NOT		= 8'b0000_0100;
 			localparam LSH		= 8'b1000_0100;
-			localparam LSHI	= 8'b1000_000x;
+			localparam LSHI		= 8'b1000_000x;
 			localparam RSH		= 8'b1000_100x;	
-		 	localparam RSHI	= 8'b1000_101x;
+		 	localparam RSHI		= 8'b1000_101x;
 			localparam ARSH 	= 8'b1000_0110;
 			localparam ARSHI 	= 9'b1000_001x;
 			localparam NOP		= 8'b0000_0000;

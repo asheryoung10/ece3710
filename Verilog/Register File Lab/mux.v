@@ -10,7 +10,7 @@ module mux #(
 				always @(*) begin
 					case(sel)
 						0000: rout = r1;
-						0001:	rout = r2;
+						0001: rout = r2;
 						0010: rout = r3;
 						0011: rout = r4;
 						0100: rout = r5;

@@ -1,0 +1,8 @@
+ALU Module:
+    Inputs:
+        16 Bits Rsrc_Imm
+        16 Bits Rdest
+        8 Bits Opcode
+    Outpus:
+        16 Bits Result
+        5 Bits Flags
