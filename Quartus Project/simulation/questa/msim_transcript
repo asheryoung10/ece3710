@@ -27,54 +27,54 @@
 # 
 # vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Verilog/ALU\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/seven_seg_decoder.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:44:37 on Jan 21,2026
+# Start time: 21:19:08 on Jan 21,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab" C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/seven_seg_decoder.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module seven_seg_decoder
 # 
 # Top level modules:
 # 	seven_seg_decoder
-# End time: 20:44:37 on Jan 21,2026, Elapsed time: 0:00:00
+# End time: 21:19:09 on Jan 21,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Verilog/ALU\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:44:37 on Jan 21,2026
+# Start time: 21:19:09 on Jan 21,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab" C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module lab1
 # 
 # Top level modules:
 # 	lab1
-# End time: 20:44:37 on Jan 21,2026, Elapsed time: 0:00:00
+# End time: 21:19:09 on Jan 21,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Verilog/ALU\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:44:37 on Jan 21,2026
+# Start time: 21:19:09 on Jan 21,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab" C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 20:44:37 on Jan 21,2026, Elapsed time: 0:00:00
+# End time: 21:19:09 on Jan 21,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Quartus\ Project/../Verilog/ALU\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/ALU Lab/tb_ALU.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:44:37 on Jan 21,2026
+# Start time: 21:19:09 on Jan 21,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/ALU Lab" C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/ALU Lab/tb_ALU.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module tb_alu
 # 
 # Top level modules:
 # 	tb_alu
-# End time: 20:44:38 on Jan 21,2026, Elapsed time: 0:00:01
+# End time: 21:19:09 on Jan 21,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_alu
 # ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_alu 
-# Start time: 20:44:38 on Jan 21,2026
+# Start time: 21:19:09 on Jan 21,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
 # ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
@@ -108,7 +108,7 @@
 # Starting ALU testbench extreme values...
 # Passed middle range tests, begining edge case testing.
 # ALU testbench completed.
-# ** Note: $finish    : C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/ALU Lab/tb_ALU.v(334)
+# ** Note: $finish    : C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/ALU Lab/tb_ALU.v(333)
 #    Time: 5124 ns  Iteration: 0  Instance: /tb_alu
-# End time: 20:44:45 on Jan 21,2026, Elapsed time: 0:00:07
-# Errors: 0, Warnings: 1
+# 1
+# Break in Module tb_alu at C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/ALU Lab/tb_ALU.v line 333
