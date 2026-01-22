@@ -1,123 +1,23 @@
 Info: Start Nativelink Simulation process
+Info: NativeLink has detected Verilog design -- Verilog simulation models will be used
 
 ========= EDA Simulation Settings =====================
 
-Sim Mode              :  Gate
+Sim Mode              :  RTL
 Family                :  cyclonev
 Quartus root          :  c:/altera_lite/25.1std/quartus/bin64/
 Quartus sim root      :  c:/altera_lite/25.1std/quartus/eda/sim_lib
 Simulation Tool       :  questa altera fpga
 Simulation Language   :  verilog
 Simulation Mode       :  GUI
-Sim Output File       :  lab1.vo
-Sim SDF file          :  lab1__verilog.sdo
+Sim Output File       :  
+Sim SDF file          :  
 Sim dir               :  simulation\questa
 
 =======================================================
 
 Info: Starting NativeLink simulation with Questa Altera FPGA software
 Sourced NativeLink script c:/altera_lite/25.1std/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File lab1_run_msim_gate_verilog.do already exists - backing up current file as lab1_run_msim_gate_verilog.do.bak11
-Probing transcript
-Questa Altera FPGA Info: # Reading pref.tcl
-Questa Altera FPGA Info: # //  Questa Altera Starter FPGA Edition-64
-Questa Altera FPGA Info: # //  Version 2025.2 win64 May 31 2025
-Questa Altera FPGA Info: # //
-Questa Altera FPGA Info: # // Unpublished work. Copyright 2025 Siemens
-Questa Altera FPGA Info: # //
-Questa Altera FPGA Info: # // This material contains trade secrets or otherwise confidential information
-Questa Altera FPGA Info: # // owned by Siemens Industry Software Inc. or its affiliates (collectively,
-Questa Altera FPGA Info: # // "SISW"), or its licensors. Access to and use of this information is strictly
-Questa Altera FPGA Info: # // limited as set forth in the Customer's applicable agreements with SISW.
-Questa Altera FPGA Info: # //
-Questa Altera FPGA Info: # // This material may not be copied, distributed, or otherwise disclosed outside
-Questa Altera FPGA Info: # // of the Customer's facilities without the express written permission of SISW,
-Questa Altera FPGA Info: # // and may not be used in any way not expressly authorized by SISW.
-Questa Altera FPGA Info: # //
-Questa Altera FPGA Info: # do lab1_run_msim_gate_verilog.do
-Questa Altera FPGA Info: # if {[file exists gate_work]} {
-Questa Altera FPGA Info: # 	vdel -lib gate_work -all
-Questa Altera FPGA Info: # }
-Questa Altera FPGA Info: # vlib gate_work
-Questa Altera FPGA Info: # vmap work gate_work
-Questa Altera FPGA Info: # Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
-Questa Altera FPGA Info: # vmap work gate_work 
-Questa Altera FPGA Info: # ** Note: (vmap-220) 'c:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
-Questa Altera FPGA Info: # Copying c:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
-Questa Altera FPGA Info: # Modifying modelsim.ini
-Questa Altera FPGA Info: # 
-Questa Altera FPGA Info: # vlog  -work work +incdir+. {lab1.vo}
-Questa Altera FPGA Info: # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-Questa Altera FPGA Info: # Start time: 14:49:29 on Jan 18,2026
-Questa Altera FPGA Info: # vlog -reportprogress 300 -work work "+incdir+." lab1.vo 
-Questa Altera FPGA Info: # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-Questa Altera FPGA Info: # -- Compiling module lab1
-Questa Altera FPGA Info: # 
-Questa Altera FPGA Info: # Top level modules:
-Questa Altera FPGA Info: # 	lab1
-Questa Altera FPGA Info: # End time: 14:49:29 on Jan 18,2026, Elapsed time: 0:00:00
-Questa Altera FPGA Info: # Errors: 0, Warnings: 0
-Questa Altera FPGA Info: # 
-Questa Altera FPGA Info: # vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/verilog {C:/Users/asher/Desktop/School Work/ece3710/verilog/lab1.v}
-Questa Altera FPGA Info: # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-Questa Altera FPGA Info: # Start time: 14:49:29 on Jan 18,2026
-Questa Altera FPGA Info: # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/verilog" C:/Users/asher/Desktop/School Work/ece3710/verilog/lab1.v 
-Questa Altera FPGA Info: # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-Questa Altera FPGA Info: # -- Compiling module lab1
-Questa Altera FPGA Info: # 
-Questa Altera FPGA Info: # Top level modules:
-Questa Altera FPGA Info: # 	lab1
-Questa Altera FPGA Info: # End time: 14:49:29 on Jan 18,2026, Elapsed time: 0:00:00
-Questa Altera FPGA Info: # Errors: 0, Warnings: 0
-Questa Altera FPGA Info: # vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/verilog {C:/Users/asher/Desktop/School Work/ece3710/verilog/ALU.v}
-Questa Altera FPGA Info: # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-Questa Altera FPGA Info: # Start time: 14:49:30 on Jan 18,2026
-Questa Altera FPGA Info: # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/verilog" C:/Users/asher/Desktop/School Work/ece3710/verilog/ALU.v 
-Questa Altera FPGA Info: # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-Questa Altera FPGA Info: # -- Compiling module alu
-Questa Altera FPGA Info: # 
-Questa Altera FPGA Info: # Top level modules:
-Questa Altera FPGA Info: # 	alu
-Questa Altera FPGA Info: # End time: 14:49:30 on Jan 18,2026, Elapsed time: 0:00:00
-Questa Altera FPGA Info: # Errors: 0, Warnings: 0
-Questa Altera FPGA Info: # vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/verilog {C:/Users/asher/Desktop/School Work/ece3710/verilog/tb_ALU.v}
-Questa Altera FPGA Info: # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-Questa Altera FPGA Info: # Start time: 14:49:30 on Jan 18,2026
-Questa Altera FPGA Info: # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/verilog" C:/Users/asher/Desktop/School Work/ece3710/verilog/tb_ALU.v 
-Questa Altera FPGA Info: # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-Questa Altera FPGA Info: # -- Compiling module tb_alu
-Questa Altera FPGA Info: # 
-Questa Altera FPGA Info: # Top level modules:
-Questa Altera FPGA Info: # 	tb_alu
-Questa Altera FPGA Info: # End time: 14:49:30 on Jan 18,2026, Elapsed time: 0:00:00
-Questa Altera FPGA Info: # Errors: 0, Warnings: 0
-Questa Altera FPGA Info: # 
-Questa Altera FPGA Info: # vsim -t 1ps -L altera_ver -L altera_lnsim_ver -L cyclonev_ver -L lpm_ver -L sgate_ver -L cyclonev_hssi_ver -L altera_mf_ver -L cyclonev_pcie_hip_ver -L gate_work -L work -voptargs="+acc"  tb_alu
-Questa Altera FPGA Info: # ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
-Questa Altera FPGA Info: # vsim -t 1ps -L altera_ver -L altera_lnsim_ver -L cyclonev_ver -L lpm_ver -L sgate_ver -L cyclonev_hssi_ver -L altera_mf_ver -L cyclonev_pcie_hip_ver -L gate_work -L work -voptargs=""+acc"" tb_alu 
-Questa Altera FPGA Info: # Start time: 14:49:30 on Jan 18,2026
-Questa Altera FPGA Info: # ** Note: (vsim-3812) Design is being optimized...
-Questa Altera FPGA Warning: # ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
-Questa Altera FPGA Info: # ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
-Questa Altera FPGA Info: # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-Questa Altera FPGA Info: # Loading work.tb_alu(fast)
-Questa Altera FPGA Info: # Loading work.alu(fast)
-Questa Altera FPGA Info: # 
-Questa Altera FPGA Info: # add wave *
-Questa Altera FPGA Info: # view structure
-Questa Altera FPGA Info: # .main_pane.structure.interior.cs.body.struct
-Questa Altera FPGA Info: # view signals
-Questa Altera FPGA Info: # .main_pane.objects.interior.cs.body.tree
-Questa Altera FPGA Info: # run -all
-Questa Altera FPGA Info: # Starting ALU testbench...
-Questa Altera FPGA Info: # Passed middle range tests, begining edge case testing.
-Questa Altera FPGA Info: # Testing ADD edge cases.
-Questa Altera FPGA Info: # Add edge cases successfull.
-Questa Altera FPGA Info: # Testing ADDU edge cases.
-Questa Altera FPGA Info: # Add edge cases successfull.
-Questa Altera FPGA Info: # ALU testbench completed.
-Questa Altera FPGA Info: # ** Note: $finish    : C:/Users/asher/Desktop/School Work/ece3710/verilog/tb_ALU.v(277)
-Questa Altera FPGA Info: #    Time: 5094 ns  Iteration: 0  Instance: /tb_alu
-Questa Altera FPGA Info: # End time: 14:50:34 on Jan 18,2026, Elapsed time: 0:01:04
-Questa Altera FPGA Info: # Errors: 0, Warnings: 1
+Warning: File lab1_run_msim_rtl_verilog.do already exists - backing up current file as lab1_run_msim_rtl_verilog.do.bak11
+Info: Spawning Questa Altera FPGA Simulation software 
 Info: NativeLink simulation flow was successful

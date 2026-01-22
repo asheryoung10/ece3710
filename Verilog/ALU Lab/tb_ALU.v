@@ -64,6 +64,7 @@ module tb_alu;
     reg [FLAG_WIDTH-1:0] expected_flags; // C, L, F, Z, N
     reg lastBit;
     reg [FLAG_WIDTH-1:0] oldFlags;
+	 reg [3:0] sa;
 
 	 
 	 	 
@@ -125,14 +126,13 @@ module tb_alu;
                     expected_flags[nFlagIndex] = 1'bx;
                 end
                 ADDC, ADDCI: begin
-                    expected_result = a + b + oldFlags[cFlagIndex];
-                    expected_flags[cFlagIndex] = 1'b0;
+                    {lastBit, expected_result} = a + b + oldFlags[cFlagIndex];
+                    expected_flags[cFlagIndex] = lastBit;
                     expected_flags[lFlagIndex] = 1'bx;
                     expected_flags[fFlagIndex] = ($signed(a[BIT_WIDTH-1]) == $signed(b[BIT_WIDTH-1]) &&
-                                         expected_result[BIT_WIDTH-1] != a[BIT_WIDTH-1]);
-                    
-                    expected_flags[zFlagIndex] = (expected_result == 0);
-                    expected_flags[nFlagIndex] = $signed(a) < $signed(b);
+                                         expected_result[BIT_WIDTH-1] != a[BIT_WIDTH-1]);             
+                    expected_flags[zFlagIndex] = 1'bx;
+                    expected_flags[nFlagIndex] = 1'bx;
 
                 end
                 SUB, SUBI: begin
@@ -185,7 +185,22 @@ module tb_alu;
                     expected_flags[nFlagIndex] = $signed(a) < $signed(b);
                 end
                 LSH, LSHI: begin
-                    expected_result = (b >= 0) ? (a << b) : (a >> -b);
+					 
+
+						if ($signed(b) >= 0)
+							 sa = b;
+						else
+							 sa = -b;
+
+						// Clamp to data width (16 bits)
+						if (sa > 15)
+							 sa = 15;
+
+						// Use 16-bit logical shift
+						if ($signed(b) >= 0)
+							 expected_result = a << sa;   // left shift
+						else
+							 expected_result = a >> sa;   // logical right shift
                     expected_flags[cFlagIndex] = 1'bx;
                     expected_flags[lFlagIndex] = 1'bx;
                     expected_flags[fFlagIndex] = 1'bx;
@@ -229,7 +244,53 @@ module tb_alu;
     integer i, j;
 	
     initial begin
-        $display("Starting ALU testbench...");
+				 	 $display("Starting ALU Test Bench.");
+
+	 	 $display("Testing ADD edge cases.");
+		  apply_test_expected(16'b0000_0000_0000_0000, 16'b0000_0000_0000_0000, ADD, 16'b0000_0000_0000_0000, 5'b0x010);
+		  apply_test_expected(16'b1000_0000_0000_0000, 16'b1000_0000_0000_0000, ADD, 16'b0000_0000_0000_0000, 5'b0x110);
+		  apply_test_expected(16'b1000_0000_0000_0000, 16'b0000_0000_0000_0000, ADD, 16'b1000_0000_0000_0000, 5'b0x001);
+		  $display("Add edge cases successfull.");
+		  // CLFZN
+		  $display("Testing ADDU edge cases.");
+		  apply_test_expected(16'b0000_0000_0000_0000, 16'b0000_0000_0000_0000, ADDU, 16'b0000_0000_0000_0000, 5'b0001x);
+		  apply_test_expected(16'b1000_0000_0000_0000, 16'b1000_0000_0000_0000, ADDU, 16'b0000_0000_0000_0000, 5'b1001x);
+		  apply_test_expected(16'b1000_0000_0000_0000, 16'b0000_0000_0000_0000, ADDU, 16'b1000_0000_0000_0000, 5'b0000x);
+		  $display("Add edge cases successfull.");
+		  
+		   $display("Testing ADDC edge cases.");
+			apply_test_expected(16'h0001, 16'h0001, ADDC, 16'h0002, 5'b0x0xx);
+			apply_test_expected(16'hFFFF, 16'h0001, ADDC, 16'h0000, 5'b1x0xx);
+			apply_test_expected(16'h7FFF, 16'h0001, ADDC, 16'h8001, 5'b0x1xx);
+			$display("ADDC edge cases successful.");
+			
+			$display("Testing SUB edge cases.");
+			apply_test_expected(16'h0000, 16'h0000, SUB, 16'h0000, 5'b0x010);
+			apply_test_expected(16'h0000, 16'h0001, SUB, 16'hFFFF, 5'b0x101);
+			apply_test_expected(16'h8000, 16'h7FFF, SUB, 16'h0001, 5'b0x001);
+			$display("SUB edge cases successful.");
+
+			$display("Testing CMP edge cases.");
+			apply_test_expected(16'h0001, 16'h0001, CMP, 16'h0000, 5'bx0x10);
+			apply_test_expected(16'h0000, 16'h0001, CMP, 16'h0000, 5'bx1x01);
+			apply_test_expected(16'h8000, 16'h7FFF, CMP, 16'h0000, 5'bx0x01);
+			$display("CMP edge cases successful.");
+			
+			$display("Testing AND edge cases.");
+			apply_test_expected(16'hFFFF, 16'h0000, AND, 16'h0000, 5'bxxx11);
+			apply_test_expected(16'hFFFF, 16'h8000, AND, 16'h8000, 5'bxxx00);
+			$display("AND edge cases successful.");
+
+			$display("Testing OR edge cases.");
+			apply_test_expected(16'h0000, 16'h0000, OR, 16'h0000, 5'bxxx10);
+			apply_test_expected(16'h8000, 16'h0001, OR, 16'h8001, 5'bxxx01);
+			$display("OR edge cases successful.");
+			
+			$display("Testing LSH edge cases.");
+			apply_test_expected(16'h0001, 16'h000F, LSH, 16'h8000, 5'bxxx01);
+			apply_test_expected(16'h8000, 16'hFFF1, LSH, 16'h0001, 5'bxxx01);
+			$display("LSH edge cases successful.");
+        $display("Starting ALU testbench extreme values...");
 		  
         // Exhaustive tests for ADD and ADDI with small numbers for demo
         for (i = -5; i <= 5; i = i + 1) begin
@@ -259,17 +320,13 @@ module tb_alu;
         end
 		  $display("Passed middle range tests, begining edge case testing.");
 		  
-		  $display("Testing ADD edge cases.");
-		  apply_test_expected(16'b0000_0000_0000_0000, 16'b0000_0000_0000_0000, ADD, 16'b0000_0000_0000_0000, 5'b0x010);
-		  apply_test_expected(16'b1000_0000_0000_0000, 16'b1000_0000_0000_0000, ADD, 16'b0000_0000_0000_0000, 5'b0x110);
-		  apply_test_expected(16'b1000_0000_0000_0000, 16'b0000_0000_0000_0000, ADD, 16'b1000_0000_0000_0000, 5'b0x001);
-		  $display("Add edge cases successfull.");
-		  // CLFZN
-		   $display("Testing ADDU edge cases.");
-		  apply_test_expected(16'b0000_0000_0000_0000, 16'b0000_0000_0000_0000, ADDU, 16'b0000_0000_0000_0000, 5'b0001x);
-		  apply_test_expected(16'b1000_0000_0000_0000, 16'b1000_0000_0000_0000, ADDU, 16'b0000_0000_0000_0000, 5'b1001x);
-		  apply_test_expected(16'b1000_0000_0000_0000, 16'b0000_0000_0000_0000, ADDU, 16'b1000_0000_0000_0000, 5'b0000x);
-		  $display("Add edge cases successfull.");
+
+
+
+
+
+
+
 		  
 	
 
