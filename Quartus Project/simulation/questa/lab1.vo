@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition"
 
-// DATE "01/18/2026 14:49:21"
+// DATE "01/21/2026 20:30:39"
 
 // 
 // Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -131,12 +131,12 @@ wire \u0|WideOr3~0_combout ;
 wire \u0|WideOr2~0_combout ;
 wire \u0|WideOr1~0_combout ;
 wire \u0|WideOr0~0_combout ;
-wire \Alu|Selector33~0_combout ;
-wire \Alu|Selector17~0_combout ;
-wire \Alu|Selector17~1_combout ;
+wire \Alu|Selector34~0_combout ;
+wire \Alu|Selector18~0_combout ;
+wire \Alu|Selector18~1_combout ;
 wire \Alu|zFlag~combout ;
-wire \Alu|Selector33~1_combout ;
-wire \Alu|Selector33~2_combout ;
+wire \Alu|Selector34~1_combout ;
+wire \Alu|Selector34~2_combout ;
 wire \Alu|WideOr10~0_combout ;
 wire \Alu|WideOr10~1_combout ;
 wire \Alu|WideOr10~2_combout ;
@@ -1286,9 +1286,9 @@ defparam \u0|WideOr0~0 .shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X12_Y1_N0
-cyclonev_lcell_comb \Alu|Selector33~0 (
+cyclonev_lcell_comb \Alu|Selector34~0 (
 // Equation(s):
-// \Alu|Selector33~0_combout  = ( \SW[0]~input_o  & ( (!\SW[2]~input_o  & ((\SW[3]~input_o ) # (\SW[1]~input_o ))) ) ) # ( !\SW[0]~input_o  & ( (!\SW[3]~input_o  & (\SW[1]~input_o )) # (\SW[3]~input_o  & ((!\SW[2]~input_o ))) ) )
+// \Alu|Selector34~0_combout  = ( \SW[0]~input_o  & ( (!\SW[2]~input_o  & ((\SW[3]~input_o ) # (\SW[1]~input_o ))) ) ) # ( !\SW[0]~input_o  & ( (!\SW[3]~input_o  & (\SW[1]~input_o )) # (\SW[3]~input_o  & ((!\SW[2]~input_o ))) ) )
 
 	.dataa(!\SW[1]~input_o ),
 	.datab(gnd),
@@ -1299,20 +1299,20 @@ cyclonev_lcell_comb \Alu|Selector33~0 (
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\Alu|Selector33~0_combout ),
+	.combout(\Alu|Selector34~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \Alu|Selector33~0 .extended_lut = "off";
-defparam \Alu|Selector33~0 .lut_mask = 64'h55F055F050F050F0;
-defparam \Alu|Selector33~0 .shared_arith = "off";
+defparam \Alu|Selector34~0 .extended_lut = "off";
+defparam \Alu|Selector34~0 .lut_mask = 64'h55F055F050F050F0;
+defparam \Alu|Selector34~0 .shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X12_Y1_N24
-cyclonev_lcell_comb \Alu|Selector17~0 (
+cyclonev_lcell_comb \Alu|Selector18~0 (
 // Equation(s):
-// \Alu|Selector17~0_combout  = ( \SW[0]~input_o  & ( (!\SW[2]~input_o  & ((\SW[1]~input_o ) # (\SW[3]~input_o ))) ) )
+// \Alu|Selector18~0_combout  = ( \SW[0]~input_o  & ( (!\SW[2]~input_o  & ((\SW[1]~input_o ) # (\SW[3]~input_o ))) ) )
 
 	.dataa(gnd),
 	.datab(!\SW[3]~input_o ),
@@ -1323,48 +1323,48 @@ cyclonev_lcell_comb \Alu|Selector17~0 (
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\Alu|Selector17~0_combout ),
+	.combout(\Alu|Selector18~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \Alu|Selector17~0 .extended_lut = "off";
-defparam \Alu|Selector17~0 .lut_mask = 64'h000000003F003F00;
-defparam \Alu|Selector17~0 .shared_arith = "off";
+defparam \Alu|Selector18~0 .extended_lut = "off";
+defparam \Alu|Selector18~0 .lut_mask = 64'h000000003F003F00;
+defparam \Alu|Selector18~0 .shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X12_Y1_N57
-cyclonev_lcell_comb \Alu|Selector17~1 (
+cyclonev_lcell_comb \Alu|Selector18~1 (
 // Equation(s):
-// \Alu|Selector17~1_combout  = ( \Alu|Selector33~0_combout  & ( \Alu|Selector17~0_combout  & ( (!\SW[6]~input_o  & ((!\SW[4]~input_o  & ((!\SW[5]~input_o ))) # (\SW[4]~input_o  & (\SW[7]~input_o )))) ) ) ) # ( !\Alu|Selector33~0_combout  & ( 
-// \Alu|Selector17~0_combout  & ( (!\SW[6]~input_o  & ((!\SW[7]~input_o  & (!\SW[5]~input_o  & !\SW[4]~input_o )) # (\SW[7]~input_o  & ((\SW[4]~input_o ))))) ) ) ) # ( \Alu|Selector33~0_combout  & ( !\Alu|Selector17~0_combout  & ( (\SW[7]~input_o  & 
-// (!\SW[6]~input_o  & ((!\SW[5]~input_o ) # (\SW[4]~input_o )))) ) ) ) # ( !\Alu|Selector33~0_combout  & ( !\Alu|Selector17~0_combout  & ( (\SW[7]~input_o  & (\SW[4]~input_o  & !\SW[6]~input_o )) ) ) )
+// \Alu|Selector18~1_combout  = ( \Alu|Selector34~0_combout  & ( \Alu|Selector18~0_combout  & ( (!\SW[6]~input_o  & ((!\SW[4]~input_o  & ((!\SW[5]~input_o ))) # (\SW[4]~input_o  & (\SW[7]~input_o )))) ) ) ) # ( !\Alu|Selector34~0_combout  & ( 
+// \Alu|Selector18~0_combout  & ( (!\SW[6]~input_o  & ((!\SW[7]~input_o  & (!\SW[5]~input_o  & !\SW[4]~input_o )) # (\SW[7]~input_o  & ((\SW[4]~input_o ))))) ) ) ) # ( \Alu|Selector34~0_combout  & ( !\Alu|Selector18~0_combout  & ( (\SW[7]~input_o  & 
+// (!\SW[6]~input_o  & ((!\SW[5]~input_o ) # (\SW[4]~input_o )))) ) ) ) # ( !\Alu|Selector34~0_combout  & ( !\Alu|Selector18~0_combout  & ( (\SW[7]~input_o  & (\SW[4]~input_o  & !\SW[6]~input_o )) ) ) )
 
 	.dataa(!\SW[7]~input_o ),
 	.datab(!\SW[5]~input_o ),
 	.datac(!\SW[4]~input_o ),
 	.datad(!\SW[6]~input_o ),
-	.datae(!\Alu|Selector33~0_combout ),
-	.dataf(!\Alu|Selector17~0_combout ),
+	.datae(!\Alu|Selector34~0_combout ),
+	.dataf(!\Alu|Selector18~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\Alu|Selector17~1_combout ),
+	.combout(\Alu|Selector18~1_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \Alu|Selector17~1 .extended_lut = "off";
-defparam \Alu|Selector17~1 .lut_mask = 64'h050045008500C500;
-defparam \Alu|Selector17~1 .shared_arith = "off";
+defparam \Alu|Selector18~1 .extended_lut = "off";
+defparam \Alu|Selector18~1 .lut_mask = 64'h050045008500C500;
+defparam \Alu|Selector18~1 .shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X12_Y1_N51
 cyclonev_lcell_comb \Alu|zFlag (
 // Equation(s):
-// \Alu|zFlag~combout  = ( \Alu|zFlag~combout  & ( (!\Alu|WideOr0~3_combout ) # (\Alu|Selector17~1_combout ) ) ) # ( !\Alu|zFlag~combout  & ( (\Alu|Selector17~1_combout  & \Alu|WideOr0~3_combout ) ) )
+// \Alu|zFlag~combout  = ( \Alu|zFlag~combout  & ( (!\Alu|WideOr0~3_combout ) # (\Alu|Selector18~1_combout ) ) ) # ( !\Alu|zFlag~combout  & ( (\Alu|Selector18~1_combout  & \Alu|WideOr0~3_combout ) ) )
 
-	.dataa(!\Alu|Selector17~1_combout ),
+	.dataa(!\Alu|Selector18~1_combout ),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(!\Alu|WideOr0~3_combout ),
@@ -1384,9 +1384,9 @@ defparam \Alu|zFlag .shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X12_Y1_N30
-cyclonev_lcell_comb \Alu|Selector33~1 (
+cyclonev_lcell_comb \Alu|Selector34~1 (
 // Equation(s):
-// \Alu|Selector33~1_combout  = ( \Alu|zFlag~combout  & ( (!\SW[2]~input_o  & (!\SW[0]~input_o  $ (((\SW[1]~input_o ) # (\SW[3]~input_o ))))) ) ) # ( !\Alu|zFlag~combout  & ( (\SW[0]~input_o  & (!\SW[2]~input_o  & ((\SW[1]~input_o ) # (\SW[3]~input_o )))) ) 
+// \Alu|Selector34~1_combout  = ( \Alu|zFlag~combout  & ( (!\SW[2]~input_o  & (!\SW[0]~input_o  $ (((\SW[1]~input_o ) # (\SW[3]~input_o ))))) ) ) # ( !\Alu|zFlag~combout  & ( (\SW[0]~input_o  & (!\SW[2]~input_o  & ((\SW[1]~input_o ) # (\SW[3]~input_o )))) ) 
 // )
 
 	.dataa(!\SW[0]~input_o ),
@@ -1398,40 +1398,40 @@ cyclonev_lcell_comb \Alu|Selector33~1 (
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\Alu|Selector33~1_combout ),
+	.combout(\Alu|Selector34~1_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \Alu|Selector33~1 .extended_lut = "off";
-defparam \Alu|Selector33~1 .lut_mask = 64'h1500150095009500;
-defparam \Alu|Selector33~1 .shared_arith = "off";
+defparam \Alu|Selector34~1 .extended_lut = "off";
+defparam \Alu|Selector34~1 .lut_mask = 64'h1500150095009500;
+defparam \Alu|Selector34~1 .shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X12_Y1_N54
-cyclonev_lcell_comb \Alu|Selector33~2 (
+cyclonev_lcell_comb \Alu|Selector34~2 (
 // Equation(s):
-// \Alu|Selector33~2_combout  = ( \Alu|Selector33~0_combout  & ( \Alu|Selector33~1_combout  & ( (!\SW[6]~input_o  & ((!\SW[4]~input_o  & ((!\SW[5]~input_o ))) # (\SW[4]~input_o  & (\SW[7]~input_o )))) ) ) ) # ( !\Alu|Selector33~0_combout  & ( 
-// \Alu|Selector33~1_combout  & ( (!\SW[6]~input_o  & ((!\SW[7]~input_o  & (!\SW[5]~input_o  & !\SW[4]~input_o )) # (\SW[7]~input_o  & ((\SW[4]~input_o ))))) ) ) ) # ( \Alu|Selector33~0_combout  & ( !\Alu|Selector33~1_combout  & ( (\SW[7]~input_o  & 
-// (!\SW[6]~input_o  & ((!\SW[5]~input_o ) # (\SW[4]~input_o )))) ) ) ) # ( !\Alu|Selector33~0_combout  & ( !\Alu|Selector33~1_combout  & ( (\SW[7]~input_o  & (!\SW[6]~input_o  & \SW[4]~input_o )) ) ) )
+// \Alu|Selector34~2_combout  = ( \Alu|Selector34~0_combout  & ( \Alu|Selector34~1_combout  & ( (!\SW[6]~input_o  & ((!\SW[4]~input_o  & ((!\SW[5]~input_o ))) # (\SW[4]~input_o  & (\SW[7]~input_o )))) ) ) ) # ( !\Alu|Selector34~0_combout  & ( 
+// \Alu|Selector34~1_combout  & ( (!\SW[6]~input_o  & ((!\SW[7]~input_o  & (!\SW[5]~input_o  & !\SW[4]~input_o )) # (\SW[7]~input_o  & ((\SW[4]~input_o ))))) ) ) ) # ( \Alu|Selector34~0_combout  & ( !\Alu|Selector34~1_combout  & ( (\SW[7]~input_o  & 
+// (!\SW[6]~input_o  & ((!\SW[5]~input_o ) # (\SW[4]~input_o )))) ) ) ) # ( !\Alu|Selector34~0_combout  & ( !\Alu|Selector34~1_combout  & ( (\SW[7]~input_o  & (!\SW[6]~input_o  & \SW[4]~input_o )) ) ) )
 
 	.dataa(!\SW[7]~input_o ),
 	.datab(!\SW[5]~input_o ),
 	.datac(!\SW[6]~input_o ),
 	.datad(!\SW[4]~input_o ),
-	.datae(!\Alu|Selector33~0_combout ),
-	.dataf(!\Alu|Selector33~1_combout ),
+	.datae(!\Alu|Selector34~0_combout ),
+	.dataf(!\Alu|Selector34~1_combout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\Alu|Selector33~2_combout ),
+	.combout(\Alu|Selector34~2_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \Alu|Selector33~2 .extended_lut = "off";
-defparam \Alu|Selector33~2 .lut_mask = 64'h005040508050C050;
-defparam \Alu|Selector33~2 .shared_arith = "off";
+defparam \Alu|Selector34~2 .extended_lut = "off";
+defparam \Alu|Selector34~2 .lut_mask = 64'h005040508050C050;
+defparam \Alu|Selector34~2 .shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X11_Y1_N54
@@ -1512,10 +1512,10 @@ defparam \Alu|WideOr10~2 .shared_arith = "off";
 // Location: LABCELL_X12_Y1_N3
 cyclonev_lcell_comb \Alu|Flags[1] (
 // Equation(s):
-// \Alu|Flags [1] = ( \Alu|WideOr10~2_combout  & ( \Alu|Selector33~2_combout  ) ) # ( !\Alu|WideOr10~2_combout  & ( \Alu|Flags [1] ) )
+// \Alu|Flags [1] = ( \Alu|WideOr10~2_combout  & ( \Alu|Selector34~2_combout  ) ) # ( !\Alu|WideOr10~2_combout  & ( \Alu|Flags [1] ) )
 
 	.dataa(gnd),
-	.datab(!\Alu|Selector33~2_combout ),
+	.datab(!\Alu|Selector34~2_combout ),
 	.datac(gnd),
 	.datad(!\Alu|Flags [1]),
 	.datae(gnd),
