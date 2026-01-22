@@ -104,8 +104,6 @@ module tb_alu;
             Rsrc_Imm = b;
             Opcode = op;
             oldFlags = Flags;
-            
-
             // Compute expected result and flags
             casex(op)
                 ADD, ADDI: begin
@@ -246,17 +244,17 @@ module tb_alu;
     initial begin
 				 	 $display("Starting ALU Test Bench.");
 
-	 	 $display("Testing ADD edge cases.");
-		  apply_test_expected(16'b0000_0000_0000_0000, 16'b0000_0000_0000_0000, ADD, 16'b0000_0000_0000_0000, 5'b0x010);
-		  apply_test_expected(16'b1000_0000_0000_0000, 16'b1000_0000_0000_0000, ADD, 16'b0000_0000_0000_0000, 5'b0x110);
-		  apply_test_expected(16'b1000_0000_0000_0000, 16'b0000_0000_0000_0000, ADD, 16'b1000_0000_0000_0000, 5'b0x001);
-		  $display("Add edge cases successfull.");
-		  // CLFZN
-		  $display("Testing ADDU edge cases.");
-		  apply_test_expected(16'b0000_0000_0000_0000, 16'b0000_0000_0000_0000, ADDU, 16'b0000_0000_0000_0000, 5'b0001x);
-		  apply_test_expected(16'b1000_0000_0000_0000, 16'b1000_0000_0000_0000, ADDU, 16'b0000_0000_0000_0000, 5'b1001x);
-		  apply_test_expected(16'b1000_0000_0000_0000, 16'b0000_0000_0000_0000, ADDU, 16'b1000_0000_0000_0000, 5'b0000x);
-		  $display("Add edge cases successfull.");
+			$display("Testing ADD edge cases.");
+			apply_test_expected(16'h0000, 16'h0000, ADD, 16'h0000, 5'b0x010);
+			apply_test_expected(16'h8000, 16'h8000, ADD, 16'h0000, 5'b0x110);
+			apply_test_expected(16'h8000, 16'h0000, ADD, 16'h8000, 5'b0x001);
+			$display("Add edge cases successfull.");
+		 
+			$display("Testing ADDU edge cases.");
+			apply_test_expected(16'h0000, 16'h0000, ADDU, 16'h0000, 5'b0001x);
+			apply_test_expected(16'h8000, 16'h8000, ADDU, 16'h0000, 5'b1001x);
+			apply_test_expected(16'h8000, 16'h0000, ADDU, 16'h8000, 5'b0000x);
+			$display("Add edge cases successfull.");
 		  
 		   $display("Testing ADDC edge cases.");
 			apply_test_expected(16'h0001, 16'h0001, ADDC, 16'h0002, 5'b0x0xx);
@@ -290,9 +288,10 @@ module tb_alu;
 			apply_test_expected(16'h0001, 16'h000F, LSH, 16'h8000, 5'bxxx01);
 			apply_test_expected(16'h8000, 16'hFFF1, LSH, 16'h0001, 5'bxxx01);
 			$display("LSH edge cases successful.");
-        $display("Starting ALU testbench extreme values...");
+			
+			$display("Starting ALU testbench extreme values...");
 		  
-        // Exhaustive tests for ADD and ADDI with small numbers for demo
+        // Exhaustive tests for different operations
         for (i = -5; i <= 5; i = i + 1) begin
             for (j = -5; j <= 5; j = j + 1) begin
                 apply_test(i, j, ADD);
