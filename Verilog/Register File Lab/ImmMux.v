@@ -1,7 +1,7 @@
 module ImmMux #(
-					paramter BIT_WIDTH = 16;
+					parameter BIT_WIDTH = 16
 				)(
-					input wire [BIT_WIDTH - 1:0]RSrc, Imm
+					input wire [BIT_WIDTH - 1:0]RSrc, Imm,
 					input wire sel,
 					output reg [BIT_WIDTH - 1:0]ImmOut
 				);

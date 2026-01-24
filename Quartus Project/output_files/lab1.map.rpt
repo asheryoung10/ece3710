@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab1
-Wed Jan 21 20:29:57 2026
+Sat Jan 24 15:12:53 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -13,13 +13,22 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: alu:Alu
- 11. Port Connectivity Checks: "alu:Alu"
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  8. State Machine - |lab1|FibFSM:fsm|state
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |lab1
+ 15. Parameter Settings for User Entity Instance: FibFSM:fsm
+ 16. Parameter Settings for User Entity Instance: register_file:rf
+ 17. Parameter Settings for User Entity Instance: ImmMux:imm_mux
+ 18. Parameter Settings for User Entity Instance: alu:alu_unit
+ 19. Port Connectivity Checks: "bin16_to_bcd5:converter"
+ 20. Port Connectivity Checks: "alu:alu_unit"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -46,14 +55,14 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jan 21 20:29:57 2026           ;
+; Analysis & Synthesis Status     ; Successful - Sat Jan 24 15:12:53 2026           ;
 ; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                   ; lab1                                            ;
 ; Top-level Entity Name           ; lab1                                            ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 0                                               ;
-; Total pins                      ; 47                                              ;
+; Total registers                 ; 280                                             ;
+; Total pins                      ; 41                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0                                               ;
 ; Total DSP Blocks                ; 0                                               ;
@@ -170,54 +179,77 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                       ;
-+----------------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path       ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                   ; Library ;
-+----------------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------+---------+
-; ../Verilog/ALU Lab/seven_seg_decoder.v ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/seven_seg_decoder.v ;         ;
-; ../Verilog/ALU Lab/lab1.v              ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v              ;         ;
-; ../Verilog/ALU Lab/ALU.v               ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v               ;         ;
-+----------------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                           ;
++--------------------------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                 ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                             ; Library ;
++--------------------------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
+; ../Verilog/Register File Lab/seven_seg_decoder.v ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/seven_seg_decoder.v ;         ;
+; ../Verilog/Register File Lab/register_file.v     ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/register_file.v     ;         ;
+; ../Verilog/Register File Lab/lab1.v              ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/lab1.v              ;         ;
+; ../Verilog/Register File Lab/ImmMux.v            ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ImmMux.v            ;         ;
+; ../Verilog/Register File Lab/FibFSM.v            ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v            ;         ;
+; ../Verilog/Register File Lab/ALU.v               ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v               ;         ;
+; ../Verilog/Register File Lab/bin16_to_bcd5.v     ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/bin16_to_bcd5.v     ;         ;
++--------------------------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                     ;
-+---------------------------------------------+-------------------+
-; Resource                                    ; Usage             ;
-+---------------------------------------------+-------------------+
-; Estimate of Logic utilization (ALMs needed) ; 17                ;
-;                                             ;                   ;
-; Combinational ALUT usage for logic          ; 29                ;
-;     -- 7 input functions                    ; 0                 ;
-;     -- 6 input functions                    ; 5                 ;
-;     -- 5 input functions                    ; 3                 ;
-;     -- 4 input functions                    ; 7                 ;
-;     -- <=3 input functions                  ; 14                ;
-;                                             ;                   ;
-; Dedicated logic registers                   ; 0                 ;
-;                                             ;                   ;
-; I/O pins                                    ; 47                ;
-;                                             ;                   ;
-; Total DSP Blocks                            ; 0                 ;
-;                                             ;                   ;
-; Maximum fan-out node                        ; alu:Alu|Result[2] ;
-; Maximum fan-out                             ; 19                ;
-; Total fan-out                               ; 179               ;
-; Average fan-out                             ; 1.46              ;
-+---------------------------------------------+-------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 283       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 320       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 200       ;
+;     -- 5 input functions                    ; 37        ;
+;     -- 4 input functions                    ; 41        ;
+;     -- <=3 input functions                  ; 42        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 280       ;
+;                                             ;           ;
+; I/O pins                                    ; 41        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 280       ;
+; Total fan-out                               ; 2851      ;
+; Average fan-out                             ; 4.18      ;
++---------------------------------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                 ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Entity Name       ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------------+--------------+
-; |lab1                      ; 29 (0)              ; 0 (0)                     ; 0                 ; 0          ; 47   ; 0            ; |lab1                      ; lab1              ; work         ;
-;    |alu:Alu|               ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab1|alu:Alu              ; alu               ; work         ;
-;    |seven_seg_decoder:u0|  ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab1|seven_seg_decoder:u0 ; seven_seg_decoder ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Entity Name       ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------+-------------------+--------------+
+; |lab1                        ; 320 (0)             ; 280 (0)                   ; 0                 ; 0          ; 41   ; 0            ; |lab1                         ; lab1              ; work         ;
+;    |FibFSM:fsm|              ; 22 (22)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |lab1|FibFSM:fsm              ; FibFSM            ; work         ;
+;    |alu:alu_unit|            ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab1|alu:alu_unit            ; alu               ; work         ;
+;    |bin16_to_bcd5:converter| ; 62 (62)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab1|bin16_to_bcd5:converter ; bin16_to_bcd5     ; work         ;
+;    |register_file:rf|        ; 176 (176)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |lab1|register_file:rf        ; register_file     ; work         ;
+;    |seven_seg_decoder:seg0|  ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab1|seven_seg_decoder:seg0  ; seven_seg_decoder ; work         ;
+;    |seven_seg_decoder:seg1|  ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab1|seven_seg_decoder:seg1  ; seven_seg_decoder ; work         ;
+;    |seven_seg_decoder:seg2|  ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab1|seven_seg_decoder:seg2  ; seven_seg_decoder ; work         ;
+;    |seven_seg_decoder:seg3|  ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab1|seven_seg_decoder:seg3  ; seven_seg_decoder ; work         ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------+
+; State Machine - |lab1|FibFSM:fsm|state                                          ;
++-----------------+------------+----------------+---------------+-----------------+
+; Name            ; state.DONE ; state.CALC_FIB ; state.INIT_R1 ; state.INIT_REGS ;
++-----------------+------------+----------------+---------------+-----------------+
+; state.INIT_REGS ; 0          ; 0              ; 0             ; 0               ;
+; state.INIT_R1   ; 0          ; 0              ; 1             ; 1               ;
+; state.CALC_FIB  ; 0          ; 1              ; 0             ; 1               ;
+; state.DONE      ; 1          ; 0              ; 0             ; 1               ;
++-----------------+------------+----------------+---------------+-----------------+
 
 
 +----------------------------------------------------------------------------------------------------+
@@ -225,27 +257,44 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
-; alu:Alu|Result[0]                                   ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Result[1]                                   ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Result[2]                                   ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Result[3]                                   ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Result[4]                                   ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Result[5]                                   ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Result[6]                                   ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Result[7]                                   ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Result[8]                                   ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Result[9]                                   ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Result[10]                                  ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Result[11]                                  ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Result[12]                                  ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Result[13]                                  ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Result[14]                                  ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Result[15]                                  ; alu:Alu|WideOr0     ; yes                    ;
-; alu:Alu|Flags[1]                                    ; alu:Alu|WideOr10    ; yes                    ;
-; alu:Alu|zFlag                                       ; alu:Alu|WideOr0     ; yes                    ;
-; Number of user-specified and inferred latches = 18  ;                     ;                        ;
+; alu:alu_unit|Result[0]                              ; FibFSM:fsm|op[0]    ; yes                    ;
+; alu:alu_unit|Result[13]                             ; FibFSM:fsm|op[0]    ; yes                    ;
+; alu:alu_unit|Result[14]                             ; FibFSM:fsm|op[0]    ; yes                    ;
+; alu:alu_unit|Result[15]                             ; FibFSM:fsm|op[0]    ; yes                    ;
+; alu:alu_unit|Result[12]                             ; FibFSM:fsm|op[0]    ; yes                    ;
+; alu:alu_unit|Result[11]                             ; FibFSM:fsm|op[0]    ; yes                    ;
+; alu:alu_unit|Result[10]                             ; FibFSM:fsm|op[0]    ; yes                    ;
+; alu:alu_unit|Result[9]                              ; FibFSM:fsm|op[0]    ; yes                    ;
+; alu:alu_unit|Result[8]                              ; FibFSM:fsm|op[0]    ; yes                    ;
+; alu:alu_unit|Result[7]                              ; FibFSM:fsm|op[0]    ; yes                    ;
+; alu:alu_unit|Result[6]                              ; FibFSM:fsm|op[0]    ; yes                    ;
+; alu:alu_unit|Result[5]                              ; FibFSM:fsm|op[0]    ; yes                    ;
+; alu:alu_unit|Result[4]                              ; FibFSM:fsm|op[0]    ; yes                    ;
+; alu:alu_unit|Result[3]                              ; FibFSM:fsm|op[0]    ; yes                    ;
+; alu:alu_unit|Result[2]                              ; FibFSM:fsm|op[0]    ; yes                    ;
+; alu:alu_unit|Result[1]                              ; FibFSM:fsm|op[0]    ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; FibFSM:fsm|ImmData[1..15]              ; Stuck at GND due to stuck port data_in ;
+; FibFSM:fsm|op[1,3..7]                  ; Stuck at GND due to stuck port data_in ;
+; FibFSM:fsm|outputState[2]              ; Stuck at GND due to stuck port data_in ;
+; FibFSM:fsm|op[2]                       ; Merged with FibFSM:fsm|regWriteEn      ;
+; FibFSM:fsm|ImmData[0]                  ; Merged with FibFSM:fsm|ImmMuxSel       ;
+; FibFSM:fsm|regWriteEn                  ; Merged with FibFSM:fsm|op[0]           ;
+; FibFSM:fsm|state~6                     ; Lost fanout                            ;
+; FibFSM:fsm|state~7                     ; Lost fanout                            ;
+; FibFSM:fsm|state~8                     ; Lost fanout                            ;
+; FibFSM:fsm|state.INIT_R1               ; Merged with FibFSM:fsm|regReset        ;
+; Total Number of Removed Registers = 29 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -253,39 +302,110 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 280   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 280   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 256   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------+
-; Parameter Settings for User Entity Instance: alu:Alu ;
-+----------------+-------+-----------------------------+
-; Parameter Name ; Value ; Type                        ;
-+----------------+-------+-----------------------------+
-; BIT_WIDTH      ; 16    ; Signed Integer              ;
-; OPCODE_WIDTH   ; 8     ; Signed Integer              ;
-; FLAG_WIDTH     ; 5     ; Signed Integer              ;
-+----------------+-------+-----------------------------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; FibFSM:fsm|regIndex[1]                 ; 13      ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; 1:1                ; 16 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |lab1|alu:alu_unit|Selector16 ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |lab1|register_file:rf|Mux21  ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |lab1|register_file:rf|Mux15  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |lab1 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; BIT_WIDTH      ; 16    ; Signed Integer                              ;
+; SEL_WIDTH      ; 4     ; Signed Integer                              ;
+; OPCODE_WIDTH   ; 8     ; Signed Integer                              ;
+; FLAG_WIDTH     ; 5     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:Alu"                                                                                                                                                                                    ;
-+-----------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port            ; Type  ; Severity ; Details                                                                                                                                                                           ;
-+-----------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Rsrc_Imm[15..1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                      ;
-; Rsrc_Imm[0]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                      ;
-; Rdest[15..1]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                      ;
-; Rdest[0]        ; Input ; Info     ; Stuck at VCC                                                                                                                                                                      ;
-; Opcode          ; Input ; Warning  ; Input port expression (10 bits) is wider than the input port (8 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+-----------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FibFSM:fsm ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; BIT_WIDTH      ; 16    ; Signed Integer                 ;
+; SEL_WIDTH      ; 4     ; Signed Integer                 ;
+; OPCODE_WIDTH   ; 8     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:rf ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; BIT_WIDTH      ; 16    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ImmMux:imm_mux ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; BIT_WIDTH      ; 16    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: alu:alu_unit ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; BIT_WIDTH      ; 16    ; Signed Integer                   ;
+; OPCODE_WIDTH   ; 8     ; Signed Integer                   ;
+; FLAG_WIDTH     ; 5     ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin16_to_bcd5:converter"                                                                                 ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; bcd4 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:alu_unit"                                                                        ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Flags ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -293,19 +413,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 33                          ;
-;     normal            ; 33                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 11                          ;
-;         4 data inputs ; 7                           ;
-;         5 data inputs ; 3                           ;
-;         6 data inputs ; 5                           ;
-; boundary_port         ; 47                          ;
+; arriav_ff             ; 280                         ;
+;     CLR               ; 24                          ;
+;     ENA CLR           ; 256                         ;
+; arriav_lcell_comb     ; 329                         ;
+;     arith             ; 16                          ;
+;         3 data inputs ; 16                          ;
+;     normal            ; 313                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 18                          ;
+;         4 data inputs ; 41                          ;
+;         5 data inputs ; 37                          ;
+;         6 data inputs ; 200                         ;
+; boundary_port         ; 41                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.41                        ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 6.96                        ;
 +-----------------------+-----------------------------+
 
 
@@ -314,7 +439,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -324,121 +449,94 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Wed Jan 21 20:29:52 2026
+    Info: Processing started: Sat Jan 24 15:12:46 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/alu lab/tb_seven_seg_decoder.v
-    Info (12023): Found entity 1: tb_seven_seg_decoder File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/tb_seven_seg_decoder.v Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/alu lab/tb_alu.v
-    Info (12023): Found entity 1: tb_alu File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/tb_ALU.v Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/alu lab/seven_seg_decoder.v
-    Info (12023): Found entity 1: seven_seg_decoder File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/seven_seg_decoder.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/alu lab/lab1.v
-    Info (12023): Found entity 1: lab1 File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/alu lab/alu.v
-    Info (12023): Found entity 1: alu File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/register file lab/seven_seg_decoder.v
+    Info (12023): Found entity 1: seven_seg_decoder File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/seven_seg_decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/register file lab/register_file.v
+    Info (12023): Found entity 1: register_file File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/register_file.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/register file lab/lab1.v
+    Info (12023): Found entity 1: lab1 File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/lab1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/register file lab/immmux.v
+    Info (12023): Found entity 1: ImmMux File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ImmMux.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/register file lab/fibfsm.v
+    Info (12023): Found entity 1: FibFSM File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/register file lab/alu.v
+    Info (12023): Found entity 1: alu File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/register file lab/bin16_to_bcd5.v
+    Info (12023): Found entity 1: bin16_to_bcd5 File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/bin16_to_bcd5.v Line: 1
 Info (12127): Elaborating entity "lab1" for the top level hierarchy
-Info (12128): Elaborating entity "alu" for hierarchy "alu:Alu" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 18
-Warning (10230): Verilog HDL assignment warning at ALU.v(174): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 174
-Warning (10230): Verilog HDL assignment warning at ALU.v(176): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 176
-Warning (10764): Verilog HDL warning at ALU.v(191): converting signed shift amount to unsigned File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 191
-Warning (10764): Verilog HDL warning at ALU.v(203): converting signed shift amount to unsigned File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 203
-Warning (10270): Verilog HDL Case Statement warning at ALU.v(56): incomplete case statement has no default case item File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Warning (10240): Verilog HDL Always Construct warning at ALU.v(56): inferring latch(es) for variable "Result", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Warning (10240): Verilog HDL Always Construct warning at ALU.v(56): inferring latch(es) for variable "zFlag", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Warning (10240): Verilog HDL Always Construct warning at ALU.v(56): inferring latch(es) for variable "cFlag", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Warning (10240): Verilog HDL Always Construct warning at ALU.v(56): inferring latch(es) for variable "fFlag", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Warning (10240): Verilog HDL Always Construct warning at ALU.v(56): inferring latch(es) for variable "lFlag", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Warning (10240): Verilog HDL Always Construct warning at ALU.v(56): inferring latch(es) for variable "nFlag", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Warning (10240): Verilog HDL Always Construct warning at ALU.v(56): inferring latch(es) for variable "Flags", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Warning (10240): Verilog HDL Always Construct warning at ALU.v(56): inferring latch(es) for variable "negRsrc", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Warning (10240): Verilog HDL Always Construct warning at ALU.v(56): inferring latch(es) for variable "shift_amt", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Warning (10240): Verilog HDL Always Construct warning at ALU.v(56): inferring latch(es) for variable "sa", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Flags[0]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Flags[1]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Flags[2]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Flags[3]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Flags[4]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "nFlag" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "lFlag" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "fFlag" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "cFlag" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "zFlag" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[0]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[1]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[2]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[3]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[4]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[5]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[6]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[7]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[8]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[9]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[10]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[11]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[12]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[13]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[14]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (10041): Inferred latch for "Result[15]" at ALU.v(56) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Info (12128): Elaborating entity "seven_seg_decoder" for hierarchy "seven_seg_decoder:u0" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 23
+Warning (10036): Verilog HDL or VHDL warning at lab1.v(114): object "display_value" assigned a value but never read File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/lab1.v Line: 114
+Info (12128): Elaborating entity "FibFSM" for hierarchy "FibFSM:fsm" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/lab1.v Line: 64
+Warning (10230): Verilog HDL assignment warning at FibFSM.v(94): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 94
+Warning (10230): Verilog HDL assignment warning at FibFSM.v(95): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 95
+Info (12128): Elaborating entity "register_file" for hierarchy "register_file:rf" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/lab1.v Line: 81
+Warning (10240): Verilog HDL Always Construct warning at register_file.v(26): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/register_file.v Line: 26
+Info (12128): Elaborating entity "ImmMux" for hierarchy "ImmMux:imm_mux" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/lab1.v Line: 93
+Info (12128): Elaborating entity "alu" for hierarchy "alu:alu_unit" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/lab1.v Line: 108
+Warning (10764): Verilog HDL warning at ALU.v(173): converting signed shift amount to unsigned File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 173
+Warning (10764): Verilog HDL warning at ALU.v(185): converting signed shift amount to unsigned File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 185
+Warning (10764): Verilog HDL warning at ALU.v(197): converting signed shift amount to unsigned File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 197
+Warning (10270): Verilog HDL Case Statement warning at ALU.v(55): incomplete case statement has no default case item File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(55): inferring latch(es) for variable "Result", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(55): inferring latch(es) for variable "zFlag", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(55): inferring latch(es) for variable "cFlag", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(55): inferring latch(es) for variable "fFlag", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(55): inferring latch(es) for variable "lFlag", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(55): inferring latch(es) for variable "nFlag", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(55): inferring latch(es) for variable "Flags", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(55): inferring latch(es) for variable "negRsrc", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(55): inferring latch(es) for variable "shift_amt", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Flags[0]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Flags[1]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Flags[2]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Flags[3]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Flags[4]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "nFlag" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "lFlag" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "fFlag" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "cFlag" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "zFlag" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[0]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[1]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[2]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[3]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[4]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[5]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[6]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[7]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[8]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[9]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[10]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[11]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[12]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[13]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[14]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (10041): Inferred latch for "Result[15]" at ALU.v(55) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 55
+Info (12128): Elaborating entity "bin16_to_bcd5" for hierarchy "bin16_to_bcd5:converter" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/lab1.v Line: 126
+Warning (10230): Verilog HDL assignment warning at bin16_to_bcd5.v(20): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/bin16_to_bcd5.v Line: 20
+Warning (10230): Verilog HDL assignment warning at bin16_to_bcd5.v(21): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/bin16_to_bcd5.v Line: 21
+Warning (10230): Verilog HDL assignment warning at bin16_to_bcd5.v(22): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/bin16_to_bcd5.v Line: 22
+Warning (10230): Verilog HDL assignment warning at bin16_to_bcd5.v(23): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/bin16_to_bcd5.v Line: 23
+Warning (10230): Verilog HDL assignment warning at bin16_to_bcd5.v(24): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/bin16_to_bcd5.v Line: 24
+Info (12128): Elaborating entity "seven_seg_decoder" for hierarchy "seven_seg_decoder:seg0" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/lab1.v Line: 131
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "alu:Alu|Result[15]" merged with LATCH primitive "alu:Alu|Result[2]" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Info (13026): Duplicate LATCH primitive "alu:Alu|Result[14]" merged with LATCH primitive "alu:Alu|Result[2]" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Info (13026): Duplicate LATCH primitive "alu:Alu|Result[13]" merged with LATCH primitive "alu:Alu|Result[2]" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Info (13026): Duplicate LATCH primitive "alu:Alu|Result[12]" merged with LATCH primitive "alu:Alu|Result[2]" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Info (13026): Duplicate LATCH primitive "alu:Alu|Result[11]" merged with LATCH primitive "alu:Alu|Result[2]" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Info (13026): Duplicate LATCH primitive "alu:Alu|Result[10]" merged with LATCH primitive "alu:Alu|Result[2]" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Info (13026): Duplicate LATCH primitive "alu:Alu|Result[9]" merged with LATCH primitive "alu:Alu|Result[2]" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Info (13026): Duplicate LATCH primitive "alu:Alu|Result[8]" merged with LATCH primitive "alu:Alu|Result[2]" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Info (13026): Duplicate LATCH primitive "alu:Alu|Result[7]" merged with LATCH primitive "alu:Alu|Result[2]" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Info (13026): Duplicate LATCH primitive "alu:Alu|Result[6]" merged with LATCH primitive "alu:Alu|Result[2]" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Info (13026): Duplicate LATCH primitive "alu:Alu|Result[5]" merged with LATCH primitive "alu:Alu|Result[2]" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Info (13026): Duplicate LATCH primitive "alu:Alu|Result[4]" merged with LATCH primitive "alu:Alu|Result[2]" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Info (13026): Duplicate LATCH primitive "alu:Alu|Result[3]" merged with LATCH primitive "alu:Alu|Result[2]" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-Warning (13012): Latch alu:Alu|Result[0] has unsafe behavior File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[4] File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 2
-Warning (13012): Latch alu:Alu|Result[1] has unsafe behavior File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2] File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 2
-Warning (13012): Latch alu:Alu|Result[2] has unsafe behavior File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[0] File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 2
-Warning (13012): Latch alu:Alu|Flags[1] has unsafe behavior File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 56
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[6] File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 2
-Warning (13012): Latch alu:Alu|zFlag has unsafe behavior File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[6] File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 2
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 3
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 4
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 4
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 4
-    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 4
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 5
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 5
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 5
-    Warning (13410): Pin "HEX2[7]" is stuck at VCC File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 5
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 6
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 6
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 6
-    Warning (13410): Pin "HEX3[7]" is stuck at VCC File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 6
-    Warning (13410): Pin "flags[0]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 8
-    Warning (13410): Pin "flags[2]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 8
-    Warning (13410): Pin "flags[3]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 8
-    Warning (13410): Pin "flags[4]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 8
+    Warning (13410): Pin "fsmState[2]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/lab1.v Line: 14
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 2
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v Line: 2
-Info (21057): Implemented 76 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 37 output pins
-    Info (21061): Implemented 29 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
-    Info: Peak virtual memory: 4881 megabytes
-    Info: Processing ended: Wed Jan 21 20:29:57 2026
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:12
+Info (21057): Implemented 619 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 35 output pins
+    Info (21061): Implemented 578 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 4925 megabytes
+    Info: Processing ended: Sat Jan 24 15:12:53 2026
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:14
 
 

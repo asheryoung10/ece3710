@@ -2,52 +2,132 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'SW[0]'
-Slack : -3.723
-TNS   : -17.042
+Type  : Slow 1100mV 85C Model Setup 'FibFSM:fsm|op[0]'
+Slack : -8.984
+TNS   : -134.059
 
-Type  : Slow 1100mV 85C Model Hold 'SW[0]'
-Slack : 1.180
+Type  : Slow 1100mV 85C Model Setup 'clk'
+Slack : -3.447
+TNS   : -848.963
+
+Type  : Slow 1100mV 85C Model Hold 'clk'
+Slack : 0.309
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'SW[0]'
-Slack : 0.160
+Type  : Slow 1100mV 85C Model Hold 'FibFSM:fsm|op[0]'
+Slack : 3.728
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Setup 'SW[0]'
-Slack : -3.672
-TNS   : -16.672
+Type  : Slow 1100mV 85C Model Recovery 'clk'
+Slack : -0.929
+TNS   : -162.087
 
-Type  : Slow 1100mV 0C Model Hold 'SW[0]'
-Slack : 1.141
+Type  : Slow 1100mV 85C Model Removal 'clk'
+Slack : 0.558
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'SW[0]'
-Slack : 0.186
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.394
+TNS   : -154.923
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'FibFSM:fsm|op[0]'
+Slack : 0.409
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Setup 'SW[0]'
-Slack : -2.528
-TNS   : -11.014
+Type  : Slow 1100mV 0C Model Setup 'FibFSM:fsm|op[0]'
+Slack : -9.103
+TNS   : -135.352
 
-Type  : Fast 1100mV 85C Model Hold 'SW[0]'
-Slack : 0.652
+Type  : Slow 1100mV 0C Model Setup 'clk'
+Slack : -3.254
+TNS   : -801.995
+
+Type  : Slow 1100mV 0C Model Hold 'clk'
+Slack : 0.284
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'SW[0]'
-Slack : -0.005
-TNS   : -0.015
-
-Type  : Fast 1100mV 0C Model Setup 'SW[0]'
-Slack : -2.304
-TNS   : -10.085
-
-Type  : Fast 1100mV 0C Model Hold 'SW[0]'
-Slack : 0.562
+Type  : Slow 1100mV 0C Model Hold 'FibFSM:fsm|op[0]'
+Slack : 3.761
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'SW[0]'
-Slack : 0.000
+Type  : Slow 1100mV 0C Model Recovery 'clk'
+Slack : -0.841
+TNS   : -145.721
+
+Type  : Slow 1100mV 0C Model Removal 'clk'
+Slack : 0.527
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -0.394
+TNS   : -164.165
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'FibFSM:fsm|op[0]'
+Slack : 0.413
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'FibFSM:fsm|op[0]'
+Slack : -4.850
+TNS   : -72.533
+
+Type  : Fast 1100mV 85C Model Setup 'clk'
+Slack : -2.579
+TNS   : -605.815
+
+Type  : Fast 1100mV 85C Model Hold 'clk'
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'FibFSM:fsm|op[0]'
+Slack : 2.252
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'clk'
+Slack : -0.245
+TNS   : -12.399
+
+Type  : Fast 1100mV 85C Model Removal 'clk'
+Slack : 0.301
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.093
+TNS   : -26.211
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'FibFSM:fsm|op[0]'
+Slack : 0.397
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'FibFSM:fsm|op[0]'
+Slack : -4.530
+TNS   : -67.917
+
+Type  : Fast 1100mV 0C Model Setup 'clk'
+Slack : -2.002
+TNS   : -465.713
+
+Type  : Fast 1100mV 0C Model Hold 'clk'
+Slack : 0.168
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'FibFSM:fsm|op[0]'
+Slack : 2.202
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'clk'
+Slack : -0.118
+TNS   : -3.130
+
+Type  : Fast 1100mV 0C Model Removal 'clk'
+Slack : 0.273
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -0.090
+TNS   : -25.560
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'FibFSM:fsm|op[0]'
+Slack : 0.412
 TNS   : 0.000
 
 ------------------------------------------------------------
