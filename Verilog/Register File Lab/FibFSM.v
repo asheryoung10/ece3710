@@ -4,46 +4,57 @@ module FibFSM #(
 						parameter OPCODE_WIDTH = 8
 					)(
 						input wire clk, reset,
-						output reg [SEL_WIDTH - 1:0]SrcMux, SrcReg, DestMux, DestReg,  //Selectors and Addr for Src and Dest Mux/Reg
+						output reg [SEL_WIDTH - 1:0]SrcAddr, DestAddr, WriteAddr //Addr for writing and reading for regfile
 						output reg regReset, regWriteEn, ImmMuxSel, //Immediate Mux selector and reset/write enable
-						output reg [BITWIDTH - 1:0]regData, Imm //Reg write data and Immediate for ImmMux
+						output reg [BITWIDTH - 1:0]ImmData //Immediate Data for ImmMux
 						output reg [OPCODE_WIDTH - 1:0]op //opcode for ALU
 					);
 					
-					reg [2:0]state = 0;
-					always @(posedge clk, negedge reset) begin
-						if (reset)
-							state = 3'b000;
-						else if (state == 25) //State number we want to hold at (last state of fib sequence) 
-							state = state;
-						else
-							state = state + 3'b001;
-					end
-					
-					always @(*) begin
-						case(state)
-							000: 
+					reg [2:0]nextState = 0;
+					reg [3:0]regIndex = 2;
+					always @(posedge clk) begin
+						case(nextState)
+							000: // Init all regs to 0
 								regReset = 1;
 								regWriteEn = 0;
-								SrcMux = 0;
-								DestMux = 0;
 								ImmMuxSel = 0;
-								DestReg = 0;
-								SrcReg = 0;
-								regData = 16'd0;
-								Imm = 16'd0
-								op = 8'd0;
-							001:
+								SrcAddr = {SEL_WIDTH}'d0;
+								DestAddr = {SEL_WIDTH}'d0;
+								WriteAddr = {SEL_WIDTH}'d0;
+								ImmData = {BITWIDTH}'d0;
+								op = {OPCODE_WIDTH}'d0;
+								nextState = 001;
+							001: // Init r1=1
 								regReset = 0;
 								regWriteEn = 1;
-								SrcMux = 4'b000;
-								DestMux = 4'b0000;
-								ImmMuxSel= 1'b1;
-								DestReg = 4'b0000;
-								SrcReg = 4'b0000;
-								regData = ?;
-								Imm = 16'd1;
-								op = 8'b0101_xxxx;
+								ImmMuxSel = 1;
+								SrcAddr = {SEL_WIDTH}'d0;
+								DestAddr = {SEL_WIDTH}'d0;
+								WriteAddr = {SEL_WIDTH}'d1;
+								ImmData = {BITWIDTH}'d1;
+								op = 8'b0000_0101; //ADD
+								nextState = 010;
+							010: /// Rindex = Rindex-1 + Rindex-2
+								regReset = 0;
+								regWriteEn = 1;
+								ImmMuxSel = 0;
+								SrcAddr = regIndex-2;
+								DestAddr = regIndex-1;
+								WriteAddr = regIndex;
+								ImmData = {BITWIDTH}'d1;
+								op = 8'b0000_0101; //ADD
+								
+								regIndex = regIndex + 1;
+								if(regIndex == 4'b1111)
+									nextState = 011;
+								else
+									nextState = 010;
+							011:
+								nextState = nextState;
+							default:
+								nextState = 000;
+						endcase
+					end
 								
 								
 								

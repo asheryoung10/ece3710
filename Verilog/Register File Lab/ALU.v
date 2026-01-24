@@ -31,7 +31,7 @@ module alu #(parameter BIT_WIDTH    = 16,
 			localparam RSH		= 8'b1000_100x;	
 		 	localparam RSHI	= 8'b1000_101x;
 			localparam ARSH 	= 8'b1000_0110;
-			localparam ARSHI 	= 9'b1000_001x;
+			localparam ARSHI 	= 8'b1000_001x;
 			localparam NOP		= 8'b0000_0000;
 				
 			// Individual bit registers to hold flags
