@@ -28,33 +28,52 @@ module tb_fib;
     // Clock pulse task
     // -------------------------
     task pulse_clk;
-    begin
-        clk = 0;
-        #5;
-        clk = 1;
-        #5;
-    end
+		 begin
+			  clk = 0;
+			  #5;
+			  clk = 1;
+			  #5;
+		 end
     endtask
 
     // -------------------------
     // Optional: reset task
     // -------------------------
     task apply_reset;
-    begin
-        reset = 0;
-        pulse_clk();
-        reset = 1;
-    end
+		 begin
+			  reset = 0;
+			  pulse_clk();
+			  reset = 1;
+		 end
     endtask
+			 
 
     // -------------------------
     // Test sequence
     // -------------------------
-    initial begin
+   reg [15:0] fibValues [0:15];
+	initial begin
         // init values
         clk      = 0;
         reset    = 1;
         switches = 0;
+			
+		  fibValues[0] = 16'd0; 
+		  fibValues[1] = 16'd1; 
+		  fibValues[2] = 16'd1; 
+			fibValues[3] = 16'd2; 
+			fibValues[4] = 16'd3; 
+			fibValues[5] = 16'd5; 
+			fibValues[6] = 16'd8; 
+			fibValues[7] = 16'd13; 
+			fibValues[8] = 16'd21; 
+			fibValues[9] = 16'd34; 
+			fibValues[10] = 16'd55; 
+			fibValues[11] = 16'd89; 
+			fibValues[12] = 16'd144; 
+			fibValues[13] = 16'd233; 
+			fibValues[14] = 16'd377; 
+			fibValues[15] = 16'd610;
 
         // apply reset
         apply_reset();
@@ -73,13 +92,17 @@ module tb_fib;
 		  for (i = 0; i < 16; i = i + 1) begin
 				switches = i[3:0];
 				pulse_clk();
-				$display("FIB VALUE AT REG%0d t=%0t  state=%0d  result=%0d",
-             i, $time, fsmState, currentResult);
+				// Check result
+            if (currentResult !== fibValues[i]) begin
+                	$display("FAIL: FIB VALUE AT REG%0d t=%0t  state=%0d  result=%0d, expected=%0d",
+						i, $time, fsmState, currentResult, fibValues[i]);
+					 $stop;
+            end 
 		end
 
 
-        $display("FINAL RESULT = %0d", currentResult);
-        $finish;
+	  $display("No Errors, All tests Passed");
+	  $finish;
     end
 
 endmodule
