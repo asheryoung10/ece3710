@@ -140,6 +140,70 @@
 					"strict" : false
 				},
 				{
+					"name" : "currentResult[0]",
+					"strict" : false
+				},
+				{
+					"name" : "currentResult[1]",
+					"strict" : false
+				},
+				{
+					"name" : "currentResult[2]",
+					"strict" : false
+				},
+				{
+					"name" : "currentResult[3]",
+					"strict" : false
+				},
+				{
+					"name" : "currentResult[4]",
+					"strict" : false
+				},
+				{
+					"name" : "currentResult[5]",
+					"strict" : false
+				},
+				{
+					"name" : "currentResult[6]",
+					"strict" : false
+				},
+				{
+					"name" : "currentResult[7]",
+					"strict" : false
+				},
+				{
+					"name" : "currentResult[8]",
+					"strict" : false
+				},
+				{
+					"name" : "currentResult[9]",
+					"strict" : false
+				},
+				{
+					"name" : "currentResult[10]",
+					"strict" : false
+				},
+				{
+					"name" : "currentResult[11]",
+					"strict" : false
+				},
+				{
+					"name" : "currentResult[12]",
+					"strict" : false
+				},
+				{
+					"name" : "currentResult[13]",
+					"strict" : false
+				},
+				{
+					"name" : "currentResult[14]",
+					"strict" : false
+				},
+				{
+					"name" : "currentResult[15]",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
 					"strict" : false
 				},

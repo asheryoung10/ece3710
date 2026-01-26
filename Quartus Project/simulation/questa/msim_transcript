@@ -17,7 +17,10 @@
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is asher@DESKTOP-JRGJE77.
 # vlib rtl_work
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# Errors: 0, Warnings: 1
 # vmap work rtl_work
 # Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
 # vmap work rtl_work 
@@ -25,90 +28,250 @@
 # Copying c:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Verilog/ALU\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/seven_seg_decoder.v}
+# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Verilog/Register\ File\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/seven_seg_decoder.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 21:19:08 on Jan 21,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab" C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/seven_seg_decoder.v 
+# Start time: 20:13:37 on Jan 25,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab" C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/seven_seg_decoder.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module seven_seg_decoder
 # 
 # Top level modules:
 # 	seven_seg_decoder
-# End time: 21:19:09 on Jan 21,2026, Elapsed time: 0:00:01
+# End time: 20:13:37 on Jan 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Verilog/ALU\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v}
+# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Verilog/Register\ File\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/register_file.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 21:19:09 on Jan 21,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab" C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/lab1.v 
+# Start time: 20:13:37 on Jan 25,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab" C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/register_file.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module register_file
+# 
+# Top level modules:
+# 	register_file
+# End time: 20:13:37 on Jan 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Verilog/Register\ File\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/lab1.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 20:13:37 on Jan 25,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab" C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/lab1.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module lab1
 # 
 # Top level modules:
 # 	lab1
-# End time: 21:19:09 on Jan 21,2026, Elapsed time: 0:00:00
+# End time: 20:13:37 on Jan 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Verilog/ALU\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v}
+# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Verilog/Register\ File\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ImmMux.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 21:19:09 on Jan 21,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab" C:/Users/asher/Desktop/School Work/ece3710/Verilog/ALU Lab/ALU.v 
+# Start time: 20:13:37 on Jan 25,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab" C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ImmMux.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module ImmMux
+# 
+# Top level modules:
+# 	ImmMux
+# End time: 20:13:37 on Jan 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Verilog/Register\ File\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 20:13:37 on Jan 25,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab" C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module FibFSM
+# 
+# Top level modules:
+# 	FibFSM
+# End time: 20:13:37 on Jan 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Verilog/Register\ File\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 20:13:37 on Jan 25,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab" C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 21:19:09 on Jan 21,2026, Elapsed time: 0:00:00
+# End time: 20:13:38 on Jan 25,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# 
-# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Quartus\ Project/../Verilog/ALU\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/ALU Lab/tb_ALU.v}
+# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Verilog/Register\ File\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/bin16_to_bcd5.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 21:19:09 on Jan 21,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/ALU Lab" C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/ALU Lab/tb_ALU.v 
+# Start time: 20:13:38 on Jan 25,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab" C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/bin16_to_bcd5.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module tb_alu
+# -- Compiling module bin16_to_bcd5
 # 
 # Top level modules:
-# 	tb_alu
-# End time: 21:19:09 on Jan 21,2026, Elapsed time: 0:00:00
+# 	bin16_to_bcd5
+# End time: 20:13:38 on Jan 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_alu
+# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Quartus\ Project/../Verilog/Register\ File\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/lab1.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 20:13:38 on Jan 25,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab" C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/lab1.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module lab1
+# 
+# Top level modules:
+# 	lab1
+# End time: 20:13:38 on Jan 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Quartus\ Project/../Verilog/Register\ File\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/FibFSM.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 20:13:38 on Jan 25,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab" C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/FibFSM.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module FibFSM
+# 
+# Top level modules:
+# 	FibFSM
+# End time: 20:13:38 on Jan 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Quartus\ Project/../Verilog/Register\ File\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ALU.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 20:13:38 on Jan 25,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab" C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ALU.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 20:13:38 on Jan 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Quartus\ Project/../Verilog/Register\ File\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/tb_fib.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 20:13:38 on Jan 25,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab" C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/tb_fib.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module tb_fib
+# 
+# Top level modules:
+# 	tb_fib
+# End time: 20:13:38 on Jan 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Quartus\ Project/../Verilog/Register\ File\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ImmMux.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 20:13:39 on Jan 25,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab" C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ImmMux.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module ImmMux
+# 
+# Top level modules:
+# 	ImmMux
+# End time: 20:13:39 on Jan 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Quartus\ Project/../Verilog/Register\ File\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/seven_seg_decoder.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 20:13:39 on Jan 25,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab" C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/seven_seg_decoder.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module seven_seg_decoder
+# 
+# Top level modules:
+# 	seven_seg_decoder
+# End time: 20:13:39 on Jan 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Quartus\ Project/../Verilog/Register\ File\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/bin16_to_bcd5.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 20:13:39 on Jan 25,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab" C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/bin16_to_bcd5.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module bin16_to_bcd5
+# 
+# Top level modules:
+# 	bin16_to_bcd5
+# End time: 20:13:39 on Jan 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+C:/Users/asher/Desktop/School\ Work/ece3710/Quartus\ Project/../Verilog/Register\ File\ Lab {C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/register_file.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 20:13:39 on Jan 25,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab" C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/register_file.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module register_file
+# 
+# Top level modules:
+# 	register_file
+# End time: 20:13:39 on Jan 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_fib
 # ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_alu 
-# Start time: 21:19:09 on Jan 21,2026
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_fib 
+# Start time: 20:13:39 on Jan 25,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
 # ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.tb_alu(fast)
+# ** Note: (vopt-143) Recognized 1 FSM in module "FibFSM(fast)".
+# ** Warning: C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/lab1.v(123): (vopt-2685) [TFMPC] - Too few port connections for 'converter'.  Expected 6, found 5.
+# ** Warning: C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/lab1.v(123): (vopt-2718) [TFMPC] - Missing connection for port 'bcd4'.
+# ** Warning: C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/tb_fib.v(19): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 10, found 5.
+# ** Warning: C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/tb_fib.v(19): (vopt-2718) [TFMPC] - Missing connection for port 'switch'.
+# ** Warning: C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/tb_fib.v(19): (vopt-2718) [TFMPC] - Missing connection for port 'seven_seg_3'.
+# ** Warning: C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/tb_fib.v(19): (vopt-2718) [TFMPC] - Missing connection for port 'seven_seg_2'.
+# ** Warning: C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/tb_fib.v(19): (vopt-2718) [TFMPC] - Missing connection for port 'seven_seg_1'.
+# ** Warning: C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/tb_fib.v(19): (vopt-2718) [TFMPC] - Missing connection for port 'seven_seg_0'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=9.
+# Loading work.tb_fib(fast)
+# Loading work.lab1(fast)
+# Loading work.FibFSM(fast)
+# Loading work.register_file(fast)
+# Loading work.ImmMux(fast)
 # Loading work.alu(fast)
+# Loading work.bin16_to_bcd5(fast)
+# Loading work.seven_seg_decoder(fast)
 # 
 # add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: asher  Hostname: DESKTOP-JRGJE77  ProcessID: 7600
+#           Attempting to use alternate WLF file "./wlftybyyj3".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftybyyj3
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Starting ALU Test Bench.
-# Testing ADD edge cases.
-# Add edge cases successfull.
-# Testing ADDU edge cases.
-# Add edge cases successfull.
-# Testing ADDC edge cases.
-# ADDC edge cases successful.
-# Testing SUB edge cases.
-# SUB edge cases successful.
-# Testing CMP edge cases.
-# CMP edge cases successful.
-# Testing AND edge cases.
-# AND edge cases successful.
-# Testing OR edge cases.
-# OR edge cases successful.
-# Testing LSH edge cases.
-# LSH edge cases successful.
-# Starting ALU testbench extreme values...
-# Passed middle range tests, begining edge case testing.
-# ALU testbench completed.
-# ** Note: $finish    : C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/ALU Lab/tb_ALU.v(333)
-#    Time: 5124 ns  Iteration: 0  Instance: /tb_alu
+# t=20000  state=0  result=0
+# t=30000  state=1  result=0
+# t=40000  state=2  result=0
+# t=50000  state=2  result=1
+# t=60000  state=2  result=1
+# t=70000  state=2  result=2
+# t=80000  state=2  result=3
+# t=90000  state=2  result=5
+# t=100000  state=2  result=8
+# t=110000  state=2  result=13
+# t=120000  state=2  result=21
+# t=130000  state=2  result=34
+# t=140000  state=2  result=55
+# t=150000  state=2  result=89
+# t=160000  state=2  result=144
+# t=170000  state=2  result=233
+# t=180000  state=3  result=8
+# t=190000  state=3  result=8
+# t=200000  state=3  result=8
+# t=210000  state=3  result=8
+# FIB VALUE AT REG0 t=220000  state=3  result=0
+# FIB VALUE AT REG1 t=230000  state=3  result=1
+# FIB VALUE AT REG2 t=240000  state=3  result=1
+# FIB VALUE AT REG3 t=250000  state=3  result=2
+# FIB VALUE AT REG4 t=260000  state=3  result=3
+# FIB VALUE AT REG5 t=270000  state=3  result=5
+# FIB VALUE AT REG6 t=280000  state=3  result=8
+# FIB VALUE AT REG7 t=290000  state=3  result=13
+# FIB VALUE AT REG8 t=300000  state=3  result=21
+# FIB VALUE AT REG9 t=310000  state=3  result=34
+# FIB VALUE AT REG10 t=320000  state=3  result=55
+# FIB VALUE AT REG11 t=330000  state=3  result=89
+# FIB VALUE AT REG12 t=340000  state=3  result=144
+# FIB VALUE AT REG13 t=350000  state=3  result=233
+# FIB VALUE AT REG14 t=360000  state=3  result=377
+# FIB VALUE AT REG15 t=370000  state=3  result=610
+# FINAL RESULT = 610
+# ** Note: $finish    : C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/tb_fib.v(81)
+#    Time: 370 ns  Iteration: 0  Instance: /tb_fib
 # 1
-# Break in Module tb_alu at C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/ALU Lab/tb_ALU.v line 333
+# Break in Module tb_fib at C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/tb_fib.v line 81
+# End time: 20:14:19 on Jan 25,2026, Elapsed time: 0:00:40
+# Errors: 0, Warnings: 11

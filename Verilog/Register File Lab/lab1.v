@@ -12,10 +12,11 @@ module lab1 #(
 	 output wire [6:0]           seven_seg_2,
 	 output wire [6:0]           seven_seg_3,
 	 output wire [2:0]				fsmState,
-	 output wire [3:0]				switch
+	 output wire [3:0]				switch,
+	 output wire [15:0] 				currentResult
 );
 
-		assign switch = SrcAddr;
+		
 		wire reset_inverted = ~reset;
 
     // --------------------------------------------------
@@ -24,6 +25,7 @@ module lab1 #(
     wire [SEL_WIDTH-1:0] SrcAddr;
     wire [SEL_WIDTH-1:0] DestAddr;
     wire [SEL_WIDTH-1:0] WriteAddr;
+	 assign switch = SrcAddr;
 
     wire regReset;
     wire regWriteEn;
@@ -112,6 +114,7 @@ module lab1 #(
     // After FSM finishes, user selects register via switches
     // --------------------------------------------------
     wire [BIT_WIDTH-1:0] display_value = Rsrc;
+	 assign currentResult = display_value;
 	 wire [3:0] bcd0;
 	  wire [3:0] bcd1;
 	   wire [3:0] bcd2;
