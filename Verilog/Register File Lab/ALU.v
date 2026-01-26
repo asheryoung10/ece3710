@@ -31,7 +31,7 @@ module alu #(parameter BIT_WIDTH    = 16,
 			localparam RSH		= 8'b1000_100x;	
 		 	localparam RSHI	= 8'b1000_101x;
 			localparam ARSH 	= 8'b1000_0110;
-			localparam ARSHI 	= 8'b1000_001x;
+			localparam ARSHI 	= 9'b1000_001x;
 			localparam NOP		= 8'b0000_0000;
 				
 			// Individual bit registers to hold flags
@@ -45,6 +45,7 @@ module alu #(parameter BIT_WIDTH    = 16,
 				
 			// Wire for just holding shift amount for shift instructions.
 			integer shift_amt;
+			reg [3:0] sa;   // shift amount (0-15)
 
 			reg signed [BIT_WIDTH-1:0] negRsrc;
 			reg lastBit;
@@ -81,13 +82,12 @@ module alu #(parameter BIT_WIDTH    = 16,
 
 						// Signed addition operation including carry.
 						ADDC, ADDCI: begin
-							Result = cFlag + $signed(Rdest) + $signed(Rsrc_Imm);
+							{cFlag, Result} = cFlag + $signed(Rdest) + $signed(Rsrc_Imm);
 							
-							zFlag = Result == 0;
-							cFlag = 1'b0;
+							zFlag = 1'bx;
 							fFlag = (Rdest[15] == Rsrc_Imm[15]) && (Result[15] != Rdest[15]);
 							lFlag = 1'bx;
-							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
+							nFlag = 1'bx;
 							
 							Flags = {cFlag, lFlag, fFlag, zFlag, nFlag};
 						end
@@ -96,13 +96,11 @@ module alu #(parameter BIT_WIDTH    = 16,
 						SUB, SUBI: begin
 							negRsrc = -$signed(Rsrc_Imm);
 							Result = $signed(Rdest) + negRsrc;
-
 							zFlag = Result == 0;
 							cFlag = 1'b0;
 							fFlag = (Rdest[15] == Rsrc_Imm[15]) && (Result[15] != Rdest[15]);
 							lFlag = 1'bx;
 							nFlag = $signed(Rdest) < $signed(Rsrc_Imm);
-							
 							Flags = {cFlag, lFlag, fFlag, zFlag, nFlag};
 						end
 
@@ -169,8 +167,16 @@ module alu #(parameter BIT_WIDTH    = 16,
 
 						// Left shift operation with signed shifting amount.
 						LSH, LSHI: begin
-							shift_amt = Rsrc_Imm;
-							Result = (shift_amt >= 0) ? (Rdest << shift_amt) : (Rdest >> -shift_amt);
+							shift_amt = $signed(Rsrc_Imm);
+
+							 // Extract magnitude safely
+							 if (shift_amt >= 0)
+								  sa = shift_amt;
+							 else
+								  sa = -shift_amt;
+
+							 Result = (shift_amt >= 0) ? (Rdest << sa)
+																: (Rdest >> sa);
 							
 							zFlag = Result == 0;
 							cFlag = 1'bx;

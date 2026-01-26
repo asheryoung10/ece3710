@@ -63,7 +63,8 @@ module tb_fib;
         switches = 4'd6;
 
         // step FSM manually
-        repeat (20) begin
+        //repeat (20) begin
+		  repeat (40) begin //bitmask has more substates
             pulse_clk();
             $display("t=%0t  state=%0d  result=%0d",
                      $time, fsmState, currentResult);

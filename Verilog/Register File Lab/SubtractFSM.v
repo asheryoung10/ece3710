@@ -1,0 +1,129 @@
+module SubtractFSM #(
+    parameter BIT_WIDTH    = 16,
+    parameter SEL_WIDTH    = 4,
+    parameter OPCODE_WIDTH = 8
+)(
+    input  wire clk,
+    input  wire reset,
+    input  wire [3:0] userInput,
+
+    // Regfile control
+    output reg [SEL_WIDTH-1:0] SrcAddr,
+    output reg [SEL_WIDTH-1:0] DestAddr,
+    output reg [SEL_WIDTH-1:0] WriteAddr,
+
+    // Control signals
+    output reg regReset,
+    output reg regWriteEn,
+    output reg ImmMuxSel,
+
+    // Immediate and opcode
+    output reg [BIT_WIDTH-1:0]    ImmData,
+    output reg [OPCODE_WIDTH-1:0] op,
+    output reg [2:0] outputState
+);
+
+    // --------------------------------------------------
+    // Opcodes
+    // --------------------------------------------------
+    localparam ADDI = 8'b0101_0000;
+    localparam SUBI = 8'b1001_0000;
+
+    // --------------------------------------------------
+    // State encoding
+    // --------------------------------------------------
+    localparam INIT_REGS = 3'b000;
+    localparam INIT_R0   = 3'b001;
+    localparam CALC_SUB  = 3'b010;
+    localparam DONE      = 3'b011;
+
+    reg [2:0] state;
+    reg [SEL_WIDTH-1:0] regIndex;
+
+    // --------------------------------------------------
+    // FSM
+    // --------------------------------------------------
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            state       <= INIT_REGS;
+            regIndex    <= 4'd1;
+
+            regReset    <= 1'b0;
+            regWriteEn  <= 1'b0;
+            ImmMuxSel   <= 1'b0;
+            SrcAddr     <= 0;
+            DestAddr    <= 0;
+            WriteAddr   <= 0;
+            ImmData     <= 0;
+            op          <= 0;
+            outputState <= INIT_REGS;
+
+        end else begin
+            // defaults
+            regReset    <= 1'b0;
+            regWriteEn  <= 1'b0;
+            ImmMuxSel   <= 1'b0;
+            SrcAddr     <= 0;
+            DestAddr    <= 0;
+            WriteAddr   <= 0;
+            ImmData     <= 0;
+            op          <= 0;
+            outputState <= state;
+
+            case (state)
+
+                // --------------------------------------
+                // Clear all registers
+                // --------------------------------------
+                INIT_REGS: begin
+                    regReset <= 1'b1;
+                    state    <= INIT_R0;
+                end
+
+                // --------------------------------------
+                // r0 = 0
+                // --------------------------------------
+                INIT_R0: begin
+                    regWriteEn <= 1'b1;
+                    ImmMuxSel  <= 1'b1;
+                    WriteAddr  <= 4'd0;
+                    ImmData    <= 16'd0;
+                    op         <= ADDI;
+
+                    state      <= CALC_SUB;
+                end
+
+                // --------------------------------------
+                // r[n] = r[n-1] - n
+                // --------------------------------------
+                CALC_SUB: begin
+                    regWriteEn <= 1'b1;
+                    SrcAddr    <= regIndex - 1;
+                    WriteAddr  <= regIndex;
+                    ImmMuxSel  <= 1'b1;
+                    ImmData    <= regIndex;
+                    op         <= SUBI;
+
+                    if (regIndex == 4'd15) begin
+                        state <= DONE;
+                    end else begin
+                        regIndex <= regIndex + 1'b1;
+                    end
+                end
+
+                // --------------------------------------
+                // DONE: read register selected by switches
+                // --------------------------------------
+                DONE: begin
+                    SrcAddr <= userInput;
+                    state   <= DONE;
+                end
+
+                default: begin
+                    state <= INIT_REGS;
+                end
+            endcase
+        end
+    end
+
+endmodule

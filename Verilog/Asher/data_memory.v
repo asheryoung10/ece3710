@@ -17,7 +17,7 @@ module data_memory (
     integer i;
 
     // Reset memory (optional)
-    always @(posedge clk) begin
+    always @(negedge clk) begin
         if (rst) begin
             for (i=0; i<1024; i=i+1)
                 mem[i] <= 16'b0;
