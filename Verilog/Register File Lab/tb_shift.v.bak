@@ -1,0 +1,109 @@
+`timescale 1ns/1ps
+
+module tb_shift;
+
+    // -------------------------
+    // DUT signals
+    // -------------------------
+    reg         clk;
+    reg         reset;
+    reg [3:0]   switches;
+	 integer i;
+
+    wire [2:0]  fsmState;
+    wire [15:0] currentResult;
+
+    // -------------------------
+    // Instantiate DUT
+    // -------------------------
+    lab1 uut (
+        .clk(clk),
+        .reset(reset),
+        .switches(switches),
+        .fsmState(fsmState),
+        .currentResult(currentResult)
+    );
+
+    // -------------------------
+    // Clock pulse task
+    // -------------------------
+    task pulse_clk;
+		 begin
+			  clk = 0;
+			  #5;
+			  clk = 1;
+			  #5;
+		 end
+    endtask
+
+    // -------------------------
+    // Optional: reset task
+    // -------------------------
+    task apply_reset;
+		 begin
+			  reset = 0;
+			  pulse_clk();
+			  reset = 1;
+		 end
+    endtask
+			 
+
+    // -------------------------
+    // Test sequence
+    // -------------------------
+   reg [15:0] expSub [0:15];
+	initial begin
+        // init values
+        clk      = 0;
+        reset    = 1;
+        switches = 0;
+		  
+		  expSub[0] = 16'd0;
+		  expSub[1] = 16'hFFFF; //-1
+		  expSub[2] = 16'hFFFD; //-3
+		  expSub[3] = 16'hFFFA; //-6
+		  expSub[4] = 16'hFFF6; //-10
+		  expSub[5] = 16'hFFF1; //-15
+		  expSub[6] = 16'hFFEB; //-21
+		  expSub[7] = 16'hFFE4; //-28
+		  expSub[8] = 16'hFFDC; //-36
+		  expSub[9] = 16'hFFD3; //-45
+		  expSub[10] = 16'hFFC9;//-55
+		  expSub[11] = 16'hFFBE;//-66
+		  expSub[12] = 16'hFFB2;//-78
+		  expSub[13] = 16'hFFA5;//-91
+		  expSub[14] = 16'hFF97;//-105
+		  expSub[15] = 16'hFF88;//-120
+		
+		 
+        // apply reset
+        apply_reset();
+
+        // set input (example fib(6))
+        switches = 4'd0;
+
+        // step FSM manually
+        repeat (20) begin
+		  //repeat (40) begin //bitmask has more substates
+            pulse_clk();
+            $display("t=%0t  state=%0d  result=%0d",
+                     $time, fsmState, currentResult);
+        end
+		  
+		  for (i = 0; i < 16; i = i + 1) begin
+				switches = i[3:0];
+				pulse_clk();
+				// Check result
+            if (currentResult !== expSub[i]) begin
+                	$display("FAIL: FIB VALUE AT REG%0d t=%0t  state=%0d  result=%0d, expected=%0d",
+						i, $time, fsmState, currentResult, expSub[i]);
+					 $stop;
+            end 
+		end
+
+
+	  $display("No Errors, All tests Passed");
+	  $finish;
+    end
+
+endmodule

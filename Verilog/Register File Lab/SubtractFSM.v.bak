@@ -98,7 +98,7 @@ module SubtractFSM #(
                 // --------------------------------------
                 CALC_SUB: begin
                     regWriteEn <= 1'b1;
-						  DestAddr   <= regIndex - 1;
+                    SrcAddr    <= regIndex - 1;
                     WriteAddr  <= regIndex;
                     ImmMuxSel  <= 1'b1;
                     ImmData    <= regIndex;
