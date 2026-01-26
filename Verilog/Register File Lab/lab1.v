@@ -46,7 +46,10 @@ module lab1 #(
     // --------------------------------------------------
     // Control Unit (FSM)
     // --------------------------------------------------
-    FibFSM #(
+    //FibFSM #(
+	 //SubtractFSM #(
+	 //ShiftFSM #(
+	 BitMaskFSM #(
         .BIT_WIDTH(BIT_WIDTH),
         .SEL_WIDTH(SEL_WIDTH),
         .OPCODE_WIDTH(OPCODE_WIDTH)

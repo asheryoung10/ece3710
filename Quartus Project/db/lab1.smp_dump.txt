@@ -1,5 +1,5 @@
 
-State Machine - |lab1|FibFSM:fsm|state
+State Machine - |FibFSM|state
 Name state.DONE state.CALC_FIB state.INIT_R1 state.INIT_REGS 
 state.INIT_REGS 0 0 0 0 
 state.INIT_R1 0 0 1 1 

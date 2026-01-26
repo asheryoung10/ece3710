@@ -4,203 +4,87 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "seven_seg_0[0]",
+					"name" : "SrcAddr[0]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_0[1]",
+					"name" : "SrcAddr[1]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_0[2]",
+					"name" : "SrcAddr[2]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_0[3]",
+					"name" : "SrcAddr[3]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_0[4]",
+					"name" : "DestAddr[0]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_0[5]",
+					"name" : "DestAddr[1]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_0[6]",
+					"name" : "DestAddr[2]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_1[0]",
+					"name" : "DestAddr[3]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_1[1]",
+					"name" : "WriteAddr[0]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_1[2]",
+					"name" : "WriteAddr[1]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_1[3]",
+					"name" : "WriteAddr[2]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_1[4]",
+					"name" : "WriteAddr[3]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_1[5]",
+					"name" : "regReset",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_1[6]",
+					"name" : "regWriteEn",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_2[0]",
+					"name" : "ImmMuxSel",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_2[1]",
+					"name" : "ImmData[0]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_2[2]",
+					"name" : "op[0]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_2[3]",
+					"name" : "op[2]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_2[4]",
+					"name" : "outputState[0]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_2[5]",
+					"name" : "outputState[1]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg_2[6]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg_3[0]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg_3[1]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg_3[2]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg_3[3]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg_3[4]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg_3[5]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg_3[6]",
-					"strict" : false
-				},
-				{
-					"name" : "fsmState[0]",
-					"strict" : false
-				},
-				{
-					"name" : "fsmState[1]",
-					"strict" : false
-				},
-				{
-					"name" : "switch[0]",
-					"strict" : false
-				},
-				{
-					"name" : "switch[1]",
-					"strict" : false
-				},
-				{
-					"name" : "switch[2]",
-					"strict" : false
-				},
-				{
-					"name" : "switch[3]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[0]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[1]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[2]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[3]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[4]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[5]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[6]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[7]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[8]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[9]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[10]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[11]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[12]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[13]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[14]",
-					"strict" : false
-				},
-				{
-					"name" : "currentResult[15]",
+					"name" : "userInput[0]",
 					"strict" : false
 				},
 				{
@@ -208,23 +92,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[0]",
-					"strict" : false
-				},
-				{
 					"name" : "reset",
 					"strict" : false
 				},
 				{
-					"name" : "switches[1]",
+					"name" : "userInput[1]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[2]",
+					"name" : "userInput[2]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[3]",
+					"name" : "userInput[3]",
 					"strict" : false
 				}
 			]
