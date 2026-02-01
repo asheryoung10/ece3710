@@ -1,0 +1,60 @@
+//======================================================
+// tb_top.v
+// Testbench: copy fib[0..15] -> [512..527]
+//======================================================
+
+`timescale 1ns/1ps
+
+module tb_top;
+
+    reg clk;
+    reg rst;
+    wire done;
+
+    // DUT
+    top dut (
+        .clk  (clk),
+        .rst  (rst),
+        .done (done)
+    );
+
+    // Clock: 100 MHz
+    initial begin
+        clk = 1'b0;
+        forever #5 clk = ~clk;
+    end
+
+    // Reset
+    initial begin
+        rst = 1'b1;
+        #20;
+        rst = 1'b0;
+    end
+
+    // Wait for FSM to finish
+    initial begin
+        wait(done);
+        #10;
+        $display("FSM DONE");
+        dump_memory();
+        $stop;
+    end
+
+	task dump_memory;
+		 integer i;
+		 begin
+			  $display("---- Source: mem[0..15] ----");
+			  for (i = 0; i < 16; i = i + 1) begin
+					$display("mem[%0d] = %h", i, dut.bram.ram[i]);
+					//$display("mem[%0d] = %h", i, dut.bram.bram0.ram[i]);
+			  end
+
+			  $display("---- Destination: mem[512..527] ----");
+			  for (i = 0; i < 16; i = i + 1) begin
+					$display("mem[%0d] = %h", 512+i, dut.bram.ram[512+i]);
+					//$display("mem[%0d] = %h", 512+i, dut.bram.bram1.ram[i]);
+			  end
+
+		 end
+	endtask
+endmodule

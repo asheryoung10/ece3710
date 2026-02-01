@@ -1,0 +1,57 @@
+//======================================================
+// top.v
+// Connects fib_copy_fsm to true dual-port BRAM
+//======================================================
+
+module top (
+    input clk,
+    input rst,
+    output done
+);
+
+    // -----------------------------
+    // Wires between FSM and BRAM
+    // -----------------------------
+    wire [10:0] addr_a;
+    wire [15:0] din_a;
+    wire [15:0] dout_a;
+    wire        en_a;
+    wire        we_a;
+
+    // -----------------------------
+    // FSM
+    // -----------------------------
+    fib_copy_fsm fsm (
+        .clk    (clk),
+        .rst    (rst),
+        .addr_a (addr_a),
+        .din_a  (din_a),
+        .en_a   (en_a),
+        .we_a   (we_a),
+        .dout_a (dout_a),
+        .done   (done)
+    );
+
+    // -----------------------------
+    // BRAM
+    // -----------------------------
+    memory #(
+    ) bram (
+        // Port A (FSM controlled)
+        .addr_a (addr_a),
+        .din_a  (din_a),
+        .en_a   (en_a),
+        .we_a   (we_a),
+        .dout_a (dout_a),
+
+        // Port B (unused for now)
+        .addr_b (11'd0),
+        .din_b  (16'd0),
+        .en_b   (1'b0),
+        .we_b   (1'b0),
+        .dout_b (),
+
+        .clk    (clk)
+    );
+
+endmodule
