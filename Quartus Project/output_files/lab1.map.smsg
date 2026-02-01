@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at fib_copy_fsm.v(43): always construct contains both blocking and non-blocking assignments File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/fib_copy_fsm.v Line: 43

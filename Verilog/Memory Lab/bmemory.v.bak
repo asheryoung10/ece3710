@@ -1,0 +1,102 @@
+//======================================================
+// memory.v
+// True Dual-Port Synchronous BRAM (2 × 512 × 16)
+// Verilog-2001 ONLY
+//======================================================
+
+module bmemory
+#(
+    parameter DATA_WIDTH = 16,
+    parameter ADDR_WIDTH = 9   // 512 words per block
+)
+(
+    // -------- Port A --------
+    input  [ADDR_WIDTH:0] addr_a,  // 10-bit: [9]=block select, [8:0]=offset
+    input  [DATA_WIDTH-1:0] din_a,
+    input                    en_a,
+    input                    we_a,
+    output reg [DATA_WIDTH-1:0] dout_a,
+
+    // -------- Port B --------
+    input  [ADDR_WIDTH:0] addr_b,  // 10-bit: [9]=block select, [8:0]=offset
+    input  [DATA_WIDTH-1:0] din_b,
+    input                    en_b,
+    input                    we_b,
+    output reg [DATA_WIDTH-1:0] dout_b,
+
+    input clk
+);
+
+    // --------------------------------------------------
+    // Declare two separate RAM blocks
+    // --------------------------------------------------
+    reg [DATA_WIDTH-1:0] ram0 [0:(1<<ADDR_WIDTH)-1]; // Block 0: addresses 0-511
+    reg [DATA_WIDTH-1:0] ram1 [0:(1<<ADDR_WIDTH)-1]; // Block 1: addresses 512-1023
+
+    // --------------------------------------------------
+    // Memory Initialization
+    // --------------------------------------------------
+    initial begin
+        // Initialize both blocks from the same file
+        // The file can contain 1024 lines; first 512 go to ram0, next 512 to ram1
+        $readmemh("mem_init.hex", ram0, 0, (1<<ADDR_WIDTH)-1);
+        $readmemh("mem_init.hex", ram1, 0, (1<<ADDR_WIDTH)-1);
+    end
+
+    // --------------------------------------------------
+    // Port A : Read / Write
+    // --------------------------------------------------
+    always @(posedge clk) begin
+        if (en_a) begin
+            if (addr_a[ADDR_WIDTH] == 1'b0) begin
+                // Block 0
+                if (we_a) begin
+                    ram0[addr_a[ADDR_WIDTH-1:0]] <= din_a;
+                    dout_a <= din_a;
+                end
+                else begin
+                    dout_a <= ram0[addr_a[ADDR_WIDTH-1:0]];
+                end
+            end
+            else begin
+                // Block 1
+                if (we_a) begin
+                    ram1[addr_a[ADDR_WIDTH-1:0]] <= din_a;
+                    dout_a <= din_a;
+                end
+                else begin
+                    dout_a <= ram1[addr_a[ADDR_WIDTH-1:0]];
+                end
+            end
+        end
+    end
+
+    // --------------------------------------------------
+    // Port B : Read / Write
+    // --------------------------------------------------
+    always @(posedge clk) begin
+        if (en_b) begin
+            if (addr_b[ADDR_WIDTH] == 1'b0) begin
+                // Block 0
+                if (we_b) begin
+                    ram0[addr_b[ADDR_WIDTH-1:0]] <= din_b;
+                    dout_b <= din_b;
+                end
+                else begin
+                    dout_b <= ram0[addr_b[ADDR_WIDTH-1:0]];
+                end
+            end
+            else begin
+                // Block 1
+                if (we_b) begin
+                    ram1[addr_b[ADDR_WIDTH-1:0]] <= din_b;
+                    dout_b <= din_b;
+                end
+                else begin
+                    dout_b <= ram1[addr_b[ADDR_WIDTH-1:0]];
+                end
+            end
+        end
+    end
+
+endmodule

@@ -4,87 +4,119 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "SrcAddr[0]",
+					"name" : "done",
 					"strict" : false
 				},
 				{
-					"name" : "SrcAddr[1]",
+					"name" : "seven_seg_0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "SrcAddr[2]",
+					"name" : "seven_seg_0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "SrcAddr[3]",
+					"name" : "seven_seg_0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "DestAddr[0]",
+					"name" : "seven_seg_0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "DestAddr[1]",
+					"name" : "seven_seg_0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "DestAddr[2]",
+					"name" : "seven_seg_0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "DestAddr[3]",
+					"name" : "seven_seg_0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteAddr[0]",
+					"name" : "seven_seg_1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteAddr[1]",
+					"name" : "seven_seg_1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteAddr[2]",
+					"name" : "seven_seg_1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteAddr[3]",
+					"name" : "seven_seg_1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "regReset",
+					"name" : "seven_seg_1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "regWriteEn",
+					"name" : "seven_seg_1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ImmMuxSel",
+					"name" : "seven_seg_1[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ImmData[0]",
+					"name" : "seven_seg_2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "op[0]",
+					"name" : "seven_seg_2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "op[2]",
+					"name" : "seven_seg_2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "outputState[0]",
+					"name" : "seven_seg_2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "outputState[1]",
+					"name" : "seven_seg_2[4]",
 					"strict" : false
 				},
 				{
-					"name" : "userInput[0]",
+					"name" : "seven_seg_2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg_2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg_3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg_3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg_3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg_3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg_3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg_3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg_3[6]",
 					"strict" : false
 				},
 				{
@@ -92,19 +124,23 @@
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "rst",
 					"strict" : false
 				},
 				{
-					"name" : "userInput[1]",
+					"name" : "switches[0]",
 					"strict" : false
 				},
 				{
-					"name" : "userInput[2]",
+					"name" : "switches[1]",
 					"strict" : false
 				},
 				{
-					"name" : "userInput[3]",
+					"name" : "switches[2]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[3]",
 					"strict" : false
 				}
 			]

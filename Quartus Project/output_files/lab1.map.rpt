@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab1
-Sun Jan 25 20:43:37 2026
+Sun Feb  1 14:28:36 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -13,15 +13,25 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |FibFSM|state
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Parameter Settings for User Entity Instance: Top-level Entity: |FibFSM
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |top|fib_copy_fsm:fsm|state
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for bmemory:bram|bram:bram0|altsyncram:ram_rtl_0|altsyncram_k942:auto_generated
+ 16. Parameter Settings for User Entity Instance: bmemory:bram
+ 17. Parameter Settings for User Entity Instance: bmemory:bram|bram:bram0
+ 18. Parameter Settings for User Entity Instance: bmemory:bram|bram:bram1
+ 19. Parameter Settings for Inferred Entity Instance: bmemory:bram|bram:bram0|altsyncram:ram_rtl_0
+ 20. altsyncram Parameter Settings by Entity Instance
+ 21. Port Connectivity Checks: "bin16_to_bcd5:converter"
+ 22. Port Connectivity Checks: "bmemory:bram"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -48,16 +58,16 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Jan 25 20:43:37 2026           ;
+; Analysis & Synthesis Status     ; Successful - Sun Feb  1 14:28:36 2026           ;
 ; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                   ; lab1                                            ;
-; Top-level Entity Name           ; FibFSM                                          ;
+; Top-level Entity Name           ; top                                             ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 28                                              ;
-; Total pins                      ; 48                                              ;
+; Total registers                 ; 39                                              ;
+; Total pins                      ; 35                                              ;
 ; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0                                               ;
+; Total block memory bits         ; 512                                             ;
 ; Total DSP Blocks                ; 0                                               ;
 ; Total HSSI RX PCSs              ; 0                                               ;
 ; Total HSSI PMA RX Deserializers ; 0                                               ;
@@ -74,7 +84,7 @@ on the Quartus Prime software download page.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; FibFSM             ; lab1               ;
+; Top-level entity name                                                           ; top                ; lab1               ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -172,13 +182,29 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                     ;
-+---------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path      ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                  ; Library ;
-+---------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
-; ../Verilog/Register File Lab/FibFSM.v ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v ;         ;
-+---------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                       ;
++-------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path          ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                 ; Library ;
++-------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------+---------+
+; ../Verilog/Memory Lab/seven_seg_decoder.v ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/seven_seg_decoder.v             ;         ;
+; ../Verilog/Memory Lab/bin16_to_bcd5.v     ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bin16_to_bcd5.v                 ;         ;
+; ../Verilog/Memory Lab/bram.v              ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bram.v                          ;         ;
+; ../Verilog/Memory Lab/fib_copy_fsm.v      ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/fib_copy_fsm.v                  ;         ;
+; ../Verilog/Memory Lab/top.v               ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/top.v                           ;         ;
+; ../Verilog/Memory Lab/bmemory.v           ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bmemory.v                       ;         ;
+; altsyncram.tdf                            ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altsyncram.tdf                        ;         ;
+; stratix_ram_block.inc                     ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                 ;         ;
+; lpm_mux.inc                               ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mux.inc                           ;         ;
+; lpm_decode.inc                            ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_decode.inc                        ;         ;
+; aglobal251.inc                            ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/aglobal251.inc                        ;         ;
+; a_rdenreg.inc                             ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/a_rdenreg.inc                         ;         ;
+; altrom.inc                                ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altrom.inc                            ;         ;
+; altram.inc                                ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altram.inc                            ;         ;
+; altdpram.inc                              ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altdpram.inc                          ;         ;
+; db/altsyncram_k942.tdf                    ; yes             ; Auto-Generated Megafunction                           ; C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_k942.tdf             ;         ;
+; db/lab1.ram0_bram_9a7723e7.hdl.mif        ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/lab1.ram0_bram_9a7723e7.hdl.mif ;         ;
++-------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -186,49 +212,71 @@ on the Quartus Prime software download page.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 14        ;
+; Estimate of Logic utilization (ALMs needed) ; 78        ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 23        ;
+; Combinational ALUT usage for logic          ; 114       ;
 ;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 3         ;
-;     -- 5 input functions                    ; 6         ;
-;     -- 4 input functions                    ; 3         ;
-;     -- <=3 input functions                  ; 11        ;
+;     -- 6 input functions                    ; 38        ;
+;     -- 5 input functions                    ; 19        ;
+;     -- 4 input functions                    ; 40        ;
+;     -- <=3 input functions                  ; 17        ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 28        ;
+; Dedicated logic registers                   ; 39        ;
 ;                                             ;           ;
-; I/O pins                                    ; 48        ;
+; I/O pins                                    ; 35        ;
+; Total MLAB memory bits                      ; 0         ;
+; Total block memory bits                     ; 512       ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 28        ;
-; Total fan-out                               ; 233       ;
-; Average fan-out                             ; 1.59      ;
+; Maximum fan-out                             ; 55        ;
+; Total fan-out                               ; 947       ;
+; Average fan-out                             ; 3.96      ;
 +---------------------------------------------+-----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |FibFSM                    ; 23 (23)             ; 28 (28)                   ; 0                 ; 0          ; 48   ; 0            ; |FibFSM             ; FibFSM      ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                              ; Entity Name       ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------+-------------------+--------------+
+; |top                                         ; 114 (1)             ; 39 (0)                    ; 512               ; 0          ; 35   ; 0            ; |top                                                                             ; top               ; work         ;
+;    |bin16_to_bcd5:converter|                 ; 62 (62)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|bin16_to_bcd5:converter                                                     ; bin16_to_bcd5     ; work         ;
+;    |bmemory:bram|                            ; 1 (1)               ; 0 (0)                     ; 512               ; 0          ; 0    ; 0            ; |top|bmemory:bram                                                                ; bmemory           ; work         ;
+;       |bram:bram0|                           ; 0 (0)               ; 0 (0)                     ; 512               ; 0          ; 0    ; 0            ; |top|bmemory:bram|bram:bram0                                                     ; bram              ; work         ;
+;          |altsyncram:ram_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 512               ; 0          ; 0    ; 0            ; |top|bmemory:bram|bram:bram0|altsyncram:ram_rtl_0                                ; altsyncram        ; work         ;
+;             |altsyncram_k942:auto_generated| ; 0 (0)               ; 0 (0)                     ; 512               ; 0          ; 0    ; 0            ; |top|bmemory:bram|bram:bram0|altsyncram:ram_rtl_0|altsyncram_k942:auto_generated ; altsyncram_k942   ; work         ;
+;    |fib_copy_fsm:fsm|                        ; 22 (22)             ; 39 (39)                   ; 0                 ; 0          ; 0    ; 0            ; |top|fib_copy_fsm:fsm                                                            ; fib_copy_fsm      ; work         ;
+;    |seven_seg_decoder:seg0|                  ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|seven_seg_decoder:seg0                                                      ; seven_seg_decoder ; work         ;
+;    |seven_seg_decoder:seg1|                  ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|seven_seg_decoder:seg1                                                      ; seven_seg_decoder ; work         ;
+;    |seven_seg_decoder:seg2|                  ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|seven_seg_decoder:seg2                                                      ; seven_seg_decoder ; work         ;
+;    |seven_seg_decoder:seg3|                  ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|seven_seg_decoder:seg3                                                      ; seven_seg_decoder ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                       ;
++----------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+------------------------------------+
+; Name                                                                                   ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                ;
++----------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+------------------------------------+
+; bmemory:bram|bram:bram0|altsyncram:ram_rtl_0|altsyncram_k942:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port ; 512          ; 16           ; 512          ; 16           ; 8192 ; db/lab1.ram0_bram_9a7723e7.hdl.mif ;
++----------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+------------------------------------+
+
+
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------+
-; State Machine - |FibFSM|state                                                   ;
-+-----------------+------------+----------------+---------------+-----------------+
-; Name            ; state.DONE ; state.CALC_FIB ; state.INIT_R1 ; state.INIT_REGS ;
-+-----------------+------------+----------------+---------------+-----------------+
-; state.INIT_REGS ; 0          ; 0              ; 0             ; 0               ;
-; state.INIT_R1   ; 0          ; 0              ; 1             ; 1               ;
-; state.CALC_FIB  ; 0          ; 1              ; 0             ; 1               ;
-; state.DONE      ; 1          ; 0              ; 0             ; 1               ;
-+-----------------+------------+----------------+---------------+-----------------+
++------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|fib_copy_fsm:fsm|state                                                                ;
++--------------------+-------------------+--------------------+------------------+------------+--------------+
+; Name               ; state.APPLY_WRITE ; state.CAPTURE_READ ; state.SETUP_READ ; state.IDLE ; state.FINISH ;
++--------------------+-------------------+--------------------+------------------+------------+--------------+
+; state.IDLE         ; 0                 ; 0                  ; 0                ; 0          ; 0            ;
+; state.SETUP_READ   ; 0                 ; 0                  ; 1                ; 1          ; 0            ;
+; state.CAPTURE_READ ; 0                 ; 1                  ; 0                ; 1          ; 0            ;
+; state.APPLY_WRITE  ; 1                 ; 0                  ; 0                ; 1          ; 0            ;
+; state.FINISH       ; 0                 ; 0                  ; 0                ; 1          ; 1            ;
++--------------------+-------------------+--------------------+------------------+------------+--------------+
 
 
 +---------------------------------------------------------------------------------+
@@ -236,53 +284,29 @@ Encoding Type:  One-Hot
 +----------------------------------------+----------------------------------------+
 ; Register name                          ; Reason for Removal                     ;
 +----------------------------------------+----------------------------------------+
-; ImmData[15]~reg0                       ; Stuck at GND due to stuck port data_in ;
-; ImmData[14]~reg0                       ; Stuck at GND due to stuck port data_in ;
-; ImmData[13]~reg0                       ; Stuck at GND due to stuck port data_in ;
-; ImmData[12]~reg0                       ; Stuck at GND due to stuck port data_in ;
-; ImmData[11]~reg0                       ; Stuck at GND due to stuck port data_in ;
-; ImmData[10]~reg0                       ; Stuck at GND due to stuck port data_in ;
-; ImmData[9]~reg0                        ; Stuck at GND due to stuck port data_in ;
-; ImmData[8]~reg0                        ; Stuck at GND due to stuck port data_in ;
-; ImmData[7]~reg0                        ; Stuck at GND due to stuck port data_in ;
-; ImmData[6]~reg0                        ; Stuck at GND due to stuck port data_in ;
-; ImmData[5]~reg0                        ; Stuck at GND due to stuck port data_in ;
-; ImmData[4]~reg0                        ; Stuck at GND due to stuck port data_in ;
-; ImmData[3]~reg0                        ; Stuck at GND due to stuck port data_in ;
-; ImmData[2]~reg0                        ; Stuck at GND due to stuck port data_in ;
-; ImmData[1]~reg0                        ; Stuck at GND due to stuck port data_in ;
-; op[7]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; op[6]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; op[5]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; op[4]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; op[3]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; op[1]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; outputState[2]~reg0                    ; Stuck at GND due to stuck port data_in ;
-; state~6                                ; Lost fanout                            ;
-; state~7                                ; Lost fanout                            ;
-; state~8                                ; Lost fanout                            ;
-; Total Number of Removed Registers = 25 ;                                        ;
+; fib_copy_fsm:fsm|addr_a[5..9]          ; Stuck at GND due to stuck port data_in ;
+; bmemory:bram|bram:bram1|q_a[0..15]     ; Lost fanout                            ;
+; fib_copy_fsm:fsm|we_b                  ; Merged with fib_copy_fsm:fsm|en_b      ;
+; fib_copy_fsm:fsm|addr_b[6..8]          ; Merged with fib_copy_fsm:fsm|addr_b[5] ;
+; fib_copy_fsm:fsm|addr_b[5]             ; Stuck at GND due to stuck port data_in ;
+; fib_copy_fsm:fsm|we_a                  ; Stuck at GND due to stuck port data_in ;
+; fib_copy_fsm:fsm|en_a                  ; Lost fanout                            ;
+; fib_copy_fsm:fsm|state~2               ; Lost fanout                            ;
+; fib_copy_fsm:fsm|state~3               ; Lost fanout                            ;
+; Total Number of Removed Registers = 30 ;                                        ;
 +----------------------------------------+----------------------------------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                           ;
-+------------------+---------------------------+----------------------------------------+
-; Register name    ; Reason for Removal        ; Registers Removed due to This Register ;
-+------------------+---------------------------+----------------------------------------+
-; ImmData[15]~reg0 ; Stuck at GND              ; ImmData[1]~reg0                        ;
-;                  ; due to stuck port data_in ;                                        ;
-; ImmData[13]~reg0 ; Stuck at GND              ; ImmData[2]~reg0                        ;
-;                  ; due to stuck port data_in ;                                        ;
-; ImmData[11]~reg0 ; Stuck at GND              ; ImmData[3]~reg0                        ;
-;                  ; due to stuck port data_in ;                                        ;
-; ImmData[9]~reg0  ; Stuck at GND              ; ImmData[4]~reg0                        ;
-;                  ; due to stuck port data_in ;                                        ;
-; ImmData[7]~reg0  ; Stuck at GND              ; ImmData[5]~reg0                        ;
-;                  ; due to stuck port data_in ;                                        ;
-; op[7]~reg0       ; Stuck at GND              ; op[5]~reg0                             ;
-;                  ; due to stuck port data_in ;                                        ;
-+------------------+---------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                ;
++----------------------------+---------------------------+-------------------------------------------------------------------+
+; Register name              ; Reason for Removal        ; Registers Removed due to This Register                            ;
++----------------------------+---------------------------+-------------------------------------------------------------------+
+; fib_copy_fsm:fsm|addr_a[9] ; Stuck at GND              ; bmemory:bram|bram:bram1|q_a[15], bmemory:bram|bram:bram1|q_a[14], ;
+;                            ; due to stuck port data_in ; bmemory:bram|bram:bram1|q_a[13], bmemory:bram|bram:bram1|q_a[11], ;
+;                            ;                           ; bmemory:bram|bram:bram1|q_a[10], bmemory:bram|bram:bram1|q_a[8],  ;
+;                            ;                           ; bmemory:bram|bram:bram1|q_a[7], fib_copy_fsm:fsm|en_a             ;
++----------------------------+---------------------------+-------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -290,36 +314,175 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 28    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 39    ;
+; Number of registers using Synchronous Clear  ; 31    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 28    ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 26    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; regIndex[1]                            ; 13      ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
++-------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                  ;
++------------------------------------+-----------------------------------+------+
+; Register Name                      ; Megafunction                      ; Type ;
++------------------------------------+-----------------------------------+------+
+; bmemory:bram|bram:bram0|q_a[0..15] ; bmemory:bram|bram:bram0|ram_rtl_0 ; RAM  ;
++------------------------------------+-----------------------------------+------+
 
 
-+------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |FibFSM ;
-+----------------+-------+-----------------------------------------------+
-; Parameter Name ; Value ; Type                                          ;
-+----------------+-------+-----------------------------------------------+
-; BIT_WIDTH      ; 16    ; Signed Integer                                ;
-; SEL_WIDTH      ; 4     ; Signed Integer                                ;
-; OPCODE_WIDTH   ; 8     ; Signed Integer                                ;
-+----------------+-------+-----------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; 3:1                ; 21 bits   ; 42 LEs        ; 0 LEs                ; 42 LEs                 ; Yes        ; |top|fib_copy_fsm:fsm|din_b[7]  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|fib_copy_fsm:fsm|addr_a[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Source assignments for bmemory:bram|bram:bram0|altsyncram:ram_rtl_0|altsyncram_k942:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------+
+; Assignment                      ; Value              ; From ; To                                   ;
++---------------------------------+--------------------+------+--------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                    ;
++---------------------------------+--------------------+------+--------------------------------------+
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bmemory:bram ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; DATA_WIDTH     ; 16    ; Signed Integer                   ;
+; ADDR_WIDTH     ; 10    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bmemory:bram|bram:bram0 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; DATA_WIDTH     ; 16    ; Signed Integer                              ;
+; ADDR_WIDTH     ; 9     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bmemory:bram|bram:bram1 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; DATA_WIDTH     ; 16    ; Signed Integer                              ;
+; ADDR_WIDTH     ; 9     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bmemory:bram|bram:bram0|altsyncram:ram_rtl_0 ;
++------------------------------------+------------------------------------+---------------------+
+; Parameter Name                     ; Value                              ; Type                ;
++------------------------------------+------------------------------------+---------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                  ; Untyped             ;
+; AUTO_CARRY_CHAINS                  ; ON                                 ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                ; ON                                 ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                ; IGNORE_CASCADE      ;
+; WIDTH_BYTEENA                      ; 1                                  ; Untyped             ;
+; OPERATION_MODE                     ; BIDIR_DUAL_PORT                    ; Untyped             ;
+; WIDTH_A                            ; 16                                 ; Untyped             ;
+; WIDTHAD_A                          ; 9                                  ; Untyped             ;
+; NUMWORDS_A                         ; 512                                ; Untyped             ;
+; OUTDATA_REG_A                      ; UNREGISTERED                       ; Untyped             ;
+; ADDRESS_ACLR_A                     ; NONE                               ; Untyped             ;
+; OUTDATA_ACLR_A                     ; NONE                               ; Untyped             ;
+; WRCONTROL_ACLR_A                   ; NONE                               ; Untyped             ;
+; INDATA_ACLR_A                      ; NONE                               ; Untyped             ;
+; BYTEENA_ACLR_A                     ; NONE                               ; Untyped             ;
+; WIDTH_B                            ; 16                                 ; Untyped             ;
+; WIDTHAD_B                          ; 9                                  ; Untyped             ;
+; NUMWORDS_B                         ; 512                                ; Untyped             ;
+; INDATA_REG_B                       ; CLOCK0                             ; Untyped             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK0                             ; Untyped             ;
+; RDCONTROL_REG_B                    ; CLOCK1                             ; Untyped             ;
+; ADDRESS_REG_B                      ; CLOCK0                             ; Untyped             ;
+; OUTDATA_REG_B                      ; UNREGISTERED                       ; Untyped             ;
+; BYTEENA_REG_B                      ; CLOCK1                             ; Untyped             ;
+; INDATA_ACLR_B                      ; NONE                               ; Untyped             ;
+; WRCONTROL_ACLR_B                   ; NONE                               ; Untyped             ;
+; ADDRESS_ACLR_B                     ; NONE                               ; Untyped             ;
+; OUTDATA_ACLR_B                     ; NONE                               ; Untyped             ;
+; RDCONTROL_ACLR_B                   ; NONE                               ; Untyped             ;
+; BYTEENA_ACLR_B                     ; NONE                               ; Untyped             ;
+; WIDTH_BYTEENA_A                    ; 1                                  ; Untyped             ;
+; WIDTH_BYTEENA_B                    ; 1                                  ; Untyped             ;
+; RAM_BLOCK_TYPE                     ; AUTO                               ; Untyped             ;
+; BYTE_SIZE                          ; 8                                  ; Untyped             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                           ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ               ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ               ; Untyped             ;
+; INIT_FILE                          ; db/lab1.ram0_bram_9a7723e7.hdl.mif ; Untyped             ;
+; INIT_FILE_LAYOUT                   ; PORT_A                             ; Untyped             ;
+; MAXIMUM_DEPTH                      ; 0                                  ; Untyped             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                             ; Untyped             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                             ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                             ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                             ; Untyped             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                    ; Untyped             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                    ; Untyped             ;
+; ENABLE_ECC                         ; FALSE                              ; Untyped             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                              ; Untyped             ;
+; WIDTH_ECCSTATUS                    ; 3                                  ; Untyped             ;
+; DEVICE_FAMILY                      ; Cyclone V                          ; Untyped             ;
+; CBXI_PARAMETER                     ; altsyncram_k942                    ; Untyped             ;
++------------------------------------+------------------------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                         ;
++-------------------------------------------+----------------------------------------------+
+; Name                                      ; Value                                        ;
++-------------------------------------------+----------------------------------------------+
+; Number of entity instances                ; 1                                            ;
+; Entity Instance                           ; bmemory:bram|bram:bram0|altsyncram:ram_rtl_0 ;
+;     -- OPERATION_MODE                     ; BIDIR_DUAL_PORT                              ;
+;     -- WIDTH_A                            ; 16                                           ;
+;     -- NUMWORDS_A                         ; 512                                          ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                 ;
+;     -- WIDTH_B                            ; 16                                           ;
+;     -- NUMWORDS_B                         ; 512                                          ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                     ;
++-------------------------------------------+----------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin16_to_bcd5:converter"                                                                                 ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; bcd4 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "bmemory:bram"            ;
++--------+--------+----------+------------------------+
+; Port   ; Type   ; Severity ; Details                ;
++--------+--------+----------+------------------------+
+; din_a  ; Input  ; Info     ; Stuck at GND           ;
+; dout_b ; Output ; Info     ; Explicitly unconnected ;
++--------+--------+----------+------------------------+
 
 
 +-----------------------------------------------------+
@@ -327,21 +490,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 28                          ;
-;     CLR               ; 28                          ;
-; arriav_lcell_comb     ; 24                          ;
-;     normal            ; 24                          ;
+; arriav_ff             ; 39                          ;
+;     ENA               ; 5                           ;
+;     ENA SCLR          ; 21                          ;
+;     SCLR              ; 10                          ;
+;     plain             ; 3                           ;
+; arriav_lcell_comb     ; 122                         ;
+;     normal            ; 122                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 3                           ;
-;         5 data inputs ; 6                           ;
-;         6 data inputs ; 3                           ;
-; boundary_port         ; 48                          ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 40                          ;
+;         5 data inputs ; 19                          ;
+;         6 data inputs ; 38                          ;
+; boundary_port         ; 35                          ;
+; stratixv_ram_block    ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.60                        ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 4.76                        ;
 +-----------------------+-----------------------------+
 
 
@@ -350,7 +517,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -360,64 +527,103 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Sun Jan 25 20:43:32 2026
+    Info: Processing started: Sun Feb  1 14:28:29 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/register file lab/seven_seg_decoder.v
-    Info (12023): Found entity 1: seven_seg_decoder File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/seven_seg_decoder.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/register file lab/register_file.v
-    Info (12023): Found entity 1: register_file File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/register_file.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/register file lab/lab1.v
-    Info (12023): Found entity 1: lab1 File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/lab1.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/register file lab/immmux.v
-    Info (12023): Found entity 1: ImmMux File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ImmMux.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/register file lab/fibfsm.v
-    Info (12023): Found entity 1: FibFSM File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/register file lab/alu.v
-    Info (12023): Found entity 1: alu File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/ALU.v Line: 2
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/register file lab/bin16_to_bcd5.v
-    Info (12023): Found entity 1: bin16_to_bcd5 File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/bin16_to_bcd5.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/school work/ece3710/verilog/register file lab/subtractfsm.v
-    Info (12023): Found entity 1: SubtractFSM File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/SubtractFSM.v Line: 1
-Info (12127): Elaborating entity "FibFSM" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at FibFSM.v(94): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 94
-Warning (10230): Verilog HDL assignment warning at FibFSM.v(95): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 95
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "ImmData[1]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "ImmData[2]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "ImmData[3]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "ImmData[4]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "ImmData[5]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "ImmData[6]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "ImmData[7]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "ImmData[8]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "ImmData[9]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "ImmData[10]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "ImmData[11]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "ImmData[12]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "ImmData[13]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "ImmData[14]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "ImmData[15]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "op[1]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "op[3]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "op[4]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "op[5]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "op[6]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "op[7]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
-    Warning (13410): Pin "outputState[2]" is stuck at GND File: C:/Users/asher/Desktop/School Work/ece3710/Verilog/Register File Lab/FibFSM.v Line: 57
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/memory lab/seven_seg_decoder.v
+    Info (12023): Found entity 1: seven_seg_decoder File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/seven_seg_decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/memory lab/bin16_to_bcd5.v
+    Info (12023): Found entity 1: bin16_to_bcd5 File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bin16_to_bcd5.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/memory lab/bram.v
+    Info (12023): Found entity 1: bram File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bram.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/memory lab/memory.v
+    Info (12023): Found entity 1: memory File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/memory.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/memory lab/fib_copy_fsm.v
+    Info (12023): Found entity 1: fib_copy_fsm File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/fib_copy_fsm.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/memory lab/top.v
+    Info (12023): Found entity 1: top File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/top.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/memory lab/tb_top.v
+    Info (12023): Found entity 1: tb_top File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/tb_top.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/memory lab/bmemory.v
+    Info (12023): Found entity 1: bmemory File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bmemory.v Line: 7
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Info (12128): Elaborating entity "fib_copy_fsm" for hierarchy "fib_copy_fsm:fsm" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/top.v Line: 54
+Info (12128): Elaborating entity "bmemory" for hierarchy "bmemory:bram" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/top.v Line: 75
+Info (12128): Elaborating entity "bram" for hierarchy "bmemory:bram|bram:bram0" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bmemory.v Line: 53
+Info (12128): Elaborating entity "bin16_to_bcd5" for hierarchy "bin16_to_bcd5:converter" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/top.v Line: 88
+Warning (10230): Verilog HDL assignment warning at bin16_to_bcd5.v(20): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bin16_to_bcd5.v Line: 20
+Warning (10230): Verilog HDL assignment warning at bin16_to_bcd5.v(21): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bin16_to_bcd5.v Line: 21
+Warning (10230): Verilog HDL assignment warning at bin16_to_bcd5.v(22): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bin16_to_bcd5.v Line: 22
+Warning (10230): Verilog HDL assignment warning at bin16_to_bcd5.v(23): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bin16_to_bcd5.v Line: 23
+Warning (10230): Verilog HDL assignment warning at bin16_to_bcd5.v(24): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bin16_to_bcd5.v Line: 24
+Info (12128): Elaborating entity "seven_seg_decoder" for hierarchy "seven_seg_decoder:seg0" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/top.v Line: 93
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "bmemory:bram|bram:bram0|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to BIDIR_DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTH_B set to 16
+        Info (286033): Parameter WIDTHAD_A set to 9
+        Info (286033): Parameter WIDTHAD_B set to 9
+        Info (286033): Parameter NUMWORDS_A set to 512
+        Info (286033): Parameter NUMWORDS_B set to 512
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_REG_B set to CLOCK0
+        Info (286033): Parameter WRCONTROL_WRADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter INIT_FILE set to db/lab1.ram0_bram_9a7723e7.hdl.mif
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+Info (12130): Elaborated megafunction instantiation "bmemory:bram|bram:bram0|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "bmemory:bram|bram:bram0|altsyncram:ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "BIDIR_DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTH_B" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "9"
+    Info (12134): Parameter "WIDTHAD_B" = "9"
+    Info (12134): Parameter "NUMWORDS_A" = "512"
+    Info (12134): Parameter "NUMWORDS_B" = "512"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_REG_B" = "CLOCK0"
+    Info (12134): Parameter "WRCONTROL_WRADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/lab1.ram0_bram_9a7723e7.hdl.mif"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_k942.tdf
+    Info (12023): Found entity 1: altsyncram_k942 File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_k942.tdf Line: 28
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (17049): 19 registers lost all their fanouts during netlist optimizations.
+Info (17036): Removed 4 MSB VCC or GND address nodes from RAM block "bmemory:bram|bram:bram0|altsyncram:ram_rtl_0|altsyncram_k942:auto_generated|ALTSYNCRAM" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_k942.tdf Line: 40
+Info (144001): Generated suppressed messages file C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/output_files/lab1.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 77 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 186 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 42 output pins
-    Info (21061): Implemented 29 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 4889 megabytes
-    Info: Processing ended: Sun Jan 25 20:43:37 2026
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:13
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 135 logic cells
+    Info (21064): Implemented 16 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4886 megabytes
+    Info: Processing ended: Sun Feb  1 14:28:36 2026
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:14
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/output_files/lab1.map.smsg.
 
 

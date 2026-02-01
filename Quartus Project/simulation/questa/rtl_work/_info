@@ -27,6 +27,30 @@ R0
 R1
 R0
 R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
 !s12c _opt
 R1
 !s11f vlog 2025.2 2025.05, May 31 2025
@@ -57,285 +81,208 @@ R2
 T_opt1
 !i145 1
 !i144 0
-!s110 1769401269
-V6[@?5L4:]XP=n77lHZlG32
-04 6 4 work tb_fib fast 0
-=1-fc349769a683-6976ebb4-3d6-bc6c
+!s110 1769981465
+VY;Nnzb9obkU@gl8<]kggH2
+04 6 4 work tb_top fast 0
+=1-fc349769a683-697fc619-6a-48dc
 R1
 R3
 R4
-!s124 OEM10U11 
+!s124 OEM10U9 
 R5
 R6
 R7
 n@_opt1
 R8
-valu
-2C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ALU.v
-Z9 !s110 1769401267
-!i10b 1
-!s100 P<7<9NmPXJKhOb:V4DG@Q3
-IE]J]a_N4^eG`7>hD2YID_3
-R2
-w1769284771
-8C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ALU.v
-FC:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ALU.v
-!i122 3
-L0 2 217
-Z10 VDg1SIo80bB@j0V0VzS_@n1
-Z11 OL;L;2025.2;82
-r1
-!s85 0
-31
-Z12 !s108 1769401266.000000
-!s107 C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ALU.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab|C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ALU.v|
-!i113 0
-Z13 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z14 !s92 -work work {+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z15 tCvgOpt 0 defaultOptions 1085333592
 vbin16_to_bcd5
-2C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/bin16_to_bcd5.v
-R9
+2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bin16_to_bcd5.v
+Z9 !s110 1769981464
 !i10b 1
 !s100 b4Ci8:KF8?XAFeZnl7P1m3
-If9JBO`z7cegLZ98O5CABz1
-R2
+IN;7BlN1>onSd=nCJUX;1X2
+Z10 dC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/simulation/questa
 w1769292765
-8C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/bin16_to_bcd5.v
-FC:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/bin16_to_bcd5.v
-!i122 7
+8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bin16_to_bcd5.v
+FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bin16_to_bcd5.v
+!i122 12
 L0 1 37
-R10
-R11
+Z11 VDg1SIo80bB@j0V0VzS_@n1
+Z12 OL;L;2025.2;82
 r1
 !s85 0
 31
-Z16 !s108 1769401267.000000
-!s107 C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/bin16_to_bcd5.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab|C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/bin16_to_bcd5.v|
+Z13 !s108 1769981464.000000
+!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bin16_to_bcd5.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bin16_to_bcd5.v|
 !i113 0
-R13
-R14
-R15
-vBitMaskFSM
-2C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/BitMaskFSM.v
-Z17 !s110 1769401268
+Z14 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z15 !s92 -work work {+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z16 tCvgOpt 0 defaultOptions 1085333592
+vbmemory
+2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bmemory.v
+R9
 !i10b 1
-!s100 T1Dz:aBBT2`:K@@;Y]Oe;3
-ISLdk^NXZ^kUhHk[JjRc0P3
-R2
-w1769401178
-8C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/BitMaskFSM.v
-FC:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/BitMaskFSM.v
+!s100 >4e8]`kYS]Pg7g;VIjJVn1
+I8JLn1l31zm37z@[fJX<M72
+R10
+w1769979806
+8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bmemory.v
+FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bmemory.v
 !i122 11
-L0 1 124
-R10
+L0 7 74
 R11
-r1
-!s85 0
-31
-Z18 !s108 1769401268.000000
-!s107 C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/BitMaskFSM.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab|C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/BitMaskFSM.v|
-!i113 0
-R13
-R14
-R15
-n@bit@mask@f@s@m
-vFibFSM
-2C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/FibFSM.v
-Z19 !s110 1769401266
-!i10b 1
-!s100 ND0Jj7b6OYSVdE1C96P2[3
-IQ6RGO7kd7`Xm76TWTP[gz0
-R2
-w1769291000
-8C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/FibFSM.v
-FC:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/FibFSM.v
-!i122 2
-L0 1 121
-R10
-R11
-r1
-!s85 0
-31
 R12
-!s107 C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/FibFSM.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab|C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/FibFSM.v|
-!i113 0
-R13
-R14
-R15
-n@fib@f@s@m
-vImmMux
-2C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ImmMux.v
-R9
-!i10b 1
-!s100 h;;2J0j:bff?kjbdgl]b51
-I@eQaOmD5;=_0CXZ>8^9Eb0
-R2
-w1769285334
-8C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ImmMux.v
-FC:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ImmMux.v
-!i122 5
-L0 1 15
-R10
-R11
 r1
 !s85 0
 31
+R13
+!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bmemory.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bmemory.v|
+!i113 0
+R14
+R15
 R16
-!s107 C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ImmMux.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab|C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ImmMux.v|
-!i113 0
-R13
-R14
-R15
-n@imm@mux
-vlab1
-2C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/lab1.v
-R19
+vbram
+2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bram.v
+Z17 !s110 1769981463
 !i10b 1
-!s100 T7BnBJRkdHAWJJHV2f3A12
-Ih1DeEaFG_8H2UK9DPfidn0
-R2
-w1769400774
-8C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/lab1.v
-FC:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/lab1.v
-!i122 1
-L0 1 152
+!s100 CD;8=IiJiHlV4G2^mU<Ba1
+I]U94gib0LRemmWUHi`]VL0
 R10
-R11
-r1
-!s85 0
-31
-R12
-!s107 C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/lab1.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab|C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/lab1.v|
-!i113 0
-R13
-R14
-R15
-vregister_file
-2C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/register_file.v
-R9
-!i10b 1
-!s100 9iCz3Q`PnEHMoahIjhkU63
-IKAFU2UBbmIMV`GB@aK0i03
-R2
-w1769285634
-8C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/register_file.v
-FC:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/register_file.v
-!i122 8
-L0 1 44
-R10
-R11
-r1
-!s85 0
-31
-R16
-!s107 C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/register_file.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab|C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/register_file.v|
-!i113 0
-R13
-R14
-R15
-vseven_seg_decoder
-2C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/seven_seg_decoder.v
-R9
-!i10b 1
-!s100 6U2dVQ]dDWPI>f_oLD5mL3
-If7Z9FGE?A]VhgF[dEZIQY3
-R2
-w1769287732
-8C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/seven_seg_decoder.v
-FC:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/seven_seg_decoder.v
+w1769981168
+8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bram.v
+FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bram.v
 !i122 6
-L0 1 28
-R10
+L0 4 47
 R11
+R12
 r1
 !s85 0
 31
-R16
-!s107 C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/seven_seg_decoder.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab|C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/seven_seg_decoder.v|
+Z18 !s108 1769981463.000000
+!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bram.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bram.v|
 !i113 0
-R13
 R14
 R15
-vShiftFSM
-2C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ShiftFSM.v
+R16
+vfib_copy_fsm
+2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/fib_copy_fsm.v
+R9
+!i10b 1
+!s100 `408<=6W6zVhUkKAXEZc23
+I>J>a2`o5W7cRi5fnN@iWN1
+R10
+w1769980695
+8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/fib_copy_fsm.v
+FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/fib_copy_fsm.v
+!i122 10
+L0 8 138
+R11
+R12
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/fib_copy_fsm.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/fib_copy_fsm.v|
+!i113 0
+R14
+R15
+R16
+vmemory
+2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/memory.v
 R17
 !i10b 1
-!s100 E7L2lh28^VhG[QKl6ilZD2
-IE[:zQ7H:CRBk5EjZYca8d1
-R2
-w1769400587
-8C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ShiftFSM.v
-FC:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ShiftFSM.v
-!i122 10
-L0 1 131
+!s100 ^E5G2Si0[m7=<OzE;L0^M3
+I8dWE20z>PKTgjg>Jb9ojm2
 R10
+w1769977499
+8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/memory.v
+FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/memory.v
+!i122 9
+L0 7 67
 R11
+R12
 r1
 !s85 0
 31
 R18
-!s107 C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ShiftFSM.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab|C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/ShiftFSM.v|
+!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/memory.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/memory.v|
 !i113 0
-R13
 R14
 R15
-n@shift@f@s@m
-vSubtractFSM
-2C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/SubtractFSM.v
+R16
+vseven_seg_decoder
+2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/seven_seg_decoder.v
 R9
 !i10b 1
-!s100 W;?J0A`g=GHh0FF@QBz2e3
-IB_`FW6J6?Fd`:MFPA[Gkc2
-R2
-w1769398876
-8C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/SubtractFSM.v
-FC:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/SubtractFSM.v
-!i122 9
-L0 1 129
+!s100 6U2dVQ]dDWPI>f_oLD5mL3
+IQZm4ZoBNl3oHKHFYGo[f]0
 R10
+w1769287732
+8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/seven_seg_decoder.v
+FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/seven_seg_decoder.v
+!i122 13
+L0 1 28
 R11
+R12
 r1
 !s85 0
 31
-R16
-!s107 C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/SubtractFSM.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab|C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/SubtractFSM.v|
-!i113 0
 R13
+!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/seven_seg_decoder.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/seven_seg_decoder.v|
+!i113 0
 R14
 R15
-n@subtract@f@s@m
-vtb_fib
-2C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/tb_fib.v
-R9
+R16
+vtb_top
+2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v
+R17
 !i10b 1
-!s100 b;T=_4O^K]gV<mAcfaMzl3
-I0:=L>a<_jb^Mef35CPh103
-R2
-w1769401258
-8C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/tb_fib.v
-FC:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/tb_fib.v
-!i122 4
-L0 3 83
+!s100 :@RY7Q7?XO6Oh]kaW:BRA0
+I0A?46=e6=fDTf3GaT88B:2
 R10
+w1769981455
+8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v
+FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v
+!i122 7
+L0 8 53
 R11
+R12
 r1
 !s85 0
 31
-R16
-!s107 C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/tb_fib.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab|C:/Users/asher/Desktop/School Work/ece3710/Quartus Project/../Verilog/Register File Lab/tb_fib.v|
+R18
+!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v|
 !i113 0
-R13
 R14
 R15
+R16
+vtop
+2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/top.v
+R17
+!i10b 1
+!s100 F0encg_QNeboiXHGa<0BQ3
+I2;a>P_DRUgce;WL^7iY]C2
+R10
+w1769981447
+8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/top.v
+FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/top.v
+!i122 8
+L0 6 102
+R11
+R12
+r1
+!s85 0
+31
+R18
+!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/top.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/top.v|
+!i113 0
+R14
+R15
+R16

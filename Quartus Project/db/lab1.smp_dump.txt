@@ -1,7 +1,8 @@
 
-State Machine - |FibFSM|state
-Name state.DONE state.CALC_FIB state.INIT_R1 state.INIT_REGS 
-state.INIT_REGS 0 0 0 0 
-state.INIT_R1 0 0 1 1 
-state.CALC_FIB 0 1 0 1 
-state.DONE 1 0 0 1 
+State Machine - |top|fib_copy_fsm:fsm|state
+Name state.APPLY_WRITE state.CAPTURE_READ state.SETUP_READ state.IDLE state.FINISH 
+state.IDLE 0 0 0 0 0 
+state.SETUP_READ 0 0 1 1 0 
+state.CAPTURE_READ 0 1 0 1 0 
+state.APPLY_WRITE 1 0 0 1 0 
+state.FINISH 0 0 0 1 1 
