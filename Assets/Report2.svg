@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    sodipodi:docname="Report2.svg"
-   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,13 +24,13 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="1"
-     inkscape:cx="614.5"
-     inkscape:cy="376.5"
-     inkscape:window-width="3840"
-     inkscape:window-height="2054"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:zoom="0.5"
+     inkscape:cx="1004"
+     inkscape:cy="248"
+     inkscape:window-width="1472"
+     inkscape:window-height="898"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer7">
     <inkscape:grid
@@ -50,27 +50,6 @@
   </sodipodi:namedview>
   <defs
      id="defs1" />
-  <g
-     inkscape:groupmode="layer"
-     id="layer6"
-     inkscape:label="Covers"
-     transform="translate(121.01389,-11.688231)">
-    <rect
-       style="fill:#d02020;fill-opacity:1;stroke:#000000;stroke-width:0.474324;-inkscape-stroke:none"
-       id="rect2"
-       width="2.7731519"
-       height="4.144269"
-       x="147.23817"
-       y="9.4916973"
-       transform="translate(-140.73799,46.95852)" />
-    <rect
-       style="fill:#d02020;fill-opacity:1;stroke:#000000;stroke-width:0.47435;-inkscape-stroke:none"
-       id="rect5"
-       width="2.0394626"
-       height="4.1491089"
-       x="238.82687"
-       y="34.137348" />
-  </g>
   <g
      inkscape:groupmode="layer"
      id="layer7"
@@ -250,23 +229,22 @@
          xml:space="preserve"
          style="font-weight:bold;font-size:7.7611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold';font-variation-settings:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          x="115.42159"
-         y="27.281939"
+         y="24.493439"
          id="text6-0-4-8"><tspan
            sodipodi:role="line"
            id="tspan6-6-3-7"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
            x="115.42159"
-           y="27.281939">4</tspan></text>
+           y="24.493439">4</tspan></text>
       <path
          style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         d="m 115.69696,30.937929 5,-5.000001"
+         d="m 115.69696,28.149429 5,-5.000001"
          id="path6-6-1-4" />
       <path
          style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         d="m 97.5966,37.686681 17.47353,-0.183221 c 0,0 0.0163,-0.906294 1.27932,-0.906294 1.28063,0 1.35734,0.906294 1.35734,0.906294 h 3.41424 c 0.93128,0.873329 1.93175,1.66428 2.92237,2.467903"
+         d="m 106.874,25.83265 17.47353,-0.183221 c 0,0 0.0163,-0.906294 1.27932,-0.906294 1.28063,0 1.35734,0.906294 1.35734,0.906294 h 3.41424 c 0.93128,0.873329 2.70349,4.078582 3.69411,4.882205"
          id="path4-1-23-2"
          sodipodi:nodetypes="ccsccc"
-         transform="translate(9.2774029,-9.0655315)"
          inkscape:label="path4" />
     </g>
     <g
@@ -374,6 +352,40 @@
        id="path1-7-4-1"
        inkscape:label="PosEdge"
        sodipodi:nodetypes="ccccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:7.7611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold';font-variation-settings:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="-9.5437994"
+       y="52.561703"
+       id="text6-0-4-8-5"><tspan
+         sodipodi:role="line"
+         id="tspan6-6-3-7-2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
+         x="-9.5437994"
+         y="52.561703">4</tspan></text>
+    <path
+       style="font-variation-settings:normal;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -9.92989,55.913672 5,-5.000001"
+       id="path6-6-1-4-7" />
+    <path
+       style="font-variation-settings:normal;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -18.75285,53.596893 17.47353,-0.183221 c 0,0 0.0163,-0.906294 1.27932,-0.906294 1.28063,0 1.35734,0.906294 1.35734,0.906294 h 3.41424 c 0.93128,0.873329 2.6567186,4.308943 3.6473386,5.112566"
+       id="path4-1-23-2-6"
+       sodipodi:nodetypes="ccsccc"
+       inkscape:label="path4" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="Covers"
+     transform="translate(121.01389,-11.688231)">
+    <rect
+       style="fill:#d02020;fill-opacity:1;stroke:#000000;stroke-width:0.47435;-inkscape-stroke:none"
+       id="rect5"
+       width="2.0394626"
+       height="4.1491089"
+       x="238.82687"
+       y="34.137348" />
   </g>
   <g
      inkscape:label="FIB FSM"
@@ -690,29 +702,29 @@
        transform="matrix(-1,0,0,1,195.47767,27.606071)">
       <path
          style="font-variation-settings:normal;opacity:1;fill:#4dd020;fill-opacity:1;stroke:#000000;stroke-width:0.386009;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
-         d="m 246.54237,-87.91419 v -4.240628 h -29.64856 c 0,0 -0.95859,0 -0.95859,2.120312 0,2.120316 0.95859,2.120316 0.95859,2.120316 z"
+         d="m 246.54237,-92.147526 v -4.240628 h -34.94023 c 0,0 -0.95859,0 -0.95859,2.120312 0,2.120316 0.95859,2.120316 0.95859,2.120316 z"
          id="path3-2-1-6-2-7-2-8-1-9-0"
          sodipodi:nodetypes="ccczcc"
          inkscape:label="PinBackground" />
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.06282px;line-height:normal;font-family:'Cascadia Code';-inkscape-font-specification:'Cascadia Code, @wght=700';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         x="-222.08791"
-         y="-92.510971"
+         x="-219.54861"
+         y="-96.921982"
          id="text4-82-2-2-4-6-3-38-0-2-8"
          inkscape:label="PinName"
          transform="scale(-1.0419688,0.95972163)"><tspan
            sodipodi:role="line"
            id="tspan4-8-4-9-5-1-3-3-9-5-8"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.06282px;font-family:'Cascadia Code';-inkscape-font-specification:'Cascadia Code, @wght=700';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
-           x="-222.08791"
-           y="-92.510971">Read Address</tspan></text>
+           x="-219.54861"
+           y="-96.921982">Read Address A</tspan></text>
       <rect
          style="font-variation-settings:'wght' 700;opacity:1;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="rect4-9-2-5-5-8-4-71-9-5-0"
          width="4.6228747"
          height="6.7478943"
-         x="-92.347679"
+         x="-96.581017"
          y="-253.11617"
          ry="0"
          inkscape:label="BitCountBackground"
@@ -721,14 +733,14 @@
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.00815px;line-height:0.6;font-family:'Cascadia Code';-inkscape-font-specification:'Cascadia Code, @wght=700';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          x="-270.72839"
-         y="-82.192467"
+         y="-86.101097"
          id="text4-6-0-5-2-1-9-1-0-6-3-6"
          inkscape:label="BitCount"
          transform="scale(-0.92330213,1.0830691)"><tspan
            sodipodi:role="line"
            style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:0.6;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
            x="-270.72839"
-           y="-82.192467"
+           y="-86.101097"
            id="tspan5-7-8-0-7-27-1-7-8-3-8">4 Bit</tspan></text>
     </g>
     <g
@@ -882,6 +894,54 @@
        cy="-85.806152"
        rx="2.133203"
        ry="2.0251336" />
+    <g
+       inkscape:groupmode="layer"
+       id="layer2-2-6-7-8-5-1-7-5-9-8-8"
+       inkscape:label="OutputPin"
+       transform="matrix(-1,0,0,1,195.47767,32.761875)">
+      <path
+         style="font-variation-settings:normal;opacity:1;fill:#4dd020;fill-opacity:1;stroke:#000000;stroke-width:0.386009;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         d="m 246.54237,-92.147526 v -4.240628 h -34.94023 c 0,0 -0.95859,0 -0.95859,2.120312 0,2.120316 0.95859,2.120316 0.95859,2.120316 z"
+         id="path3-2-1-6-2-7-2-8-1-9-0-8"
+         sodipodi:nodetypes="ccczcc"
+         inkscape:label="PinBackground" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.06282px;line-height:normal;font-family:'Cascadia Code';-inkscape-font-specification:'Cascadia Code, @wght=700';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         x="-219.54861"
+         y="-96.921982"
+         id="text4-82-2-2-4-6-3-38-0-2-8-2"
+         inkscape:label="PinName"
+         transform="scale(-1.0419688,0.95972163)"><tspan
+           sodipodi:role="line"
+           id="tspan4-8-4-9-5-1-3-3-9-5-8-4"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.06282px;font-family:'Cascadia Code';-inkscape-font-specification:'Cascadia Code, @wght=700';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
+           x="-219.54861"
+           y="-96.921982">Read Address B</tspan></text>
+      <rect
+         style="font-variation-settings:'wght' 700;opacity:1;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect4-9-2-5-5-8-4-71-9-5-0-5"
+         width="4.6228747"
+         height="6.7478943"
+         x="-96.581017"
+         y="-253.11617"
+         ry="0"
+         inkscape:label="BitCountBackground"
+         transform="rotate(90)" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.00815px;line-height:0.6;font-family:'Cascadia Code';-inkscape-font-specification:'Cascadia Code, @wght=700';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         x="-270.72839"
+         y="-86.101097"
+         id="text4-6-0-5-2-1-9-1-0-6-3-6-5"
+         inkscape:label="BitCount"
+         transform="scale(-0.92330213,1.0830691)"><tspan
+           sodipodi:role="line"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:0.6;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
+           x="-270.72839"
+           y="-86.101097"
+           id="tspan5-7-8-0-7-27-1-7-8-3-8-1">4 Bit</tspan></text>
+    </g>
   </g>
   <g
      inkscape:groupmode="layer"
