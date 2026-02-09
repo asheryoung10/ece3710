@@ -1,0 +1,8 @@
+module top (
+	input wire [3:0] switches
+);
+
+
+
+
+endmodule

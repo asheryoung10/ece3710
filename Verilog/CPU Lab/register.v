@@ -1,0 +1,21 @@
+module register
+#(
+    parameter DATA_WIDTH = 16
+)
+(
+    input clock,
+    input reset,
+    input writeEnable,
+    input [DATA_WIDTH-1:0] writeData,
+    output reg [DATA_WIDTH-1:0] contents
+);
+
+always @(posedge clock or posedge reset)
+begin
+    if (reset)
+        contents <= 0;
+    else if (writeEnable)
+        contents <= writeData;
+end
+
+endmodule

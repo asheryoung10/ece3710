@@ -1,13 +1,7 @@
-//======================================================
-// memory.v
-// Top-level memory using TWO BRAM instances (512x16 each)
-// Verilog-2001 ONLY
-//======================================================
-
 module bmemory
 #(
     parameter DATA_WIDTH = 16,
-    parameter ADDR_WIDTH = 10  // 1024 words total
+    parameter ADDR_WIDTH = 11  // 1024 words total
 )
 (
     // -------- Port A --------
@@ -27,15 +21,9 @@ module bmemory
     input clk
 );
 
-    // -------------------------
-    // Internal wires to BRAMs
-    // -------------------------
     wire [DATA_WIDTH-1:0] dout_a0, dout_a1;
     wire [DATA_WIDTH-1:0] dout_b0, dout_b1;
 
-    // -------------------------
-    // BRAM0 (addresses 0-511)
-    // -------------------------
     bram #(
         .DATA_WIDTH(DATA_WIDTH),
         .ADDR_WIDTH(ADDR_WIDTH-1)  // 512 words
@@ -52,12 +40,10 @@ module bmemory
         .q_b(dout_b0)
     );
 
-    // -------------------------
-    // BRAM1 (addresses 512-1023)
-    // -------------------------
     bram #(
         .DATA_WIDTH(DATA_WIDTH),
-        .ADDR_WIDTH(ADDR_WIDTH-1)  // 512 words
+        .ADDR_WIDTH(ADDR_WIDTH-1),  // 512 words
+		  .INITFILE("mem_initb.text")
     ) bram1 (
         .data_a(din_a),
         .addr_a(addr_a[ADDR_WIDTH-2:0]),
@@ -71,9 +57,6 @@ module bmemory
         .q_b(dout_b1)
     );
 
-    // -------------------------
-    // MUX outputs based on MSB of address
-    // -------------------------
     assign dout_a = (addr_a[ADDR_WIDTH-1]==1'b0) ? dout_a0 : dout_a1;
     assign dout_b = (addr_b[ADDR_WIDTH-1]==1'b0) ? dout_b0 : dout_b1;
 

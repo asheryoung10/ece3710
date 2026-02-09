@@ -2,7 +2,7 @@
 // True Dual Port RAM with single clock
 
 module bram
-#(parameter DATA_WIDTH=16, parameter ADDR_WIDTH=9, parameter INITFILE="mem_init.text")
+#(parameter DATA_WIDTH=16, parameter ADDR_WIDTH=11)
 (
 	input [(DATA_WIDTH-1):0] data_a, data_b,
 	input [(ADDR_WIDTH-1):0] addr_a, addr_b,
@@ -11,14 +11,15 @@ module bram
 );
 
 	// Declare the RAM variable
-	reg [DATA_WIDTH-1:0] ram[(2**ADDR_WIDTH)-1:0];
-	integer i;
-	initial
-	begin
-		$readmemh(INITFILE, ram);
+	reg [DATA_WIDTH-1:0] ram[2**ADDR_WIDTH-1:0];
+	
+	
+	
+	initial begin 
+		$readmemh("initial.txt", ram);
 	end
 
-	// Port A
+	// Port A 
 	always @ (posedge clk)
 	begin
 		if (we_a) 

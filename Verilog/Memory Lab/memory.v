@@ -1,13 +1,8 @@
-//======================================================
-// memory.v
-// True Dual-Port Synchronous BRAM
-// Verilog-2001 ONLY
-//======================================================
 
 module memory
 #(
     parameter DATA_WIDTH = 16,
-    parameter ADDR_WIDTH = 12
+    parameter ADDR_WIDTH = 10
 )
 (
     // -------- Port A --------
@@ -37,7 +32,7 @@ module memory
     initial begin
         // Hex or binary file is fine
         // Example: mem_init.hex
-        $readmemh("mem_init.hex", ram);
+        $readmemh("mem_init.text", ram);
     end
 
     // --------------------------------------------------
