@@ -1,261 +1,539 @@
-# Reading pref.tcl
-# //  Questa Altera Starter FPGA Edition-64
-# //  Version 2025.2 win64 May 31 2025
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2023.3 linux_x86_64 Jul 17 2023
 # //
-# // Unpublished work. Copyright 2025 Siemens
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
 # //
-# // This material contains trade secrets or otherwise confidential information
-# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
-# // "SISW"), or its licensors. Access to and use of this information is strictly
-# // limited as set forth in the Customer's applicable agreements with SISW.
-# //
-# // This material may not be copied, distributed, or otherwise disclosed outside
-# // of the Customer's facilities without the express written permission of SISW,
-# // and may not be used in any way not expressly authorized by SISW.
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
 # //
 # do lab1_run_msim_rtl_verilog.do
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is asher@DESKTOP-JRGJE77.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is u1462567@dsl8.
 # vlib rtl_work
 # ** Warning: (vlib-34) Library already exists at "rtl_work".
 # Errors: 0, Warnings: 1
 # vmap work rtl_work
-# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# Questa Intel Starter FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
 # vmap work rtl_work 
-# ** Note: (vmap-220) 'c:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
-# Copying c:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Copying /usr/local/quartus/questa_fse/linux_x86_64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/seven_seg_decoder.v}
-# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 14:31:02 on Feb 01,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/seven_seg_decoder.v 
-# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module seven_seg_decoder
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/register_file.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:00 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/register_file.v 
+# -- Compiling module register_file
 # 
 # Top level modules:
-# 	seven_seg_decoder
-# End time: 14:31:02 on Feb 01,2026, Elapsed time: 0:00:00
+# 	register_file
+# End time: 15:54:00 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bin16_to_bcd5.v}
-# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 14:31:02 on Feb 01,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bin16_to_bcd5.v 
-# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module bin16_to_bcd5
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/register.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:00 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/register.v 
+# -- Compiling module register
 # 
 # Top level modules:
-# 	bin16_to_bcd5
-# End time: 14:31:02 on Feb 01,2026, Elapsed time: 0:00:00
+# 	register
+# End time: 15:54:01 on Feb 09,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bram.v}
-# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 14:31:02 on Feb 01,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bram.v 
-# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module bram
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/mux4.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:01 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/mux4.v 
+# -- Compiling module mux4
 # 
 # Top level modules:
-# 	bram
-# End time: 14:31:02 on Feb 01,2026, Elapsed time: 0:00:00
+# 	mux4
+# End time: 15:54:01 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/fib_copy_fsm.v}
-# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 14:31:02 on Feb 01,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/fib_copy_fsm.v 
-# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module fib_copy_fsm
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/mux2.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:01 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/mux2.v 
+# -- Compiling module mux2
 # 
 # Top level modules:
-# 	fib_copy_fsm
-# End time: 14:31:03 on Feb 01,2026, Elapsed time: 0:00:01
+# 	mux2
+# End time: 15:54:01 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/top.v}
-# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 14:31:03 on Feb 01,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/top.v 
-# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module top
-# 
-# Top level modules:
-# 	top
-# End time: 14:31:03 on Feb 01,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bmemory.v}
-# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 14:31:03 on Feb 01,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bmemory.v 
-# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module bmemory
-# 
-# Top level modules:
-# 	bmemory
-# End time: 14:31:03 on Feb 01,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bram.v}
-# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 14:31:03 on Feb 01,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bram.v 
-# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module bram
-# 
-# Top level modules:
-# 	bram
-# End time: 14:31:03 on Feb 01,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v}
-# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 14:31:03 on Feb 01,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v 
-# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module tb_top
-# 
-# Top level modules:
-# 	tb_top
-# End time: 14:31:03 on Feb 01,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/top.v}
-# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 14:31:03 on Feb 01,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/top.v 
-# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module top
-# 
-# Top level modules:
-# 	top
-# End time: 14:31:03 on Feb 01,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/memory.v}
-# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 14:31:03 on Feb 01,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/memory.v 
-# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/memory.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:01 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/memory.v 
 # -- Compiling module memory
 # 
 # Top level modules:
 # 	memory
-# End time: 14:31:03 on Feb 01,2026, Elapsed time: 0:00:00
+# End time: 15:54:01 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/fib_copy_fsm.v}
-# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 14:31:04 on Feb 01,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/fib_copy_fsm.v 
-# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module fib_copy_fsm
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/instruction_decoder.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:01 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/instruction_decoder.v 
+# -- Compiling module instruction_decoder
 # 
 # Top level modules:
-# 	fib_copy_fsm
-# End time: 14:31:04 on Feb 01,2026, Elapsed time: 0:00:00
+# 	instruction_decoder
+# End time: 15:54:01 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bmemory.v}
-# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 14:31:04 on Feb 01,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bmemory.v 
-# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module bmemory
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/cpu.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:01 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/cpu.v 
+# -- Compiling module cpu
 # 
 # Top level modules:
-# 	bmemory
-# End time: 14:31:04 on Feb 01,2026, Elapsed time: 0:00:00
+# 	cpu
+# End time: 15:54:01 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bin16_to_bcd5.v}
-# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 14:31:04 on Feb 01,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bin16_to_bcd5.v 
-# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module bin16_to_bcd5
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/control_unit.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:01 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/control_unit.v 
+# -- Compiling module control_unit
 # 
 # Top level modules:
-# 	bin16_to_bcd5
-# End time: 14:31:04 on Feb 01,2026, Elapsed time: 0:00:00
+# 	control_unit
+# End time: 15:54:01 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/seven_seg_decoder.v}
-# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 14:31:04 on Feb 01,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/seven_seg_decoder.v 
-# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module seven_seg_decoder
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/alu.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:01 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/alu.v 
+# -- Compiling module alu
 # 
 # Top level modules:
-# 	seven_seg_decoder
-# End time: 14:31:04 on Feb 01,2026, Elapsed time: 0:00:00
+# 	alu
+# End time: 15:54:01 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_top
-# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_top 
-# Start time: 14:31:04 on Feb 01,2026
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/top.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:02 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/top.v 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 15:54:02 on Feb 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/tb_cpu.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:02 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/tb_cpu.v 
+# -- Compiling module tb_cpu
+# 
+# Top level modules:
+# 	tb_cpu
+# End time: 15:54:02 on Feb 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/shifting_unit.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:02 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/shifting_unit.v 
+# End time: 15:54:02 on Feb 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/register_file.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:02 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/register_file.v 
+# -- Compiling module register_file
+# 
+# Top level modules:
+# 	register_file
+# End time: 15:54:02 on Feb 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/register.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:02 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/register.v 
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+# End time: 15:54:02 on Feb 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/mux4.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:02 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/mux4.v 
+# -- Compiling module mux4
+# 
+# Top level modules:
+# 	mux4
+# End time: 15:54:02 on Feb 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/mux2.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:02 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/mux2.v 
+# -- Compiling module mux2
+# 
+# Top level modules:
+# 	mux2
+# End time: 15:54:02 on Feb 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/memory.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:02 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/memory.v 
+# -- Compiling module memory
+# 
+# Top level modules:
+# 	memory
+# End time: 15:54:02 on Feb 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/instruction_decoder.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:02 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/instruction_decoder.v 
+# -- Compiling module instruction_decoder
+# 
+# Top level modules:
+# 	instruction_decoder
+# End time: 15:54:03 on Feb 09,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/cpu.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:03 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/cpu.v 
+# -- Compiling module cpu
+# 
+# Top level modules:
+# 	cpu
+# End time: 15:54:03 on Feb 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/control_unit.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:03 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/control_unit.v 
+# -- Compiling module control_unit
+# 
+# Top level modules:
+# 	control_unit
+# End time: 15:54:03 on Feb 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/alu.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 15:54:03 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab" /home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 15:54:03 on Feb 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_cpu
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_cpu 
+# Start time: 15:54:03 on Feb 09,2026
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
-# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
-# ** Note: (vopt-143) Recognized 1 FSM in module "fib_copy_fsm(fast)".
-# ** Warning: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v(15): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 8, found 3.
-# ** Warning: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v(15): (vopt-2718) [TFMPC] - Missing connection for port 'seven_seg_3'.
-# ** Warning: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v(15): (vopt-2718) [TFMPC] - Missing connection for port 'seven_seg_2'.
-# ** Warning: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v(15): (vopt-2718) [TFMPC] - Missing connection for port 'seven_seg_1'.
-# ** Warning: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v(15): (vopt-2718) [TFMPC] - Missing connection for port 'seven_seg_0'.
-# ** Warning: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v(15): (vopt-2718) [TFMPC] - Missing connection for port 'switches'.
-# ** Warning: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/top.v(82): (vopt-2685) [TFMPC] - Too few port connections for 'converter'.  Expected 6, found 5.
-# ** Warning: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/top.v(82): (vopt-2718) [TFMPC] - Missing connection for port 'bcd4'.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=9.
-# Loading work.tb_top(fast)
-# Loading work.top(fast)
-# Loading work.fib_copy_fsm(fast)
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "control_unit(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.tb_cpu(fast)
+# Loading work.cpu(fast)
 # Loading work.memory(fast)
-# Loading work.bin16_to_bcd5(fast)
-# Loading work.seven_seg_decoder(fast)
+# Loading work.register_file(fast)
+# Loading work.alu(fast)
+# Loading work.register(fast)
+# Loading work.instruction_decoder(fast)
+# Loading work.mux2(fast)
+# Loading work.mux2(fast__1)
+# Loading work.mux4(fast)
+# Loading work.control_unit(fast)
 # 
 # add wave *
+# Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
+# Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
+# Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
+# Cannot lock WLF file: "vsim.wlf"
+#           errno 11: Resource temporarily unavailable.
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: asher  Hostname: DESKTOP-JRGJE77  ProcessID: 7600
-#           Attempting to use alternate WLF file "./wlfthtymkz".
+#           File in use by: u1462567  Hostname: dsl8  ProcessID: 97472
+#           Attempting to use alternate WLF file "./wlftx5U1U6".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfthtymkz
+#           Using alternate file: ./wlftx5U1U6
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# FSM DONE
-# ---- Source: mem[0..15] ----
-# mem[0] = 0000
-# mem[1] = 0001
-# mem[2] = 0001
-# mem[3] = 0002
-# mem[4] = 0003
-# mem[5] = 0005
-# mem[6] = 0008
-# mem[7] = 000d
-# mem[8] = 0015
-# mem[9] = 0022
-# mem[10] = 0037
-# mem[11] = 0059
-# mem[12] = 0090
-# mem[13] = 00e9
-# mem[14] = 0179
-# mem[15] = 0262
-# ---- Destination: mem[512..527] ----
-# mem[512] = 0000
-# mem[513] = 0001
-# mem[514] = 0001
-# mem[515] = 0002
-# mem[516] = 0003
-# mem[517] = 0005
-# mem[518] = 0008
-# mem[519] = 000d
-# mem[520] = 0015
-# mem[521] = 0022
-# mem[522] = 0037
-# mem[523] = 0059
-# mem[524] = 0090
-# mem[525] = 00e9
-# mem[526] = 0179
-# mem[527] = 0262
-# ** Note: $stop    : C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v(40)
-#    Time: 525 ns  Iteration: 0  Instance: /tb_top
-# Break in Module tb_top at C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v line 40
-# End time: 14:31:33 on Feb 01,2026, Elapsed time: 0:00:29
-# Errors: 0, Warnings: 11
+# Time=10000 | IR=0000 | DecInst=0000| DecRsrc=0 | DecRdest=0 | DecodedImmediate=0000 | DecodedOpcode=00 | PC=0000 | PSR=0000 | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=0 | CU_Next=1 | ALUOpcode=0 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000
+# FETCH
+# Time=20000 | IR=5001 | DecInst=5001| DecRsrc=1 | DecRdest=0 | DecodedImmediate=0001 | DecodedOpcode=50 | PC=0001 | PSR=0000 | ALU select Imm=0| ALURes=0000 | ALUFlags=0x010 | CU_State=1 | CU_Next=2 | ALUOpcode=80 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000
+# DECODE
+# Time=30000 | IR=5001 | DecInst=5001| DecRsrc=1 | DecRdest=0 | DecodedImmediate=0001 | DecodedOpcode=50 | PC=0001 | PSR=0000 | ALU select Imm=1| ALURes=0001 | ALUFlags=0x001 | CU_State=2 | CU_Next=3 | ALUOpcode=80 | ALU_A=0001 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0001 | RegFile_ReadA=0000 | RegFile_ReadB=0000
+# EXECUTE
+# Time=40000 | IR=5001 | DecInst=5001| DecRsrc=1 | DecRdest=0 | DecodedImmediate=0001 | DecodedOpcode=50 | PC=0001 | PSR=0000 | ALU select Imm=1| ALURes=0001 | ALUFlags=0x001 | CU_State=3 | CU_Next=0 | ALUOpcode=80 | ALU_A=0001 | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=0 | RegFile_WriteData=0001 | RegFile_ReadA=0000 | RegFile_ReadB=0000
+# WRITEBACK
+# Time=50000 | IR=5001 | DecInst=5001| DecRsrc=1 | DecRdest=0 | DecodedImmediate=0001 | DecodedOpcode=50 | PC=0001 | PSR=0000 | ALU select Imm=0| ALURes=0001 | ALUFlags=0x000 | CU_State=0 | CU_Next=1 | ALUOpcode=80 | ALU_A=0000 | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0001 | RegFile_ReadA=0000 | RegFile_ReadB=0001
+# RegisterFile:
+# registerFile[0] = 0001
+# registerFile[1] = 0000
+# registerFile[2] = 0000
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# FETCH
+# Time=60000 | IR=0150 | DecInst=0150| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0050 | DecodedOpcode=05 | PC=0002 | PSR=0000 | ALU select Imm=0| ALURes=0001 | ALUFlags=0x001 | CU_State=1 | CU_Next=2 | ALUOpcode=5 | ALU_A=0001 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=0001 | RegFile_ReadA=0001 | RegFile_ReadB=0000
+# DECODE
+# Time=70000 | IR=0150 | DecInst=0150| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0050 | DecodedOpcode=05 | PC=0002 | PSR=0000 | ALU select Imm=0| ALURes=0001 | ALUFlags=0x001 | CU_State=2 | CU_Next=3 | ALUOpcode=5 | ALU_A=0001 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=0001 | RegFile_ReadA=0001 | RegFile_ReadB=0000
+# EXECUTE
+# Time=80000 | IR=0150 | DecInst=0150| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0050 | DecodedOpcode=05 | PC=0002 | PSR=0000 | ALU select Imm=0| ALURes=0001 | ALUFlags=0x001 | CU_State=3 | CU_Next=0 | ALUOpcode=5 | ALU_A=0001 | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=1 | RegFile_WriteData=0001 | RegFile_ReadA=0001 | RegFile_ReadB=0000
+# WRITEBACK
+# Time=90000 | IR=0150 | DecInst=0150| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0050 | DecodedOpcode=05 | PC=0002 | PSR=0000 | ALU select Imm=0| ALURes=0002 | ALUFlags=0x000 | CU_State=0 | CU_Next=1 | ALUOpcode=5 | ALU_A=0001 | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=0002 | RegFile_ReadA=0001 | RegFile_ReadB=0001
+# RegisterFile:
+# registerFile[0] = 0001
+# registerFile[1] = 0001
+# registerFile[2] = 0000
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# FETCH
+# Time=100000 | IR=5101 | DecInst=5101| DecRsrc=1 | DecRdest=1 | DecodedImmediate=0001 | DecodedOpcode=50 | PC=0003 | PSR=0000 | ALU select Imm=0| ALURes=0002 | ALUFlags=0x000 | CU_State=1 | CU_Next=2 | ALUOpcode=80 | ALU_A=0001 | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=0002 | RegFile_ReadA=0001 | RegFile_ReadB=0001
+# DECODE
+# Time=110000 | IR=5101 | DecInst=5101| DecRsrc=1 | DecRdest=1 | DecodedImmediate=0001 | DecodedOpcode=50 | PC=0003 | PSR=0000 | ALU select Imm=1| ALURes=0002 | ALUFlags=0x000 | CU_State=2 | CU_Next=3 | ALUOpcode=80 | ALU_A=0001 | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=0002 | RegFile_ReadA=0001 | RegFile_ReadB=0001
+# EXECUTE
+# Time=120000 | IR=5101 | DecInst=5101| DecRsrc=1 | DecRdest=1 | DecodedImmediate=0001 | DecodedOpcode=50 | PC=0003 | PSR=0000 | ALU select Imm=1| ALURes=0002 | ALUFlags=0x000 | CU_State=3 | CU_Next=0 | ALUOpcode=80 | ALU_A=0001 | ALU_B=0001 | RegFile_WriteEn=1 | RegFile_WriteAddr=1 | RegFile_WriteData=0002 | RegFile_ReadA=0001 | RegFile_ReadB=0001
+# WRITEBACK
+# Time=130000 | IR=5101 | DecInst=5101| DecRsrc=1 | DecRdest=1 | DecodedImmediate=0001 | DecodedOpcode=50 | PC=0003 | PSR=0000 | ALU select Imm=0| ALURes=0004 | ALUFlags=0x000 | CU_State=0 | CU_Next=1 | ALUOpcode=80 | ALU_A=0002 | ALU_B=0002 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=0004 | RegFile_ReadA=0002 | RegFile_ReadB=0002
+# RegisterFile:
+# registerFile[0] = 0001
+# registerFile[1] = 0002
+# registerFile[2] = 0000
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# FETCH
+# Time=140000 | IR=0251 | DecInst=0251| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0051 | DecodedOpcode=05 | PC=0004 | PSR=0000 | ALU select Imm=0| ALURes=0002 | ALUFlags=0x001 | CU_State=1 | CU_Next=2 | ALUOpcode=5 | ALU_A=0002 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0002 | RegFile_ReadA=0002 | RegFile_ReadB=0000
+# DECODE
+# Time=150000 | IR=0251 | DecInst=0251| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0051 | DecodedOpcode=05 | PC=0004 | PSR=0000 | ALU select Imm=0| ALURes=0002 | ALUFlags=0x001 | CU_State=2 | CU_Next=3 | ALUOpcode=5 | ALU_A=0002 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0002 | RegFile_ReadA=0002 | RegFile_ReadB=0000
+# EXECUTE
+# Time=160000 | IR=0251 | DecInst=0251| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0051 | DecodedOpcode=05 | PC=0004 | PSR=0000 | ALU select Imm=0| ALURes=0002 | ALUFlags=0x001 | CU_State=3 | CU_Next=0 | ALUOpcode=5 | ALU_A=0002 | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0002 | RegFile_ReadA=0002 | RegFile_ReadB=0000
+# WRITEBACK
+# Time=170000 | IR=0251 | DecInst=0251| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0051 | DecodedOpcode=05 | PC=0004 | PSR=0000 | ALU select Imm=0| ALURes=0004 | ALUFlags=0x000 | CU_State=0 | CU_Next=1 | ALUOpcode=5 | ALU_A=0002 | ALU_B=0002 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0004 | RegFile_ReadA=0002 | RegFile_ReadB=0002
+# RegisterFile:
+# registerFile[0] = 0001
+# registerFile[1] = 0002
+# registerFile[2] = 0002
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# FETCH
+# Time=180000 | IR=5210 | DecInst=5210| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0010 | DecodedOpcode=51 | PC=0005 | PSR=0000 | ALU select Imm=0| ALURes=0003 | ALUFlags=0x000 | CU_State=1 | CU_Next=2 | ALUOpcode=81 | ALU_A=0001 | ALU_B=0002 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0003 | RegFile_ReadA=0001 | RegFile_ReadB=0002
+# DECODE
+# Time=190000 | IR=5210 | DecInst=5210| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0010 | DecodedOpcode=51 | PC=0005 | PSR=0000 | ALU select Imm=1| ALURes=0012 | ALUFlags=0x001 | CU_State=2 | CU_Next=3 | ALUOpcode=81 | ALU_A=0010 | ALU_B=0002 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0012 | RegFile_ReadA=0001 | RegFile_ReadB=0002
+# EXECUTE
+# Time=200000 | IR=5210 | DecInst=5210| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0010 | DecodedOpcode=51 | PC=0005 | PSR=0000 | ALU select Imm=1| ALURes=0012 | ALUFlags=0x001 | CU_State=3 | CU_Next=0 | ALUOpcode=81 | ALU_A=0010 | ALU_B=0002 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0012 | RegFile_ReadA=0001 | RegFile_ReadB=0002
+# WRITEBACK
+# Time=210000 | IR=5210 | DecInst=5210| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0010 | DecodedOpcode=51 | PC=0005 | PSR=0000 | ALU select Imm=0| ALURes=0013 | ALUFlags=0x000 | CU_State=0 | CU_Next=1 | ALUOpcode=81 | ALU_A=0001 | ALU_B=0012 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0013 | RegFile_ReadA=0001 | RegFile_ReadB=0012
+# RegisterFile:
+# registerFile[0] = 0001
+# registerFile[1] = 0002
+# registerFile[2] = 0012
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# FETCH
+# Time=220000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0006 | PSR=0000 | ALU select Imm=0| ALURes=xxxx | ALUFlags=0xxxx | CU_State=1 | CU_Next=2 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=0 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# DECODE
+# Time=230000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0006 | PSR=0000 | ALU select Imm=1| ALURes=xxxx | ALUFlags=0xxxx | CU_State=2 | CU_Next=3 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=0 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# EXECUTE
+# Time=240000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0006 | PSR=0000 | ALU select Imm=1| ALURes=xxxx | ALUFlags=0xxxx | CU_State=3 | CU_Next=0 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=1 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# WRITEBACK
+# Time=250000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0006 | PSR=0000 | ALU select Imm=0| ALURes=xxxx | ALUFlags=0xxxx | CU_State=0 | CU_Next=1 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=0 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# RegisterFile:
+# registerFile[0] = 0001
+# registerFile[1] = 0002
+# registerFile[2] = 0012
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# FETCH
+# Time=260000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0007 | PSR=0000 | ALU select Imm=0| ALURes=xxxx | ALUFlags=0xxxx | CU_State=1 | CU_Next=2 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=0 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# DECODE
+# Time=270000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0007 | PSR=0000 | ALU select Imm=1| ALURes=xxxx | ALUFlags=0xxxx | CU_State=2 | CU_Next=3 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=0 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# EXECUTE
+# Time=280000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0007 | PSR=0000 | ALU select Imm=1| ALURes=xxxx | ALUFlags=0xxxx | CU_State=3 | CU_Next=0 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=1 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# WRITEBACK
+# Time=290000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0007 | PSR=0000 | ALU select Imm=0| ALURes=xxxx | ALUFlags=0xxxx | CU_State=0 | CU_Next=1 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=0 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# RegisterFile:
+# registerFile[0] = 0001
+# registerFile[1] = 0002
+# registerFile[2] = 0012
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# FETCH
+# Time=300000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0008 | PSR=0000 | ALU select Imm=0| ALURes=xxxx | ALUFlags=0xxxx | CU_State=1 | CU_Next=2 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=0 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# DECODE
+# Time=310000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0008 | PSR=0000 | ALU select Imm=1| ALURes=xxxx | ALUFlags=0xxxx | CU_State=2 | CU_Next=3 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=0 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# EXECUTE
+# Time=320000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0008 | PSR=0000 | ALU select Imm=1| ALURes=xxxx | ALUFlags=0xxxx | CU_State=3 | CU_Next=0 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=1 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# WRITEBACK
+# Time=330000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0008 | PSR=0000 | ALU select Imm=0| ALURes=xxxx | ALUFlags=0xxxx | CU_State=0 | CU_Next=1 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=0 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# RegisterFile:
+# registerFile[0] = 0001
+# registerFile[1] = 0002
+# registerFile[2] = 0012
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# FETCH
+# Time=340000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0009 | PSR=0000 | ALU select Imm=0| ALURes=xxxx | ALUFlags=0xxxx | CU_State=1 | CU_Next=2 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=0 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# DECODE
+# Time=350000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0009 | PSR=0000 | ALU select Imm=1| ALURes=xxxx | ALUFlags=0xxxx | CU_State=2 | CU_Next=3 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=0 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# EXECUTE
+# Time=360000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0009 | PSR=0000 | ALU select Imm=1| ALURes=xxxx | ALUFlags=0xxxx | CU_State=3 | CU_Next=0 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=1 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# WRITEBACK
+# Time=370000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=0009 | PSR=0000 | ALU select Imm=0| ALURes=xxxx | ALUFlags=0xxxx | CU_State=0 | CU_Next=1 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=0 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# RegisterFile:
+# registerFile[0] = 0001
+# registerFile[1] = 0002
+# registerFile[2] = 0012
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# FETCH
+# Time=380000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=000a | PSR=0000 | ALU select Imm=0| ALURes=xxxx | ALUFlags=0xxxx | CU_State=1 | CU_Next=2 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=0 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# DECODE
+# Time=390000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=000a | PSR=0000 | ALU select Imm=1| ALURes=xxxx | ALUFlags=0xxxx | CU_State=2 | CU_Next=3 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=0 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# EXECUTE
+# Time=400000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=000a | PSR=0000 | ALU select Imm=1| ALURes=xxxx | ALUFlags=0xxxx | CU_State=3 | CU_Next=0 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=1 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# WRITEBACK
+# Time=410000 | IR=xxxx | DecInst=xxxx| DecRsrc=x | DecRdest=x | DecodedImmediate=xxxx | DecodedOpcode=xx | PC=000a | PSR=0000 | ALU select Imm=0| ALURes=xxxx | ALUFlags=0xxxx | CU_State=0 | CU_Next=1 | ALUOpcode=x | ALU_A=xxxx | ALU_B=xxxx | RegFile_WriteEn=0 | RegFile_WriteAddr=x | RegFile_WriteData=xxxx | RegFile_ReadA=xxxx | RegFile_ReadB=xxxx
+# RegisterFile:
+# registerFile[0] = 0001
+# registerFile[1] = 0002
+# registerFile[2] = 0012
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# ** Note: $finish    : /home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/tb_cpu.v(136)
+#    Time: 410 ns  Iteration: 0  Instance: /tb_cpu
+# 1
+# Break in Module tb_cpu at /home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/tb_cpu.v line 136
+# End time: 16:31:26 on Feb 09,2026, Elapsed time: 0:37:23
+# Errors: 0, Warnings: 3

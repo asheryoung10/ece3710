@@ -42,9 +42,9 @@ set_global_assignment -name DEVICE 5CSEMA5F31C6
 set_global_assignment -name TOP_LEVEL_ENTITY top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 24.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:10:11  JANUARY 09, 2026"
-set_global_assignment -name LAST_QUARTUS_VERSION "25.1std.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.1 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
-set_global_assignment -name EDA_SIMULATION_TOOL "Questa Altera FPGA (Verilog)"
+set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
@@ -59,72 +59,51 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_alu -section_id tb_ALU
 set_global_assignment -name EDA_RUN_TOOL_AUTOMATICALLY OFF -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/ALU Lab/ALU.v.bak" -section_id tb_ALU
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/ALU Lab/tb_ALU.v" -section_id tb_ALU
-set_location_assignment PIN_AF10 -to switches[3]
-set_location_assignment PIN_AF9 -to switches[2]
-set_location_assignment PIN_AC12 -to switches[1]
-set_location_assignment PIN_AB12 -to switches[0]
-set_location_assignment PIN_AA16 -to clk
 set_location_assignment PIN_AA15 -to reset
-set_location_assignment PIN_V16 -to fsmState[0]
-set_location_assignment PIN_Y21 -to switch[3]
-set_location_assignment PIN_W21 -to switch[2]
-set_location_assignment PIN_W20 -to switch[1]
-set_location_assignment PIN_Y19 -to switch[0]
-set_location_assignment PIN_AH28 -to seven_seg_0[6]
-set_location_assignment PIN_AG28 -to seven_seg_0[5]
-set_location_assignment PIN_AF28 -to seven_seg_0[4]
-set_location_assignment PIN_AG27 -to seven_seg_0[3]
-set_location_assignment PIN_AE28 -to seven_seg_0[2]
-set_location_assignment PIN_AE27 -to seven_seg_0[1]
-set_location_assignment PIN_AE26 -to seven_seg_0[0]
-set_location_assignment PIN_AD27 -to seven_seg_1[6]
-set_location_assignment PIN_AF30 -to seven_seg_1[5]
-set_location_assignment PIN_AF29 -to seven_seg_1[4]
-set_location_assignment PIN_AG30 -to seven_seg_1[3]
-set_location_assignment PIN_AH30 -to seven_seg_1[2]
-set_location_assignment PIN_AH29 -to seven_seg_1[1]
-set_location_assignment PIN_AJ29 -to seven_seg_1[0]
-set_location_assignment PIN_AB23 -to seven_seg_2[0]
-set_location_assignment PIN_AE29 -to seven_seg_2[1]
-set_location_assignment PIN_AD29 -to seven_seg_2[2]
-set_location_assignment PIN_AC28 -to seven_seg_2[3]
-set_location_assignment PIN_AD30 -to seven_seg_2[4]
-set_location_assignment PIN_AC29 -to seven_seg_2[5]
-set_location_assignment PIN_AC30 -to seven_seg_2[6]
-set_location_assignment PIN_AD26 -to seven_seg_3[0]
-set_location_assignment PIN_AC27 -to seven_seg_3[1]
-set_location_assignment PIN_AD25 -to seven_seg_3[2]
-set_location_assignment PIN_AC25 -to seven_seg_3[3]
-set_location_assignment PIN_AB28 -to seven_seg_3[4]
-set_location_assignment PIN_AB25 -to seven_seg_3[5]
-set_location_assignment PIN_AB22 -to seven_seg_3[6]
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb_top -section_id eda_simulation
-set_global_assignment -name EDA_TEST_BENCH_NAME tb_top -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_top
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_top -section_id tb_top
-set_global_assignment -name VERILOG_FILE "../Verilog/Memory Lab/seven_seg_decoder.v"
-set_global_assignment -name VERILOG_FILE "../Verilog/Memory Lab/bin16_to_bcd5.v"
-set_global_assignment -name VERILOG_FILE "../Verilog/Memory Lab/bram.v"
-set_global_assignment -name VERILOG_FILE "../Verilog/Memory Lab/memory.v"
-set_global_assignment -name HEX_FILE "../Verilog/Memory Lab/mem_init.hex"
-set_global_assignment -name VERILOG_FILE "../Verilog/Memory Lab/fib_copy_fsm.v"
-set_global_assignment -name VERILOG_FILE "../Verilog/Memory Lab/top.v"
-set_global_assignment -name VERILOG_FILE "../Verilog/Memory Lab/tb_top.v"
-set_global_assignment -name VERILOG_FILE "../Verilog/Memory Lab/bmemory.v"
-set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Memory Lab/mem_init.hex" -section_id tb_top
-set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Memory Lab/bram.v" -section_id tb_top
-set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Memory Lab/tb_top.v" -section_id tb_top
-set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Memory Lab/top.v" -section_id tb_top
-set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Memory Lab/memory.v" -section_id tb_top
-set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Memory Lab/fib_copy_fsm.v" -section_id tb_top
-set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Memory Lab/bmemory.v" -section_id tb_top
-set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Memory Lab/bin16_to_bcd5.v" -section_id tb_top
-set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Memory Lab/seven_seg_decoder.v" -section_id tb_top
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb_cpu -section_id eda_simulation
+set_global_assignment -name VERILOG_FILE "../Verilog/CPU Lab/shifting_unit.v"
+set_global_assignment -name VERILOG_FILE "../Verilog/CPU Lab/register_file.v"
+set_global_assignment -name VERILOG_FILE "../Verilog/CPU Lab/register.v"
+set_global_assignment -name VERILOG_FILE "../Verilog/CPU Lab/mux4.v"
+set_global_assignment -name VERILOG_FILE "../Verilog/CPU Lab/mux2.v"
+set_global_assignment -name VERILOG_FILE "../Verilog/CPU Lab/memory.v"
+set_global_assignment -name VERILOG_FILE "../Verilog/CPU Lab/instruction_decoder.v"
+set_global_assignment -name VERILOG_FILE "../Verilog/CPU Lab/cpu.v"
+set_global_assignment -name VERILOG_FILE "../Verilog/CPU Lab/control_unit.v"
+set_global_assignment -name VERILOG_FILE "../Verilog/CPU Lab/alu.v"
+set_global_assignment -name VERILOG_FILE "../Verilog/CPU Lab/tb_cpu.v"
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_cpu -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_cpu
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_cpu -section_id tb_cpu
+set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/CPU Lab/top.v" -section_id tb_cpu
+set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/CPU Lab/tb_cpu.v" -section_id tb_cpu
+set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/CPU Lab/shifting_unit.v" -section_id tb_cpu
+set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/CPU Lab/register_file.v" -section_id tb_cpu
+set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/CPU Lab/register.v" -section_id tb_cpu
+set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/CPU Lab/mux4.v" -section_id tb_cpu
+set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/CPU Lab/mux2.v" -section_id tb_cpu
+set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/CPU Lab/memory.v" -section_id tb_cpu
+set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/CPU Lab/instruction_decoder.v" -section_id tb_cpu
+set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/CPU Lab/cpu.v" -section_id tb_cpu
+set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/CPU Lab/control_unit.v" -section_id tb_cpu
+set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/CPU Lab/alu.v" -section_id tb_cpu
+set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/CPU Lab/init_mem.text" -section_id tb_cpu
+set_global_assignment -name SOURCE_FILE db/lab1.cmp.rdb
+set_global_assignment -name VERILOG_FILE "../Verilog/CPU Lab/top.v"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_location_assignment PIN_V17 -to rst
-set_location_assignment PIN_W16 -to done
+set_location_assignment PIN_AA14 -to clock
+set_location_assignment PIN_V16 -to aluResultOutput[0]
+set_location_assignment PIN_W16 -to aluResultOutput[1]
+set_location_assignment PIN_V17 -to aluResultOutput[2]
+set_location_assignment PIN_V18 -to aluResultOutput[3]
+set_location_assignment PIN_W17 -to aluResultOutput[4]
+set_location_assignment PIN_W19 -to aluResultOutput[5]
+set_location_assignment PIN_Y19 -to aluResultOutput[6]
+set_location_assignment PIN_W20 -to aluResultOutput[7]
+set_location_assignment PIN_W21 -to aluResultOutput[8]
+set_location_assignment PIN_Y21 -to aluResultOutput[9]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

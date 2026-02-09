@@ -1,28 +1,22 @@
-//======================================================
-// fib_copy_fsm.v
-// Dual-port FSM (3-state copy):
-//   Port A reads  mem[0..15]
-//   Port B writes mem[512..527]
-//======================================================
 
 module fib_copy_fsm (
     input  clk,
     input  rst,
 	 input [3:0] switches,
 	 
-    // -------- BRAM Port A (READ) --------
+
     output reg [9:0]  addr_a,
     output reg        en_a,
-    output reg        we_a,     // always 0
+    output reg        we_a,
     input      [15:0] dout_a,
 	 
-
-    // -------- BRAM Port B (WRITE) --------
     output reg [9:0]  addr_b,
     output reg [15:0] din_b,
     output reg        en_b,
     output reg        we_b,
-
+	 
+	 output reg [2:0] state,
+	 output reg [4:0] index,
     output reg done
 );
 
@@ -33,14 +27,13 @@ module fib_copy_fsm (
     localparam APPLY_WRITE  = 3'd3;
     localparam FINISH       = 3'd4;
 
-    reg [2:0] state;
-    reg [4:0] index;           // 0..15
     reg [15:0] buffer;         // capture dout_a
 
     // -------------------------------
     // FSM
     // -------------------------------
     always @(posedge clk) begin
+		  done <= 0;
         if (rst) begin
             state <= IDLE;
             index <= 5'd0;

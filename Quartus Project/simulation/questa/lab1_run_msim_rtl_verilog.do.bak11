@@ -5,23 +5,30 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/seven_seg_decoder.v}
-vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bin16_to_bcd5.v}
-vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bram.v}
-vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/fib_copy_fsm.v}
-vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/top.v}
-vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/bmemory.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/register_file.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/register.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/mux4.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/mux2.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/memory.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/instruction_decoder.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/cpu.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/control_unit.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/alu.v}
 
-vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bram.v}
-vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/tb_top.v}
-vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/top.v}
-vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/memory.v}
-vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/fib_copy_fsm.v}
-vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bmemory.v}
-vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/bin16_to_bcd5.v}
-vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Memory\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Memory Lab/seven_seg_decoder.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/top.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/tb_cpu.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/shifting_unit.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/register_file.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/register.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/mux4.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/mux2.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/memory.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/instruction_decoder.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/cpu.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/control_unit.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Documents/ece3710-main/Quartus\ Project/../Verilog/CPU\ Lab {/home/u1462567/Documents/ece3710-main/Quartus Project/../Verilog/CPU Lab/alu.v}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_top
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_cpu
 
 add wave *
 view structure

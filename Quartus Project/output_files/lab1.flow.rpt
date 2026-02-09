@@ -1,6 +1,6 @@
 Flow report for lab1
-Tue Feb  3 10:41:40 2026
-Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Mon Feb  9 16:10:08 2026
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
 ---------------------
@@ -21,46 +21,46 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2025  Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
-the Altera IP License Agreement, or other applicable license
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
-Altera and sold by Altera or its authorized distributors.  Please
-refer to the Altera Software License Subscription Agreements 
-on the Quartus Prime software download page.
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Flow Summary                                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Tue Feb  3 10:41:40 2026           ;
-; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
-; Revision Name                   ; lab1                                            ;
-; Top-level Entity Name           ; top                                             ;
-; Family                          ; Cyclone V                                       ;
-; Device                          ; 5CSEMA5F31C6                                    ;
-; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 319 / 32,070 ( < 1 % )                          ;
-; Total registers                 ; 570                                             ;
-; Total pins                      ; 35 / 457 ( 8 % )                                ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                           ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                                  ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                                   ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                                   ;
-+---------------------------------+-------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++---------------------------------+------------------------------------------------+
+; Flow Status                     ; Successful - Mon Feb  9 16:10:08 2026          ;
+; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                   ; lab1                                           ;
+; Top-level Entity Name           ; top                                            ;
+; Family                          ; Cyclone V                                      ;
+; Device                          ; 5CSEMA5F31C6                                   ;
+; Timing Models                   ; Final                                          ;
+; Logic utilization (in ALMs)     ; 462 / 32,070 ( 1 % )                           ;
+; Total registers                 ; 389                                            ;
+; Total pins                      ; 18 / 457 ( 4 % )                               ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 16,384 / 4,065,280 ( < 1 % )                   ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                                 ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0 / 6 ( 0 % )                                  ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                  ;
++---------------------------------+------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -68,54 +68,58 @@ on the Quartus Prime software download page.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/03/2026 10:38:25 ;
+; Start date & time ; 02/09/2026 16:08:49 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab1                ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                   ;
-+--------------------------------------+-------------------------------------------+---------------+-------------+-----------------------------------+
-; Assignment Name                      ; Value                                     ; Default Value ; Entity Name ; Section Id                        ;
-+--------------------------------------+-------------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 97640872116533.177014030530068            ; --            ; --          ; --                                ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                        ; --            ; --          ; tb_top                            ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                        ; --            ; --          ; tb_ALU                            ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                       ; --            ; --          ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                       ; --            ; --          ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                       ; --            ; --          ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                       ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_top                                    ; --            ; --          ; eda_simulation                    ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                               ; --            ; --          ; eda_simulation                    ;
-; EDA_RUN_TOOL_AUTOMATICALLY           ; Off                                       ; --            ; --          ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                  ; Questa Altera FPGA (Verilog)              ; <None>        ; --          ; --                                ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                           ; --            ; --          ; eda_simulation                    ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Memory Lab/mem_init.hex        ; --            ; --          ; tb_top                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Memory Lab/bram.v              ; --            ; --          ; tb_top                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Memory Lab/tb_top.v            ; --            ; --          ; tb_top                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Memory Lab/top.v               ; --            ; --          ; tb_top                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Memory Lab/memory.v            ; --            ; --          ; tb_top                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Memory Lab/fib_copy_fsm.v      ; --            ; --          ; tb_top                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Memory Lab/bmemory.v           ; --            ; --          ; tb_top                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Memory Lab/bin16_to_bcd5.v     ; --            ; --          ; tb_top                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Memory Lab/seven_seg_decoder.v ; --            ; --          ; tb_top                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/ALU.v.bak              ; --            ; --          ; tb_ALU                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/tb_ALU.v               ; --            ; --          ; tb_ALU                            ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_top                                    ; --            ; --          ; tb_top                            ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_alu                                    ; --            ; --          ; tb_ALU                            ;
-; EDA_TEST_BENCH_NAME                  ; tb_top                                    ; --            ; --          ; eda_simulation                    ;
-; EDA_TIME_SCALE                       ; 1 ps                                      ; --            ; --          ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                        ; --            ; --          ; --                                ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                         ; --            ; --          ; --                                ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family)    ; --            ; top         ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)    ; --            ; top         ; Top                               ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)    ; --            ; top         ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                       ; --            ; --          ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW     ; --            ; --          ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                              ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                     ; top                                       ; lab1          ; --          ; --                                ;
-+--------------------------------------+-------------------------------------------+---------------+-------------+-----------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                  ;
++--------------------------------------+------------------------------------------+---------------+-------------+-----------------------------------+
+; Assignment Name                      ; Value                                    ; Default Value ; Entity Name ; Section Id                        ;
++--------------------------------------+------------------------------------------+---------------+-------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID                ; 123719793384753.177067852954269          ; --            ; --          ; --                                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                       ; --            ; --          ; tb_cpu                            ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                       ; --            ; --          ; tb_ALU                            ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                      ; --            ; --          ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                      ; --            ; --          ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                      ; --            ; --          ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                      ; --            ; --          ; eda_board_design_symbol           ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_cpu                                   ; --            ; --          ; eda_simulation                    ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                              ; --            ; --          ; eda_simulation                    ;
+; EDA_RUN_TOOL_AUTOMATICALLY           ; Off                                      ; --            ; --          ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (Verilog)              ; <None>        ; --          ; --                                ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                          ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/top.v                 ; --            ; --          ; tb_cpu                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/tb_cpu.v              ; --            ; --          ; tb_cpu                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/shifting_unit.v       ; --            ; --          ; tb_cpu                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/register_file.v       ; --            ; --          ; tb_cpu                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/register.v            ; --            ; --          ; tb_cpu                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/mux4.v                ; --            ; --          ; tb_cpu                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/mux2.v                ; --            ; --          ; tb_cpu                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/memory.v              ; --            ; --          ; tb_cpu                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/instruction_decoder.v ; --            ; --          ; tb_cpu                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/cpu.v                 ; --            ; --          ; tb_cpu                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/control_unit.v        ; --            ; --          ; tb_cpu                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/alu.v                 ; --            ; --          ; tb_cpu                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/init_mem.text         ; --            ; --          ; tb_cpu                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/ALU.v.bak             ; --            ; --          ; tb_ALU                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/tb_ALU.v              ; --            ; --          ; tb_ALU                            ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_cpu                                   ; --            ; --          ; tb_cpu                            ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_alu                                   ; --            ; --          ; tb_ALU                            ;
+; EDA_TEST_BENCH_NAME                  ; tb_cpu                                   ; --            ; --          ; eda_simulation                    ;
+; EDA_TIME_SCALE                       ; 1 ps                                     ; --            ; --          ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                       ; --            ; --          ; --                                ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                        ; --            ; --          ; --                                ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family)   ; --            ; top         ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)   ; --            ; top         ; Top                               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)   ; --            ; top         ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                      ; --            ; --          ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW    ; --            ; --          ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                             ; --            ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                     ; top                                      ; lab1          ; --          ; --                                ;
++--------------------------------------+------------------------------------------+---------------+-------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -123,26 +127,26 @@ on the Quartus Prime software download page.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 13596 MB            ; 00:00:26                           ;
-; Fitter               ; 00:02:40     ; 1.0                     ; 16031 MB            ; 00:13:32                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 13761 MB            ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.8                     ; 13926 MB            ; 00:00:06                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 13253 MB            ; 00:00:01                           ;
-; Total                ; 00:03:09     ; --                      ; --                  ; 00:14:11                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 465 MB              ; 00:00:18                           ;
+; Fitter               ; 00:00:50     ; 1.1                     ; 1860 MB             ; 00:01:33                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 512 MB              ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:07     ; 1.6                     ; 838 MB              ; 00:00:08                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 664 MB              ; 00:00:01                           ;
+; Total                ; 00:01:14     ; --                      ; --                  ; 00:02:05                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; AsherARM         ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; AsherARM         ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; AsherARM         ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; AsherARM         ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; AsherARM         ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++----------------------+------------------+----------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
++----------------------+------------------+----------------+------------+----------------+
+; Analysis & Synthesis ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; Fitter               ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; Assembler            ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; Timing Analyzer      ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; EDA Netlist Writer   ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
++----------------------+------------------+----------------+------------+----------------+
 
 
 ------------
