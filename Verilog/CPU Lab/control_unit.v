@@ -40,13 +40,16 @@ module control_unit
 			localparam RSH		= 8'b1000_100x;	
 		 	localparam RSHI	= 8'b1000_101x;
 			localparam ARSH 	= 8'b1000_0110;
-			localparam ARSHI 	= 9'b1000_001x;
+			localparam ARSHI 	= 8'b1000_001x;
 			localparam NOP		= 8'b0000_0000;
+			localparam LOAD   = 8'b0100_0000;
+			localparam STOR   = 8'b0100_0100;
 			// States
 			localparam FETCH     = 3'd0;
 			localparam DECODE    = 3'd1;
 			localparam EXECUTE   = 3'd2;
 			localparam WRITEBACK = 3'd3;
+			localparam LoadStoreCNTL = 3'd4;
 
     // State register
     always @(posedge clock or posedge reset) begin
@@ -118,6 +121,17 @@ module control_unit
 
                 nextState = FETCH;
             end
+				
+				LoadStoreCNTL: begin
+					casex(aluOpcode)
+						LOAD:begin
+							registerFileWriteEnable = 1'b1;
+							
+							end
+						STOR:
+						default: 
+					programStateRegister
+				end
 
             default: begin
                 nextState = FETCH;
