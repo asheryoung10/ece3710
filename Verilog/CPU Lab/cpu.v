@@ -233,7 +233,7 @@ register_file_input_mux
     // Inputs
     .select(registerFileSelectInput),
     .selection0(aluResult),
-    .selection1(registerFileContentsA),
+    .selection1(registerFileContentsB),
     .selection2(instructionDecoderImmediate),
     .selection3(memoryContents),
     // Outputs

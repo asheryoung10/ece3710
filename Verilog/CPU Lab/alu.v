@@ -33,6 +33,9 @@ module alu
     localparam ARSH  = 8'b1000_0110;
     localparam ARSHI = 8'b1000_001x;
     localparam NOP   = 8'b0000_0000;
+	 
+	 localparam LOAD  = 8'b0100_0000;
+	 localparam STOR  = 8'b0100_0100;
 
     // Individual flag bits
     reg cFlag, lFlag, fFlag, zFlag, nFlag;
@@ -116,8 +119,8 @@ module alu
                 Result = (shift_amt >= 0) ? ($signed(B) >>> shift_amt) : ($signed(B) <<< -shift_amt);
             end
 
-            // NOP
-            NOP: begin
+            // NOP and LOAD/STOR
+            default: begin
                 Result = B; // pass-through
             end
         endcase
