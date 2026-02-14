@@ -42,6 +42,7 @@ module control_unit
 			localparam ARSH 	= 8'b1000_0110;
 			localparam ARSHI 	= 8'b1000_001x;
 			localparam NOP		= 8'b0000_0000;
+			
 			localparam LOAD   = 8'b0100_0000;
 			localparam STOR   = 8'b0100_0100;
 			// States
@@ -49,7 +50,7 @@ module control_unit
 			localparam DECODE    = 3'd1;
 			localparam EXECUTE   = 3'd2;
 			localparam WRITEBACK = 3'd3;
-			localparam LoadStoreCNTL = 3'd4;
+			localparam LOADSTORCNTL = 3'd4;
 
     // State register
     always @(posedge clock or posedge reset) begin
@@ -92,7 +93,10 @@ module control_unit
             // ======================
             DECODE: begin
                 // No writes, just let instruction decoder settle
-                nextState = EXECUTE;
+					 casex (aluOpcode)
+					   LOAD, STOR: nextState = LOADSTORCNTL;
+						default: nextState = EXECUTE;
+					 endcase
             end
 
             // ======================
@@ -122,15 +126,24 @@ module control_unit
                 nextState = FETCH;
             end
 				
-				LoadStoreCNTL: begin
+				LOADSTORCNTL: begin
 					casex(aluOpcode)
-						LOAD:begin
+						LOAD: begin
+							memoryWriteEnable = 1'b0;
+							memorySelectReadWriteAddress = 1'b1;
 							registerFileWriteEnable = 1'b1;
-							
+							registerFileSelectInput = 2'd3;
+							nextState = FETCH;
 							end
-						STOR:
-						default: 
-					programStateRegister
+						STOR: begin
+							memoryWriteEnable = 1'b1;
+							memorySelectReadWriteAddress = 1'b1;
+							registerFileWriteEnable = 1'b1;
+							registerFileSelectInput = 2'd1;
+							nextState = FETCH;
+						end
+						default: nextState = FETCH;
+						endcase
 				end
 
             default: begin
