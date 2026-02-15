@@ -2,154 +2,93 @@ module control_unit
 (
     input clock,
     input reset,
-
     input [7:0] aluOpcode,
 
     output reg memoryWriteEnable,
-
+    output reg memorySelectReadWriteAddress,
     output reg registerFileWriteEnable,
     output reg [1:0] registerFileSelectInput,
-
     output reg instructionRegisterWriteEnable,
     output reg programCounterWriteEnable,
     output reg programStateRegisterWriteEnable,
-
     output reg aluSelectImmediate,
-    output reg memorySelectReadWriteAddress,
-	 
-	 output reg [2:0] state,
-	 output reg [2:0] nextState
+	output reg [2:0] state,
+	output reg [2:0] nextState
 );
-		// Instruction opcodes
-         localparam ADD    	= 8'b0000_0101;
-         localparam ADDI   	= 8'b0101_xxxx;
-			localparam ADDU   	= 8'b0000_0110;
-			localparam ADDUI  	= 8'b0110_xxxx;
-			localparam ADDC   	= 8'b0000_0111;
-			localparam ADDCI  	= 8'b0111_xxxx;
-			localparam SUB    	= 8'b0000_1001;
-			localparam SUBI   	= 8'b1001_xxxx;
-			localparam CMP 		= 8'b0000_1011;
-			localparam CMPI		= 8'b1011_xxxx;
-			localparam AND 		= 8'b0000_0001;
-			localparam OR 		= 8'b0000_0010;
-			localparam XOR		= 8'b0000_0011;
-			localparam NOT		= 8'b0000_0100;
-			localparam LSH		= 8'b1000_0100;
-			localparam LSHI	= 8'b1000_000x;
-			localparam RSH		= 8'b1000_100x;	
-		 	localparam RSHI	= 8'b1000_101x;
-			localparam ARSH 	= 8'b1000_0110;
-			localparam ARSHI 	= 8'b1000_001x;
-			localparam NOP		= 8'b0000_0000;
-			
-			localparam LOAD   = 8'b0100_0000;
-			localparam STOR   = 8'b0100_0100;
-			// States
-			localparam FETCH     = 3'd0;
-			localparam DECODE    = 3'd1;
-			localparam EXECUTE   = 3'd2;
-			localparam WRITEBACK = 3'd3;
-			localparam LOADSTORCNTL = 3'd4;
+     
+`include "opcodes.vh"
+`include "states.vh"
 
-    // State register
-    always @(posedge clock or posedge reset) begin
-        if (reset)
-            state <= FETCH;
-        else
-            state <= nextState;
-    end
+always @(posedge clock or posedge reset) begin
+    if (reset)
+        state <= FETCH_INSTRUCTION_FROM_MEMORY;
+    else
+        state <= nextState;
+end
 
-    // Default control values
-    always @(*) begin
-        // Defaults (safe!)
-        memoryWriteEnable              = 1'b0;
-        registerFileWriteEnable        = 1'b0;
-        instructionRegisterWriteEnable = 1'b0;
-        programCounterWriteEnable      = 1'b0;
-        programStateRegisterWriteEnable= 1'b0;
+always @(*) begin
+    memoryWriteEnable               = 1'b0;
+    memorySelectReadWriteAddress    = 1'b0;
+    registerFileWriteEnable         = 1'b0;
+    registerFileSelectInput         = 2'b0;
+    instructionRegisterWriteEnable  = 1'b0;
+    programCounterWriteEnable       = 1'b0;
+    programStateRegisterWriteEnable = 1'b0;
+    aluSelectImmediate              = 1'b0;
+    state                           = state;
+    nextState                       = NOTHING_STATE;
 
-        aluSelectImmediate             = 1'b0;
-        memorySelectReadWriteAddress   = 1'b0;
-        registerFileSelectInput        = 2'b00;
+    case (state)
+        FETCH_INSTRUCTION_FROM_MEMORY: begin
+            // Address memory with program counter
+            memorySelectReadWriteAddress = 1'b0;
+            nextState = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER;
 
-        nextState = state;
-
-        case (state)
-
-            // ======================
-            // FETCH
-            // ======================
-            FETCH: begin
-                memorySelectReadWriteAddress   = 1'b0; // PC → memory
-                instructionRegisterWriteEnable = 1'b1; // IR <= memory
-                programCounterWriteEnable      = 1'b1; // PC++
-
-                nextState = DECODE;
-            end
-
-            // ======================
-            // DECODE
-            // ======================
-            DECODE: begin
-                // No writes, just let instruction decoder settle
-					 casex (aluOpcode)
-					   LOAD, STOR: nextState = LOADSTORCNTL;
-						default: nextState = EXECUTE;
-					 endcase
-            end
-
-            // ======================
-            // EXECUTE
-            // ======================
-            EXECUTE: begin
-                // Example: ALU register-register or immediate
-                casex (aluOpcode)
-						  ADDI, SUBI: aluSelectImmediate = 1'b1;  // I-type
-						  default:    aluSelectImmediate = 1'b0;  // Register-register type
-					 endcase
-
-                nextState = WRITEBACK;
-            end
-
-            // ======================
-            // WRITEBACK
-            // ======================
-            WRITEBACK: begin
-					casex (aluOpcode)
-						  ADDI, SUBI: aluSelectImmediate = 1'b1;  // I-type
-						  default:    aluSelectImmediate = 1'b0;  // Register-register type
-					 endcase
-                registerFileWriteEnable = 1'b1;
-                registerFileSelectInput = 2'b00; // ALU result
-
-                nextState = FETCH;
-            end
-				
-				LOADSTORCNTL: begin
-					casex(aluOpcode)
-						LOAD: begin
-							memoryWriteEnable = 1'b0;
-							memorySelectReadWriteAddress = 1'b1;
-							registerFileWriteEnable = 1'b1;
-							registerFileSelectInput = 2'd3;
-							nextState = FETCH;
+        end
+        LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER: begin
+            // Write instruction to the instruction register
+            instructionRegisterWriteEnable = 1'b1;
+            nextState = DECODE_INSTRUCTION;
+        end 
+        DECODE_INSTRUCTION: begin
+            programCounterWriteEnable = 1'b1;
+            // Choose next state
+            casex (aluOpcode)
+                ADD, ADDI, ADDUI, ADDC, ADDCI, SUB, SUBI, CMP, CMPI, AND, OR, XOR, NOT, LSH, LSHI, RSH, RSHI, ARSH, ARSHI: begin
+                    registerFileWriteEnable = 1'b1;
+                    nextState = FETCH_INSTRUCTION_FROM_MEMORY;
 							end
-						STOR: begin
-							memoryWriteEnable = 1'b1;
-							memorySelectReadWriteAddress = 1'b1;
-							registerFileWriteEnable = 1'b1;
-							registerFileSelectInput = 2'd1;
-							nextState = FETCH;
-						end
-						default: nextState = FETCH;
-						endcase
-				end
+                LOAD: 
+                    nextState = EXECUTE_LOAD_INSTRUCTION;
+                STOR:
+                    nextState = FETCH_INSTRUCTION_FROM_MEMORY;
+                MOV, MOVI: begin
+                    registerFileWriteEnable = 1'b1;
+                    nextState = FETCH_INSTRUCTION_FROM_MEMORY;
+					 end
+            endcase
 
-            default: begin
-                nextState = FETCH;
-            end
-        endcase
-    end
+            // Setup next state
+            casex (aluOpcode)
+                ADDI, ADDUI, ADDCI, SUBI, CMPI, LSHI, RSHI, ARSHI: aluSelectImmediate = 1'b1;
+                MOV:    registerFileSelectInput = 2'b01; // Select Contents A
+                MOVI:   registerFileSelectInput = 2'b10; // Select Immediate
+                LOAD:   memorySelectReadWriteAddress = 1'b1;
+                STOR: begin
+                    memoryWriteEnable = 1'b1;
+                    memorySelectReadWriteAddress = 1'b1;
+                end
+            endcase
+        end
+        EXECUTE_LOAD_INSTRUCTION: begin
+            registerFileWriteEnable = 1'b1;
+            registerFileSelectInput = 2'b11;
+				nextState = FETCH_INSTRUCTION_FROM_MEMORY;
+        end
+        NOTHING_STATE: begin
+            nextState = NOTHING_STATE;
+        end
+    endcase
+end
 
 endmodule

@@ -1,12 +1,13 @@
 module instruction_decoder (
     input [15:0] instruction,
-	 input [15:0] programCounter,
+	input [15:0] programCounter,
+    input [15:0] programStateRegisterContents,
 	 
     output [3:0] registerAddressA,
     output [3:0] registerAddressB,
     output [15:0] immediate,
     output [7:0] aluOpcode,
-	 output [15:0] nextProgramCounter
+	output [15:0] nextProgramCounter
 );
 
 assign registerAddressA = instruction[3:0];
