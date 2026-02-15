@@ -1,3 +1,37 @@
 BEGIN 1:memory:fast:work
-    ram :  1:tb_top:fast:work
+    ram :  1:tb_cpu:fast:work
+END 
+BEGIN 1:cpu:fast:work
+    programCounterContentsOutput :  1:tb_cpu:fast:work
+    aluFlagsOutput :  1:tb_cpu:fast:work
+    controlUnitNextState :  1:tb_cpu:fast:work
+    instructionRegisterContentsOutput :  1:tb_cpu:fast:work
+    programStateRegisterContentsOutput :  1:tb_cpu:fast:work
+    aluResultOutput :  1:tb_cpu:fast:work
+    controlUnitState :  1:tb_cpu:fast:work
+END 
+BEGIN 1:register_file:fast:work
+    contentsB :  1:tb_cpu:fast:work
+    registers :  1:tb_cpu:fast:work
+    contentsA :  1:tb_cpu:fast:work
+    writeAddress :  1:tb_cpu:fast:work
+    writeEnable :  1:tb_cpu:fast:work
+    writeData :  1:tb_cpu:fast:work
+END 
+BEGIN 1:alu:fast:work
+    A :  1:tb_cpu:fast:work
+    B :  1:tb_cpu:fast:work
+END 
+BEGIN 1:mux4:fast:work
+    select :  1:tb_cpu:fast:work
+END 
+BEGIN 1:instruction_decoder:fast:work
+    immediate :  1:tb_cpu:fast:work
+    instruction :  1:tb_cpu:fast:work
+    registerAddressB :  1:tb_cpu:fast:work
+    aluOpcode :  1:tb_cpu:fast:work
+    registerAddressA :  1:tb_cpu:fast:work
+END 
+BEGIN 1:control_unit:fast:work
+    aluSelectImmediate :  1:tb_cpu:fast:work
 END 

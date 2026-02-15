@@ -13,8 +13,8 @@ module cpu
     output [DATA_WIDTH-1:0] aluResultOutput,
     output [4:0] aluFlagsOutput,
 	 
-	 output [2:0] controlUnitState,
-	 output [2:0] controlUnitNextState
+	output [2:0] controlUnitState,
+	output [2:0] controlUnitNextState
 );
 
 //
@@ -28,6 +28,7 @@ wire [MEMORY_ADDR_WIDTH-1:0] memoryReadWriteAddress;
 // Outputs
 wire [DATA_WIDTH-1:0] memoryContents;
 wire [DATA_WIDTH-1:0] registerFileContentsB;
+
 
 // Inputs
 wire registerFileWriteEnable;
@@ -70,6 +71,7 @@ wire programCounterWriteEnable;
 wire [DATA_WIDTH-1:0] programCounterWriteData;
 // Outputs
 wire [DATA_WIDTH-1:0] programCounterContents;
+
 
 //
 // Core modules
@@ -126,7 +128,6 @@ alu_instance
     .Result(aluResult)
 );
 
-
 register 
 #(
     .DATA_WIDTH(DATA_WIDTH)
@@ -141,7 +142,6 @@ instruction_register
     .writeData(memoryContents),
     .contents(instructionRegisterContents)
 );
-
 
 register 
 #(
@@ -177,13 +177,14 @@ instruction_decoder instruction_decoder_instance
 (
     // Inputs
     .instruction(instructionRegisterContents),
-	 .programCounter(programCounterContents),
+	.programCounter(programCounterContents),
+    .programStateRegisterContents(programStateRegisterContents),
     // Outputs
     .registerAddressA(registerFileReadAddressA),
     .registerAddressB(registerFileReadAddressB),
     .immediate(instructionDecoderImmediate),
     .aluOpcode(aluOpcode),
-	 .nextProgramCounter(programCounterWriteData)
+	.nextProgramCounter(programCounterWriteData)
 );
 
 
@@ -205,13 +206,11 @@ alu_input_mux
     .selection(aluA)
 );
 
-
-
 mux2 
 #(
     .DATA_WIDTH(MEMORY_ADDR_WIDTH)
 )
-memory_select_read_write_address
+memory_select_read_write_address_mux
 (
     // Inputs
     .select(memorySelectReadWriteAddress),
@@ -220,9 +219,6 @@ memory_select_read_write_address
     // Outputs
     .selection(memoryReadWriteAddress)
 );
-
-
-
 
 mux4 
 #(
@@ -233,7 +229,7 @@ register_file_input_mux
     // Inputs
     .select(registerFileSelectInput),
     .selection0(aluResult),
-    .selection1(registerFileContentsB),
+    .selection1(registerFileContentsA),
     .selection2(instructionDecoderImmediate),
     .selection3(memoryContents),
     // Outputs
@@ -260,8 +256,8 @@ control_unit control_unit_instance
     .aluSelectImmediate(aluSelectImmediate),
     .memorySelectReadWriteAddress(memorySelectReadWriteAddress),
 	 
-	 .state(controlUnitState),
-	 .nextState(controlUnitNextState)
+	.state(controlUnitState),
+	.nextState(controlUnitNextState)
 );
 
 

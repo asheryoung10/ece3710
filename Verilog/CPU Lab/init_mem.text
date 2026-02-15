@@ -1,6 +1,59 @@
-5001  // ADDI #1, R0 0101_0001_0000_0001
-0150  // ADD R0, R1
-5101  // ADDI #1, R1
-0251  // ADD R1, R2
-5210  // ADDI #16, R2
-0000  // FPGA switches
+//ADDI Init registers to 1-16
+5001
+5102
+5203
+5304
+5405
+5506
+5607
+5708
+5809
+590a
+5a0b
+5b0c
+5c0d
+5d0e
+5e0f
+5f10
+
+//MOVI Inits register to 16-1
+D010
+D10f
+D20e
+D30d
+D40c
+D50b
+D60a
+D709
+D808
+D907
+Da06
+Db05
+Dc04
+Dd03
+De02
+Df01
+
+//MOV Inits regs to all 16  0000_dddd_1101_ssss
+00D0
+01D0
+02D0
+03D0
+04D0
+05D0
+06D0
+07D0
+08D0
+09D0
+0aD0
+0bD0
+0cD0
+0dD0
+0eD0
+0fD0
+430F //0100 0011 0000 1111 LOAD Rdest = 3, Raddr=15
+454F //0100 0101 0100 1111 STOR Rsrc = 6, Raddr = 15
+440F //0100 0100 0000 1111 LOAD Rdest = 4, Raddr=15
+474F //0100 0111 0100 1111 STOR Rsrc = 7, Raddr = 15'
+0000 // NOP
+// r0 = r0 + 1: 0101_rdest_immm_immm

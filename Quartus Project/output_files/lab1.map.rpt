@@ -1,6 +1,6 @@
 Analysis & Synthesis report for lab1
-Mon Feb  9 16:09:00 2026
-Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Sat Feb 14 19:39:49 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
 ---------------------
@@ -16,69 +16,70 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. Registers Removed During Synthesis
  10. General Register Statistics
- 11. Registers Packed Into Inferred Megafunctions
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0|altsyncram_3qc1:auto_generated
- 14. Parameter Settings for User Entity Instance: cpu:cpu_instance
- 15. Parameter Settings for User Entity Instance: cpu:cpu_instance|memory:memory_instance
- 16. Parameter Settings for User Entity Instance: cpu:cpu_instance|register_file:register_file_instance
- 17. Parameter Settings for User Entity Instance: cpu:cpu_instance|alu:alu_instance
- 18. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:instruction_register
- 19. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_state_register
- 20. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_counter
- 21. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:alu_input_mux
- 22. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:memory_select_read_write_address
- 23. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux4:register_file_input_mux
- 24. Parameter Settings for Inferred Entity Instance: cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0
- 25. altsyncram Parameter Settings by Entity Instance
- 26. Port Connectivity Checks: "cpu:cpu_instance"
- 27. Post-Synthesis Netlist Statistics for Top Partition
- 28. Elapsed Time Per Partition
- 29. Analysis & Synthesis Messages
+ 11. Inverted Register Statistics
+ 12. Registers Packed Into Inferred Megafunctions
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0|altsyncram_hte1:auto_generated
+ 15. Parameter Settings for User Entity Instance: cpu:cpu_instance
+ 16. Parameter Settings for User Entity Instance: cpu:cpu_instance|memory:memory_instance
+ 17. Parameter Settings for User Entity Instance: cpu:cpu_instance|register_file:register_file_instance
+ 18. Parameter Settings for User Entity Instance: cpu:cpu_instance|alu:alu_instance
+ 19. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:instruction_register
+ 20. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_state_register
+ 21. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_counter
+ 22. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:alu_input_mux
+ 23. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:memory_select_read_write_address_mux
+ 24. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux4:register_file_input_mux
+ 25. Parameter Settings for Inferred Entity Instance: cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0
+ 26. altsyncram Parameter Settings by Entity Instance
+ 27. Port Connectivity Checks: "cpu:cpu_instance"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2024  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions 
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Intel Program License 
-Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Feb  9 16:09:00 2026          ;
-; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name                   ; lab1                                           ;
-; Top-level Entity Name           ; top                                            ;
-; Family                          ; Cyclone V                                      ;
-; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 284                                            ;
-; Total pins                      ; 18                                             ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 16,384                                         ;
-; Total DSP Blocks                ; 0                                              ;
-; Total HSSI RX PCSs              ; 0                                              ;
-; Total HSSI PMA RX Deserializers ; 0                                              ;
-; Total HSSI TX PCSs              ; 0                                              ;
-; Total HSSI PMA TX Serializers   ; 0                                              ;
-; Total PLLs                      ; 0                                              ;
-; Total DLLs                      ; 0                                              ;
-+---------------------------------+------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Feb 14 19:39:49 2026           ;
+; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                   ; lab1                                            ;
+; Top-level Entity Name           ; top                                             ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 285                                             ;
+; Total pins                      ; 18                                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 16,384                                          ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -173,47 +174,54 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 32          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                    ;
-+------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path         ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                               ; Library ;
-+------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------+---------+
-; ../Verilog/CPU Lab/register_file.v       ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/register_file.v                      ;         ;
-; ../Verilog/CPU Lab/register.v            ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/register.v                           ;         ;
-; ../Verilog/CPU Lab/mux4.v                ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/mux4.v                               ;         ;
-; ../Verilog/CPU Lab/mux2.v                ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/mux2.v                               ;         ;
-; ../Verilog/CPU Lab/memory.v              ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/memory.v                             ;         ;
-; ../Verilog/CPU Lab/instruction_decoder.v ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/instruction_decoder.v                ;         ;
-; ../Verilog/CPU Lab/cpu.v                 ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/cpu.v                                ;         ;
-; ../Verilog/CPU Lab/control_unit.v        ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/control_unit.v                       ;         ;
-; ../Verilog/CPU Lab/alu.v                 ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/alu.v                                ;         ;
-; ../Verilog/CPU Lab/top.v                 ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/top.v                                ;         ;
-; altsyncram.tdf                           ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/altsyncram.tdf                          ;         ;
-; stratix_ram_block.inc                    ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/stratix_ram_block.inc                   ;         ;
-; lpm_mux.inc                              ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/lpm_mux.inc                             ;         ;
-; lpm_decode.inc                           ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/lpm_decode.inc                          ;         ;
-; aglobal231.inc                           ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/aglobal231.inc                          ;         ;
-; a_rdenreg.inc                            ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/a_rdenreg.inc                           ;         ;
-; altrom.inc                               ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/altrom.inc                              ;         ;
-; altram.inc                               ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/altram.inc                              ;         ;
-; altdpram.inc                             ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/altdpram.inc                            ;         ;
-; db/altsyncram_3qc1.tdf                   ; yes             ; Auto-Generated Megafunction                           ; /home/u1462567/Documents/ece3710-main/Quartus Project/db/altsyncram_3qc1.tdf               ;         ;
-; db/lab1.ram0_memory_acf65643.hdl.mif     ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/u1462567/Documents/ece3710-main/Quartus Project/db/lab1.ram0_memory_acf65643.hdl.mif ;         ;
-+------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                  ;
++--------------------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                   ; Library ;
++--------------------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------+---------+
+; ../Verilog/CPU Lab/register_file.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/register_file.v                      ;         ;
+; ../Verilog/CPU Lab/register.v                                      ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/register.v                           ;         ;
+; ../Verilog/CPU Lab/mux4.v                                          ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/mux4.v                               ;         ;
+; ../Verilog/CPU Lab/mux2.v                                          ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/mux2.v                               ;         ;
+; ../Verilog/CPU Lab/memory.v                                        ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/memory.v                             ;         ;
+; ../Verilog/CPU Lab/instruction_decoder.v                           ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/instruction_decoder.v                ;         ;
+; ../Verilog/CPU Lab/cpu.v                                           ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v                                ;         ;
+; ../Verilog/CPU Lab/control_unit.v                                  ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/control_unit.v                       ;         ;
+; ../Verilog/CPU Lab/alu.v                                           ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/alu.v                                ;         ;
+; ../Verilog/CPU Lab/top.v                                           ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/top.v                                ;         ;
+; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/opcodes.vh ; yes             ; Auto-Found Unspecified File                           ; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/opcodes.vh                             ;         ;
+; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/states.vh  ; yes             ; Auto-Found Unspecified File                           ; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/states.vh                              ;         ;
+; altsyncram.tdf                                                     ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altsyncram.tdf                          ;         ;
+; stratix_ram_block.inc                                              ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                   ;         ;
+; lpm_mux.inc                                                        ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mux.inc                             ;         ;
+; lpm_decode.inc                                                     ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_decode.inc                          ;         ;
+; aglobal251.inc                                                     ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/aglobal251.inc                          ;         ;
+; a_rdenreg.inc                                                      ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/a_rdenreg.inc                           ;         ;
+; altrom.inc                                                         ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altrom.inc                              ;         ;
+; altram.inc                                                         ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altram.inc                              ;         ;
+; altdpram.inc                                                       ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altdpram.inc                            ;         ;
+; db/altsyncram_hte1.tdf                                             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_hte1.tdf               ;         ;
+; db/lab1.ram0_memory_acf65643.hdl.mif                               ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/lab1.ram0_memory_acf65643.hdl.mif ;         ;
++--------------------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -221,16 +229,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 488         ;
+; Estimate of Logic utilization (ALMs needed) ; 555         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 590         ;
-;     -- 7 input functions                    ; 14          ;
-;     -- 6 input functions                    ; 342         ;
-;     -- 5 input functions                    ; 102         ;
-;     -- 4 input functions                    ; 47          ;
-;     -- <=3 input functions                  ; 85          ;
+; Combinational ALUT usage for logic          ; 681         ;
+;     -- 7 input functions                    ; 7           ;
+;     -- 6 input functions                    ; 392         ;
+;     -- 5 input functions                    ; 100         ;
+;     -- 4 input functions                    ; 100         ;
+;     -- <=3 input functions                  ; 82          ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 284         ;
+; Dedicated logic registers                   ; 285         ;
 ;                                             ;             ;
 ; I/O pins                                    ; 18          ;
 ; Total MLAB memory bits                      ; 0           ;
@@ -239,9 +247,9 @@ https://fpgasoftware.intel.com/eula.
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 300         ;
-; Total fan-out                               ; 4447        ;
-; Average fan-out                             ; 4.80        ;
+; Maximum fan-out                             ; 301         ;
+; Total fan-out                               ; 4934        ;
+; Average fan-out                             ; 4.85        ;
 +---------------------------------------------+-------------+
 
 
@@ -250,40 +258,41 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                              ; Entity Name         ; Library Name ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |top                                                     ; 590 (0)             ; 284 (0)                   ; 16384             ; 0          ; 18   ; 0            ; |top                                                                                             ; top                 ; work         ;
-;    |cpu:cpu_instance|                                    ; 590 (0)             ; 284 (0)                   ; 16384             ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance                                                                            ; cpu                 ; work         ;
-;       |alu:alu_instance|                                 ; 394 (394)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|alu:alu_instance                                                           ; alu                 ; work         ;
-;       |control_unit:control_unit_instance|               ; 5 (5)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|control_unit:control_unit_instance                                         ; control_unit        ; work         ;
+; |top                                                     ; 681 (0)             ; 285 (0)                   ; 16384             ; 0          ; 18   ; 0            ; |top                                                                                             ; top                 ; work         ;
+;    |cpu:cpu_instance|                                    ; 681 (0)             ; 285 (0)                   ; 16384             ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance                                                                            ; cpu                 ; work         ;
+;       |alu:alu_instance|                                 ; 429 (429)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|alu:alu_instance                                                           ; alu                 ; work         ;
+;       |control_unit:control_unit_instance|               ; 19 (19)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|control_unit:control_unit_instance                                         ; control_unit        ; work         ;
 ;       |instruction_decoder:instruction_decoder_instance| ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|instruction_decoder:instruction_decoder_instance                           ; instruction_decoder ; work         ;
 ;       |memory:memory_instance|                           ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|memory:memory_instance                                                     ; memory              ; work         ;
 ;          |altsyncram:ram_rtl_0|                          ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0                                ; altsyncram          ; work         ;
-;             |altsyncram_3qc1:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0|altsyncram_3qc1:auto_generated ; altsyncram_3qc1     ; work         ;
-;       |mux2:alu_input_mux|                               ; 85 (85)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|mux2:alu_input_mux                                                         ; mux2                ; work         ;
+;             |altsyncram_hte1:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0|altsyncram_hte1:auto_generated ; altsyncram_hte1     ; work         ;
+;       |mux2:alu_input_mux|                               ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|mux2:alu_input_mux                                                         ; mux2                ; work         ;
+;       |mux2:memory_select_read_write_address_mux|        ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|mux2:memory_select_read_write_address_mux                                  ; mux2                ; work         ;
+;       |mux4:register_file_input_mux|                     ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|mux4:register_file_input_mux                                               ; mux4                ; work         ;
 ;       |register:instruction_register|                    ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|register:instruction_register                                              ; register            ; work         ;
 ;       |register:program_counter|                         ; 1 (1)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|register:program_counter                                                   ; register            ; work         ;
-;       |register_file:register_file_instance|             ; 96 (96)             ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|register_file:register_file_instance                                       ; register_file       ; work         ;
+;       |register_file:register_file_instance|             ; 182 (182)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|register_file:register_file_instance                                       ; register_file       ; work         ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                ;
-+--------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+--------------------------------------+
-; Name                                                                                                   ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                  ;
-+--------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+--------------------------------------+
-; cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0|altsyncram_3qc1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 1024         ; 16           ; --           ; --           ; 16384 ; db/lab1.ram0_memory_acf65643.hdl.mif ;
-+--------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+--------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                       ;
++--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+--------------------------------------+
+; Name                                                                                                   ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                  ;
++--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+--------------------------------------+
+; cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0|altsyncram_hte1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 1024         ; 16           ; --           ; --           ; 16384 ; db/lab1.ram0_memory_acf65643.hdl.mif ;
++--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+--------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                    ;
-+--------------------------------------------------------------+----------------------------------------+
-; Register name                                                ; Reason for Removal                     ;
-+--------------------------------------------------------------+----------------------------------------+
-; cpu:cpu_instance|control_unit:control_unit_instance|state[2] ; Stuck at GND due to stuck port data_in ;
-; cpu:cpu_instance|register:program_counter|contents[10..15]   ; Lost fanout                            ;
-; Total Number of Removed Registers = 7                        ;                                        ;
-+--------------------------------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++------------------------------------------------------------+--------------------+
+; Register name                                              ; Reason for Removal ;
++------------------------------------------------------------+--------------------+
+; cpu:cpu_instance|register:program_counter|contents[10..15] ; Lost fanout        ;
+; Total Number of Removed Registers = 6                      ;                    ;
++------------------------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -291,14 +300,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 284   ;
+; Total registers                              ; 285   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 284   ;
+; Number of registers using Asynchronous Clear ; 285   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 282   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------+
+; Inverted Register Statistics                                           ;
++--------------------------------------------------------------+---------+
+; Inverted Register                                            ; Fan out ;
++--------------------------------------------------------------+---------+
+; cpu:cpu_instance|control_unit:control_unit_instance|state[0] ; 13      ;
+; Total number of inverted registers = 1                       ;         ;
++--------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -310,27 +329,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------+---------------------------------------------------+------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|alu:alu_instance|ShiftRight1               ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|alu:alu_instance|ShiftLeft2                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|alu:alu_instance|ShiftRight0               ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|alu:alu_instance|ShiftLeft0                ;
-; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|alu:alu_instance|ShiftLeft0                ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|register_file:register_file_instance|Mux22 ;
-; 17:1               ; 16 bits   ; 176 LEs       ; 176 LEs              ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|mux2:alu_input_mux|selection[10]           ;
-; 250:1              ; 2 bits    ; 332 LEs       ; 76 LEs               ; 256 LEs                ; No         ; |top|cpu:cpu_instance|alu:alu_instance|Selector5                 ;
-; 252:1              ; 2 bits    ; 336 LEs       ; 76 LEs               ; 260 LEs                ; No         ; |top|cpu:cpu_instance|alu:alu_instance|Selector10                ;
-; 252:1              ; 2 bits    ; 336 LEs       ; 76 LEs               ; 260 LEs                ; No         ; |top|cpu:cpu_instance|alu:alu_instance|Selector2                 ;
-; 253:1              ; 2 bits    ; 336 LEs       ; 76 LEs               ; 260 LEs                ; No         ; |top|cpu:cpu_instance|alu:alu_instance|Selector13                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; Yes        ; |top|cpu:cpu_instance|control_unit:control_unit_instance|state[1] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|alu:alu_instance|ShiftRight1                ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|alu:alu_instance|ShiftLeft2                 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|alu:alu_instance|ShiftRight0                ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|alu:alu_instance|ShiftLeft0                 ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|alu:alu_instance|ShiftLeft0                 ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; No         ; |top|cpu:cpu_instance|control_unit:control_unit_instance|Mux4     ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|mux4:register_file_input_mux|selection[13]  ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|register_file:register_file_instance|Mux28  ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|register_file:register_file_instance|Mux3   ;
+; 250:1              ; 2 bits    ; 332 LEs       ; 36 LEs               ; 296 LEs                ; No         ; |top|cpu:cpu_instance|alu:alu_instance|Selector5                  ;
+; 252:1              ; 2 bits    ; 336 LEs       ; 36 LEs               ; 300 LEs                ; No         ; |top|cpu:cpu_instance|alu:alu_instance|Selector9                  ;
+; 252:1              ; 2 bits    ; 336 LEs       ; 34 LEs               ; 302 LEs                ; No         ; |top|cpu:cpu_instance|alu:alu_instance|Selector1                  ;
+; 253:1              ; 2 bits    ; 336 LEs       ; 34 LEs               ; 302 LEs                ; No         ; |top|cpu:cpu_instance|alu:alu_instance|Selector14                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
-; Source assignments for cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0|altsyncram_3qc1:auto_generated ;
+; Source assignments for cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0|altsyncram_hte1:auto_generated ;
 +---------------------------------+--------------------+------+------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                   ;
 +---------------------------------+--------------------+------+------------------------------------------------------+
@@ -422,13 +444,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:memory_select_read_write_address ;
-+----------------+-------+----------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                       ;
-+----------------+-------+----------------------------------------------------------------------------+
-; DATA_WIDTH     ; 10    ; Signed Integer                                                             ;
-+----------------+-------+----------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:memory_select_read_write_address_mux ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; DATA_WIDTH     ; 10    ; Signed Integer                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -453,7 +475,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; AUTO_CASCADE_CHAINS                ; ON                                   ; AUTO_CASCADE                      ;
 ; IGNORE_CASCADE_BUFFERS             ; OFF                                  ; IGNORE_CASCADE                    ;
 ; WIDTH_BYTEENA                      ; 1                                    ; Untyped                           ;
-; OPERATION_MODE                     ; ROM                                  ; Untyped                           ;
+; OPERATION_MODE                     ; SINGLE_PORT                          ; Untyped                           ;
 ; WIDTH_A                            ; 16                                   ; Untyped                           ;
 ; WIDTHAD_A                          ; 10                                   ; Untyped                           ;
 ; NUMWORDS_A                         ; 1024                                 ; Untyped                           ;
@@ -498,7 +520,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                ; Untyped                           ;
 ; WIDTH_ECCSTATUS                    ; 3                                    ; Untyped                           ;
 ; DEVICE_FAMILY                      ; Cyclone V                            ; Untyped                           ;
-; CBXI_PARAMETER                     ; altsyncram_3qc1                      ; Untyped                           ;
+; CBXI_PARAMETER                     ; altsyncram_hte1                      ; Untyped                           ;
 +------------------------------------+--------------------------------------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -510,7 +532,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+--------------------------------------------------------------+
 ; Number of entity instances                ; 1                                                            ;
 ; Entity Instance                           ; cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0 ;
-;     -- OPERATION_MODE                     ; ROM                                                          ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                  ;
 ;     -- WIDTH_A                            ; 16                                                           ;
 ;     -- NUMWORDS_A                         ; 1024                                                         ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                 ;
@@ -542,30 +564,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 284                         ;
-;     CLR               ; 2                           ;
+; arriav_ff             ; 285                         ;
+;     CLR               ; 3                           ;
 ;     ENA CLR           ; 282                         ;
-; arriav_lcell_comb     ; 590                         ;
+; arriav_lcell_comb     ; 681                         ;
 ;     arith             ; 59                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 10                          ;
-;         2 data inputs ; 5                           ;
-;         4 data inputs ; 15                          ;
-;         5 data inputs ; 28                          ;
-;     extend            ; 14                          ;
-;         7 data inputs ; 14                          ;
-;     normal            ; 517                         ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 23                          ;
-;         3 data inputs ; 44                          ;
-;         4 data inputs ; 32                          ;
-;         5 data inputs ; 74                          ;
-;         6 data inputs ; 342                         ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 1                           ;
+;         4 data inputs ; 17                          ;
+;         5 data inputs ; 32                          ;
+;     extend            ; 7                           ;
+;         7 data inputs ; 7                           ;
+;     normal            ; 615                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 25                          ;
+;         3 data inputs ; 46                          ;
+;         4 data inputs ; 83                          ;
+;         5 data inputs ; 68                          ;
+;         6 data inputs ; 392                         ;
 ; boundary_port         ; 18                          ;
 ; stratixv_ram_block    ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.10                       ;
-; Average LUT depth     ; 8.63                        ;
+; Max LUT depth         ; 11.40                       ;
+; Average LUT depth     ; 9.42                        ;
 +-----------------------+-----------------------------+
 
 
@@ -574,7 +596,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -583,58 +605,60 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Feb  9 16:08:49 2026
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Sat Feb 14 19:39:41 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 0 design units, including 0 entities, in source file /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/shifting_unit.v
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/register_file.v
-    Info (12023): Found entity 1: register_file File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/register_file.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/register.v
-    Info (12023): Found entity 1: register File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/register.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/mux4.v
-    Info (12023): Found entity 1: mux4 File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/mux4.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/mux2.v
-    Info (12023): Found entity 1: mux2 File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/mux2.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/memory.v
-    Info (12023): Found entity 1: memory File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/memory.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/instruction_decoder.v
-    Info (12023): Found entity 1: instruction_decoder File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/instruction_decoder.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/cpu.v
-    Info (12023): Found entity 1: cpu File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/cpu.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/control_unit.v
-    Info (12023): Found entity 1: control_unit File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/control_unit.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/alu.v
-    Info (12023): Found entity 1: alu File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/alu.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/tb_cpu.v
-    Info (12023): Found entity 1: tb_cpu File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/tb_cpu.v Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/top.v
-    Info (12023): Found entity 1: top File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/top.v Line: 1
+Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
+Info (12021): Found 0 design units, including 0 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/shifting_unit.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/register_file.v
+    Info (12023): Found entity 1: register_file File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/register_file.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/register.v
+    Info (12023): Found entity 1: register File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/register.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/mux4.v
+    Info (12023): Found entity 1: mux4 File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/mux4.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/mux2.v
+    Info (12023): Found entity 1: mux2 File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/mux2.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/memory.v
+    Info (12023): Found entity 1: memory File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/memory.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/instruction_decoder.v
+    Info (12023): Found entity 1: instruction_decoder File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/instruction_decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/cpu.v
+    Info (12023): Found entity 1: cpu File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/control_unit.v
+    Info (12023): Found entity 1: control_unit File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/control_unit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/alu.v
+    Info (12023): Found entity 1: alu File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/alu.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/tb_cpu.v
+    Info (12023): Found entity 1: tb_cpu File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/tb_cpu.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/top.v
+    Info (12023): Found entity 1: top File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/top.v Line: 1
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu_instance" File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/top.v Line: 13
-Info (12128): Elaborating entity "memory" for hierarchy "cpu:cpu_instance|memory:memory_instance" File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/cpu.v Line: 91
-Warning (10850): Verilog HDL warning at memory.v(18): number of words (6) in memory file does not match the number of elements in the address range [0:1023] File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/memory.v Line: 18
-Info (12128): Elaborating entity "register_file" for hierarchy "cpu:cpu_instance|register_file:register_file_instance" File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/cpu.v Line: 111
-Warning (10240): Verilog HDL Always Construct warning at register_file.v(23): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/register_file.v Line: 23
-Info (12128): Elaborating entity "alu" for hierarchy "cpu:cpu_instance|alu:alu_instance" File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/cpu.v Line: 127
-Warning (10230): Verilog HDL assignment warning at alu.v(107): truncated value with size 32 to match size of target (4) File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/alu.v Line: 107
-Warning (10764): Verilog HDL warning at alu.v(112): converting signed shift amount to unsigned File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/alu.v Line: 112
-Warning (10764): Verilog HDL warning at alu.v(116): converting signed shift amount to unsigned File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/alu.v Line: 116
-Warning (10270): Verilog HDL Case Statement warning at alu.v(48): incomplete case statement has no default case item File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/alu.v Line: 48
-Warning (10240): Verilog HDL Always Construct warning at alu.v(45): inferring latch(es) for variable "negA", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/alu.v Line: 45
-Warning (10240): Verilog HDL Always Construct warning at alu.v(45): inferring latch(es) for variable "shift_amt", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/alu.v Line: 45
-Warning (10240): Verilog HDL Always Construct warning at alu.v(45): inferring latch(es) for variable "sa", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/alu.v Line: 45
-Info (12128): Elaborating entity "register" for hierarchy "cpu:cpu_instance|register:instruction_register" File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/cpu.v Line: 143
-Info (12128): Elaborating entity "instruction_decoder" for hierarchy "cpu:cpu_instance|instruction_decoder:instruction_decoder_instance" File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/cpu.v Line: 187
-Warning (10230): Verilog HDL assignment warning at instruction_decoder.v(16): truncated value with size 32 to match size of target (16) File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/instruction_decoder.v Line: 16
-Info (12128): Elaborating entity "mux2" for hierarchy "cpu:cpu_instance|mux2:alu_input_mux" File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/cpu.v Line: 206
-Info (12128): Elaborating entity "mux2" for hierarchy "cpu:cpu_instance|mux2:memory_select_read_write_address" File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/cpu.v Line: 222
-Info (12128): Elaborating entity "mux4" for hierarchy "cpu:cpu_instance|mux4:register_file_input_mux" File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/cpu.v Line: 241
-Info (12128): Elaborating entity "control_unit" for hierarchy "cpu:cpu_instance|control_unit:control_unit_instance" File: /home/u1462567/Documents/ece3710-main/Verilog/CPU Lab/cpu.v Line: 265
+Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/top.v Line: 13
+Info (12128): Elaborating entity "memory" for hierarchy "cpu:cpu_instance|memory:memory_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 93
+Warning (10850): Verilog HDL warning at memory.v(18): number of words (53) in memory file does not match the number of elements in the address range [0:1023] File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/memory.v Line: 18
+Info (12128): Elaborating entity "register_file" for hierarchy "cpu:cpu_instance|register_file:register_file_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 113
+Warning (10240): Verilog HDL Always Construct warning at register_file.v(23): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/register_file.v Line: 23
+Info (12128): Elaborating entity "alu" for hierarchy "cpu:cpu_instance|alu:alu_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 129
+Warning (10230): Verilog HDL assignment warning at alu.v(87): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/alu.v Line: 87
+Warning (10764): Verilog HDL warning at alu.v(92): converting signed shift amount to unsigned File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/alu.v Line: 92
+Warning (10764): Verilog HDL warning at alu.v(96): converting signed shift amount to unsigned File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/alu.v Line: 96
+Warning (10240): Verilog HDL Always Construct warning at alu.v(25): inferring latch(es) for variable "negA", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/alu.v Line: 25
+Warning (10240): Verilog HDL Always Construct warning at alu.v(25): inferring latch(es) for variable "shift_amt", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/alu.v Line: 25
+Warning (10240): Verilog HDL Always Construct warning at alu.v(25): inferring latch(es) for variable "sa", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/alu.v Line: 25
+Info (12128): Elaborating entity "register" for hierarchy "cpu:cpu_instance|register:instruction_register" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 144
+Info (12128): Elaborating entity "instruction_decoder" for hierarchy "cpu:cpu_instance|instruction_decoder:instruction_decoder_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 188
+Warning (10230): Verilog HDL assignment warning at instruction_decoder.v(17): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/instruction_decoder.v Line: 17
+Info (12128): Elaborating entity "mux2" for hierarchy "cpu:cpu_instance|mux2:alu_input_mux" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 207
+Info (12128): Elaborating entity "mux2" for hierarchy "cpu:cpu_instance|mux2:memory_select_read_write_address_mux" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 221
+Info (12128): Elaborating entity "mux4" for hierarchy "cpu:cpu_instance|mux4:register_file_input_mux" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 237
+Info (12128): Elaborating entity "control_unit" for hierarchy "cpu:cpu_instance|control_unit:control_unit_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 261
+Warning (10270): Verilog HDL Case Statement warning at control_unit.v(56): incomplete case statement has no default case item File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/control_unit.v Line: 56
+Warning (10270): Verilog HDL Case Statement warning at control_unit.v(72): incomplete case statement has no default case item File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/control_unit.v Line: 72
+Warning (10270): Verilog HDL Case Statement warning at control_unit.v(41): incomplete case statement has no default case item File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/control_unit.v Line: 41
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "cpu:cpu_instance|memory:memory_instance|ram_rtl_0" 
-        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
         Info (286033): Parameter WIDTH_A set to 16
         Info (286033): Parameter WIDTHAD_A set to 10
         Info (286033): Parameter NUMWORDS_A set to 1024
@@ -646,7 +670,7 @@ Info (19000): Inferred 1 megafunctions from design logic
         Info (286033): Parameter INIT_FILE set to db/lab1.ram0_memory_acf65643.hdl.mif
 Info (12130): Elaborated megafunction instantiation "cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0"
 Info (12133): Instantiated megafunction "cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
     Info (12134): Parameter "WIDTH_A" = "16"
     Info (12134): Parameter "WIDTHAD_A" = "10"
     Info (12134): Parameter "NUMWORDS_A" = "1024"
@@ -656,22 +680,22 @@ Info (12133): Instantiated megafunction "cpu:cpu_instance|memory:memory_instance
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
     Info (12134): Parameter "INIT_FILE" = "db/lab1.ram0_memory_acf65643.hdl.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_3qc1.tdf
-    Info (12023): Found entity 1: altsyncram_3qc1 File: /home/u1462567/Documents/ece3710-main/Quartus Project/db/altsyncram_3qc1.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_hte1.tdf
+    Info (12023): Found entity 1: altsyncram_hte1 File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_hte1.tdf Line: 28
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 896 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 987 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 862 logic cells
+    Info (21061): Implemented 953 logic cells
     Info (21064): Implemented 16 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 475 megabytes
-    Info: Processing ended: Mon Feb  9 16:09:00 2026
-    Info: Elapsed time: 00:00:11
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 4919 megabytes
+    Info: Processing ended: Sat Feb 14 19:39:49 2026
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:18
 
 

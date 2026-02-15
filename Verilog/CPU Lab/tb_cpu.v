@@ -1,10 +1,11 @@
 `timescale 1ns/1ps
 
 module tb_cpu;
+    `include "states.vh"
 
     // Parameters
     localparam CLK_PERIOD = 10;
-
+	 reg running;
     // Inputs
     reg clock;
     reg reset;
@@ -65,7 +66,7 @@ module tb_cpu;
     task print_cpu_state;
         begin
             $display(
-    "Time=%0t | IR=%h | DecInst=%h| DecRsrc=%h | DecRdest=%h | DecodedImmediate=%h | DecodedOpcode=%h | PC=%h | PSR=%h | ALU select Imm=%h| ALURes=%h | ALUFlags=%b | CU_State=%0d | CU_Next=%0d | ALUOpcode=%0d | ALU_A=%h | ALU_B=%h | RegFile_WriteEn=%b | RegFile_WriteAddr=%0d | RegFile_WriteData=%h | RegFile_ReadA=%h | RegFile_ReadB=%h",
+    "Time=%0t | IR=%h | DecInst=%h| DecRsrc=%h | DecRdest=%h | DecodedImmediate=%h | DecodedOpcode=%h | PC=%h | PSR=%h | ALU select Imm=%h| ALURes=%h | ALUFlags=%b | CU_State=%0d | CU_Next=%0d | ALUOpcode=%0d | ALU_A=%h | ALU_B=%h | RegFile_WriteEn=%b | RegFile_WriteAddr=%0d | RegFile_WriteData=%h | RegFile_ReadA=%h | RegFile_ReadB=%h | RegFileSel=%h",
     $time,
     uut.instructionRegisterContentsOutput,
 	 uut.instruction_decoder_instance.instruction,
@@ -87,9 +88,9 @@ module tb_cpu;
     uut.register_file_instance.writeAddress, // Register file write address
     uut.register_file_instance.writeData,    // Register file write data
     uut.register_file_instance.contentsA,    // Register file read output A
-    uut.register_file_instance.contentsB     // Register file read output B
+    uut.register_file_instance.contentsB,     // Register file read output B
+    uut.register_file_input_mux.select
 );
-
         end
     endtask
 	 
@@ -104,6 +105,74 @@ task dumpRegisterFile;
     end
 endtask
 
+task dumpMemory;
+    integer i;
+    begin
+        $display("Memory:");
+        for (i = 0; i < 48; i = i + 1) begin
+            $display("memory[%0d] = %h", i, uut.memory_instance.ram[i]);
+        end
+        $display(""); // blank line for readability
+    end
+endtask
+
+// ==================================================
+// Task to print Control Unit State Name
+// ==================================================
+task print_state;
+    begin
+		  
+        $write("Current State = ");
+
+        case (controlUnitState)
+
+            FETCH_INSTRUCTION_FROM_MEMORY:
+                $write("FETCH_INSTRUCTION_FROM_MEMORY");
+
+            LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER:
+                $write("LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER");
+
+            DECODE_INSTRUCTION:
+                $write("DECODE_INSTRUCTION");
+
+            EXECUTE_LOAD_INSTRUCTION:
+                $write("EXECUTE_LOAD_INSTRUCTION");
+
+            NOTHING_STATE:
+                $write("NOTHING_STATE");
+            default:
+                $write("UNKNOWN_STATE (%0d)", controlUnitState);
+
+        endcase
+
+        $write("\t\t\t\t\t\tNext State = ");
+
+        case (controlUnitNextState)
+
+            FETCH_INSTRUCTION_FROM_MEMORY:
+                $write("FETCH_INSTRUCTION_FROM_MEMORY");
+
+            LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER:
+                $write("LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER");
+
+            DECODE_INSTRUCTION:
+                $write("DECODE_INSTRUCTION");
+
+            EXECUTE_LOAD_INSTRUCTION:
+                $write("EXECUTE_LOAD_INSTRUCTION");
+
+            NOTHING_STATE:
+                $write("NOTHING_STATE");
+            default:
+                $write("UNKNOWN_STATE (%0d)", controlUnitNextState);
+
+        endcase
+
+        $display("");  // newline
+    end
+endtask
+
+
     // ==================================================
     // Testbench stimulus
     // ==================================================
@@ -114,23 +183,22 @@ endtask
 
         // Apply reset
         apply_reset();
-		  print_cpu_state();
+			running = 1;
         // Run for a few cycles and print state
-        repeat (10) begin
-		  
-            pulse_clock(1);
-				$display("FETCH");
-            print_cpu_state();
+        while (running) begin
+				if(controlUnitNextState == NOTHING_STATE) running = 0;
+			   if(controlUnitState == FETCH_INSTRUCTION_FROM_MEMORY) begin
+					$display("\n\n\n");
+					$display("CONTENTS AFTER PREVIOUS INSTRUCTION");
+					dumpRegisterFile();
+					dumpMemory();
+				end
+				print_state();
+				print_cpu_state();
+				
 				pulse_clock(1);
-				$display("DECODE");
-            print_cpu_state();
-				pulse_clock(1);
-				$display("EXECUTE");
-            print_cpu_state();
-				pulse_clock(1);
-				$display("WRITEBACK");
-            print_cpu_state();
-				dumpRegisterFile();
+				
+            
         end
 
         $finish;
