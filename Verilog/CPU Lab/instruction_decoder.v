@@ -2,18 +2,69 @@ module instruction_decoder (
     input [15:0] instruction,
 	input [15:0] programCounter,
     input [15:0] programStateRegisterContents,
+    input [15:0] registerFileContentsA,
 	 
     output [3:0] registerAddressA,
     output [3:0] registerAddressB,
     output [15:0] immediate,
     output [7:0] aluOpcode,
-	output [15:0] nextProgramCounter
+	output reg [15:0] nextProgramCounter
 );
 
 assign registerAddressA = instruction[3:0];
 assign registerAddressB = instruction[11:8];
-assign immediate = $signed(instruction[7:0]);
-assign aluOpcode = {instruction[15:12], instruction[7:4]}; // inst = 5101 => 0101_0000 //aluopcode = 0x0a when should be
-assign nextProgramCounter = programCounter + 1;
+assign immediate = {{8{instruction[7]}}, instruction[7:0]};
+assign aluOpcode = {instruction[15:12], instruction[7:4]};
+
+
+// Next Program Counter Logic
+`include "opcodes.vh"
+`include "conditions.vh"
+`include "indicesPSR.vh"
+reg conditionMet;
+always @(*) begin
+    conditionMet = 1'b0;
+    case (instruction[11:8])
+        EQ: conditionMet = programStateRegisterContents[ZIndex];
+        NE: conditionMet = ~programStateRegisterContents[ZIndex];
+        GE: conditionMet = programStateRegisterContents[NIndex] | programStateRegisterContents[ZIndex];
+        CS: conditionMet = programStateRegisterContents[CIndex];
+        CC: conditionMet = ~programStateRegisterContents[CIndex];
+        HI: conditionMet = programStateRegisterContents[LIndex];
+        LS: conditionMet = ~programStateRegisterContents[LIndex];
+        LO: conditionMet = ~programStateRegisterContents[LIndex] & ~programStateRegisterContents[ZIndex];
+        HS: conditionMet = programStateRegisterContents[LIndex] | programStateRegisterContents[ZIndex];
+        GT: conditionMet = programStateRegisterContents[NIndex];
+        LE: conditionMet = ~programStateRegisterContents[NIndex];
+        FS: conditionMet = programStateRegisterContents[FIndex];
+        FC: conditionMet = ~programStateRegisterContents[FIndex];
+        LT: conditionMet = ~programStateRegisterContents[NIndex] & ~programStateRegisterContents[ZIndex];
+        UC: conditionMet = 1'b1;
+        4'b1111: conditionMet = 1'b0;
+        default: conditionMet = 1'b0;
+    endcase
+end
+always @(*) begin
+       casex(aluOpcode)
+        BCOND: begin
+            if(conditionMet)
+                nextProgramCounter = programCounter + immediate;
+            else
+                nextProgramCounter = programCounter + 1;
+            
+        end
+        JCOND: begin
+            if(conditionMet)
+                nextProgramCounter = registerFileContentsA;
+            else 
+                nextProgramCounter = programCounter + 1;
+            
+        end
+        default: begin
+            nextProgramCounter = programCounter + 1;
+        end
+
+    endcase
+end
 
 endmodule

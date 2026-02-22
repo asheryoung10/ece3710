@@ -23,3 +23,6 @@ localparam LOAD  = 8'b0100_0000;
 localparam STOR  = 8'b0100_0100;
 localparam MOV   = 8'b0000_1101;
 localparam MOVI  = 8'b1101_xxxx;
+localparam SCOND  = 8'b010_1101;
+localparam BCOND  = 8'b1100_XXXX;
+localparam JCOND  = 8'b0100_1100;

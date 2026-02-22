@@ -179,6 +179,7 @@ instruction_decoder instruction_decoder_instance
     .instruction(instructionRegisterContents),
 	.programCounter(programCounterContents),
     .programStateRegisterContents(programStateRegisterContents),
+    .registerFileContentsA(registerFileContentsA),
     // Outputs
     .registerAddressA(registerFileReadAddressA),
     .registerAddressB(registerFileReadAddressB),
