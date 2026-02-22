@@ -10,9 +10,9 @@ vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ 
 vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/mux4.v}
 vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/mux2.v}
 vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/memory.v}
-vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/instruction_decoder.v}
 vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v}
 vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/top.v}
+vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/instruction_decoder.v}
 vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/control_unit.v}
 vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/alu.v}
 

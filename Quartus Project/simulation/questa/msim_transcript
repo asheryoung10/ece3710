@@ -30,248 +30,248 @@
 # 
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/register_file.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:11 on Feb 14,2026
+# Start time: 12:45:53 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/register_file.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module register_file
 # 
 # Top level modules:
 # 	register_file
-# End time: 19:40:11 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:53 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/register.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:11 on Feb 14,2026
+# Start time: 12:45:53 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/register.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module register
 # 
 # Top level modules:
 # 	register
-# End time: 19:40:11 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:53 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/mux4.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:11 on Feb 14,2026
+# Start time: 12:45:54 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/mux4.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module mux4
 # 
 # Top level modules:
 # 	mux4
-# End time: 19:40:11 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:54 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/mux2.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:12 on Feb 14,2026
+# Start time: 12:45:54 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/mux2.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module mux2
 # 
 # Top level modules:
 # 	mux2
-# End time: 19:40:12 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:54 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/memory.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:12 on Feb 14,2026
+# Start time: 12:45:54 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/memory.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module memory
 # 
 # Top level modules:
 # 	memory
-# End time: 19:40:12 on Feb 14,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/instruction_decoder.v}
-# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:12 on Feb 14,2026
-# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/instruction_decoder.v 
-# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module instruction_decoder
-# 
-# Top level modules:
-# 	instruction_decoder
-# End time: 19:40:12 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:54 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:12 on Feb 14,2026
+# Start time: 12:45:54 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module cpu
 # 
 # Top level modules:
 # 	cpu
-# End time: 19:40:12 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:54 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/top.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:12 on Feb 14,2026
+# Start time: 12:45:54 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/top.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module top
 # 
 # Top level modules:
 # 	top
-# End time: 19:40:12 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:54 on Feb 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/instruction_decoder.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 12:45:54 on Feb 22,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/instruction_decoder.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module instruction_decoder
+# 
+# Top level modules:
+# 	instruction_decoder
+# End time: 12:45:54 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/control_unit.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:12 on Feb 14,2026
+# Start time: 12:45:55 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/control_unit.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module control_unit
 # 
 # Top level modules:
 # 	control_unit
-# End time: 19:40:12 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:55 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/alu.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:13 on Feb 14,2026
+# Start time: 12:45:55 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/alu.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 19:40:13 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:55 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/top.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:13 on Feb 14,2026
+# Start time: 12:45:55 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/top.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module top
 # 
 # Top level modules:
 # 	top
-# End time: 19:40:13 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:55 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/tb_cpu.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:13 on Feb 14,2026
+# Start time: 12:45:55 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/tb_cpu.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module tb_cpu
 # 
 # Top level modules:
 # 	tb_cpu
-# End time: 19:40:13 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:55 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/shifting_unit.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:13 on Feb 14,2026
+# Start time: 12:45:55 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/shifting_unit.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# End time: 19:40:13 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:55 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/register_file.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:13 on Feb 14,2026
+# Start time: 12:45:55 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/register_file.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module register_file
 # 
 # Top level modules:
 # 	register_file
-# End time: 19:40:13 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:55 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/register.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:13 on Feb 14,2026
+# Start time: 12:45:55 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/register.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module register
 # 
 # Top level modules:
 # 	register
-# End time: 19:40:13 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:55 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/mux4.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:14 on Feb 14,2026
+# Start time: 12:45:56 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/mux4.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module mux4
 # 
 # Top level modules:
 # 	mux4
-# End time: 19:40:14 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:56 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/mux2.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:14 on Feb 14,2026
+# Start time: 12:45:56 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/mux2.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module mux2
 # 
 # Top level modules:
 # 	mux2
-# End time: 19:40:14 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:56 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/memory.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:14 on Feb 14,2026
+# Start time: 12:45:56 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/memory.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module memory
 # 
 # Top level modules:
 # 	memory
-# End time: 19:40:14 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:56 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/instruction_decoder.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:14 on Feb 14,2026
+# Start time: 12:45:56 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/instruction_decoder.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module instruction_decoder
 # 
 # Top level modules:
 # 	instruction_decoder
-# End time: 19:40:14 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:56 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/cpu.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:14 on Feb 14,2026
+# Start time: 12:45:56 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/cpu.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module cpu
 # 
 # Top level modules:
 # 	cpu
-# End time: 19:40:14 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:56 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/control_unit.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:14 on Feb 14,2026
+# Start time: 12:45:56 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/control_unit.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module control_unit
 # 
 # Top level modules:
 # 	control_unit
-# End time: 19:40:15 on Feb 14,2026, Elapsed time: 0:00:01
+# End time: 12:45:56 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/CPU\ Lab {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/alu.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:40:15 on Feb 14,2026
+# Start time: 12:45:57 on Feb 22,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/alu.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 19:40:15 on Feb 14,2026, Elapsed time: 0:00:00
+# End time: 12:45:57 on Feb 22,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_cpu
 # ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_cpu 
-# Start time: 19:40:15 on Feb 14,2026
+# Start time: 12:45:57 on Feb 22,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
 # ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
@@ -4490,5 +4490,5 @@
 #    Time: 1620 ns  Iteration: 0  Instance: /tb_cpu
 # 1
 # Break in Module tb_cpu at C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/tb_cpu.v line 204
-# End time: 19:40:50 on Feb 14,2026, Elapsed time: 0:00:35
+# End time: 12:46:18 on Feb 22,2026, Elapsed time: 0:00:21
 # Errors: 0, Warnings: 1

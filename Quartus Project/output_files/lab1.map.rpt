@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab1
-Sat Feb 14 19:39:49 2026
+Sun Feb 22 12:45:40 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -15,27 +15,28 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Registers Packed Into Inferred Megafunctions
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0|altsyncram_hte1:auto_generated
- 15. Parameter Settings for User Entity Instance: cpu:cpu_instance
- 16. Parameter Settings for User Entity Instance: cpu:cpu_instance|memory:memory_instance
- 17. Parameter Settings for User Entity Instance: cpu:cpu_instance|register_file:register_file_instance
- 18. Parameter Settings for User Entity Instance: cpu:cpu_instance|alu:alu_instance
- 19. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:instruction_register
- 20. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_state_register
- 21. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_counter
- 22. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:alu_input_mux
- 23. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:memory_select_read_write_address_mux
- 24. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux4:register_file_input_mux
- 25. Parameter Settings for Inferred Entity Instance: cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0
- 26. altsyncram Parameter Settings by Entity Instance
- 27. Port Connectivity Checks: "cpu:cpu_instance"
- 28. Post-Synthesis Netlist Statistics for Top Partition
- 29. Elapsed Time Per Partition
- 30. Analysis & Synthesis Messages
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0|altsyncram_hte1:auto_generated
+ 16. Parameter Settings for User Entity Instance: cpu:cpu_instance
+ 17. Parameter Settings for User Entity Instance: cpu:cpu_instance|memory:memory_instance
+ 18. Parameter Settings for User Entity Instance: cpu:cpu_instance|register_file:register_file_instance
+ 19. Parameter Settings for User Entity Instance: cpu:cpu_instance|alu:alu_instance
+ 20. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:instruction_register
+ 21. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_state_register
+ 22. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_counter
+ 23. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:alu_input_mux
+ 24. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:memory_select_read_write_address_mux
+ 25. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux4:register_file_input_mux
+ 26. Parameter Settings for Inferred Entity Instance: cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0
+ 27. altsyncram Parameter Settings by Entity Instance
+ 28. Port Connectivity Checks: "cpu:cpu_instance"
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
 
 
 
@@ -62,7 +63,7 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Feb 14 19:39:49 2026           ;
+; Analysis & Synthesis Status     ; Successful - Sun Feb 22 12:45:40 2026           ;
 ; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                   ; lab1                                            ;
 ; Top-level Entity Name           ; top                                             ;
@@ -193,35 +194,37 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                  ;
-+--------------------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                   ; Library ;
-+--------------------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------+---------+
-; ../Verilog/CPU Lab/register_file.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/register_file.v                      ;         ;
-; ../Verilog/CPU Lab/register.v                                      ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/register.v                           ;         ;
-; ../Verilog/CPU Lab/mux4.v                                          ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/mux4.v                               ;         ;
-; ../Verilog/CPU Lab/mux2.v                                          ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/mux2.v                               ;         ;
-; ../Verilog/CPU Lab/memory.v                                        ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/memory.v                             ;         ;
-; ../Verilog/CPU Lab/instruction_decoder.v                           ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/instruction_decoder.v                ;         ;
-; ../Verilog/CPU Lab/cpu.v                                           ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v                                ;         ;
-; ../Verilog/CPU Lab/control_unit.v                                  ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/control_unit.v                       ;         ;
-; ../Verilog/CPU Lab/alu.v                                           ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/alu.v                                ;         ;
-; ../Verilog/CPU Lab/top.v                                           ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/top.v                                ;         ;
-; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/opcodes.vh ; yes             ; Auto-Found Unspecified File                           ; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/opcodes.vh                             ;         ;
-; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/states.vh  ; yes             ; Auto-Found Unspecified File                           ; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/states.vh                              ;         ;
-; altsyncram.tdf                                                     ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altsyncram.tdf                          ;         ;
-; stratix_ram_block.inc                                              ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                   ;         ;
-; lpm_mux.inc                                                        ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mux.inc                             ;         ;
-; lpm_decode.inc                                                     ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_decode.inc                          ;         ;
-; aglobal251.inc                                                     ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/aglobal251.inc                          ;         ;
-; a_rdenreg.inc                                                      ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/a_rdenreg.inc                           ;         ;
-; altrom.inc                                                         ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altrom.inc                              ;         ;
-; altram.inc                                                         ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altram.inc                              ;         ;
-; altdpram.inc                                                       ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altdpram.inc                            ;         ;
-; db/altsyncram_hte1.tdf                                             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_hte1.tdf               ;         ;
-; db/lab1.ram0_memory_acf65643.hdl.mif                               ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/lab1.ram0_memory_acf65643.hdl.mif ;         ;
-+--------------------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                     ;
++-----------------------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                      ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                   ; Library ;
++-----------------------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------+---------+
+; ../Verilog/CPU Lab/register_file.v                                    ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/register_file.v                      ;         ;
+; ../Verilog/CPU Lab/register.v                                         ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/register.v                           ;         ;
+; ../Verilog/CPU Lab/mux4.v                                             ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/mux4.v                               ;         ;
+; ../Verilog/CPU Lab/mux2.v                                             ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/mux2.v                               ;         ;
+; ../Verilog/CPU Lab/memory.v                                           ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/memory.v                             ;         ;
+; ../Verilog/CPU Lab/instruction_decoder.v                              ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/instruction_decoder.v                ;         ;
+; ../Verilog/CPU Lab/cpu.v                                              ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v                                ;         ;
+; ../Verilog/CPU Lab/control_unit.v                                     ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/control_unit.v                       ;         ;
+; ../Verilog/CPU Lab/alu.v                                              ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/alu.v                                ;         ;
+; ../Verilog/CPU Lab/top.v                                              ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/top.v                                ;         ;
+; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/indicespsr.vh ; yes             ; Auto-Found Unspecified File                           ; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/indicespsr.vh                          ;         ;
+; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/opcodes.vh    ; yes             ; Auto-Found Unspecified File                           ; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/opcodes.vh                             ;         ;
+; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/conditions.vh ; yes             ; Auto-Found Unspecified File                           ; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/conditions.vh                          ;         ;
+; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/states.vh     ; yes             ; Auto-Found Unspecified File                           ; /users/asher/desktop/schoolwork/ece3710/verilog/cpu lab/states.vh                              ;         ;
+; altsyncram.tdf                                                        ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altsyncram.tdf                          ;         ;
+; stratix_ram_block.inc                                                 ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                   ;         ;
+; lpm_mux.inc                                                           ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mux.inc                             ;         ;
+; lpm_decode.inc                                                        ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_decode.inc                          ;         ;
+; aglobal251.inc                                                        ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/aglobal251.inc                          ;         ;
+; a_rdenreg.inc                                                         ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/a_rdenreg.inc                           ;         ;
+; altrom.inc                                                            ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altrom.inc                              ;         ;
+; altram.inc                                                            ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altram.inc                              ;         ;
+; altdpram.inc                                                          ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altdpram.inc                            ;         ;
+; db/altsyncram_hte1.tdf                                                ; yes             ; Auto-Generated Megafunction                           ; C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_hte1.tdf               ;         ;
+; db/lab1.ram0_memory_acf65643.hdl.mif                                  ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/lab1.ram0_memory_acf65643.hdl.mif ;         ;
++-----------------------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -229,14 +232,14 @@ on the Quartus Prime software download page.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 555         ;
+; Estimate of Logic utilization (ALMs needed) ; 565         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 681         ;
+; Combinational ALUT usage for logic          ; 705         ;
 ;     -- 7 input functions                    ; 7           ;
-;     -- 6 input functions                    ; 392         ;
-;     -- 5 input functions                    ; 100         ;
-;     -- 4 input functions                    ; 100         ;
-;     -- <=3 input functions                  ; 82          ;
+;     -- 6 input functions                    ; 389         ;
+;     -- 5 input functions                    ; 110         ;
+;     -- 4 input functions                    ; 105         ;
+;     -- <=3 input functions                  ; 94          ;
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 285         ;
 ;                                             ;             ;
@@ -248,8 +251,8 @@ on the Quartus Prime software download page.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
 ; Maximum fan-out                             ; 301         ;
-; Total fan-out                               ; 4934        ;
-; Average fan-out                             ; 4.85        ;
+; Total fan-out                               ; 5020        ;
+; Average fan-out                             ; 4.82        ;
 +---------------------------------------------+-------------+
 
 
@@ -258,19 +261,19 @@ on the Quartus Prime software download page.
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                              ; Entity Name         ; Library Name ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |top                                                     ; 681 (0)             ; 285 (0)                   ; 16384             ; 0          ; 18   ; 0            ; |top                                                                                             ; top                 ; work         ;
-;    |cpu:cpu_instance|                                    ; 681 (0)             ; 285 (0)                   ; 16384             ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance                                                                            ; cpu                 ; work         ;
-;       |alu:alu_instance|                                 ; 429 (429)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|alu:alu_instance                                                           ; alu                 ; work         ;
-;       |control_unit:control_unit_instance|               ; 19 (19)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|control_unit:control_unit_instance                                         ; control_unit        ; work         ;
-;       |instruction_decoder:instruction_decoder_instance| ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|instruction_decoder:instruction_decoder_instance                           ; instruction_decoder ; work         ;
+; |top                                                     ; 705 (0)             ; 285 (0)                   ; 16384             ; 0          ; 18   ; 0            ; |top                                                                                             ; top                 ; work         ;
+;    |cpu:cpu_instance|                                    ; 705 (0)             ; 285 (0)                   ; 16384             ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance                                                                            ; cpu                 ; work         ;
+;       |alu:alu_instance|                                 ; 428 (428)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|alu:alu_instance                                                           ; alu                 ; work         ;
+;       |control_unit:control_unit_instance|               ; 21 (21)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|control_unit:control_unit_instance                                         ; control_unit        ; work         ;
+;       |instruction_decoder:instruction_decoder_instance| ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|instruction_decoder:instruction_decoder_instance                           ; instruction_decoder ; work         ;
 ;       |memory:memory_instance|                           ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|memory:memory_instance                                                     ; memory              ; work         ;
 ;          |altsyncram:ram_rtl_0|                          ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0                                ; altsyncram          ; work         ;
 ;             |altsyncram_hte1:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|memory:memory_instance|altsyncram:ram_rtl_0|altsyncram_hte1:auto_generated ; altsyncram_hte1     ; work         ;
 ;       |mux2:alu_input_mux|                               ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|mux2:alu_input_mux                                                         ; mux2                ; work         ;
 ;       |mux2:memory_select_read_write_address_mux|        ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|mux2:memory_select_read_write_address_mux                                  ; mux2                ; work         ;
-;       |mux4:register_file_input_mux|                     ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|mux4:register_file_input_mux                                               ; mux4                ; work         ;
+;       |mux4:register_file_input_mux|                     ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|mux4:register_file_input_mux                                               ; mux4                ; work         ;
 ;       |register:instruction_register|                    ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|register:instruction_register                                              ; register            ; work         ;
-;       |register:program_counter|                         ; 1 (1)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|register:program_counter                                                   ; register            ; work         ;
+;       |register:program_counter|                         ; 3 (3)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|register:program_counter                                                   ; register            ; work         ;
 ;       |register_file:register_file_instance|             ; 182 (182)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |top|cpu:cpu_instance|register_file:register_file_instance                                       ; register_file       ; work         ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -285,14 +288,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+--------------------------------------+
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+------------------------------------------------------------+--------------------+
-; Register name                                              ; Reason for Removal ;
-+------------------------------------------------------------+--------------------+
-; cpu:cpu_instance|register:program_counter|contents[10..15] ; Lost fanout        ;
-; Total Number of Removed Registers = 6                      ;                    ;
-+------------------------------------------------------------+--------------------+
++---------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                            ;
++-----------------------------------------------------------------+---------------------------------------------+
+; Register name                                                   ; Reason for Removal                          ;
++-----------------------------------------------------------------+---------------------------------------------+
+; cpu:cpu_instance|register:program_state_register|contents[0..4] ; Stuck at GND due to stuck port clock_enable ;
+; cpu:cpu_instance|register:program_counter|contents[10..15]      ; Lost fanout                                 ;
+; Total Number of Removed Registers = 11                          ;                                             ;
++-----------------------------------------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                           ;
++--------------------------------------------------------+--------------------+---------------------------------------------------------+
+; Register name                                          ; Reason for Removal ; Registers Removed due to This Register                  ;
++--------------------------------------------------------+--------------------+---------------------------------------------------------+
+; cpu:cpu_instance|register:program_counter|contents[15] ; Lost Fanouts       ; cpu:cpu_instance|register:program_counter|contents[14], ;
+;                                                        ;                    ; cpu:cpu_instance|register:program_counter|contents[13], ;
+;                                                        ;                    ; cpu:cpu_instance|register:program_counter|contents[12], ;
+;                                                        ;                    ; cpu:cpu_instance|register:program_counter|contents[11], ;
+;                                                        ;                    ; cpu:cpu_instance|register:program_counter|contents[10]  ;
++--------------------------------------------------------+--------------------+---------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -315,7 +332,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------+---------+
 ; Inverted Register                                            ; Fan out ;
 +--------------------------------------------------------------+---------+
-; cpu:cpu_instance|control_unit:control_unit_instance|state[0] ; 13      ;
+; cpu:cpu_instance|control_unit:control_unit_instance|state[0] ; 12      ;
 ; Total number of inverted registers = 1                       ;         ;
 +--------------------------------------------------------------+---------+
 
@@ -334,20 +351,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
-; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; Yes        ; |top|cpu:cpu_instance|control_unit:control_unit_instance|state[1] ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; Yes        ; |top|cpu:cpu_instance|control_unit:control_unit_instance|state[2] ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |top|cpu:cpu_instance|register:program_counter|contents[9]        ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|alu:alu_instance|ShiftRight1                ;
 ; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|alu:alu_instance|ShiftLeft2                 ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|alu:alu_instance|ShiftRight0                ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|alu:alu_instance|ShiftLeft0                 ;
 ; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|alu:alu_instance|ShiftLeft0                 ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; No         ; |top|cpu:cpu_instance|control_unit:control_unit_instance|Mux4     ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|mux4:register_file_input_mux|selection[13]  ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|register_file:register_file_instance|Mux28  ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|register_file:register_file_instance|Mux3   ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; No         ; |top|cpu:cpu_instance|control_unit:control_unit_instance|Mux5     ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|mux4:register_file_input_mux|selection[0]   ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|register_file:register_file_instance|Mux24  ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |top|cpu:cpu_instance|register_file:register_file_instance|Mux11  ;
 ; 250:1              ; 2 bits    ; 332 LEs       ; 36 LEs               ; 296 LEs                ; No         ; |top|cpu:cpu_instance|alu:alu_instance|Selector5                  ;
 ; 252:1              ; 2 bits    ; 336 LEs       ; 36 LEs               ; 300 LEs                ; No         ; |top|cpu:cpu_instance|alu:alu_instance|Selector9                  ;
 ; 252:1              ; 2 bits    ; 336 LEs       ; 34 LEs               ; 302 LEs                ; No         ; |top|cpu:cpu_instance|alu:alu_instance|Selector1                  ;
-; 253:1              ; 2 bits    ; 336 LEs       ; 34 LEs               ; 302 LEs                ; No         ; |top|cpu:cpu_instance|alu:alu_instance|Selector14                 ;
+; 253:1              ; 2 bits    ; 336 LEs       ; 34 LEs               ; 302 LEs                ; No         ; |top|cpu:cpu_instance|alu:alu_instance|Selector13                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
 
 
@@ -567,27 +585,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; arriav_ff             ; 285                         ;
 ;     CLR               ; 3                           ;
 ;     ENA CLR           ; 282                         ;
-; arriav_lcell_comb     ; 681                         ;
-;     arith             ; 59                          ;
+; arriav_lcell_comb     ; 705                         ;
+;     arith             ; 70                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 8                           ;
-;         2 data inputs ; 1                           ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 10                          ;
 ;         4 data inputs ; 17                          ;
 ;         5 data inputs ; 32                          ;
 ;     extend            ; 7                           ;
 ;         7 data inputs ; 7                           ;
-;     normal            ; 615                         ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 25                          ;
-;         3 data inputs ; 46                          ;
-;         4 data inputs ; 83                          ;
-;         5 data inputs ; 68                          ;
-;         6 data inputs ; 392                         ;
+;     normal            ; 628                         ;
+;         2 data inputs ; 26                          ;
+;         3 data inputs ; 47                          ;
+;         4 data inputs ; 88                          ;
+;         5 data inputs ; 78                          ;
+;         6 data inputs ; 389                         ;
 ; boundary_port         ; 18                          ;
 ; stratixv_ram_block    ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.40                       ;
-; Average LUT depth     ; 9.42                        ;
+; Average LUT depth     ; 9.23                        ;
 +-----------------------+-----------------------------+
 
 
@@ -606,7 +623,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Sat Feb 14 19:39:41 2026
+    Info: Processing started: Sun Feb 22 12:45:33 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
@@ -647,12 +664,14 @@ Warning (10240): Verilog HDL Always Construct warning at alu.v(25): inferring la
 Warning (10240): Verilog HDL Always Construct warning at alu.v(25): inferring latch(es) for variable "shift_amt", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/alu.v Line: 25
 Warning (10240): Verilog HDL Always Construct warning at alu.v(25): inferring latch(es) for variable "sa", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/alu.v Line: 25
 Info (12128): Elaborating entity "register" for hierarchy "cpu:cpu_instance|register:instruction_register" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 144
-Info (12128): Elaborating entity "instruction_decoder" for hierarchy "cpu:cpu_instance|instruction_decoder:instruction_decoder_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 188
-Warning (10230): Verilog HDL assignment warning at instruction_decoder.v(17): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/instruction_decoder.v Line: 17
-Info (12128): Elaborating entity "mux2" for hierarchy "cpu:cpu_instance|mux2:alu_input_mux" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 207
-Info (12128): Elaborating entity "mux2" for hierarchy "cpu:cpu_instance|mux2:memory_select_read_write_address_mux" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 221
-Info (12128): Elaborating entity "mux4" for hierarchy "cpu:cpu_instance|mux4:register_file_input_mux" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 237
-Info (12128): Elaborating entity "control_unit" for hierarchy "cpu:cpu_instance|control_unit:control_unit_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 261
+Info (12128): Elaborating entity "instruction_decoder" for hierarchy "cpu:cpu_instance|instruction_decoder:instruction_decoder_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 189
+Warning (10230): Verilog HDL assignment warning at instruction_decoder.v(53): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/instruction_decoder.v Line: 53
+Warning (10230): Verilog HDL assignment warning at instruction_decoder.v(60): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/instruction_decoder.v Line: 60
+Warning (10230): Verilog HDL assignment warning at instruction_decoder.v(64): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/instruction_decoder.v Line: 64
+Info (12128): Elaborating entity "mux2" for hierarchy "cpu:cpu_instance|mux2:alu_input_mux" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 208
+Info (12128): Elaborating entity "mux2" for hierarchy "cpu:cpu_instance|mux2:memory_select_read_write_address_mux" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 222
+Info (12128): Elaborating entity "mux4" for hierarchy "cpu:cpu_instance|mux4:register_file_input_mux" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 238
+Info (12128): Elaborating entity "control_unit" for hierarchy "cpu:cpu_instance|control_unit:control_unit_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/cpu.v Line: 262
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(56): incomplete case statement has no default case item File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/control_unit.v Line: 56
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(72): incomplete case statement has no default case item File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/control_unit.v Line: 72
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(41): incomplete case statement has no default case item File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/CPU Lab/control_unit.v Line: 41
@@ -687,15 +706,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 987 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1011 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 953 logic cells
+    Info (21061): Implemented 977 logic cells
     Info (21064): Implemented 16 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
     Info: Peak virtual memory: 4919 megabytes
-    Info: Processing ended: Sat Feb 14 19:39:49 2026
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Processing ended: Sun Feb 22 12:45:40 2026
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:15
 
 

@@ -55,6 +55,8 @@ R0
 R1
 R0
 R1
+R0
+R1
 Z2 !s12c _opt2
 R1
 R0
@@ -235,10 +237,10 @@ R3
 T_opt1
 !i145 1
 !i144 0
-!s110 1771123216
-VP_iZAiCJHUZ2oFh0XVBYz0
+!s110 1771789558
+V>3?>Y@>76MS>?AB]LWUA:3
 04 6 4 work tb_cpu fast 0
-=1-fc349769a683-6991320f-39d-34a8
+=1-fc349769a683-699b5cf5-380-4c54
 R1
 R4
 R5
@@ -250,24 +252,24 @@ n@_opt1
 R9
 valu
 2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/alu.v
-Z10 !s110 1771123215
+!s110 1771789557
 !i10b 1
-!s100 QZ]ik51FnFOVTWN362ENA2
-I29[a1ae@Qao:czn6PT:OD2
-Z11 dC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/simulation/questa
-w1771120733
+!s100 _hPaTlRmgjQ;1K`oLKznZ2
+I2OCM2RM6^JiPCAd_^bZFD0
+Z10 dC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/simulation/questa
+Z11 w1771787172
 8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/alu.v
 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/alu.v
 Z12 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/opcodes.vh
 Z13 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/states.vh
 !i122 20
-L0 1 138
+L0 1 141
 Z14 VDg1SIo80bB@j0V0VzS_@n1
 Z15 OL;L;2025.2;82
 r1
 !s85 0
 31
-!s108 1771123215.000000
+!s108 1771789557.000000
 !s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/states.vh|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/opcodes.vh|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/alu.v|
 !s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/alu.v|
 !i113 0
@@ -276,24 +278,24 @@ Z17 !s92 -work work {+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus P
 Z18 tCvgOpt 0 defaultOptions 1085333592
 vcontrol_unit
 2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/control_unit.v
-R10
+Z19 !s110 1771789556
 !i10b 1
-!s100 28EERXmA64<U?]Pk@?YCG2
-IVdmO2oCH3bdTA7>Jz17T81
+!s100 P8@QkzM^?ooSn;UR>JO882
+I>jMM]ca<aFEA]Tb?2c`I11
+R10
 R11
-w1771123107
 8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/control_unit.v
 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/control_unit.v
 R12
 R13
 !i122 19
-L0 1 123
+L0 1 126
 R14
 R15
 r1
 !s85 0
 31
-Z19 !s108 1771123214.000000
+Z20 !s108 1771789556.000000
 !s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/states.vh|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/opcodes.vh|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/control_unit.v|
 !s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/control_unit.v|
 !i113 0
@@ -302,22 +304,22 @@ R17
 R18
 vcpu
 2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/cpu.v
-Z20 !s110 1771123214
+R19
 !i10b 1
-!s100 _S81PcAP4Z^QT=:0F@O>^1
-IBTDf?D1]20ZZ[B1kMK`fK2
-R11
-w1771123176
+!s100 J0ECcXOU5UOKVH@`?TW9A0
+IzbjMWeNEYX;SNzzZ0N:0K0
+R10
+w1771788663
 8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/cpu.v
 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/cpu.v
 !i122 18
-L0 1 273
+L0 1 274
 R14
 R15
 r1
 !s85 0
 31
-R19
+R20
 !s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/cpu.v|
 !s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/cpu.v|
 !i113 0
@@ -326,23 +328,26 @@ R17
 R18
 vinstruction_decoder
 2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/instruction_decoder.v
-R20
+R19
 !i10b 1
-!s100 J?W2zMEPQhKfML:i3zWLM2
-I3Hm_]OYfF?zTYomHF7KKE2
-R11
-w1771110918
+!s100 68A^3`G0lZY]`eIWeO3eQ3
+ImhE`g:l4`:AjD;L9FTg=P2
+R10
+w1771789529
 8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/instruction_decoder.v
 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/instruction_decoder.v
+R12
+FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/conditions.vh
+FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/indicesPSR.vh
 !i122 17
-L0 1 19
+L0 1 116
 R14
 R15
 r1
 !s85 0
 31
-R19
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/instruction_decoder.v|
+R20
+!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/indicesPSR.vh|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/conditions.vh|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/opcodes.vh|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/instruction_decoder.v|
 !s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/instruction_decoder.v|
 !i113 0
 R16
@@ -350,11 +355,11 @@ R17
 R18
 vmemory
 2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/memory.v
-R20
+R19
 !i10b 1
 !s100 TX8`Un6:HO5WU@CO<`Lgl0
 I>b5g_ak]WfYLi<FTKSE0B2
-R11
+R10
 Z21 w1771108838
 8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/memory.v
 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/memory.v
@@ -365,7 +370,7 @@ R15
 r1
 !s85 0
 31
-R19
+R20
 !s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/memory.v|
 !s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/memory.v|
 !i113 0
@@ -374,11 +379,11 @@ R17
 R18
 vmux2
 2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/mux2.v
-R20
+R19
 !i10b 1
 !s100 F^P4461fIaNQW01O`hCKk0
 IemVc8Rb>RG:20Ei2VFzQg3
-R11
+R10
 R21
 8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/mux2.v
 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/mux2.v
@@ -389,7 +394,7 @@ R15
 r1
 !s85 0
 31
-R19
+R20
 !s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/mux2.v|
 !s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/mux2.v|
 !i113 0
@@ -398,11 +403,11 @@ R17
 R18
 vmux4
 2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/mux4.v
-R20
+R19
 !i10b 1
 !s100 ocNIIGmeUTJD25e?RBGjc2
 IB<b]PGY]CV8jM>==oWgcl2
-R11
+R10
 R21
 8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/mux4.v
 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/mux4.v
@@ -413,7 +418,7 @@ R15
 r1
 !s85 0
 31
-R19
+R20
 !s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/mux4.v|
 !s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/mux4.v|
 !i113 0
@@ -422,11 +427,11 @@ R17
 R18
 vregister
 2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/register.v
-Z22 !s110 1771123213
+Z22 !s110 1771789555
 !i10b 1
 !s100 hZ>3?W8fI?C]oAR1^ZmG=1
 IXkNdc?4]Ao58Bc2eOLEKf3
-R11
+R10
 R21
 8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/register.v
 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/register.v
@@ -437,7 +442,7 @@ R15
 r1
 !s85 0
 31
-Z23 !s108 1771123213.000000
+Z23 !s108 1771789555.000000
 !s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/register.v|
 !s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/register.v|
 !i113 0
@@ -450,7 +455,7 @@ R22
 !i10b 1
 !s100 J@^a0WIY0Pi2V24ofJn>60
 IBS<zMUc<=37Nb7`[6<4;d1
-R11
+R10
 R21
 8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/register_file.v
 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/register_file.v
@@ -474,7 +479,7 @@ R22
 !i10b 1
 !s100 H>[>0mADUal0gc9:aOTi83
 IT^^<RIBMaeDCK1YjMzSgm0
-R11
+R10
 w1771122420
 8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/tb_cpu.v
 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/tb_cpu.v
@@ -499,7 +504,7 @@ R22
 !i10b 1
 !s100 4H^kW3F4NUL1NO0gnMUMi2
 IkAS<37`2ZM1f8dUX>aKj=1
-R11
+R10
 R21
 8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/top.v
 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/CPU Lab/top.v
