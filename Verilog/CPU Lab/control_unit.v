@@ -56,6 +56,7 @@ always @(*) begin
             casex (aluOpcode)
                 ADD, ADDI, ADDUI, ADDC, ADDCI, SUB, SUBI, CMP, CMPI, AND, OR, XOR, NOT, LSH, LSHI, RSH, RSHI, ARSH, ARSHI: begin
                     registerFileWriteEnable = 1'b1;
+						  programStateRegisterWriteEnable = 1'b1;
                     nextState = FETCH_INSTRUCTION_FROM_MEMORY;
 							end
                 LOAD: 
@@ -65,6 +66,9 @@ always @(*) begin
                 MOV, MOVI: begin
                     registerFileWriteEnable = 1'b1;
                     nextState = FETCH_INSTRUCTION_FROM_MEMORY;
+					 end
+					 BCOND, JCOND: begin
+						nextState = FETCH_INSTRUCTION_FROM_MEMORY;
 					 end
             endcase
 

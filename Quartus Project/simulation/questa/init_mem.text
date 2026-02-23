@@ -1,59 +1,13 @@
-//ADDI Init registers to 1-16
-5001
-5102
-5203
-5304
-5405
-5506
-5607
-5708
-5809
-590a
-5a0b
-5b0c
-5c0d
-5d0e
-5e0f
-5f10
-
-//MOVI Inits register to 16-1
-D010
-D10f
-D20e
-D30d
-D40c
-D50b
-D60a
-D709
-D808
-D907
-Da06
-Db05
-Dc04
-Dd03
-De02
-Df01
-
-//MOV Inits regs to all 16  0000_dddd_1101_ssss
-00D0
-01D0
-02D0
-03D0
-04D0
-05D0
-06D0
-07D0
-08D0
-09D0
-0aD0
-0bD0
-0cD0
-0dD0
-0eD0
-0fD0
-430F //0100 0011 0000 1111 LOAD Rdest = 3, Raddr=15
-454F //0100 0101 0100 1111 STOR Rsrc = 6, Raddr = 15
-440F //0100 0100 0000 1111 LOAD Rdest = 4, Raddr=15
-474F //0100 0111 0100 1111 STOR Rsrc = 7, Raddr = 15'
-0000 // NOP
-// r0 = r0 + 1: 0101_rdest_immm_immm
+5010 // Set register 0 to 16, register 0 will be write address; Register 1 has the offset.
+02d0		// move 0 to 2
+0251 		//then add 1 to 2
+4142    // store, 2 is  address, 1 is value
+5101			//1++
+03d1			// move 1 to 3
+9310			//set flags z if 3 == 16
+c1fa			// subtract 6 if equal
+df0c // set reg 15 to 21
+43Cf 
+0000		//done		
+0000
+0000

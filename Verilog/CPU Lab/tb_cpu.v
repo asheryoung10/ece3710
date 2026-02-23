@@ -5,7 +5,7 @@ module tb_cpu;
 
     // Parameters
     localparam CLK_PERIOD = 10;
-	 reg running;
+	 integer running;
     // Inputs
     reg clock;
     reg reset;
@@ -66,7 +66,7 @@ module tb_cpu;
     task print_cpu_state;
         begin
             $display(
-    "Time=%0t | IR=%h | DecInst=%h| DecRsrc=%h | DecRdest=%h | DecodedImmediate=%h | DecodedOpcode=%h | PC=%h | PSR=%h | ALU select Imm=%h| ALURes=%h | ALUFlags=%b | CU_State=%0d | CU_Next=%0d | ALUOpcode=%0d | ALU_A=%h | ALU_B=%h | RegFile_WriteEn=%b | RegFile_WriteAddr=%0d | RegFile_WriteData=%h | RegFile_ReadA=%h | RegFile_ReadB=%h | RegFileSel=%h",
+    "Time=%0t | IR=%h | DecInst=%h| DecRsrc=%h | DecRdest=%h | DecodedImmediate=%h | DecodedOpcode=%h | PC=%h | PSR=%h | ALU select Imm=%h| ALURes=%h | ALUFlags=%b | CU_State=%0d | CU_Next=%0d | ALUOpcode=%0d | ALU_A=%h | ALU_B=%h | RegFile_WriteEn=%b | RegFile_WriteAddr=%0d | RegFile_WriteData=%h | RegFile_ReadA=%h | RegFile_ReadB=%h | RegFileSel=%h | PSR=%h | NextPC: %h",
     $time,
     uut.instructionRegisterContentsOutput,
 	 uut.instruction_decoder_instance.instruction,
@@ -89,7 +89,9 @@ module tb_cpu;
     uut.register_file_instance.writeData,    // Register file write data
     uut.register_file_instance.contentsA,    // Register file read output A
     uut.register_file_instance.contentsB,     // Register file read output B
-    uut.register_file_input_mux.select
+    uut.register_file_input_mux.select,
+	 uut.program_state_register.contents,
+	 uut.instruction_decoder_instance.nextProgramCounter
 );
         end
     endtask
@@ -185,8 +187,14 @@ endtask
         apply_reset();
 			running = 1;
         // Run for a few cycles and print state
-        while (running) begin
+        while (running != 0) begin
+		  
+		  
 				if(controlUnitNextState == NOTHING_STATE) running = 0;
+				if(controlUnitState == NOTHING_STATE) running = 0;
+	
+				
+				
 			   if(controlUnitState == FETCH_INSTRUCTION_FROM_MEMORY) begin
 					$display("\n\n\n");
 					$display("CONTENTS AFTER PREVIOUS INSTRUCTION");

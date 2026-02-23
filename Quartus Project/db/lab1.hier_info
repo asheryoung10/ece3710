@@ -1,22 +1,22 @@
 |top
 clock => clock.IN1
 reset => reset.IN1
-aluResultOutput[0] << cpu:cpu_instance.aluResultOutput
-aluResultOutput[1] << cpu:cpu_instance.aluResultOutput
-aluResultOutput[2] << cpu:cpu_instance.aluResultOutput
-aluResultOutput[3] << cpu:cpu_instance.aluResultOutput
-aluResultOutput[4] << cpu:cpu_instance.aluResultOutput
-aluResultOutput[5] << cpu:cpu_instance.aluResultOutput
-aluResultOutput[6] << cpu:cpu_instance.aluResultOutput
-aluResultOutput[7] << cpu:cpu_instance.aluResultOutput
-aluResultOutput[8] << cpu:cpu_instance.aluResultOutput
-aluResultOutput[9] << cpu:cpu_instance.aluResultOutput
-aluResultOutput[10] << cpu:cpu_instance.aluResultOutput
-aluResultOutput[11] << cpu:cpu_instance.aluResultOutput
-aluResultOutput[12] << cpu:cpu_instance.aluResultOutput
-aluResultOutput[13] << cpu:cpu_instance.aluResultOutput
-aluResultOutput[14] << cpu:cpu_instance.aluResultOutput
-aluResultOutput[15] << cpu:cpu_instance.aluResultOutput
+aluResultOutput[0] << cpu:cpu_instance.programCounterContentsOutput
+aluResultOutput[1] << cpu:cpu_instance.programCounterContentsOutput
+aluResultOutput[2] << cpu:cpu_instance.programCounterContentsOutput
+aluResultOutput[3] << cpu:cpu_instance.programCounterContentsOutput
+aluResultOutput[4] << cpu:cpu_instance.programCounterContentsOutput
+aluResultOutput[5] << cpu:cpu_instance.programCounterContentsOutput
+aluResultOutput[6] << cpu:cpu_instance.programCounterContentsOutput
+aluResultOutput[7] << cpu:cpu_instance.programCounterContentsOutput
+aluResultOutput[8] << cpu:cpu_instance.programCounterContentsOutput
+aluResultOutput[9] << cpu:cpu_instance.programCounterContentsOutput
+aluResultOutput[10] << cpu:cpu_instance.programCounterContentsOutput
+aluResultOutput[11] << cpu:cpu_instance.programCounterContentsOutput
+aluResultOutput[12] << cpu:cpu_instance.programCounterContentsOutput
+aluResultOutput[13] << cpu:cpu_instance.programCounterContentsOutput
+aluResultOutput[14] << cpu:cpu_instance.programCounterContentsOutput
+aluResultOutput[15] << cpu:cpu_instance.programCounterContentsOutput
 
 
 |top|cpu:cpu_instance
@@ -86,11 +86,11 @@ aluResultOutput[12] <= aluResult[12].DB_MAX_OUTPUT_PORT_TYPE
 aluResultOutput[13] <= aluResult[13].DB_MAX_OUTPUT_PORT_TYPE
 aluResultOutput[14] <= aluResult[14].DB_MAX_OUTPUT_PORT_TYPE
 aluResultOutput[15] <= aluResult[15].DB_MAX_OUTPUT_PORT_TYPE
-aluFlagsOutput[0] <= alu:alu_instance.Flags
-aluFlagsOutput[1] <= alu:alu_instance.Flags
-aluFlagsOutput[2] <= alu:alu_instance.Flags
-aluFlagsOutput[3] <= alu:alu_instance.Flags
-aluFlagsOutput[4] <= alu:alu_instance.Flags
+aluFlagsOutput[0] <= aluFlags[0].DB_MAX_OUTPUT_PORT_TYPE
+aluFlagsOutput[1] <= aluFlags[1].DB_MAX_OUTPUT_PORT_TYPE
+aluFlagsOutput[2] <= aluFlags[2].DB_MAX_OUTPUT_PORT_TYPE
+aluFlagsOutput[3] <= aluFlags[3].DB_MAX_OUTPUT_PORT_TYPE
+aluFlagsOutput[4] <= aluFlags[4].DB_MAX_OUTPUT_PORT_TYPE
 controlUnitState[0] <= control_unit:control_unit_instance.state
 controlUnitState[1] <= control_unit:control_unit_instance.state
 controlUnitState[2] <= control_unit:control_unit_instance.state
@@ -2662,7 +2662,7 @@ registerFileSelectInput[0] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
 registerFileSelectInput[1] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
 instructionRegisterWriteEnable <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
 programCounterWriteEnable <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
-programStateRegisterWriteEnable <= <GND>
+programStateRegisterWriteEnable <= programStateRegisterWriteEnable.DB_MAX_OUTPUT_PORT_TYPE
 aluSelectImmediate <= aluSelectImmediate.DB_MAX_OUTPUT_PORT_TYPE
 state[0] <= state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 state[1] <= state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
