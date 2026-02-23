@@ -9,7 +9,7 @@ cpu cpu_instance
 	 (
 		.clock(clock),
 		.reset(reset),
-		.aluResultOutput(aluResultOutput)
+		.programCounterContentsOutput(aluResultOutput)
 	 );
 	 
 	 

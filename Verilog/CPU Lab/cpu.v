@@ -154,7 +154,7 @@ program_state_register
     .reset(reset),
     //Outputs
     .writeEnable(programStateRegisterWriteEnable),
-    .writeData(programStateRegisterWriteData),
+    .writeData(aluFlags),
     .contents(programStateRegisterContents)
 );
 
