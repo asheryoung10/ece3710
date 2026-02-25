@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab1
-Wed Feb 25 11:35:13 2026
+Wed Feb 25 15:57:11 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -10,18 +10,7 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |top|audio_player:audio_player_inst|i2c_controller:i2c_inst|state
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Port Connectivity Checks: "audio_player:audio_player_inst|i2c_controller:i2c_inst"
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -45,27 +34,22 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Feb 25 11:35:13 2026          ;
-; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name                   ; lab1                                           ;
-; Top-level Entity Name           ; top                                            ;
-; Family                          ; Cyclone V                                      ;
-; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 69                                             ;
-; Total pins                      ; 7                                              ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 0                                              ;
-; Total DSP Blocks                ; 0                                              ;
-; Total HSSI RX PCSs              ; 0                                              ;
-; Total HSSI PMA RX Deserializers ; 0                                              ;
-; Total HSSI TX PCSs              ; 0                                              ;
-; Total HSSI PMA TX Serializers   ; 0                                              ;
-; Total PLLs                      ; 0                                              ;
-; Total DLLs                      ; 0                                              ;
-+---------------------------------+------------------------------------------------+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++-----------------------------+------------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Wed Feb 25 15:57:11 2026              ;
+; Quartus Prime Version       ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name               ; lab1                                           ;
+; Top-level Entity Name       ; i2c_audio_setup                                ;
+; Family                      ; Cyclone V                                      ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
+; Total registers             ; N/A until Partition Merge                      ;
+; Total pins                  ; N/A until Partition Merge                      ;
+; Total virtual pins          ; N/A until Partition Merge                      ;
+; Total block memory bits     ; N/A until Partition Merge                      ;
+; Total PLLs                  ; N/A until Partition Merge                      ;
+; Total DLLs                  ; N/A until Partition Merge                      ;
++-----------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -74,7 +58,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; top                ; lab1               ;
+; Top-level entity name                                                           ; i2c_audio_setup    ; lab1               ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -164,183 +148,11 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                       ;
-+---------------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path            ; Used in Netlist ; File Type              ; File Name with Absolute Path                                              ; Library ;
-+---------------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
-; ../Verilog/Audio Test/top.v                 ; yes             ; User Verilog HDL File  ; /home/u1462567/Documents/ece3710/Verilog/Audio Test/top.v                 ;         ;
-; ../Verilog/Audio Test/i2s_clock_generator.v ; yes             ; User Verilog HDL File  ; /home/u1462567/Documents/ece3710/Verilog/Audio Test/i2s_clock_generator.v ;         ;
-; ../Verilog/Audio Test/i2c_controller.v      ; yes             ; User Verilog HDL File  ; /home/u1462567/Documents/ece3710/Verilog/Audio Test/i2c_controller.v      ;         ;
-; ../Verilog/Audio Test/audio_player.v        ; yes             ; User Verilog HDL File  ; /home/u1462567/Documents/ece3710/Verilog/Audio Test/audio_player.v        ;         ;
-+---------------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 45        ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 78        ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 10        ;
-;     -- 5 input functions                    ; 7         ;
-;     -- 4 input functions                    ; 3         ;
-;     -- <=3 input functions                  ; 58        ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 69        ;
-;                                             ;           ;
-; I/O pins                                    ; 7         ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 67        ;
-; Total fan-out                               ; 472       ;
-; Average fan-out                             ; 2.91      ;
-+---------------------------------------------+-----------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                   ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                      ; Entity Name         ; Library Name ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------+---------------------+--------------+
-; |top                                         ; 78 (45)             ; 69 (38)                   ; 0                 ; 0          ; 7    ; 0            ; |top                                                                     ; top                 ; work         ;
-;    |audio_player:audio_player_inst|          ; 33 (0)              ; 31 (1)                    ; 0                 ; 0          ; 0    ; 0            ; |top|audio_player:audio_player_inst                                      ; audio_player        ; work         ;
-;       |i2c_controller:i2c_inst|              ; 11 (11)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |top|audio_player:audio_player_inst|i2c_controller:i2c_inst              ; i2c_controller      ; work         ;
-;       |i2s_clock_generator:i2s_clk_gen_inst| ; 22 (22)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |top|audio_player:audio_player_inst|i2s_clock_generator:i2s_clk_gen_inst ; i2s_clock_generator ; work         ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------+---------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------+
-; State Machine - |top|audio_player:audio_player_inst|i2c_controller:i2c_inst|state                 ;
-+--------------------+-----------------+--------------------+-------------+------------+------------+
-; Name               ; state.SEND_DATA ; state.SEND_ADDRESS ; state.START ; state.IDLE ; state.DONE ;
-+--------------------+-----------------+--------------------+-------------+------------+------------+
-; state.IDLE         ; 0               ; 0                  ; 0           ; 0          ; 0          ;
-; state.START        ; 0               ; 0                  ; 1           ; 1          ; 0          ;
-; state.SEND_ADDRESS ; 0               ; 1                  ; 0           ; 1          ; 0          ;
-; state.SEND_DATA    ; 1               ; 0                  ; 0           ; 1          ; 0          ;
-; state.DONE         ; 0               ; 0                  ; 0           ; 1          ; 1          ;
-+--------------------+-----------------+--------------------+-------------+------------+------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                  ;
-+------------------------------------------------------------------------+------------------------------------------------------------+
-; Register name                                                          ; Reason for Removal                                         ;
-+------------------------------------------------------------------------+------------------------------------------------------------+
-; audio_player:audio_player_inst|i2c_controller:i2c_inst|shift_reg[0]    ; Stuck at GND due to stuck port data_in                     ;
-; audio_data[0]                                                          ; Merged with audio_data[8]                                  ;
-; audio_player:audio_player_inst|right_channel[0]                        ; Merged with audio_player:audio_player_inst|left_channel[0] ;
-; audio_player:audio_player_inst|i2c_controller:i2c_inst|shift_reg[1..7] ; Stuck at GND due to stuck port data_in                     ;
-; audio_player:audio_player_inst|i2c_controller:i2c_inst|state~4         ; Lost fanout                                                ;
-; audio_player:audio_player_inst|i2c_controller:i2c_inst|state~5         ; Lost fanout                                                ;
-; Total Number of Removed Registers = 12                                 ;                                                            ;
-+------------------------------------------------------------------------+------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                            ;
-+---------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------+
-; Register name                                                       ; Reason for Removal        ; Registers Removed due to This Register                               ;
-+---------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------+
-; audio_player:audio_player_inst|i2c_controller:i2c_inst|shift_reg[0] ; Stuck at GND              ; audio_player:audio_player_inst|i2c_controller:i2c_inst|shift_reg[1], ;
-;                                                                     ; due to stuck port data_in ; audio_player:audio_player_inst|i2c_controller:i2c_inst|shift_reg[2], ;
-;                                                                     ;                           ; audio_player:audio_player_inst|i2c_controller:i2c_inst|shift_reg[3], ;
-;                                                                     ;                           ; audio_player:audio_player_inst|i2c_controller:i2c_inst|shift_reg[4], ;
-;                                                                     ;                           ; audio_player:audio_player_inst|i2c_controller:i2c_inst|shift_reg[5], ;
-;                                                                     ;                           ; audio_player:audio_player_inst|i2c_controller:i2c_inst|shift_reg[6], ;
-;                                                                     ;                           ; audio_player:audio_player_inst|i2c_controller:i2c_inst|shift_reg[7]  ;
-+---------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 69    ;
-; Number of registers using Synchronous Clear  ; 48    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 51    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------------------------------+
-; Inverted Register Statistics                                             ;
-+----------------------------------------------------------------+---------+
-; Inverted Register                                              ; Fan out ;
-+----------------------------------------------------------------+---------+
-; audio_player:audio_player_inst|i2c_controller:i2c_inst|scl_reg ; 1       ;
-; audio_player:audio_player_inst|i2c_controller:i2c_inst|sda_out ; 2       ;
-; Total number of inverted registers = 2                         ;         ;
-+----------------------------------------------------------------+---------+
-
-
-+------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "audio_player:audio_player_inst|i2c_controller:i2c_inst" ;
-+---------+--------+----------+------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                              ;
-+---------+--------+----------+------------------------------------------------------+
-; data_in ; Input  ; Info     ; Stuck at GND                                         ;
-; start   ; Input  ; Info     ; Stuck at VCC                                         ;
-; done    ; Output ; Info     ; Explicitly unconnected                               ;
-+---------+--------+----------+------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 69                          ;
-;     CLR               ; 19                          ;
-;     CLR SCLR          ; 32                          ;
-;     SCLR              ; 16                          ;
-;     plain             ; 2                           ;
-; arriav_io_obuf        ; 1                           ;
-; arriav_lcell_comb     ; 79                          ;
-;     arith             ; 48                          ;
-;         1 data inputs ; 48                          ;
-;     normal            ; 31                          ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 4                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 3                           ;
-;         5 data inputs ; 7                           ;
-;         6 data inputs ; 10                          ;
-; boundary_port         ; 7                           ;
-;                       ;                             ;
-; Max LUT depth         ; 4.10                        ;
-; Average LUT depth     ; 2.48                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -349,40 +161,77 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed Feb 25 11:35:06 2026
+    Info: Processing started: Wed Feb 25 15:57:05 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Documents/ece3710/Verilog/Audio Test/top.v
-    Info (12023): Found entity 1: top File: /home/u1462567/Documents/ece3710/Verilog/Audio Test/top.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Documents/ece3710/Verilog/Audio Test/i2s_clock_generator.v
-    Info (12023): Found entity 1: i2s_clock_generator File: /home/u1462567/Documents/ece3710/Verilog/Audio Test/i2s_clock_generator.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Documents/ece3710/Verilog/Audio Test/i2c_controller.v
-    Info (12023): Found entity 1: i2c_controller File: /home/u1462567/Documents/ece3710/Verilog/Audio Test/i2c_controller.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Documents/ece3710/Verilog/Audio Test/audio_player.v
-    Info (12023): Found entity 1: audio_player File: /home/u1462567/Documents/ece3710/Verilog/Audio Test/audio_player.v Line: 1
-Info (12127): Elaborating entity "top" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at top.v(42): truncated value with size 32 to match size of target (5) File: /home/u1462567/Documents/ece3710/Verilog/Audio Test/top.v Line: 42
-Info (12128): Elaborating entity "audio_player" for hierarchy "audio_player:audio_player_inst" File: /home/u1462567/Documents/ece3710/Verilog/Audio Test/top.v Line: 29
-Warning (10230): Verilog HDL assignment warning at audio_player.v(46): truncated value with size 16 to match size of target (1) File: /home/u1462567/Documents/ece3710/Verilog/Audio Test/audio_player.v Line: 46
-Info (12128): Elaborating entity "i2c_controller" for hierarchy "audio_player:audio_player_inst|i2c_controller:i2c_inst" File: /home/u1462567/Documents/ece3710/Verilog/Audio Test/audio_player.v Line: 25
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(57): truncated value with size 9 to match size of target (8) File: /home/u1462567/Documents/ece3710/Verilog/Audio Test/i2c_controller.v Line: 57
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(66): truncated value with size 32 to match size of target (4) File: /home/u1462567/Documents/ece3710/Verilog/Audio Test/i2c_controller.v Line: 66
-Info (12128): Elaborating entity "i2s_clock_generator" for hierarchy "audio_player:audio_player_inst|i2s_clock_generator:i2s_clk_gen_inst" File: /home/u1462567/Documents/ece3710/Verilog/Audio Test/audio_player.v Line: 32
-Warning (10230): Verilog HDL assignment warning at i2s_clock_generator.v(12): truncated value with size 32 to match size of target (16) File: /home/u1462567/Documents/ece3710/Verilog/Audio Test/i2s_clock_generator.v Line: 12
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 87 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 4 output pins
-    Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 80 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 461 megabytes
-    Info: Processing ended: Wed Feb 25 11:35:13 2026
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:14
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v
+    Info (12023): Found entity 1: i2c_audio_setup File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 1
+Info (12127): Elaborating entity "i2c_audio_setup" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at i2c_audio_setup.v(31): object "send_next_bit" assigned a value but never read File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 31
+Warning (10230): Verilog HDL assignment warning at i2c_audio_setup.v(18): truncated value with size 32 to match size of target (8) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 18
+Warning (10240): Verilog HDL Always Construct warning at i2c_audio_setup.v(42): inferring latch(es) for variable "cmd_index", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Warning (10230): Verilog HDL assignment warning at i2c_audio_setup.v(81): truncated value with size 32 to match size of target (4) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 81
+Info (10264): Verilog HDL Case Statement information at i2c_audio_setup.v(70): all case item expressions in this case statement are onehot File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 70
+Warning (10030): Net "commands.data_a" at i2c_audio_setup.v(23) has no driver or initial value, using a default initial value '0' File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 23
+Warning (10030): Net "commands.waddr_a" at i2c_audio_setup.v(23) has no driver or initial value, using a default initial value '0' File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 23
+Warning (10030): Net "commands.we_a" at i2c_audio_setup.v(23) has no driver or initial value, using a default initial value '0' File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 23
+Info (10041): Inferred latch for "cmd_index[0]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[1]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[2]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[3]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[4]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[5]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[6]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[7]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[8]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[9]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[10]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[11]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[12]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[13]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[14]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[15]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[16]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[17]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[18]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[19]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[20]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[21]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[22]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[23]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[24]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[25]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[26]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[27]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[28]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[29]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[30]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Info (10041): Inferred latch for "cmd_index[31]" at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[31]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10029): Constant driver at i2c_audio_setup.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 42
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[30]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[29]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[28]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[27]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[26]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[25]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[24]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[23]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[22]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[21]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[20]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[19]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[18]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[17]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[16]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[15]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (10028): Can't resolve multiple constant drivers for net "cmd_index[14]" at i2c_audio_setup.v(102) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 102
+Error (12153): Can't elaborate top-level user hierarchy
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 20 errors, 8 warnings
+    Error: Peak virtual memory: 390 megabytes
+    Error: Processing ended: Wed Feb 25 15:57:11 2026
+    Error: Elapsed time: 00:00:06
+    Error: Total CPU time (on all processors): 00:00:13
 
 
