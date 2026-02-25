@@ -1,0 +1,8 @@
+
+State Machine - |top|audio_player:audio_player_inst|i2c_controller:i2c_inst|state
+Name state.SEND_DATA state.SEND_ADDRESS state.START state.IDLE state.DONE 
+state.IDLE 0 0 0 0 0 
+state.START 0 0 1 1 0 
+state.SEND_ADDRESS 0 1 0 1 0 
+state.SEND_DATA 1 0 0 1 0 
+state.DONE 0 0 0 1 1 

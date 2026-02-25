@@ -4,75 +4,31 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "aluResultOutput[0]",
+					"name" : "scl",
 					"strict" : false
 				},
 				{
-					"name" : "aluResultOutput[1]",
+					"name" : "bclk",
 					"strict" : false
 				},
 				{
-					"name" : "aluResultOutput[2]",
+					"name" : "lrck",
 					"strict" : false
 				},
 				{
-					"name" : "aluResultOutput[3]",
+					"name" : "dac_data",
 					"strict" : false
 				},
 				{
-					"name" : "aluResultOutput[4]",
+					"name" : "sda",
 					"strict" : false
 				},
 				{
-					"name" : "aluResultOutput[5]",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
-					"name" : "aluResultOutput[6]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[7]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[8]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[9]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[10]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[11]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[12]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[13]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[14]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[15]",
-					"strict" : false
-				},
-				{
-					"name" : "clock",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
+					"name" : "rst",
 					"strict" : false
 				}
 			]

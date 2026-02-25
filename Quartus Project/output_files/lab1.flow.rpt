@@ -1,5 +1,5 @@
 Flow report for lab1
-Mon Feb 23 16:40:39 2026
+Wed Feb 25 11:36:00 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Mon Feb 23 16:40:39 2026          ;
+; Flow Status                     ; Successful - Wed Feb 25 11:36:00 2026          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; lab1                                           ;
 ; Top-level Entity Name           ; top                                            ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEMA5F31C6                                   ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 579 / 32,070 ( 2 % )                           ;
-; Total registers                 ; 428                                            ;
-; Total pins                      ; 18 / 457 ( 4 % )                               ;
+; Logic utilization (in ALMs)     ; 45 / 32,070 ( < 1 % )                          ;
+; Total registers                 ; 94                                             ;
+; Total pins                      ; 7 / 457 ( 2 % )                                ;
 ; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 16,384 / 4,065,280 ( < 1 % )                   ;
+; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                          ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                                 ;
 ; Total HSSI RX PCSs              ; 0                                              ;
 ; Total HSSI PMA RX Deserializers ; 0                                              ;
@@ -68,59 +68,51 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/23/2026 16:39:09 ;
+; Start date & time ; 02/25/2026 11:35:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab1                ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                  ;
-+--------------------------------------+------------------------------------------+---------------+-------------+-----------------------------------+
-; Assignment Name                      ; Value                                    ; Default Value ; Entity Name ; Section Id                        ;
-+--------------------------------------+------------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 123719793987059.177188994860402          ; --            ; --          ; --                                ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                       ; --            ; --          ; tb_cpu                            ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                       ; --            ; --          ; tb_ALU                            ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                      ; --            ; --          ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                      ; --            ; --          ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                      ; --            ; --          ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                      ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_cpu                                   ; --            ; --          ; eda_simulation                    ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                              ; --            ; --          ; eda_simulation                    ;
-; EDA_RUN_TOOL_AUTOMATICALLY           ; Off                                      ; --            ; --          ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (Verilog)              ; <None>        ; --          ; --                                ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                          ; --            ; --          ; eda_simulation                    ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/top.v                 ; --            ; --          ; tb_cpu                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/tb_cpu.v              ; --            ; --          ; tb_cpu                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/shifting_unit.v       ; --            ; --          ; tb_cpu                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/register_file.v       ; --            ; --          ; tb_cpu                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/register.v            ; --            ; --          ; tb_cpu                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/mux4.v                ; --            ; --          ; tb_cpu                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/mux2.v                ; --            ; --          ; tb_cpu                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/memory.v              ; --            ; --          ; tb_cpu                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/instruction_decoder.v ; --            ; --          ; tb_cpu                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/cpu.v                 ; --            ; --          ; tb_cpu                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/control_unit.v        ; --            ; --          ; tb_cpu                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/alu.v                 ; --            ; --          ; tb_cpu                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/init_mem.text         ; --            ; --          ; tb_cpu                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/CPU Lab/othermem.text         ; --            ; --          ; tb_cpu                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/ALU.v.bak             ; --            ; --          ; tb_ALU                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/tb_ALU.v              ; --            ; --          ; tb_ALU                            ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_cpu                                   ; --            ; --          ; tb_cpu                            ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_alu                                   ; --            ; --          ; tb_ALU                            ;
-; EDA_TEST_BENCH_NAME                  ; tb_cpu                                   ; --            ; --          ; eda_simulation                    ;
-; EDA_TIME_SCALE                       ; 1 ps                                     ; --            ; --          ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                       ; --            ; --          ; --                                ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                        ; --            ; --          ; --                                ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family)   ; --            ; top         ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)   ; --            ; top         ; Top                               ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)   ; --            ; top         ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                      ; --            ; --          ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW    ; --            ; --          ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                             ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                     ; top                                      ; lab1          ; --          ; --                                ;
-+--------------------------------------+------------------------------------------+---------------+-------------+-----------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                ;
++--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
+; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
++--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID                ; 123719793987202.177204450652643        ; --            ; --          ; --                                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_ALU                            ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_hard_coded_vga                      ; --            ; --          ; eda_simulation                    ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation                    ;
+; EDA_RUN_TOOL_AUTOMATICALLY           ; Off                                    ; --            ; --          ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (Verilog)            ; <None>        ; --          ; --                                ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/block_mover.v       ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/clk_divider.v       ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/hard_coded_bitgen.v ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/hard_coded_vga.v    ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/tb_hard_coded_vga.v ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/vga_controller.v    ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/ALU.v.bak           ; --            ; --          ; tb_ALU                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/tb_ALU.v            ; --            ; --          ; tb_ALU                            ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_hard_coded_vga                      ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_alu                                 ; --            ; --          ; tb_ALU                            ;
+; EDA_TEST_BENCH_NAME                  ; tb_hard_coded_vga                      ; --            ; --          ; eda_simulation                    ;
+; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --                                ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --                                ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; top         ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; top         ; Top                               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; top         ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                     ; top                                    ; lab1          ; --          ; --                                ;
++--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -128,12 +120,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 459 MB              ; 00:00:18                           ;
-; Fitter               ; 00:00:59     ; 1.1                     ; 1869 MB             ; 00:01:45                           ;
-; Assembler            ; 00:00:06     ; 1.0                     ; 521 MB              ; 00:00:05                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.6                     ; 864 MB              ; 00:00:09                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 451 MB              ; 00:00:14                           ;
+; Fitter               ; 00:00:30     ; 1.0                     ; 1767 MB             ; 00:00:47                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 502 MB              ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.1                     ; 825 MB              ; 00:00:04                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 667 MB              ; 00:00:01                           ;
-; Total                ; 00:01:25     ; --                      ; --                  ; 00:02:18                           ;
+; Total                ; 00:00:47     ; --                      ; --                  ; 00:01:11                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -142,11 +134,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+----------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
 +----------------------+------------------+----------------+------------+----------------+
-; Analysis & Synthesis ; dsl6             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
-; Fitter               ; dsl6             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
-; Assembler            ; dsl6             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
-; Timing Analyzer      ; dsl6             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
-; EDA Netlist Writer   ; dsl6             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; Analysis & Synthesis ; dsl7             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; Fitter               ; dsl7             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; Assembler            ; dsl7             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; Timing Analyzer      ; dsl7             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; EDA Netlist Writer   ; dsl7             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
 +----------------------+------------------+----------------+------------+----------------+
 
 
