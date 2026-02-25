@@ -1,0 +1,64 @@
+module top (
+    input clk,               // System clock (50 MHz or 100 MHz)
+    input rst,               // Reset signal
+    output scl,              // I2C clock for codec configuration
+    inout sda,               // I2C data for codec configuration
+    output bclk,             // I2S Bit Clock
+    output lrck,             // I2S Left/Right Clock
+    output dac_data          // I2S audio data to DAC
+);
+wire invRst;
+assign invRst = ~rst;
+
+    // Internal signals
+    reg [15:0] audio_data;   // Audio data to send to audio_player (simple test signal)
+    reg [31:0] counter;      // Counter to control when the signal changes
+    reg [4:0] signal_type;   // Select between different signal types (square wave)
+    wire [15:0] audio_sample; // Audio sample output from audio_player
+
+    // Instantiate the Audio Player module
+    audio_player audio_player_inst (
+        .clk(clk),               // System clock
+        .rst(~rst),               // Reset signal
+        .audio_data(audio_data), // Audio data (simple test signal)
+        .scl(scl),               // I2C clock for codec configuration
+        .sda(sda),               // I2C data for codec configuration
+        .bclk(bclk),             // I2S Bit Clock
+        .lrck(lrck),             // I2S Left/Right Clock
+        .dac_data(dac_data)      // Audio data to the DAC via I2S
+    );
+
+    // Simple audio signal generator: square wave
+    always @(posedge clk or posedge invRst) begin
+        if (invRst) begin
+            counter <= 0;
+            audio_data <= 16'd0;  // Reset audio data to 0
+            signal_type <= 5'd0;   // Start with square wave
+        end else begin
+            counter <= counter + 1;
+            
+            // Change the signal type every 1 second (assuming 50 MHz clock)
+            if (counter == 32'd50000000) begin
+                signal_type <= signal_type + 1;  // Switch signal type (square wave)
+                counter <= 0;  // Reset the counter
+            end
+
+            // Generate audio signal (square wave)
+            case (signal_type)
+                5'd0: begin
+                    // Square wave signal: Toggle between max amplitude and min amplitude
+                    if (counter[24]) begin
+                        audio_data <= 16'd32767;  // Max positive amplitude (max value for 16-bit audio)
+                    end else begin
+                        audio_data <= 16'd0;  // Min amplitude (0)
+                    end
+                end
+
+                default: begin
+                    audio_data <= 16'd0;  // Default to silence if no valid signal type
+                end
+            endcase
+        end
+    end
+
+endmodule
