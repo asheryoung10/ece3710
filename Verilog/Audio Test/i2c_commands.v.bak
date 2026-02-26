@@ -61,8 +61,8 @@ always @(posedge fpga50MHzClock or posedge reset) begin
         subStep <= 0;
         state <= IDLE;
         bitIndex <= 0;
-    //end else if (i2c_tick) begii2c_data_valuen
-	 end else begin
+    end else if (i2c_tick) begii2c_data_valuen
+	 //end else begin
         case (state)
             IDLE: begin
                 driveClockLow <= 0;
@@ -139,8 +139,7 @@ always @(posedge fpga50MHzClock or posedge reset) begin
 						end
 						1: begin
 							if(i2c_clock_value) begin
-								//if(i2c_data_value) begin
-								if(i2c_data_value == 0 || i2c_data_value == 1) begin
+								if(i2c_data_value) begin
 									ackNumber <= ackNumber + 1;
 									case(ackNumber) 
 										0: begin
@@ -148,14 +147,12 @@ always @(posedge fpga50MHzClock or posedge reset) begin
 											driveClockLow <= 1;
 											state <= SEND_BIT;
 											bitIndex <= 7;
-											subStep <= 0;
 										end
 										1: begin 
 											dataByte <= savedSecondByte;
 											driveClockLow <= 1;
 											state <= SEND_BIT;
 											bitIndex <= 7;
-											subStep <= 0;
 										end
 										2: begin
 											state <= STOP; // We are done;
