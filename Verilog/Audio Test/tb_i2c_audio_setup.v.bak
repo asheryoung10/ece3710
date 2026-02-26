@@ -54,8 +54,7 @@ always @(posedge fpga50MHzClock or posedge reset) begin
         subStep <= 0;
         state <= IDLE;
         bitIndex <= 0;
-    //end else if (i2c_tick) begin
-	 end else begin
+    end else if (i2c_tick) begin
         case (state)
             IDLE: begin
                 driveClockLow <= 0;
