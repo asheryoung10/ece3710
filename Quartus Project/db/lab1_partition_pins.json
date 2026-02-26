@@ -4,31 +4,131 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "scl",
+					"name" : "busy",
 					"strict" : false
 				},
 				{
-					"name" : "bclk",
+					"name" : "done",
 					"strict" : false
 				},
 				{
-					"name" : "lrck",
+					"name" : "error",
 					"strict" : false
 				},
 				{
-					"name" : "dac_data",
+					"name" : "i2c_clock",
 					"strict" : false
 				},
 				{
-					"name" : "sda",
+					"name" : "i2c_data",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "start",
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "fpga50MHzClock",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "secondByte[5]",
+					"strict" : false
+				},
+				{
+					"name" : "firstByte[5]",
+					"strict" : false
+				},
+				{
+					"name" : "address[5]",
+					"strict" : false
+				},
+				{
+					"name" : "secondByte[7]",
+					"strict" : false
+				},
+				{
+					"name" : "firstByte[7]",
+					"strict" : false
+				},
+				{
+					"name" : "address[7]",
+					"strict" : false
+				},
+				{
+					"name" : "secondByte[4]",
+					"strict" : false
+				},
+				{
+					"name" : "firstByte[4]",
+					"strict" : false
+				},
+				{
+					"name" : "address[4]",
+					"strict" : false
+				},
+				{
+					"name" : "secondByte[6]",
+					"strict" : false
+				},
+				{
+					"name" : "firstByte[6]",
+					"strict" : false
+				},
+				{
+					"name" : "address[6]",
+					"strict" : false
+				},
+				{
+					"name" : "secondByte[1]",
+					"strict" : false
+				},
+				{
+					"name" : "firstByte[1]",
+					"strict" : false
+				},
+				{
+					"name" : "address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "secondByte[3]",
+					"strict" : false
+				},
+				{
+					"name" : "firstByte[3]",
+					"strict" : false
+				},
+				{
+					"name" : "address[3]",
+					"strict" : false
+				},
+				{
+					"name" : "secondByte[0]",
+					"strict" : false
+				},
+				{
+					"name" : "firstByte[0]",
+					"strict" : false
+				},
+				{
+					"name" : "address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "secondByte[2]",
+					"strict" : false
+				},
+				{
+					"name" : "firstByte[2]",
+					"strict" : false
+				},
+				{
+					"name" : "address[2]",
 					"strict" : false
 				}
 			]
