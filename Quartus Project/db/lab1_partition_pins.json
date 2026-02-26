@@ -12,10 +12,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "error",
-					"strict" : false
-				},
-				{
 					"name" : "i2c_clock",
 					"strict" : false
 				},

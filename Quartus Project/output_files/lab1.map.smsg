@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at fib_copy_fsm.v(35): always construct contains both blocking and non-blocking assignments File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Memory Lab/fib_copy_fsm.v Line: 35
+Info (10281): Verilog HDL Declaration information at i2c_commands.v(6): object "done" differs only in case from object "DONE" in the same scope File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_commands.v Line: 6
