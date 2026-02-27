@@ -9,9 +9,9 @@ module tb_i2c_audio_setup;
     wire error;
     wire i2c_clock;
     wire i2c_data;
-	 wire [7:0] debugAddress;
-	 wire [7:0] debugFirstByte;
-	 wire [7:0] debugSecondByte;
+	wire [7:0] debugAddress;
+	wire [7:0] debugFirstByte;
+	wire [7:0] debugSecondByte;
 
     // Instantiate the I2C module
     i2c_commands uut (
@@ -23,9 +23,9 @@ module tb_i2c_audio_setup;
         .error(error),
         .i2c_clock(i2c_clock),
         .i2c_data(i2c_data),
-		  .debugAddress(debugAddress),
-		  .debugFirstByte(debugFirstByte),
-		  .debugSecondByte(debugSecondByte)
+		.debugAddress(debugAddress),
+		.debugFirstByte(debugFirstByte),
+		.debugSecondByte(debugSecondByte)
     );
 
     // Generate the 50 MHz FPGA clock
