@@ -5,6 +5,8 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio\ Test\ 2 {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/top.v}
+vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio\ Test\ 2 {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_output.v}
 vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio\ Test\ 2 {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_configurator.v}
 vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio\ Test\ 2 {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v}
 

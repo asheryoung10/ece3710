@@ -47,6 +47,12 @@ R0
 R1
 R0
 R1
+R0
+R1
+R0
+R1
+R0
+R1
 Z2 !s12c _opt2
 R1
 R0
@@ -381,10 +387,10 @@ R3
 T_opt1
 !i145 1
 !i144 0
-!s110 1772164069
-VP@`C5M_z2;m;0IPoMPmG13
+!s110 1772167763
+VkfLH?QSAaAN2k6n_Rh<Bf0
 04 21 4 work tb_audio_configurator fast 0
-=1-fc349769a683-69a113e4-28e-53b0
+=1-fc349769a683-69a12252-35e-4924
 R1
 R4
 R5
@@ -396,73 +402,121 @@ n@_opt1
 R9
 vaudio_configurator
 2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/audio_configurator.v
-!s110 1772164068
+Z10 !s110 1772167762
 !i10b 1
-!s100 eF11A^3U5G[2X`Qn8fIam2
-IINcHc^4QN8@Lokf9CgEIb0
-Z10 dC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/simulation/questa
-w1772164043
+!s100 E4mRFDEjDclNDaM<BKE4E3
+I787fJV@__0@H3JBA7]JRc2
+Z11 dC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/simulation/questa
+w1772167731
 8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/audio_configurator.v
 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/audio_configurator.v
-!i122 4
-L0 1 110
-Z11 VDg1SIo80bB@j0V0VzS_@n1
-Z12 OL;L;2025.2;82
+!i122 6
+L0 1 156
+Z12 VDg1SIo80bB@j0V0VzS_@n1
+Z13 OL;L;2025.2;82
 r1
 !s85 0
 31
-Z13 !s108 1772164067.000000
+Z14 !s108 1772167762.000000
 !s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/audio_configurator.v|
 !s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/audio_configurator.v|
 !i113 0
-Z14 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z15 !s92 -work work {+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z16 tCvgOpt 0 defaultOptions 1085333592
+Z15 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z16 !s92 -work work {+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z17 tCvgOpt 0 defaultOptions 1085333592
+vaudio_output
+2C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_output.v
+Z18 !s110 1772167761
+!i10b 1
+!s100 >aSi=1>d6ZS:WX8Vij2zY1
+IbEQANb9Ta6d:`mf=KLP:g0
+R11
+w1772166482
+8C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_output.v
+FC:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_output.v
+!i122 1
+L0 1 59
+R12
+R13
+r1
+!s85 0
+31
+Z19 !s108 1772167761.000000
+!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_output.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2|C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_output.v|
+!i113 0
+R15
+Z20 !s92 -work work {+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R17
 vi2c_controller
 2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/i2c_controller.v
-Z17 !s110 1772164067
+R10
 !i10b 1
 !s100 cCY0gk6U@>bbiFz[ZV[KM1
 IYHb>46m?W36FH1EzG[MY42
-R10
+R11
 w1772160822
 8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/i2c_controller.v
 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/i2c_controller.v
-!i122 3
+!i122 5
 L0 1 167
-R11
 R12
+R13
 r1
 !s85 0
 31
-R13
+R14
 !s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/i2c_controller.v|
 !s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/i2c_controller.v|
 !i113 0
-R14
 R15
 R16
+R17
 vtb_audio_configurator
 2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/tb_audio_configurator.v
-R17
+R18
 !i10b 1
 !s100 :ThaPSAPl4WnI<`<[C1L>0
 In_fhTVlVM4b8k^f>Zj9Ln1
-R10
+R11
 w1772163790
 8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/tb_audio_configurator.v
 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/tb_audio_configurator.v
-!i122 2
+!i122 4
 L0 1 60
-R11
 R12
+R13
 r1
 !s85 0
 31
-R13
+R19
 !s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/tb_audio_configurator.v|
 !s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/tb_audio_configurator.v|
 !i113 0
-R14
 R15
 R16
+R17
+vtop
+2C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/top.v
+R18
+!i10b 1
+!s100 lzoM7YHKi3NMIe@bB?0:J1
+I1GSE_CNm[^7F4GWK?7IXO0
+R11
+w1772166494
+8C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/top.v
+FC:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/top.v
+!i122 0
+L0 1 43
+R12
+R13
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/top.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2|C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/top.v|
+!i113 0
+R15
+R20
+R17

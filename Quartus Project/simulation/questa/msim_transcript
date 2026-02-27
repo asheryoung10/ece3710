@@ -28,67 +28,94 @@
 # Copying c:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio\ Test\ 2 {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/top.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 21:49:21 on Feb 26,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/top.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 21:49:21 on Feb 26,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio\ Test\ 2 {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_output.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 21:49:21 on Feb 26,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_output.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module audio_output
+# ** Warning: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_output.v(50): (vlog-13562) Size of the numeric literal '16' is bigger than the specified number of bits '4'. 
+# 
+# Top level modules:
+# 	audio_output
+# End time: 21:49:21 on Feb 26,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio\ Test\ 2 {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_configurator.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:47:47 on Feb 26,2026
+# Start time: 21:49:21 on Feb 26,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_configurator.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module audio_configurator
+# ** Warning: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_configurator.v(32): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_configurator.v(32): (vlog-13562) Size of the numeric literal '10a' is bigger than the specified number of bits '8'. 
 # 
 # Top level modules:
 # 	audio_configurator
-# End time: 20:47:47 on Feb 26,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+# End time: 21:49:21 on Feb 26,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio\ Test\ 2 {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:47:47 on Feb 26,2026
+# Start time: 21:49:21 on Feb 26,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module i2c_controller
 # 
 # Top level modules:
 # 	i2c_controller
-# End time: 20:47:47 on Feb 26,2026, Elapsed time: 0:00:00
+# End time: 21:49:21 on Feb 26,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Audio\ Test\ 2 {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/tb_audio_configurator.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:47:47 on Feb 26,2026
+# Start time: 21:49:21 on Feb 26,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/tb_audio_configurator.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module tb_audio_configurator
 # 
 # Top level modules:
 # 	tb_audio_configurator
-# End time: 20:47:47 on Feb 26,2026, Elapsed time: 0:00:00
+# End time: 21:49:21 on Feb 26,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Audio\ Test\ 2 {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/i2c_controller.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:47:47 on Feb 26,2026
+# Start time: 21:49:22 on Feb 26,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/i2c_controller.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module i2c_controller
 # 
 # Top level modules:
 # 	i2c_controller
-# End time: 20:47:47 on Feb 26,2026, Elapsed time: 0:00:00
+# End time: 21:49:22 on Feb 26,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Audio\ Test\ 2 {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/audio_configurator.v}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:47:47 on Feb 26,2026
+# Start time: 21:49:22 on Feb 26,2026
 # vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/audio_configurator.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module audio_configurator
+# ** Warning: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/audio_configurator.v(32): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/audio_configurator.v(32): (vlog-13562) Size of the numeric literal '10a' is bigger than the specified number of bits '8'. 
 # 
 # Top level modules:
 # 	audio_configurator
-# End time: 20:47:48 on Feb 26,2026, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
+# End time: 21:49:22 on Feb 26,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_audio_configurator
 # ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_audio_configurator 
-# Start time: 20:47:48 on Feb 26,2026
+# Start time: 21:49:22 on Feb 26,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
 # ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
@@ -107,7 +134,8 @@
 # run -all
 # Transaction Complete. Error Flag: 1
 # ** Note: $finish    : C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/tb_audio_configurator.v(57)
-#    Time: 11350 ps  Iteration: 0  Instance: /tb_audio_configurator
+#    Time: 16930 ps  Iteration: 0  Instance: /tb_audio_configurator
 # 1
 # Break in Module tb_audio_configurator at C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/tb_audio_configurator.v line 57
-# Causality operation skipped due to absence of debug database file
+# End time: 21:50:04 on Feb 26,2026, Elapsed time: 0:00:42
+# Errors: 0, Warnings: 1

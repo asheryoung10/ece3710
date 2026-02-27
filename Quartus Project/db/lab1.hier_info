@@ -1,8 +1,30 @@
-|audio_configurator
-systemClock => controllerClock.IN1
+|top
+CLOCK_50 => CLOCK_50.IN2
+RESET_N => _.IN1
+configure_N => _.IN1
+FPGA_I2C_SCLK <> audio_configurator:i2c_conf.i2c_clock
+FPGA_I2C_SDAT <> audio_configurator:i2c_conf.i2c_data
+AUD_XCK << audio_output:dac_driver.aud_xck
+AUD_BCLK << audio_output:dac_driver.aud_bclk
+AUD_DACLRCK << audio_output:dac_driver.aud_daclrck
+AUD_DACDAT << audio_output:dac_driver.aud_dacdat
+error << audio_configurator:i2c_conf.encounteredError
+
+
+|top|audio_configurator:i2c_conf
+systemClock => i2c_clk_reg.CLK
+systemClock => clk_divider_count[0].CLK
+systemClock => clk_divider_count[1].CLK
+systemClock => clk_divider_count[2].CLK
+systemClock => clk_divider_count[3].CLK
+systemClock => clk_divider_count[4].CLK
+systemClock => clk_divider_count[5].CLK
+systemClock => clk_divider_count[6].CLK
+systemClock => clk_divider_count[7].CLK
 reset => reset.IN1
 configure => currentState.OUTPUTSELECT
 configure => currentState.OUTPUTSELECT
+configure => currentCommandIndex.OUTPUTSELECT
 configure => currentCommandIndex.OUTPUTSELECT
 configure => currentCommandIndex.OUTPUTSELECT
 configure => currentCommandIndex.OUTPUTSELECT
@@ -19,7 +41,7 @@ i2c_clock <> i2c_controller:i2c_controller_instance.i2c_clock
 i2c_data <> i2c_controller:i2c_controller_instance.i2c_data
 
 
-|audio_configurator|i2c_controller:i2c_controller_instance
+|top|audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance
 clock => currentByte[0].CLK
 clock => currentByte[1].CLK
 clock => currentByte[2].CLK
@@ -182,5 +204,14 @@ done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE
 encounteredError <= encounteredError~reg0.DB_MAX_OUTPUT_PORT_TYPE
 i2c_clock <> i2c_clock
 i2c_data <> i2c_data
+
+
+|top|audio_output:dac_driver
+clk_50 => mclk_count[0].CLK
+clk_50 => mclk_count[1].CLK
+aud_xck <= mclk_count[1].DB_MAX_OUTPUT_PORT_TYPE
+aud_bclk <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+aud_daclrck <= counter[7].DB_MAX_OUTPUT_PORT_TYPE
+aud_dacdat <= dacdat_reg.DB_MAX_OUTPUT_PORT_TYPE
 
 

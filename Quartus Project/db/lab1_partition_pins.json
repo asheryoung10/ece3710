@@ -4,35 +4,43 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "busy",
+					"name" : "AUD_XCK",
 					"strict" : false
 				},
 				{
-					"name" : "done",
+					"name" : "AUD_BCLK",
 					"strict" : false
 				},
 				{
-					"name" : "encounteredError",
+					"name" : "AUD_DACLRCK",
 					"strict" : false
 				},
 				{
-					"name" : "i2c_clock",
+					"name" : "AUD_DACDAT",
 					"strict" : false
 				},
 				{
-					"name" : "i2c_data",
+					"name" : "error",
 					"strict" : false
 				},
 				{
-					"name" : "configure",
+					"name" : "FPGA_I2C_SCLK",
 					"strict" : false
 				},
 				{
-					"name" : "systemClock",
+					"name" : "FPGA_I2C_SDAT",
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "RESET_N",
+					"strict" : false
+				},
+				{
+					"name" : "configure_N",
 					"strict" : false
 				}
 			]

@@ -11,18 +11,49 @@ module audio_configurator (
     inout wire i2c_data
 );
 
-reg [23:0] commands[5:0];
+reg [23:0] commands[7:0];
+
 initial begin
-    commands[0] = {8'h11, 8'h01, 8'h02};
-    commands[1] = {8'h11, 8'h03, 8'h04};
-    commands[2] = {8'h12, 8'h05, 8'h06};
-    commands[3] = {8'h13, 8'h07, 8'h08};
-    commands[4] = {8'h14, 8'h09, 8'h0A};
-    commands[5] = {8'h15, 8'h0B, 8'h0C};
+    // Reset Address: 7'b0001111 Data: RESET
+    //commands[0] = {8'b00110100, 8'b00111110, 8'b00000000};
+	 // Left Line In Address: 7'b0000000, DATA: Simultanous load, Mute, Max Volume
+    commands[0] = {8'b00110100, 8'b00000001, 8'b10011111};
+	 // Left Headphone Out Address: 7'b0000001, DATA: Simultaneous load, Disable LZCEN, Volume Max
+    commands[1] = {8'b00110100, 8'b00000011, 8'b00000000};
+	 // Analogue Audio Path Controll Address: 7'b0000100, DATA: Select DAC and Mute Mic
+    commands[2] = {8'b00110100, 8'b00001000, 8'b00010010};
+	 // Digital Audio Path Address: 7'b0000101, DATA:Disable soft mute 
+    commands[3] = {8'b00110100, 8'b00001010, 8'b00000000};
+	 // Power down control Address: 7'b0000110, DATA: Powerdown linein, mic, and adc
+    commands[4] = {8'b00110100, 8'b00001100, 8'b00000111};
+	 // Digital Audio Interface Format Address: 7'b0000111, DATA: i2s MSB first left 1 justified
+    commands[5] = {8'b00110100, 8'b00001110, 8'b00000010};
+	 // Sampling Control Address: 7'b0001000, DATA: defaults
+    commands[6] = {8'b00110100, 8'b00010000, 8'b00000000};
+	 // Active Control Address: 7'b0001001, DATA: active
+    commands[7] = {8'b00110100, 8'b00010010, 8'b00000001};
+end
+
+reg [7:0] clk_divider_count;
+reg       i2c_clk_reg;
+
+always @(posedge systemClock or posedge reset) begin
+    if (reset) begin
+        clk_divider_count <= 8'd0;
+        i2c_clk_reg <= 1'b0;
+    end else begin
+        if (clk_divider_count >= 8'd124) begin // Toggle every 125 cycles
+            clk_divider_count <= 8'd0;
+            i2c_clk_reg <= ~i2c_clk_reg;
+        end else begin
+            clk_divider_count <= clk_divider_count + 1'b1;
+        end
+    end
 end
 
 wire controllerClock;
-assign controllerClock = systemClock; // for now
+assign controllerClock = i2c_clk_reg;
+//assign controllerClock = systemClock;
 
 reg sendMessage;
 reg [7:0] addressByte;
@@ -51,7 +82,7 @@ i2c_controller i2c_controller_instance (
 
 localparam IDLE_STATE = 0;
 localparam SEND_COMMAND_STATE = 1;
-reg [2:0] currentCommandIndex;
+reg [3:0] currentCommandIndex;
 reg [2:0] currentState;
 reg [2:0] currentStep;
 always @(posedge controllerClock or posedge reset) begin
@@ -95,7 +126,7 @@ always @(posedge controllerClock or posedge reset) begin
                         if(controllerBusy)
                             currentStep <= 3;
                         else begin
-                            if(currentCommandIndex == 6) begin                         
+                            if(currentCommandIndex == 8) begin                         
                                 busy <= 0;
                                 done <= 1;
                             end else

@@ -1,6 +1,6 @@
 Timing Analyzer report for lab1
-Thu Feb 26 16:13:51 2026
-Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Thu Feb 26 22:25:41 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
 ---------------------
@@ -61,35 +61,35 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2024  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions 
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Intel Program License 
-Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
 
 
 
-+--------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                        ;
-+-----------------------+--------------------------------------------------------+
-; Quartus Prime Version ; Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Timing Analyzer       ; Legacy Timing Analyzer                                 ;
-; Revision Name         ; lab1                                                   ;
-; Device Family         ; Cyclone V                                              ;
-; Device Name           ; 5CSEMA5F31C6                                           ;
-; Timing Models         ; Final                                                  ;
-; Delay Model           ; Combined                                               ;
-; Rise/Fall Delays      ; Enabled                                                ;
-+-----------------------+--------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                         ;
++-----------------------+---------------------------------------------------------+
+; Quartus Prime Version ; Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                  ;
+; Revision Name         ; lab1                                                    ;
+; Device Family         ; Cyclone V                                               ;
+; Device Name           ; 5CSEMA5F31C6                                            ;
+; Timing Models         ; Final                                                   ;
+; Delay Model           ; Combined                                                ;
+; Rise/Fall Delays      ; Enabled                                                 ;
++-----------------------+---------------------------------------------------------+
 
 
 +------------------------------------------+
@@ -97,36 +97,56 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 32          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.07        ;
-; Maximum used               ; 4           ;
+; Average used               ; 1.38        ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.2%      ;
-;     Processor 3            ;   2.2%      ;
-;     Processor 4            ;   2.2%      ;
+;     Processor 2            ;   3.0%      ;
+;     Processor 3            ;   2.9%      ;
+;     Processor 4            ;   2.8%      ;
+;     Processor 5            ;   2.6%      ;
+;     Processor 6            ;   2.6%      ;
+;     Processor 7            ;   2.6%      ;
+;     Processor 8            ;   2.6%      ;
+;     Processor 9            ;   2.6%      ;
+;     Processor 10           ;   2.6%      ;
+;     Processor 11           ;   2.5%      ;
+;     Processor 12           ;   2.5%      ;
+;     Processor 13           ;   2.5%      ;
+;     Processor 14           ;   2.5%      ;
+;     Processor 15           ;   2.5%      ;
+;     Processor 16           ;   1.2%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clocks                                                                                                                                                                                         ;
-+----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------+
-; Clock Name     ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets            ;
-+----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------+
-; fpga50MHzClock ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { fpga50MHzClock } ;
-+----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                           ;
++-----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------+
+; Clock Name                              ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                     ;
++-----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------+
+; audio_configurator:i2c_conf|i2c_clk_reg ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { audio_configurator:i2c_conf|i2c_clk_reg } ;
+; audio_output:dac_driver|counter[2]      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { audio_output:dac_driver|counter[2] }      ;
+; audio_output:dac_driver|counter[7]      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { audio_output:dac_driver|counter[7] }      ;
+; audio_output:dac_driver|mclk_count[1]   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { audio_output:dac_driver|mclk_count[1] }   ;
+; CLOCK_50                                ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 }                                ;
++-----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------+
 
 
-+------------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary                   ;
-+------------+-----------------+----------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name     ; Note ;
-+------------+-----------------+----------------+------+
-; 400.64 MHz ; 400.64 MHz      ; fpga50MHzClock ;      ;
-+------------+-----------------+----------------+------+
++-------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                                            ;
++------------+-----------------+-----------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                              ; Note ;
++------------+-----------------+-----------------------------------------+------+
+; 233.1 MHz  ; 233.1 MHz       ; audio_output:dac_driver|counter[2]      ;      ;
+; 235.35 MHz ; 235.35 MHz      ; CLOCK_50                                ;      ;
+; 289.1 MHz  ; 289.1 MHz       ; audio_configurator:i2c_conf|i2c_clk_reg ;      ;
+; 290.44 MHz ; 290.44 MHz      ; audio_output:dac_driver|mclk_count[1]   ;      ;
+; 318.78 MHz ; 318.78 MHz      ; audio_output:dac_driver|counter[7]      ;      ;
++------------+-----------------+-----------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -136,22 +156,30 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 HTML report is unavailable in plain text report export.
 
 
-+-----------------------------------------+
-; Slow 1100mV 85C Model Setup Summary     ;
-+----------------+--------+---------------+
-; Clock          ; Slack  ; End Point TNS ;
-+----------------+--------+---------------+
-; fpga50MHzClock ; -1.496 ; -42.748       ;
-+----------------+--------+---------------+
++------------------------------------------------------------------+
+; Slow 1100mV 85C Model Setup Summary                              ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; CLOCK_50                                ; -4.878 ; -19.023       ;
+; audio_configurator:i2c_conf|i2c_clk_reg ; -2.459 ; -101.728      ;
+; audio_output:dac_driver|mclk_count[1]   ; -2.443 ; -15.383       ;
+; audio_output:dac_driver|counter[7]      ; -2.137 ; -15.613       ;
+; audio_output:dac_driver|counter[2]      ; -1.720 ; -1.720        ;
++-----------------------------------------+--------+---------------+
 
 
-+----------------------------------------+
-; Slow 1100mV 85C Model Hold Summary     ;
-+----------------+-------+---------------+
-; Clock          ; Slack ; End Point TNS ;
-+----------------+-------+---------------+
-; fpga50MHzClock ; 0.241 ; 0.000         ;
-+----------------+-------+---------------+
++-----------------------------------------------------------------+
+; Slow 1100mV 85C Model Hold Summary                              ;
++-----------------------------------------+-------+---------------+
+; Clock                                   ; Slack ; End Point TNS ;
++-----------------------------------------+-------+---------------+
+; audio_output:dac_driver|mclk_count[1]   ; 0.295 ; 0.000         ;
+; audio_configurator:i2c_conf|i2c_clk_reg ; 0.298 ; 0.000         ;
+; CLOCK_50                                ; 0.384 ; 0.000         ;
+; audio_output:dac_driver|counter[2]      ; 0.546 ; 0.000         ;
+; audio_output:dac_driver|counter[7]      ; 0.667 ; 0.000         ;
++-----------------------------------------+-------+---------------+
 
 
 ------------------------------------------
@@ -166,13 +194,17 @@ No paths to report.
 No paths to report.
 
 
-+---------------------------------------------------+
-; Slow 1100mV 85C Model Minimum Pulse Width Summary ;
-+----------------+--------+-------------------------+
-; Clock          ; Slack  ; End Point TNS           ;
-+----------------+--------+-------------------------+
-; fpga50MHzClock ; -0.394 ; -27.670                 ;
-+----------------+--------+-------------------------+
++------------------------------------------------------------------+
+; Slow 1100mV 85C Model Minimum Pulse Width Summary                ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; CLOCK_50                                ; -0.801 ; -7.356        ;
+; audio_configurator:i2c_conf|i2c_clk_reg ; -0.394 ; -32.985       ;
+; audio_output:dac_driver|counter[7]      ; -0.394 ; -5.248        ;
+; audio_output:dac_driver|mclk_count[1]   ; -0.394 ; -4.084        ;
+; audio_output:dac_driver|counter[2]      ; -0.394 ; -0.600        ;
++-----------------------------------------+--------+---------------+
 
 
 -----------------------------------------------
@@ -181,32 +213,44 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+-----------------------------------------------------+
-; Slow 1100mV 0C Model Fmax Summary                   ;
-+-----------+-----------------+----------------+------+
-; Fmax      ; Restricted Fmax ; Clock Name     ; Note ;
-+-----------+-----------------+----------------+------+
-; 399.2 MHz ; 399.2 MHz       ; fpga50MHzClock ;      ;
-+-----------+-----------------+----------------+------+
++-------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                                             ;
++------------+-----------------+-----------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                              ; Note ;
++------------+-----------------+-----------------------------------------+------+
+; 221.29 MHz ; 221.29 MHz      ; CLOCK_50                                ;      ;
+; 239.92 MHz ; 239.92 MHz      ; audio_output:dac_driver|counter[2]      ;      ;
+; 282.09 MHz ; 282.09 MHz      ; audio_output:dac_driver|mclk_count[1]   ;      ;
+; 297.8 MHz  ; 297.8 MHz       ; audio_configurator:i2c_conf|i2c_clk_reg ;      ;
+; 316.36 MHz ; 316.36 MHz      ; audio_output:dac_driver|counter[7]      ;      ;
++------------+-----------------+-----------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+-----------------------------------------+
-; Slow 1100mV 0C Model Setup Summary      ;
-+----------------+--------+---------------+
-; Clock          ; Slack  ; End Point TNS ;
-+----------------+--------+---------------+
-; fpga50MHzClock ; -1.505 ; -38.894       ;
-+----------------+--------+---------------+
++------------------------------------------------------------------+
+; Slow 1100mV 0C Model Setup Summary                               ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; CLOCK_50                                ; -4.761 ; -18.582       ;
+; audio_output:dac_driver|mclk_count[1]   ; -2.545 ; -16.005       ;
+; audio_configurator:i2c_conf|i2c_clk_reg ; -2.358 ; -98.168       ;
+; audio_output:dac_driver|counter[7]      ; -2.161 ; -16.056       ;
+; audio_output:dac_driver|counter[2]      ; -1.620 ; -1.620        ;
++-----------------------------------------+--------+---------------+
 
 
-+----------------------------------------+
-; Slow 1100mV 0C Model Hold Summary      ;
-+----------------+-------+---------------+
-; Clock          ; Slack ; End Point TNS ;
-+----------------+-------+---------------+
-; fpga50MHzClock ; 0.228 ; 0.000         ;
-+----------------+-------+---------------+
++-----------------------------------------------------------------+
+; Slow 1100mV 0C Model Hold Summary                               ;
++-----------------------------------------+-------+---------------+
+; Clock                                   ; Slack ; End Point TNS ;
++-----------------------------------------+-------+---------------+
+; audio_configurator:i2c_conf|i2c_clk_reg ; 0.320 ; 0.000         ;
+; CLOCK_50                                ; 0.397 ; 0.000         ;
+; audio_output:dac_driver|mclk_count[1]   ; 0.429 ; 0.000         ;
+; audio_output:dac_driver|counter[2]      ; 0.470 ; 0.000         ;
+; audio_output:dac_driver|counter[7]      ; 0.663 ; 0.000         ;
++-----------------------------------------+-------+---------------+
 
 
 -----------------------------------------
@@ -221,13 +265,17 @@ No paths to report.
 No paths to report.
 
 
-+--------------------------------------------------+
-; Slow 1100mV 0C Model Minimum Pulse Width Summary ;
-+----------------+--------+------------------------+
-; Clock          ; Slack  ; End Point TNS          ;
-+----------------+--------+------------------------+
-; fpga50MHzClock ; -0.394 ; -29.947                ;
-+----------------+--------+------------------------+
++------------------------------------------------------------------+
+; Slow 1100mV 0C Model Minimum Pulse Width Summary                 ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; CLOCK_50                                ; -0.828 ; -7.910        ;
+; audio_configurator:i2c_conf|i2c_clk_reg ; -0.394 ; -32.574       ;
+; audio_output:dac_driver|counter[7]      ; -0.394 ; -5.148        ;
+; audio_output:dac_driver|mclk_count[1]   ; -0.394 ; -4.077        ;
+; audio_output:dac_driver|counter[2]      ; -0.394 ; -0.516        ;
++-----------------------------------------+--------+---------------+
 
 
 ----------------------------------------------
@@ -236,22 +284,30 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+-----------------------------------------+
-; Fast 1100mV 85C Model Setup Summary     ;
-+----------------+--------+---------------+
-; Clock          ; Slack  ; End Point TNS ;
-+----------------+--------+---------------+
-; fpga50MHzClock ; -0.547 ; -4.799        ;
-+----------------+--------+---------------+
++------------------------------------------------------------------+
+; Fast 1100mV 85C Model Setup Summary                              ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; CLOCK_50                                ; -3.915 ; -10.159       ;
+; audio_output:dac_driver|mclk_count[1]   ; -1.337 ; -7.534        ;
+; audio_configurator:i2c_conf|i2c_clk_reg ; -1.228 ; -44.909       ;
+; audio_output:dac_driver|counter[7]      ; -1.005 ; -5.972        ;
+; audio_output:dac_driver|counter[2]      ; -0.902 ; -0.902        ;
++-----------------------------------------+--------+---------------+
 
 
-+----------------------------------------+
-; Fast 1100mV 85C Model Hold Summary     ;
-+----------------+-------+---------------+
-; Clock          ; Slack ; End Point TNS ;
-+----------------+-------+---------------+
-; fpga50MHzClock ; 0.146 ; 0.000         ;
-+----------------+-------+---------------+
++------------------------------------------------------------------+
+; Fast 1100mV 85C Model Hold Summary                               ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; audio_output:dac_driver|mclk_count[1]   ; -0.023 ; -0.023        ;
+; audio_configurator:i2c_conf|i2c_clk_reg ; 0.150  ; 0.000         ;
+; CLOCK_50                                ; 0.187  ; 0.000         ;
+; audio_output:dac_driver|counter[2]      ; 0.304  ; 0.000         ;
+; audio_output:dac_driver|counter[7]      ; 0.341  ; 0.000         ;
++-----------------------------------------+--------+---------------+
 
 
 ------------------------------------------
@@ -266,13 +322,17 @@ No paths to report.
 No paths to report.
 
 
-+---------------------------------------------------+
-; Fast 1100mV 85C Model Minimum Pulse Width Summary ;
-+----------------+--------+-------------------------+
-; Clock          ; Slack  ; End Point TNS           ;
-+----------------+--------+-------------------------+
-; fpga50MHzClock ; -0.087 ; -4.383                  ;
-+----------------+--------+-------------------------+
++------------------------------------------------------------------+
+; Fast 1100mV 85C Model Minimum Pulse Width Summary                ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; CLOCK_50                                ; -0.729 ; -2.877        ;
+; audio_configurator:i2c_conf|i2c_clk_reg ; -0.029 ; -0.307        ;
+; audio_output:dac_driver|counter[2]      ; 0.129  ; 0.000         ;
+; audio_output:dac_driver|counter[7]      ; 0.133  ; 0.000         ;
+; audio_output:dac_driver|mclk_count[1]   ; 0.144  ; 0.000         ;
++-----------------------------------------+--------+---------------+
 
 
 -----------------------------------------------
@@ -281,22 +341,30 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+-----------------------------------------+
-; Fast 1100mV 0C Model Setup Summary      ;
-+----------------+--------+---------------+
-; Clock          ; Slack  ; End Point TNS ;
-+----------------+--------+---------------+
-; fpga50MHzClock ; -0.418 ; -2.998        ;
-+----------------+--------+---------------+
++------------------------------------------------------------------+
+; Fast 1100mV 0C Model Setup Summary                               ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; CLOCK_50                                ; -3.372 ; -8.509        ;
+; audio_output:dac_driver|mclk_count[1]   ; -1.215 ; -7.050        ;
+; audio_configurator:i2c_conf|i2c_clk_reg ; -1.068 ; -37.862       ;
+; audio_output:dac_driver|counter[7]      ; -0.882 ; -5.415        ;
+; audio_output:dac_driver|counter[2]      ; -0.813 ; -0.813        ;
++-----------------------------------------+--------+---------------+
 
 
-+----------------------------------------+
-; Fast 1100mV 0C Model Hold Summary      ;
-+----------------+-------+---------------+
-; Clock          ; Slack ; End Point TNS ;
-+----------------+-------+---------------+
-; fpga50MHzClock ; 0.131 ; 0.000         ;
-+----------------+-------+---------------+
++-----------------------------------------------------------------+
+; Fast 1100mV 0C Model Hold Summary                               ;
++-----------------------------------------+-------+---------------+
+; Clock                                   ; Slack ; End Point TNS ;
++-----------------------------------------+-------+---------------+
+; audio_output:dac_driver|mclk_count[1]   ; 0.008 ; 0.000         ;
+; audio_configurator:i2c_conf|i2c_clk_reg ; 0.144 ; 0.000         ;
+; CLOCK_50                                ; 0.178 ; 0.000         ;
+; audio_output:dac_driver|counter[2]      ; 0.273 ; 0.000         ;
+; audio_output:dac_driver|counter[7]      ; 0.310 ; 0.000         ;
++-----------------------------------------+-------+---------------+
 
 
 -----------------------------------------
@@ -311,13 +379,17 @@ No paths to report.
 No paths to report.
 
 
-+--------------------------------------------------+
-; Fast 1100mV 0C Model Minimum Pulse Width Summary ;
-+----------------+--------+------------------------+
-; Clock          ; Slack  ; End Point TNS          ;
-+----------------+--------+------------------------+
-; fpga50MHzClock ; -0.084 ; -4.266                 ;
-+----------------+--------+------------------------+
++------------------------------------------------------------------+
+; Fast 1100mV 0C Model Minimum Pulse Width Summary                 ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; CLOCK_50                                ; -0.714 ; -2.813        ;
+; audio_configurator:i2c_conf|i2c_clk_reg ; 0.007  ; 0.000         ;
+; audio_output:dac_driver|counter[2]      ; 0.138  ; 0.000         ;
+; audio_output:dac_driver|counter[7]      ; 0.141  ; 0.000         ;
+; audio_output:dac_driver|mclk_count[1]   ; 0.151  ; 0.000         ;
++-----------------------------------------+--------+---------------+
 
 
 ----------------------------------------------
@@ -326,137 +398,151 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+-------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                           ;
-+------------------+---------+-------+----------+---------+---------------------+
-; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+---------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -1.505  ; 0.131 ; N/A      ; N/A     ; -0.394              ;
-;  fpga50MHzClock  ; -1.505  ; 0.131 ; N/A      ; N/A     ; -0.394              ;
-; Design-wide TNS  ; -42.748 ; 0.0   ; 0.0      ; 0.0     ; -29.947             ;
-;  fpga50MHzClock  ; -42.748 ; 0.000 ; N/A      ; N/A     ; -29.947             ;
-+------------------+---------+-------+----------+---------+---------------------+
++---------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                     ;
++------------------------------------------+----------+--------+----------+---------+---------------------+
+; Clock                                    ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------------------------------+----------+--------+----------+---------+---------------------+
+; Worst-case Slack                         ; -4.878   ; -0.023 ; N/A      ; N/A     ; -0.828              ;
+;  CLOCK_50                                ; -4.878   ; 0.178  ; N/A      ; N/A     ; -0.828              ;
+;  audio_configurator:i2c_conf|i2c_clk_reg ; -2.459   ; 0.144  ; N/A      ; N/A     ; -0.394              ;
+;  audio_output:dac_driver|counter[2]      ; -1.720   ; 0.273  ; N/A      ; N/A     ; -0.394              ;
+;  audio_output:dac_driver|counter[7]      ; -2.161   ; 0.310  ; N/A      ; N/A     ; -0.394              ;
+;  audio_output:dac_driver|mclk_count[1]   ; -2.545   ; -0.023 ; N/A      ; N/A     ; -0.394              ;
+; Design-wide TNS                          ; -153.467 ; -0.023 ; 0.0      ; 0.0     ; -50.273             ;
+;  CLOCK_50                                ; -19.023  ; 0.000  ; N/A      ; N/A     ; -7.910              ;
+;  audio_configurator:i2c_conf|i2c_clk_reg ; -101.728 ; 0.000  ; N/A      ; N/A     ; -32.985             ;
+;  audio_output:dac_driver|counter[2]      ; -1.720   ; 0.000  ; N/A      ; N/A     ; -0.600              ;
+;  audio_output:dac_driver|counter[7]      ; -16.056  ; 0.000  ; N/A      ; N/A     ; -5.248              ;
+;  audio_output:dac_driver|mclk_count[1]   ; -16.005  ; -0.023 ; N/A      ; N/A     ; -4.084              ;
++------------------------------------------+----------+--------+----------+---------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                ;
-+-----------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
-; Pin       ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
-+-----------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
-; busy      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; done      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; error     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; i2c_clock ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; i2c_data  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-+-----------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; AUD_XCK       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; AUD_BCLK      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; AUD_DACLRCK   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; AUD_DACDAT    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; error         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; FPGA_I2C_SCLK ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; FPGA_I2C_SDAT ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
 
 
-+-------------------------------------------------------------------+
-; Input Transition Times                                            ;
-+----------------+--------------+-----------------+-----------------+
-; Pin            ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
-+----------------+--------------+-----------------+-----------------+
-; i2c_clock      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; i2c_data       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; start          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; fpga50MHzClock ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; reset          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; secondByte[5]  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; firstByte[5]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; address[5]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; secondByte[7]  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; firstByte[7]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; address[7]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; secondByte[4]  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; firstByte[4]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; address[4]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; secondByte[6]  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; firstByte[6]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; address[6]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; secondByte[1]  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; firstByte[1]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; address[1]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; secondByte[3]  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; firstByte[3]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; address[3]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; secondByte[0]  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; firstByte[0]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; address[0]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; secondByte[2]  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; firstByte[2]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; address[2]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-+----------------+--------------+-----------------+-----------------+
++------------------------------------------------------------------+
+; Input Transition Times                                           ;
++---------------+--------------+-----------------+-----------------+
+; Pin           ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++---------------+--------------+-----------------+-----------------+
+; FPGA_I2C_SCLK ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; FPGA_I2C_SDAT ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; CLOCK_50      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; RESET_N       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; configure_N   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++---------------+--------------+-----------------+-----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Signal Integrity Metrics (Slow 1100mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
-+-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; Pin       ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
-+-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; busy      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
-; done      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0557 V           ; 0.175 V                              ; 0.114 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0557 V          ; 0.175 V                             ; 0.114 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
-; error     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
-; i2c_clock ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
-; i2c_data  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
-+-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1100mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; AUD_XCK       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
+; AUD_BCLK      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; AUD_DACLRCK   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; AUD_DACDAT    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; error         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; FPGA_I2C_SCLK ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; FPGA_I2C_SDAT ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Signal Integrity Metrics (Slow 1100mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
-+-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; Pin       ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
-+-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; busy      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
-; done      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.037 V            ; 0.188 V                              ; 0.158 V                              ; 4.67e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.037 V           ; 0.188 V                             ; 0.158 V                             ; 4.67e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
-; error     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
-; i2c_clock ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
-; i2c_data  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
-+-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1100mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; AUD_XCK       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
+; AUD_BCLK      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; AUD_DACLRCK   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; AUD_DACDAT    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; error         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; FPGA_I2C_SCLK ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; FPGA_I2C_SDAT ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Signal Integrity Metrics (Fast 1100mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
-+-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; Pin       ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
-+-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; busy      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
-; done      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
-; error     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
-; i2c_clock ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
-; i2c_data  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
-+-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1100mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; AUD_XCK       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; AUD_BCLK      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; AUD_DACLRCK   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; AUD_DACDAT    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; error         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; FPGA_I2C_SCLK ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; FPGA_I2C_SDAT ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Signal Integrity Metrics (Fast 1100mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
-+-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; Pin       ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
-+-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; busy      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
-; done      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
-; error     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
-; i2c_clock ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
-; i2c_data  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
-+-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1100mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; AUD_XCK       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
+; AUD_BCLK      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; AUD_DACLRCK   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; AUD_DACDAT    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; error         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; FPGA_I2C_SCLK ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; FPGA_I2C_SDAT ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+-----------------------------------------------------------------------------+
-; Setup Transfers                                                             ;
-+----------------+----------------+----------+----------+----------+----------+
-; From Clock     ; To Clock       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+----------------+----------------+----------+----------+----------+----------+
-; fpga50MHzClock ; fpga50MHzClock ; 253      ; 0        ; 0        ; 0        ;
-+----------------+----------------+----------+----------+----------+----------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                               ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+; From Clock                              ; To Clock                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+; audio_configurator:i2c_conf|i2c_clk_reg ; audio_configurator:i2c_conf|i2c_clk_reg ; 483      ; 0        ; 0        ; 0        ;
+; audio_output:dac_driver|counter[2]      ; audio_output:dac_driver|counter[2]      ; 0        ; 0        ; 1        ; 1        ;
+; audio_output:dac_driver|counter[7]      ; audio_output:dac_driver|counter[2]      ; 0        ; 0        ; 1        ; 0        ;
+; audio_output:dac_driver|mclk_count[1]   ; audio_output:dac_driver|counter[2]      ; 0        ; 0        ; 4        ; 0        ;
+; audio_output:dac_driver|counter[7]      ; audio_output:dac_driver|counter[7]      ; 50       ; 0        ; 0        ; 0        ;
+; audio_output:dac_driver|counter[2]      ; audio_output:dac_driver|mclk_count[1]   ; 6        ; 6        ; 0        ; 0        ;
+; audio_output:dac_driver|counter[7]      ; audio_output:dac_driver|mclk_count[1]   ; 1        ; 1        ; 0        ; 0        ;
+; audio_output:dac_driver|mclk_count[1]   ; audio_output:dac_driver|mclk_count[1]   ; 29       ; 0        ; 0        ; 0        ;
+; audio_configurator:i2c_conf|i2c_clk_reg ; CLOCK_50                                ; 1        ; 1        ; 0        ; 0        ;
+; audio_output:dac_driver|mclk_count[1]   ; CLOCK_50                                ; 1        ; 1        ; 0        ; 0        ;
+; CLOCK_50                                ; CLOCK_50                                ; 92       ; 0        ; 0        ; 0        ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+-----------------------------------------------------------------------------+
-; Hold Transfers                                                              ;
-+----------------+----------------+----------+----------+----------+----------+
-; From Clock     ; To Clock       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+----------------+----------------+----------+----------+----------+----------+
-; fpga50MHzClock ; fpga50MHzClock ; 253      ; 0        ; 0        ; 0        ;
-+----------------+----------------+----------+----------+----------+----------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+; From Clock                              ; To Clock                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+; audio_configurator:i2c_conf|i2c_clk_reg ; audio_configurator:i2c_conf|i2c_clk_reg ; 483      ; 0        ; 0        ; 0        ;
+; audio_output:dac_driver|counter[2]      ; audio_output:dac_driver|counter[2]      ; 0        ; 0        ; 1        ; 1        ;
+; audio_output:dac_driver|counter[7]      ; audio_output:dac_driver|counter[2]      ; 0        ; 0        ; 1        ; 0        ;
+; audio_output:dac_driver|mclk_count[1]   ; audio_output:dac_driver|counter[2]      ; 0        ; 0        ; 4        ; 0        ;
+; audio_output:dac_driver|counter[7]      ; audio_output:dac_driver|counter[7]      ; 50       ; 0        ; 0        ; 0        ;
+; audio_output:dac_driver|counter[2]      ; audio_output:dac_driver|mclk_count[1]   ; 6        ; 6        ; 0        ; 0        ;
+; audio_output:dac_driver|counter[7]      ; audio_output:dac_driver|mclk_count[1]   ; 1        ; 1        ; 0        ; 0        ;
+; audio_output:dac_driver|mclk_count[1]   ; audio_output:dac_driver|mclk_count[1]   ; 29       ; 0        ; 0        ; 0        ;
+; audio_configurator:i2c_conf|i2c_clk_reg ; CLOCK_50                                ; 1        ; 1        ; 0        ; 0        ;
+; audio_output:dac_driver|mclk_count[1]   ; CLOCK_50                                ; 1        ; 1        ; 0        ; 0        ;
+; CLOCK_50                                ; CLOCK_50                                ; 92       ; 0        ; 0        ; 0        ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -479,20 +565,24 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 27    ; 27   ;
-; Unconstrained Input Port Paths  ; 127   ; 127  ;
-; Unconstrained Output Ports      ; 4     ; 4    ;
-; Unconstrained Output Port Paths ; 4     ; 4    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 101   ; 101  ;
+; Unconstrained Output Ports      ; 7     ; 7    ;
+; Unconstrained Output Port Paths ; 7     ; 7    ;
 +---------------------------------+-------+------+
 
 
-+------------------------------------------------------+
-; Clock Status Summary                                 ;
-+----------------+----------------+------+-------------+
-; Target         ; Clock          ; Type ; Status      ;
-+----------------+----------------+------+-------------+
-; fpga50MHzClock ; fpga50MHzClock ; Base ; Constrained ;
-+----------------+----------------+------+-------------+
++--------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                   ;
++-----------------------------------------+-----------------------------------------+------+-------------+
+; Target                                  ; Clock                                   ; Type ; Status      ;
++-----------------------------------------+-----------------------------------------+------+-------------+
+; CLOCK_50                                ; CLOCK_50                                ; Base ; Constrained ;
+; audio_configurator:i2c_conf|i2c_clk_reg ; audio_configurator:i2c_conf|i2c_clk_reg ; Base ; Constrained ;
+; audio_output:dac_driver|counter[2]      ; audio_output:dac_driver|counter[2]      ; Base ; Constrained ;
+; audio_output:dac_driver|counter[7]      ; audio_output:dac_driver|counter[7]      ; Base ; Constrained ;
+; audio_output:dac_driver|mclk_count[1]   ; audio_output:dac_driver|mclk_count[1]   ; Base ; Constrained ;
++-----------------------------------------+-----------------------------------------+------+-------------+
 
 
 +------------------------------------------------------------------------------------------------------+
@@ -500,46 +590,26 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------+--------------------------------------------------------------------------------------+
 ; Input Port    ; Comment                                                                              ;
 +---------------+--------------------------------------------------------------------------------------+
-; address[0]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; address[1]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; address[2]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; address[3]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; address[4]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; address[5]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; address[6]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; address[7]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; i2c_clock     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; reset         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; start         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FPGA_I2C_SCLK ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FPGA_I2C_SDAT ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RESET_N       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; configure_N   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +---------------+--------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Unconstrained Output Ports                                                                          ;
-+-------------+---------------------------------------------------------------------------------------+
-; Output Port ; Comment                                                                               ;
-+-------------+---------------------------------------------------------------------------------------+
-; busy        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; done        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; i2c_clock   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; i2c_data    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+-------------+---------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; AUD_BCLK      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AUD_DACDAT    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AUD_DACLRCK   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AUD_XCK       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FPGA_I2C_SCLK ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FPGA_I2C_SDAT ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; error         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------+
@@ -547,46 +617,26 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------+--------------------------------------------------------------------------------------+
 ; Input Port    ; Comment                                                                              ;
 +---------------+--------------------------------------------------------------------------------------+
-; address[0]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; address[1]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; address[2]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; address[3]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; address[4]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; address[5]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; address[6]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; address[7]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; firstByte[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; i2c_clock     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; reset         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; secondByte[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; start         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FPGA_I2C_SCLK ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FPGA_I2C_SDAT ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RESET_N       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; configure_N   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +---------------+--------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Unconstrained Output Ports                                                                          ;
-+-------------+---------------------------------------------------------------------------------------+
-; Output Port ; Comment                                                                               ;
-+-------------+---------------------------------------------------------------------------------------+
-; busy        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; done        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; i2c_clock   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; i2c_data    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+-------------+---------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; AUD_BCLK      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AUD_DACDAT    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AUD_DACLRCK   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AUD_XCK       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FPGA_I2C_SCLK ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FPGA_I2C_SDAT ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; error         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
 
 
 +--------------------------+
@@ -594,102 +644,154 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +--------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
-    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Thu Feb 26 16:13:47 2026
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Thu Feb 26 22:25:38 2026
 Info: Command: quartus_sta lab1 -c lab1
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'lab1.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
-    Info (332105): create_clock -period 1.000 -name fpga50MHzClock fpga50MHzClock
+    Info (332105): create_clock -period 1.000 -name audio_output:dac_driver|mclk_count[1] audio_output:dac_driver|mclk_count[1]
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+    Info (332105): create_clock -period 1.000 -name audio_configurator:i2c_conf|i2c_clk_reg audio_configurator:i2c_conf|i2c_clk_reg
+    Info (332105): create_clock -period 1.000 -name audio_output:dac_driver|counter[7] audio_output:dac_driver|counter[7]
+    Info (332105): create_clock -period 1.000 -name audio_output:dac_driver|counter[2] audio_output:dac_driver|counter[2]
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.496
+Info (332146): Worst-case setup slack is -4.878
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.496             -42.748 fpga50MHzClock 
-Info (332146): Worst-case hold slack is 0.241
+    Info (332119):    -4.878             -19.023 CLOCK_50 
+    Info (332119):    -2.459            -101.728 audio_configurator:i2c_conf|i2c_clk_reg 
+    Info (332119):    -2.443             -15.383 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -2.137             -15.613 audio_output:dac_driver|counter[7] 
+    Info (332119):    -1.720              -1.720 audio_output:dac_driver|counter[2] 
+Info (332146): Worst-case hold slack is 0.295
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.241               0.000 fpga50MHzClock 
+    Info (332119):     0.295               0.000 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):     0.298               0.000 audio_configurator:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.384               0.000 CLOCK_50 
+    Info (332119):     0.546               0.000 audio_output:dac_driver|counter[2] 
+    Info (332119):     0.667               0.000 audio_output:dac_driver|counter[7] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.394
+Info (332146): Worst-case minimum pulse width slack is -0.801
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394             -27.670 fpga50MHzClock 
+    Info (332119):    -0.801              -7.356 CLOCK_50 
+    Info (332119):    -0.394             -32.985 audio_configurator:i2c_conf|i2c_clk_reg 
+    Info (332119):    -0.394              -5.248 audio_output:dac_driver|counter[7] 
+    Info (332119):    -0.394              -4.084 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -0.394              -0.600 audio_output:dac_driver|counter[2] 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.505
+Info (332146): Worst-case setup slack is -4.761
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.505             -38.894 fpga50MHzClock 
-Info (332146): Worst-case hold slack is 0.228
+    Info (332119):    -4.761             -18.582 CLOCK_50 
+    Info (332119):    -2.545             -16.005 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -2.358             -98.168 audio_configurator:i2c_conf|i2c_clk_reg 
+    Info (332119):    -2.161             -16.056 audio_output:dac_driver|counter[7] 
+    Info (332119):    -1.620              -1.620 audio_output:dac_driver|counter[2] 
+Info (332146): Worst-case hold slack is 0.320
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.228               0.000 fpga50MHzClock 
+    Info (332119):     0.320               0.000 audio_configurator:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.397               0.000 CLOCK_50 
+    Info (332119):     0.429               0.000 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):     0.470               0.000 audio_output:dac_driver|counter[2] 
+    Info (332119):     0.663               0.000 audio_output:dac_driver|counter[7] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.394
+Info (332146): Worst-case minimum pulse width slack is -0.828
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394             -29.947 fpga50MHzClock 
+    Info (332119):    -0.828              -7.910 CLOCK_50 
+    Info (332119):    -0.394             -32.574 audio_configurator:i2c_conf|i2c_clk_reg 
+    Info (332119):    -0.394              -5.148 audio_output:dac_driver|counter[7] 
+    Info (332119):    -0.394              -4.077 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -0.394              -0.516 audio_output:dac_driver|counter[2] 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.547
+Info (332146): Worst-case setup slack is -3.915
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.547              -4.799 fpga50MHzClock 
-Info (332146): Worst-case hold slack is 0.146
+    Info (332119):    -3.915             -10.159 CLOCK_50 
+    Info (332119):    -1.337              -7.534 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -1.228             -44.909 audio_configurator:i2c_conf|i2c_clk_reg 
+    Info (332119):    -1.005              -5.972 audio_output:dac_driver|counter[7] 
+    Info (332119):    -0.902              -0.902 audio_output:dac_driver|counter[2] 
+Info (332146): Worst-case hold slack is -0.023
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.146               0.000 fpga50MHzClock 
+    Info (332119):    -0.023              -0.023 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):     0.150               0.000 audio_configurator:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.187               0.000 CLOCK_50 
+    Info (332119):     0.304               0.000 audio_output:dac_driver|counter[2] 
+    Info (332119):     0.341               0.000 audio_output:dac_driver|counter[7] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.087
+Info (332146): Worst-case minimum pulse width slack is -0.729
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.087              -4.383 fpga50MHzClock 
+    Info (332119):    -0.729              -2.877 CLOCK_50 
+    Info (332119):    -0.029              -0.307 audio_configurator:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.129               0.000 audio_output:dac_driver|counter[2] 
+    Info (332119):     0.133               0.000 audio_output:dac_driver|counter[7] 
+    Info (332119):     0.144               0.000 audio_output:dac_driver|mclk_count[1] 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.418
+Info (332146): Worst-case setup slack is -3.372
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.418              -2.998 fpga50MHzClock 
-Info (332146): Worst-case hold slack is 0.131
+    Info (332119):    -3.372              -8.509 CLOCK_50 
+    Info (332119):    -1.215              -7.050 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -1.068             -37.862 audio_configurator:i2c_conf|i2c_clk_reg 
+    Info (332119):    -0.882              -5.415 audio_output:dac_driver|counter[7] 
+    Info (332119):    -0.813              -0.813 audio_output:dac_driver|counter[2] 
+Info (332146): Worst-case hold slack is 0.008
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.131               0.000 fpga50MHzClock 
+    Info (332119):     0.008               0.000 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):     0.144               0.000 audio_configurator:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.178               0.000 CLOCK_50 
+    Info (332119):     0.273               0.000 audio_output:dac_driver|counter[2] 
+    Info (332119):     0.310               0.000 audio_output:dac_driver|counter[7] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.084
+Info (332146): Worst-case minimum pulse width slack is -0.714
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.084              -4.266 fpga50MHzClock 
+    Info (332119):    -0.714              -2.813 CLOCK_50 
+    Info (332119):     0.007               0.000 audio_configurator:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.138               0.000 audio_output:dac_driver|counter[2] 
+    Info (332119):     0.141               0.000 audio_output:dac_driver|counter[7] 
+    Info (332119):     0.151               0.000 audio_output:dac_driver|mclk_count[1] 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 815 megabytes
-    Info: Processing ended: Thu Feb 26 16:13:51 2026
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 5430 megabytes
+    Info: Processing ended: Thu Feb 26 22:25:41 2026
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:04
 
 
