@@ -1,6 +1,6 @@
 Analysis & Synthesis report for lab1
-Thu Feb 26 22:31:13 2026
-Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Fri Feb 27 10:17:14 2026
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
 ---------------------
@@ -13,63 +13,62 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |top|audio_configurator:i2c_conf|currentStep
-  9. State Machine - |top|audio_configurator:i2c_conf|currentState
- 10. State Machine - |top|audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentStep
- 11. State Machine - |top|audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentState
+  8. State Machine - |top|audio_configurator_select:i2c_conf|currentStep
+  9. State Machine - |top|audio_configurator_select:i2c_conf|currentState
+ 10. State Machine - |top|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentStep
+ 11. State Machine - |top|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentState
  12. Registers Removed During Synthesis
  13. Removed Registers Triggering Further Register Optimizations
  14. General Register Statistics
  15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Port Connectivity Checks: "audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance"
- 17. Port Connectivity Checks: "audio_configurator:i2c_conf"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+ 16. Port Connectivity Checks: "audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2025  Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
-the Altera IP License Agreement, or other applicable license
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
-Altera and sold by Altera or its authorized distributors.  Please
-refer to the Altera Software License Subscription Agreements 
-on the Quartus Prime software download page.
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Feb 26 22:31:13 2026           ;
-; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
-; Revision Name                   ; lab1                                            ;
-; Top-level Entity Name           ; top                                             ;
-; Family                          ; Cyclone V                                       ;
-; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 86                                              ;
-; Total pins                      ; 12                                              ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0                                               ;
-; Total DSP Blocks                ; 0                                               ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0                                               ;
-; Total DLLs                      ; 0                                               ;
-+---------------------------------+-------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Feb 27 10:17:14 2026          ;
+; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                   ; lab1                                           ;
+; Top-level Entity Name           ; top                                            ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 96                                             ;
+; Total pins                      ; 19                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -164,73 +163,74 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 32          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 16          ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
-+----------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path             ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                        ; Library ;
-+----------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
-; ../Verilog/Audio Test 2/top.v                ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/top.v                ;         ;
-; ../Verilog/Audio Test 2/audio_output.v       ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_output.v       ;         ;
-; ../Verilog/Audio Test 2/audio_configurator.v ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_configurator.v ;         ;
-; ../Verilog/Audio Test 2/i2c_controller.v     ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v     ;         ;
-+----------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
++-----------------------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                    ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                    ; Library ;
++-----------------------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------+---------+
+; ../Verilog/Audio Test 2/top.v                       ; yes             ; User Verilog HDL File  ; /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/top.v                       ;         ;
+; ../Verilog/Audio Test 2/audio_output.v              ; yes             ; User Verilog HDL File  ; /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/audio_output.v              ;         ;
+; ../Verilog/Audio Test 2/i2c_controller.v            ; yes             ; User Verilog HDL File  ; /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/i2c_controller.v            ;         ;
+; ../Verilog/Audio Test 2/audio_configurator_select.v ; yes             ; User Verilog HDL File  ; /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/audio_configurator_select.v ;         ;
++-----------------------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                           ;
-+---------------------------------------------+-----------------------------------------+
-; Resource                                    ; Usage                                   ;
-+---------------------------------------------+-----------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 80                                      ;
-;                                             ;                                         ;
-; Combinational ALUT usage for logic          ; 124                                     ;
-;     -- 7 input functions                    ; 3                                       ;
-;     -- 6 input functions                    ; 30                                      ;
-;     -- 5 input functions                    ; 17                                      ;
-;     -- 4 input functions                    ; 9                                       ;
-;     -- <=3 input functions                  ; 65                                      ;
-;                                             ;                                         ;
-; Dedicated logic registers                   ; 86                                      ;
-;                                             ;                                         ;
-; I/O pins                                    ; 12                                      ;
-;                                             ;                                         ;
-; Total DSP Blocks                            ; 0                                       ;
-;                                             ;                                         ;
-; Maximum fan-out node                        ; audio_configurator:i2c_conf|i2c_clk_reg ;
-; Maximum fan-out                             ; 57                                      ;
-; Total fan-out                               ; 743                                     ;
-; Average fan-out                             ; 3.15                                    ;
-+---------------------------------------------+-----------------------------------------+
++----------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                  ;
++---------------------------------------------+------------------------------------------------+
+; Resource                                    ; Usage                                          ;
++---------------------------------------------+------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 80                                             ;
+;                                             ;                                                ;
+; Combinational ALUT usage for logic          ; 128                                            ;
+;     -- 7 input functions                    ; 3                                              ;
+;     -- 6 input functions                    ; 27                                             ;
+;     -- 5 input functions                    ; 21                                             ;
+;     -- 4 input functions                    ; 20                                             ;
+;     -- <=3 input functions                  ; 57                                             ;
+;                                             ;                                                ;
+; Dedicated logic registers                   ; 96                                             ;
+;                                             ;                                                ;
+; I/O pins                                    ; 19                                             ;
+;                                             ;                                                ;
+; Total DSP Blocks                            ; 0                                              ;
+;                                             ;                                                ;
+; Maximum fan-out node                        ; audio_configurator_select:i2c_conf|i2c_clk_reg ;
+; Maximum fan-out                             ; 67                                             ;
+; Total fan-out                               ; 817                                            ;
+; Average fan-out                             ; 3.09                                           ;
++---------------------------------------------+------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                   ;
-+------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+--------------------+--------------+
-; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                     ; Entity Name        ; Library Name ;
-+------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+--------------------+--------------+
-; |top                                           ; 124 (0)             ; 86 (0)                    ; 0                 ; 0          ; 12   ; 0            ; |top                                                                    ; top                ; work         ;
-;    |audio_configurator:i2c_conf|               ; 99 (35)             ; 65 (29)                   ; 0                 ; 0          ; 0    ; 0            ; |top|audio_configurator:i2c_conf                                        ; audio_configurator ; work         ;
-;       |i2c_controller:i2c_controller_instance| ; 64 (64)             ; 36 (36)                   ; 0                 ; 0          ; 0    ; 0            ; |top|audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance ; i2c_controller     ; work         ;
-;    |audio_output:dac_driver|                   ; 25 (25)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |top|audio_output:dac_driver                                            ; audio_output       ; work         ;
-+------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+--------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                 ;
++------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------------+--------------+
+; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name               ; Library Name ;
++------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------------+--------------+
+; |top                                           ; 128 (1)             ; 96 (0)                    ; 0                 ; 0          ; 19   ; 0            ; |top                                                                           ; top                       ; work         ;
+;    |audio_configurator_select:i2c_conf|        ; 102 (37)            ; 75 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |top|audio_configurator_select:i2c_conf                                        ; audio_configurator_select ; work         ;
+;       |i2c_controller:i2c_controller_instance| ; 65 (65)             ; 41 (41)                   ; 0                 ; 0          ; 0    ; 0            ; |top|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance ; i2c_controller            ; work         ;
+;    |audio_output:dac_driver|                   ; 25 (25)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |top|audio_output:dac_driver                                                   ; audio_output              ; work         ;
++------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------------------+
-; State Machine - |top|audio_configurator:i2c_conf|currentStep                            ;
+; State Machine - |top|audio_configurator_select:i2c_conf|currentStep                     ;
 +-----------------+-----------------+-----------------+-----------------+-----------------+
 ; Name            ; currentStep.011 ; currentStep.010 ; currentStep.001 ; currentStep.000 ;
 +-----------------+-----------------+-----------------+-----------------+-----------------+
@@ -242,31 +242,31 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------+
-; State Machine - |top|audio_configurator:i2c_conf|currentState     ;
-+---------------------------------+---------------------------------+
-; Name                            ; currentState.SEND_COMMAND_STATE ;
-+---------------------------------+---------------------------------+
-; currentState.IDLE_STATE         ; 0                               ;
-; currentState.SEND_COMMAND_STATE ; 1                               ;
-+---------------------------------+---------------------------------+
++----------------------------------------------------------------------+
+; State Machine - |top|audio_configurator_select:i2c_conf|currentState ;
++---------------------------------+------------------------------------+
+; Name                            ; currentState.SEND_COMMAND_STATE    ;
++---------------------------------+------------------------------------+
+; currentState.IDLE_STATE         ; 0                                  ;
+; currentState.SEND_COMMAND_STATE ; 1                                  ;
++---------------------------------+------------------------------------+
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------+
-; State Machine - |top|audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentStep ;
-+------------------+------------------+------------------+--------------------------------------------+
-; Name             ; currentStep.0000 ; currentStep.0010 ; currentStep.0001                           ;
-+------------------+------------------+------------------+--------------------------------------------+
-; currentStep.0000 ; 0                ; 0                ; 0                                          ;
-; currentStep.0001 ; 1                ; 0                ; 1                                          ;
-; currentStep.0010 ; 1                ; 1                ; 0                                          ;
-+------------------+------------------+------------------+--------------------------------------------+
++------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentStep ;
++------------------+------------------+------------------+---------------------------------------------------+
+; Name             ; currentStep.0000 ; currentStep.0010 ; currentStep.0001                                  ;
++------------------+------------------+------------------+---------------------------------------------------+
+; currentStep.0000 ; 0                ; 0                ; 0                                                 ;
+; currentStep.0001 ; 1                ; 0                ; 1                                                 ;
+; currentStep.0010 ; 1                ; 1                ; 0                                                 ;
++------------------+------------------+------------------+---------------------------------------------------+
 
 
 Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |top|audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentState                                                              ;
+; State Machine - |top|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentState                                                       ;
 +-----------------------------+------------------------+-----------------------------+--------------------------+-------------------------+-------------------------+
 ; Name                        ; currentState.ACK_STATE ; currentState.SEND_BIT_STATE ; currentState.START_STATE ; currentState.IDLE_STATE ; currentState.STOP_STATE ;
 +-----------------------------+------------------------+-----------------------------+--------------------------+-------------------------+-------------------------+
@@ -278,77 +278,57 @@ Encoding Type:  One-Hot
 +-----------------------------+------------------------+-----------------------------+--------------------------+-------------------------+-------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                           ;
-+------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-; Register name                                                                            ; Reason for Removal                                                                                ;
-+------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-; audio_output:dac_driver|audio_sample[0..12]                                              ; Stuck at GND due to stuck port data_in                                                            ;
-; audio_output:dac_driver|audio_sample[13]                                                 ; Stuck at VCC due to stuck port data_in                                                            ;
-; audio_configurator:i2c_conf|addressByte[6,7]                                             ; Stuck at GND due to stuck port data_in                                                            ;
-; audio_configurator:i2c_conf|addressByte[4,5]                                             ; Stuck at VCC due to stuck port data_in                                                            ;
-; audio_configurator:i2c_conf|addressByte[3]                                               ; Stuck at GND due to stuck port data_in                                                            ;
-; audio_configurator:i2c_conf|addressByte[2]                                               ; Stuck at VCC due to stuck port data_in                                                            ;
-; audio_configurator:i2c_conf|addressByte[0,1]                                             ; Stuck at GND due to stuck port data_in                                                            ;
-; audio_configurator:i2c_conf|firstByte[5..7]                                              ; Stuck at GND due to stuck port data_in                                                            ;
-; audio_configurator:i2c_conf|secondByte[5,6]                                              ; Stuck at GND due to stuck port data_in                                                            ;
-; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[6,7] ; Stuck at GND due to stuck port data_in                                                            ;
-; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[4,5] ; Stuck at VCC due to stuck port data_in                                                            ;
-; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[3]   ; Stuck at GND due to stuck port data_in                                                            ;
-; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[2]   ; Stuck at VCC due to stuck port data_in                                                            ;
-; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[0,1] ; Stuck at GND due to stuck port data_in                                                            ;
-; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[5..7]  ; Stuck at GND due to stuck port data_in                                                            ;
-; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedSecondByte[5,6]  ; Stuck at GND due to stuck port data_in                                                            ;
-; audio_output:dac_driver|audio_sample[15]                                                 ; Merged with audio_output:dac_driver|audio_sample[14]                                              ;
-; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedSecondByte[7]    ; Merged with audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedSecondByte[3] ;
-; audio_configurator:i2c_conf|secondByte[7]                                                ; Merged with audio_configurator:i2c_conf|secondByte[3]                                             ;
-; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[6]        ; Stuck at GND due to stuck port data_in                                                            ;
-; audio_configurator:i2c_conf|currentStep~6                                                ; Lost fanout                                                                                       ;
-; audio_configurator:i2c_conf|currentStep~7                                                ; Lost fanout                                                                                       ;
-; audio_configurator:i2c_conf|currentStep~8                                                ; Lost fanout                                                                                       ;
-; audio_configurator:i2c_conf|currentState~7                                               ; Lost fanout                                                                                       ;
-; audio_configurator:i2c_conf|currentState~8                                               ; Lost fanout                                                                                       ;
-; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentStep~7         ; Lost fanout                                                                                       ;
-; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentStep~8         ; Lost fanout                                                                                       ;
-; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentState~9        ; Lost fanout                                                                                       ;
-; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentState~10       ; Lost fanout                                                                                       ;
-; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentState~12       ; Lost fanout                                                                                       ;
-; Total Number of Removed Registers = 54                                                   ;                                                                                                   ;
-+------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                ;
++-------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+; Register name                                                                                         ; Reason for Removal                                                                                        ;
++-------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+; audio_output:dac_driver|audio_sample[0..12]                                                           ; Stuck at GND due to stuck port data_in                                                                    ;
+; audio_output:dac_driver|audio_sample[13]                                                              ; Stuck at VCC due to stuck port data_in                                                                    ;
+; audio_configurator_select:i2c_conf|addressByte[0,1,3,6,7]                                             ; Stuck at GND due to stuck port data_in                                                                    ;
+; audio_configurator_select:i2c_conf|firstByte[6,7]                                                     ; Stuck at GND due to stuck port data_in                                                                    ;
+; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[0,1,3,6,7] ; Stuck at GND due to stuck port data_in                                                                    ;
+; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[6,7]         ; Stuck at GND due to stuck port data_in                                                                    ;
+; audio_output:dac_driver|audio_sample[15]                                                              ; Merged with audio_output:dac_driver|audio_sample[14]                                                      ;
+; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedSecondByte[6]          ; Merged with audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedSecondByte[5]  ;
+; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[4,5]       ; Merged with audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[2] ;
+; audio_configurator_select:i2c_conf|secondByte[6]                                                      ; Merged with audio_configurator_select:i2c_conf|secondByte[5]                                              ;
+; audio_configurator_select:i2c_conf|addressByte[4,5]                                                   ; Merged with audio_configurator_select:i2c_conf|addressByte[2]                                             ;
+; audio_configurator_select:i2c_conf|currentStep~6                                                      ; Lost fanout                                                                                               ;
+; audio_configurator_select:i2c_conf|currentStep~7                                                      ; Lost fanout                                                                                               ;
+; audio_configurator_select:i2c_conf|currentStep~8                                                      ; Lost fanout                                                                                               ;
+; audio_configurator_select:i2c_conf|currentState~7                                                     ; Lost fanout                                                                                               ;
+; audio_configurator_select:i2c_conf|currentState~8                                                     ; Lost fanout                                                                                               ;
+; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentStep~7               ; Lost fanout                                                                                               ;
+; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentStep~8               ; Lost fanout                                                                                               ;
+; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentState~9              ; Lost fanout                                                                                               ;
+; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentState~10             ; Lost fanout                                                                                               ;
+; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentState~12             ; Lost fanout                                                                                               ;
+; audio_configurator_select:i2c_conf|currentStep.010                                                    ; Lost fanout                                                                                               ;
+; Total Number of Removed Registers = 46                                                                ;                                                                                                           ;
++-------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                      ;
-+--------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------+
-; Register name                              ; Reason for Removal        ; Registers Removed due to This Register                                                  ;
-+--------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------+
-; audio_configurator:i2c_conf|addressByte[6] ; Stuck at GND              ; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[6], ;
-;                                            ; due to stuck port data_in ; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[6]       ;
-; audio_configurator:i2c_conf|addressByte[7] ; Stuck at GND              ; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[7]  ;
-;                                            ; due to stuck port data_in ;                                                                                         ;
-; audio_configurator:i2c_conf|addressByte[5] ; Stuck at VCC              ; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[5]  ;
-;                                            ; due to stuck port data_in ;                                                                                         ;
-; audio_configurator:i2c_conf|addressByte[4] ; Stuck at VCC              ; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[4]  ;
-;                                            ; due to stuck port data_in ;                                                                                         ;
-; audio_configurator:i2c_conf|addressByte[3] ; Stuck at GND              ; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[3]  ;
-;                                            ; due to stuck port data_in ;                                                                                         ;
-; audio_configurator:i2c_conf|addressByte[2] ; Stuck at VCC              ; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[2]  ;
-;                                            ; due to stuck port data_in ;                                                                                         ;
-; audio_configurator:i2c_conf|addressByte[1] ; Stuck at GND              ; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[1]  ;
-;                                            ; due to stuck port data_in ;                                                                                         ;
-; audio_configurator:i2c_conf|addressByte[0] ; Stuck at GND              ; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[0]  ;
-;                                            ; due to stuck port data_in ;                                                                                         ;
-; audio_configurator:i2c_conf|firstByte[7]   ; Stuck at GND              ; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[7]    ;
-;                                            ; due to stuck port data_in ;                                                                                         ;
-; audio_configurator:i2c_conf|firstByte[6]   ; Stuck at GND              ; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[6]    ;
-;                                            ; due to stuck port data_in ;                                                                                         ;
-; audio_configurator:i2c_conf|firstByte[5]   ; Stuck at GND              ; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[5]    ;
-;                                            ; due to stuck port data_in ;                                                                                         ;
-; audio_configurator:i2c_conf|secondByte[6]  ; Stuck at GND              ; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedSecondByte[6]   ;
-;                                            ; due to stuck port data_in ;                                                                                         ;
-; audio_configurator:i2c_conf|secondByte[5]  ; Stuck at GND              ; audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|savedSecondByte[5]   ;
-;                                            ; due to stuck port data_in ;                                                                                         ;
-+--------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                   ;
++---------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------------+
+; Register name                                     ; Reason for Removal        ; Registers Removed due to This Register                                                        ;
++---------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------------+
+; audio_configurator_select:i2c_conf|addressByte[7] ; Stuck at GND              ; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[7] ;
+;                                                   ; due to stuck port data_in ;                                                                                               ;
+; audio_configurator_select:i2c_conf|addressByte[6] ; Stuck at GND              ; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[6] ;
+;                                                   ; due to stuck port data_in ;                                                                                               ;
+; audio_configurator_select:i2c_conf|addressByte[3] ; Stuck at GND              ; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[3] ;
+;                                                   ; due to stuck port data_in ;                                                                                               ;
+; audio_configurator_select:i2c_conf|addressByte[1] ; Stuck at GND              ; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[1] ;
+;                                                   ; due to stuck port data_in ;                                                                                               ;
+; audio_configurator_select:i2c_conf|addressByte[0] ; Stuck at GND              ; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[0] ;
+;                                                   ; due to stuck port data_in ;                                                                                               ;
+; audio_configurator_select:i2c_conf|firstByte[7]   ; Stuck at GND              ; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[7]   ;
+;                                                   ; due to stuck port data_in ;                                                                                               ;
+; audio_configurator_select:i2c_conf|firstByte[6]   ; Stuck at GND              ; audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[6]   ;
+;                                                   ; due to stuck port data_in ;                                                                                               ;
++---------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -356,50 +336,38 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 86    ;
-; Number of registers using Synchronous Clear  ; 21    ;
+; Total registers                              ; 96    ;
+; Number of registers using Synchronous Clear  ; 22    ;
 ; Number of registers using Synchronous Load   ; 2     ;
-; Number of registers using Asynchronous Clear ; 21    ;
+; Number of registers using Asynchronous Clear ; 23    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 35    ;
+; Number of registers using Clock Enable       ; 45    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|audio_configurator:i2c_conf|currentCommandIndex[2]                                     ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |top|audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentByteIndex[2] ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |top|audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentBitIndex[3]  ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |top|audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[5]      ;
-; 12:1               ; 4 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |top|audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[4]      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|audio_configurator:i2c_conf|currentStep                                                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|audio_configurator:i2c_conf|currentStep.011                                            ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |top|audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|currentStep.0001    ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|audio_configurator:i2c_conf|currentStep.010                                            ;
-; 10:1               ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |top|audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|Selector12          ;
-; 17:1               ; 2 bits    ; 22 LEs        ; 8 LEs                ; 14 LEs                 ; No         ; |top|audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance|Selector13          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|audio_configurator_select:i2c_conf|currentCommandIndex[2]                                     ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |top|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByteIndex[0] ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |top|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentBitIndex[3]  ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[0]      ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |top|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[4]      ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top|audio_configurator_select:i2c_conf|currentStep.000                                            ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |top|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentStep.0010    ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |top|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|Selector12          ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 8 LEs                ; 14 LEs                 ; No         ; |top|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|Selector11          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance"                 ;
+; Port Connectivity Checks: "audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance"          ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
-; done ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "audio_configurator:i2c_conf"                                                        ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; busy ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; done ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -409,33 +377,33 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 86                          ;
-;     CLR               ; 7                           ;
+; arriav_ff             ; 96                          ;
+;     CLR               ; 9                           ;
 ;     CLR SCLR          ; 8                           ;
-;     ENA               ; 23                          ;
+;     ENA               ; 32                          ;
 ;     ENA CLR           ; 6                           ;
-;     ENA SCLR          ; 4                           ;
+;     ENA SCLR          ; 5                           ;
 ;     ENA SLD           ; 2                           ;
 ;     SCLR              ; 9                           ;
-;     plain             ; 27                          ;
+;     plain             ; 25                          ;
 ; arriav_io_obuf        ; 2                           ;
-; arriav_lcell_comb     ; 124                         ;
+; arriav_lcell_comb     ; 128                         ;
 ;     arith             ; 24                          ;
 ;         1 data inputs ; 23                          ;
 ;         2 data inputs ; 1                           ;
 ;     extend            ; 3                           ;
 ;         7 data inputs ; 3                           ;
-;     normal            ; 97                          ;
+;     normal            ; 101                         ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 16                          ;
+;         2 data inputs ; 8                           ;
 ;         3 data inputs ; 23                          ;
-;         4 data inputs ; 9                           ;
-;         5 data inputs ; 17                          ;
-;         6 data inputs ; 30                          ;
-; boundary_port         ; 12                          ;
+;         4 data inputs ; 20                          ;
+;         5 data inputs ; 21                          ;
+;         6 data inputs ; 27                          ;
+; boundary_port         ; 19                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.65                        ;
+; Average LUT depth     ; 1.55                        ;
 +-----------------------+-----------------------------+
 
 
@@ -453,41 +421,47 @@ Encoding Type:  One-Hot
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Thu Feb 26 22:31:08 2026
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Fri Feb 27 10:17:06 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/audio test 2/top.v
-    Info (12023): Found entity 1: top File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/top.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/audio test 2/audio_output.v
-    Info (12023): Found entity 1: audio_output File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_output.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/audio test 2/audio_configurator.v
-    Info (12023): Found entity 1: audio_configurator File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_configurator.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/audio test 2/i2c_controller.v
-    Info (12023): Found entity 1: i2c_controller File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v Line: 1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning (10275): Verilog HDL Module Instantiation warning at top.v(37): ignored dangling comma in List of Port Connections File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/top.v Line: 37
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/top.v
+    Info (12023): Found entity 1: top File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/audio_output.v
+    Info (12023): Found entity 1: audio_output File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/audio_output.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/audio_configurator.v
+    Info (12023): Found entity 1: audio_configurator File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/audio_configurator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/i2c_controller.v
+    Info (12023): Found entity 1: i2c_controller File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/i2c_controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/audio_configurator_select.v
+    Info (12023): Found entity 1: audio_configurator_select File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/audio_configurator_select.v Line: 1
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Info (12128): Elaborating entity "audio_configurator" for hierarchy "audio_configurator:i2c_conf" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/top.v Line: 32
-Warning (10230): Verilog HDL assignment warning at audio_configurator.v(114): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_configurator.v Line: 114
-Info (12128): Elaborating entity "i2c_controller" for hierarchy "audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/audio_configurator.v Line: 81
-Info (10264): Verilog HDL Case Statement information at i2c_controller.v(64): all case item expressions in this case statement are onehot File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v Line: 64
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(98): truncated value with size 32 to match size of target (3) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v Line: 98
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(100): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v Line: 100
-Info (10264): Verilog HDL Case Statement information at i2c_controller.v(147): all case item expressions in this case statement are onehot File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v Line: 147
-Info (12128): Elaborating entity "audio_output" for hierarchy "audio_output:dac_driver" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/top.v Line: 43
+Info (12128): Elaborating entity "audio_configurator_select" for hierarchy "audio_configurator_select:i2c_conf" File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/top.v Line: 37
+Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(123): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/audio_configurator_select.v Line: 123
+Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(124): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/audio_configurator_select.v Line: 124
+Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(125): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/audio_configurator_select.v Line: 125
+Warning (10230): Verilog HDL assignment warning at audio_configurator_select.v(127): truncated value with size 32 to match size of target (4) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/audio_configurator_select.v Line: 127
+Info (12128): Elaborating entity "i2c_controller" for hierarchy "audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/audio_configurator_select.v Line: 93
+Info (10264): Verilog HDL Case Statement information at i2c_controller.v(64): all case item expressions in this case statement are onehot File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/i2c_controller.v Line: 64
+Warning (10230): Verilog HDL assignment warning at i2c_controller.v(98): truncated value with size 32 to match size of target (3) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/i2c_controller.v Line: 98
+Warning (10230): Verilog HDL assignment warning at i2c_controller.v(100): truncated value with size 32 to match size of target (4) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/i2c_controller.v Line: 100
+Info (10264): Verilog HDL Case Statement information at i2c_controller.v(147): all case item expressions in this case statement are onehot File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/i2c_controller.v Line: 147
+Info (12128): Elaborating entity "audio_output" for hierarchy "audio_output:dac_driver" File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test 2/top.v Line: 48
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 10 registers lost all their fanouts during netlist optimizations.
+Info (17049): 11 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 147 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 5 output pins
+Info (21057): Implemented 161 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 7 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 135 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4890 megabytes
-    Info: Processing ended: Thu Feb 26 22:31:13 2026
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:13
+    Info (21061): Implemented 142 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 464 megabytes
+    Info: Processing ended: Fri Feb 27 10:17:14 2026
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:14
 
 

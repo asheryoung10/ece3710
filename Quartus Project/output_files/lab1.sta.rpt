@@ -1,6 +1,6 @@
 Timing Analyzer report for lab1
-Thu Feb 26 22:31:56 2026
-Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Fri Feb 27 10:18:02 2026
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
 ---------------------
@@ -61,35 +61,35 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2025  Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
-the Altera IP License Agreement, or other applicable license
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
-Altera and sold by Altera or its authorized distributors.  Please
-refer to the Altera Software License Subscription Agreements 
-on the Quartus Prime software download page.
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+---------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                         ;
-+-----------------------+---------------------------------------------------------+
-; Quartus Prime Version ; Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
-; Timing Analyzer       ; Legacy Timing Analyzer                                  ;
-; Revision Name         ; lab1                                                    ;
-; Device Family         ; Cyclone V                                               ;
-; Device Name           ; 5CSEMA5F31C6                                            ;
-; Timing Models         ; Final                                                   ;
-; Delay Model           ; Combined                                                ;
-; Rise/Fall Delays      ; Enabled                                                 ;
-+-----------------------+---------------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                        ;
++-----------------------+--------------------------------------------------------+
+; Quartus Prime Version ; Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                 ;
+; Revision Name         ; lab1                                                   ;
+; Device Family         ; Cyclone V                                              ;
+; Device Name           ; 5CSEMA5F31C6                                           ;
+; Timing Models         ; Final                                                  ;
+; Delay Model           ; Combined                                               ;
+; Rise/Fall Delays      ; Enabled                                                ;
++-----------------------+--------------------------------------------------------+
 
 
 +------------------------------------------+
@@ -97,55 +97,44 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 32          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.36        ;
-; Maximum used               ; 16          ;
+; Average used               ; 1.15        ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   3.0%      ;
-;     Processor 3            ;   2.9%      ;
-;     Processor 4            ;   2.9%      ;
-;     Processor 5            ;   2.6%      ;
-;     Processor 6            ;   2.6%      ;
-;     Processor 7            ;   2.6%      ;
-;     Processor 8            ;   2.6%      ;
-;     Processor 9            ;   2.5%      ;
-;     Processor 10           ;   2.5%      ;
-;     Processor 11           ;   2.5%      ;
-;     Processor 12           ;   2.5%      ;
-;     Processor 13           ;   2.5%      ;
-;     Processor 14           ;   2.5%      ;
-;     Processors 15-16       ;   1.1%      ;
+;     Processor 2            ;   5.2%      ;
+;     Processor 3            ;   5.0%      ;
+;     Processor 4            ;   4.9%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clocks                                                                                                                                                                                                                                           ;
-+-----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------+
-; Clock Name                              ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                     ;
-+-----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------+
-; audio_configurator:i2c_conf|i2c_clk_reg ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { audio_configurator:i2c_conf|i2c_clk_reg } ;
-; audio_output:dac_driver|counter[2]      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { audio_output:dac_driver|counter[2] }      ;
-; audio_output:dac_driver|counter[7]      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { audio_output:dac_driver|counter[7] }      ;
-; audio_output:dac_driver|mclk_count[1]   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { audio_output:dac_driver|mclk_count[1] }   ;
-; CLOCK_50                                ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 }                                ;
-+-----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                         ;
++------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------------+
+; Clock Name                                     ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                            ;
++------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------------+
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { audio_configurator_select:i2c_conf|i2c_clk_reg } ;
+; audio_output:dac_driver|counter[2]             ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { audio_output:dac_driver|counter[2] }             ;
+; audio_output:dac_driver|counter[7]             ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { audio_output:dac_driver|counter[7] }             ;
+; audio_output:dac_driver|mclk_count[1]          ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { audio_output:dac_driver|mclk_count[1] }          ;
+; CLOCK_50                                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 }                                       ;
++------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary                                            ;
-+------------+-----------------+-----------------------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                              ; Note ;
-+------------+-----------------+-----------------------------------------+------+
-; 221.73 MHz ; 221.73 MHz      ; audio_output:dac_driver|counter[2]      ;      ;
-; 229.83 MHz ; 229.83 MHz      ; CLOCK_50                                ;      ;
-; 278.71 MHz ; 278.71 MHz      ; audio_configurator:i2c_conf|i2c_clk_reg ;      ;
-; 283.29 MHz ; 283.29 MHz      ; audio_output:dac_driver|mclk_count[1]   ;      ;
-; 333.67 MHz ; 333.67 MHz      ; audio_output:dac_driver|counter[7]      ;      ;
-+------------+-----------------+-----------------------------------------+------+
++--------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                                                   ;
++------------+-----------------+------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                     ; Note ;
++------------+-----------------+------------------------------------------------+------+
+; 210.75 MHz ; 210.75 MHz      ; CLOCK_50                                       ;      ;
+; 229.99 MHz ; 229.99 MHz      ; audio_output:dac_driver|counter[2]             ;      ;
+; 273.9 MHz  ; 273.9 MHz       ; audio_output:dac_driver|mclk_count[1]          ;      ;
+; 275.03 MHz ; 275.03 MHz      ; audio_configurator_select:i2c_conf|i2c_clk_reg ;      ;
+; 330.36 MHz ; 330.36 MHz      ; audio_output:dac_driver|counter[7]             ;      ;
++------------+-----------------+------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -155,30 +144,30 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 HTML report is unavailable in plain text report export.
 
 
-+------------------------------------------------------------------+
-; Slow 1100mV 85C Model Setup Summary                              ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; CLOCK_50                                ; -4.804 ; -18.468       ;
-; audio_configurator:i2c_conf|i2c_clk_reg ; -2.588 ; -105.870      ;
-; audio_output:dac_driver|mclk_count[1]   ; -2.530 ; -17.208       ;
-; audio_output:dac_driver|counter[7]      ; -1.997 ; -19.952       ;
-; audio_output:dac_driver|counter[2]      ; -1.773 ; -1.773        ;
-+-----------------------------------------+--------+---------------+
++-------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Setup Summary                                     ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; CLOCK_50                                       ; -4.921 ; -20.416       ;
+; audio_output:dac_driver|mclk_count[1]          ; -2.651 ; -17.112       ;
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; -2.636 ; -122.767      ;
+; audio_output:dac_driver|counter[7]             ; -2.027 ; -20.005       ;
+; audio_output:dac_driver|counter[2]             ; -1.674 ; -1.674        ;
++------------------------------------------------+--------+---------------+
 
 
-+-----------------------------------------------------------------+
-; Slow 1100mV 85C Model Hold Summary                              ;
-+-----------------------------------------+-------+---------------+
-; Clock                                   ; Slack ; End Point TNS ;
-+-----------------------------------------+-------+---------------+
-; audio_configurator:i2c_conf|i2c_clk_reg ; 0.224 ; 0.000         ;
-; audio_output:dac_driver|mclk_count[1]   ; 0.239 ; 0.000         ;
-; CLOCK_50                                ; 0.510 ; 0.000         ;
-; audio_output:dac_driver|counter[2]      ; 0.686 ; 0.000         ;
-; audio_output:dac_driver|counter[7]      ; 0.687 ; 0.000         ;
-+-----------------------------------------+-------+---------------+
++------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Hold Summary                                     ;
++------------------------------------------------+-------+---------------+
+; Clock                                          ; Slack ; End Point TNS ;
++------------------------------------------------+-------+---------------+
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; 0.240 ; 0.000         ;
+; audio_output:dac_driver|mclk_count[1]          ; 0.378 ; 0.000         ;
+; audio_output:dac_driver|counter[2]             ; 0.559 ; 0.000         ;
+; CLOCK_50                                       ; 0.576 ; 0.000         ;
+; audio_output:dac_driver|counter[7]             ; 0.747 ; 0.000         ;
++------------------------------------------------+-------+---------------+
 
 
 ------------------------------------------
@@ -193,17 +182,17 @@ No paths to report.
 No paths to report.
 
 
-+------------------------------------------------------------------+
-; Slow 1100mV 85C Model Minimum Pulse Width Summary                ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; CLOCK_50                                ; -0.947 ; -7.561        ;
-; audio_configurator:i2c_conf|i2c_clk_reg ; -0.394 ; -30.215       ;
-; audio_output:dac_driver|counter[7]      ; -0.394 ; -5.201        ;
-; audio_output:dac_driver|mclk_count[1]   ; -0.394 ; -4.941        ;
-; audio_output:dac_driver|counter[2]      ; -0.394 ; -0.606        ;
-+-----------------------------------------+--------+---------------+
++-------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Minimum Pulse Width Summary                       ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; CLOCK_50                                       ; -0.529 ; -7.666        ;
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; -0.394 ; -38.302       ;
+; audio_output:dac_driver|counter[7]             ; -0.394 ; -5.310        ;
+; audio_output:dac_driver|mclk_count[1]          ; -0.394 ; -4.775        ;
+; audio_output:dac_driver|counter[2]             ; -0.394 ; -0.608        ;
++------------------------------------------------+--------+---------------+
 
 
 -----------------------------------------------
@@ -212,44 +201,44 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+-------------------------------------------------------------------------------+
-; Slow 1100mV 0C Model Fmax Summary                                             ;
-+------------+-----------------+-----------------------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                              ; Note ;
-+------------+-----------------+-----------------------------------------+------+
-; 215.47 MHz ; 215.47 MHz      ; CLOCK_50                                ;      ;
-; 226.24 MHz ; 226.24 MHz      ; audio_output:dac_driver|counter[2]      ;      ;
-; 279.25 MHz ; 279.25 MHz      ; audio_output:dac_driver|mclk_count[1]   ;      ;
-; 282.97 MHz ; 282.97 MHz      ; audio_configurator:i2c_conf|i2c_clk_reg ;      ;
-; 330.03 MHz ; 330.03 MHz      ; audio_output:dac_driver|counter[7]      ;      ;
-+------------+-----------------+-----------------------------------------+------+
++--------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                                                    ;
++------------+-----------------+------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                     ; Note ;
++------------+-----------------+------------------------------------------------+------+
+; 208.99 MHz ; 208.99 MHz      ; CLOCK_50                                       ;      ;
+; 240.5 MHz  ; 240.5 MHz       ; audio_output:dac_driver|counter[2]             ;      ;
+; 270.12 MHz ; 270.12 MHz      ; audio_output:dac_driver|mclk_count[1]          ;      ;
+; 276.01 MHz ; 276.01 MHz      ; audio_configurator_select:i2c_conf|i2c_clk_reg ;      ;
+; 321.85 MHz ; 321.85 MHz      ; audio_output:dac_driver|counter[7]             ;      ;
++------------+-----------------+------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+------------------------------------------------------------------+
-; Slow 1100mV 0C Model Setup Summary                               ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; CLOCK_50                                ; -4.664 ; -18.111       ;
-; audio_output:dac_driver|mclk_count[1]   ; -2.581 ; -17.677       ;
-; audio_configurator:i2c_conf|i2c_clk_reg ; -2.534 ; -101.888      ;
-; audio_output:dac_driver|counter[7]      ; -2.030 ; -19.913       ;
-; audio_output:dac_driver|counter[2]      ; -1.710 ; -1.710        ;
-+-----------------------------------------+--------+---------------+
++-------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Setup Summary                                      ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; CLOCK_50                                       ; -4.669 ; -19.755       ;
+; audio_output:dac_driver|mclk_count[1]          ; -2.702 ; -17.544       ;
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; -2.623 ; -119.785      ;
+; audio_output:dac_driver|counter[7]             ; -2.107 ; -19.710       ;
+; audio_output:dac_driver|counter[2]             ; -1.579 ; -1.579        ;
++------------------------------------------------+--------+---------------+
 
 
-+-----------------------------------------------------------------+
-; Slow 1100mV 0C Model Hold Summary                               ;
-+-----------------------------------------+-------+---------------+
-; Clock                                   ; Slack ; End Point TNS ;
-+-----------------------------------------+-------+---------------+
-; audio_configurator:i2c_conf|i2c_clk_reg ; 0.213 ; 0.000         ;
-; audio_output:dac_driver|mclk_count[1]   ; 0.367 ; 0.000         ;
-; CLOCK_50                                ; 0.519 ; 0.000         ;
-; audio_output:dac_driver|counter[2]      ; 0.613 ; 0.000         ;
-; audio_output:dac_driver|counter[7]      ; 0.674 ; 0.000         ;
-+-----------------------------------------+-------+---------------+
++------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Hold Summary                                      ;
++------------------------------------------------+-------+---------------+
+; Clock                                          ; Slack ; End Point TNS ;
++------------------------------------------------+-------+---------------+
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; 0.206 ; 0.000         ;
+; audio_output:dac_driver|counter[2]             ; 0.490 ; 0.000         ;
+; audio_output:dac_driver|mclk_count[1]          ; 0.498 ; 0.000         ;
+; CLOCK_50                                       ; 0.558 ; 0.000         ;
+; audio_output:dac_driver|counter[7]             ; 0.702 ; 0.000         ;
++------------------------------------------------+-------+---------------+
 
 
 -----------------------------------------
@@ -264,17 +253,17 @@ No paths to report.
 No paths to report.
 
 
-+------------------------------------------------------------------+
-; Slow 1100mV 0C Model Minimum Pulse Width Summary                 ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; CLOCK_50                                ; -0.944 ; -8.097        ;
-; audio_configurator:i2c_conf|i2c_clk_reg ; -0.394 ; -29.612       ;
-; audio_output:dac_driver|counter[7]      ; -0.394 ; -5.120        ;
-; audio_output:dac_driver|mclk_count[1]   ; -0.394 ; -4.918        ;
-; audio_output:dac_driver|counter[2]      ; -0.394 ; -0.516        ;
-+-----------------------------------------+--------+---------------+
++-------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Minimum Pulse Width Summary                        ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; CLOCK_50                                       ; -0.512 ; -7.918        ;
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; -0.394 ; -37.068       ;
+; audio_output:dac_driver|counter[7]             ; -0.394 ; -5.250        ;
+; audio_output:dac_driver|mclk_count[1]          ; -0.394 ; -4.675        ;
+; audio_output:dac_driver|counter[2]             ; -0.394 ; -0.518        ;
++------------------------------------------------+--------+---------------+
 
 
 ----------------------------------------------
@@ -283,30 +272,30 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+------------------------------------------------------------------+
-; Fast 1100mV 85C Model Setup Summary                              ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; CLOCK_50                                ; -3.946 ; -9.800        ;
-; audio_output:dac_driver|mclk_count[1]   ; -1.405 ; -7.789        ;
-; audio_configurator:i2c_conf|i2c_clk_reg ; -1.269 ; -46.657       ;
-; audio_output:dac_driver|counter[2]      ; -0.968 ; -0.968        ;
-; audio_output:dac_driver|counter[7]      ; -0.838 ; -8.077        ;
-+-----------------------------------------+--------+---------------+
++-------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Setup Summary                                     ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; CLOCK_50                                       ; -3.888 ; -9.868        ;
+; audio_output:dac_driver|mclk_count[1]          ; -1.532 ; -8.519        ;
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; -1.269 ; -55.170       ;
+; audio_output:dac_driver|counter[2]             ; -0.944 ; -0.944        ;
+; audio_output:dac_driver|counter[7]             ; -0.862 ; -8.055        ;
++------------------------------------------------+--------+---------------+
 
 
-+------------------------------------------------------------------+
-; Fast 1100mV 85C Model Hold Summary                               ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; audio_output:dac_driver|mclk_count[1]   ; -0.055 ; -0.064        ;
-; audio_configurator:i2c_conf|i2c_clk_reg ; 0.067  ; 0.000         ;
-; CLOCK_50                                ; 0.235  ; 0.000         ;
-; audio_output:dac_driver|counter[7]      ; 0.355  ; 0.000         ;
-; audio_output:dac_driver|counter[2]      ; 0.396  ; 0.000         ;
-+-----------------------------------------+--------+---------------+
++------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Hold Summary                                     ;
++------------------------------------------------+-------+---------------+
+; Clock                                          ; Slack ; End Point TNS ;
++------------------------------------------------+-------+---------------+
+; audio_output:dac_driver|mclk_count[1]          ; 0.011 ; 0.000         ;
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; 0.102 ; 0.000         ;
+; CLOCK_50                                       ; 0.303 ; 0.000         ;
+; audio_output:dac_driver|counter[2]             ; 0.344 ; 0.000         ;
+; audio_output:dac_driver|counter[7]             ; 0.382 ; 0.000         ;
++------------------------------------------------+-------+---------------+
 
 
 ------------------------------------------
@@ -321,17 +310,17 @@ No paths to report.
 No paths to report.
 
 
-+------------------------------------------------------------------+
-; Fast 1100mV 85C Model Minimum Pulse Width Summary                ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; CLOCK_50                                ; -0.833 ; -3.005        ;
-; audio_configurator:i2c_conf|i2c_clk_reg ; 0.066  ; 0.000         ;
-; audio_output:dac_driver|mclk_count[1]   ; 0.069  ; 0.000         ;
-; audio_output:dac_driver|counter[2]      ; 0.122  ; 0.000         ;
-; audio_output:dac_driver|counter[7]      ; 0.157  ; 0.000         ;
-+-----------------------------------------+--------+---------------+
++-------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Minimum Pulse Width Summary                       ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; CLOCK_50                                       ; -0.519 ; -3.494        ;
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; -0.001 ; -0.007        ;
+; audio_output:dac_driver|counter[7]             ; 0.107  ; 0.000         ;
+; audio_output:dac_driver|counter[2]             ; 0.121  ; 0.000         ;
+; audio_output:dac_driver|mclk_count[1]          ; 0.124  ; 0.000         ;
++------------------------------------------------+--------+---------------+
 
 
 -----------------------------------------------
@@ -340,30 +329,30 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+------------------------------------------------------------------+
-; Fast 1100mV 0C Model Setup Summary                               ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; CLOCK_50                                ; -3.362 ; -8.173        ;
-; audio_output:dac_driver|mclk_count[1]   ; -1.263 ; -7.273        ;
-; audio_configurator:i2c_conf|i2c_clk_reg ; -1.069 ; -39.702       ;
-; audio_output:dac_driver|counter[2]      ; -0.876 ; -0.876        ;
-; audio_output:dac_driver|counter[7]      ; -0.758 ; -7.243        ;
-+-----------------------------------------+--------+---------------+
++-------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Setup Summary                                      ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; CLOCK_50                                       ; -3.234 ; -8.014        ;
+; audio_output:dac_driver|mclk_count[1]          ; -1.373 ; -7.847        ;
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; -1.135 ; -47.069       ;
+; audio_output:dac_driver|counter[2]             ; -0.829 ; -0.829        ;
+; audio_output:dac_driver|counter[7]             ; -0.776 ; -7.124        ;
++------------------------------------------------+--------+---------------+
 
 
-+------------------------------------------------------------------+
-; Fast 1100mV 0C Model Hold Summary                                ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; audio_output:dac_driver|mclk_count[1]   ; -0.027 ; -0.027        ;
-; audio_configurator:i2c_conf|i2c_clk_reg ; 0.050  ; 0.000         ;
-; CLOCK_50                                ; 0.223  ; 0.000         ;
-; audio_output:dac_driver|counter[7]      ; 0.322  ; 0.000         ;
-; audio_output:dac_driver|counter[2]      ; 0.351  ; 0.000         ;
-+-----------------------------------------+--------+---------------+
++------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Hold Summary                                      ;
++------------------------------------------------+-------+---------------+
+; Clock                                          ; Slack ; End Point TNS ;
++------------------------------------------------+-------+---------------+
+; audio_output:dac_driver|mclk_count[1]          ; 0.033 ; 0.000         ;
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; 0.078 ; 0.000         ;
+; CLOCK_50                                       ; 0.285 ; 0.000         ;
+; audio_output:dac_driver|counter[2]             ; 0.305 ; 0.000         ;
+; audio_output:dac_driver|counter[7]             ; 0.338 ; 0.000         ;
++------------------------------------------------+-------+---------------+
 
 
 -----------------------------------------
@@ -378,17 +367,17 @@ No paths to report.
 No paths to report.
 
 
-+------------------------------------------------------------------+
-; Fast 1100mV 0C Model Minimum Pulse Width Summary                 ;
-+-----------------------------------------+--------+---------------+
-; Clock                                   ; Slack  ; End Point TNS ;
-+-----------------------------------------+--------+---------------+
-; CLOCK_50                                ; -0.780 ; -2.911        ;
-; audio_configurator:i2c_conf|i2c_clk_reg ; 0.085  ; 0.000         ;
-; audio_output:dac_driver|mclk_count[1]   ; 0.089  ; 0.000         ;
-; audio_output:dac_driver|counter[2]      ; 0.134  ; 0.000         ;
-; audio_output:dac_driver|counter[7]      ; 0.159  ; 0.000         ;
-+-----------------------------------------+--------+---------------+
++-------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Minimum Pulse Width Summary                        ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; CLOCK_50                                       ; -0.483 ; -3.276        ;
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; 0.037  ; 0.000         ;
+; audio_output:dac_driver|counter[7]             ; 0.126  ; 0.000         ;
+; audio_output:dac_driver|counter[2]             ; 0.133  ; 0.000         ;
+; audio_output:dac_driver|mclk_count[1]          ; 0.140  ; 0.000         ;
++------------------------------------------------+--------+---------------+
 
 
 ----------------------------------------------
@@ -397,24 +386,24 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+---------------------------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                                     ;
-+------------------------------------------+----------+--------+----------+---------+---------------------+
-; Clock                                    ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------------------------------+----------+--------+----------+---------+---------------------+
-; Worst-case Slack                         ; -4.804   ; -0.055 ; N/A      ; N/A     ; -0.947              ;
-;  CLOCK_50                                ; -4.804   ; 0.223  ; N/A      ; N/A     ; -0.947              ;
-;  audio_configurator:i2c_conf|i2c_clk_reg ; -2.588   ; 0.050  ; N/A      ; N/A     ; -0.394              ;
-;  audio_output:dac_driver|counter[2]      ; -1.773   ; 0.351  ; N/A      ; N/A     ; -0.394              ;
-;  audio_output:dac_driver|counter[7]      ; -2.030   ; 0.322  ; N/A      ; N/A     ; -0.394              ;
-;  audio_output:dac_driver|mclk_count[1]   ; -2.581   ; -0.055 ; N/A      ; N/A     ; -0.394              ;
-; Design-wide TNS                          ; -163.271 ; -0.064 ; 0.0      ; 0.0     ; -48.524             ;
-;  CLOCK_50                                ; -18.468  ; 0.000  ; N/A      ; N/A     ; -8.097              ;
-;  audio_configurator:i2c_conf|i2c_clk_reg ; -105.870 ; 0.000  ; N/A      ; N/A     ; -30.215             ;
-;  audio_output:dac_driver|counter[2]      ; -1.773   ; 0.000  ; N/A      ; N/A     ; -0.606              ;
-;  audio_output:dac_driver|counter[7]      ; -19.952  ; 0.000  ; N/A      ; N/A     ; -5.201              ;
-;  audio_output:dac_driver|mclk_count[1]   ; -17.677  ; -0.064 ; N/A      ; N/A     ; -4.941              ;
-+------------------------------------------+----------+--------+----------+---------+---------------------+
++---------------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                           ;
++-------------------------------------------------+----------+-------+----------+---------+---------------------+
+; Clock                                           ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------------------------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack                                ; -4.921   ; 0.011 ; N/A      ; N/A     ; -0.529              ;
+;  CLOCK_50                                       ; -4.921   ; 0.285 ; N/A      ; N/A     ; -0.529              ;
+;  audio_configurator_select:i2c_conf|i2c_clk_reg ; -2.636   ; 0.078 ; N/A      ; N/A     ; -0.394              ;
+;  audio_output:dac_driver|counter[2]             ; -1.674   ; 0.305 ; N/A      ; N/A     ; -0.394              ;
+;  audio_output:dac_driver|counter[7]             ; -2.107   ; 0.338 ; N/A      ; N/A     ; -0.394              ;
+;  audio_output:dac_driver|mclk_count[1]          ; -2.702   ; 0.011 ; N/A      ; N/A     ; -0.394              ;
+; Design-wide TNS                                 ; -181.974 ; 0.0   ; 0.0      ; 0.0     ; -56.661             ;
+;  CLOCK_50                                       ; -20.416  ; 0.000 ; N/A      ; N/A     ; -7.918              ;
+;  audio_configurator_select:i2c_conf|i2c_clk_reg ; -122.767 ; 0.000 ; N/A      ; N/A     ; -38.302             ;
+;  audio_output:dac_driver|counter[2]             ; -1.674   ; 0.000 ; N/A      ; N/A     ; -0.608              ;
+;  audio_output:dac_driver|counter[7]             ; -20.005  ; 0.000 ; N/A      ; N/A     ; -5.310              ;
+;  audio_output:dac_driver|mclk_count[1]          ; -17.544  ; 0.000 ; N/A      ; N/A     ; -4.775              ;
++-------------------------------------------------+----------+-------+----------+---------+---------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -427,24 +416,31 @@ No synchronizer chains to report.
 ; AUD_DACLRCK   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; AUD_DACDAT    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; error         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; busy          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; done          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; FPGA_I2C_SCLK ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; FPGA_I2C_SDAT ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 +---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
 
 
-+------------------------------------------------------------------+
-; Input Transition Times                                           ;
-+---------------+--------------+-----------------+-----------------+
-; Pin           ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
-+---------------+--------------+-----------------+-----------------+
-; FPGA_I2C_SCLK ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; FPGA_I2C_SDAT ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; CLOCK_50      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; RESET_N       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; pitch[0]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; pitch[1]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; configure_N   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-+---------------+--------------+-----------------+-----------------+
++-----------------------------------------------------------------------+
+; Input Transition Times                                                ;
++--------------------+--------------+-----------------+-----------------+
+; Pin                ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++--------------------+--------------+-----------------+-----------------+
+; FPGA_I2C_SCLK      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; FPGA_I2C_SDAT      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; RESET_N            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; configure_N        ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; CLOCK_50           ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; enableOutput       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; pitch[0]           ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; pitch[1]           ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; selectedCommand[0] ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; selectedCommand[1] ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; selectedCommand[2] ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; selectedCommand[3] ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++--------------------+--------------+-----------------+-----------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -457,6 +453,8 @@ No synchronizer chains to report.
 ; AUD_DACLRCK   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
 ; AUD_DACDAT    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
 ; error         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; busy          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; done          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
 ; FPGA_I2C_SCLK ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
 ; FPGA_I2C_SDAT ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -472,6 +470,8 @@ No synchronizer chains to report.
 ; AUD_DACLRCK   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
 ; AUD_DACDAT    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
 ; error         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; busy          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; done          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
 ; FPGA_I2C_SCLK ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
 ; FPGA_I2C_SDAT ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -487,6 +487,8 @@ No synchronizer chains to report.
 ; AUD_DACLRCK   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
 ; AUD_DACDAT    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
 ; error         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; busy          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; done          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
 ; FPGA_I2C_SCLK ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
 ; FPGA_I2C_SDAT ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -502,48 +504,50 @@ No synchronizer chains to report.
 ; AUD_DACLRCK   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
 ; AUD_DACDAT    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
 ; error         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; busy          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; done          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
 ; FPGA_I2C_SCLK ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
 ; FPGA_I2C_SDAT ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Setup Transfers                                                                                                               ;
-+-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
-; From Clock                              ; To Clock                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
-; audio_configurator:i2c_conf|i2c_clk_reg ; audio_configurator:i2c_conf|i2c_clk_reg ; 483      ; 0        ; 0        ; 0        ;
-; audio_output:dac_driver|counter[2]      ; audio_output:dac_driver|counter[2]      ; 0        ; 0        ; 1        ; 1        ;
-; audio_output:dac_driver|counter[7]      ; audio_output:dac_driver|counter[2]      ; 0        ; 0        ; 1        ; 0        ;
-; audio_output:dac_driver|mclk_count[1]   ; audio_output:dac_driver|counter[2]      ; 0        ; 0        ; 4        ; 0        ;
-; audio_output:dac_driver|counter[7]      ; audio_output:dac_driver|counter[7]      ; 166      ; 0        ; 0        ; 0        ;
-; audio_output:dac_driver|counter[2]      ; audio_output:dac_driver|mclk_count[1]   ; 6        ; 6        ; 0        ; 0        ;
-; audio_output:dac_driver|counter[7]      ; audio_output:dac_driver|mclk_count[1]   ; 1        ; 1        ; 0        ; 0        ;
-; audio_output:dac_driver|mclk_count[1]   ; audio_output:dac_driver|mclk_count[1]   ; 30       ; 0        ; 0        ; 0        ;
-; audio_configurator:i2c_conf|i2c_clk_reg ; CLOCK_50                                ; 1        ; 1        ; 0        ; 0        ;
-; audio_output:dac_driver|mclk_count[1]   ; CLOCK_50                                ; 1        ; 1        ; 0        ; 0        ;
-; CLOCK_50                                ; CLOCK_50                                ; 92       ; 0        ; 0        ; 0        ;
-+-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                             ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                     ; To Clock                                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; audio_configurator_select:i2c_conf|i2c_clk_reg ; 537      ; 0        ; 0        ; 0        ;
+; audio_output:dac_driver|counter[2]             ; audio_output:dac_driver|counter[2]             ; 0        ; 0        ; 1        ; 1        ;
+; audio_output:dac_driver|counter[7]             ; audio_output:dac_driver|counter[2]             ; 0        ; 0        ; 1        ; 0        ;
+; audio_output:dac_driver|mclk_count[1]          ; audio_output:dac_driver|counter[2]             ; 0        ; 0        ; 4        ; 0        ;
+; audio_output:dac_driver|counter[7]             ; audio_output:dac_driver|counter[7]             ; 166      ; 0        ; 0        ; 0        ;
+; audio_output:dac_driver|counter[2]             ; audio_output:dac_driver|mclk_count[1]          ; 6        ; 6        ; 0        ; 0        ;
+; audio_output:dac_driver|counter[7]             ; audio_output:dac_driver|mclk_count[1]          ; 1        ; 1        ; 0        ; 0        ;
+; audio_output:dac_driver|mclk_count[1]          ; audio_output:dac_driver|mclk_count[1]          ; 30       ; 0        ; 0        ; 0        ;
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; CLOCK_50                                       ; 1        ; 1        ; 0        ; 0        ;
+; audio_output:dac_driver|mclk_count[1]          ; CLOCK_50                                       ; 1        ; 1        ; 0        ; 0        ;
+; CLOCK_50                                       ; CLOCK_50                                       ; 93       ; 0        ; 0        ; 0        ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Hold Transfers                                                                                                                ;
-+-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
-; From Clock                              ; To Clock                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
-; audio_configurator:i2c_conf|i2c_clk_reg ; audio_configurator:i2c_conf|i2c_clk_reg ; 483      ; 0        ; 0        ; 0        ;
-; audio_output:dac_driver|counter[2]      ; audio_output:dac_driver|counter[2]      ; 0        ; 0        ; 1        ; 1        ;
-; audio_output:dac_driver|counter[7]      ; audio_output:dac_driver|counter[2]      ; 0        ; 0        ; 1        ; 0        ;
-; audio_output:dac_driver|mclk_count[1]   ; audio_output:dac_driver|counter[2]      ; 0        ; 0        ; 4        ; 0        ;
-; audio_output:dac_driver|counter[7]      ; audio_output:dac_driver|counter[7]      ; 166      ; 0        ; 0        ; 0        ;
-; audio_output:dac_driver|counter[2]      ; audio_output:dac_driver|mclk_count[1]   ; 6        ; 6        ; 0        ; 0        ;
-; audio_output:dac_driver|counter[7]      ; audio_output:dac_driver|mclk_count[1]   ; 1        ; 1        ; 0        ; 0        ;
-; audio_output:dac_driver|mclk_count[1]   ; audio_output:dac_driver|mclk_count[1]   ; 30       ; 0        ; 0        ; 0        ;
-; audio_configurator:i2c_conf|i2c_clk_reg ; CLOCK_50                                ; 1        ; 1        ; 0        ; 0        ;
-; audio_output:dac_driver|mclk_count[1]   ; CLOCK_50                                ; 1        ; 1        ; 0        ; 0        ;
-; CLOCK_50                                ; CLOCK_50                                ; 92       ; 0        ; 0        ; 0        ;
-+-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                              ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                     ; To Clock                                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; audio_configurator_select:i2c_conf|i2c_clk_reg ; 537      ; 0        ; 0        ; 0        ;
+; audio_output:dac_driver|counter[2]             ; audio_output:dac_driver|counter[2]             ; 0        ; 0        ; 1        ; 1        ;
+; audio_output:dac_driver|counter[7]             ; audio_output:dac_driver|counter[2]             ; 0        ; 0        ; 1        ; 0        ;
+; audio_output:dac_driver|mclk_count[1]          ; audio_output:dac_driver|counter[2]             ; 0        ; 0        ; 4        ; 0        ;
+; audio_output:dac_driver|counter[7]             ; audio_output:dac_driver|counter[7]             ; 166      ; 0        ; 0        ; 0        ;
+; audio_output:dac_driver|counter[2]             ; audio_output:dac_driver|mclk_count[1]          ; 6        ; 6        ; 0        ; 0        ;
+; audio_output:dac_driver|counter[7]             ; audio_output:dac_driver|mclk_count[1]          ; 1        ; 1        ; 0        ; 0        ;
+; audio_output:dac_driver|mclk_count[1]          ; audio_output:dac_driver|mclk_count[1]          ; 30       ; 0        ; 0        ; 0        ;
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; CLOCK_50                                       ; 1        ; 1        ; 0        ; 0        ;
+; audio_output:dac_driver|mclk_count[1]          ; CLOCK_50                                       ; 1        ; 1        ; 0        ; 0        ;
+; CLOCK_50                                       ; CLOCK_50                                       ; 93       ; 0        ; 0        ; 0        ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -566,38 +570,42 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 6     ; 6    ;
-; Unconstrained Input Port Paths  ; 121   ; 121  ;
-; Unconstrained Output Ports      ; 7     ; 7    ;
-; Unconstrained Output Port Paths ; 7     ; 7    ;
+; Unconstrained Input Ports       ; 10    ; 10   ;
+; Unconstrained Input Port Paths  ; 137   ; 137  ;
+; Unconstrained Output Ports      ; 9     ; 9    ;
+; Unconstrained Output Port Paths ; 9     ; 9    ;
 +---------------------------------+-------+------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Clock Status Summary                                                                                   ;
-+-----------------------------------------+-----------------------------------------+------+-------------+
-; Target                                  ; Clock                                   ; Type ; Status      ;
-+-----------------------------------------+-----------------------------------------+------+-------------+
-; CLOCK_50                                ; CLOCK_50                                ; Base ; Constrained ;
-; audio_configurator:i2c_conf|i2c_clk_reg ; audio_configurator:i2c_conf|i2c_clk_reg ; Base ; Constrained ;
-; audio_output:dac_driver|counter[2]      ; audio_output:dac_driver|counter[2]      ; Base ; Constrained ;
-; audio_output:dac_driver|counter[7]      ; audio_output:dac_driver|counter[7]      ; Base ; Constrained ;
-; audio_output:dac_driver|mclk_count[1]   ; audio_output:dac_driver|mclk_count[1]   ; Base ; Constrained ;
-+-----------------------------------------+-----------------------------------------+------+-------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                                 ;
++------------------------------------------------+------------------------------------------------+------+-------------+
+; Target                                         ; Clock                                          ; Type ; Status      ;
++------------------------------------------------+------------------------------------------------+------+-------------+
+; CLOCK_50                                       ; CLOCK_50                                       ; Base ; Constrained ;
+; audio_configurator_select:i2c_conf|i2c_clk_reg ; audio_configurator_select:i2c_conf|i2c_clk_reg ; Base ; Constrained ;
+; audio_output:dac_driver|counter[2]             ; audio_output:dac_driver|counter[2]             ; Base ; Constrained ;
+; audio_output:dac_driver|counter[7]             ; audio_output:dac_driver|counter[7]             ; Base ; Constrained ;
+; audio_output:dac_driver|mclk_count[1]          ; audio_output:dac_driver|mclk_count[1]          ; Base ; Constrained ;
++------------------------------------------------+------------------------------------------------+------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------+
-; Unconstrained Input Ports                                                                            ;
-+---------------+--------------------------------------------------------------------------------------+
-; Input Port    ; Comment                                                                              ;
-+---------------+--------------------------------------------------------------------------------------+
-; FPGA_I2C_SCLK ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; FPGA_I2C_SDAT ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; RESET_N       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; configure_N   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pitch[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pitch[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+---------------+--------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                 ;
++--------------------+--------------------------------------------------------------------------------------+
+; Input Port         ; Comment                                                                              ;
++--------------------+--------------------------------------------------------------------------------------+
+; FPGA_I2C_SCLK      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FPGA_I2C_SDAT      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RESET_N            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; configure_N        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pitch[0]           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pitch[1]           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedCommand[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedCommand[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedCommand[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedCommand[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++--------------------+--------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------+
@@ -611,22 +619,28 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; AUD_XCK       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; FPGA_I2C_SCLK ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; FPGA_I2C_SDAT ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; busy          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; done          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; error         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +---------------+---------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------+
-; Unconstrained Input Ports                                                                            ;
-+---------------+--------------------------------------------------------------------------------------+
-; Input Port    ; Comment                                                                              ;
-+---------------+--------------------------------------------------------------------------------------+
-; FPGA_I2C_SCLK ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; FPGA_I2C_SDAT ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; RESET_N       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; configure_N   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pitch[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pitch[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+---------------+--------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                 ;
++--------------------+--------------------------------------------------------------------------------------+
+; Input Port         ; Comment                                                                              ;
++--------------------+--------------------------------------------------------------------------------------+
+; FPGA_I2C_SCLK      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FPGA_I2C_SDAT      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RESET_N            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; configure_N        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pitch[0]           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pitch[1]           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedCommand[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedCommand[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedCommand[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedCommand[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++--------------------+--------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------+
@@ -640,6 +654,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; AUD_XCK       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; FPGA_I2C_SCLK ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; FPGA_I2C_SDAT ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; busy          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; done          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; error         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +---------------+---------------------------------------------------------------------------------------+
 
@@ -649,12 +665,12 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +--------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
-    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Thu Feb 26 22:31:52 2026
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Fri Feb 27 10:17:57 2026
 Info: Command: quartus_sta lab1 -c lab1
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'lab1.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
@@ -663,7 +679,7 @@ Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name audio_output:dac_driver|mclk_count[1] audio_output:dac_driver|mclk_count[1]
     Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
     Info (332105): create_clock -period 1.000 -name audio_output:dac_driver|counter[7] audio_output:dac_driver|counter[7]
-    Info (332105): create_clock -period 1.000 -name audio_configurator:i2c_conf|i2c_clk_reg audio_configurator:i2c_conf|i2c_clk_reg
+    Info (332105): create_clock -period 1.000 -name audio_configurator_select:i2c_conf|i2c_clk_reg audio_configurator_select:i2c_conf|i2c_clk_reg
     Info (332105): create_clock -period 1.000 -name audio_output:dac_driver|counter[2] audio_output:dac_driver|counter[2]
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
@@ -671,132 +687,132 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.804
+Info (332146): Worst-case setup slack is -4.921
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.804             -18.468 CLOCK_50 
-    Info (332119):    -2.588            -105.870 audio_configurator:i2c_conf|i2c_clk_reg 
-    Info (332119):    -2.530             -17.208 audio_output:dac_driver|mclk_count[1] 
-    Info (332119):    -1.997             -19.952 audio_output:dac_driver|counter[7] 
-    Info (332119):    -1.773              -1.773 audio_output:dac_driver|counter[2] 
-Info (332146): Worst-case hold slack is 0.224
+    Info (332119):    -4.921             -20.416 CLOCK_50 
+    Info (332119):    -2.651             -17.112 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -2.636            -122.767 audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -2.027             -20.005 audio_output:dac_driver|counter[7] 
+    Info (332119):    -1.674              -1.674 audio_output:dac_driver|counter[2] 
+Info (332146): Worst-case hold slack is 0.240
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.224               0.000 audio_configurator:i2c_conf|i2c_clk_reg 
-    Info (332119):     0.239               0.000 audio_output:dac_driver|mclk_count[1] 
-    Info (332119):     0.510               0.000 CLOCK_50 
-    Info (332119):     0.686               0.000 audio_output:dac_driver|counter[2] 
-    Info (332119):     0.687               0.000 audio_output:dac_driver|counter[7] 
+    Info (332119):     0.240               0.000 audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.378               0.000 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):     0.559               0.000 audio_output:dac_driver|counter[2] 
+    Info (332119):     0.576               0.000 CLOCK_50 
+    Info (332119):     0.747               0.000 audio_output:dac_driver|counter[7] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.947
+Info (332146): Worst-case minimum pulse width slack is -0.529
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.947              -7.561 CLOCK_50 
-    Info (332119):    -0.394             -30.215 audio_configurator:i2c_conf|i2c_clk_reg 
-    Info (332119):    -0.394              -5.201 audio_output:dac_driver|counter[7] 
-    Info (332119):    -0.394              -4.941 audio_output:dac_driver|mclk_count[1] 
-    Info (332119):    -0.394              -0.606 audio_output:dac_driver|counter[2] 
+    Info (332119):    -0.529              -7.666 CLOCK_50 
+    Info (332119):    -0.394             -38.302 audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -0.394              -5.310 audio_output:dac_driver|counter[7] 
+    Info (332119):    -0.394              -4.775 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -0.394              -0.608 audio_output:dac_driver|counter[2] 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.664
+Info (332146): Worst-case setup slack is -4.669
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.664             -18.111 CLOCK_50 
-    Info (332119):    -2.581             -17.677 audio_output:dac_driver|mclk_count[1] 
-    Info (332119):    -2.534            -101.888 audio_configurator:i2c_conf|i2c_clk_reg 
-    Info (332119):    -2.030             -19.913 audio_output:dac_driver|counter[7] 
-    Info (332119):    -1.710              -1.710 audio_output:dac_driver|counter[2] 
-Info (332146): Worst-case hold slack is 0.213
+    Info (332119):    -4.669             -19.755 CLOCK_50 
+    Info (332119):    -2.702             -17.544 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -2.623            -119.785 audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -2.107             -19.710 audio_output:dac_driver|counter[7] 
+    Info (332119):    -1.579              -1.579 audio_output:dac_driver|counter[2] 
+Info (332146): Worst-case hold slack is 0.206
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.213               0.000 audio_configurator:i2c_conf|i2c_clk_reg 
-    Info (332119):     0.367               0.000 audio_output:dac_driver|mclk_count[1] 
-    Info (332119):     0.519               0.000 CLOCK_50 
-    Info (332119):     0.613               0.000 audio_output:dac_driver|counter[2] 
-    Info (332119):     0.674               0.000 audio_output:dac_driver|counter[7] 
+    Info (332119):     0.206               0.000 audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.490               0.000 audio_output:dac_driver|counter[2] 
+    Info (332119):     0.498               0.000 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):     0.558               0.000 CLOCK_50 
+    Info (332119):     0.702               0.000 audio_output:dac_driver|counter[7] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.944
+Info (332146): Worst-case minimum pulse width slack is -0.512
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.944              -8.097 CLOCK_50 
-    Info (332119):    -0.394             -29.612 audio_configurator:i2c_conf|i2c_clk_reg 
-    Info (332119):    -0.394              -5.120 audio_output:dac_driver|counter[7] 
-    Info (332119):    -0.394              -4.918 audio_output:dac_driver|mclk_count[1] 
-    Info (332119):    -0.394              -0.516 audio_output:dac_driver|counter[2] 
+    Info (332119):    -0.512              -7.918 CLOCK_50 
+    Info (332119):    -0.394             -37.068 audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -0.394              -5.250 audio_output:dac_driver|counter[7] 
+    Info (332119):    -0.394              -4.675 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -0.394              -0.518 audio_output:dac_driver|counter[2] 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.946
+Info (332146): Worst-case setup slack is -3.888
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.946              -9.800 CLOCK_50 
-    Info (332119):    -1.405              -7.789 audio_output:dac_driver|mclk_count[1] 
-    Info (332119):    -1.269             -46.657 audio_configurator:i2c_conf|i2c_clk_reg 
-    Info (332119):    -0.968              -0.968 audio_output:dac_driver|counter[2] 
-    Info (332119):    -0.838              -8.077 audio_output:dac_driver|counter[7] 
-Info (332146): Worst-case hold slack is -0.055
+    Info (332119):    -3.888              -9.868 CLOCK_50 
+    Info (332119):    -1.532              -8.519 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -1.269             -55.170 audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -0.944              -0.944 audio_output:dac_driver|counter[2] 
+    Info (332119):    -0.862              -8.055 audio_output:dac_driver|counter[7] 
+Info (332146): Worst-case hold slack is 0.011
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.055              -0.064 audio_output:dac_driver|mclk_count[1] 
-    Info (332119):     0.067               0.000 audio_configurator:i2c_conf|i2c_clk_reg 
-    Info (332119):     0.235               0.000 CLOCK_50 
-    Info (332119):     0.355               0.000 audio_output:dac_driver|counter[7] 
-    Info (332119):     0.396               0.000 audio_output:dac_driver|counter[2] 
+    Info (332119):     0.011               0.000 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):     0.102               0.000 audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.303               0.000 CLOCK_50 
+    Info (332119):     0.344               0.000 audio_output:dac_driver|counter[2] 
+    Info (332119):     0.382               0.000 audio_output:dac_driver|counter[7] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.833
+Info (332146): Worst-case minimum pulse width slack is -0.519
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.833              -3.005 CLOCK_50 
-    Info (332119):     0.066               0.000 audio_configurator:i2c_conf|i2c_clk_reg 
-    Info (332119):     0.069               0.000 audio_output:dac_driver|mclk_count[1] 
-    Info (332119):     0.122               0.000 audio_output:dac_driver|counter[2] 
-    Info (332119):     0.157               0.000 audio_output:dac_driver|counter[7] 
+    Info (332119):    -0.519              -3.494 CLOCK_50 
+    Info (332119):    -0.001              -0.007 audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.107               0.000 audio_output:dac_driver|counter[7] 
+    Info (332119):     0.121               0.000 audio_output:dac_driver|counter[2] 
+    Info (332119):     0.124               0.000 audio_output:dac_driver|mclk_count[1] 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.362
+Info (332146): Worst-case setup slack is -3.234
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.362              -8.173 CLOCK_50 
-    Info (332119):    -1.263              -7.273 audio_output:dac_driver|mclk_count[1] 
-    Info (332119):    -1.069             -39.702 audio_configurator:i2c_conf|i2c_clk_reg 
-    Info (332119):    -0.876              -0.876 audio_output:dac_driver|counter[2] 
-    Info (332119):    -0.758              -7.243 audio_output:dac_driver|counter[7] 
-Info (332146): Worst-case hold slack is -0.027
+    Info (332119):    -3.234              -8.014 CLOCK_50 
+    Info (332119):    -1.373              -7.847 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -1.135             -47.069 audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -0.829              -0.829 audio_output:dac_driver|counter[2] 
+    Info (332119):    -0.776              -7.124 audio_output:dac_driver|counter[7] 
+Info (332146): Worst-case hold slack is 0.033
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.027              -0.027 audio_output:dac_driver|mclk_count[1] 
-    Info (332119):     0.050               0.000 audio_configurator:i2c_conf|i2c_clk_reg 
-    Info (332119):     0.223               0.000 CLOCK_50 
-    Info (332119):     0.322               0.000 audio_output:dac_driver|counter[7] 
-    Info (332119):     0.351               0.000 audio_output:dac_driver|counter[2] 
+    Info (332119):     0.033               0.000 audio_output:dac_driver|mclk_count[1] 
+    Info (332119):     0.078               0.000 audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.285               0.000 CLOCK_50 
+    Info (332119):     0.305               0.000 audio_output:dac_driver|counter[2] 
+    Info (332119):     0.338               0.000 audio_output:dac_driver|counter[7] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.780
+Info (332146): Worst-case minimum pulse width slack is -0.483
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.780              -2.911 CLOCK_50 
-    Info (332119):     0.085               0.000 audio_configurator:i2c_conf|i2c_clk_reg 
-    Info (332119):     0.089               0.000 audio_output:dac_driver|mclk_count[1] 
-    Info (332119):     0.134               0.000 audio_output:dac_driver|counter[2] 
-    Info (332119):     0.159               0.000 audio_output:dac_driver|counter[7] 
+    Info (332119):    -0.483              -3.276 CLOCK_50 
+    Info (332119):     0.037               0.000 audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.126               0.000 audio_output:dac_driver|counter[7] 
+    Info (332119):     0.133               0.000 audio_output:dac_driver|counter[2] 
+    Info (332119):     0.140               0.000 audio_output:dac_driver|mclk_count[1] 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5430 megabytes
-    Info: Processing ended: Thu Feb 26 22:31:56 2026
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 819 megabytes
+    Info: Processing ended: Fri Feb 27 10:18:02 2026
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

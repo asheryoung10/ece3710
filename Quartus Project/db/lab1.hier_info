@@ -1,19 +1,26 @@
 |top
-CLOCK_50 => CLOCK_50.IN2
+CLOCK_50 => CLOCK_50.IN1
 RESET_N => _.IN1
 configure_N => _.IN1
 pitch[0] => pitch[0].IN1
 pitch[1] => pitch[1].IN1
-FPGA_I2C_SCLK <> audio_configurator:i2c_conf.i2c_clock
-FPGA_I2C_SDAT <> audio_configurator:i2c_conf.i2c_data
+enableOutput => comb.IN0
+selectedCommand[0] => selectedCommand[0].IN1
+selectedCommand[1] => selectedCommand[1].IN1
+selectedCommand[2] => selectedCommand[2].IN1
+selectedCommand[3] => selectedCommand[3].IN1
+FPGA_I2C_SCLK <> audio_configurator_select:i2c_conf.i2c_clock
+FPGA_I2C_SDAT <> audio_configurator_select:i2c_conf.i2c_data
 AUD_XCK << audio_output:dac_driver.aud_xck
 AUD_BCLK << audio_output:dac_driver.aud_bclk
 AUD_DACLRCK << audio_output:dac_driver.aud_daclrck
 AUD_DACDAT << audio_output:dac_driver.aud_dacdat
-error << audio_configurator:i2c_conf.encounteredError
+error << audio_configurator_select:i2c_conf.encounteredError
+busy << audio_configurator_select:i2c_conf.busy
+done << audio_configurator_select:i2c_conf.done
 
 
-|top|audio_configurator:i2c_conf
+|top|audio_configurator_select:i2c_conf
 systemClock => i2c_clk_reg.CLK
 systemClock => clk_divider_count[0].CLK
 systemClock => clk_divider_count[1].CLK
@@ -36,6 +43,10 @@ configure => currentStep.OUTPUTSELECT
 configure => currentStep.OUTPUTSELECT
 configure => done.OUTPUTSELECT
 configure => busy.DATAB
+selectedCommand[0] => currentCommandIndex.DATAB
+selectedCommand[1] => currentCommandIndex.DATAB
+selectedCommand[2] => currentCommandIndex.DATAB
+selectedCommand[3] => currentCommandIndex.DATAB
 busy <= busy~reg0.DB_MAX_OUTPUT_PORT_TYPE
 done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE
 encounteredError <= i2c_controller:i2c_controller_instance.encounteredError
@@ -43,7 +54,7 @@ i2c_clock <> i2c_controller:i2c_controller_instance.i2c_clock
 i2c_data <> i2c_controller:i2c_controller_instance.i2c_data
 
 
-|top|audio_configurator:i2c_conf|i2c_controller:i2c_controller_instance
+|top|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance
 clock => currentByte[0].CLK
 clock => currentByte[1].CLK
 clock => currentByte[2].CLK

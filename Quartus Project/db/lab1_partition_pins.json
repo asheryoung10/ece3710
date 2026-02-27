@@ -24,6 +24,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "busy",
+					"strict" : false
+				},
+				{
+					"name" : "done",
+					"strict" : false
+				},
+				{
 					"name" : "FPGA_I2C_SCLK",
 					"strict" : false
 				},
@@ -32,11 +40,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "RESET_N",
+					"strict" : false
+				},
+				{
+					"name" : "configure_N",
+					"strict" : false
+				},
+				{
 					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
-					"name" : "RESET_N",
+					"name" : "enableOutput",
 					"strict" : false
 				},
 				{
@@ -48,7 +64,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "configure_N",
+					"name" : "selectedCommand[0]",
+					"strict" : false
+				},
+				{
+					"name" : "selectedCommand[1]",
+					"strict" : false
+				},
+				{
+					"name" : "selectedCommand[2]",
+					"strict" : false
+				},
+				{
+					"name" : "selectedCommand[3]",
 					"strict" : false
 				}
 			]
