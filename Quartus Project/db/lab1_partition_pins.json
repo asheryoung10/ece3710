@@ -24,111 +24,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "sendMessage",
+					"name" : "configure",
 					"strict" : false
 				},
 				{
-					"name" : "clock",
+					"name" : "systemClock",
 					"strict" : false
 				},
 				{
 					"name" : "reset",
-					"strict" : false
-				},
-				{
-					"name" : "secondByte[5]",
-					"strict" : false
-				},
-				{
-					"name" : "firstByte[5]",
-					"strict" : false
-				},
-				{
-					"name" : "addressByte[5]",
-					"strict" : false
-				},
-				{
-					"name" : "secondByte[7]",
-					"strict" : false
-				},
-				{
-					"name" : "firstByte[7]",
-					"strict" : false
-				},
-				{
-					"name" : "addressByte[7]",
-					"strict" : false
-				},
-				{
-					"name" : "secondByte[4]",
-					"strict" : false
-				},
-				{
-					"name" : "firstByte[4]",
-					"strict" : false
-				},
-				{
-					"name" : "addressByte[4]",
-					"strict" : false
-				},
-				{
-					"name" : "secondByte[6]",
-					"strict" : false
-				},
-				{
-					"name" : "firstByte[6]",
-					"strict" : false
-				},
-				{
-					"name" : "addressByte[6]",
-					"strict" : false
-				},
-				{
-					"name" : "secondByte[1]",
-					"strict" : false
-				},
-				{
-					"name" : "firstByte[1]",
-					"strict" : false
-				},
-				{
-					"name" : "addressByte[1]",
-					"strict" : false
-				},
-				{
-					"name" : "secondByte[3]",
-					"strict" : false
-				},
-				{
-					"name" : "firstByte[3]",
-					"strict" : false
-				},
-				{
-					"name" : "addressByte[3]",
-					"strict" : false
-				},
-				{
-					"name" : "secondByte[0]",
-					"strict" : false
-				},
-				{
-					"name" : "firstByte[0]",
-					"strict" : false
-				},
-				{
-					"name" : "addressByte[0]",
-					"strict" : false
-				},
-				{
-					"name" : "secondByte[2]",
-					"strict" : false
-				},
-				{
-					"name" : "firstByte[2]",
-					"strict" : false
-				},
-				{
-					"name" : "addressByte[2]",
 					"strict" : false
 				}
 			]

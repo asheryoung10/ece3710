@@ -1,4 +1,25 @@
-|i2c_controller
+|audio_configurator
+systemClock => controllerClock.IN1
+reset => reset.IN1
+configure => currentState.OUTPUTSELECT
+configure => currentState.OUTPUTSELECT
+configure => currentCommandIndex.OUTPUTSELECT
+configure => currentCommandIndex.OUTPUTSELECT
+configure => currentCommandIndex.OUTPUTSELECT
+configure => currentStep.OUTPUTSELECT
+configure => currentStep.OUTPUTSELECT
+configure => currentStep.OUTPUTSELECT
+configure => currentStep.OUTPUTSELECT
+configure => done.OUTPUTSELECT
+configure => busy.DATAB
+busy <= busy~reg0.DB_MAX_OUTPUT_PORT_TYPE
+done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE
+encounteredError <= i2c_controller:i2c_controller_instance.encounteredError
+i2c_clock <> i2c_controller:i2c_controller_instance.i2c_clock
+i2c_data <> i2c_controller:i2c_controller_instance.i2c_data
+
+
+|audio_configurator|i2c_controller:i2c_controller_instance
 clock => currentByte[0].CLK
 clock => currentByte[1].CLK
 clock => currentByte[2].CLK
@@ -156,9 +177,9 @@ secondByte[4] => savedSecondByte.DATAB
 secondByte[5] => savedSecondByte.DATAB
 secondByte[6] => savedSecondByte.DATAB
 secondByte[7] => savedSecondByte.DATAB
-busy << busy~reg0.DB_MAX_OUTPUT_PORT_TYPE
-done << done~reg0.DB_MAX_OUTPUT_PORT_TYPE
-encounteredError << encounteredError~reg0.DB_MAX_OUTPUT_PORT_TYPE
+busy <= busy~reg0.DB_MAX_OUTPUT_PORT_TYPE
+done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE
+encounteredError <= encounteredError~reg0.DB_MAX_OUTPUT_PORT_TYPE
 i2c_clock <> i2c_clock
 i2c_data <> i2c_data
 

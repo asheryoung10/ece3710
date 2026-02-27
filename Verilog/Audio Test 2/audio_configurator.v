@@ -1,0 +1,110 @@
+module audio_configurator (
+    input wire systemClock,
+    input wire reset,
+    input wire configure,
+
+    output reg busy,
+    output reg done,
+    output wire encounteredError,
+
+    inout wire i2c_clock,
+    inout wire i2c_data
+);
+
+reg [23:0] commands[5:0];
+initial begin
+    commands[0] = {8'h11, 8'h01, 8'h02};
+    commands[1] = {8'h11, 8'h03, 8'h04};
+    commands[2] = {8'h12, 8'h05, 8'h06};
+    commands[3] = {8'h13, 8'h07, 8'h08};
+    commands[4] = {8'h14, 8'h09, 8'h0A};
+    commands[5] = {8'h15, 8'h0B, 8'h0C};
+end
+
+wire controllerClock;
+assign controllerClock = systemClock; // for now
+
+reg sendMessage;
+reg [7:0] addressByte;
+reg [7:0] firstByte;
+reg [7:0] secondByte;
+
+wire controllerBusy;
+wire controllerDone;
+
+i2c_controller i2c_controller_instance (
+    .clock(controllerClock),
+    .reset(reset),
+
+    .sendMessage(sendMessage),
+    .addressByte(addressByte),
+    .firstByte(firstByte),
+    .secondByte(secondByte),
+
+    .busy(controllerBusy),
+    .done(controllerDone),
+    .encounteredError(encounteredError),
+
+    .i2c_clock(i2c_clock),
+    .i2c_data(i2c_data)
+);
+
+localparam IDLE_STATE = 0;
+localparam SEND_COMMAND_STATE = 1;
+reg [2:0] currentCommandIndex;
+reg [2:0] currentState;
+reg [2:0] currentStep;
+always @(posedge controllerClock or posedge reset) begin
+    if(reset) begin
+        currentCommandIndex <= 0;
+        currentState <= IDLE_STATE;
+        busy <= 0;
+        done <= 0;
+    end else begin
+        case(currentState)
+            IDLE_STATE: begin
+                if(configure) begin
+                    busy <= 1;
+                    currentState <= SEND_COMMAND_STATE;
+                    currentCommandIndex <= 0;
+                    currentStep <= 0;
+                end else begin
+                    busy <= 0;
+                    done <= 0;
+                end
+            end
+            SEND_COMMAND_STATE: begin
+                case (currentStep)
+                    0: begin
+                        addressByte <= commands[currentCommandIndex][23:16];
+                        firstByte <= commands[currentCommandIndex][15:8];
+                        secondByte <= commands[currentCommandIndex][7:0];
+                        currentStep <= 1;
+                        currentCommandIndex <= currentCommandIndex + 1;
+                    end
+                    1: begin
+                        sendMessage <= 1;
+                        currentStep <= 2;
+                    end
+                    2: begin
+                        sendMessage <= 0;
+                        if(controllerBusy)
+                            currentStep <= 3;
+                    end
+                    3: begin
+                        if(controllerBusy)
+                            currentStep <= 3;
+                        else begin
+                            if(currentCommandIndex == 6) begin                         
+                                busy <= 0;
+                                done <= 1;
+                            end else
+                                currentStep <= 0;
+                        end
+                    end
+                endcase
+            end
+        endcase
+    end
+end
+endmodule
