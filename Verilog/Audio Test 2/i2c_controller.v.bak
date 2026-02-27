@@ -13,7 +13,7 @@ module i2c_controller (
 
     inout wire i2c_clock,
     inout wire i2c_data
-);
+)
 
 reg pullClockLow;
 reg pullDataLow;
@@ -36,9 +36,9 @@ reg [3:0] currentStep;
 reg [3:0] currentBitIndex;
 reg [2:0] currentByteIndex;
 
-always @(posedge clock or posedge reset) begin
+@always @(posedge clock or posedge reset) begin
     if(reset) begin
-        currentState <= IDLE_STATE;
+        currentState <= IDLE;
         encounteredError <= 0;
         busy <= 0;
         done <= 0;
@@ -110,11 +110,11 @@ always @(posedge clock or posedge reset) begin
             ACK_STATE: begin
                 case (currentStep)
                     0: begin
-                        pullDataLow <= 0;
+                        pullClockLow <= 0;
                         currentStep <= 1;
                     end 
                     1: begin
-                        pullClockLow <= 1;
+                        pullDataLow <= 0;
                         currentStep <= 2;
                     end
                     2: begin
@@ -126,11 +126,11 @@ always @(posedge clock or posedge reset) begin
                             pullClockLow <= 1;
                             case (currentByteIndex)
                                 1: begin
-                                    currentByte <= savedFirstByte;    
+                                    currentByte <= firstByte;    
                                     currentState <= SEND_BIT_STATE;
                                 end
                                 2: begin
-                                    currentByte <= savedSecondByte;
+                                    currentByte <= secondByte;
                                     currentState <= SEND_BIT_STATE;
                                 end
                                 3: begin
