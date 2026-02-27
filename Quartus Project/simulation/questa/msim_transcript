@@ -1,16 +1,17 @@
-# //  Questa Intel Starter FPGA Edition-64
-# //  Version 2023.3 linux_x86_64 Jul 17 2023
+# Reading pref.tcl
+# //  Questa Altera Starter FPGA Edition-64
+# //  Version 2025.2 win64 May 31 2025
 # //
-# //  Copyright 1991-2023 Mentor Graphics Corporation
-# //  All Rights Reserved.
+# // Unpublished work. Copyright 2025 Siemens
 # //
-# //  QuestaSim and its associated documentation contain trade
-# //  secrets and commercial or financial information that are the property of
-# //  Mentor Graphics Corporation and are privileged, confidential,
-# //  and exempt from disclosure under the Freedom of Information Act,
-# //  5 U.S.C. Section 552. Furthermore, this information
-# //  is prohibited from disclosure under the Trade Secrets Act,
-# //  18 U.S.C. Section 1905.
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
 # //
 # do lab1_run_msim_rtl_verilog.do
 # if {[file exists rtl_work]} {
@@ -21,64 +22,58 @@
 # ** Warning: (vlib-34) Library already exists at "rtl_work".
 # Errors: 0, Warnings: 1
 # vmap work rtl_work
-# Questa Intel Starter FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
 # vmap work rtl_work 
-# Copying /usr/local/quartus/questa_fse/linux_x86_64/../modelsim.ini to modelsim.ini
+# ** Note: (vmap-220) 'c:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# Copying c:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Audio\ Test {/home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 16:36:25 on Feb 26,2026
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Audio Test" /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v 
-# -- Compiling module i2c_audio_setup
+# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio\ Test\ 2 {C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:55:22 on Feb 26,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2" C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module i2c_controller
 # 
 # Top level modules:
-# 	i2c_audio_setup
-# End time: 16:36:25 on Feb 26,2026, Elapsed time: 0:00:00
+# 	i2c_controller
+# End time: 19:55:22 on Feb 26,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Audio\ Test {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Audio Test/tb_i2c_audio_setup.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 16:36:25 on Feb 26,2026
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Audio Test" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Audio Test/tb_i2c_audio_setup.v 
-# -- Compiling module tb_i2c_audio_setup
+# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Audio\ Test\ 2 {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/i2c_controller.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:55:22 on Feb 26,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/i2c_controller.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module i2c_controller
 # 
 # Top level modules:
-# 	tb_i2c_audio_setup
-# End time: 16:36:25 on Feb 26,2026, Elapsed time: 0:00:00
+# 	i2c_controller
+# End time: 19:55:22 on Feb 26,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Audio\ Test {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Audio Test/i2c_audio_setup.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 16:36:25 on Feb 26,2026
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Audio Test" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Audio Test/i2c_audio_setup.v 
-# -- Compiling module i2c_audio_setup
+# vlog  -work work +incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus\ Project/../Verilog/Audio\ Test\ 2 {C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/tb_i2c_controller.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:55:22 on Feb 26,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2" C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/tb_i2c_controller.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module tb_i2c_controller
 # 
 # Top level modules:
-# 	i2c_audio_setup
-# End time: 16:36:25 on Feb 26,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Audio\ Test {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Audio Test/i2c_commands.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 16:36:25 on Feb 26,2026
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Audio Test" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Audio Test/i2c_commands.v 
-# -- Compiling module i2c_commands
-# 
-# Top level modules:
-# 	i2c_commands
-# End time: 16:36:25 on Feb 26,2026, Elapsed time: 0:00:00
+# 	tb_i2c_controller
+# End time: 19:55:22 on Feb 26,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_i2c_audio_setup
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_i2c_audio_setup 
-# Start time: 16:36:26 on Feb 26,2026
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_i2c_controller
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_i2c_controller 
+# Start time: 19:55:22 on Feb 26,2026
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vopt-143) Recognized 2 FSMs in module "i2c_audio_setup(fast)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_commands(fast)".
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vopt-143) Recognized 2 FSMs in module "i2c_controller(fast)".
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.tb_i2c_audio_setup(fast)
-# Loading work.i2c_commands(fast)
-# Loading work.i2c_audio_setup(fast)
+# Loading work.tb_i2c_controller(fast)
+# Loading work.i2c_controller(fast)
 # 
 # add wave *
 # view structure
@@ -86,502 +81,10 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Time =                    0, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 0, done = 0, error = 0, state = 000, stepIndex = 000
-# Time =                   70, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 000, stepIndex = 000
-# Time =                   90, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 001, stepIndex = 000
-# Time =                  110, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 001, stepIndex = 001
-# Time =                  130, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                  150, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                  170, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                  190, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                  210, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                  230, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                  250, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                  270, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                  290, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                  310, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                  330, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                  350, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                  370, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                  390, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                  410, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                  430, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                  450, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                  470, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                  490, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                  510, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                  530, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                  550, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                  570, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                  590, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                  610, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                  630, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                  650, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                  670, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                  690, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                  710, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                  730, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                  750, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                  770, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 011, stepIndex = 000
-# Time =                  790, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 011, stepIndex = 001
-# Time =                  810, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                  830, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                  850, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                  870, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                  890, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                  910, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                  930, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                  950, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                  970, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                  990, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 1010, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 1030, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 1050, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 1070, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 1090, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 1110, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 1130, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 1150, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 1170, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 1190, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 1210, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 1230, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 1250, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 1270, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 1290, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 1310, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 1330, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 1350, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 1370, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 1390, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 1410, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 1430, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 1450, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 011, stepIndex = 000
-# Time =                 1470, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 011, stepIndex = 001
-# Time =                 1490, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 1510, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 1530, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 1550, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 1570, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 1590, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 1610, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 1630, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 1650, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 1670, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 1690, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 1710, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 1730, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 1750, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 1770, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 1790, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 1810, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 1830, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 1850, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 1870, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 1890, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 1910, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 1930, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 1950, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 1970, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 1990, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 2010, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 2030, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 2050, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 2070, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 2090, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 2110, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 2130, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 011, stepIndex = 000
-# Time =                 2150, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 011, stepIndex = 001
-# Time =                 2170, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 100, stepIndex = 001
-# Time =                 2190, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 000, stepIndex = 000
-# Time =                 2250, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 001, stepIndex = 000
-# Time =                 2270, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 001, stepIndex = 001
-# Time =                 2290, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 2310, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 2330, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 2350, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 2370, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 2390, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 2410, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 2430, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 2450, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 2470, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 2490, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 2510, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 2530, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 2550, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 2570, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 2590, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 2610, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 2630, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 2650, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 2670, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 2690, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 2710, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 2730, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 2750, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 2770, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 2790, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 2810, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 2830, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 2850, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 2870, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 2890, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 2910, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 2930, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 011, stepIndex = 000
-# Time =                 2950, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 011, stepIndex = 001
-# Time =                 2970, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 2990, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 3010, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 3030, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 3050, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 3070, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 3090, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 3110, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 3130, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 3150, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 3170, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 3190, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 3210, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 3230, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 3250, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 3270, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 3290, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 3310, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 3330, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 3350, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 3370, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 3390, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 3410, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 3430, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 3450, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 3470, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 3490, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 3510, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 3530, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 3550, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 3570, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 3590, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 3610, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 011, stepIndex = 000
-# Time =                 3630, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 011, stepIndex = 001
-# Time =                 3650, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 3670, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 3690, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 3710, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 3730, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 3750, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 3770, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 3790, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 3810, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 3830, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 3850, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 3870, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 3890, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 3910, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 3930, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 3950, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 3970, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 3990, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 4010, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 4030, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 4050, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 4070, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 4090, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 4110, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 4130, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 4150, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 4170, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 4190, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 4210, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 4230, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 4250, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 4270, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 4290, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 011, stepIndex = 000
-# Time =                 4310, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 011, stepIndex = 001
-# Time =                 4330, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 100, stepIndex = 001
-# Time =                 4350, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 000, stepIndex = 000
-# Time =                 4410, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 001, stepIndex = 000
-# Time =                 4430, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 001, stepIndex = 001
-# Time =                 4450, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 4470, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 4490, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 4510, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 4530, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 4550, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 4570, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 4590, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 4610, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 4630, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 4650, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 4670, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 4690, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 4710, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 4730, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 4750, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 4770, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 4790, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 4810, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 4830, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 4850, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 4870, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 4890, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 4910, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 4930, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 4950, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 4970, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 4990, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 5010, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 5030, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 5050, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 5070, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 5090, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 011, stepIndex = 000
-# Time =                 5110, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 011, stepIndex = 001
-# Time =                 5130, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 5150, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 5170, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 5190, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 5210, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 5230, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 5250, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 5270, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 5290, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 5310, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 5330, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 5350, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 5370, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 5390, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 5410, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 5430, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 5450, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 5470, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 5490, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 5510, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 5530, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 5550, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 5570, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 5590, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 5610, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 5630, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 5650, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 5670, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 5690, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 5710, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 5730, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 5750, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 5770, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 011, stepIndex = 000
-# Time =                 5790, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 011, stepIndex = 001
-# Time =                 5810, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 5830, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 5850, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 5870, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 5890, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 5910, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 5930, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 5950, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 5970, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 5990, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 6010, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 6030, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 6050, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 6070, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 6090, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 6110, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 6130, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 6150, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 6170, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 6190, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 6210, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 6230, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 6250, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 6270, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 6290, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 6310, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 6330, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 6350, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 6370, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 6390, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 6410, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 6430, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 6450, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 011, stepIndex = 000
-# Time =                 6470, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 011, stepIndex = 001
-# Time =                 6490, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 100, stepIndex = 001
-# Time =                 6510, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 000, stepIndex = 000
-# Time =                 6570, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 001, stepIndex = 000
-# Time =                 6590, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 001, stepIndex = 001
-# Time =                 6610, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 6630, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 6650, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 6670, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 6690, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 6710, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 6730, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 6750, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 6770, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 6790, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 6810, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 6830, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 6850, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 6870, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 6890, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 6910, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 6930, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 6950, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 6970, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 6990, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 7010, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 7030, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 7050, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 7070, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 7090, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 7110, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 7130, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 7150, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 7170, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 7190, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 7210, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 7230, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 7250, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 011, stepIndex = 000
-# Time =                 7270, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 011, stepIndex = 001
-# Time =                 7290, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 7310, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 7330, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 7350, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 7370, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 7390, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 7410, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 7430, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 7450, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 7470, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 7490, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 7510, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 7530, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 7550, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 7570, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 7590, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 7610, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 7630, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 7650, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 7670, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 7690, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 7710, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 7730, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 7750, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 7770, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 7790, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 7810, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 7830, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 7850, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 7870, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 7890, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 7910, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 7930, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 011, stepIndex = 000
-# Time =                 7950, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 011, stepIndex = 001
-# Time =                 7970, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 7990, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 8010, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 8030, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 8050, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 8070, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 8090, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 8110, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 8130, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 8150, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 8170, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 8190, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 8210, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 8230, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 8250, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 8270, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 8290, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 8310, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 8330, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 8350, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 8370, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 8390, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 8410, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 8430, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 8450, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 8470, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 8490, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 8510, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 8530, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 8550, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 8570, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 8590, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 8610, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 011, stepIndex = 000
-# Time =                 8630, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 011, stepIndex = 001
-# Time =                 8650, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 100, stepIndex = 001
-# Time =                 8670, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 000, stepIndex = 000
-# Time =                 8730, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 001, stepIndex = 000
-# Time =                 8750, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 001, stepIndex = 001
-# Time =                 8770, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 8790, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 8810, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 8830, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 8850, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 8870, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 8890, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 8910, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 8930, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 8950, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 8970, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 8990, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 9010, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 9030, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 9050, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 9070, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 9090, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 9110, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 9130, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 9150, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 9170, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 9190, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 9210, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 9230, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 9250, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 9270, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 9290, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 9310, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 9330, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 9350, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 9370, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 9390, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 9410, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 011, stepIndex = 000
-# Time =                 9430, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 011, stepIndex = 001
-# Time =                 9450, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 9470, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 9490, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 9510, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 9530, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 9550, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 9570, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 9590, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 9610, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 9630, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 9650, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 9670, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 9690, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 9710, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 9730, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 9750, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 9770, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 9790, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 9810, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 9830, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 0, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 9850, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 0, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 9870, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 9890, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 9910, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                 9930, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                 9950, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                 9970, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                 9990, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# Time =                10010, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 000
-# Time =                10030, i2c_clock = 0, i2c_clock_value = 0, i2c_data = 1, i2c_data_value = 0, busy = 1, done = 0, error = 0, state = 010, stepIndex = 001
-# Time =                10050, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 010
-# Time =                10070, i2c_clock = 1, i2c_clock_value = 1, i2c_data = 1, i2c_data_value = 1, busy = 1, done = 0, error = 0, state = 010, stepIndex = 011
-# ** Note: $stop    : /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Audio Test/tb_i2c_audio_setup.v(69)
-#    Time: 10080 ps  Iteration: 0  Instance: /tb_i2c_audio_setup
-# Break in Module tb_i2c_audio_setup at /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Audio Test/tb_i2c_audio_setup.v line 69
-# End time: 16:37:51 on Feb 26,2026, Elapsed time: 0:01:25
+# Transaction Complete. Error Flag: 0
+# ** Note: $finish    : C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/tb_i2c_controller.v(80)
+#    Time: 1970 ps  Iteration: 0  Instance: /tb_i2c_controller
+# 1
+# Break in Module tb_i2c_controller at C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Audio Test 2/tb_i2c_controller.v line 80
+# End time: 19:57:32 on Feb 26,2026, Elapsed time: 0:02:10
 # Errors: 0, Warnings: 1

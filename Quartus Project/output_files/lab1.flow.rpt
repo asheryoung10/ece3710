@@ -1,6 +1,6 @@
 Flow report for lab1
-Thu Feb 26 16:23:30 2026
-Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Thu Feb 26 19:38:35 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
 ---------------------
@@ -21,46 +21,46 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2024  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions 
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Intel Program License 
-Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
 
 
 
-+----------------------------------------------------------------------------------+
-; Flow Summary                                                                     ;
-+---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Thu Feb 26 16:23:30 2026          ;
-; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name                   ; lab1                                           ;
-; Top-level Entity Name           ; i2c_audio_setup                                ;
-; Family                          ; Cyclone V                                      ;
-; Device                          ; 5CSEMA5F31C6                                   ;
-; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 52                                             ;
-; Total pins                      ; 32                                             ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 0                                              ;
-; Total DSP Blocks                ; 0                                              ;
-; Total HSSI RX PCSs              ; 0                                              ;
-; Total HSSI PMA RX Deserializers ; 0                                              ;
-; Total HSSI TX PCSs              ; 0                                              ;
-; Total HSSI PMA TX Serializers   ; 0                                              ;
-; Total PLLs                      ; 0                                              ;
-; Total DLLs                      ; 0                                              ;
-+---------------------------------+------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Flow Summary                                                                      ;
++---------------------------------+-------------------------------------------------+
+; Flow Status                     ; Successful - Thu Feb 26 19:38:35 2026           ;
+; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                   ; lab1                                            ;
+; Top-level Entity Name           ; i2c_controller                                  ;
+; Family                          ; Cyclone V                                       ;
+; Device                          ; 5CSEMA5F31C6                                    ;
+; Timing Models                   ; Final                                           ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 52                                              ;
+; Total pins                      ; 32                                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/26/2026 16:23:23 ;
+; Start date & time ; 02/26/2026 19:38:30 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab1                ;
 +-------------------+---------------------+
@@ -76,49 +76,48 @@ https://fpgasoftware.intel.com/eula.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Flow Non-Default Global Settings                                                                                                                        ;
-+--------------------------------------+--------------------------------------------+---------------+-----------------+-----------------------------------+
-; Assignment Name                      ; Value                                      ; Default Value ; Entity Name     ; Section Id                        ;
-+--------------------------------------+--------------------------------------------+---------------+-----------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 123719793384753.177214820353903            ; --            ; --              ; --                                ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --              ; tb_i2c_audio_setup                ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --              ; tb_hard_coded_vga                 ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --              ; tb_ALU                            ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                        ; --            ; --              ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                        ; --            ; --              ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                        ; --            ; --              ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                        ; --            ; --              ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_i2c_audio_setup                         ; --            ; --              ; eda_simulation                    ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                                ; --            ; --              ; eda_simulation                    ;
-; EDA_RUN_TOOL_AUTOMATICALLY           ; Off                                        ; --            ; --              ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (Verilog)                ; <None>        ; --              ; --                                ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                            ; --            ; --              ; eda_simulation                    ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test/tb_i2c_audio_setup.v ; --            ; --              ; tb_i2c_audio_setup                ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test/i2c_audio_setup.v    ; --            ; --              ; tb_i2c_audio_setup                ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test/i2c_commands.v       ; --            ; --              ; tb_i2c_audio_setup                ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/block_mover.v           ; --            ; --              ; tb_hard_coded_vga                 ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/clk_divider.v           ; --            ; --              ; tb_hard_coded_vga                 ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/hard_coded_bitgen.v     ; --            ; --              ; tb_hard_coded_vga                 ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/hard_coded_vga.v        ; --            ; --              ; tb_hard_coded_vga                 ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/tb_hard_coded_vga.v     ; --            ; --              ; tb_hard_coded_vga                 ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/vga_controller.v        ; --            ; --              ; tb_hard_coded_vga                 ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/ALU.v.bak               ; --            ; --              ; tb_ALU                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/tb_ALU.v                ; --            ; --              ; tb_ALU                            ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_i2c_audio_setup                         ; --            ; --              ; tb_i2c_audio_setup                ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_hard_coded_vga                          ; --            ; --              ; tb_hard_coded_vga                 ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_alu                                     ; --            ; --              ; tb_ALU                            ;
-; EDA_TEST_BENCH_NAME                  ; tb_hard_coded_vga                          ; --            ; --              ; eda_simulation                    ;
-; EDA_TEST_BENCH_NAME                  ; tb_i2c_audio_setup                         ; --            ; --              ; eda_simulation                    ;
-; EDA_TIME_SCALE                       ; 1 ps                                       ; --            ; --              ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                         ; --            ; --              ; --                                ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                          ; --            ; --              ; --                                ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family)     ; --            ; i2c_audio_setup ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)     ; --            ; i2c_audio_setup ; Top                               ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)     ; --            ; i2c_audio_setup ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                        ; --            ; --              ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW      ; --            ; --              ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                               ; --            ; --              ; --                                ;
-; TOP_LEVEL_ENTITY                     ; i2c_audio_setup                            ; lab1          ; --              ; --                                ;
-+--------------------------------------+--------------------------------------------+---------------+-----------------+-----------------------------------+
++--------------------------------------+---------------------------------------------+---------------+----------------+-----------------------------------+
+; Assignment Name                      ; Value                                       ; Default Value ; Entity Name    ; Section Id                        ;
++--------------------------------------+---------------------------------------------+---------------+----------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID                ; 126017862575399.177215991016304             ; --            ; --             ; --                                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                          ; --            ; --             ; tb_i2c_controller                 ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                          ; --            ; --             ; tb_hard_coded_vga                 ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                          ; --            ; --             ; tb_ALU                            ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                         ; --            ; --             ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                         ; --            ; --             ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                         ; --            ; --             ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                         ; --            ; --             ; eda_board_design_symbol           ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_hard_coded_vga                           ; --            ; --             ; eda_simulation                    ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                                 ; --            ; --             ; eda_simulation                    ;
+; EDA_RUN_TOOL_AUTOMATICALLY           ; Off                                         ; --            ; --             ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                  ; Questa Altera FPGA (Verilog)                ; <None>        ; --             ; --                                ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                             ; --            ; --             ; eda_simulation                    ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/i2c_controller.v    ; --            ; --             ; tb_i2c_controller                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/tb_i2c_controller.v ; --            ; --             ; tb_i2c_controller                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/block_mover.v            ; --            ; --             ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/clk_divider.v            ; --            ; --             ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/hard_coded_bitgen.v      ; --            ; --             ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/hard_coded_vga.v         ; --            ; --             ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/tb_hard_coded_vga.v      ; --            ; --             ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/vga_controller.v         ; --            ; --             ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/ALU.v.bak                ; --            ; --             ; tb_ALU                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/tb_ALU.v                 ; --            ; --             ; tb_ALU                            ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_i2c_controller                           ; --            ; --             ; tb_i2c_controller                 ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_hard_coded_vga                           ; --            ; --             ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_alu                                      ; --            ; --             ; tb_ALU                            ;
+; EDA_TEST_BENCH_NAME                  ; tb_hard_coded_vga                           ; --            ; --             ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; tb_i2c_controller                           ; --            ; --             ; eda_simulation                    ;
+; EDA_TIME_SCALE                       ; 1 ps                                        ; --            ; --             ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                          ; --            ; --             ; --                                ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                           ; --            ; --             ; --                                ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family)      ; --            ; i2c_controller ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)      ; --            ; i2c_controller ; Top                               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)      ; --            ; i2c_controller ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                         ; --            ; --             ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW       ; --            ; --             ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                                ; --            ; --             ; --                                ;
+; TOP_LEVEL_ENTITY                     ; i2c_controller                              ; lab1          ; --             ; --                                ;
++--------------------------------------+---------------------------------------------+---------------+----------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -126,18 +125,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 464 MB              ; 00:00:14                           ;
-; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:14                           ;
+; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 4890 MB             ; 00:00:13                           ;
+; Total                ; 00:00:05     ; --                      ; --                  ; 00:00:13                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+----------------------+------------------+----------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
-+----------------------+------------------+----------------+------------+----------------+
-; Analysis & Synthesis ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
-+----------------------+------------------+----------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; DESKTOP-JRGJE77  ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------

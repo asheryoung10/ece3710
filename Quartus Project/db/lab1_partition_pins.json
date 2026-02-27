@@ -12,6 +12,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "encounteredError",
+					"strict" : false
+				},
+				{
 					"name" : "i2c_clock",
 					"strict" : false
 				},
@@ -20,11 +24,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "start",
+					"name" : "sendMessage",
 					"strict" : false
 				},
 				{
-					"name" : "fpga50MHzClock",
+					"name" : "clock",
 					"strict" : false
 				},
 				{
@@ -40,7 +44,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "address[5]",
+					"name" : "addressByte[5]",
 					"strict" : false
 				},
 				{
@@ -52,7 +56,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "address[7]",
+					"name" : "addressByte[7]",
 					"strict" : false
 				},
 				{
@@ -64,7 +68,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "address[4]",
+					"name" : "addressByte[4]",
 					"strict" : false
 				},
 				{
@@ -76,7 +80,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "address[6]",
+					"name" : "addressByte[6]",
 					"strict" : false
 				},
 				{
@@ -88,7 +92,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "address[1]",
+					"name" : "addressByte[1]",
 					"strict" : false
 				},
 				{
@@ -100,7 +104,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "address[3]",
+					"name" : "addressByte[3]",
 					"strict" : false
 				},
 				{
@@ -112,7 +116,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "address[0]",
+					"name" : "addressByte[0]",
 					"strict" : false
 				},
 				{
@@ -124,7 +128,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "address[2]",
+					"name" : "addressByte[2]",
 					"strict" : false
 				}
 			]

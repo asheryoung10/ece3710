@@ -1,15 +1,14 @@
 
-State Machine - |i2c_audio_setup|state
-Name state.ACK_STATE state.SEND_BIT state.START state.IDLE state.STOP 
-state.IDLE 0 0 0 0 0 
-state.START 0 0 1 1 0 
-state.SEND_BIT 0 1 0 1 0 
-state.ACK_STATE 1 0 0 1 0 
-state.STOP 0 0 0 1 1 
+State Machine - |i2c_controller|currentStep
+Name currentStep.0000 currentStep.0010 currentStep.0001 
+currentStep.0000 0 0 0 
+currentStep.0001 1 0 1 
+currentStep.0010 1 1 0 
 
-State Machine - |i2c_audio_setup|subStep
-Name subStep.011 subStep.010 subStep.001 subStep.000 
-subStep.000 0 0 0 0 
-subStep.001 0 0 1 1 
-subStep.010 0 1 0 1 
-subStep.011 1 0 0 1 
+State Machine - |i2c_controller|currentState
+Name currentState.ACK_STATE currentState.SEND_BIT_STATE currentState.START_STATE currentState.IDLE_STATE currentState.STOP_STATE 
+currentState.IDLE_STATE 0 0 0 0 0 
+currentState.START_STATE 0 0 1 1 0 
+currentState.SEND_BIT_STATE 0 1 0 1 0 
+currentState.ACK_STATE 1 0 0 1 0 
+currentState.STOP_STATE 0 0 0 1 1 

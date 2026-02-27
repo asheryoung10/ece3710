@@ -1,7 +1,7 @@
-Analysis & Synthesis Status : Successful - Thu Feb 26 16:23:30 2026
-Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Analysis & Synthesis Status : Successful - Thu Feb 26 19:38:35 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 Revision Name : lab1
-Top-level Entity Name : i2c_audio_setup
+Top-level Entity Name : i2c_controller
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
 Total registers : 52

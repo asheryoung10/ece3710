@@ -1,6 +1,6 @@
 Analysis & Synthesis report for lab1
-Thu Feb 26 16:23:30 2026
-Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Thu Feb 26 19:38:35 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
 ---------------------
@@ -13,8 +13,8 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |i2c_audio_setup|state
-  9. State Machine - |i2c_audio_setup|subStep
+  8. State Machine - |i2c_controller|currentStep
+  9. State Machine - |i2c_controller|currentState
  10. Registers Removed During Synthesis
  11. General Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
@@ -27,44 +27,44 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2024  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions 
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Intel Program License 
-Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Feb 26 16:23:30 2026          ;
-; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name                   ; lab1                                           ;
-; Top-level Entity Name           ; i2c_audio_setup                                ;
-; Family                          ; Cyclone V                                      ;
-; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 52                                             ;
-; Total pins                      ; 32                                             ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 0                                              ;
-; Total DSP Blocks                ; 0                                              ;
-; Total HSSI RX PCSs              ; 0                                              ;
-; Total HSSI PMA RX Deserializers ; 0                                              ;
-; Total HSSI TX PCSs              ; 0                                              ;
-; Total HSSI PMA TX Serializers   ; 0                                              ;
-; Total PLLs                      ; 0                                              ;
-; Total DLLs                      ; 0                                              ;
-+---------------------------------+------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Feb 26 19:38:35 2026           ;
+; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                   ; lab1                                            ;
+; Top-level Entity Name           ; i2c_controller                                  ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 52                                              ;
+; Total pins                      ; 32                                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -73,7 +73,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; i2c_audio_setup    ; lab1               ;
+; Top-level entity name                                                           ; i2c_controller     ; lab1               ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -159,104 +159,102 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 32          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                             ;
-+-----------------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
-; File Name with User-Entered Path        ; Used in Netlist ; File Type              ; File Name with Absolute Path                                        ; Library ;
-+-----------------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
-; ../Verilog/Audio Test/i2c_audio_setup.v ; yes             ; User Verilog HDL File  ; /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v ;         ;
-+-----------------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++------------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path         ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                    ; Library ;
++------------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------+---------+
+; ../Verilog/Audio Test 2/i2c_controller.v ; yes             ; User Verilog HDL File  ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v ;         ;
++------------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                        ;
-+---------------------------------------------+----------------------+
-; Resource                                    ; Usage                ;
-+---------------------------------------------+----------------------+
-; Estimate of Logic utilization (ALMs needed) ; 33                   ;
-;                                             ;                      ;
-; Combinational ALUT usage for logic          ; 39                   ;
-;     -- 7 input functions                    ; 4                    ;
-;     -- 6 input functions                    ; 10                   ;
-;     -- 5 input functions                    ; 7                    ;
-;     -- 4 input functions                    ; 2                    ;
-;     -- <=3 input functions                  ; 16                   ;
-;                                             ;                      ;
-; Dedicated logic registers                   ; 52                   ;
-;                                             ;                      ;
-; I/O pins                                    ; 32                   ;
-;                                             ;                      ;
-; Total DSP Blocks                            ; 0                    ;
-;                                             ;                      ;
-; Maximum fan-out node                        ; fpga50MHzClock~input ;
-; Maximum fan-out                             ; 52                   ;
-; Total fan-out                               ; 392                  ;
-; Average fan-out                             ; 2.50                 ;
-+---------------------------------------------+----------------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 44          ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 59          ;
+;     -- 7 input functions                    ; 3           ;
+;     -- 6 input functions                    ; 22          ;
+;     -- 5 input functions                    ; 8           ;
+;     -- 4 input functions                    ; 5           ;
+;     -- <=3 input functions                  ; 21          ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 52          ;
+;                                             ;             ;
+; I/O pins                                    ; 32          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 52          ;
+; Total fan-out                               ; 479         ;
+; Average fan-out                             ; 2.71        ;
++---------------------------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                        ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name     ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
-; |i2c_audio_setup           ; 39 (39)             ; 52 (52)                   ; 0                 ; 0          ; 32   ; 0            ; |i2c_audio_setup    ; i2c_audio_setup ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name    ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+----------------+--------------+
+; |i2c_controller            ; 59 (59)             ; 52 (52)                   ; 0                 ; 0          ; 32   ; 0            ; |i2c_controller     ; i2c_controller ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------+
-; State Machine - |i2c_audio_setup|state                                                     ;
-+-----------------+-----------------+----------------+-------------+------------+------------+
-; Name            ; state.ACK_STATE ; state.SEND_BIT ; state.START ; state.IDLE ; state.STOP ;
-+-----------------+-----------------+----------------+-------------+------------+------------+
-; state.IDLE      ; 0               ; 0              ; 0           ; 0          ; 0          ;
-; state.START     ; 0               ; 0              ; 1           ; 1          ; 0          ;
-; state.SEND_BIT  ; 0               ; 1              ; 0           ; 1          ; 0          ;
-; state.ACK_STATE ; 1               ; 0              ; 0           ; 1          ; 0          ;
-; state.STOP      ; 0               ; 0              ; 0           ; 1          ; 1          ;
-+-----------------+-----------------+----------------+-------------+------------+------------+
++---------------------------------------------------------------------------+
+; State Machine - |i2c_controller|currentStep                               ;
++------------------+------------------+------------------+------------------+
+; Name             ; currentStep.0000 ; currentStep.0010 ; currentStep.0001 ;
++------------------+------------------+------------------+------------------+
+; currentStep.0000 ; 0                ; 0                ; 0                ;
+; currentStep.0001 ; 1                ; 0                ; 1                ;
+; currentStep.0010 ; 1                ; 1                ; 0                ;
++------------------+------------------+------------------+------------------+
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------+
-; State Machine - |i2c_audio_setup|subStep                            ;
-+-------------+-------------+-------------+-------------+-------------+
-; Name        ; subStep.011 ; subStep.010 ; subStep.001 ; subStep.000 ;
-+-------------+-------------+-------------+-------------+-------------+
-; subStep.000 ; 0           ; 0           ; 0           ; 0           ;
-; subStep.001 ; 0           ; 0           ; 1           ; 1           ;
-; subStep.010 ; 0           ; 1           ; 0           ; 1           ;
-; subStep.011 ; 1           ; 0           ; 0           ; 1           ;
-+-------------+-------------+-------------+-------------+-------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |i2c_controller|currentState                                                                                                                      ;
++-----------------------------+------------------------+-----------------------------+--------------------------+-------------------------+-------------------------+
+; Name                        ; currentState.ACK_STATE ; currentState.SEND_BIT_STATE ; currentState.START_STATE ; currentState.IDLE_STATE ; currentState.STOP_STATE ;
++-----------------------------+------------------------+-----------------------------+--------------------------+-------------------------+-------------------------+
+; currentState.IDLE_STATE     ; 0                      ; 0                           ; 0                        ; 0                       ; 0                       ;
+; currentState.START_STATE    ; 0                      ; 0                           ; 1                        ; 1                       ; 0                       ;
+; currentState.SEND_BIT_STATE ; 0                      ; 1                           ; 0                        ; 1                       ; 0                       ;
+; currentState.ACK_STATE      ; 1                      ; 0                           ; 0                        ; 1                       ; 0                       ;
+; currentState.STOP_STATE     ; 0                      ; 0                           ; 0                        ; 1                       ; 1                       ;
++-----------------------------+------------------------+-----------------------------+--------------------------+-------------------------+-------------------------+
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; error~reg0                            ; Stuck at GND due to stuck port data_in ;
-; state~9                               ; Lost fanout                            ;
-; state~10                              ; Lost fanout                            ;
-; subStep~6                             ; Lost fanout                            ;
-; subStep~7                             ; Lost fanout                            ;
-; subStep~8                             ; Lost fanout                            ;
-; Total Number of Removed Registers = 6 ;                                        ;
-+---------------------------------------+----------------------------------------+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; currentStep~7                         ; Lost fanout        ;
+; currentStep~8                         ; Lost fanout        ;
+; currentState~9                        ; Lost fanout        ;
+; currentState~10                       ; Lost fanout        ;
+; currentState~12                       ; Lost fanout        ;
+; Total Number of Removed Registers = 5 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -265,24 +263,27 @@ Encoding Type:  One-Hot
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 52    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Clear  ; 2     ;
 ; Number of registers using Synchronous Load   ; 8     ;
-; Number of registers using Asynchronous Clear ; 17    ;
+; Number of registers using Asynchronous Clear ; 8     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 39    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |i2c_audio_setup|bitIndex[2] ;
-; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |i2c_audio_setup|dataByte[0] ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |i2c_audio_setup|Selector21  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |i2c_controller|currentByteIndex[0] ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |i2c_controller|currentBitIndex[3]  ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |i2c_controller|currentByte[7]      ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |i2c_controller|currentStep.0001    ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |i2c_controller|Selector9           ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 8 LEs                ; 14 LEs                 ; No         ; |i2c_controller|Selector11          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -291,25 +292,26 @@ Encoding Type:  One-Hot
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 52                          ;
-;     CLR               ; 13                          ;
+;     CLR               ; 6                           ;
 ;     ENA               ; 27                          ;
-;     ENA CLR           ; 4                           ;
+;     ENA CLR           ; 2                           ;
+;     ENA SCLR          ; 2                           ;
 ;     ENA SLD           ; 8                           ;
+;     plain             ; 7                           ;
 ; arriav_io_obuf        ; 2                           ;
-; arriav_lcell_comb     ; 40                          ;
-;     extend            ; 4                           ;
-;         7 data inputs ; 4                           ;
-;     normal            ; 36                          ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 15                          ;
-;         4 data inputs ; 2                           ;
-;         5 data inputs ; 7                           ;
-;         6 data inputs ; 10                          ;
+; arriav_lcell_comb     ; 59                          ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 56                          ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 5                           ;
+;         5 data inputs ; 8                           ;
+;         6 data inputs ; 22                          ;
 ; boundary_port         ; 32                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.11                        ;
+; Average LUT depth     ; 1.35                        ;
 +-----------------------+-----------------------------+
 
 
@@ -327,42 +329,31 @@ Encoding Type:  One-Hot
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Thu Feb 26 16:23:22 2026
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Thu Feb 26 19:38:30 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_commands.v
-    Info (12023): Found entity 1: i2c_commands File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_commands.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Audio Test/tb_i2c_audio_setup.v
-    Info (12023): Found entity 1: tb_i2c_audio_setup File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/tb_i2c_audio_setup.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v
-    Info (12023): Found entity 1: i2c_audio_setup File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at tb_i2c_audio_setup.v(27): created implicit net for "debugFirstbyte" File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/tb_i2c_audio_setup.v Line: 27
-Info (12127): Elaborating entity "i2c_audio_setup" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at i2c_audio_setup.v(16): object "i2c_tick" assigned a value but never read File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 16
-Warning (10230): Verilog HDL assignment warning at i2c_audio_setup.v(28): truncated value with size 32 to match size of target (8) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 28
-Warning (10230): Verilog HDL assignment warning at i2c_audio_setup.v(50): truncated value with size 32 to match size of target (1) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 50
-Warning (10230): Verilog HDL assignment warning at i2c_audio_setup.v(51): truncated value with size 32 to match size of target (1) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 51
-Info (10264): Verilog HDL Case Statement information at i2c_audio_setup.v(85): all case item expressions in this case statement are onehot File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 85
-Warning (10230): Verilog HDL assignment warning at i2c_audio_setup.v(123): truncated value with size 32 to match size of target (4) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 123
-Warning (10230): Verilog HDL assignment warning at i2c_audio_setup.v(144): truncated value with size 32 to match size of target (3) File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 144
-Info (10264): Verilog HDL Case Statement information at i2c_audio_setup.v(135): all case item expressions in this case statement are onehot File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 135
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "error" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Audio Test/i2c_audio_setup.v Line: 10
+Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/audio test 2/i2c_controller.v
+    Info (12023): Found entity 1: i2c_controller File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v Line: 1
+Info (12127): Elaborating entity "i2c_controller" for the top level hierarchy
+Info (10264): Verilog HDL Case Statement information at i2c_controller.v(64): all case item expressions in this case statement are onehot File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v Line: 64
+Warning (10230): Verilog HDL assignment warning at i2c_controller.v(98): truncated value with size 32 to match size of target (3) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v Line: 98
+Warning (10230): Verilog HDL assignment warning at i2c_controller.v(100): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v Line: 100
+Info (10264): Verilog HDL Case Statement information at i2c_controller.v(147): all case item expressions in this case statement are onehot File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Audio Test 2/i2c_controller.v Line: 147
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 5 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 95 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 115 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 27 input pins
     Info (21059): Implemented 3 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 63 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 473 megabytes
-    Info: Processing ended: Thu Feb 26 16:23:30 2026
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:14
+    Info (21061): Implemented 83 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4890 megabytes
+    Info: Processing ended: Thu Feb 26 19:38:35 2026
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:13
 
 
