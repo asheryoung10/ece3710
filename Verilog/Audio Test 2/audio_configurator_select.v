@@ -1,37 +1,49 @@
-module audio_configurator (
+module audio_configurator_select (
     input wire systemClock,
     input wire reset,
     input wire configure,
-
+	 input wire [3:0] selectedCommand,
     output reg busy,
     output reg done,
     output wire encounteredError,
-
+	 
     inout wire i2c_clock,
     inout wire i2c_data
 );
 
-reg [23:0] commands[8:0];
+reg [23:0] commands[16:0];
 localparam commandCount = 1;
 initial begin
     // Reset Address: 7'b0001111 Data: RESET
     commands[0] = {8'b00110100, 8'b00111110, 8'b00000000};
-	 // Left Line In Address: 7'b0000000, DATA: Simultanous load, Mute, Max Volume
+    // Left Line In Address: 7'b0000000, DATA: Simultaneous load, Mute, Max Volume
     commands[1] = {8'b00110100, 8'b00000001, 8'b10011111};
-	 // Left Headphone Out Address: 7'b0000001, DATA: Simultaneous load, Disable LZCEN, Volume Max
+    // Left Headphone Out Address: 7'b0000001, DATA: Simultaneous load, Disable LZCEN, Volume Max
     commands[2] = {8'b00110100, 8'b00000011, 8'b00000000};
-	 // Analogue Audio Path Controll Address: 7'b0000100, DATA: Select DAC and Mute Mic
+    // Analogue Audio Path Control Address: 7'b0000100, DATA: Select DAC and Mute Mic
     commands[3] = {8'b00110100, 8'b00001000, 8'b00010010};
-	 // Digital Audio Path Address: 7'b0000101, DATA:Disable soft mute 
+    // Digital Audio Path Address: 7'b0000101, DATA: Disable soft mute 
     commands[4] = {8'b00110100, 8'b00001010, 8'b00000000};
-	 // Power down control Address: 7'b0000110, DATA: Powerdown linein, mic, and adc
+    // Power down control Address: 7'b0000110, DATA: Powerdown linein, mic, and adc
     commands[5] = {8'b00110100, 8'b00001100, 8'b00000111};
-	 // Digital Audio Interface Format Address: 7'b0000111, DATA: i2s MSB first left 1 justified
+    // Digital Audio Interface Format Address: 7'b0000111, DATA: i2s MSB first left 1 justified
     commands[6] = {8'b00110100, 8'b00001110, 8'b00000010};
-	 // Sampling Control Address: 7'b0001000, DATA: defaults
+    // Sampling Control Address: 7'b0001000, DATA: defaults
     commands[7] = {8'b00110100, 8'b00010000, 8'b00000000};
-	 // Active Control Address: 7'b0001001, DATA: active
+    // Active Control Address: 7'b0001001, DATA: active
     commands[8] = {8'b00110100, 8'b00010010, 8'b00000001};
+    // Power down control Address: 7'b0000110, DATA: Powerdown linein, mic, and adc
+    commands[9] = {8'b00110100, 8'b00001100, 8'b10011111};
+    // Left Headphone Out Address: 7'b0000001, DATA: Simultaneous load, Disable LZCEN, Volume Max
+    commands[10] = {8'b00110100, 8'b00000011, 8'b01111111};
+    
+    // Explicitly initialize remaining elements to avoid warning
+    commands[11] = 24'b0;
+    commands[12] = 24'b0;
+    commands[13] = 24'b0;
+    commands[14] = 24'b0;
+    commands[15] = 24'b0;
+    commands[16] = 24'b0;
 end
 
 reg [7:0] clk_divider_count;
@@ -98,7 +110,7 @@ always @(posedge controllerClock or posedge reset) begin
                 if(configure) begin
                     busy <= 1;
                     currentState <= SEND_COMMAND_STATE;
-                    currentCommandIndex <= 0;
+                    currentCommandIndex <= selectedCommand;
                     currentStep <= 0;
                 end else begin
                     busy <= 0;
@@ -126,22 +138,14 @@ always @(posedge controllerClock or posedge reset) begin
                     3: begin
                         if(controllerBusy)
                             currentStep <= 3;
-                        else begin
-                            if(currentCommandIndex == commandCount) begin                         
-                                busy <= 0;
-                                done <= 1;
-										  currentState <= IDLE_STATE;
-                            end else
-                                currentStep <= 4;
-										  delay <= 0;
+                        else begin          
+                               busy <= 0;
+                               done <= 1;
+										 currentState <= IDLE_STATE;
+            
                         end
                     end
-						  4: begin
-								if(delay == 40096)
-									currentStep <= 0;
-								else 
-									delay <= delay + 1;
-						  end
+
                 endcase
             end
         endcase
