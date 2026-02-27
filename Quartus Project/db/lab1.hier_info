@@ -2,6 +2,8 @@
 CLOCK_50 => CLOCK_50.IN2
 RESET_N => _.IN1
 configure_N => _.IN1
+pitch[0] => pitch[0].IN1
+pitch[1] => pitch[1].IN1
 FPGA_I2C_SCLK <> audio_configurator:i2c_conf.i2c_clock
 FPGA_I2C_SDAT <> audio_configurator:i2c_conf.i2c_data
 AUD_XCK << audio_output:dac_driver.aud_xck
@@ -209,6 +211,9 @@ i2c_data <> i2c_data
 |top|audio_output:dac_driver
 clk_50 => mclk_count[0].CLK
 clk_50 => mclk_count[1].CLK
+pitch_sel[0] => Decoder0.IN1
+pitch_sel[1] => Decoder0.IN0
+pitch_sel[1] => LessThan0.IN17
 aud_xck <= mclk_count[1].DB_MAX_OUTPUT_PORT_TYPE
 aud_bclk <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
 aud_daclrck <= counter[7].DB_MAX_OUTPUT_PORT_TYPE

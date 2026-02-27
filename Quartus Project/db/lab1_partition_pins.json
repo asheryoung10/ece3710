@@ -40,6 +40,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "pitch[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pitch[1]",
+					"strict" : false
+				},
+				{
 					"name" : "configure_N",
 					"strict" : false
 				}

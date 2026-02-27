@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Thu Feb 26 22:24:01 2026
+Analysis & Synthesis Status : Successful - Thu Feb 26 22:31:13 2026
 Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 Revision Name : lab1
 Top-level Entity Name : top
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 84
-Total pins : 10
+Total registers : 86
+Total pins : 12
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
