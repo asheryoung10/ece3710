@@ -7,8 +7,8 @@
    viewBox="0 0 520 170"
    version="1.1"
    id="svg1"
-   sodipodi:docname="module.svg"
-   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="cpu.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    inkscape:export-filename="module.png"
    inkscape:export-xdpi="300"
    inkscape:export-ydpi="300"
@@ -27,13 +27,13 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="0.97794118"
-     inkscape:cx="964.27067"
-     inkscape:cy="262.28571"
-     inkscape:window-width="3840"
-     inkscape:window-height="2126"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:zoom="0.48897059"
+     inkscape:cx="856.90225"
+     inkscape:cy="541.95488"
+     inkscape:window-width="1472"
+     inkscape:window-height="898"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1">
     <inkscape:grid
@@ -3895,6 +3895,23 @@
        apply_with_radius="true"
        only_selected="false"
        hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect12-0-82-0-0-7-2-34-4"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,1,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,1.000003,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,1,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0.999999,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,1,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0.99999,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
   </defs>
   <g
      inkscape:label="Mux2"
@@ -5463,199 +5480,6 @@
     </g>
   </g>
   <g
-     inkscape:label="Mux2"
-     inkscape:groupmode="layer"
-     id="layer1-9-9-4-75"
-     transform="translate(-592.78567,-196.37769)">
-    <g
-       inkscape:groupmode="layer"
-       id="layer2-8-8-0-5"
-       inkscape:label="ModuleBackground">
-      <path
-         style="fill:#666666;stroke:none;stroke-width:0.263"
-         d="m 610.90235,288.99437 h 20 l -10e-6,15 -19.99999,4.99998 z"
-         id="path4-2-8-4-0-50"
-         sodipodi:nodetypes="ccccc"
-         inkscape:label="BodyBackground" />
-      <path
-         style="fill:#800000;stroke:none;stroke-width:0.263"
-         d="M 40.000002,124.99999 59.999995,130 V 124.99999 123 a 2.9999982,2.9999982 45 0 0 -2.999998,-3 H 54.999995 44.999992 42.807527 a 2.8075318,2.8075318 135 0 0 -2.807532,2.80753 v 2.19246 z"
-         id="path4-0-0-5-9"
-         inkscape:path-effect="#path-effect5-4-8-2-9"
-         inkscape:original-d="M 40.000002,124.99999 59.999995,130 V 124.99999 120 h -5 -10.000003 -4.999997 v 4.99999 z"
-         inkscape:label="HeaderBackground"
-         transform="translate(570.90235,163.99437)"
-         sodipodi:nodetypes="ccccccccc" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;line-height:normal;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#c87137;stroke:none;stroke-width:0.263"
-         x="620.9024"
-         y="288.99438"
-         id="text2-87-6-1-2"
-         inkscape:label="ModuleName"><tspan
-           sodipodi:role="line"
-           id="tspan2-7-3-0-8"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#c87137;stroke:none;stroke-width:0.263"
-           x="620.9024"
-           y="288.99438">Mux</tspan></text>
-    </g>
-    <g
-       inkscape:groupmode="layer"
-       id="layer3-6-7-8-6-6-2"
-       inkscape:label="Output Pin"
-       transform="translate(32.768859,3.500007)">
-      <path
-         style="fill:#333333;stroke:none;stroke-width:0.263"
-         d="m 38,130 h 1.000001 a 1.0000015,1.0000015 44.999914 0 0 1.000003,1 h 0.999998 a 0.9999995,0.9999995 134.99997 0 0 0.999999,-1 v -3 0 a 0.999999,0.999999 45 0 0 -0.999999,-1 h -0.999998 -3e-6 a 1,1 135 0 0 -1,1 H 38 h -9e-6 A 0.999991,0.999991 135.00003 0 0 37,127.99999 v 0 1 1e-5 a 1,1 45 0 0 1,1 z"
-         id="path5-0-8-1-1-7-45"
-         sodipodi:nodetypes="ccccccccccccccccccc"
-         inkscape:label="PinBackground"
-         inkscape:path-effect="#path-effect12-2-9-4-49-6-7"
-         inkscape:original-d="m 37,130 h 1 1.000001 v 1 h 1.000003 0.999998 0.999999 v -1 -3 -1 h -0.999999 -0.999998 -1.000003 v 1 H 38 37.000001 L 37,127.99999 v 1 z"
-         transform="matrix(-1,0,0,1,638.13349,165.49437)" />
-      <text
-         xml:space="preserve"
-         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:normal;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#f9f9f9;stroke:none;stroke-width:0.263"
-         x="596.57886"
-         y="295.01758"
-         id="text2-8-8-38-3-5-5-5-0"
-         inkscape:label="PinBitWidthLabel"><tspan
-           sodipodi:role="line"
-           id="tspan2-8-5-0-5-8-42-00-4"
-           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#f9f9f9;stroke:none;stroke-width:0.263"
-           x="596.57886"
-           y="295.01758">16</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:normal;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:end;white-space:normal;opacity:1;vector-effect:none;fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:0.263;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
-         x="596.13354"
-         y="295.49438"
-         id="text2-8-1-1-6-0-4-4"
-         inkscape:label="PinLabel"><tspan
-           sodipodi:role="line"
-           id="tspan3-9-5-0"
-           x="596.13354"
-           y="295.49438">s</tspan></text>
-    </g>
-    <g
-       inkscape:groupmode="layer"
-       id="layer3-3-8-3-1-4-5"
-       inkscape:label="Input Pin"
-       transform="translate(-0.49999875,6.0000036)">
-      <path
-         style="fill:#333333;stroke:none;stroke-width:0.263"
-         d="m 38,130 h 1.000001 a 1.0000015,1.0000015 44.999914 0 0 1.000003,1 h 0.999998 a 0.9999995,0.9999995 134.99997 0 0 0.999999,-1 v -3 0 a 0.999999,0.999999 45 0 0 -0.999999,-1 h -0.999998 -3e-6 a 1,1 135 0 0 -1,1 H 38 h -9e-6 A 0.999991,0.999991 135.00003 0 0 37,127.99999 v 0 1 1e-5 a 1,1 45 0 0 1,1 z"
-         id="path5-8-2-2-6-9-1"
-         sodipodi:nodetypes="ccccccccccccccccccc"
-         inkscape:label="PinBackground"
-         inkscape:path-effect="#path-effect12-0-4-4-3-4-98"
-         inkscape:original-d="m 37,130 h 1 1.000001 v 1 h 1.000003 0.999998 0.999999 v -1 -3 -1 h -0.999999 -0.999998 -1.000003 v 1 H 38 37.000001 L 37,127.99999 v 1 z"
-         transform="translate(571.40235,169.99437)" />
-      <text
-         xml:space="preserve"
-         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:normal;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#f9f9f9;stroke:none;stroke-width:0.263"
-         x="612.8606"
-         y="299.51758"
-         id="text2-8-8-37-4-2-5-5-15"
-         inkscape:label="PinBitWidthLabel"><tspan
-           sodipodi:role="line"
-           id="tspan2-8-5-10-5-1-7-6-90"
-           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;text-anchor:end;fill:#f9f9f9;stroke:none;stroke-width:0.263"
-           x="612.8606"
-           y="299.51758">16</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:normal;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#800000;stroke:none;stroke-width:0.263"
-         x="613.4024"
-         y="299.99438"
-         id="text2-8-7-5-6-5-4-8"
-         inkscape:label="PinLabel"><tspan
-           sodipodi:role="line"
-           id="tspan2-8-34-1-8-4-8-3"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#f9f9f9;stroke:none;stroke-width:0.263"
-           x="613.4024"
-           y="299.99438">s1</tspan></text>
-    </g>
-    <g
-       inkscape:groupmode="layer"
-       id="layer3-3-8-6-4-8"
-       inkscape:label="Input Pin"
-       transform="translate(-0.50000294)">
-      <path
-         style="fill:#333333;stroke:none;stroke-width:0.263"
-         d="m 38,130 h 1.000001 a 1.0000015,1.0000015 44.999914 0 0 1.000003,1 h 0.999998 a 0.9999995,0.9999995 134.99997 0 0 0.999999,-1 v -3 0 a 0.999999,0.999999 45 0 0 -0.999999,-1 h -0.999998 -3e-6 a 1,1 135 0 0 -1,1 H 38 h -9e-6 A 0.999991,0.999991 135.00003 0 0 37,127.99999 v 0 1 1e-5 a 1,1 45 0 0 1,1 z"
-         id="path5-8-2-0-8-7"
-         sodipodi:nodetypes="ccccccccccccccccccc"
-         inkscape:label="PinBackground"
-         inkscape:path-effect="#path-effect12-0-4-8-7-0"
-         inkscape:original-d="m 37,130 h 1 1.000001 v 1 h 1.000003 0.999998 0.999999 v -1 -3 -1 h -0.999999 -0.999998 -1.000003 v 1 H 38 37.000001 L 37,127.99999 v 1 z"
-         transform="translate(571.40235,169.99437)" />
-      <text
-         xml:space="preserve"
-         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:normal;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#f9f9f9;stroke:none;stroke-width:0.263"
-         x="612.8606"
-         y="299.51758"
-         id="text2-8-8-37-4-7-4-2"
-         inkscape:label="PinBitWidthLabel"><tspan
-           sodipodi:role="line"
-           id="tspan2-8-5-10-5-17-9-6"
-           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;text-anchor:end;fill:#f9f9f9;stroke:none;stroke-width:0.263"
-           x="612.8606"
-           y="299.51758">16</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:normal;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#800000;stroke:none;stroke-width:0.263"
-         x="613.4024"
-         y="299.99438"
-         id="text2-8-7-5-7-2-9"
-         inkscape:label="PinLabel"><tspan
-           sodipodi:role="line"
-           id="tspan2-8-34-1-77-0-3"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#f9f9f9;stroke:none;stroke-width:0.263"
-           x="613.4024"
-           y="299.99438">s0</tspan></text>
-    </g>
-    <g
-       inkscape:groupmode="layer"
-       id="layer3-3-3-7-8"
-       inkscape:label="Input Pin"
-       transform="translate(-0.50000029,-5.9999952)">
-      <path
-         style="fill:#333333;stroke:none;stroke-width:0.263"
-         d="m 38,130 h 1.000001 a 1.0000015,1.0000015 44.999914 0 0 1.000003,1 h 0.999998 a 0.9999995,0.9999995 134.99997 0 0 0.999999,-1 v -3 0 a 0.999999,0.999999 45 0 0 -0.999999,-1 h -0.999998 -3e-6 a 1,1 135 0 0 -1,1 H 38 h -9e-6 A 0.999991,0.999991 135.00003 0 0 37,127.99999 v 0 1 1e-5 a 1,1 45 0 0 1,1 z"
-         id="path5-8-3-0-1"
-         sodipodi:nodetypes="ccccccccccccccccccc"
-         inkscape:label="PinBackground"
-         inkscape:path-effect="#path-effect12-0-82-0-1"
-         inkscape:original-d="m 37,130 h 1 1.000001 v 1 h 1.000003 0.999998 0.999999 v -1 -3 -1 h -0.999999 -0.999998 -1.000003 v 1 H 38 37.000001 L 37,127.99999 v 1 z"
-         transform="translate(571.40235,169.99437)" />
-      <text
-         xml:space="preserve"
-         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:normal;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#f9f9f9;stroke:none;stroke-width:0.263"
-         x="612.8606"
-         y="299.51758"
-         id="text2-8-8-37-5-6-0"
-         inkscape:label="PinBitWidthLabel"><tspan
-           sodipodi:role="line"
-           id="tspan2-8-5-10-9-0-3"
-           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;text-anchor:end;fill:#f9f9f9;stroke:none;stroke-width:0.263"
-           x="612.8606"
-           y="299.51758">1</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:normal;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#800000;stroke:none;stroke-width:0.263"
-         x="613.4024"
-         y="299.99438"
-         id="text2-8-7-9-7-3"
-         inkscape:label="PinLabel"><tspan
-           sodipodi:role="line"
-           id="tspan2-8-34-8-0-8"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#f9f9f9;stroke:none;stroke-width:0.263"
-           x="613.4024"
-           y="299.99438">s</tspan></text>
-    </g>
-  </g>
-  <g
      inkscape:label="Instruction Register"
      inkscape:groupmode="layer"
      id="layer1-9-9-8"
@@ -6243,7 +6067,7 @@
            id="tspan2-8-5-0-5-8-42-0-8-5-8"
            style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#f9f9f9;stroke:none;stroke-width:0.263"
            x="581.51105"
-           y="349.94745">16</tspan></text>
+           y="349.94745">8</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:normal;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:end;white-space:normal;opacity:1;vector-effect:none;fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:0.263;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
@@ -6281,7 +6105,7 @@
            id="tspan2-8-5-10-5-1-7-8-2-4"
            style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;text-anchor:end;fill:#f9f9f9;stroke:none;stroke-width:0.263"
            x="572.79272"
-           y="359.44745">1</tspan></text>
+           y="359.44745">8</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:normal;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#800000;stroke:none;stroke-width:0.263"
@@ -6320,7 +6144,7 @@
            id="tspan2-8-5-10-5-17-0-4-3"
            style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;text-anchor:end;fill:#f9f9f9;stroke:none;stroke-width:0.263"
            x="572.79272"
-           y="359.44745">1</tspan></text>
+           y="359.44745">16</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:normal;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#800000;stroke:none;stroke-width:0.263"
@@ -6359,7 +6183,7 @@
            id="tspan2-8-5-10-9-4-6-0"
            style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:Sans;-inkscape-font-specification:'Sans, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;text-anchor:end;fill:#f9f9f9;stroke:none;stroke-width:0.263"
            x="572.79272"
-           y="359.44745">1</tspan></text>
+           y="359.44745">16</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:normal;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#800000;stroke:none;stroke-width:0.263"
@@ -6701,12 +6525,6 @@
        inkscape:original-d="m 37,130 h 1 1.000001 v 1 h 1.000003 0.999998 0.999999 v -1 -3 -1 h -0.999999 -0.999998 -1.000003 v 1 H 38 37.000001 L 37,127.99999 v 1 z"
        transform="matrix(-1,0,0,1,229.11668,198.11669)" />
     <path
-       style="font-variation-settings:normal;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 173.61668,332.61668 h 18.5"
-       id="path3-7-9-1-5-4-9-8"
-       sodipodi:nodetypes="cc"
-       inkscape:label="Wire" />
-    <path
        style="fill:#00cc00;stroke:none;stroke-width:0.263"
        d="m 38,130 h 1.000001 a 1.0000015,1.0000015 44.999914 0 0 1.000003,1 h 0.999998 a 0.9999995,0.9999995 134.99997 0 0 0.999999,-1 v -3 0 a 0.999999,0.999999 45 0 0 -0.999999,-1 h -0.999998 -3e-6 a 1,1 135 0 0 -1,1 H 38 h -9e-6 A 0.999991,0.999991 135.00003 0 0 37,127.99999 v 0 1 1e-5 a 1,1 45 0 0 1,1 z"
        id="path5-8-3-0-5-1-9"
@@ -6818,15 +6636,6 @@
        sodipodi:nodetypes="cccc"
        inkscape:label="Wire" />
     <path
-       style="fill:#ffcc00;stroke:none;stroke-width:0.263"
-       d="m 38,130 h 1.000001 a 1.0000015,1.0000015 44.999914 0 0 1.000003,1 h 0.999998 a 0.9999995,0.9999995 134.99997 0 0 0.999999,-1 v -3 0 a 0.999999,0.999999 45 0 0 -0.999999,-1 h -0.999998 -3e-6 a 1,1 135 0 0 -1,1 H 38 h -9e-6 A 0.999991,0.999991 135.00003 0 0 37,127.99999 v 0 1 1e-5 a 1,1 45 0 0 1,1 z"
-       id="path5-8-3-0-5-1-1-6"
-       sodipodi:nodetypes="ccccccccccccccccccc"
-       inkscape:label="Control"
-       inkscape:path-effect="#path-effect12-0-82-0-0-7-3-8"
-       inkscape:original-d="m 37,130 h 1 1.000001 v 1 h 1.000003 0.999998 0.999999 v -1 -3 -1 h -0.999999 -0.999998 -1.000003 v 1 H 38 37.000001 L 37,127.99999 v 1 z"
-       transform="matrix(-1,0,0,1,184.66088,199.11668)" />
-    <path
        style="fill:#00cc00;stroke:none;stroke-width:0.263"
        d="m 38,130 h 1.000001 a 1.0000015,1.0000015 44.999914 0 0 1.000003,1 h 0.999998 a 0.9999995,0.9999995 134.99997 0 0 0.999999,-1 v -3 0 a 0.999999,0.999999 45 0 0 -0.999999,-1 h -0.999998 -3e-6 a 1,1 135 0 0 -1,1 H 38 h -9e-6 A 0.999991,0.999991 135.00003 0 0 37,127.99999 v 0 1 1e-5 a 1,1 45 0 0 1,1 z"
        id="path5-8-3-0-5-1-9-48"
@@ -6884,21 +6693,6 @@
        sodipodi:nodetypes="cccccc"
        inkscape:label="Wire" />
     <path
-       style="fill:#ffcc00;stroke:none;stroke-width:0.263"
-       d="m 38,130 h 1.000001 a 1.0000015,1.0000015 44.999914 0 0 1.000003,1 h 0.999998 a 0.9999995,0.9999995 134.99997 0 0 0.999999,-1 v -3 0 a 0.999999,0.999999 45 0 0 -0.999999,-1 h -0.999998 -3e-6 a 1,1 135 0 0 -1,1 H 38 h -9e-6 A 0.999991,0.999991 135.00003 0 0 37,127.99999 v 0 1 1e-5 a 1,1 45 0 0 1,1 z"
-       id="path5-8-3-0-5-1-1-6-7-7"
-       sodipodi:nodetypes="ccccccccccccccccccc"
-       inkscape:label="Control"
-       inkscape:path-effect="#path-effect12-0-82-0-0-7-3-8-3-1"
-       inkscape:original-d="m 37,130 h 1 1.000001 v 1 h 1.000003 0.999998 0.999999 v -1 -3 -1 h -0.999999 -0.999998 -1.000003 v 1 H 38 37.000001 L 37,127.99999 v 1 z"
-       transform="translate(608.83165,175.55535)" />
-    <path
-       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#d62ae0;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
-       d="m 463.11669,321.11668 v 4 c 0,0 -1.05657,0 -1.02828,1.5 0.0283,1.5 1.02828,1.5 1.02828,1.5 v 37 h -11.69872 c 0,0 0,-0.97165 -1.30128,-1 -1.26026,-0.0275 -1.2605,1 -1.2605,1 h -248.7395 v -12 h -8.45791 c 0,0 0,-0.98195 -1.54209,-1 -1.71004,-0.02 -1.71016,1 -1.71016,1 h -42.28985 v -13.50001 h 1.5"
-       id="path3-7-9-1-5-4-9-8-3"
-       sodipodi:nodetypes="ccscccsccccscccc"
-       inkscape:label="Wire" />
-    <path
        style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#e06c2a;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
        d="m 334.52334,281.59636 h -19.40665 v -45.47968 l 127,-0.2959 v 3.65757 c 0,0 -1,0.0123 -0.98498,1.31713 0.015,1.30485 0.98498,1.3212 0.98498,1.3212 v 12 c 0,0 -1,0 -1.04024,1.5 -0.0402,1.5 1.04024,1.5 1.04024,1.5 v 4"
        id="path3-1"
@@ -6906,15 +6700,31 @@
        inkscape:label="Wire" />
     <path
        style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#2a83e0;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
-       d="m 147.16346,384.61669 h -12.04678 v -85.50001 h 178.00001 l -0.40373,-65 h 137.40373 v 18"
+       d="m 147.16346,384.61669 h -12.04678 v -85.50001 h 178.00001 l -0.40373,-65 h 137.40373 v 5.10434 c 0,0 -1.55067,-0.0966 -1.54243,1.57446 0.008,1.67101 1.54243,1.50457 1.54243,1.50457 v 9.81663"
        id="path3-7-9-1-5-4-9-8-8"
-       sodipodi:nodetypes="ccccccc"
+       sodipodi:nodetypes="ccccccczcc"
        inkscape:label="Wire" />
     <path
        style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#e06c2a;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
-       d="m 315.11669,282.11668 v 20 H 140.11668 v 31.49999 h 7.5"
+       d="m 315.11669,282.11668 v 20 H 140.11668 v 30.44165 l 52,0.0583"
        id="path3-7-9-1-5-4-9-8-89"
        sodipodi:nodetypes="ccccc"
        inkscape:label="Wire" />
+    <path
+       style="font-variation-settings:normal;fill:none;fill-opacity:1;stroke:#46a500;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 202.02334,56.096355 -13.05096,5.7e-5 0.24722,15.823334 h 37.46927 c 0,0 0.10247,-1.015793 0.9568,-1.053071 0.85433,-0.03728 0.96824,1.053071 0.96824,1.053071 h 1.00139 c 0,0 0.11808,-1.085504 1.00139,-1.100025 0.88331,-0.01452 1.02229,1.100025 1.02229,1.100025 h 97.24461 c 0,0 0.88477,-1.407317 1.61642,-1.419728 0.73164,-0.01241 1.73149,1.419728 1.73149,1.419728 h 34.6747 c 0,0 0.24344,-1.419728 1.59381,-1.419728 1.35036,0 1.73018,1.419728 1.73018,1.419728 h 15.26982 V 113.50002 H 518.9555 V 72.55535 l -5.62385,-1.2e-5"
+       id="path3-7-9-1-5-4-8"
+       sodipodi:nodetypes="cccczcczcczcczcccccc"
+       inkscape:label="Wire"
+       transform="translate(132.5,231.5)" />
+    <path
+       style="fill:#000000;stroke:none;stroke-width:0.263;fill-opacity:1"
+       d="m 38,130 h 1.000001 a 1.0000015,1.0000015 44.999914 0 0 1.000003,1 h 0.999998 a 0.9999995,0.9999995 134.99997 0 0 0.999999,-1 v -3 0 a 0.999999,0.999999 45 0 0 -0.999999,-1 h -0.999998 -3e-6 a 1,1 135 0 0 -1,1 H 38 h -9e-6 A 0.999991,0.999991 135.00003 0 0 37,127.99999 v 0 1 1e-5 a 1,1 45 0 0 1,1 z"
+       id="path5-8-3-0-5-1-7-6-5"
+       sodipodi:nodetypes="ccccccccccccccccccc"
+       inkscape:label="Unused"
+       inkscape:path-effect="#path-effect12-0-82-0-0-7-2-34-4"
+       inkscape:original-d="m 37,130 h 1 1.000001 v 1 h 1.000003 0.999998 0.999999 v -1 -3 -1 h -0.999999 -0.999998 -1.000003 v 1 H 38 37.000001 L 37,127.99999 v 1 z"
+       transform="matrix(-1,0,0,1,371.52334,165.09641)" />
   </g>
 </svg>
