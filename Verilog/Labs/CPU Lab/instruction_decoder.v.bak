@@ -1,0 +1,16 @@
+module instruction_decoder (
+    input [15:0] instruction,
+    output [3:0] registerAddressA,
+    output [3:0] registerAddressB,
+    output [15:0] registerA,
+    output [15:0] registerB,
+    output [15:0] immediate
+    output [7:0] aluOpcode,
+)
+
+registerAddressA = instruction[3:0];
+registerAddressB = instruction[11:8];
+immediate = instruction[7:0];
+aluOpcode = {instruction[15:12], instruction[7-4]};
+
+endmodule

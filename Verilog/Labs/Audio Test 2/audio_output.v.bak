@@ -1,0 +1,59 @@
+module audio_output (
+    input  clk_50,       // 50MHz Clock
+    output aud_xck,      // 12.5 MHz (MCLK)
+    output aud_bclk,     // ~1.56 MHz
+    output aud_daclrck,  // 48.8 kHz
+    output aud_dacdat    // Serial data
+);
+
+    // 1. Clock Dividers
+    reg [1:0] mclk_count;
+    always @(posedge clk_50) begin
+        mclk_count <= mclk_count + 1'b1;
+    end
+    assign aud_xck = mclk_count[1]; 
+
+    reg [7:0] counter; 
+    always @(posedge aud_xck) begin
+        counter <= counter + 1'b1;
+    end
+
+    assign aud_bclk    = counter[2]; // MCLK / 8
+    assign aud_daclrck = counter[7]; // MCLK / 256
+
+    // 2. Square Wave Generation
+    // We flip the wave every 128 audio samples (~190Hz tone)
+    reg [15:0] audio_sample;
+    reg [6:0]  tone_divider;
+    
+    always @(posedge aud_daclrck) begin
+        tone_divider <= tone_divider + 1'b1;
+        if (tone_divider == 7'd0) begin
+            // Switch between positive and negative values for square wave
+            if (audio_sample == 16'h2000)
+                audio_sample <= 16'hE000;
+            else
+                audio_sample <= 16'h2000;
+        end
+    end
+
+    // 3. I2S Serial Output Logic
+    // I2S shifts MSB first, starting 1 BCLK cycle after LRCK changes.
+    wire [3:0] bit_idx;
+    assign bit_idx = 4'd15 - counter[6:3]; // Tracks bit 15 down to 0
+
+    reg dacdat_reg;
+    always @(negedge aud_bclk) begin
+        // counter[7] is LRCK. counter[6:3] counts 0-15 within each half-cycle.
+        // I2S requires a 1-BCLK delay, so we shift during counter[6:3] 
+        // values 0 to 15, but shifted slightly by the logic.
+        if (counter[6:3] < 4'd16) begin
+            dacdat_reg <= audio_sample[bit_idx];
+        end else begin
+            dacdat_reg <= 1'b0;
+        end
+    end
+    
+    assign aud_dacdat = dacdat_reg;
+
+endmodule

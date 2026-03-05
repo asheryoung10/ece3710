@@ -11,7 +11,7 @@ module audio_configurator (
     inout wire i2c_data
 );
 
-reg [23:0] commands[8:0];
+reg [23:0] commands[11110018:0];
 localparam commandCount = 1;
 initial begin
     // Reset Address: 7'b0001111 Data: RESET
