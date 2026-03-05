@@ -1,0 +1,101 @@
+`timescale 1ns/1ps
+
+module tb_cpu;
+
+    // Parameters
+    localparam CLK_PERIOD = 10;
+
+    // Inputs
+    reg clock;
+    reg reset;
+
+    // Outputs
+    wire [15:0] instructionRegisterContentsOutput;
+    wire [15:0] programCounterContentsOutput;
+    wire [15:0] programStateRegisterContentsOutput;
+    wire [15:0] aluResultOutput;
+    wire [4:0] aluFlagsOutput;
+
+    wire [2:0] controlUnitState;
+    wire [2:0] controlUnitNextState;
+
+    // Instantiate the CPU
+    cpu uut (
+        .clock(clock),
+        .reset(reset),
+        .instructionRegisterContentsOutput(instructionRegisterContentsOutput),
+        .programCounterContentsOutput(programCounterContentsOutput),
+        .programStateRegisterContentsOutput(programStateRegisterContentsOutput),
+        .aluResultOutput(aluResultOutput),
+        .aluFlagsOutput(aluFlagsOutput),
+        .controlUnitState(controlUnitState),
+        .controlUnitNextState(controlUnitNextState)
+    );
+
+    // ==================================================
+    // Clock task
+    // ==================================================
+    task pulse_clock;
+        input integer num_cycles;
+        integer i;
+        begin
+            for (i = 0; i < num_cycles; i = i + 1) begin
+                clock = 1'b0;
+                # (CLK_PERIOD/2);
+                clock = 1'b1;
+                # (CLK_PERIOD/2);
+            end
+        end
+    endtask
+
+    // ==================================================
+    // Reset task
+    // ==================================================
+    task apply_reset;
+        begin
+            reset = 1'b1;
+            pulse_clock(2);  // hold reset for 2 cycles
+            reset = 1'b0;
+        end
+    endtask
+
+    // ==================================================
+    // Task to print CPU state
+    // ==================================================
+    task print_cpu_state;
+        begin
+            $display(
+                "Time=%0t | IR=%h | PC=%h | PSR=%h | ALURes=%h | ALUFlags=%b | CU_State=%0d | CU_Next=%0d",
+                $time,
+                instructionRegisterContentsOutput,
+                programCounterContentsOutput,
+                programStateRegisterContentsOutput,
+                aluResultOutput,
+                aluFlagsOutput,
+                controlUnitState,
+                controlUnitNextState
+            );
+        end
+    endtask
+
+    // ==================================================
+    // Testbench stimulus
+    // ==================================================
+    initial begin
+        // Initialize
+        clock = 0;
+        reset = 0;
+
+        // Apply reset
+        apply_reset();
+
+        // Run for a few cycles and print state
+        repeat (20) begin
+            pulse_clock(1);
+            print_cpu_state();
+        end
+
+        $finish;
+    end
+
+endmodule

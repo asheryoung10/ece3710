@@ -1,0 +1,220 @@
+module cpu
+#(
+    parameter DATA_WIDTH = 16,
+    parameter MEMORY_ADDR_WIDTH = 10
+)
+(
+    input clock,
+    input reset,
+
+    output [DATA_WIDTH-1:0] instructionRegisterContentsOutput,
+    output [DATA_WIDTH-1:0] programCounterContentsOutput,
+    output [DATA_WIDTH-1:0] programStateRegisterContentsOutput,
+    output [DATA_WIDTH-1:0] aluResultOutput,
+    output [4:0] aluFlagsOutput,
+);
+
+//
+// Core modules
+//
+
+// Inputs
+wire memoryWriteEnable;
+wire [MEMORY_ADDR_WIDTH-1:0] memoryReadWriteAddress;
+// Outputs
+wire [DATA_WIDTH-1:0] memoryContents;
+memory memory_instance
+#(
+    .DATA_WIDTH(DATA_WIDTH)
+)
+(
+    // Inputs
+    .clock(clock),
+    .writeEnable(memoryWriteEnable),
+    .writeData(registerFileContentsB),
+    .readWriteAddress(memoryReadWriteAddress),
+    // Outputs
+    .contents(memoryContents)
+);
+
+// Inputs
+wire registerFileWriteEnable;
+wire [3:0] registerFileWriteAddress;
+wire [DATA_WIDTH-1:0] registerFileWriteData;
+wire [3:0] registerFileReadAddressA;
+wire [3:0] registerFileReadAddressB;
+//Outputs
+wire [DATA_WIDTH-1:0] registerFileContentsA;
+wire [DATA_WIDTH-1:0] registerFileContentsB;
+register_file register_file_instance
+#(
+    .DATA_WIDTH(DATA_WIDTH)
+)
+(
+    // Inputs
+    .clock(clock),
+    .reset(reset),
+    .writeEnable(registerFileWriteEnable),
+    .writeAddress(registerFileWriteAddress),
+    .writeData(registerFileWriteData),
+    .readAddressA(registerFileReadAddressA),
+    .readAddressB(registerFileReadAddressB),
+    // Outputs
+    .contentsA(registerFileContentsA),
+    .contentsB(registerFileContentsB)
+);
+
+// Inputs
+wire [DATA_WIDTH-1:0] aluA;
+wire [DATA_WIDTH-1:0] aluB;
+wire [7:0] aluOpcode;
+// Outputs
+wire [4:0] aluFlags;
+wire [DATA_WIDTH-1:0] aluResult;
+alu alu_instance
+#(
+    .DATA_WIDTH(DATA_WIDTH)
+)
+(
+    // Inputs
+    .A(aluA),
+    .B(aluB),
+    .Opcode(aluOpcode),
+    // Outputs
+    .Flags(aluFlags),
+    .Result(aluResult)
+);
+
+// Inputs
+wire instructionRegisterWriteEnable;
+wire [DATA_WIDTH-1:0] instructionRegisterWriteData;
+// Outputs
+wire [DATA_WIDTH-1:0] instructionRegisterContents;
+register instruction_register
+#(
+    .DATA_WIDTH(DATA_WIDTH)
+)
+(
+    // Inputs
+    .clock(clock),
+    .reset(reset),
+    //Outputs
+    .writeEnable(instructionRegisterWriteEnable),
+    .writeData(instructionRegisterWriteData),
+    .contents(instructionRegisterContents)
+);
+
+// Inputs
+wire programStateRegisterWriteEnable;
+wire [DATA_WIDTH-1:0] programStateRegisterWriteData;
+// Outputs
+wire [DATA_WIDTH-1:0] programStateRegisterContents;
+register program_state_register
+#(
+    .DATA_WIDTH(DATA_WIDTH)
+)
+(
+    // Inputs
+    .clock(clock),
+    .reset(reset),
+    //Outputs
+    .writeEnable(programStateRegisterWriteEnable),
+    .writeData(programStateRegisterWriteData),
+    .contents(programStateRegisterContents)
+);
+
+// Inputs
+wire programCounterWriteEnable;
+wire [DATA_WIDTH-1:0] programCounterWriteData;
+// Outputs
+wire [DATA_WIDTH-1:0] programCounterContents;
+register program_counter
+#(
+    .DATA_WIDTH(DATA_WIDTH)
+)
+(
+    // Inputs
+    .clock(clock),
+    .reset(reset),
+    //Outputs
+    .writeEnable(programCounterWriteEnable),
+    .writeData(programCounterWriteData),
+    .contents(programCounterContents)
+);
+
+// Output
+wire instructionDecoderImmediate;
+instruction_decoder instruction_decoder_instance
+(
+    // Inputs
+    .instruction(instructionRegisterContents),
+    // Outputs
+    .registerAddressA(registerFileReadAddressA),
+    .registerAddressB(registerFileReadAddressB),
+    .immediate(instructionDecoderImmediate),
+    .aluOpcode(aluOpcode)
+);
+
+
+//
+// Muxes
+//
+
+// Inputs
+wire aluSelectImmediate;
+mux2 alu_input_mux
+#(
+    .DATA_WIDTH(DATA_WIDTH)
+)
+(
+    // Inputs
+    .select(aluSelectImmediate),
+    .selection0(registerFileContentsA),
+    .selection1(instructionDecoderImmediate),
+    // Outputs
+    .selection(aluA)
+);
+
+
+wire memorySelectReadWriteAddress;
+mux2 memory_select_read_write_address
+#(
+    .DATA_WIDTH(DATA_WIDTH)
+)
+(
+    // Inputs
+    .select(memorySelectReadWriteAddress),
+    .selection0(programCounterContents),
+    .selection1(registerFileContentsA),
+    // Outputs
+    .selection(aluA)
+);
+
+
+
+// Inputs
+wire [1:0] registerFileSelectInput
+mux4 register_file_input_mux
+#(
+    .DATA_WIDTH(DATA_WIDTH)
+)
+(
+    // Inputs
+    .select(registerFileSelectInput),
+    .selection0(aluResult),
+    .selection1(registerFileContentsA),
+    .selection2(immediate),
+    .selection3(memoryContents),
+    // Outputs
+    .selection(registerFileWriteData)
+);
+
+//
+// Module Outputs
+//
+instructionRegisterContentsOutput = instructionRegisterContents;
+programCounterContentsOutput = programCounterContents;
+programStateRegisterContentsOutput = programStateRegisterContents;
+aluResultOutput = aluResult;
+aluFlagsOutput = aluFlags;
+endmodule

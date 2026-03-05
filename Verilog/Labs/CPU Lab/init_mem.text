@@ -1,0 +1,13 @@
+5010 // Set register 0 to 16, register 0 will be write address; Register 1 has the offset.
+02d0		// move 0 to 2
+0251 		//then add 1 to 2
+4142    // store, 2 is  address, 1 is value
+5101			//1++
+03d1			// move 1 to 3
+9310			//set flags z if 3 == 16
+c1fa			// subtract 6 if equal
+df0c // set reg 15 to 21
+43Cf 
+0000		//done		
+0000
+0000

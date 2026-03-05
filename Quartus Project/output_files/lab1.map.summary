@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Fri Feb 27 10:17:14 2026
+Analysis & Synthesis Status : Successful - Wed Mar  4 17:18:23 2026
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : lab1
-Top-level Entity Name : top
+Top-level Entity Name : doodle_jump
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 96
-Total pins : 19
+Total registers : 179
+Total pins : 102
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

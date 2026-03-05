@@ -4,79 +4,243 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "AUD_XCK",
+					"name" : "leds[0]",
 					"strict" : false
 				},
 				{
-					"name" : "AUD_BCLK",
+					"name" : "leds[1]",
 					"strict" : false
 				},
 				{
-					"name" : "AUD_DACLRCK",
+					"name" : "leds[2]",
 					"strict" : false
 				},
 				{
-					"name" : "AUD_DACDAT",
+					"name" : "hex0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "error",
+					"name" : "hex0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "busy",
+					"name" : "hex0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "done",
+					"name" : "hex0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "FPGA_I2C_SCLK",
+					"name" : "hex0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "FPGA_I2C_SDAT",
+					"name" : "hex0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "RESET_N",
+					"name" : "hex0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "configure_N",
+					"name" : "hex1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
+					"name" : "hex1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "enableOutput",
+					"name" : "hex1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "pitch[0]",
+					"name" : "vga_clock",
 					"strict" : false
 				},
 				{
-					"name" : "pitch[1]",
+					"name" : "vga_blank_n",
 					"strict" : false
 				},
 				{
-					"name" : "selectedCommand[0]",
+					"name" : "vga_hs",
 					"strict" : false
 				},
 				{
-					"name" : "selectedCommand[1]",
+					"name" : "vga_vs",
 					"strict" : false
 				},
 				{
-					"name" : "selectedCommand[2]",
+					"name" : "vga_red[0]",
 					"strict" : false
 				},
 				{
-					"name" : "selectedCommand[3]",
+					"name" : "vga_red[1]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_red[2]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_red[3]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_red[4]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_red[5]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_red[6]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_red[7]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_green[0]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_green[1]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_green[2]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_green[3]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_green[4]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_green[5]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_green[6]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_green[7]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_blue[0]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_blue[1]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_blue[2]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_blue[3]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_blue[4]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_blue[5]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_blue[6]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_blue[7]",
+					"strict" : false
+				},
+				{
+					"name" : "i2c_clock",
+					"strict" : false
+				},
+				{
+					"name" : "i2c_data",
+					"strict" : false
+				},
+				{
+					"name" : "audio_masterClock",
+					"strict" : false
+				},
+				{
+					"name" : "audio_leftRightClock",
+					"strict" : false
+				},
+				{
+					"name" : "audio_bitClock",
+					"strict" : false
+				},
+				{
+					"name" : "audio_data",
+					"strict" : false
+				},
+				{
+					"name" : "switches[0]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[1]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[2]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[3]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[4]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[5]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[6]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[7]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[8]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[9]",
+					"strict" : false
+				},
+				{
+					"name" : "push_buttons[0]",
+					"strict" : false
+				},
+				{
+					"name" : "push_buttons[1]",
+					"strict" : false
+				},
+				{
+					"name" : "systemClock50MHz",
 					"strict" : false
 				}
 			]
