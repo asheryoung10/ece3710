@@ -18,7 +18,7 @@ module glyph_addr_gen
 );
 
 
-localparam BG_COLOR = 24'hFFFFFF;
+localparam BG_COLOR = 24'h00000000;
 
 
 // multiple fetches if multiple data needed
@@ -46,9 +46,9 @@ wire [(LOG2_DISPLAY_HEIGHT-1):0] mario_y_off;
 assign mario_x_off = x_pos - mario_x_pos;
 assign mario_y_off = y_pos - mario_y_pos;
 
-localparam MARIO_GLYPH_WIDTH = 17;
+localparam MARIO_GLYPH_WIDTH = 32;
 localparam MARIO_GLYPH_HEIGHT = 32;
-localparam MARIO_GLYPH_SIZE = 544;	// MARIO_GLYPH_WIDTH * MARIO_GLYPH_HEIGHT
+localparam MARIO_GLYPH_SIZE = 1024;	// MARIO_GLYPH_WIDTH * MARIO_GLYPH_HEIGHT
 
 
 always @(posedge clk, negedge rst) begin

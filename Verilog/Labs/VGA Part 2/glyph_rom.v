@@ -24,7 +24,7 @@ reg [(DATA_WIDTH-1):0] rom [((2**ADDR_WIDTH)-1):0];
 
 initial
 begin
-	$readmemh("glyphs.hex", rom);
+	$readmemh("glyphsCustom.hex", rom);
 end
 
 always @(posedge clk)
