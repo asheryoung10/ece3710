@@ -33,8 +33,8 @@ assign reset = ~push_buttons[0];
 assign hex0 = switches[6:0];
 assign hex1 = switches [9:7];
 
-hard_coded_vga hard_coded_vga_instance (
-	.clk(systemClock50MHz),
+vga vga_instance (
+	.clk50(systemClock50MHz),
 	.rstInv(~reset),
 	.vga_clk(vga_clock),
 	.vga_blank_n(vga_blank_n),
@@ -42,7 +42,10 @@ hard_coded_vga hard_coded_vga_instance (
 	.vga_hs(vga_hs),
 	.r(vga_red),
 	.g(vga_green),
-	.b(vga_blue)
+	.b(vga_blue),
+	.playerX(switches[5:0]),
+	.playerY(0),
+	.playerAnimationIndex(switches[9:6]),
 );
 
 cpu cpu_instance (

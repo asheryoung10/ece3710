@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab1
-Wed Mar  4 17:18:23 2026
+Mon Mar 16 16:44:08 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -21,24 +21,24 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
  13. Removed Registers Triggering Further Register Optimizations
  14. General Register Statistics
  15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Parameter Settings for User Entity Instance: hard_coded_vga:hard_coded_vga_instance|vga_controller:vga_ctrl
- 17. Parameter Settings for User Entity Instance: hard_coded_vga:hard_coded_vga_instance|hard_coded_bitgen:blockgen_inst
- 18. Parameter Settings for User Entity Instance: cpu:cpu_instance
- 19. Parameter Settings for User Entity Instance: cpu:cpu_instance|memory:memory_instance
- 20. Parameter Settings for User Entity Instance: cpu:cpu_instance|register_file:register_file_instance
- 21. Parameter Settings for User Entity Instance: cpu:cpu_instance|alu:alu_instance
- 22. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:instruction_register
- 23. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_state_register
- 24. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_counter
- 25. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:alu_input_mux
- 26. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:memory_select_read_write_address_mux
- 27. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux4:register_file_input_mux
- 28. Parameter Settings for User Entity Instance: audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen
- 29. Port Connectivity Checks: "audio_unit:audio_unit_instance|audio_output:dac_driver"
- 30. Port Connectivity Checks: "audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance"
- 31. Port Connectivity Checks: "audio_unit:audio_unit_instance"
- 32. Port Connectivity Checks: "cpu:cpu_instance|register:program_state_register"
- 33. Port Connectivity Checks: "cpu:cpu_instance"
+ 16. Parameter Settings for User Entity Instance: vga:vga_instance
+ 17. Parameter Settings for User Entity Instance: cpu:cpu_instance
+ 18. Parameter Settings for User Entity Instance: cpu:cpu_instance|memory:memory_instance
+ 19. Parameter Settings for User Entity Instance: cpu:cpu_instance|register_file:register_file_instance
+ 20. Parameter Settings for User Entity Instance: cpu:cpu_instance|alu:alu_instance
+ 21. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:instruction_register
+ 22. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_state_register
+ 23. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_counter
+ 24. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:alu_input_mux
+ 25. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:memory_select_read_write_address_mux
+ 26. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux4:register_file_input_mux
+ 27. Parameter Settings for User Entity Instance: audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen
+ 28. Port Connectivity Checks: "audio_unit:audio_unit_instance|audio_output:dac_driver"
+ 29. Port Connectivity Checks: "audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance"
+ 30. Port Connectivity Checks: "audio_unit:audio_unit_instance"
+ 31. Port Connectivity Checks: "cpu:cpu_instance|register:program_state_register"
+ 32. Port Connectivity Checks: "cpu:cpu_instance"
+ 33. Port Connectivity Checks: "vga:vga_instance"
  34. Post-Synthesis Netlist Statistics for Top Partition
  35. Elapsed Time Per Partition
  36. Analysis & Synthesis Messages
@@ -68,13 +68,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Mar  4 17:18:23 2026          ;
+; Analysis & Synthesis Status     ; Successful - Mon Mar 16 16:44:08 2026          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; lab1                                           ;
 ; Top-level Entity Name           ; doodle_jump                                    ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 179                                            ;
+; Total registers                 ; 199                                            ;
 ; Total pins                      ; 102                                            ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0                                              ;
@@ -197,6 +197,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path                                     ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                         ; Library ;
 +----------------------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
+; ../Verilog/Doodle Jump/vga/playerMemory.v                            ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v                ;         ;
+; ../Verilog/Doodle Jump/vga/tileMemory.v                              ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/tileMemory.v                  ;         ;
 ; ../Verilog/Doodle Jump/cpu/register_file.v                           ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register_file.v               ;         ;
 ; ../Verilog/Doodle Jump/cpu/register.v                                ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register.v                    ;         ;
 ; ../Verilog/Doodle Jump/cpu/mux4.v                                    ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux4.v                        ;         ;
@@ -210,11 +212,7 @@ https://fpgasoftware.intel.com/eula.
 ; ../Verilog/Doodle Jump/audio/i2c_controller.v                        ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v            ;         ;
 ; ../Verilog/Doodle Jump/audio/audio_output.v                          ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v              ;         ;
 ; ../Verilog/Doodle Jump/audio/audio_configurator_select.v             ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v ;         ;
-; ../Verilog/Doodle Jump/vga/block_mover.v                             ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/block_mover.v                 ;         ;
-; ../Verilog/Doodle Jump/vga/clk_divider.v                             ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/clk_divider.v                 ;         ;
-; ../Verilog/Doodle Jump/vga/hard_coded_bitgen.v                       ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_bitgen.v           ;         ;
 ; ../Verilog/Doodle Jump/vga/hard_coded_vga.v                          ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v              ;         ;
-; ../Verilog/Doodle Jump/vga/vga_controller.v                          ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/vga_controller.v              ;         ;
 ; ../Verilog/Doodle Jump/doodle_jump.v                                 ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v                     ;         ;
 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/states.vh     ; yes             ; Auto-Found Unspecified File  ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/states.vh                     ;         ;
 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/opcodes.vh    ; yes             ; Auto-Found Unspecified File  ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/opcodes.vh                    ;         ;
@@ -228,25 +226,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------------------+
 ; Resource                                    ; Usage                 ;
 +---------------------------------------------+-----------------------+
-; Estimate of Logic utilization (ALMs needed) ; 186                   ;
+; Estimate of Logic utilization (ALMs needed) ; 138                   ;
 ;                                             ;                       ;
-; Combinational ALUT usage for logic          ; 306                   ;
+; Combinational ALUT usage for logic          ; 234                   ;
 ;     -- 7 input functions                    ; 1                     ;
-;     -- 6 input functions                    ; 62                    ;
-;     -- 5 input functions                    ; 39                    ;
-;     -- 4 input functions                    ; 33                    ;
-;     -- <=3 input functions                  ; 171                   ;
+;     -- 6 input functions                    ; 36                    ;
+;     -- 5 input functions                    ; 45                    ;
+;     -- 4 input functions                    ; 32                    ;
+;     -- <=3 input functions                  ; 120                   ;
 ;                                             ;                       ;
-; Dedicated logic registers                   ; 179                   ;
+; Dedicated logic registers                   ; 199                   ;
 ;                                             ;                       ;
 ; I/O pins                                    ; 102                   ;
 ;                                             ;                       ;
 ; Total DSP Blocks                            ; 0                     ;
 ;                                             ;                       ;
 ; Maximum fan-out node                        ; push_buttons[0]~input ;
-; Maximum fan-out                             ; 75                    ;
-; Total fan-out                               ; 1788                  ;
-; Average fan-out                             ; 2.57                  ;
+; Maximum fan-out                             ; 87                    ;
+; Total fan-out                               ; 1598                  ;
+; Average fan-out                             ; 2.49                  ;
 +---------------------------------------------+-----------------------+
 
 
@@ -255,17 +253,15 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                   ; Entity Name               ; Library Name ;
 +---------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |doodle_jump                                      ; 306 (0)             ; 179 (0)                   ; 0                 ; 0          ; 102  ; 0            ; |doodle_jump                                                                                                          ; doodle_jump               ; work         ;
+; |doodle_jump                                      ; 234 (0)             ; 199 (0)                   ; 0                 ; 0          ; 102  ; 0            ; |doodle_jump                                                                                                          ; doodle_jump               ; work         ;
 ;    |audio_unit:audio_unit_instance|               ; 160 (1)             ; 126 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance                                                                           ; audio_unit                ; work         ;
 ;       |audio_configurator_select:i2c_conf|        ; 94 (36)             ; 72 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf                                        ; audio_configurator_select ; work         ;
 ;          |i2c_controller:i2c_controller_instance| ; 58 (58)             ; 39 (39)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance ; i2c_controller            ; work         ;
 ;       |audio_output:dac_driver|                   ; 65 (11)             ; 54 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_output:dac_driver                                                   ; audio_output              ; work         ;
 ;          |note_generator:note_gen|                ; 54 (54)             ; 42 (42)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen                           ; note_generator            ; work         ;
-;    |hard_coded_vga:hard_coded_vga_instance|       ; 146 (0)             ; 53 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|hard_coded_vga:hard_coded_vga_instance                                                                   ; hard_coded_vga            ; work         ;
-;       |block_mover:block_mov|                     ; 38 (38)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|hard_coded_vga:hard_coded_vga_instance|block_mover:block_mov                                             ; block_mover               ; work         ;
-;       |clk_divider:clk_div|                       ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|hard_coded_vga:hard_coded_vga_instance|clk_divider:clk_div                                               ; clk_divider               ; work         ;
-;       |hard_coded_bitgen:blockgen_inst|           ; 77 (77)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|hard_coded_vga:hard_coded_vga_instance|hard_coded_bitgen:blockgen_inst                                   ; hard_coded_bitgen         ; work         ;
-;       |vga_controller:vga_ctrl|                   ; 30 (30)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|hard_coded_vga:hard_coded_vga_instance|vga_controller:vga_ctrl                                           ; vga_controller            ; work         ;
+;    |vga:vga_instance|                             ; 74 (59)             ; 73 (45)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance                                                                                         ; vga                       ; work         ;
+;       |playerMemory:playerMem_inst|               ; 14 (14)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|playerMemory:playerMem_inst                                                             ; playerMemory              ; work         ;
+;       |tileMemory:tileMem_inst|                   ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|tileMemory:tileMem_inst                                                                 ; tileMemory                ; work         ;
 +---------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -326,6 +322,10 @@ Encoding Type:  One-Hot
 ; Register name                                                                                                                  ; Reason for Removal                                                                                      ;
 +--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|drum_generator:drum_gen|drum_sample[0..15]                              ; Lost fanout                                                                                             ;
+; vga:vga_instance|playerMemory:playerMem_inst|g_next[0..3]                                                                      ; Stuck at GND due to stuck port data_in                                                                  ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[0..7]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; vga:vga_instance|playerMemory:playerMem_inst|playerPixelG[0..3]                                                                ; Stuck at GND due to stuck port data_in                                                                  ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[0..7]                                                                     ; Stuck at GND due to stuck port data_in                                                                  ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[6,7]                                             ; Stuck at GND due to stuck port data_in                                                                  ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[4,5]                                             ; Stuck at VCC due to stuck port data_in                                                                  ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[3]                                               ; Stuck at GND due to stuck port data_in                                                                  ;
@@ -341,7 +341,13 @@ Encoding Type:  One-Hot
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[6,7]   ; Stuck at GND due to stuck port data_in                                                                  ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedSecondByte[6]    ; Stuck at GND due to stuck port data_in                                                                  ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen|note_data[1..15]                                ; Merged with audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen|note_data[0] ;
+; vga:vga_instance|tileMemory:tileMem_inst|g_next[0..7]                                                                          ; Merged with vga:vga_instance|tileMemory:tileMem_inst|b_next[0]                                          ;
+; vga:vga_instance|tileMemory:tileMem_inst|b_next[1..7]                                                                          ; Merged with vga:vga_instance|tileMemory:tileMem_inst|b_next[0]                                          ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[0..7]                                                                     ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[0]                                     ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[1..7]                                                                     ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[0]                                     ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|final_audio_data[1..15]                                                 ; Merged with audio_unit:audio_unit_instance|audio_output:dac_driver|final_audio_data[0]                  ;
+; vga:vga_instance|playerMemory:playerMem_inst|playerPixelR[1..7]                                                                ; Merged with vga:vga_instance|playerMemory:playerMem_inst|playerPixelR[0]                                ;
+; vga:vga_instance|playerMemory:playerMem_inst|r_next[1..7]                                                                      ; Merged with vga:vga_instance|playerMemory:playerMem_inst|r_next[0]                                      ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen|tone_limit[9..31]                               ; Stuck at GND due to stuck port data_in                                                                  ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[6]        ; Stuck at GND due to stuck port data_in                                                                  ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep~6                                                ; Lost fanout                                                                                             ;
@@ -355,7 +361,7 @@ Encoding Type:  One-Hot
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentState~10       ; Lost fanout                                                                                             ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentState~12       ; Lost fanout                                                                                             ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep.010                                              ; Lost fanout                                                                                             ;
-; Total Number of Removed Registers = 103                                                                                        ;                                                                                                         ;
+; Total Number of Removed Registers = 171                                                                                        ;                                                                                                         ;
 +--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 
 
@@ -366,25 +372,49 @@ Encoding Type:  One-Hot
 +----------------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[6] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[6], ;
 ;                                                                                  ; due to stuck port data_in ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[6]       ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[7] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[7]  ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[7]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[7]                                                                       ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[5] ; Stuck at VCC              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[5]  ;
-;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[4] ; Stuck at VCC              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[4]  ;
-;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[3] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[3]  ;
-;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[2] ; Stuck at VCC              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[2]  ;
-;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[1] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[1]  ;
-;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[0] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[0]  ;
-;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|firstByte[7]   ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[7]    ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|secondByte[6]  ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedSecondByte[6]   ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|firstByte[6]   ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[6]    ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|secondByte[6]  ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedSecondByte[6]   ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|firstByte[7]   ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[7]    ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[0] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[0]  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[1] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[1]  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[2] ; Stuck at VCC              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[2]  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[3] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[3]  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[4] ; Stuck at VCC              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[4]  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[5] ; Stuck at VCC              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[5]  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[7] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[7]  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|playerMemory:playerMem_inst|g_next[0]                           ; Stuck at GND              ; vga:vga_instance|playerMemory:playerMem_inst|playerPixelG[0]                                                                  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[6]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[6]                                                                       ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[5]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[5]                                                                       ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[4]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[4]                                                                       ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[3]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[3]                                                                       ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[2]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[2]                                                                       ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[1]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[1]                                                                       ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[0]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[0]                                                                       ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|playerMemory:playerMem_inst|g_next[3]                           ; Stuck at GND              ; vga:vga_instance|playerMemory:playerMem_inst|playerPixelG[3]                                                                  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|playerMemory:playerMem_inst|g_next[2]                           ; Stuck at GND              ; vga:vga_instance|playerMemory:playerMem_inst|playerPixelG[2]                                                                  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|playerMemory:playerMem_inst|g_next[1]                           ; Stuck at GND              ; vga:vga_instance|playerMemory:playerMem_inst|playerPixelG[1]                                                                  ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
 +----------------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
@@ -394,12 +424,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 179   ;
-; Number of registers using Synchronous Clear  ; 96    ;
+; Total registers                              ; 199   ;
+; Number of registers using Synchronous Clear  ; 89    ;
 ; Number of registers using Synchronous Load   ; 3     ;
-; Number of registers using Asynchronous Clear ; 54    ;
+; Number of registers using Asynchronous Clear ; 68    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 64    ;
+; Number of registers using Clock Enable       ; 54    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -409,55 +439,33 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentCommandIndex[3]                                     ;
-; 3:1                ; 21 bits   ; 42 LEs        ; 0 LEs                ; 42 LEs                 ; Yes        ; |doodle_jump|hard_coded_vga:hard_coded_vga_instance|block_mover:block_mov|counter[5]                                                      ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByteIndex[2] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentCommandIndex[2]                                     ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByteIndex[0] ;
 ; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentBitIndex[1]  ;
-; 12:1               ; 6 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[0]      ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep.000                                            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |doodle_jump|hard_coded_vga:hard_coded_vga_instance|hard_coded_bitgen:blockgen_inst|rgb[8]                                                ;
+; 12:1               ; 6 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[5]      ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep.010                                            ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentStep.0001    ;
 ; 10:1               ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|Selector9           ;
 ; 17:1               ; 2 bits    ; 22 LEs        ; 8 LEs                ; 14 LEs                 ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|Selector11          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: hard_coded_vga:hard_coded_vga_instance|vga_controller:vga_ctrl ;
-+----------------+------------+-------------------------------------------------------------------------------+
-; Parameter Name ; Value      ; Type                                                                          ;
-+----------------+------------+-------------------------------------------------------------------------------+
-; H_SYNC         ; 0001100000 ; Unsigned Binary                                                               ;
-; H_BACK_PORCH   ; 0000110000 ; Unsigned Binary                                                               ;
-; H_DISPLAY      ; 1010000000 ; Unsigned Binary                                                               ;
-; H_FRONT_PORCH  ; 0000010000 ; Unsigned Binary                                                               ;
-; H_TOTAL        ; 1100100000 ; Unsigned Binary                                                               ;
-; V_SYNC         ; 0000000010 ; Unsigned Binary                                                               ;
-; V_BACK_PORCH   ; 0000100001 ; Unsigned Binary                                                               ;
-; V_DISPLAY      ; 0111100000 ; Unsigned Binary                                                               ;
-; V_FRONT_PORCH  ; 0000001010 ; Unsigned Binary                                                               ;
-; V_TOTAL        ; 1000001101 ; Unsigned Binary                                                               ;
-+----------------+------------+-------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: hard_coded_vga:hard_coded_vga_instance|hard_coded_bitgen:blockgen_inst ;
-+----------------+------------+---------------------------------------------------------------------------------------+
-; Parameter Name ; Value      ; Type                                                                                  ;
-+----------------+------------+---------------------------------------------------------------------------------------+
-; CORNERS_SIZE   ; 10         ; Signed Integer                                                                        ;
-; H_SYNC         ; 0001100000 ; Unsigned Binary                                                                       ;
-; H_BACK_PORCH   ; 0000110000 ; Unsigned Binary                                                                       ;
-; H_DISPLAY      ; 1010000000 ; Unsigned Binary                                                                       ;
-; H_FRONT_PORCH  ; 0000010000 ; Unsigned Binary                                                                       ;
-; H_TOTAL        ; 1100100000 ; Unsigned Binary                                                                       ;
-; V_SYNC         ; 0000000010 ; Unsigned Binary                                                                       ;
-; V_BACK_PORCH   ; 0000100001 ; Unsigned Binary                                                                       ;
-; V_DISPLAY      ; 0111100000 ; Unsigned Binary                                                                       ;
-; V_FRONT_PORCH  ; 0000001010 ; Unsigned Binary                                                                       ;
-; V_TOTAL        ; 1000001101 ; Unsigned Binary                                                                       ;
-+----------------+------------+---------------------------------------------------------------------------------------+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga_instance ;
++----------------+------------+---------------------------------+
+; Parameter Name ; Value      ; Type                            ;
++----------------+------------+---------------------------------+
+; H_SYNC         ; 0001100000 ; Unsigned Binary                 ;
+; H_BACK_PORCH   ; 0000110000 ; Unsigned Binary                 ;
+; H_DISPLAY      ; 1010000000 ; Unsigned Binary                 ;
+; H_FRONT_PORCH  ; 0000010000 ; Unsigned Binary                 ;
+; H_TOTAL        ; 1100100000 ; Unsigned Binary                 ;
+; V_SYNC         ; 0000000010 ; Unsigned Binary                 ;
+; V_BACK_PORCH   ; 0000100001 ; Unsigned Binary                 ;
+; V_DISPLAY      ; 0111100000 ; Unsigned Binary                 ;
+; V_FRONT_PORCH  ; 0000001010 ; Unsigned Binary                 ;
+; V_TOTAL        ; 1000001101 ; Unsigned Binary                 ;
++----------------+------------+---------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -629,41 +637,51 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga:vga_instance"                                                                                                                                                                           ;
++---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                                                                                                                                             ;
++---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; playerX       ; Input ; Warning  ; Input port expression (6 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "playerX[9..6]" will be connected to GND.                                    ;
+; playerY       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; playerY[9..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 179                         ;
-;     CLR               ; 10                          ;
-;     CLR SCLR          ; 18                          ;
+; arriav_ff             ; 199                         ;
+;     CLR               ; 22                          ;
+;     CLR SCLR          ; 30                          ;
 ;     ENA               ; 30                          ;
 ;     ENA CLR           ; 6                           ;
-;     ENA CLR SCLR      ; 20                          ;
+;     ENA CLR SCLR      ; 10                          ;
 ;     ENA SCLR          ; 5                           ;
 ;     ENA SLD           ; 3                           ;
-;     SCLR              ; 53                          ;
-;     plain             ; 34                          ;
+;     SCLR              ; 44                          ;
+;     plain             ; 49                          ;
 ; arriav_io_obuf        ; 6                           ;
-; arriav_lcell_comb     ; 308                         ;
-;     arith             ; 127                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 122                         ;
-;         2 data inputs ; 3                           ;
+; arriav_lcell_comb     ; 236                         ;
+;     arith             ; 76                          ;
+;         1 data inputs ; 74                          ;
+;         2 data inputs ; 2                           ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 180                         ;
+;     normal            ; 159                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 7                           ;
 ;         2 data inputs ; 13                          ;
 ;         3 data inputs ; 25                          ;
-;         4 data inputs ; 33                          ;
-;         5 data inputs ; 39                          ;
-;         6 data inputs ; 62                          ;
+;         4 data inputs ; 32                          ;
+;         5 data inputs ; 45                          ;
+;         6 data inputs ; 36                          ;
 ; boundary_port         ; 102                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.20                        ;
-; Average LUT depth     ; 2.59                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.04                        ;
 +-----------------------+-----------------------------+
 
 
@@ -682,10 +700,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed Mar  4 17:18:15 2026
+    Info: Processing started: Mon Mar 16 16:44:00 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v
+    Info (12023): Found entity 1: playerMemory File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/tileMemory.v
+    Info (12023): Found entity 1: tileMemory File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/tileMemory.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/top.v
     Info (12023): Found entity 1: top File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/top.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/tb_cpu.v
@@ -732,10 +754,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/u
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_bitgen.v
     Info (12023): Found entity 1: hard_coded_bitgen File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_bitgen.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v
-    Info (12023): Found entity 1: hard_coded_vga File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/vga_controller.v
-    Info (12023): Found entity 1: vga_controller File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/vga_controller.v Line: 1
-Warning (10275): Verilog HDL Module Instantiation warning at doodle_jump.v(51): ignored dangling comma in List of Port Connections File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 51
+    Info (12023): Found entity 1: vga File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 2
+Warning (12019): Can't analyze file -- file ../Verilog/Doodle Jump/vga/vga_controller.v is missing
+Warning (10275): Verilog HDL Module Instantiation warning at doodle_jump.v(49): ignored dangling comma in List of Port Connections File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 49
+Warning (10275): Verilog HDL Module Instantiation warning at doodle_jump.v(54): ignored dangling comma in List of Port Connections File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 54
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v
     Info (12023): Found entity 1: doodle_jump File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at doodle_jump.v(32): created implicit net for "reset" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 32
@@ -746,17 +768,13 @@ Warning (10034): Output port "hex3" at doodle_jump.v(11) has no driver File: /ho
 Warning (10034): Output port "hex4" at doodle_jump.v(12) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 12
 Warning (10034): Output port "hex5" at doodle_jump.v(13) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 13
 Warning (10034): Output port "vga_sync_n" at doodle_jump.v(27) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 27
-Info (12128): Elaborating entity "hard_coded_vga" for hierarchy "hard_coded_vga:hard_coded_vga_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 46
-Info (12128): Elaborating entity "clk_divider" for hierarchy "hard_coded_vga:hard_coded_vga_instance|clk_divider:clk_div" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 23
-Info (12128): Elaborating entity "vga_controller" for hierarchy "hard_coded_vga:hard_coded_vga_instance|vga_controller:vga_ctrl" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 33
-Warning (10230): Verilog HDL assignment warning at vga_controller.v(43): truncated value with size 32 to match size of target (10) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/vga_controller.v Line: 43
-Warning (10230): Verilog HDL assignment warning at vga_controller.v(46): truncated value with size 32 to match size of target (10) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/vga_controller.v Line: 46
-Info (12128): Elaborating entity "block_mover" for hierarchy "hard_coded_vga:hard_coded_vga_instance|block_mover:block_mov" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 39
-Warning (10230): Verilog HDL assignment warning at block_mover.v(20): truncated value with size 32 to match size of target (21) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/block_mover.v Line: 20
-Warning (10230): Verilog HDL assignment warning at block_mover.v(32): truncated value with size 32 to match size of target (10) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/block_mover.v Line: 32
-Info (12128): Elaborating entity "hard_coded_bitgen" for hierarchy "hard_coded_vga:hard_coded_vga_instance|hard_coded_bitgen:blockgen_inst" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 47
-Warning (10230): Verilog HDL assignment warning at hard_coded_bitgen.v(30): truncated value with size 32 to match size of target (10) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_bitgen.v Line: 30
-Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 51
+Info (12128): Elaborating entity "vga" for hierarchy "vga:vga_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 49
+Warning (10230): Verilog HDL assignment warning at hard_coded_vga.v(62): truncated value with size 32 to match size of target (10) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 62
+Warning (10230): Verilog HDL assignment warning at hard_coded_vga.v(64): truncated value with size 32 to match size of target (10) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 64
+Info (12128): Elaborating entity "tileMemory" for hierarchy "vga:vga_instance|tileMemory:tileMem_inst" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 105
+Info (12128): Elaborating entity "playerMemory" for hierarchy "vga:vga_instance|playerMemory:playerMem_inst" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 122
+Warning (10230): Verilog HDL assignment warning at playerMemory.v(22): truncated value with size 32 to match size of target (8) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v Line: 22
+Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 54
 Info (12128): Elaborating entity "memory" for hierarchy "cpu:cpu_instance|memory:memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 93
 Warning (10850): Verilog HDL warning at memory.v(18): number of words (13) in memory file does not match the number of elements in the address range [0:1023] File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/memory.v Line: 18
 Info (12128): Elaborating entity "register_file" for hierarchy "cpu:cpu_instance|register_file:register_file_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 113
@@ -780,7 +798,7 @@ Info (12128): Elaborating entity "control_unit" for hierarchy "cpu:cpu_instance|
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(56): incomplete case statement has no default case item File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 56
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(76): incomplete case statement has no default case item File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 76
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(41): incomplete case statement has no default case item File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 41
-Info (12128): Elaborating entity "audio_unit" for hierarchy "audio_unit:audio_unit_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 73
+Info (12128): Elaborating entity "audio_unit" for hierarchy "audio_unit:audio_unit_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 76
 Info (12128): Elaborating entity "audio_configurator_select" for hierarchy "audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v Line: 38
 Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(124): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 124
 Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(125): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 125
@@ -794,7 +812,7 @@ Info (10264): Verilog HDL Case Statement information at i2c_controller.v(147): a
 Info (12128): Elaborating entity "audio_output" for hierarchy "audio_unit:audio_unit_instance|audio_output:dac_driver" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v Line: 49
 Info (12128): Elaborating entity "note_generator" for hierarchy "audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 33
 Info (12128): Elaborating entity "drum_generator" for hierarchy "audio_unit:audio_unit_instance|audio_output:dac_driver|drum_generator:drum_gen" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 42
-Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "audio_masterClock" and its non-tri-state driver. File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 18
     Warning (13035): Inserted always-enabled tri-state buffer between "audio_leftRightClock" and its non-tri-state driver. File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 19
@@ -853,15 +871,15 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "push_buttons[2]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 6
     Warning (15610): No output dependent on input pin "push_buttons[3]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 6
-Info (21057): Implemented 426 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 386 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 81 output pins
     Info (21060): Implemented 6 bidirectional pins
-    Info (21061): Implemented 324 logic cells
+    Info (21061): Implemented 284 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 90 warnings
-    Info: Peak virtual memory: 458 megabytes
-    Info: Processing ended: Wed Mar  4 17:18:23 2026
+    Info: Peak virtual memory: 464 megabytes
+    Info: Processing ended: Mon Mar 16 16:44:08 2026
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Total CPU time (on all processors): 00:00:14
 
 
