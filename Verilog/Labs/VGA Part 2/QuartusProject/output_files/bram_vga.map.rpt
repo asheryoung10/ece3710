@@ -1,0 +1,1017 @@
+Analysis & Synthesis report for bram_vga
+Mon Mar 16 09:10:49 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |glyph_vga|movement:move|PS
+ 10. State Machine - |glyph_vga|vga:vga|glyph_addr_gen:addr_gen|PS
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated
+ 16. Source assignments for vga:vga|glyph_rom:glyphs|altsyncram:rom_rtl_0|altsyncram_bjd1:auto_generated
+ 17. Parameter Settings for User Entity Instance: vga:vga
+ 18. Parameter Settings for User Entity Instance: vga:vga|vga_controller:crtl
+ 19. Parameter Settings for User Entity Instance: vga:vga|bitgen:bitgen
+ 20. Parameter Settings for User Entity Instance: vga:vga|glyph_addr_gen:addr_gen
+ 21. Parameter Settings for User Entity Instance: vga:vga|glyph_addr_gen:addr_gen|register:mario_x_reg
+ 22. Parameter Settings for User Entity Instance: vga:vga|glyph_addr_gen:addr_gen|register:mario_y_reg
+ 23. Parameter Settings for User Entity Instance: vga:vga|glyph_addr_gen:addr_gen|register:mario_m_reg
+ 24. Parameter Settings for User Entity Instance: vga:vga|glyph_rom:glyphs
+ 25. Parameter Settings for User Entity Instance: bram:ram
+ 26. Parameter Settings for User Entity Instance: movement:move
+ 27. Parameter Settings for Inferred Entity Instance: bram:ram|altsyncram:ram_rtl_0
+ 28. Parameter Settings for Inferred Entity Instance: vga:vga|glyph_rom:glyphs|altsyncram:rom_rtl_0
+ 29. altsyncram Parameter Settings by Entity Instance
+ 30. Port Connectivity Checks: "movement:move|pulse:pwm"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
+ 34. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Mar 16 09:10:49 2026           ;
+; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                   ; bram_vga                                        ;
+; Top-level Entity Name           ; glyph_vga                                       ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 109                                             ;
+; Total pins                      ; 30                                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 393,280                                         ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; glyph_vga          ; bram_vga           ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                        ;
++----------------------------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                           ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                                 ; Library ;
++----------------------------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+---------+
+; ../vga_controller.v                                                        ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/vga_controller.v                                           ;         ;
+; ../clk_divider.v                                                           ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/clk_divider.v                                              ;         ;
+; ../vga.v                                                                   ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/vga.v                                                      ;         ;
+; ../register.v                                                              ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/register.v                                                 ;         ;
+; ../pulse.v                                                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/pulse.v                                                    ;         ;
+; ../movement.v                                                              ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/movement.v                                                 ;         ;
+; ../glyph_vga.v                                                             ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_vga.v                                                ;         ;
+; ../glyph_rom.v                                                             ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_rom.v                                                ;         ;
+; ../glyph_addr_gen.v                                                        ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_addr_gen.v                                           ;         ;
+; ../bram_vga.v                                                              ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/bram_vga.v                                                 ;         ;
+; ../bitgen.v                                                                ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/bitgen.v                                                   ;         ;
+; /users/asher/desktop/schoolwork/ece3710/verilog/labs/vga part 2/glyphs.hex ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /users/asher/desktop/schoolwork/ece3710/verilog/labs/vga part 2/glyphs.hex                                                   ;         ;
+; altsyncram.tdf                                                             ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altsyncram.tdf                                                        ;         ;
+; stratix_ram_block.inc                                                      ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                                                 ;         ;
+; lpm_mux.inc                                                                ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mux.inc                                                           ;         ;
+; lpm_decode.inc                                                             ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_decode.inc                                                        ;         ;
+; aglobal251.inc                                                             ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/aglobal251.inc                                                        ;         ;
+; a_rdenreg.inc                                                              ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                                         ;         ;
+; altrom.inc                                                                 ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altrom.inc                                                            ;         ;
+; altram.inc                                                                 ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altram.inc                                                            ;         ;
+; altdpram.inc                                                               ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altdpram.inc                                                          ;         ;
+; db/altsyncram_0g52.tdf                                                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf                      ;         ;
+; db/bram_vga.ram0_bram_eff4708c.hdl.mif                                     ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/bram_vga.ram0_bram_eff4708c.hdl.mif      ;         ;
+; db/decode_dla.tdf                                                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/decode_dla.tdf                           ;         ;
+; db/mux_chb.tdf                                                             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/mux_chb.tdf                              ;         ;
+; db/altsyncram_bjd1.tdf                                                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_bjd1.tdf                      ;         ;
+; db/bram_vga.ram0_glyph_rom_86c5041f.hdl.mif                                ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/bram_vga.ram0_glyph_rom_86c5041f.hdl.mif ;         ;
+; db/decode_u0a.tdf                                                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/decode_u0a.tdf                           ;         ;
+; db/mux_3hb.tdf                                                             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/mux_3hb.tdf                              ;         ;
++----------------------------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 189       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 315       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 58        ;
+;     -- 5 input functions                    ; 31        ;
+;     -- 4 input functions                    ; 14        ;
+;     -- <=3 input functions                  ; 212       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 109       ;
+;                                             ;           ;
+; I/O pins                                    ; 30        ;
+; Total MLAB memory bits                      ; 0         ;
+; Total block memory bits                     ; 393280    ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 153       ;
+; Total fan-out                               ; 2380      ;
+; Average fan-out                             ; 4.34      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                           ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name     ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |glyph_vga                                   ; 315 (1)             ; 109 (0)                   ; 393280            ; 0          ; 30   ; 0            ; |glyph_vga                                                                                           ; glyph_vga       ; work         ;
+;    |bram:ram|                                ; 0 (0)               ; 0 (0)                     ; 64                ; 0          ; 0    ; 0            ; |glyph_vga|bram:ram                                                                                  ; bram            ; work         ;
+;       |altsyncram:ram_rtl_0|                 ; 0 (0)               ; 0 (0)                     ; 64                ; 0          ; 0    ; 0            ; |glyph_vga|bram:ram|altsyncram:ram_rtl_0                                                             ; altsyncram      ; work         ;
+;          |altsyncram_0g52:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 64                ; 0          ; 0    ; 0            ; |glyph_vga|bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated                              ; altsyncram_0g52 ; work         ;
+;    |movement:move|                           ; 89 (43)             ; 40 (7)                    ; 0                 ; 0          ; 0    ; 0            ; |glyph_vga|movement:move                                                                             ; movement        ; work         ;
+;       |pulse:pwm|                            ; 46 (46)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |glyph_vga|movement:move|pulse:pwm                                                                   ; pulse           ; work         ;
+;    |vga:vga|                                 ; 225 (0)             ; 69 (1)                    ; 393216            ; 0          ; 0    ; 0            ; |glyph_vga|vga:vga                                                                                   ; vga             ; work         ;
+;       |bitgen:bitgen|                        ; 37 (37)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |glyph_vga|vga:vga|bitgen:bitgen                                                                     ; bitgen          ; work         ;
+;       |clk_divider:clk_div|                  ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |glyph_vga|vga:vga|clk_divider:clk_div                                                               ; clk_divider     ; work         ;
+;       |glyph_addr_gen:addr_gen|              ; 133 (133)           ; 46 (5)                    ; 0                 ; 0          ; 0    ; 0            ; |glyph_vga|vga:vga|glyph_addr_gen:addr_gen                                                           ; glyph_addr_gen  ; work         ;
+;          |register:mario_m_reg|              ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |glyph_vga|vga:vga|glyph_addr_gen:addr_gen|register:mario_m_reg                                      ; register        ; work         ;
+;          |register:mario_x_reg|              ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |glyph_vga|vga:vga|glyph_addr_gen:addr_gen|register:mario_x_reg                                      ; register        ; work         ;
+;          |register:mario_y_reg|              ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |glyph_vga|vga:vga|glyph_addr_gen:addr_gen|register:mario_y_reg                                      ; register        ; work         ;
+;       |glyph_rom:glyphs|                     ; 24 (0)              ; 1 (0)                     ; 393216            ; 0          ; 0    ; 0            ; |glyph_vga|vga:vga|glyph_rom:glyphs                                                                  ; glyph_rom       ; work         ;
+;          |altsyncram:rom_rtl_0|              ; 24 (0)              ; 1 (0)                     ; 393216            ; 0          ; 0    ; 0            ; |glyph_vga|vga:vga|glyph_rom:glyphs|altsyncram:rom_rtl_0                                             ; altsyncram      ; work         ;
+;             |altsyncram_bjd1:auto_generated| ; 24 (0)              ; 1 (1)                     ; 393216            ; 0          ; 0    ; 0            ; |glyph_vga|vga:vga|glyph_rom:glyphs|altsyncram:rom_rtl_0|altsyncram_bjd1:auto_generated              ; altsyncram_bjd1 ; work         ;
+;                |mux_3hb:mux2|                ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |glyph_vga|vga:vga|glyph_rom:glyphs|altsyncram:rom_rtl_0|altsyncram_bjd1:auto_generated|mux_3hb:mux2 ; mux_3hb         ; work         ;
+;       |vga_controller:crtl|                  ; 30 (30)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |glyph_vga|vga:vga|vga_controller:crtl                                                               ; vga_controller  ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                    ;
++-----------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+---------+---------------------------------------------+
+; Name                                                                                    ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF                                         ;
++-----------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+---------+---------------------------------------------+
+; bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ALTSYNCRAM                 ; AUTO ; True Dual Port ; 65536        ; 16           ; 65536        ; 16           ; 1048576 ; db/bram_vga.ram0_bram_eff4708c.hdl.mif      ;
+; vga:vga|glyph_rom:glyphs|altsyncram:rom_rtl_0|altsyncram_bjd1:auto_generated|ALTSYNCRAM ; AUTO ; ROM            ; 16384        ; 24           ; --           ; --           ; 393216  ; db/bram_vga.ram0_glyph_rom_86c5041f.hdl.mif ;
++-----------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+---------+---------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------+
+; State Machine - |glyph_vga|movement:move|PS                                                         ;
++--------------------+---------+--------------------+-----------+------------+-----------+------------+
+; Name               ; PS.IDLE ; PS.SAVE_M_STANDING ; PS.SAVE_M ; PS.FETCH_M ; PS.SAVE_X ; PS.FETCH_X ;
++--------------------+---------+--------------------+-----------+------------+-----------+------------+
+; PS.FETCH_X         ; 0       ; 0                  ; 0         ; 0          ; 0         ; 0          ;
+; PS.SAVE_X          ; 0       ; 0                  ; 0         ; 0          ; 1         ; 1          ;
+; PS.FETCH_M         ; 0       ; 0                  ; 0         ; 1          ; 0         ; 1          ;
+; PS.SAVE_M          ; 0       ; 0                  ; 1         ; 0          ; 0         ; 1          ;
+; PS.SAVE_M_STANDING ; 0       ; 1                  ; 0         ; 0          ; 0         ; 1          ;
+; PS.IDLE            ; 1       ; 0                  ; 0         ; 0          ; 0         ; 1          ;
++--------------------+---------+--------------------+-----------+------------+-----------+------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------+
+; State Machine - |glyph_vga|vga:vga|glyph_addr_gen:addr_gen|PS                   ;
++----------------+-----------+-----------+-----------+-----------+----------------+
+; Name           ; PS.FETCH3 ; PS.FETCH2 ; PS.FETCH1 ; PS.FETCH0 ; PS.FETCH_PIXEL ;
++----------------+-----------+-----------+-----------+-----------+----------------+
+; PS.FETCH0      ; 0         ; 0         ; 0         ; 0         ; 0              ;
+; PS.FETCH1      ; 0         ; 0         ; 1         ; 1         ; 0              ;
+; PS.FETCH2      ; 0         ; 1         ; 0         ; 1         ; 0              ;
+; PS.FETCH3      ; 1         ; 0         ; 0         ; 1         ; 0              ;
+; PS.FETCH_PIXEL ; 0         ; 0         ; 0         ; 1         ; 1              ;
++----------------+-----------+-----------+-----------+-----------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                        ;
++----------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                    ; Reason for Removal                     ;
++----------------------------------------------------------------------------------+----------------------------------------+
+; vga:vga|glyph_addr_gen:addr_gen|register:mario_m_reg|q[9..15]                    ; Lost fanout                            ;
+; movement:move|PS~10                                                              ; Lost fanout                            ;
+; movement:move|PS~11                                                              ; Lost fanout                            ;
+; movement:move|PS~12                                                              ; Lost fanout                            ;
+; vga:vga|glyph_addr_gen:addr_gen|PS~5                                             ; Lost fanout                            ;
+; vga:vga|glyph_addr_gen:addr_gen|PS~6                                             ; Lost fanout                            ;
+; vga:vga|glyph_addr_gen:addr_gen|PS~8                                             ; Lost fanout                            ;
+; vga:vga|glyph_addr_gen:addr_gen|PS~9                                             ; Lost fanout                            ;
+; vga:vga|glyph_addr_gen:addr_gen|PS~10                                            ; Lost fanout                            ;
+; vga:vga|glyph_addr_gen:addr_gen|PS~11                                            ; Lost fanout                            ;
+; vga:vga|glyph_addr_gen:addr_gen|PS~12                                            ; Lost fanout                            ;
+; bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|address_reg_a[0..2] ; Stuck at GND due to stuck port data_in ;
+; bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|address_reg_b[0..2] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 23                                           ;                                        ;
++----------------------------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 109   ;
+; Number of registers using Synchronous Clear  ; 52    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 106   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 54    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                  ;
++-----------------------------------+------------------------------------+------+
+; Register Name                     ; Megafunction                       ; Type ;
++-----------------------------------+------------------------------------+------+
+; bram:ram|q_a[0..15]               ; bram:ram|ram_rtl_0                 ; RAM  ;
+; bram:ram|q_b[0..15]               ; bram:ram|ram_rtl_0                 ; RAM  ;
+; vga:vga|glyph_rom:glyphs|q[0..23] ; vga:vga|glyph_rom:glyphs|rom_rtl_0 ; RAM  ;
++-----------------------------------+------------------------------------+------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |glyph_vga|movement:move|PS              ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |glyph_vga|vga:vga|bitgen:bitgen|rgb[12] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Source assignments for bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated ;
++---------------------------------+--------------------+------+-----------------------+
+; Assignment                      ; Value              ; From ; To                    ;
++---------------------------------+--------------------+------+-----------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                     ;
++---------------------------------+--------------------+------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Source assignments for vga:vga|glyph_rom:glyphs|altsyncram:rom_rtl_0|altsyncram_bjd1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------+
+; Assignment                      ; Value              ; From ; To                                    ;
++---------------------------------+--------------------+------+---------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                     ;
++---------------------------------+--------------------+------+---------------------------------------+
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga ;
++------------------+-------+---------------------------+
+; Parameter Name   ; Value ; Type                      ;
++------------------+-------+---------------------------+
+; SYS_DATA_WIDTH   ; 16    ; Signed Integer            ;
+; SYS_ADDR_WIDTH   ; 16    ; Signed Integer            ;
+; GLYPH_DATA_WIDTH ; 24    ; Signed Integer            ;
+; GLYPH_ADDR_WIDTH ; 14    ; Signed Integer            ;
++------------------+-------+---------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga|vga_controller:crtl ;
++----------------+------------+--------------------------------------------+
+; Parameter Name ; Value      ; Type                                       ;
++----------------+------------+--------------------------------------------+
+; H_SYNC         ; 0001100000 ; Unsigned Binary                            ;
+; H_BACK_PORCH   ; 0000110000 ; Unsigned Binary                            ;
+; H_DISPLAY      ; 1010000000 ; Unsigned Binary                            ;
+; H_FRONT_PORCH  ; 0000010000 ; Unsigned Binary                            ;
+; H_TOTAL        ; 1100100000 ; Unsigned Binary                            ;
+; V_SYNC         ; 0000000010 ; Unsigned Binary                            ;
+; V_BACK_PORCH   ; 0000100001 ; Unsigned Binary                            ;
+; V_DISPLAY      ; 0111100000 ; Unsigned Binary                            ;
+; V_FRONT_PORCH  ; 0000001010 ; Unsigned Binary                            ;
+; V_TOTAL        ; 1000001101 ; Unsigned Binary                            ;
++----------------+------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga|bitgen:bitgen ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; DATA_WIDTH     ; 24    ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga|glyph_addr_gen:addr_gen ;
++---------------------+-------+------------------------------------------------+
+; Parameter Name      ; Value ; Type                                           ;
++---------------------+-------+------------------------------------------------+
+; GLYPH_DATA_WIDTH    ; 24    ; Signed Integer                                 ;
+; SYS_DATA_WIDTH      ; 16    ; Signed Integer                                 ;
+; SYS_ADDR_WIDTH      ; 16    ; Signed Integer                                 ;
+; GLYPH_ADDR_WIDTH    ; 14    ; Signed Integer                                 ;
+; LOG2_DISPLAY_WIDTH  ; 10    ; Signed Integer                                 ;
+; LOG2_DISPLAY_HEIGHT ; 10    ; Signed Integer                                 ;
++---------------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga|glyph_addr_gen:addr_gen|register:mario_x_reg ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga|glyph_addr_gen:addr_gen|register:mario_y_reg ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga|glyph_addr_gen:addr_gen|register:mario_m_reg ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga|glyph_rom:glyphs ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; DATA_WIDTH     ; 24    ; Signed Integer                               ;
+; ADDR_WIDTH     ; 14    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bram:ram ;
++----------------+-------+------------------------------+
+; Parameter Name ; Value ; Type                         ;
++----------------+-------+------------------------------+
+; DATA_WIDTH     ; 16    ; Signed Integer               ;
+; ADDR_WIDTH     ; 16    ; Signed Integer               ;
++----------------+-------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: movement:move ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; DATA_WIDTH     ; 16    ; Signed Integer                    ;
+; ADDR_WIDTH     ; 16    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bram:ram|altsyncram:ram_rtl_0               ;
++------------------------------------+----------------------------------------+----------------+
+; Parameter Name                     ; Value                                  ; Type           ;
++------------------------------------+----------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                      ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                     ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                    ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                     ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                    ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                      ; Untyped        ;
+; OPERATION_MODE                     ; BIDIR_DUAL_PORT                        ; Untyped        ;
+; WIDTH_A                            ; 16                                     ; Untyped        ;
+; WIDTHAD_A                          ; 16                                     ; Untyped        ;
+; NUMWORDS_A                         ; 65536                                  ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                           ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                   ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                   ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                   ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                   ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                   ; Untyped        ;
+; WIDTH_B                            ; 16                                     ; Untyped        ;
+; WIDTHAD_B                          ; 16                                     ; Untyped        ;
+; NUMWORDS_B                         ; 65536                                  ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK0                                 ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK0                                 ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                 ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK0                                 ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                           ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                 ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                   ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                   ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                   ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                   ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                   ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                   ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                      ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                      ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                   ; Untyped        ;
+; BYTE_SIZE                          ; 8                                      ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                               ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                   ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                   ; Untyped        ;
+; INIT_FILE                          ; db/bram_vga.ram0_bram_eff4708c.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                 ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                      ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                 ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                 ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                 ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                 ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                        ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                        ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                  ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                  ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                      ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone V                              ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_0g52                        ; Untyped        ;
++------------------------------------+----------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga:vga|glyph_rom:glyphs|altsyncram:rom_rtl_0    ;
++------------------------------------+---------------------------------------------+----------------+
+; Parameter Name                     ; Value                                       ; Type           ;
++------------------------------------+---------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                           ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                          ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                         ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                          ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                         ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                           ; Untyped        ;
+; OPERATION_MODE                     ; ROM                                         ; Untyped        ;
+; WIDTH_A                            ; 24                                          ; Untyped        ;
+; WIDTHAD_A                          ; 14                                          ; Untyped        ;
+; NUMWORDS_A                         ; 16384                                       ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                        ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                        ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                        ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                        ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                        ; Untyped        ;
+; WIDTH_B                            ; 1                                           ; Untyped        ;
+; WIDTHAD_B                          ; 1                                           ; Untyped        ;
+; NUMWORDS_B                         ; 1                                           ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                      ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                      ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                      ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                      ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                      ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                        ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                        ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                        ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                        ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                        ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                        ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                           ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                           ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                        ; Untyped        ;
+; BYTE_SIZE                          ; 8                                           ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                   ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                        ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                        ; Untyped        ;
+; INIT_FILE                          ; db/bram_vga.ram0_glyph_rom_86c5041f.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                      ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                           ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                      ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                      ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                      ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                      ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                             ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                             ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                       ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                       ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                           ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone V                                   ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_bjd1                             ; Untyped        ;
++------------------------------------+---------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                          ;
++-------------------------------------------+-----------------------------------------------+
+; Name                                      ; Value                                         ;
++-------------------------------------------+-----------------------------------------------+
+; Number of entity instances                ; 2                                             ;
+; Entity Instance                           ; bram:ram|altsyncram:ram_rtl_0                 ;
+;     -- OPERATION_MODE                     ; BIDIR_DUAL_PORT                               ;
+;     -- WIDTH_A                            ; 16                                            ;
+;     -- NUMWORDS_A                         ; 65536                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                  ;
+;     -- WIDTH_B                            ; 16                                            ;
+;     -- NUMWORDS_B                         ; 65536                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                        ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                  ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                          ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                      ;
+; Entity Instance                           ; vga:vga|glyph_rom:glyphs|altsyncram:rom_rtl_0 ;
+;     -- OPERATION_MODE                     ; ROM                                           ;
+;     -- WIDTH_A                            ; 24                                            ;
+;     -- NUMWORDS_A                         ; 16384                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                  ;
+;     -- WIDTH_B                            ; 1                                             ;
+;     -- NUMWORDS_B                         ; 1                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                        ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                  ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                          ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                     ;
++-------------------------------------------+-----------------------------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "movement:move|pulse:pwm" ;
++-----------------+-------+----------+----------------+
+; Port            ; Type  ; Severity ; Details        ;
++-----------------+-------+----------+----------------+
+; length1[1..0]   ; Input ; Info     ; Stuck at VCC   ;
+; length1[31..2]  ; Input ; Info     ; Stuck at GND   ;
+; length2[21..17] ; Input ; Info     ; Stuck at VCC   ;
+; length2[13..10] ; Input ; Info     ; Stuck at VCC   ;
+; length2[31..24] ; Input ; Info     ; Stuck at GND   ;
+; length2[9..6]   ; Input ; Info     ; Stuck at GND   ;
+; length2[4..0]   ; Input ; Info     ; Stuck at GND   ;
+; length2[23]     ; Input ; Info     ; Stuck at VCC   ;
+; length2[22]     ; Input ; Info     ; Stuck at GND   ;
+; length2[16]     ; Input ; Info     ; Stuck at GND   ;
+; length2[15]     ; Input ; Info     ; Stuck at VCC   ;
+; length2[14]     ; Input ; Info     ; Stuck at GND   ;
+; length2[5]      ; Input ; Info     ; Stuck at VCC   ;
++-----------------+-------+----------+----------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 109                         ;
+;     CLR               ; 10                          ;
+;     CLR SCLR          ; 42                          ;
+;     ENA CLR           ; 44                          ;
+;     ENA CLR SCLR      ; 10                          ;
+;     plain             ; 3                           ;
+; arriav_lcell_comb     ; 316                         ;
+;     arith             ; 137                         ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 102                         ;
+;         2 data inputs ; 32                          ;
+;     normal            ; 160                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 45                          ;
+;         4 data inputs ; 14                          ;
+;         5 data inputs ; 31                          ;
+;         6 data inputs ; 58                          ;
+;     shared            ; 19                          ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 1                           ;
+; boundary_port         ; 30                          ;
+; stratixv_ram_block    ; 64                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.30                        ;
+; Average LUT depth     ; 3.41                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Mon Mar 16 09:10:30 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project -c bram_vga
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/labs/vga part 2/vga_controller.v
+    Info (12023): Found entity 1: vga_controller File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/vga_controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/labs/vga part 2/clk_divider.v
+    Info (12023): Found entity 1: clk_divider File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/clk_divider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/labs/vga part 2/vga.v
+    Info (12023): Found entity 1: vga File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/vga.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/labs/vga part 2/register.v
+    Info (12023): Found entity 1: register File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/register.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/labs/vga part 2/pulse.v
+    Info (12023): Found entity 1: pulse File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/pulse.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/labs/vga part 2/movement.v
+    Info (12023): Found entity 1: movement File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/movement.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/labs/vga part 2/glyph_vga.v
+    Info (12023): Found entity 1: glyph_vga File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_vga.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/labs/vga part 2/glyph_rom.v
+    Info (12023): Found entity 1: glyph_rom File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_rom.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/labs/vga part 2/glyph_addr_gen.v
+    Info (12023): Found entity 1: glyph_addr_gen File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_addr_gen.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/labs/vga part 2/bram_vga.v
+    Info (12023): Found entity 1: bram File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/bram_vga.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/labs/vga part 2/bitgen.v
+    Info (12023): Found entity 1: bitgen File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/bitgen.v Line: 1
+Info (12127): Elaborating entity "glyph_vga" for the top level hierarchy
+Info (12128): Elaborating entity "vga" for hierarchy "vga:vga" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_vga.v Line: 40
+Info (12128): Elaborating entity "clk_divider" for hierarchy "vga:vga|clk_divider:clk_div" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/vga.v Line: 44
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga:vga|vga_controller:crtl" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/vga.v Line: 54
+Warning (10230): Verilog HDL assignment warning at vga_controller.v(43): truncated value with size 32 to match size of target (10) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/vga_controller.v Line: 43
+Warning (10230): Verilog HDL assignment warning at vga_controller.v(46): truncated value with size 32 to match size of target (10) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/vga_controller.v Line: 46
+Info (12128): Elaborating entity "bitgen" for hierarchy "vga:vga|bitgen:bitgen" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/vga.v Line: 72
+Info (12128): Elaborating entity "glyph_addr_gen" for hierarchy "vga:vga|glyph_addr_gen:addr_gen" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/vga.v Line: 99
+Warning (10230): Verilog HDL assignment warning at glyph_addr_gen.v(46): truncated value with size 16 to match size of target (10) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_addr_gen.v Line: 46
+Warning (10230): Verilog HDL assignment warning at glyph_addr_gen.v(47): truncated value with size 16 to match size of target (10) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_addr_gen.v Line: 47
+Warning (10230): Verilog HDL assignment warning at glyph_addr_gen.v(63): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_addr_gen.v Line: 63
+Warning (10230): Verilog HDL assignment warning at glyph_addr_gen.v(64): truncated value with size 32 to match size of target (14) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_addr_gen.v Line: 64
+Warning (10230): Verilog HDL assignment warning at glyph_addr_gen.v(112): truncated value with size 32 to match size of target (14) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_addr_gen.v Line: 112
+Info (12128): Elaborating entity "register" for hierarchy "vga:vga|glyph_addr_gen:addr_gen|register:mario_x_reg" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_addr_gen.v Line: 40
+Info (12128): Elaborating entity "glyph_rom" for hierarchy "vga:vga|glyph_rom:glyphs" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/vga.v Line: 112
+Warning (10850): Verilog HDL warning at glyph_rom.v(27): number of words (11424) in memory file does not match the number of elements in the address range [0:16383] File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_rom.v Line: 27
+Warning (10030): Net "rom.data_a" at glyph_rom.v(23) has no driver or initial value, using a default initial value '0' File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_rom.v Line: 23
+Warning (10030): Net "rom.waddr_a" at glyph_rom.v(23) has no driver or initial value, using a default initial value '0' File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_rom.v Line: 23
+Warning (10030): Net "rom.we_a" at glyph_rom.v(23) has no driver or initial value, using a default initial value '0' File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_rom.v Line: 23
+Info (12128): Elaborating entity "bram" for hierarchy "bram:ram" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_vga.v Line: 56
+Info (12128): Elaborating entity "movement" for hierarchy "movement:move" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/glyph_vga.v Line: 69
+Warning (10230): Verilog HDL assignment warning at movement.v(54): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/movement.v Line: 54
+Warning (10230): Verilog HDL assignment warning at movement.v(55): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/movement.v Line: 55
+Warning (10230): Verilog HDL assignment warning at movement.v(85): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/movement.v Line: 85
+Warning (10230): Verilog HDL assignment warning at movement.v(90): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/movement.v Line: 90
+Warning (10230): Verilog HDL assignment warning at movement.v(95): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/movement.v Line: 95
+Warning (10230): Verilog HDL assignment warning at movement.v(96): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/movement.v Line: 96
+Warning (10230): Verilog HDL assignment warning at movement.v(101): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/movement.v Line: 101
+Warning (10230): Verilog HDL assignment warning at movement.v(106): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/movement.v Line: 106
+Warning (10230): Verilog HDL assignment warning at movement.v(115): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/movement.v Line: 115
+Info (12128): Elaborating entity "pulse" for hierarchy "movement:move|pulse:pwm" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/movement.v Line: 23
+Info (19000): Inferred 2 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "bram:ram|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to BIDIR_DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTH_B set to 16
+        Info (286033): Parameter WIDTHAD_A set to 16
+        Info (286033): Parameter WIDTHAD_B set to 16
+        Info (286033): Parameter NUMWORDS_A set to 65536
+        Info (286033): Parameter NUMWORDS_B set to 65536
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_REG_B set to CLOCK0
+        Info (286033): Parameter WRCONTROL_WRADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter INIT_FILE set to db/bram_vga.ram0_bram_eff4708c.hdl.mif
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "vga:vga|glyph_rom:glyphs|rom_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 24
+        Info (286033): Parameter WIDTHAD_A set to 14
+        Info (286033): Parameter NUMWORDS_A set to 16384
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/bram_vga.ram0_glyph_rom_86c5041f.hdl.mif
+Info (12130): Elaborated megafunction instantiation "bram:ram|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "bram:ram|altsyncram:ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "BIDIR_DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTH_B" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "16"
+    Info (12134): Parameter "WIDTHAD_B" = "16"
+    Info (12134): Parameter "NUMWORDS_A" = "65536"
+    Info (12134): Parameter "NUMWORDS_B" = "65536"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_REG_B" = "CLOCK0"
+    Info (12134): Parameter "WRCONTROL_WRADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/bram_vga.ram0_bram_eff4708c.hdl.mif"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0g52.tdf
+    Info (12023): Found entity 1: altsyncram_0g52 File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dla.tdf
+    Info (12023): Found entity 1: decode_dla File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/decode_dla.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_chb.tdf
+    Info (12023): Found entity 1: mux_chb File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/mux_chb.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "vga:vga|glyph_rom:glyphs|altsyncram:rom_rtl_0"
+Info (12133): Instantiated megafunction "vga:vga|glyph_rom:glyphs|altsyncram:rom_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "WIDTH_A" = "24"
+    Info (12134): Parameter "WIDTHAD_A" = "14"
+    Info (12134): Parameter "NUMWORDS_A" = "16384"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/bram_vga.ram0_glyph_rom_86c5041f.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_bjd1.tdf
+    Info (12023): Found entity 1: altsyncram_bjd1 File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_bjd1.tdf Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_u0a.tdf
+    Info (12023): Found entity 1: decode_u0a File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/decode_u0a.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_3hb.tdf
+    Info (12023): Found entity 1: mux_3hb File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/mux_3hb.tdf Line: 23
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a16" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 594
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a17" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 628
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a18" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 662
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a19" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 696
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a20" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 730
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a21" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 764
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a22" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 798
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a23" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 832
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a24" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 866
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a25" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 900
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a26" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 934
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a27" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 968
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a28" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1002
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a29" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1036
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a30" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1070
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a31" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1104
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a32" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1138
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a33" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1172
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a34" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1206
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a35" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1240
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a36" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1274
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a37" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1308
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a38" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1342
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a39" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1376
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a40" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1410
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a41" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1444
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a42" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1478
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a43" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1512
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a44" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1546
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a45" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1580
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a46" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1614
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a47" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1648
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a48" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1682
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a49" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1716
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a50" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1750
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a51" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1784
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a52" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1818
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a53" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1852
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a54" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1886
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a55" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1920
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a56" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1954
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a57" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 1988
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a58" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2022
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a59" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2056
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a60" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2090
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a61" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2124
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a62" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2158
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a63" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2192
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a64" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2226
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a65" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2260
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a66" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2294
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a67" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2328
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a68" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2362
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a69" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2396
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a70" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2430
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a71" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2464
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a72" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2498
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a73" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2532
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a74" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2566
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a75" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2600
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a76" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2634
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a77" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2668
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a78" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2702
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a79" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2736
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a80" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2770
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a81" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2804
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a82" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2838
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a83" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2872
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a84" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2906
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a85" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2940
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a86" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 2974
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a87" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3008
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a88" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3042
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a89" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3076
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a90" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3110
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a91" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3144
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a92" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3178
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a93" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3212
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a94" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3246
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a95" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3280
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a96" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3314
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a97" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3348
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a98" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3382
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a99" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3416
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a100" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3450
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a101" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3484
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a102" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3518
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a103" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3552
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a104" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3586
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a105" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3620
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a106" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3654
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a107" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3688
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a108" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3722
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a109" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3756
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a110" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3790
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a111" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3824
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a112" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3858
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a113" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3892
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a114" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3926
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a115" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3960
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a116" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 3994
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a117" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 4028
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a118" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 4062
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a119" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 4096
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a120" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 4130
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a121" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 4164
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a122" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 4198
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a123" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 4232
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a124" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 4266
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a125" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 4300
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a126" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 4334
+        Warning (14320): Synthesized away node "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ram_block1a127" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 4368
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 17 registers lost all their fanouts during netlist optimizations.
+Info (17036): Removed 11 MSB VCC or GND address nodes from RAM block "bram:ram|altsyncram:ram_rtl_0|altsyncram_0g52:auto_generated|ALTSYNCRAM" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/db/altsyncram_0g52.tdf Line: 50
+Info (144001): Generated suppressed messages file C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/output_files/bram_vga.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 453 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 359 logic cells
+    Info (21064): Implemented 64 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 135 warnings
+    Info: Peak virtual memory: 13499 megabytes
+    Info: Processing ended: Mon Mar 16 09:10:49 2026
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:27
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Labs/VGA Part 2/QuartusProject/output_files/bram_vga.map.smsg.
+
+
