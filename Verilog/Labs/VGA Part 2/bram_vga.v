@@ -35,7 +35,7 @@ module bram
 		// Assuming data memory starts at 16'h1000
 		ram[16'h1000] = 16'd100;	// mario x_pos
 		ram[16'h1001] = 16'd350;	// mario y_pos
-		ram[16'h1002] = 16'd0;		// mario movement position (21 positions)
+		ram[16'h1002] = 16'd20;		// mario movement position (21 positions)
 	end
 
 	// Port A 

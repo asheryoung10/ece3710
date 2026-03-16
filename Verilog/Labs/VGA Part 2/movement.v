@@ -32,10 +32,10 @@ reg [2:0] PS, NS;
 
 localparam MARIO_X_END = 300;
 
-localparam MARIO_STANDING   = 0;
+localparam MARIO_STANDING   = 2;
 localparam MARIO_WALK_START = 1;
-localparam MARIO_WALK_MID   = 2;
-localparam MARIO_WALK_END   = 3;
+localparam MARIO_WALK_MID   = 0;
+localparam MARIO_WALK_END   = 1;
 reg inc_in, inc_out;
 
 // dff for mario walking animation (increment or decrement walk pattern)
@@ -71,7 +71,8 @@ always @(PS, data_in, inc_out) begin
 				NS = FETCH_M;
 			else
 				NS = SAVE_M_STANDING;
-		end
+			end
+		
 		FETCH_M: begin
 			addr = 'h1002;
 			NS = SAVE_M;
