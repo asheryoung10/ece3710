@@ -1,7 +1,7 @@
 module cpu
 #(
     parameter DATA_WIDTH = 16,
-    parameter MEMORY_ADDR_WIDTH = 10
+    parameter MEMORY_ADDR_WIDTH = 16
 )
 (
     input clock,
@@ -204,8 +204,8 @@ memory_select_read_write_address_mux
 (
     // Inputs
     .select(memorySelectReadWriteAddress),
-    .selection0(programCounterContents[9:0]),
-    .selection1(registerFileContentsA[9:0]),
+    .selection0(programCounterContents),
+    .selection1(registerFileContentsA),
     // Outputs
     .selection(memoryReadWriteAddress)
 );

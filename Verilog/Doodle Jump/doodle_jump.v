@@ -1,6 +1,6 @@
 module doodle_jump #(
     parameter DATA_WIDTH = 16,
-    parameter MEMORY_ADDR_WIDTH = 10
+    parameter MEMORY_ADDR_WIDTH = 16
 )
 (
 	input systemClock50MHz,
@@ -82,6 +82,7 @@ wire [DATA_WIDTH-1:0] memoryContents;
 cpu cpu_instance (
 	.clock(systemClock50MHz),
 	.reset(reset),
+	
 	.memoryWriteEnable(memoryWriteEnable),
 	.registerFileContentsB(registerFileContentsB),
 	.memoryReadWriteAddress(memoryReadWriteAddress),

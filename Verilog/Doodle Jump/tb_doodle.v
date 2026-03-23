@@ -1,7 +1,13 @@
 `timescale 1ns/1ps
 
 module tb_doodle;
-    `include "cpu/states.vh"
+    localparam FETCH_INSTRUCTION_FROM_MEMORY     = 3'd1;
+localparam LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER     = 3'd2;
+localparam DECODE_INSTRUCTION = 3'd3;
+localparam EXECUTE_LOAD_INSTRUCTION = 3'd5;
+localparam NOTHING_STATE = 3'd6;
+localparam MOVE_STATE = 3'd7;
+
 
     // Parameters
     localparam CLK_PERIOD = 10;
@@ -62,7 +68,9 @@ module tb_doodle;
     task apply_reset;
         begin
             reset = 1'b1;
+				push_buttons = 4'b0000;
             pulse_clock(1);
+				push_buttons = 4'b1111;
             reset = 1'b0;
         end
     endtask
@@ -73,7 +81,7 @@ module tb_doodle;
     task print_cpu_state;
         begin
             $display(
-    "Time=%0t | IR=%h | DecInst=%h| DecRsrc=%h | DecRdest=%h | DecodedImmediate=%h | DecodedOpcode=%h | PC=%h | PSR=%h | ALU select Imm=%h| ALURes=%h | ALUFlags=%b | CU_State=%0d | CU_Next=%0d | ALUOpcode=%0d | ALU_A=%h | ALU_B=%h | RegFile_WriteEn=%b | RegFile_WriteAddr=%0d | RegFile_WriteData=%h | RegFile_ReadA=%h | RegFile_ReadB=%h | RegFileSel=%h | PSR=%h | NextPC: %h",
+    "Time=%0t | IR=%h | DecInst=%h| DecRsrc=%h | DecRdest=%h | DecodedImmediate=%h | DecodedOpcode=%h | PC=%h | PSR=%h | ALU select Imm=%h| ALURes=%h | ALUFlags=%b | CU_State=%0d | CU_Next=%0d | ALUOpcode=%0d | ALU_A=%h | ALU_B=%h | RegFile_WriteEn=%b | RegFile_WriteAddr=%0d | RegFile_WriteData=%h | RegFile_ReadA=%h | RegFile_ReadB=%h | RegFileSel=%h | PSR=%h | NextPC: %h | WriteEnableMemory: %h | MemoryReadWriteAddress: %h | MemoryContents: %h| WriteContents: %h",
     $time,
     uut.cpu_instance.instructionRegisterContentsOutput,
 	 uut.cpu_instance.instruction_decoder_instance.instruction,
@@ -98,7 +106,11 @@ module tb_doodle;
     uut.cpu_instance.register_file_instance.contentsB,     // Register file read output B
     uut.cpu_instance.register_file_input_mux.select,
 	 uut.cpu_instance.program_state_register.contents,
-	 uut.cpu_instance.instruction_decoder_instance.nextProgramCounter
+	 uut.cpu_instance.instruction_decoder_instance.nextProgramCounter,
+	 uut.memoryWriteEnable,
+	 uut.memoryReadWriteAddress,
+	 uut.memoryContents,
+	 uut.registerFileContentsB
 );
         end
     endtask
@@ -108,7 +120,7 @@ task dumpRegisterFile;
     begin
         $display("RegisterFile:");
         for (i = 0; i < 16; i = i + 1) begin
-            $display("registerFile[%0d] = %h", i, uut.register_file_instance.registers[i]);
+            $display("registerFile[%0d] = %h", i, uut.cpu_instance.register_file_instance.registers[i]);
         end
         $display(""); // blank line for readability
     end
