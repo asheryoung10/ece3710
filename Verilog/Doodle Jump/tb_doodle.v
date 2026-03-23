@@ -8,8 +8,6 @@ module tb_doodle;
 	 integer running;
     // Inputs
     reg clock;
-    reg reset;
-	 
 	 reg [9:0] switches;
 	 reg [3:0] push_buttons;
 
@@ -61,9 +59,9 @@ module tb_doodle;
     // ==================================================
     task apply_reset;
         begin
-            reset = 1'b1;
+            push_buttons[0] = 1'b0;
             pulse_clock(1);
-            reset = 1'b0;
+            push_buttons[0] = 1'b1;
         end
     endtask
 
@@ -104,23 +102,79 @@ module tb_doodle;
     endtask
 	 
 task dumpRegisterFile;
-    integer i;
     begin
         $display("RegisterFile:");
-        for (i = 0; i < 16; i = i + 1) begin
-            $display("registerFile[%0d] = %h", i, uut.register_file_instance.registers[i]);
-        end
+        $display("registerFile[0] = %h",  uut.cpu_instance.register_file_instance.registers[0]);
+        $display("registerFile[1] = %h",  uut.cpu_instance.register_file_instance.registers[1]);
+        $display("registerFile[2] = %h",  uut.cpu_instance.register_file_instance.registers[2]);
+        $display("registerFile[3] = %h",  uut.cpu_instance.register_file_instance.registers[3]);
+        $display("registerFile[4] = %h",  uut.cpu_instance.register_file_instance.registers[4]);
+        $display("registerFile[5] = %h",  uut.cpu_instance.register_file_instance.registers[5]);
+        $display("registerFile[6] = %h",  uut.cpu_instance.register_file_instance.registers[6]);
+        $display("registerFile[7] = %h",  uut.cpu_instance.register_file_instance.registers[7]);
+        $display("registerFile[8] = %h",  uut.cpu_instance.register_file_instance.registers[8]);
+        $display("registerFile[9] = %h",  uut.cpu_instance.register_file_instance.registers[9]);
+        $display("registerFile[10] = %h", uut.cpu_instance.register_file_instance.registers[10]);
+        $display("registerFile[11] = %h", uut.cpu_instance.register_file_instance.registers[11]);
+        $display("registerFile[12] = %h", uut.cpu_instance.register_file_instance.registers[12]);
+        $display("registerFile[13] = %h", uut.cpu_instance.register_file_instance.registers[13]);
+        $display("registerFile[14] = %h", uut.cpu_instance.register_file_instance.registers[14]);
+        $display("registerFile[15] = %h", uut.cpu_instance.register_file_instance.registers[15]);
         $display(""); // blank line for readability
     end
 endtask
 
 task dumpMemory;
-    integer i;
     begin
         $display("Memory:");
-        for (i = 0; i < 48; i = i + 1) begin
-            $display("memory[%0d] = %h", i, uut.memory_instance.ram[i]);
-        end
+        $display("memory[0] = %h",   uut.memory_instance.bram_inst.ram[0]);
+        $display("memory[1] = %h",   uut.memory_instance.bram_inst.ram[1]);
+        $display("memory[2] = %h",   uut.memory_instance.bram_inst.ram[2]);
+        $display("memory[3] = %h",   uut.memory_instance.bram_inst.ram[3]);
+        $display("memory[4] = %h",   uut.memory_instance.bram_inst.ram[4]);
+        $display("memory[5] = %h",   uut.memory_instance.bram_inst.ram[5]);
+        $display("memory[6] = %h",   uut.memory_instance.bram_inst.ram[6]);
+        $display("memory[7] = %h",   uut.memory_instance.bram_inst.ram[7]);
+        $display("memory[8] = %h",   uut.memory_instance.bram_inst.ram[8]);
+        $display("memory[9] = %h",   uut.memory_instance.bram_inst.ram[9]);
+        $display("memory[10] = %h",  uut.memory_instance.bram_inst.ram[10]);
+        $display("memory[11] = %h",  uut.memory_instance.bram_inst.ram[11]);
+        $display("memory[12] = %h",  uut.memory_instance.bram_inst.ram[12]);
+        $display("memory[13] = %h",  uut.memory_instance.bram_inst.ram[13]);
+        $display("memory[14] = %h",  uut.memory_instance.bram_inst.ram[14]);
+        $display("memory[15] = %h",  uut.memory_instance.bram_inst.ram[15]);
+        $display("memory[16] = %h",  uut.memory_instance.bram_inst.ram[16]);
+        $display("memory[17] = %h",  uut.memory_instance.bram_inst.ram[17]);
+        $display("memory[18] = %h",  uut.memory_instance.bram_inst.ram[18]);
+        $display("memory[19] = %h",  uut.memory_instance.bram_inst.ram[19]);
+        $display("memory[20] = %h",  uut.memory_instance.bram_inst.ram[20]);
+        $display("memory[21] = %h",  uut.memory_instance.bram_inst.ram[21]);
+        $display("memory[22] = %h",  uut.memory_instance.bram_inst.ram[22]);
+        $display("memory[23] = %h",  uut.memory_instance.bram_inst.ram[23]);
+        $display("memory[24] = %h",  uut.memory_instance.bram_inst.ram[24]);
+        $display("memory[25] = %h",  uut.memory_instance.bram_inst.ram[25]);
+        $display("memory[26] = %h",  uut.memory_instance.bram_inst.ram[26]);
+        $display("memory[27] = %h",  uut.memory_instance.bram_inst.ram[27]);
+        $display("memory[28] = %h",  uut.memory_instance.bram_inst.ram[28]);
+        $display("memory[29] = %h",  uut.memory_instance.bram_inst.ram[29]);
+        $display("memory[30] = %h",  uut.memory_instance.bram_inst.ram[30]);
+        $display("memory[31] = %h",  uut.memory_instance.bram_inst.ram[31]);
+        $display("memory[32] = %h",  uut.memory_instance.bram_inst.ram[32]);
+        $display("memory[33] = %h",  uut.memory_instance.bram_inst.ram[33]);
+        $display("memory[34] = %h",  uut.memory_instance.bram_inst.ram[34]);
+        $display("memory[35] = %h",  uut.memory_instance.bram_inst.ram[35]);
+        $display("memory[36] = %h",  uut.memory_instance.bram_inst.ram[36]);
+        $display("memory[37] = %h",  uut.memory_instance.bram_inst.ram[37]);
+        $display("memory[38] = %h",  uut.memory_instance.bram_inst.ram[38]);
+        $display("memory[39] = %h",  uut.memory_instance.bram_inst.ram[39]);
+        $display("memory[40] = %h",  uut.memory_instance.bram_inst.ram[40]);
+        $display("memory[41] = %h",  uut.memory_instance.bram_inst.ram[41]);
+        $display("memory[42] = %h",  uut.memory_instance.bram_inst.ram[42]);
+        $display("memory[43] = %h",  uut.memory_instance.bram_inst.ram[43]);
+        $display("memory[44] = %h",  uut.memory_instance.bram_inst.ram[44]);
+        $display("memory[45] = %h",  uut.memory_instance.bram_inst.ram[45]);
+        $display("memory[46] = %h",  uut.memory_instance.bram_inst.ram[46]);
+        $display("memory[47] = %h",  uut.memory_instance.bram_inst.ram[47]);
         $display(""); // blank line for readability
     end
 endtask
@@ -188,7 +242,6 @@ endtask
     initial begin
         // Initialize
         clock = 0;
-        reset = 0;
 		  
 		  switches = 10'b0;
 		  push_buttons = 4'b1111;

@@ -1,7 +1,7 @@
 module cpu
 #(
     parameter DATA_WIDTH = 16,
-    parameter MEMORY_ADDR_WIDTH = 10
+    parameter MEMORY_ADDR_WIDTH = 16
 )
 (
     input clock,
@@ -143,7 +143,7 @@ program_state_register
     .reset(reset),
     //Outputs
     .writeEnable(programStateRegisterWriteEnable),
-    .writeData(aluFlags),
+    .writeData({{DATA_WIDTH-5{1'b0}}, aluFlags}),
     .contents(programStateRegisterContents)
 );
 
@@ -204,8 +204,8 @@ memory_select_read_write_address_mux
 (
     // Inputs
     .select(memorySelectReadWriteAddress),
-    .selection0(programCounterContents[9:0]),
-    .selection1(registerFileContentsA[9:0]),
+    .selection0(programCounterContents[MEMORY_ADDR_WIDTH-1:0]),
+    .selection1(registerFileContentsA[MEMORY_ADDR_WIDTH-1:0]),
     // Outputs
     .selection(memoryReadWriteAddress)
 );

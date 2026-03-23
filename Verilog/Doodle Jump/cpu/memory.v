@@ -20,11 +20,29 @@ module memory
 // --------------------
 // BRAM (10-bit address)
 // --------------------
-reg [DATA_WIDTH-1:0] ram[0:1023];
+localparam RECT_BASE = 16'h8000;
 
-initial begin
-    $readmemh(INIT_FILE, ram);
-end
+wire in_bram  = (readWriteAddress < 16'd1024);
+wire in_rect  = (readWriteAddress >= RECT_BASE &&
+                 readWriteAddress < RECT_BASE + 32);
+wire [DATA_WIDTH-1:0] bram_contents;
+wire bram_write_enable = writeEnable && in_bram;
+wire [9:0] bram_address = readWriteAddress[9:0];
+
+bram
+#(
+    .DATA_WIDTH(DATA_WIDTH),
+    .ADDR_WIDTH(10),
+    .INIT_FILE(INIT_FILE)
+)
+bram_inst
+(
+    .clock(clock),
+    .writeEnable(bram_write_enable),
+    .address(bram_address),
+    .writeData(writeData),
+    .readData(bram_contents)
+);
 
 // --------------------
 // Rectangle registers
@@ -34,60 +52,47 @@ reg [15:0] rect_y [0:7];
 reg [7:0]  rect_w [0:7];
 reg [7:0]  rect_h [0:7];
 
-localparam RECT_BASE = 16'h8000;
-
 // --------------------
 // Memory access
 // --------------------
-integer idx;
-wire in_bram  = (readWriteAddress < 16'd1024);
-wire in_rect  = (readWriteAddress >= RECT_BASE &&
-                 readWriteAddress < RECT_BASE + 32);
+wire [2:0] rect_index = readWriteAddress[4:2];
+wire [1:0] rect_word = readWriteAddress[1:0];
+
+reg [15:0] rect_contents;
 
 always @(posedge clock)
 begin
-    if (writeEnable) begin
-
-        if (in_rect) begin
-            idx = (readWriteAddress - RECT_BASE) >> 2;
-
-            case ((readWriteAddress - RECT_BASE) & 2'b11)
-                2'd0: rect_x[idx] <= writeData;
-                2'd1: rect_y[idx] <= writeData;
+    if (in_rect) begin
+        if (writeEnable) begin
+            case (rect_word)
+                2'd0: rect_x[rect_index] <= writeData;
+                2'd1: rect_y[rect_index] <= writeData;
                 2'd2: begin
-                    rect_w[idx] <= writeData[15:8];
-                    rect_h[idx] <= writeData[7:0];
+                    rect_w[rect_index] <= writeData[15:8];
+                    rect_h[rect_index] <= writeData[7:0];
                 end
             endcase
 
-            contents <= writeData;
-
-        end else if (in_bram) begin
-            ram[readWriteAddress[9:0]] <= writeData;
-            contents <= writeData;
+            rect_contents <= writeData;
 
         end else begin
-            contents <= 16'd0;
-        end
-
-    end else begin
-
-        if (in_rect) begin
-            idx = (readWriteAddress - RECT_BASE) >> 2;
-
-            case ((readWriteAddress - RECT_BASE) & 2'b11)
-                2'd0: contents <= rect_x[idx];
-                2'd1: contents <= rect_y[idx];
-                2'd2: contents <= {rect_w[idx], rect_h[idx]};
-                default: contents <= 16'd0;
+            case (rect_word)
+                2'd0: rect_contents <= rect_x[rect_index];
+                2'd1: rect_contents <= rect_y[rect_index];
+                2'd2: rect_contents <= {rect_w[rect_index], rect_h[rect_index]};
+                default: rect_contents <= 16'd0;
             endcase
-
-        end else if (in_bram) begin
-            contents <= ram[readWriteAddress[9:0]];
-
-        end else begin
-            contents <= 16'd0;
         end
+    end
+end
+
+always @(*) begin
+    if (in_rect) begin
+        contents = rect_contents;
+    end else if (in_bram) begin
+        contents = bram_contents;
+    end else begin
+        contents = 16'd0;
     end
 end
 

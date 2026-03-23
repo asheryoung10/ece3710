@@ -97,23 +97,31 @@ module tb_cpu;
     endtask
 	 
 task dumpRegisterFile;
-    integer i;
     begin
         $display("RegisterFile:");
-        for (i = 0; i < 16; i = i + 1) begin
-            $display("registerFile[%0d] = %h", i, uut.register_file_instance.registers[i]);
-        end
+        $display("registerFile[0] = %h",  uut.register_file_instance.registers[0]);
+        $display("registerFile[1] = %h",  uut.register_file_instance.registers[1]);
+        $display("registerFile[2] = %h",  uut.register_file_instance.registers[2]);
+        $display("registerFile[3] = %h",  uut.register_file_instance.registers[3]);
+        $display("registerFile[4] = %h",  uut.register_file_instance.registers[4]);
+        $display("registerFile[5] = %h",  uut.register_file_instance.registers[5]);
+        $display("registerFile[6] = %h",  uut.register_file_instance.registers[6]);
+        $display("registerFile[7] = %h",  uut.register_file_instance.registers[7]);
+        $display("registerFile[8] = %h",  uut.register_file_instance.registers[8]);
+        $display("registerFile[9] = %h",  uut.register_file_instance.registers[9]);
+        $display("registerFile[10] = %h", uut.register_file_instance.registers[10]);
+        $display("registerFile[11] = %h", uut.register_file_instance.registers[11]);
+        $display("registerFile[12] = %h", uut.register_file_instance.registers[12]);
+        $display("registerFile[13] = %h", uut.register_file_instance.registers[13]);
+        $display("registerFile[14] = %h", uut.register_file_instance.registers[14]);
+        $display("registerFile[15] = %h", uut.register_file_instance.registers[15]);
         $display(""); // blank line for readability
     end
 endtask
 
 task dumpMemory;
-    integer i;
     begin
-        $display("Memory:");
-        for (i = 0; i < 48; i = i + 1) begin
-            $display("memory[%0d] = %h", i, uut.memory_instance.ram[i]);
-        end
+        $display("Memory dump unavailable in tb_cpu: this testbench instantiates the CPU without a memory module.");
         $display(""); // blank line for readability
     end
 endtask

@@ -1,6 +1,6 @@
 module doodle_jump #(
     parameter DATA_WIDTH = 16,
-    parameter MEMORY_ADDR_WIDTH = 10
+    parameter MEMORY_ADDR_WIDTH = 16
 )
 (
 	input systemClock50MHz,
@@ -62,8 +62,8 @@ vga vga_instance (
 	.r(vga_red),
 	.g(vga_green),
 	.b(vga_blue),
-	.playerX(switches[5:0]),
-	.playerY(0),
+	.playerX({4'b0000, switches[5:0]}),
+	.playerY(10'd0),
 	.playerAnimationIndex(switches[9:6]),
 	.pixelX(vgaPixelX),
 	.pixelY(vgaPixelY),

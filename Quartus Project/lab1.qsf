@@ -186,10 +186,11 @@ set_location_assignment PIN_AE12 -to switches[9]
 set_location_assignment PIN_AF14 -to systemClock50MHz
 set_global_assignment -name EDA_TEST_BENCH_NAME test.v -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id test.v
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_doodle.v -section_id test.v
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_doodle -section_id test.v
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/cpu/alu.v" -section_id test.v
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/cpu/control_unit.v" -section_id test.v
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/cpu/cpu.v" -section_id test.v
+set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/cpu/bram.v" -section_id test.v
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/cpu/instruction_decoder.v" -section_id test.v
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/cpu/memory.v" -section_id test.v
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/cpu/mux2.v" -section_id test.v
@@ -216,6 +217,7 @@ set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/vga/playerMemor
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/vga/tileMemory.v"
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/cpu/top.v"
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/cpu/tb_cpu.v"
+set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/cpu/bram.v"
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/cpu/register_file.v"
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/cpu/register.v"
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/cpu/mux4.v"
