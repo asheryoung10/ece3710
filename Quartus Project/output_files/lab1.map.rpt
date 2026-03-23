@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab1
-Mon Mar 23 12:11:36 2026
+Mon Mar 23 13:42:09 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Mar 23 12:11:35 2026          ;
+; Analysis & Synthesis Status     ; Successful - Mon Mar 23 13:42:08 2026          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; lab1                                           ;
 ; Top-level Entity Name           ; doodle_jump                                    ;
@@ -221,12 +221,12 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------------+
 ; Estimate of Logic utilization (ALMs needed) ; 11666                  ;
 ;                                             ;                        ;
-; Combinational ALUT usage for logic          ; 7545                   ;
+; Combinational ALUT usage for logic          ; 7653                   ;
 ;     -- 7 input functions                    ; 21                     ;
 ;     -- 6 input functions                    ; 5981                   ;
 ;     -- 5 input functions                    ; 191                    ;
 ;     -- 4 input functions                    ; 144                    ;
-;     -- <=3 input functions                  ; 1208                   ;
+;     -- <=3 input functions                  ; 1316                   ;
 ;                                             ;                        ;
 ; Dedicated logic registers                   ; 16769                  ;
 ;                                             ;                        ;
@@ -236,8 +236,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                        ;
 ; Maximum fan-out node                        ; systemClock50MHz~input ;
 ; Maximum fan-out                             ; 16697                  ;
-; Total fan-out                               ; 91998                  ;
-; Average fan-out                             ; 3.73                   ;
+; Total fan-out                               ; 92106                  ;
+; Average fan-out                             ; 3.72                   ;
 +---------------------------------------------+------------------------+
 
 
@@ -246,7 +246,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name         ; Library Name ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------+--------------+
-; |doodle_jump                                             ; 7545 (0)            ; 16769 (0)                 ; 0                 ; 0          ; 177  ; 0            ; |doodle_jump                                                                   ; doodle_jump         ; work         ;
+; |doodle_jump                                             ; 7653 (0)            ; 16769 (0)                 ; 0                 ; 0          ; 177  ; 0            ; |doodle_jump                                                                   ; doodle_jump         ; work         ;
 ;    |cpu:cpu_instance|                                    ; 833 (0)             ; 296 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance                                                  ; cpu                 ; work         ;
 ;       |alu:alu_instance|                                 ; 520 (520)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|alu:alu_instance                                 ; alu                 ; work         ;
 ;       |control_unit:control_unit_instance|               ; 24 (24)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|control_unit:control_unit_instance               ; control_unit        ; work         ;
@@ -258,7 +258,7 @@ https://fpgasoftware.intel.com/eula.
 ;       |register:program_counter|                         ; 2 (2)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:program_counter                         ; register            ; work         ;
 ;       |register:program_state_register|                  ; 0 (0)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:program_state_register                  ; register            ; work         ;
 ;       |register_file:register_file_instance|             ; 182 (182)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance             ; register_file       ; work         ;
-;    |memory:memory_instance|                              ; 6598 (6598)         ; 16400 (16400)             ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|memory:memory_instance                                            ; memory              ; work         ;
+;    |memory:memory_instance|                              ; 6706 (6706)         ; 16400 (16400)             ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|memory:memory_instance                                            ; memory              ; work         ;
 ;    |vga:vga_instance|                                    ; 114 (100)           ; 73 (45)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance                                                  ; vga                 ; work         ;
 ;       |playerMemory:playerMem_inst|                      ; 13 (13)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|playerMemory:playerMem_inst                      ; playerMemory        ; work         ;
 ;       |tileMemory:tileMem_inst|                          ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|tileMemory:tileMem_inst                          ; tileMemory          ; work         ;
@@ -927,7 +927,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SLD               ; 16                          ;
 ;     plain             ; 40                          ;
 ; arriav_io_obuf        ; 6                           ;
-; arriav_lcell_comb     ; 7548                        ;
+; arriav_lcell_comb     ; 7656                        ;
 ;     arith             ; 112                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 44                          ;
@@ -936,9 +936,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs ; 32                          ;
 ;     extend            ; 21                          ;
 ;         7 data inputs ; 21                          ;
-;     normal            ; 7415                        ;
+;     normal            ; 7523                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 21                          ;
+;         1 data inputs ; 129                         ;
 ;         2 data inputs ; 36                          ;
 ;         3 data inputs ; 1090                        ;
 ;         4 data inputs ; 127                         ;
@@ -947,7 +947,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 177                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.20                       ;
-; Average LUT depth     ; 5.84                        ;
+; Average LUT depth     ; 5.83                        ;
 +-----------------------+-----------------------------+
 
 
@@ -966,7 +966,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Mar 23 12:10:59 2026
+    Info: Processing started: Mon Mar 23 13:41:31 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -998,18 +998,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/u
     Info (12023): Found entity 1: alu File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/tb_i2c_controller.v
     Info (12023): Found entity 1: tb_i2c_controller File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/tb_i2c_controller.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/tb_audio_configurator.v
-    Info (12023): Found entity 1: tb_audio_configurator File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/tb_audio_configurator.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v
     Info (12023): Found entity 1: i2c_controller File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v Line: 1
-Info (12021): Found 3 design units, including 3 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v
-    Info (12023): Found entity 1: audio_output File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 1
-    Info (12023): Found entity 2: note_generator File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 72
-    Info (12023): Found entity 3: drum_generator File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 101
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v
-    Info (12023): Found entity 1: audio_configurator_select File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator.v
-    Info (12023): Found entity 1: audio_configurator File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/block_mover.v
     Info (12023): Found entity 1: block_mover File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/block_mover.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/clk_divider.v
@@ -1023,21 +1013,21 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/u
     Info (12023): Found entity 1: doodle_jump File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/tb_doodle.v
     Info (12023): Found entity 1: tb_doodle File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/tb_doodle.v Line: 3
-Warning (10236): Verilog HDL Implicit Net warning at doodle_jump.v(42): created implicit net for "reset" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 42
+Warning (10236): Verilog HDL Implicit Net warning at doodle_jump.v(46): created implicit net for "reset" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 46
 Info (12127): Elaborating entity "doodle_jump" for the top level hierarchy
-Warning (10034): Output port "leds" at doodle_jump.v(5) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 5
-Warning (10034): Output port "hex2" at doodle_jump.v(10) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 10
-Warning (10034): Output port "hex3" at doodle_jump.v(11) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 11
-Warning (10034): Output port "hex4" at doodle_jump.v(12) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 12
-Warning (10034): Output port "hex5" at doodle_jump.v(13) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 13
-Warning (10034): Output port "vga_sync_n" at doodle_jump.v(27) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 27
-Info (12128): Elaborating entity "vga" for hierarchy "vga:vga_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 69
+Warning (10034): Output port "leds" at doodle_jump.v(9) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+Warning (10034): Output port "hex2" at doodle_jump.v(14) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 14
+Warning (10034): Output port "hex3" at doodle_jump.v(15) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 15
+Warning (10034): Output port "hex4" at doodle_jump.v(16) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+Warning (10034): Output port "hex5" at doodle_jump.v(17) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+Warning (10034): Output port "vga_sync_n" at doodle_jump.v(31) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 31
+Info (12128): Elaborating entity "vga" for hierarchy "vga:vga_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 73
 Warning (10230): Verilog HDL assignment warning at hard_coded_vga.v(67): truncated value with size 32 to match size of target (10) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 67
 Warning (10230): Verilog HDL assignment warning at hard_coded_vga.v(69): truncated value with size 32 to match size of target (10) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 69
 Info (12128): Elaborating entity "tileMemory" for hierarchy "vga:vga_instance|tileMemory:tileMem_inst" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 110
 Info (12128): Elaborating entity "playerMemory" for hierarchy "vga:vga_instance|playerMemory:playerMem_inst" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 127
 Warning (10230): Verilog HDL assignment warning at playerMemory.v(22): truncated value with size 32 to match size of target (8) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v Line: 22
-Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 93
+Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 97
 Info (12128): Elaborating entity "register_file" for hierarchy "cpu:cpu_instance|register_file:register_file_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 102
 Warning (10240): Verilog HDL Always Construct warning at register_file.v(23): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register_file.v Line: 23
 Info (12128): Elaborating entity "alu" for hierarchy "cpu:cpu_instance|alu:alu_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 118
@@ -1059,93 +1049,93 @@ Info (12128): Elaborating entity "control_unit" for hierarchy "cpu:cpu_instance|
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(56): incomplete case statement has no default case item File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 56
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(76): incomplete case statement has no default case item File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 76
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(41): incomplete case statement has no default case item File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 41
-Info (12128): Elaborating entity "memory" for hierarchy "memory:memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 117
-Warning (10850): Verilog HDL warning at memory.v(26): number of words (5) in memory file does not match the number of elements in the address range [0:1023] File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/memory.v Line: 26
+Info (12128): Elaborating entity "memory" for hierarchy "memory:memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 119
+Warning (10850): Verilog HDL warning at memory.v(26): number of words (24) in memory file does not match the number of elements in the address range [0:1023] File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/memory.v Line: 26
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "memory:memory_instance|ram" is uninferred due to asynchronous read logic File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/memory.v Line: 23
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/u1462567/Desktop/ece3710/Quartus Project/db/lab1.ram0_memory_acf65643.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "i2c_clock" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
-    Warning (13040): bidirectional pin "i2c_data" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
-    Warning (13040): bidirectional pin "audio_masterClock" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 18
-    Warning (13040): bidirectional pin "audio_leftRightClock" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 19
-    Warning (13040): bidirectional pin "audio_bitClock" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 20
-    Warning (13040): bidirectional pin "audio_data" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 21
+    Warning (13040): bidirectional pin "i2c_clock" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 20
+    Warning (13040): bidirectional pin "i2c_data" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 21
+    Warning (13040): bidirectional pin "audio_masterClock" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 22
+    Warning (13040): bidirectional pin "audio_leftRightClock" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 23
+    Warning (13040): bidirectional pin "audio_bitClock" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 24
+    Warning (13040): bidirectional pin "audio_data" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 25
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "leds[0]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 5
-    Warning (13410): Pin "leds[1]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 5
-    Warning (13410): Pin "leds[2]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 5
-    Warning (13410): Pin "leds[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 5
-    Warning (13410): Pin "leds[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 5
-    Warning (13410): Pin "leds[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 5
-    Warning (13410): Pin "leds[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 5
-    Warning (13410): Pin "leds[7]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 5
-    Warning (13410): Pin "leds[8]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 5
-    Warning (13410): Pin "leds[9]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 5
-    Warning (13410): Pin "hex1[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "hex1[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "hex1[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "hex1[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "hex2[0]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 10
-    Warning (13410): Pin "hex2[1]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 10
-    Warning (13410): Pin "hex2[2]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 10
-    Warning (13410): Pin "hex2[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 10
-    Warning (13410): Pin "hex2[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 10
-    Warning (13410): Pin "hex2[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 10
-    Warning (13410): Pin "hex2[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 10
-    Warning (13410): Pin "hex3[0]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 11
-    Warning (13410): Pin "hex3[1]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 11
-    Warning (13410): Pin "hex3[2]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 11
-    Warning (13410): Pin "hex3[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 11
-    Warning (13410): Pin "hex3[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 11
-    Warning (13410): Pin "hex3[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 11
-    Warning (13410): Pin "hex3[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 11
-    Warning (13410): Pin "hex4[0]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 12
-    Warning (13410): Pin "hex4[1]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 12
-    Warning (13410): Pin "hex4[2]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 12
-    Warning (13410): Pin "hex4[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 12
-    Warning (13410): Pin "hex4[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 12
-    Warning (13410): Pin "hex4[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 12
-    Warning (13410): Pin "hex4[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 12
-    Warning (13410): Pin "hex5[0]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 13
-    Warning (13410): Pin "hex5[1]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 13
-    Warning (13410): Pin "hex5[2]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 13
-    Warning (13410): Pin "hex5[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 13
-    Warning (13410): Pin "hex5[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 13
-    Warning (13410): Pin "hex5[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 13
-    Warning (13410): Pin "hex5[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 13
-    Warning (13410): Pin "vga_sync_n" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 27
-    Warning (13410): Pin "programStateRegisterContentsOutput[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 35
-    Warning (13410): Pin "programStateRegisterContentsOutput[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 35
-    Warning (13410): Pin "programStateRegisterContentsOutput[7]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 35
-    Warning (13410): Pin "programStateRegisterContentsOutput[8]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 35
-    Warning (13410): Pin "programStateRegisterContentsOutput[9]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 35
-    Warning (13410): Pin "programStateRegisterContentsOutput[10]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 35
-    Warning (13410): Pin "programStateRegisterContentsOutput[11]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 35
-    Warning (13410): Pin "programStateRegisterContentsOutput[12]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 35
-    Warning (13410): Pin "programStateRegisterContentsOutput[13]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 35
-    Warning (13410): Pin "programStateRegisterContentsOutput[14]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 35
-    Warning (13410): Pin "programStateRegisterContentsOutput[15]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 35
+    Warning (13410): Pin "leds[0]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[1]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[2]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[7]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[8]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[9]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "hex1[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 13
+    Warning (13410): Pin "hex1[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 13
+    Warning (13410): Pin "hex1[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 13
+    Warning (13410): Pin "hex1[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 13
+    Warning (13410): Pin "hex2[0]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 14
+    Warning (13410): Pin "hex2[1]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 14
+    Warning (13410): Pin "hex2[2]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 14
+    Warning (13410): Pin "hex2[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 14
+    Warning (13410): Pin "hex2[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 14
+    Warning (13410): Pin "hex2[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 14
+    Warning (13410): Pin "hex2[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 14
+    Warning (13410): Pin "hex3[0]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 15
+    Warning (13410): Pin "hex3[1]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 15
+    Warning (13410): Pin "hex3[2]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 15
+    Warning (13410): Pin "hex3[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 15
+    Warning (13410): Pin "hex3[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 15
+    Warning (13410): Pin "hex3[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 15
+    Warning (13410): Pin "hex3[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 15
+    Warning (13410): Pin "hex4[0]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+    Warning (13410): Pin "hex4[1]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+    Warning (13410): Pin "hex4[2]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+    Warning (13410): Pin "hex4[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+    Warning (13410): Pin "hex4[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+    Warning (13410): Pin "hex4[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+    Warning (13410): Pin "hex4[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+    Warning (13410): Pin "hex5[0]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+    Warning (13410): Pin "hex5[1]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+    Warning (13410): Pin "hex5[2]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+    Warning (13410): Pin "hex5[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+    Warning (13410): Pin "hex5[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+    Warning (13410): Pin "hex5[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+    Warning (13410): Pin "hex5[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+    Warning (13410): Pin "vga_sync_n" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 31
+    Warning (13410): Pin "programStateRegisterContentsOutput[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[7]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[8]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[9]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[10]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[11]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[12]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[13]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[14]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[15]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 16 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file /home/u1462567/Desktop/ece3710/Quartus Project/output_files/lab1.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "push_buttons[1]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 6
-    Warning (15610): No output dependent on input pin "push_buttons[2]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 6
-    Warning (15610): No output dependent on input pin "push_buttons[3]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 6
+    Warning (15610): No output dependent on input pin "push_buttons[1]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 10
+    Warning (15610): No output dependent on input pin "push_buttons[2]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 10
+    Warning (15610): No output dependent on input pin "push_buttons[3]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 10
 Info (21057): Implemented 24396 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 156 output pins
     Info (21060): Implemented 6 bidirectional pins
     Info (21061): Implemented 24219 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 94 warnings
-    Info: Peak virtual memory: 607 megabytes
-    Info: Processing ended: Mon Mar 23 12:11:36 2026
-    Info: Elapsed time: 00:00:37
-    Info: Total CPU time (on all processors): 00:00:43
+    Info: Peak virtual memory: 587 megabytes
+    Info: Processing ended: Mon Mar 23 13:42:09 2026
+    Info: Elapsed time: 00:00:38
+    Info: Total CPU time (on all processors): 00:00:44
 
 
 +------------------------------------------+

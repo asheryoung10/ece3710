@@ -205,12 +205,8 @@ set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/vga/play
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v" -section_id test.v
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/vga/tileMemory.v" -section_id test.v
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/doodle_jump.v" -section_id test.v
-set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/audio/top.v" -section_id test.v
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/audio/tb_i2c_controller.v" -section_id test.v
-set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/audio/tb_audio_configurator.v" -section_id test.v
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/audio/i2c_controller.v" -section_id test.v
-set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/audio/audio_configurator_select.v" -section_id test.v
-set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/audio/audio_configurator.v" -section_id test.v
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/tb_doodle.v" -section_id test.v
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/cpu/conditions.vh" -section_id test.v
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/cpu/indicesPSR.vh" -section_id test.v
@@ -230,11 +226,7 @@ set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/cpu/cpu.v"
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/cpu/control_unit.v"
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/cpu/alu.v"
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/audio/tb_i2c_controller.v"
-set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/audio/tb_audio_configurator.v"
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/audio/i2c_controller.v"
-set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/audio/audio_output.v"
-set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/audio/audio_configurator_select.v"
-set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/audio/audio_configurator.v"
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/vga/block_mover.v"
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/vga/clk_divider.v"
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/vga/hard_coded_bitgen.v"

@@ -28,109 +28,354 @@
 # 
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 12:19:58 on Mar 23,2026
+# Start time: 13:51:05 on Mar 23,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v 
 # -- Compiling module playerMemory
 # 
 # Top level modules:
 # 	playerMemory
-# End time: 12:19:58 on Mar 23,2026, Elapsed time: 0:00:00
+# End time: 13:51:06 on Mar 23,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/tileMemory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 12:19:58 on Mar 23,2026
+# Start time: 13:51:06 on Mar 23,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/tileMemory.v 
 # -- Compiling module tileMemory
 # 
 # Top level modules:
 # 	tileMemory
-# End time: 12:19:58 on Mar 23,2026, Elapsed time: 0:00:00
+# End time: 13:51:06 on Mar 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register_file.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 12:19:58 on Mar 23,2026
+# Start time: 13:51:06 on Mar 23,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register_file.v 
 # -- Compiling module register_file
 # 
 # Top level modules:
 # 	register_file
-# End time: 12:19:59 on Mar 23,2026, Elapsed time: 0:00:01
+# End time: 13:51:06 on Mar 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 12:19:59 on Mar 23,2026
+# Start time: 13:51:06 on Mar 23,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register.v 
 # -- Compiling module register
 # 
 # Top level modules:
 # 	register
-# End time: 12:19:59 on Mar 23,2026, Elapsed time: 0:00:00
+# End time: 13:51:06 on Mar 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux4.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 12:19:59 on Mar 23,2026
+# Start time: 13:51:06 on Mar 23,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux4.v 
 # -- Compiling module mux4
 # 
 # Top level modules:
 # 	mux4
-# End time: 12:19:59 on Mar 23,2026, Elapsed time: 0:00:00
+# End time: 13:51:06 on Mar 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux2.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 12:19:59 on Mar 23,2026
+# Start time: 13:51:06 on Mar 23,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux2.v 
 # -- Compiling module mux2
 # 
 # Top level modules:
 # 	mux2
-# End time: 12:19:59 on Mar 23,2026, Elapsed time: 0:00:00
+# End time: 13:51:06 on Mar 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/memory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 12:19:59 on Mar 23,2026
+# Start time: 13:51:06 on Mar 23,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/memory.v 
 # -- Compiling module memory
 # 
 # Top level modules:
 # 	memory
-# End time: 12:19:59 on Mar 23,2026, Elapsed time: 0:00:00
+# End time: 13:51:06 on Mar 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 12:19:59 on Mar 23,2026
+# Start time: 13:51:06 on Mar 23,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v 
 # -- Compiling module cpu
 # 
 # Top level modules:
 # 	cpu
-# End time: 12:19:59 on Mar 23,2026, Elapsed time: 0:00:00
+# End time: 13:51:07 on Mar 23,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 12:19:59 on Mar 23,2026
+# Start time: 13:51:07 on Mar 23,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v 
 # -- Compiling module vga
 # 
 # Top level modules:
 # 	vga
-# End time: 12:19:59 on Mar 23,2026, Elapsed time: 0:00:00
+# End time: 13:51:07 on Mar 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 12:19:59 on Mar 23,2026
+# Start time: 13:51:07 on Mar 23,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v 
 # -- Compiling module doodle_jump
-# ** Error: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v(33): (vlog-2730) Undefined variable: 'DATA_WIDTH'.
-# ** Error (suppressible): /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v(33): (vlog-2388) 'instructionRegisterContentsOutput' already declared in this scope (doodle_jump) at /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v(33).
-# ** Error: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v(75): (vlog-2730) Undefined variable: 'MEMORY_ADDR_WIDTH'.
-# ** Error: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v(95): (vlog-13282) 'DATA_WIDTH' already declared in this scope.
-# ** Error: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v(96): (vlog-13282) 'MEMORY_ADDR_WIDTH' already declared in this scope.
-# ** Error: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v(33): (vlog-13294) Identifier must be declared with a port mode: instructionRegisterContentsOutput.
-# End time: 12:19:59 on Mar 23,2026, Elapsed time: 0:00:00
-# Errors: 6, Warnings: 0
+# 
+# Top level modules:
+# 	doodle_jump
+# End time: 13:51:07 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:07 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v 
+# -- Compiling module instruction_decoder
+# 
+# Top level modules:
+# 	instruction_decoder
+# End time: 13:51:07 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:07 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v 
+# -- Compiling module control_unit
+# 
+# Top level modules:
+# 	control_unit
+# End time: 13:51:07 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:07 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 13:51:07 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:08 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 13:51:08 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:08 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v 
+# -- Compiling module control_unit
+# 
+# Top level modules:
+# 	control_unit
+# End time: 13:51:08 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:08 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v 
+# -- Compiling module cpu
+# 
+# Top level modules:
+# 	cpu
+# End time: 13:51:08 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:08 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v 
+# -- Compiling module instruction_decoder
+# 
+# Top level modules:
+# 	instruction_decoder
+# End time: 13:51:08 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/memory.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:08 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/memory.v 
+# -- Compiling module memory
+# 
+# Top level modules:
+# 	memory
+# End time: 13:51:08 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:08 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v 
+# -- Compiling module mux2
+# 
+# Top level modules:
+# 	mux2
+# End time: 13:51:09 on Mar 23,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:09 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v 
+# -- Compiling module mux4
+# 
+# Top level modules:
+# 	mux4
+# End time: 13:51:09 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:09 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v 
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+# End time: 13:51:09 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:09 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v 
+# -- Compiling module register_file
+# 
+# Top level modules:
+# 	register_file
+# End time: 13:51:09 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:09 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 13:51:09 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:09 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v 
+# -- Compiling module block_mover
+# 
+# Top level modules:
+# 	block_mover
+# End time: 13:51:10 on Mar 23,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:10 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v 
+# -- Compiling module clk_divider
+# 
+# Top level modules:
+# 	clk_divider
+# End time: 13:51:10 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:10 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v 
+# -- Compiling module hard_coded_bitgen
+# 
+# Top level modules:
+# 	hard_coded_bitgen
+# End time: 13:51:10 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:10 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v 
+# -- Compiling module vga
+# 
+# Top level modules:
+# 	vga
+# End time: 13:51:10 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:10 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v 
+# -- Compiling module playerMemory
+# 
+# Top level modules:
+# 	playerMemory
+# End time: 13:51:10 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:10 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v 
+# -- Compiling module tb_hard_coded_vga
+# 
+# Top level modules:
+# 	tb_hard_coded_vga
+# End time: 13:51:10 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:10 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v 
+# -- Compiling module tileMemory
+# 
+# Top level modules:
+# 	tileMemory
+# End time: 13:51:11 on Mar 23,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:11 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v 
+# -- Compiling module doodle_jump
+# 
+# Top level modules:
+# 	doodle_jump
+# End time: 13:51:11 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:11 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v 
+# -- Compiling module tb_i2c_controller
+# 
+# Top level modules:
+# 	tb_i2c_controller
+# End time: 13:51:11 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:11 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v 
+# -- Compiling module i2c_controller
+# 
+# Top level modules:
+# 	i2c_controller
+# End time: 13:51:11 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:11 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v 
+# -- Compiling module tb_doodle
+# 
+# Top level modules:
+# 	tb_doodle
+# End time: 13:51:11 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/conditions.vh}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:51:11 on Mar 23,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/conditions.vh 
+# ** Error: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/conditions.vh(1): (vlog-2155) Global declarations are illegal in Verilog 2001 syntax.
+# End time: 13:51:11 on Mar 23,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
 # ** Error: /usr/local/quartus/questa_fse/linux_x86_64/vlog failed.
-# Error in macro ./lab1_run_msim_rtl_verilog.do line 17
+# Error in macro ./lab1_run_msim_rtl_verilog.do line 43
 # /usr/local/quartus/questa_fse/linux_x86_64/vlog failed.
 #     while executing
-# "vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_j..."
+# "vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quar..."
