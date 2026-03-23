@@ -1,5 +1,5 @@
 Flow report for lab1
-Mon Mar 23 13:49:25 2026
+Mon Mar 23 16:03:21 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Mon Mar 23 13:49:25 2026          ;
+; Flow Status                     ; Successful - Mon Mar 23 16:03:21 2026          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; lab1                                           ;
 ; Top-level Entity Name           ; doodle_jump                                    ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEMA5F31C6                                   ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 10,828 / 32,070 ( 34 % )                       ;
-; Total registers                 ; 16854                                          ;
+; Logic utilization (in ALMs)     ; 1,145 / 32,070 ( 4 % )                         ;
+; Total registers                 ; 944                                            ;
 ; Total pins                      ; 177 / 457 ( 39 % )                             ;
 ; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                          ;
+; Total block memory bits         ; 16,384 / 4,065,280 ( < 1 % )                   ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                                 ;
 ; Total HSSI RX PCSs              ; 0                                              ;
 ; Total HSSI PMA RX Deserializers ; 0                                              ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/23/2026 13:41:32 ;
+; Start date & time ; 03/23/2026 16:01:57 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab1                ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+--------------------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                            ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+--------------------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 123719793384753.177429489227524                  ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 27214213868532.177430331745931                   ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                               ; --            ; --          ; tb_i2c_controller                 ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                               ; --            ; --          ; test.v                            ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                               ; --            ; --          ; tb_audio_configurator             ;
@@ -99,6 +99,7 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/alu.v                 ; --            ; --          ; test.v                            ;
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/control_unit.v        ; --            ; --          ; test.v                            ;
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/cpu.v                 ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/bram.v                ; --            ; --          ; test.v                            ;
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/instruction_decoder.v ; --            ; --          ; test.v                            ;
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/memory.v              ; --            ; --          ; test.v                            ;
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/mux2.v                ; --            ; --          ; test.v                            ;
@@ -133,7 +134,7 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/ALU.v.bak                     ; --            ; --          ; tb_ALU                            ;
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/tb_ALU.v                      ; --            ; --          ; tb_ALU                            ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; tb_i2c_controller                                ; --            ; --          ; tb_i2c_controller                 ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_doodle.v                                      ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_doodle                                        ; --            ; --          ; test.v                            ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; tb_audio_configurator                            ; --            ; --          ; tb_audio_configurator             ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; tb_hard_coded_vga                                ; --            ; --          ; tb_hard_coded_vga                 ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; tb_alu                                           ; --            ; --          ; tb_ALU                            ;
@@ -156,26 +157,26 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:35     ; 1.0                     ; 587 MB              ; 00:00:42                           ;
-; Fitter               ; 00:06:13     ; 1.2                     ; 2097 MB             ; 00:10:57                           ;
-; Assembler            ; 00:00:11     ; 1.0                     ; 673 MB              ; 00:00:11                           ;
-; Timing Analyzer      ; 00:00:37     ; 3.1                     ; 1257 MB             ; 00:01:33                           ;
-; EDA Netlist Writer   ; 00:00:04     ; 1.0                     ; 817 MB              ; 00:00:04                           ;
-; Total                ; 00:07:40     ; --                      ; --                  ; 00:13:27                           ;
+; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 867 MB              ; 00:00:19                           ;
+; Fitter               ; 00:00:49     ; 1.2                     ; 2499 MB             ; 00:02:13                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 788 MB              ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:08     ; 1.9                     ; 1196 MB             ; 00:00:12                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 949 MB              ; 00:00:01                           ;
+; Total                ; 00:01:18     ; --                      ; --                  ; 00:02:49                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+----------------------+------------------+----------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
-+----------------------+------------------+----------------+------------+----------------+
-; Analysis & Synthesis ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
-; Fitter               ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
-; Assembler            ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
-; Timing Analyzer      ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
-; EDA Netlist Writer   ; dsl8             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
-+----------------------+------------------+----------------+------------+----------------+
++-------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                     ;
++----------------------+----------------------+---------+------------+----------------+
+; Module Name          ; Machine Hostname     ; OS Name ; OS Version ; Processor type ;
++----------------------+----------------------+---------+------------+----------------+
+; Analysis & Synthesis ; lab1-20.eng.utah.edu ; Red Hat ; Red Hat    ; x86_64         ;
+; Fitter               ; lab1-20.eng.utah.edu ; Red Hat ; Red Hat    ; x86_64         ;
+; Assembler            ; lab1-20.eng.utah.edu ; Red Hat ; Red Hat    ; x86_64         ;
+; Timing Analyzer      ; lab1-20.eng.utah.edu ; Red Hat ; Red Hat    ; x86_64         ;
+; EDA Netlist Writer   ; lab1-20.eng.utah.edu ; Red Hat ; Red Hat    ; x86_64         ;
++----------------------+----------------------+---------+------------+----------------+
 
 
 ------------
