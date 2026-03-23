@@ -1,5 +1,29 @@
-D001
-804F
-D100
-4140
-0000
+D001 // MOVI 1, R0
+800F // LSHI 15, R0              -> R0 = 0x8000 (rectangle base)
+D120 // MOVI 32, R1              -> rect_x start
+D20D // MOVI 13, R2
+8204 // LSHI 4, R2               -> rect_y = 208
+D306 // MOVI 6, R3
+8304 // LSHI 4, R3               -> rect_width = 96
+D404 // MOVI 4, R4
+8404 // LSHI 4, R4               -> rect_height = 64
+D604 // MOVI 4, R6               -> step = 4
+ 
+08D0 // MOV R0, R8               -> x address
+4148 // STOR R1, R8              -> store rect_x
+ 
+0AD0 // MOV R0, R10
+5A01 // ADDI 1, R10
+424A // STOR R2, R10             -> store rect_y
+ 
+0AD0 // MOV R0, R10
+5A02 // ADDI 2, R10
+434A // STOR R3, R10             -> store rect_width
+ 
+0AD0 // MOV R0, R10
+5A03 // ADDI 3, R10
+444A // STOR R4, R10             -> store rect_height
+ 
+0156 // loop: ADD R6, R1         -> x += step
+4148 // STOR R1, R8              -> write rect_x
+CEFE // BCOND UC, -2             -> loop forever

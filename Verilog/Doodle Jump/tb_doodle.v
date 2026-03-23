@@ -9,6 +9,9 @@ module tb_doodle;
     // Inputs
     reg clock;
     reg reset;
+	 
+	 reg [9:0] switches;
+	 reg [3:0] push_buttons;
 
     // Outputs
     wire [15:0] instructionRegisterContentsOutput;
@@ -23,15 +26,17 @@ module tb_doodle;
     // Instantiate the CPU
 
 	  doodle_jump uut(
-	 .systemClock50MHz(clock),
-	        .reset(reset),
-        .instructionRegisterContentsOutput(instructionRegisterContentsOutput),
-        .programCounterContentsOutput(programCounterContentsOutput),
-        .programStateRegisterContentsOutput(programStateRegisterContentsOutput),
-        .aluResultOutput(aluResultOutput),
-        .aluFlagsOutput(aluFlagsOutput),
-        .controlUnitState(controlUnitState),
-        .controlUnitNextState(controlUnitNextState)
+		.systemClock50MHz(clock),
+		.switches(switches),
+		.push_buttons(push_buttons),
+	        //.reset(reset),
+		.instructionRegisterContentsOutput(instructionRegisterContentsOutput),
+		.programCounterContentsOutput(programCounterContentsOutput),
+		.programStateRegisterContentsOutput(programStateRegisterContentsOutput),
+      .aluResultOutput(aluResultOutput),
+      .aluFlagsOutput(aluFlagsOutput),
+      .controlUnitState(controlUnitState),
+      .controlUnitNextState(controlUnitNextState)
 	
 );
 
@@ -184,6 +189,9 @@ endtask
         // Initialize
         clock = 0;
         reset = 0;
+		  
+		  switches = 10'b0;
+		  push_buttons = 4'b1111;
 
         // Apply reset
         apply_reset();
