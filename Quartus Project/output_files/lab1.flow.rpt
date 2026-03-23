@@ -1,5 +1,5 @@
 Flow report for lab1
-Mon Mar 23 13:49:25 2026
+Mon Mar 23 15:59:02 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Mon Mar 23 13:49:25 2026          ;
+; Flow Status                     ; Successful - Mon Mar 23 15:59:02 2026          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; lab1                                           ;
 ; Top-level Entity Name           ; doodle_jump                                    ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEMA5F31C6                                   ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 10,828 / 32,070 ( 34 % )                       ;
-; Total registers                 ; 16854                                          ;
+; Logic utilization (in ALMs)     ; 10,140 / 32,070 ( 32 % )                       ;
+; Total registers                 ; 16866                                          ;
 ; Total pins                      ; 177 / 457 ( 39 % )                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                          ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/23/2026 13:41:32 ;
+; Start date & time ; 03/23/2026 15:50:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab1                ;
 +-------------------+---------------------+
@@ -79,9 +79,9 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+--------------------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                            ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+--------------------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 123719793384753.177429489227524                  ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 123719793384753.177430263453800                  ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                               ; --            ; --          ; tb_i2c_controller                 ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                               ; --            ; --          ; test.v                            ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                               ; --            ; --          ; tb_doodle                         ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                               ; --            ; --          ; tb_audio_configurator             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                               ; --            ; --          ; tb_hard_coded_vga                 ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                               ; --            ; --          ; tb_ALU                            ;
@@ -89,38 +89,35 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                              ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                              ; --            ; --          ; eda_board_design_signal_integrity ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                              ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; test.v                                           ; --            ; --          ; eda_simulation                    ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_doodle                                        ; --            ; --          ; eda_simulation                    ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                                      ; --            ; --          ; eda_simulation                    ;
 ; EDA_RUN_TOOL_AUTOMATICALLY           ; Off                                              ; --            ; --          ; eda_simulation                    ;
 ; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (Verilog)                      ; <None>        ; --          ; --                                ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                                  ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/i2c_controller.v         ; --            ; --          ; tb_i2c_controller                 ;
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/tb_i2c_controller.v      ; --            ; --          ; tb_i2c_controller                 ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/alu.v                 ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/control_unit.v        ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/cpu.v                 ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/instruction_decoder.v ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/memory.v              ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/mux2.v                ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/mux4.v                ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/register.v            ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/register_file.v       ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/top.v                 ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/block_mover.v         ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/clk_divider.v         ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/hard_coded_bitgen.v   ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/hard_coded_vga.v      ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/playerMemory.v        ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v   ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/tileMemory.v          ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/doodle_jump.v             ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/audio/tb_i2c_controller.v ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/audio/i2c_controller.v    ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/tb_doodle.v               ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/conditions.vh         ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/indicesPSR.vh         ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/opcodes.vh            ; --            ; --          ; test.v                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/states.vh             ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/alu.v                 ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/control_unit.v        ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/cpu.v                 ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/instruction_decoder.v ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/memory.v              ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/mux2.v                ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/mux4.v                ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/register.v            ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/register_file.v       ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/top.v                 ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/block_mover.v         ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/clk_divider.v         ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/hard_coded_bitgen.v   ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/hard_coded_vga.v      ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/playerMemory.v        ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v   ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/tileMemory.v          ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/doodle_jump.v             ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/audio/tb_i2c_controller.v ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/audio/i2c_controller.v    ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/tb_doodle.v               ; --            ; --          ; tb_doodle                         ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/tb_cpu.v              ; --            ; --          ; tb_doodle                         ;
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/tb_audio_configurator.v  ; --            ; --          ; tb_audio_configurator             ;
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/i2c_controller.v         ; --            ; --          ; tb_audio_configurator             ;
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/audio_configurator.v     ; --            ; --          ; tb_audio_configurator             ;
@@ -133,11 +130,11 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/ALU.v.bak                     ; --            ; --          ; tb_ALU                            ;
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/tb_ALU.v                      ; --            ; --          ; tb_ALU                            ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; tb_i2c_controller                                ; --            ; --          ; tb_i2c_controller                 ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_doodle.v                                      ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_doodle                                        ; --            ; --          ; tb_doodle                         ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; tb_audio_configurator                            ; --            ; --          ; tb_audio_configurator             ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; tb_hard_coded_vga                                ; --            ; --          ; tb_hard_coded_vga                 ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; tb_alu                                           ; --            ; --          ; tb_ALU                            ;
-; EDA_TEST_BENCH_NAME                  ; test.v                                           ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; tb_doodle                                        ; --            ; --          ; eda_simulation                    ;
 ; EDA_TIME_SCALE                       ; 1 ps                                             ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                               ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                                ; --            ; --          ; --                                ;
@@ -148,6 +145,7 @@ https://fpgasoftware.intel.com/eula.
 ; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW            ; --            ; --          ; --                                ;
 ; PROJECT_OUTPUT_DIRECTORY             ; output_files                                     ; --            ; --          ; --                                ;
 ; TOP_LEVEL_ENTITY                     ; doodle_jump                                      ; lab1          ; --          ; --                                ;
+; VERILOG_SHOW_LMF_MAPPING_MESSAGES    ; Off                                              ; --            ; --          ; --                                ;
 +--------------------------------------+--------------------------------------------------+---------------+-------------+-----------------------------------+
 
 
@@ -156,12 +154,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:35     ; 1.0                     ; 587 MB              ; 00:00:42                           ;
-; Fitter               ; 00:06:13     ; 1.2                     ; 2097 MB             ; 00:10:57                           ;
+; Analysis & Synthesis ; 00:00:35     ; 1.0                     ; 573 MB              ; 00:00:41                           ;
+; Fitter               ; 00:06:43     ; 1.2                     ; 2119 MB             ; 00:12:05                           ;
 ; Assembler            ; 00:00:11     ; 1.0                     ; 673 MB              ; 00:00:11                           ;
-; Timing Analyzer      ; 00:00:37     ; 3.1                     ; 1257 MB             ; 00:01:33                           ;
-; EDA Netlist Writer   ; 00:00:04     ; 1.0                     ; 817 MB              ; 00:00:04                           ;
-; Total                ; 00:07:40     ; --                      ; --                  ; 00:13:27                           ;
+; Timing Analyzer      ; 00:00:40     ; 3.1                     ; 1290 MB             ; 00:01:42                           ;
+; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 825 MB              ; 00:00:04                           ;
+; Total                ; 00:08:14     ; --                      ; --                  ; 00:14:43                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

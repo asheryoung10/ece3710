@@ -50,15 +50,17 @@ begin
 
         if (in_rect) begin
             idx = (readWriteAddress - RECT_BASE) >> 2;
-
-            case ((readWriteAddress - RECT_BASE) & 2'b11)
-                2'd0: rect_x[idx] <= writeData;
-                2'd1: rect_y[idx] <= writeData;
-                2'd2: begin
-                    rect_w[idx] <= writeData[15:8];
-                    rect_h[idx] <= writeData[7:0];
-                end
-            endcase
+				
+				//if(idx != 0) begin
+            //case ((readWriteAddress - RECT_BASE) & 2'b11)
+                //2'd0: rect_x[idx] <= writeData;
+                //2'd1: rect_y[idx] <= writeData;
+                //2'd2: begin
+                 //   rect_w[idx] <= writeData[15:8];
+                 //   rect_h[idx] <= writeData[7:0];
+                //end
+            //endcase
+				//end
 
             contents <= writeData;
 
@@ -75,12 +77,12 @@ begin
         if (in_rect) begin
             idx = (readWriteAddress - RECT_BASE) >> 2;
 
-            case ((readWriteAddress - RECT_BASE) & 2'b11)
-                2'd0: contents <= rect_x[idx];
-                2'd1: contents <= rect_y[idx];
-                2'd2: contents <= {rect_w[idx], rect_h[idx]};
-                default: contents <= 16'd0;
-            endcase
+            //case ((readWriteAddress - RECT_BASE) & 2'b11)
+                //2'd0: contents <= rect_x[idx];
+                //2'd1: contents <= rect_y[idx];
+                //2'd2: contents <= {rect_w[idx], rect_h[idx]};
+                //default: contents <= 16'd0;
+            //endcase
 
         end else if (in_bram) begin
             contents <= ram[readWriteAddress[9:0]];
@@ -142,6 +144,27 @@ initial begin
     rect_x[5] = {4'hA, 12'd200};  rect_y[5] = {4'h6, 12'd300};
     rect_x[6] = {4'h9, 12'd360};  rect_y[6] = {4'h7, 12'd300};
     rect_x[7] = {4'h8, 12'd520};  rect_y[7] = {4'h8, 12'd300};
+end
+
+// --------------------
+// Rectangle 0 automatic movement
+// --------------------
+reg [9:0] rect0_dir; // 0 = left, 1 = right
+
+always @(posedge clock) begin
+    // Initialize direction on first clock
+    if (rect0_dir === 1'bx) rect0_dir <= 1'b1;
+
+    // Move rectangle 0 horizontally
+    if (rect0_dir) begin
+        rect_x[0][9:0] <= rect_x[0][9:0] + 1; // move right
+        if (rect_x[0][9:0] >= 640 - rect_w[0]) // hit right edge
+            rect0_dir <= 1'b0;
+    end else begin
+        rect_x[0][9:0] <= rect_x[0][9:0] - 1; // move left
+        if (rect_x[0][9:0] == 0) // hit left edge
+            rect0_dir <= 1'b1;
+    end
 end
 
 endmodule
