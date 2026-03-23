@@ -1,4 +1,8 @@
-module doodle_jump (
+module doodle_jump #(
+    parameter DATA_WIDTH = 16,
+    parameter MEMORY_ADDR_WIDTH = 10
+)
+(
 	input systemClock50MHz,
 	
 	input [9:0] switches,
@@ -27,12 +31,27 @@ module doodle_jump (
 	output vga_sync_n,
 	output [7:0] vga_red,
 	output [7:0] vga_green,
-	output [7:0] vga_blue
+	output [7:0] vga_blue,
+	
+	//cpu debug
+	output [DATA_WIDTH-1:0] instructionRegisterContentsOutput,
+   output [DATA_WIDTH-1:0] programCounterContentsOutput,
+   output [DATA_WIDTH-1:0] programStateRegisterContentsOutput,
+   output [DATA_WIDTH-1:0] aluResultOutput,
+   output [4:0] aluFlagsOutput,
+	 
+	output [2:0] controlUnitState,
+	output [2:0] controlUnitNextState
 );
 assign reset = ~push_buttons[0];
 assign hex0 = switches[6:0];
 assign hex1 = switches [9:7];
 
+wire [9:0] vgaPixelX;
+wire [9:0] vgaPixelY;
+wire [7:0] rectR;
+wire [7:0] rectG;
+wire [7:0] rectB;
 vga vga_instance (
 	.clk50(systemClock50MHz),
 	.rstInv(~reset),
@@ -46,33 +65,79 @@ vga vga_instance (
 	.playerX(switches[5:0]),
 	.playerY(0),
 	.playerAnimationIndex(switches[9:6]),
+	.pixelX(vgaPixelX),
+	.pixelY(vgaPixelY),
+	.rectR(rectR),
+	.rectB(rectB),
+	.rectG(rectG)
 );
 
+
+
+
+wire memoryWriteEnable;
+wire [MEMORY_ADDR_WIDTH-1:0] memoryReadWriteAddress;
+wire [DATA_WIDTH-1:0] registerFileContentsB;
+wire [DATA_WIDTH-1:0] memoryContents;
 cpu cpu_instance (
 	.clock(systemClock50MHz),
 	.reset(reset),
+	.memoryWriteEnable(memoryWriteEnable),
+	.registerFileContentsB(registerFileContentsB),
+	.memoryReadWriteAddress(memoryReadWriteAddress),
+	.memoryContents(memoryContents),
+	
+	.instructionRegisterContentsOutput(instructionRegisterContentsOutput),
+   .programCounterContentsOutput(programCounterContentsOutput),
+   .programStateRegisterContentsOutput(programStateRegisterContentsOutput),
+   .aluResultOutput(aluResultOutput),
+   .aluFlagsOutput(aluFlagsOutput),
+   .controlUnitState(controlUnitState),
+   .controlUnitNextState(controlUnitNextState)
 );
 
-audio_unit audio_unit_instance (
-	.CLOCK_50(systemClock50MHz),
-	.RESET_N(~reset),
-	.configure_N(push_buttons[1]),
-	.pitch({{6'b000000}, switches[2:1]}),
-	.drum(1'b0),
-	.enableOutput(switches[0]),
-	.selectedCommand(switches[9:6]),
-	
-	.FPGA_I2C_SCLK(i2c_clock),
-	.FPGA_I2C_SDAT(i2c_data),
-	
-	.AUD_XCK(audio_masterClock),
-	.AUD_BCLK(audio_bitClock),
-	.AUD_DACLRCK(audio_leftRightClock),
-	.AUD_DACDAT(audio_data),
-	.error(leds[0]),
-	.busy(leds[2]),
-	.done(leds[1])
-	
+memory 
+#(
+    .DATA_WIDTH(DATA_WIDTH)
+)
+memory_instance
+(
+    // Inputs
+    .clock(systemClock50MHz),
+    .writeEnable(memoryWriteEnable),
+    .writeData(registerFileContentsB),
+    .readWriteAddress(memoryReadWriteAddress),
+    // Outputs
+    .contents(memoryContents),
+	 
+	 .vgaX(vgaPixelX),
+	 .vgaY(vgaPixelY),
+	 .r(rectR),
+	 .g(rectG),
+	 .b(rectB)
+	 
 );
+
+//audio_unit audio_unit_instance (
+	//.CLOCK_50(systemClock50MHz),
+	//.RESET_N(~reset),
+	//.configure_N(push_buttons[1]),
+	//.pitch({{6'b000000}, switches[2:1]}),
+	//.drum(1'b0),
+	//.enableOutput(switches[0]),
+	//.selectedCommand(switches[9:6]),
+	
+	//.FPGA_I2C_SCLK(i2c_clock),
+	//.FPGA_I2C_SDAT(i2c_data),
+	
+	//.AUD_XCK(audio_masterClock),
+	//.AUD_BCLK(audio_bitClock),
+	//.AUD_DACLRCK(audio_leftRightClock),
+	//.AUD_DACDAT(audio_data),
+	//.error(leds[0]),
+	//.busy(leds[2]),
+	//.done(leds[1])
+	
+//);
 
 endmodule

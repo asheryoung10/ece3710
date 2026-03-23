@@ -12,7 +12,12 @@ module vga
     output wire       vga_hs,
     output wire [7:0] r,
     output wire [7:0] g,
-    output wire [7:0] b
+    output wire [7:0] b,
+	 output wire [9:0] pixelX,
+	 output wire [9:0] pixelY,
+	 input [7:0] rectR,
+	 input [7:0] rectG,
+	 input [7:0] rectB
 );
 
 //-----------------------------------------------------------
@@ -83,8 +88,8 @@ assign vga_blank_n = display_area;
 //-----------------------------------------------------------
 // Pixel Coordinates in visible area
 //-----------------------------------------------------------
-wire [9:0] pixelX = display_area ? (hcount - (H_SYNC + H_BACK_PORCH)) : 10'd0;
-wire [9:0] pixelY = display_area ? (vcount - (V_SYNC + V_BACK_PORCH)) : 10'd0;
+assign pixelX = display_area ? (hcount - (H_SYNC + H_BACK_PORCH)) : 10'd0;
+assign pixelY = display_area ? (vcount - (V_SYNC + V_BACK_PORCH)) : 10'd0;
 
 // "Next pixel" coordinates for memory prefetch
 //wire [9:0] nextX = (pixelX == H_DISPLAY-1) ? 10'd0 : (pixelX + 1);
@@ -125,22 +130,29 @@ playerMemory playerMem_inst (
 // RGB Output Pipeline: overlay player on tiles
 //-----------------------------------------------------------
 reg [7:0] r_reg, g_reg, b_reg;
-always @(posedge clk25 or negedge rstInv) begin
-    if (~rstInv) begin
-        r_reg <= 8'd0;
-        g_reg <= 8'd0;
-        b_reg <= 8'd0;
+wire player_active = (playerPixelR != 0) || (playerPixelG != 0) || (playerPixelB != 0);
+wire rect_active   = (rectR != 0)        || (rectG != 0)        || (rectB != 0);
+wire tile_active   = (glyphPixelR != 0)  || (glyphPixelG != 0)  || (glyphPixelB != 0);
+always @(posedge clk25) begin
+    if (player_active) begin
+        r_reg = playerPixelR;
+        g_reg = playerPixelG;
+        b_reg = playerPixelB;
+
+    end else if (rect_active) begin
+        r_reg = rectR;
+        g_reg = rectG;
+        b_reg = rectB;
+
+    end else if (tile_active) begin
+        r_reg = glyphPixelR;
+        g_reg = glyphPixelG;
+        b_reg = glyphPixelB;
+
     end else begin
-        if (display_area) begin
-            // Player overlay: if player pixel is non-zero, use it; otherwise, use tile
-            r_reg <= playerPixelR ? playerPixelR : glyphPixelR;
-            g_reg <= playerPixelG ? playerPixelG : glyphPixelG;
-            b_reg <= playerPixelB ? playerPixelB : glyphPixelB;
-        end else begin
-            r_reg <= 8'd0;
-            g_reg <= 8'd0;
-            b_reg <= 8'd0;
-        end
+        r_reg = 0;
+        g_reg = 0;
+        b_reg = 0;
     end
 end
 
