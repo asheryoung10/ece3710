@@ -14,7 +14,12 @@ module cpu
     output [4:0] aluFlagsOutput,
 	 
 	output [2:0] controlUnitState,
-	output [2:0] controlUnitNextState
+	output [2:0] controlUnitNextState,
+	
+	output memoryWriteEnable,
+	output [MEMORY_ADDR_WIDTH-1:0] memoryReadWriteAddress,
+	output [DATA_WIDTH-1:0] registerFileContentsB,
+	input [DATA_WIDTH-1:0] memoryContents
 );
 
 //
@@ -22,12 +27,10 @@ module cpu
 //
 
 // Inputs
-wire memoryWriteEnable;
-wire [MEMORY_ADDR_WIDTH-1:0] memoryReadWriteAddress;
+
 
 // Outputs
-wire [DATA_WIDTH-1:0] memoryContents;
-wire [DATA_WIDTH-1:0] registerFileContentsB;
+
 
 
 // Inputs
@@ -77,20 +80,6 @@ wire [DATA_WIDTH-1:0] programCounterContents;
 // Core modules
 //
 
-memory 
-#(
-    .DATA_WIDTH(DATA_WIDTH)
-)
-memory_instance
-(
-    // Inputs
-    .clock(clock),
-    .writeEnable(memoryWriteEnable),
-    .writeData(registerFileContentsB),
-    .readWriteAddress(memoryReadWriteAddress),
-    // Outputs
-    .contents(memoryContents)
-);
 
 
 register_file 

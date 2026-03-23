@@ -1,5 +1,5 @@
 Flow report for lab1
-Mon Mar 16 16:45:04 2026
+Mon Mar 23 12:19:20 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,16 +41,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Mon Mar 16 16:45:04 2026          ;
+; Flow Status                     ; Successful - Mon Mar 23 12:19:20 2026          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; lab1                                           ;
 ; Top-level Entity Name           ; doodle_jump                                    ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEMA5F31C6                                   ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 135 / 32,070 ( < 1 % )                         ;
-; Total registers                 ; 219                                            ;
-; Total pins                      ; 102 / 457 ( 22 % )                             ;
+; Logic utilization (in ALMs)     ; 11,220 / 32,070 ( 35 % )                       ;
+; Total registers                 ; 16835                                          ;
+; Total pins                      ; 177 / 457 ( 39 % )                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                          ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                                 ;
@@ -68,59 +68,91 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/16/2026 16:44:00 ;
+; Start date & time ; 03/23/2026 12:10:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab1                ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                         ;
-+--------------------------------------+-------------------------------------------------+---------------+-------------+-----------------------------------+
-; Assignment Name                      ; Value                                           ; Default Value ; Entity Name ; Section Id                        ;
-+--------------------------------------+-------------------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 123719793384753.177370104014125                 ; --            ; --          ; --                                ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                              ; --            ; --          ; tb_i2c_controller                 ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                              ; --            ; --          ; tb_audio_configurator             ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                              ; --            ; --          ; tb_hard_coded_vga                 ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                              ; --            ; --          ; tb_ALU                            ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                             ; --            ; --          ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                             ; --            ; --          ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                             ; --            ; --          ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                             ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_cpu                                          ; --            ; --          ; eda_simulation                    ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                                     ; --            ; --          ; eda_simulation                    ;
-; EDA_RUN_TOOL_AUTOMATICALLY           ; Off                                             ; --            ; --          ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (Verilog)                     ; <None>        ; --          ; --                                ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; NOT_USED                                        ; --            ; --          ; eda_simulation                    ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/i2c_controller.v        ; --            ; --          ; tb_i2c_controller                 ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/tb_i2c_controller.v     ; --            ; --          ; tb_i2c_controller                 ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/tb_audio_configurator.v ; --            ; --          ; tb_audio_configurator             ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/i2c_controller.v        ; --            ; --          ; tb_audio_configurator             ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/audio_configurator.v    ; --            ; --          ; tb_audio_configurator             ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/block_mover.v                ; --            ; --          ; tb_hard_coded_vga                 ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/clk_divider.v                ; --            ; --          ; tb_hard_coded_vga                 ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/hard_coded_bitgen.v          ; --            ; --          ; tb_hard_coded_vga                 ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/hard_coded_vga.v             ; --            ; --          ; tb_hard_coded_vga                 ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/tb_hard_coded_vga.v          ; --            ; --          ; tb_hard_coded_vga                 ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/vga_controller.v             ; --            ; --          ; tb_hard_coded_vga                 ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/ALU.v.bak                    ; --            ; --          ; tb_ALU                            ;
-; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/tb_ALU.v                     ; --            ; --          ; tb_ALU                            ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_i2c_controller                               ; --            ; --          ; tb_i2c_controller                 ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_audio_configurator                           ; --            ; --          ; tb_audio_configurator             ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_hard_coded_vga                               ; --            ; --          ; tb_hard_coded_vga                 ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_alu                                          ; --            ; --          ; tb_ALU                            ;
-; EDA_TIME_SCALE                       ; 1 ps                                            ; --            ; --          ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                              ; --            ; --          ; --                                ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                               ; --            ; --          ; --                                ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family)          ; --            ; doodle_jump ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)          ; --            ; doodle_jump ; Top                               ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)          ; --            ; doodle_jump ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                             ; --            ; --          ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW           ; --            ; --          ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                                    ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                     ; doodle_jump                                     ; lab1          ; --          ; --                                ;
-+--------------------------------------+-------------------------------------------------+---------------+-------------+-----------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                  ;
++--------------------------------------+----------------------------------------------------------+---------------+-------------+-----------------------------------+
+; Assignment Name                      ; Value                                                    ; Default Value ; Entity Name ; Section Id                        ;
++--------------------------------------+----------------------------------------------------------+---------------+-------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID                ; 123719793384753.177428945945256                          ; --            ; --          ; --                                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                       ; --            ; --          ; tb_i2c_controller                 ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                       ; --            ; --          ; test.v                            ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                       ; --            ; --          ; tb_audio_configurator             ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                       ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                       ; --            ; --          ; tb_ALU                            ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                                      ; --            ; --          ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                                      ; --            ; --          ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                                      ; --            ; --          ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                                      ; --            ; --          ; eda_board_design_symbol           ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; test.v                                                   ; --            ; --          ; eda_simulation                    ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                                              ; --            ; --          ; eda_simulation                    ;
+; EDA_RUN_TOOL_AUTOMATICALLY           ; Off                                                      ; --            ; --          ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (Verilog)                              ; <None>        ; --          ; --                                ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                                          ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/i2c_controller.v                 ; --            ; --          ; tb_i2c_controller                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/tb_i2c_controller.v              ; --            ; --          ; tb_i2c_controller                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/alu.v                         ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/control_unit.v                ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/cpu.v                         ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/instruction_decoder.v         ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/memory.v                      ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/mux2.v                        ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/mux4.v                        ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/register.v                    ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/register_file.v               ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/top.v                         ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/block_mover.v                 ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/clk_divider.v                 ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/hard_coded_bitgen.v           ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/hard_coded_vga.v              ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/playerMemory.v                ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v           ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/vga/tileMemory.v                  ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/doodle_jump.v                     ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/audio/top.v                       ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/audio/tb_i2c_controller.v         ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/audio/tb_audio_configurator.v     ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/audio/i2c_controller.v            ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/audio/audio_configurator_select.v ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/audio/audio_configurator.v        ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/tb_doodle.v                       ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/conditions.vh                 ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/indicesPSR.vh                 ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/opcodes.vh                    ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Doodle Jump/cpu/states.vh                     ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/tb_audio_configurator.v          ; --            ; --          ; tb_audio_configurator             ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/i2c_controller.v                 ; --            ; --          ; tb_audio_configurator             ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/audio_configurator.v             ; --            ; --          ; tb_audio_configurator             ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/block_mover.v                         ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/clk_divider.v                         ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/hard_coded_bitgen.v                   ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/hard_coded_vga.v                      ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/tb_hard_coded_vga.v                   ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/VGA Lab/vga_controller.v                      ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/ALU.v.bak                             ; --            ; --          ; tb_ALU                            ;
+; EDA_TEST_BENCH_FILE                  ; ../Verilog/ALU Lab/tb_ALU.v                              ; --            ; --          ; tb_ALU                            ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_i2c_controller                                        ; --            ; --          ; tb_i2c_controller                 ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_doodle.v                                              ; --            ; --          ; test.v                            ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_audio_configurator                                    ; --            ; --          ; tb_audio_configurator             ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_hard_coded_vga                                        ; --            ; --          ; tb_hard_coded_vga                 ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_alu                                                   ; --            ; --          ; tb_ALU                            ;
+; EDA_TEST_BENCH_NAME                  ; test.v                                                   ; --            ; --          ; eda_simulation                    ;
+; EDA_TIME_SCALE                       ; 1 ps                                                     ; --            ; --          ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                                       ; --            ; --          ; --                                ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                                        ; --            ; --          ; --                                ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family)                   ; --            ; doodle_jump ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)                   ; --            ; doodle_jump ; Top                               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)                   ; --            ; doodle_jump ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                                      ; --            ; --          ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                    ; --            ; --          ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                                             ; --            ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                     ; doodle_jump                                              ; lab1          ; --          ; --                                ;
++--------------------------------------+----------------------------------------------------------+---------------+-------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -128,12 +160,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 455 MB              ; 00:00:14                           ;
-; Fitter               ; 00:00:38     ; 1.0                     ; 1826 MB             ; 00:01:02                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 516 MB              ; 00:00:05                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.2                     ; 847 MB              ; 00:00:06                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 667 MB              ; 00:00:01                           ;
-; Total                ; 00:00:57     ; --                      ; --                  ; 00:01:28                           ;
+; Analysis & Synthesis ; 00:00:34     ; 1.0                     ; 607 MB              ; 00:00:41                           ;
+; Fitter               ; 00:06:38     ; 1.2                     ; 2110 MB             ; 00:11:38                           ;
+; Assembler            ; 00:00:11     ; 1.0                     ; 669 MB              ; 00:00:11                           ;
+; Timing Analyzer      ; 00:00:40     ; 3.1                     ; 1287 MB             ; 00:01:41                           ;
+; EDA Netlist Writer   ; 00:00:04     ; 1.0                     ; 825 MB              ; 00:00:04                           ;
+; Total                ; 00:08:07     ; --                      ; --                  ; 00:14:15                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
