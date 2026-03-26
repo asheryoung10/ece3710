@@ -1,20 +1,52 @@
-D020
-4100
-D228
-4302
-0153
-B100
-CC02
-4140
-4140
-CEF8
-D100
-D301
-4142
-4342
-CEF4
-D164
-D3FF
-4140
-4342
-CEF0
+D001 // MOVI 1, R0
+800F // LSHI 15, R0              -> R0 = 0x8000
+D120 // MOVI 32, R1              -> rect_x start
+D20D // MOVI 13, R2
+8204 // LSHI 4, R2               -> rect_y = 208
+D306 // MOVI 6, R3
+8304 // LSHI 4, R3               -> rect_width = 96
+D404 // MOVI 4, R4
+8404 // LSHI 4, R4               -> rect_height = 64
+D501 // MOVI 1, R5               -> dir = right
+D604 // MOVI 4, R6               -> step = 4
+D722 // MOVI 34, R7
+8704 // LSHI 4, R7               -> x_max = 544
+08D0 // MOV R0, R8               -> x address
+09D0 // MOV R0, R9               -> base for dir address
+5904 // ADDI 4, R9               -> dir address = 0x8004
+4148 // STOR R1, R8              -> store rect_x
+0AD0 // MOV R0, R10
+5A01 // ADDI 1, R10
+424A // STOR R2, R10             -> store rect_y
+0AD0 // MOV R0, R10
+5A02 // ADDI 2, R10
+434A // STOR R3, R10             -> store rect_width
+0AD0 // MOV R0, R10
+5A03 // ADDI 3, R10
+444A // STOR R4, R10             -> store rect_height
+4549 // STOR R5, R9              -> store rect_dir
+0AD0 // MOV R0, R10
+5A05 // ADDI 5, R10
+464A // STOR R6, R10             -> store rect_step
+0AD0 // MOV R0, R10
+5A06 // ADDI 6, R10
+474A // STOR R7, R10             -> store rect_x_max
+0AD5 // MOV R5, R10              -> loop: copy dir for compare
+BA00 // CMPI 0, R10
+C009 // BEQ 9                    -> move_left
+0156 // ADD R6, R1               -> x += step
+0AD1 // MOV R1, R10
+0AB7 // CMP R7, R10
+C102 // BNE 2                    -> skip dir flip if x != x_max
+D500 // MOVI 0, R5               -> dir = left
+4148 // STOR R1, R8              -> write rect_x
+4549 // STOR R5, R9              -> write rect_dir
+CEF6 // BUC 0xF6                 -> loop
+0196 // SUB R6, R1               -> move_left: x -= step
+0AD1 // MOV R1, R10
+BA00 // CMPI 0, R10
+C102 // BNE 2                    -> skip dir flip if x != 0
+D501 // MOVI 1, R5               -> dir = right
+4148 // STOR R1, R8              -> write rect_x
+4549 // STOR R5, R9              -> write rect_dir
+CEEE // BUC 0xEE                 -> loop

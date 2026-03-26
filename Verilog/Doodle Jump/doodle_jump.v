@@ -97,7 +97,7 @@ cpu cpu_instance (
    .controlUnitNextState(controlUnitNextState)
 );
 
-memory 
+sharedMemory 
 #(
     .DATA_WIDTH(DATA_WIDTH)
 )
@@ -119,26 +119,26 @@ memory_instance
 	 
 );
 
-//audio_unit audio_unit_instance (
-	//.CLOCK_50(systemClock50MHz),
-	//.RESET_N(~reset),
-	//.configure_N(push_buttons[1]),
-	//.pitch({{6'b000000}, switches[2:1]}),
-	//.drum(1'b0),
-	//.enableOutput(switches[0]),
-	//.selectedCommand(switches[9:6]),
+audio_unit audio_unit_instance (
+	.CLOCK_50(systemClock50MHz),
+	.RESET_N(~reset),
+	.configure_N(push_buttons[1]),
+	.pitch({{6'b000000}, switches[2:1]}),
+	.drum(1'b0),
+	.enableOutput(switches[0]),
+	.selectedCommand(switches[9:6]),
 	
-	//.FPGA_I2C_SCLK(i2c_clock),
-	//.FPGA_I2C_SDAT(i2c_data),
+	.FPGA_I2C_SCLK(i2c_clock),
+	.FPGA_I2C_SDAT(i2c_data),
 	
-	//.AUD_XCK(audio_masterClock),
-	//.AUD_BCLK(audio_bitClock),
-	//.AUD_DACLRCK(audio_leftRightClock),
-	//.AUD_DACDAT(audio_data),
-	//.error(leds[0]),
-	//.busy(leds[2]),
-	//.done(leds[1])
+	.AUD_XCK(audio_masterClock),
+	.AUD_BCLK(audio_bitClock),
+	.AUD_DACLRCK(audio_leftRightClock),
+	.AUD_DACDAT(audio_data),
+	.error(leds[0]),
+	.busy(leds[2]),
+	.done(leds[1])
 	
-//);
+);
 
 endmodule

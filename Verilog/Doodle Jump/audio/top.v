@@ -33,7 +33,7 @@ module audio_unit(
         .done(done),
         .encounteredError(error),     // Unused for this simple setup
         .i2c_clock(FPGA_I2C_SCLK),
-        .i2c_data(FPGA_I2C_SDAT),
+        .i2c_data(FPGA_I2C_SDAT)
 
     );
 

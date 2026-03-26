@@ -131,7 +131,7 @@ task dumpMemory;
     begin
         $display("Memory:");
         for (i = 0; i < 48; i = i + 1) begin
-            $display("memory[%0d] = %h", i, uut.memory_instance.ram[i]);
+            $display("memory[%0d] = %h", i, uut.memory_instance.cpu_memory_instance.ram[i]);
         end
         $display(""); // blank line for readability
     end
@@ -214,7 +214,8 @@ endtask
 		  
 				if(controlUnitNextState == NOTHING_STATE) running = 0;
 				if(controlUnitState == NOTHING_STATE) running = 0;
-	
+			   if(uut.memory_instance.cpu_memory_instance.ram[0] === 16'hxxxx) running = 0;
+
 				
 				
 			   if(controlUnitState == FETCH_INSTRUCTION_FROM_MEMORY) begin
