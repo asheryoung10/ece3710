@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab1
-Mon Mar 23 15:51:11 2026
+Thu Mar 26 14:13:50 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -13,29 +13,44 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: Top-level Entity: |doodle_jump
- 14. Parameter Settings for User Entity Instance: vga:vga_instance
- 15. Parameter Settings for User Entity Instance: cpu:cpu_instance
- 16. Parameter Settings for User Entity Instance: cpu:cpu_instance|register_file:register_file_instance
- 17. Parameter Settings for User Entity Instance: cpu:cpu_instance|alu:alu_instance
- 18. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:instruction_register
- 19. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_state_register
- 20. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_counter
- 21. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:alu_input_mux
- 22. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:memory_select_read_write_address_mux
- 23. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux4:register_file_input_mux
- 24. Parameter Settings for User Entity Instance: memory:memory_instance
- 25. Port Connectivity Checks: "cpu:cpu_instance|register:program_state_register"
- 26. Port Connectivity Checks: "vga:vga_instance"
- 27. Post-Synthesis Netlist Statistics for Top Partition
- 28. Elapsed Time Per Partition
- 29. Analysis & Synthesis Messages
- 30. Analysis & Synthesis Suppressed Messages
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep
+ 10. State Machine - |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentState
+ 11. State Machine - |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentStep
+ 12. State Machine - |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentState
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Registers Packed Into Inferred Megafunctions
+ 18. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 19. Source assignments for sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0|altsyncram_0pe1:auto_generated
+ 20. Parameter Settings for User Entity Instance: Top-level Entity: |doodle_jump
+ 21. Parameter Settings for User Entity Instance: vga:vga_instance
+ 22. Parameter Settings for User Entity Instance: cpu:cpu_instance
+ 23. Parameter Settings for User Entity Instance: cpu:cpu_instance|register_file:register_file_instance
+ 24. Parameter Settings for User Entity Instance: cpu:cpu_instance|alu:alu_instance
+ 25. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:instruction_register
+ 26. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_state_register
+ 27. Parameter Settings for User Entity Instance: cpu:cpu_instance|register:program_counter
+ 28. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:alu_input_mux
+ 29. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux2:memory_select_read_write_address_mux
+ 30. Parameter Settings for User Entity Instance: cpu:cpu_instance|mux4:register_file_input_mux
+ 31. Parameter Settings for User Entity Instance: sharedMemory:memory_instance
+ 32. Parameter Settings for User Entity Instance: sharedMemory:memory_instance|memory:cpu_memory_instance
+ 33. Parameter Settings for User Entity Instance: audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen
+ 34. Parameter Settings for Inferred Entity Instance: sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0
+ 35. Parameter Settings for Inferred Entity Instance: sharedMemory:memory_instance|lpm_divide:Div0
+ 36. Parameter Settings for Inferred Entity Instance: sharedMemory:memory_instance|lpm_divide:Mod0
+ 37. altsyncram Parameter Settings by Entity Instance
+ 38. Port Connectivity Checks: "audio_unit:audio_unit_instance|audio_output:dac_driver"
+ 39. Port Connectivity Checks: "audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance"
+ 40. Port Connectivity Checks: "audio_unit:audio_unit_instance"
+ 41. Port Connectivity Checks: "cpu:cpu_instance|register:program_state_register"
+ 42. Port Connectivity Checks: "vga:vga_instance"
+ 43. Post-Synthesis Netlist Statistics for Top Partition
+ 44. Elapsed Time Per Partition
+ 45. Analysis & Synthesis Messages
 
 
 
@@ -62,16 +77,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Mar 23 15:51:10 2026          ;
+; Analysis & Synthesis Status     ; Successful - Thu Mar 26 14:13:50 2026          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; lab1                                           ;
 ; Top-level Entity Name           ; doodle_jump                                    ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 16780                                          ;
+; Total registers                 ; 2031                                           ;
 ; Total pins                      ; 177                                            ;
 ; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 0                                              ;
+; Total block memory bits         ; 16,384                                         ;
 ; Total DSP Blocks                ; 0                                              ;
 ; Total HSSI RX PCSs              ; 0                                              ;
 ; Total HSSI PMA RX Deserializers ; 0                                              ;
@@ -184,34 +199,57 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.1%      ;
-;     Processor 4            ;   0.1%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                         ;
-+----------------------------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                                     ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; ../Verilog/Doodle Jump/vga/playerMemory.v                            ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v        ;         ;
-; ../Verilog/Doodle Jump/vga/tileMemory.v                              ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/tileMemory.v          ;         ;
-; ../Verilog/Doodle Jump/cpu/register_file.v                           ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register_file.v       ;         ;
-; ../Verilog/Doodle Jump/cpu/register.v                                ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register.v            ;         ;
-; ../Verilog/Doodle Jump/cpu/mux4.v                                    ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux4.v                ;         ;
-; ../Verilog/Doodle Jump/cpu/mux2.v                                    ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux2.v                ;         ;
-; ../Verilog/Doodle Jump/cpu/memory.v                                  ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/memory.v              ;         ;
-; ../Verilog/Doodle Jump/cpu/instruction_decoder.v                     ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v ;         ;
-; ../Verilog/Doodle Jump/cpu/cpu.v                                     ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v                 ;         ;
-; ../Verilog/Doodle Jump/cpu/control_unit.v                            ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v        ;         ;
-; ../Verilog/Doodle Jump/cpu/alu.v                                     ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v                 ;         ;
-; ../Verilog/Doodle Jump/vga/hard_coded_vga.v                          ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v      ;         ;
-; ../Verilog/Doodle Jump/doodle_jump.v                                 ; yes             ; User Verilog HDL File        ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v             ;         ;
-; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/states.vh     ; yes             ; Auto-Found Unspecified File  ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/states.vh             ;         ;
-; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/opcodes.vh    ; yes             ; Auto-Found Unspecified File  ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/opcodes.vh            ;         ;
-; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/indicesPSR.vh ; yes             ; Auto-Found Unspecified File  ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/indicesPSR.vh         ;         ;
-; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/conditions.vh ; yes             ; Auto-Found Unspecified File  ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/conditions.vh         ;         ;
-+----------------------------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                          ;
++----------------------------------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                     ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                         ; Library ;
++----------------------------------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------+---------+
+; ../Verilog/Doodle Jump/audio/top.v                                   ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v                       ;         ;
+; ../Verilog/Doodle Jump/audio/audio_configurator_select.v             ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v ;         ;
+; ../Verilog/Doodle Jump/audio/audio_output.v                          ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v              ;         ;
+; ../Verilog/Doodle Jump/memory.v                                      ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v                          ;         ;
+; ../Verilog/Doodle Jump/sharedMemory.v                                ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v                    ;         ;
+; ../Verilog/Doodle Jump/vga/playerMemory.v                            ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v                ;         ;
+; ../Verilog/Doodle Jump/vga/tileMemory.v                              ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/tileMemory.v                  ;         ;
+; ../Verilog/Doodle Jump/cpu/register_file.v                           ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register_file.v               ;         ;
+; ../Verilog/Doodle Jump/cpu/register.v                                ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register.v                    ;         ;
+; ../Verilog/Doodle Jump/cpu/mux4.v                                    ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux4.v                        ;         ;
+; ../Verilog/Doodle Jump/cpu/mux2.v                                    ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux2.v                        ;         ;
+; ../Verilog/Doodle Jump/cpu/instruction_decoder.v                     ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v         ;         ;
+; ../Verilog/Doodle Jump/cpu/cpu.v                                     ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v                         ;         ;
+; ../Verilog/Doodle Jump/cpu/control_unit.v                            ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v                ;         ;
+; ../Verilog/Doodle Jump/cpu/alu.v                                     ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v                         ;         ;
+; ../Verilog/Doodle Jump/audio/i2c_controller.v                        ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v            ;         ;
+; ../Verilog/Doodle Jump/vga/hard_coded_vga.v                          ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v              ;         ;
+; ../Verilog/Doodle Jump/doodle_jump.v                                 ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v                     ;         ;
+; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/states.vh     ; yes             ; Auto-Found Unspecified File                           ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/states.vh                     ;         ;
+; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/opcodes.vh    ; yes             ; Auto-Found Unspecified File                           ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/opcodes.vh                    ;         ;
+; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/indicesPSR.vh ; yes             ; Auto-Found Unspecified File                           ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/indicesPSR.vh                 ;         ;
+; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/conditions.vh ; yes             ; Auto-Found Unspecified File                           ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/conditions.vh                 ;         ;
+; altsyncram.tdf                                                       ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/altsyncram.tdf                    ;         ;
+; stratix_ram_block.inc                                                ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/stratix_ram_block.inc             ;         ;
+; lpm_mux.inc                                                          ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/lpm_mux.inc                       ;         ;
+; lpm_decode.inc                                                       ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/lpm_decode.inc                    ;         ;
+; aglobal231.inc                                                       ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/aglobal231.inc                    ;         ;
+; a_rdenreg.inc                                                        ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/a_rdenreg.inc                     ;         ;
+; altrom.inc                                                           ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/altrom.inc                        ;         ;
+; altram.inc                                                           ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/altram.inc                        ;         ;
+; altdpram.inc                                                         ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/altdpram.inc                      ;         ;
+; db/altsyncram_0pe1.tdf                                               ; yes             ; Auto-Generated Megafunction                           ; /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_0pe1.tdf                ;         ;
+; db/lab1.ram0_memory_16436850.hdl.mif                                 ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/u1462567/Desktop/ece3710/Quartus Project/db/lab1.ram0_memory_16436850.hdl.mif  ;         ;
+; lpm_divide.tdf                                                       ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/lpm_divide.tdf                    ;         ;
+; abs_divider.inc                                                      ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/abs_divider.inc                   ;         ;
+; sign_div_unsign.inc                                                  ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/sign_div_unsign.inc               ;         ;
+; db/lpm_divide_2am.tdf                                                ; yes             ; Auto-Generated Megafunction                           ; /home/u1462567/Desktop/ece3710/Quartus Project/db/lpm_divide_2am.tdf                 ;         ;
+; db/sign_div_unsign_8kh.tdf                                           ; yes             ; Auto-Generated Megafunction                           ; /home/u1462567/Desktop/ece3710/Quartus Project/db/sign_div_unsign_8kh.tdf            ;         ;
+; db/alt_u_div_mse.tdf                                                 ; yes             ; Auto-Generated Megafunction                           ; /home/u1462567/Desktop/ece3710/Quartus Project/db/alt_u_div_mse.tdf                  ;         ;
+; db/lpm_divide_52m.tdf                                                ; yes             ; Auto-Generated Megafunction                           ; /home/u1462567/Desktop/ece3710/Quartus Project/db/lpm_divide_52m.tdf                 ;         ;
++----------------------------------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------------+
@@ -219,105 +257,232 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 11694                  ;
+; Estimate of Logic utilization (ALMs needed) ; 2312                   ;
 ;                                             ;                        ;
-; Combinational ALUT usage for logic          ; 7721                   ;
-;     -- 7 input functions                    ; 15                     ;
-;     -- 6 input functions                    ; 6014                   ;
-;     -- 5 input functions                    ; 209                    ;
-;     -- 4 input functions                    ; 164                    ;
-;     -- <=3 input functions                  ; 1319                   ;
+; Combinational ALUT usage for logic          ; 3695                   ;
+;     -- 7 input functions                    ; 10                     ;
+;     -- 6 input functions                    ; 680                    ;
+;     -- 5 input functions                    ; 708                    ;
+;     -- 4 input functions                    ; 505                    ;
+;     -- <=3 input functions                  ; 1792                   ;
 ;                                             ;                        ;
-; Dedicated logic registers                   ; 16780                  ;
+; Dedicated logic registers                   ; 2031                   ;
 ;                                             ;                        ;
 ; I/O pins                                    ; 177                    ;
+; Total MLAB memory bits                      ; 0                      ;
+; Total block memory bits                     ; 16384                  ;
 ;                                             ;                        ;
 ; Total DSP Blocks                            ; 0                      ;
 ;                                             ;                        ;
 ; Maximum fan-out node                        ; systemClock50MHz~input ;
-; Maximum fan-out                             ; 16708                  ;
-; Total fan-out                               ; 92512                  ;
-; Average fan-out                             ; 3.72                   ;
+; Maximum fan-out                             ; 1859                   ;
+; Total fan-out                               ; 20394                  ;
+; Average fan-out                             ; 3.34                   ;
 +---------------------------------------------+------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                     ;
-+----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name         ; Library Name ;
-+----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------+--------------+
-; |doodle_jump                                             ; 7721 (0)            ; 16780 (0)                 ; 0                 ; 0          ; 177  ; 0            ; |doodle_jump                                                                   ; doodle_jump         ; work         ;
-;    |cpu:cpu_instance|                                    ; 834 (0)             ; 296 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance                                                  ; cpu                 ; work         ;
-;       |alu:alu_instance|                                 ; 520 (520)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|alu:alu_instance                                 ; alu                 ; work         ;
-;       |control_unit:control_unit_instance|               ; 25 (25)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|control_unit:control_unit_instance               ; control_unit        ; work         ;
-;       |instruction_decoder:instruction_decoder_instance| ; 53 (53)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|instruction_decoder:instruction_decoder_instance ; instruction_decoder ; work         ;
-;       |mux2:alu_input_mux|                               ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux2:alu_input_mux                               ; mux2                ; work         ;
-;       |mux2:memory_select_read_write_address_mux|        ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux2:memory_select_read_write_address_mux        ; mux2                ; work         ;
-;       |mux4:register_file_input_mux|                     ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux4:register_file_input_mux                     ; mux4                ; work         ;
-;       |register:instruction_register|                    ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:instruction_register                    ; register            ; work         ;
-;       |register:program_counter|                         ; 2 (2)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:program_counter                         ; register            ; work         ;
-;       |register:program_state_register|                  ; 0 (0)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:program_state_register                  ; register            ; work         ;
-;       |register_file:register_file_instance|             ; 182 (182)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance             ; register_file       ; work         ;
-;    |memory:memory_instance|                              ; 6767 (6767)         ; 16411 (16411)             ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|memory:memory_instance                                            ; memory              ; work         ;
-;    |vga:vga_instance|                                    ; 120 (107)           ; 73 (45)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance                                                  ; vga                 ; work         ;
-;       |playerMemory:playerMem_inst|                      ; 12 (12)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|playerMemory:playerMem_inst                      ; playerMemory        ; work         ;
-;       |tileMemory:tileMem_inst|                          ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|tileMemory:tileMem_inst                          ; tileMemory          ; work         ;
-+----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                      ;
++----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
+; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                       ; Entity Name               ; Library Name ;
++----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
+; |doodle_jump                                             ; 3695 (0)            ; 2031 (0)                  ; 16384             ; 0          ; 177  ; 0            ; |doodle_jump                                                                                                                              ; doodle_jump               ; work         ;
+;    |audio_unit:audio_unit_instance|                      ; 155 (1)             ; 126 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance                                                                                               ; audio_unit                ; work         ;
+;       |audio_configurator_select:i2c_conf|               ; 94 (36)             ; 72 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf                                                            ; audio_configurator_select ; work         ;
+;          |i2c_controller:i2c_controller_instance|        ; 58 (58)             ; 39 (39)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance                     ; i2c_controller            ; work         ;
+;       |audio_output:dac_driver|                          ; 60 (11)             ; 54 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_output:dac_driver                                                                       ; audio_output              ; work         ;
+;          |note_generator:note_gen|                       ; 49 (49)             ; 42 (42)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen                                               ; note_generator            ; work         ;
+;    |cpu:cpu_instance|                                    ; 768 (0)             ; 296 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance                                                                                                             ; cpu                       ; work         ;
+;       |alu:alu_instance|                                 ; 467 (467)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|alu:alu_instance                                                                                            ; alu                       ; work         ;
+;       |control_unit:control_unit_instance|               ; 24 (24)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|control_unit:control_unit_instance                                                                          ; control_unit              ; work         ;
+;       |instruction_decoder:instruction_decoder_instance| ; 53 (53)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|instruction_decoder:instruction_decoder_instance                                                            ; instruction_decoder       ; work         ;
+;       |mux2:alu_input_mux|                               ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux2:alu_input_mux                                                                                          ; mux2                      ; work         ;
+;       |mux2:memory_select_read_write_address_mux|        ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux2:memory_select_read_write_address_mux                                                                   ; mux2                      ; work         ;
+;       |mux4:register_file_input_mux|                     ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux4:register_file_input_mux                                                                                ; mux4                      ; work         ;
+;       |register:instruction_register|                    ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:instruction_register                                                                               ; register                  ; work         ;
+;       |register:program_counter|                         ; 3 (3)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:program_counter                                                                                    ; register                  ; work         ;
+;       |register:program_state_register|                  ; 0 (0)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:program_state_register                                                                             ; register                  ; work         ;
+;       |register_file:register_file_instance|             ; 176 (176)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance                                                                        ; register_file             ; work         ;
+;    |sharedMemory:memory_instance|                        ; 2657 (2594)         ; 1536 (1536)               ; 16384             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance                                                                                                 ; sharedMemory              ; work         ;
+;       |lpm_divide:Div0|                                  ; 31 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|lpm_divide:Div0                                                                                 ; lpm_divide                ; work         ;
+;          |lpm_divide_2am:auto_generated|                 ; 31 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|lpm_divide:Div0|lpm_divide_2am:auto_generated                                                   ; lpm_divide_2am            ; work         ;
+;             |sign_div_unsign_8kh:divider|                ; 31 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|lpm_divide:Div0|lpm_divide_2am:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh       ; work         ;
+;                |alt_u_div_mse:divider|                   ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|lpm_divide:Div0|lpm_divide_2am:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_mse:divider ; alt_u_div_mse             ; work         ;
+;       |lpm_divide:Mod0|                                  ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|lpm_divide:Mod0                                                                                 ; lpm_divide                ; work         ;
+;          |lpm_divide_52m:auto_generated|                 ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|lpm_divide:Mod0|lpm_divide_52m:auto_generated                                                   ; lpm_divide_52m            ; work         ;
+;             |sign_div_unsign_8kh:divider|                ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|lpm_divide:Mod0|lpm_divide_52m:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh       ; work         ;
+;                |alt_u_div_mse:divider|                   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|lpm_divide:Mod0|lpm_divide_52m:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_mse:divider ; alt_u_div_mse             ; work         ;
+;       |memory:cpu_memory_instance|                       ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|memory:cpu_memory_instance                                                                      ; memory                    ; work         ;
+;          |altsyncram:ram_rtl_0|                          ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0                                                 ; altsyncram                ; work         ;
+;             |altsyncram_0pe1:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0|altsyncram_0pe1:auto_generated                  ; altsyncram_0pe1           ; work         ;
+;    |vga:vga_instance|                                    ; 115 (102)           ; 73 (45)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance                                                                                                             ; vga                       ; work         ;
+;       |playerMemory:playerMem_inst|                      ; 12 (12)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|playerMemory:playerMem_inst                                                                                 ; playerMemory              ; work         ;
+;       |tileMemory:tileMem_inst|                          ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|tileMemory:tileMem_inst                                                                                     ; tileMemory                ; work         ;
++----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                          ;
-+------------------------------------------------------------------+--------------------------------------------------------------------------+
-; Register name                                                    ; Reason for Removal                                                       ;
-+------------------------------------------------------------------+--------------------------------------------------------------------------+
-; cpu:cpu_instance|register:program_state_register|contents[5..15] ; Stuck at GND due to stuck port data_in                                   ;
-; vga:vga_instance|playerMemory:playerMem_inst|g_next[0..3]        ; Stuck at GND due to stuck port data_in                                   ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[0..7]            ; Stuck at GND due to stuck port data_in                                   ;
-; vga:vga_instance|playerMemory:playerMem_inst|playerPixelG[0..3]  ; Stuck at GND due to stuck port data_in                                   ;
-; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[0..7]       ; Stuck at GND due to stuck port data_in                                   ;
-; memory:memory_instance|rect0_dir[1..8]                           ; Merged with memory:memory_instance|rect0_dir[9]                          ;
-; vga:vga_instance|tileMemory:tileMem_inst|g_next[0..7]            ; Merged with vga:vga_instance|tileMemory:tileMem_inst|b_next[0]           ;
-; vga:vga_instance|tileMemory:tileMem_inst|b_next[1..7]            ; Merged with vga:vga_instance|tileMemory:tileMem_inst|b_next[0]           ;
-; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[0..7]       ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[0]      ;
-; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[1..7]       ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[0]      ;
-; vga:vga_instance|playerMemory:playerMem_inst|playerPixelR[1..7]  ; Merged with vga:vga_instance|playerMemory:playerMem_inst|playerPixelR[0] ;
-; vga:vga_instance|playerMemory:playerMem_inst|r_next[1..7]        ; Merged with vga:vga_instance|playerMemory:playerMem_inst|r_next[0]       ;
-; memory:memory_instance|rect0_dir[9]                              ; Stuck at GND due to stuck port data_in                                   ;
-; Total Number of Removed Registers = 88                           ;                                                                          ;
-+------------------------------------------------------------------+--------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                       ;
++------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+--------------------------------------+
+; Name                                                                                                                   ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                  ;
++------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+--------------------------------------+
+; sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0|altsyncram_0pe1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 1024         ; 16           ; --           ; --           ; 16384 ; db/lab1.ram0_memory_16436850.hdl.mif ;
++------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+--------------------------------------+
 
 
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------+
+; State Machine - |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep ;
++-----------------+-----------------+-----------------+-----------------+------------------------------------+
+; Name            ; currentStep.011 ; currentStep.010 ; currentStep.001 ; currentStep.000                    ;
++-----------------+-----------------+-----------------+-----------------+------------------------------------+
+; currentStep.000 ; 0               ; 0               ; 0               ; 0                                  ;
+; currentStep.001 ; 0               ; 0               ; 1               ; 1                                  ;
+; currentStep.010 ; 0               ; 1               ; 0               ; 1                                  ;
+; currentStep.011 ; 1               ; 0               ; 0               ; 1                                  ;
++-----------------+-----------------+-----------------+-----------------+------------------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------+
+; State Machine - |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentState ;
++---------------------------------+---------------------------------------------------------------------------+
+; Name                            ; currentState.SEND_COMMAND_STATE                                           ;
++---------------------------------+---------------------------------------------------------------------------+
+; currentState.IDLE_STATE         ; 0                                                                         ;
+; currentState.SEND_COMMAND_STATE ; 1                                                                         ;
++---------------------------------+---------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                       ;
-+--------------------------------------------------------+---------------------------+--------------------------------------------------------------+
-; Register name                                          ; Reason for Removal        ; Registers Removed due to This Register                       ;
-+--------------------------------------------------------+---------------------------+--------------------------------------------------------------+
-; vga:vga_instance|playerMemory:playerMem_inst|g_next[0] ; Stuck at GND              ; vga:vga_instance|playerMemory:playerMem_inst|playerPixelG[0] ;
-;                                                        ; due to stuck port data_in ;                                                              ;
-; vga:vga_instance|playerMemory:playerMem_inst|g_next[1] ; Stuck at GND              ; vga:vga_instance|playerMemory:playerMem_inst|playerPixelG[1] ;
-;                                                        ; due to stuck port data_in ;                                                              ;
-; vga:vga_instance|playerMemory:playerMem_inst|g_next[2] ; Stuck at GND              ; vga:vga_instance|playerMemory:playerMem_inst|playerPixelG[2] ;
-;                                                        ; due to stuck port data_in ;                                                              ;
-; vga:vga_instance|playerMemory:playerMem_inst|g_next[3] ; Stuck at GND              ; vga:vga_instance|playerMemory:playerMem_inst|playerPixelG[3] ;
-;                                                        ; due to stuck port data_in ;                                                              ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[0]     ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[0]      ;
-;                                                        ; due to stuck port data_in ;                                                              ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[1]     ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[1]      ;
-;                                                        ; due to stuck port data_in ;                                                              ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[2]     ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[2]      ;
-;                                                        ; due to stuck port data_in ;                                                              ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[3]     ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[3]      ;
-;                                                        ; due to stuck port data_in ;                                                              ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[4]     ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[4]      ;
-;                                                        ; due to stuck port data_in ;                                                              ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[5]     ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[5]      ;
-;                                                        ; due to stuck port data_in ;                                                              ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[6]     ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[6]      ;
-;                                                        ; due to stuck port data_in ;                                                              ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[7]     ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[7]      ;
-;                                                        ; due to stuck port data_in ;                                                              ;
-+--------------------------------------------------------+---------------------------+--------------------------------------------------------------+
+; State Machine - |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentStep ;
++------------------+------------------+------------------+------------------------------------------------------------------------------------------+
+; Name             ; currentStep.0000 ; currentStep.0010 ; currentStep.0001                                                                         ;
++------------------+------------------+------------------+------------------------------------------------------------------------------------------+
+; currentStep.0000 ; 0                ; 0                ; 0                                                                                        ;
+; currentStep.0001 ; 1                ; 0                ; 1                                                                                        ;
+; currentStep.0010 ; 1                ; 1                ; 0                                                                                        ;
++------------------+------------------+------------------+------------------------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentState                ;
++-----------------------------+------------------------+-----------------------------+--------------------------+-------------------------+-------------------------+
+; Name                        ; currentState.ACK_STATE ; currentState.SEND_BIT_STATE ; currentState.START_STATE ; currentState.IDLE_STATE ; currentState.STOP_STATE ;
++-----------------------------+------------------------+-----------------------------+--------------------------+-------------------------+-------------------------+
+; currentState.IDLE_STATE     ; 0                      ; 0                           ; 0                        ; 0                       ; 0                       ;
+; currentState.START_STATE    ; 0                      ; 0                           ; 1                        ; 1                       ; 0                       ;
+; currentState.SEND_BIT_STATE ; 0                      ; 1                           ; 0                        ; 1                       ; 0                       ;
+; currentState.ACK_STATE      ; 1                      ; 0                           ; 0                        ; 1                       ; 0                       ;
+; currentState.STOP_STATE     ; 0                      ; 0                           ; 0                        ; 1                       ; 1                       ;
++-----------------------------+------------------------+-----------------------------+--------------------------+-------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                       ;
++--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                  ; Reason for Removal                                                                                      ;
++--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+; audio_unit:audio_unit_instance|audio_output:dac_driver|drum_generator:drum_gen|drum_sample[0..15]                              ; Lost fanout                                                                                             ;
+; cpu:cpu_instance|register:program_state_register|contents[5..15]                                                               ; Stuck at GND due to stuck port data_in                                                                  ;
+; vga:vga_instance|playerMemory:playerMem_inst|g_next[0..3]                                                                      ; Stuck at GND due to stuck port data_in                                                                  ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[0..7]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; vga:vga_instance|playerMemory:playerMem_inst|playerPixelG[0..3]                                                                ; Stuck at GND due to stuck port data_in                                                                  ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[0..7]                                                                     ; Stuck at GND due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[6,7]                                             ; Stuck at GND due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[4,5]                                             ; Stuck at VCC due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[3]                                               ; Stuck at GND due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[2]                                               ; Stuck at VCC due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[0,1]                                             ; Stuck at GND due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|firstByte[6,7]                                               ; Stuck at GND due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|secondByte[6]                                                ; Stuck at GND due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[6,7] ; Stuck at GND due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[4,5] ; Stuck at VCC due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[3]   ; Stuck at GND due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[2]   ; Stuck at VCC due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[0,1] ; Stuck at GND due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[6,7]   ; Stuck at GND due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedSecondByte[6]    ; Stuck at GND due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen|note_data[1..15]                                ; Merged with audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen|note_data[0] ;
+; vga:vga_instance|tileMemory:tileMem_inst|g_next[0..7]                                                                          ; Merged with vga:vga_instance|tileMemory:tileMem_inst|b_next[0]                                          ;
+; vga:vga_instance|tileMemory:tileMem_inst|b_next[1..7]                                                                          ; Merged with vga:vga_instance|tileMemory:tileMem_inst|b_next[0]                                          ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[0..7]                                                                     ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[0]                                     ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[1..7]                                                                     ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[0]                                     ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|final_audio_data[1..15]                                                 ; Merged with audio_unit:audio_unit_instance|audio_output:dac_driver|final_audio_data[0]                  ;
+; vga:vga_instance|playerMemory:playerMem_inst|playerPixelR[1..7]                                                                ; Merged with vga:vga_instance|playerMemory:playerMem_inst|playerPixelR[0]                                ;
+; vga:vga_instance|playerMemory:playerMem_inst|r_next[1..7]                                                                      ; Merged with vga:vga_instance|playerMemory:playerMem_inst|r_next[0]                                      ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen|tone_limit[9..31]                               ; Stuck at GND due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[6]        ; Stuck at GND due to stuck port data_in                                                                  ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep~6                                                ; Lost fanout                                                                                             ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep~7                                                ; Lost fanout                                                                                             ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep~8                                                ; Lost fanout                                                                                             ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentState~7                                               ; Lost fanout                                                                                             ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentState~8                                               ; Lost fanout                                                                                             ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentStep~7         ; Lost fanout                                                                                             ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentStep~8         ; Lost fanout                                                                                             ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentState~9        ; Lost fanout                                                                                             ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentState~10       ; Lost fanout                                                                                             ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentState~12       ; Lost fanout                                                                                             ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep.010                                              ; Lost fanout                                                                                             ;
+; Total Number of Removed Registers = 182                                                                                        ;                                                                                                         ;
++--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                  ;
++----------------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                    ; Reason for Removal        ; Registers Removed due to This Register                                                                                        ;
++----------------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[6] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[6], ;
+;                                                                                  ; due to stuck port data_in ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[6]       ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[7]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[7]                                                                       ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|secondByte[6]  ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedSecondByte[6]   ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|firstByte[6]   ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[6]    ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|firstByte[7]   ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[7]    ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[0] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[0]  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[1] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[1]  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[2] ; Stuck at VCC              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[2]  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[3] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[3]  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[4] ; Stuck at VCC              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[4]  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[5] ; Stuck at VCC              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[5]  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[7] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[7]  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|playerMemory:playerMem_inst|g_next[0]                           ; Stuck at GND              ; vga:vga_instance|playerMemory:playerMem_inst|playerPixelG[0]                                                                  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[6]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[6]                                                                       ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[5]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[5]                                                                       ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[4]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[4]                                                                       ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[3]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[3]                                                                       ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[2]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[2]                                                                       ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[1]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[1]                                                                       ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[0]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[0]                                                                       ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|playerMemory:playerMem_inst|g_next[3]                           ; Stuck at GND              ; vga:vga_instance|playerMemory:playerMem_inst|playerPixelG[3]                                                                  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|playerMemory:playerMem_inst|g_next[2]                           ; Stuck at GND              ; vga:vga_instance|playerMemory:playerMem_inst|playerPixelG[2]                                                                  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; vga:vga_instance|playerMemory:playerMem_inst|g_next[1]                           ; Stuck at GND              ; vga:vga_instance|playerMemory:playerMem_inst|playerPixelG[1]                                                                  ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
++----------------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -325,12 +490,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 16780 ;
-; Number of registers using Synchronous Clear  ; 48    ;
-; Number of registers using Synchronous Load   ; 16    ;
-; Number of registers using Asynchronous Clear ; 317   ;
+; Total registers                              ; 2031  ;
+; Number of registers using Synchronous Clear  ; 77    ;
+; Number of registers using Synchronous Load   ; 3     ;
+; Number of registers using Asynchronous Clear ; 340   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 16703 ;
+; Number of registers using Clock Enable       ; 1883  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -340,35 +505,157 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------+---------+
 ; Inverted Register                                            ; Fan out ;
 +--------------------------------------------------------------+---------+
-; cpu:cpu_instance|control_unit:control_unit_instance|state[0] ; 13      ;
-; memory:memory_instance|rect_x[0][3]                          ; 4       ;
-; memory:memory_instance|rect_x[0][5]                          ; 12      ;
-; Total number of inverted registers = 3                       ;         ;
+; cpu:cpu_instance|control_unit:control_unit_instance|state[0] ; 8       ;
+; sharedMemory:memory_instance|rect_x[30][6]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[30][4]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[30][3]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[30][9]                   ; 3       ;
+; sharedMemory:memory_instance|rect_y[30][7]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[30][6]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[30][5]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[30][4]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[31][6]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[31][5]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[31][3]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[31][2]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[31][9]                   ; 3       ;
+; sharedMemory:memory_instance|rect_y[31][8]                   ; 3       ;
+; sharedMemory:memory_instance|rect_y[31][4]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[31][3]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[28][5]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[28][4]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[28][9]                   ; 3       ;
+; sharedMemory:memory_instance|rect_y[28][7]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[28][5]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[29][6]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[29][2]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[29][9]                   ; 3       ;
+; sharedMemory:memory_instance|rect_y[29][7]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[29][6]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[29][3]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[24][7]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[24][6]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[24][5]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[24][8]                   ; 3       ;
+; sharedMemory:memory_instance|rect_x[25][7]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[25][6]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[25][5]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[25][4]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[25][2]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[25][8]                   ; 3       ;
+; sharedMemory:memory_instance|rect_y[25][5]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[25][3]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[26][3]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[26][9]                   ; 3       ;
+; sharedMemory:memory_instance|rect_y[26][6]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[26][4]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[27][4]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[27][3]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[27][2]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[27][9]                   ; 3       ;
+; sharedMemory:memory_instance|rect_y[27][6]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[27][5]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[27][4]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[27][3]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[10][7]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[10][6]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[10][3]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[10][8]                   ; 3       ;
+; sharedMemory:memory_instance|rect_y[10][7]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[10][4]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[11][7]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[11][6]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[11][4]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[11][3]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[11][2]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[11][8]                   ; 3       ;
+; sharedMemory:memory_instance|rect_y[11][7]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[11][5]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[11][4]                   ; 2       ;
+; sharedMemory:memory_instance|rect_y[11][3]                   ; 2       ;
+; sharedMemory:memory_instance|rect_x[8][7]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[8][5]                    ; 2       ;
+; sharedMemory:memory_instance|rect_y[8][8]                    ; 3       ;
+; sharedMemory:memory_instance|rect_y[8][6]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[9][7]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[9][5]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[9][4]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[9][2]                    ; 2       ;
+; sharedMemory:memory_instance|rect_y[9][8]                    ; 3       ;
+; sharedMemory:memory_instance|rect_y[9][6]                    ; 2       ;
+; sharedMemory:memory_instance|rect_y[9][5]                    ; 2       ;
+; sharedMemory:memory_instance|rect_y[9][3]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[6][6]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[6][5]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[6][4]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[6][3]                    ; 2       ;
+; sharedMemory:memory_instance|rect_y[6][7]                    ; 2       ;
+; sharedMemory:memory_instance|rect_y[6][6]                    ; 2       ;
+; sharedMemory:memory_instance|rect_y[6][5]                    ; 2       ;
+; sharedMemory:memory_instance|rect_y[6][4]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[7][7]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[7][3]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[7][2]                    ; 2       ;
+; sharedMemory:memory_instance|rect_y[7][8]                    ; 3       ;
+; sharedMemory:memory_instance|rect_y[7][4]                    ; 2       ;
+; sharedMemory:memory_instance|rect_y[7][3]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[4][6]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[4][4]                    ; 2       ;
+; sharedMemory:memory_instance|rect_y[4][7]                    ; 2       ;
+; sharedMemory:memory_instance|rect_y[4][5]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[5][6]                    ; 2       ;
+; sharedMemory:memory_instance|rect_x[5][5]                    ; 2       ;
+; Total number of inverted registers = 424*                    ;         ;
 +--------------------------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
-; 5:1                ; 16 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |doodle_jump|memory:memory_instance|contents[15]                         ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |doodle_jump|cpu:cpu_instance|register:program_counter|contents[9]       ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftRight1               ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftLeft2                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftLeft0                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftRight0               ;
-; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftLeft0                ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 24 LEs               ; 6 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|control_unit:control_unit_instance|Mux3    ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|mux4:register_file_input_mux|selection[2]  ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|Mux14 ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|Mux16 ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |doodle_jump|memory:memory_instance|b[4]                                 ;
-; 250:1              ; 2 bits    ; 332 LEs       ; 36 LEs               ; 296 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector5                 ;
-; 252:1              ; 2 bits    ; 336 LEs       ; 36 LEs               ; 300 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector9                 ;
-; 252:1              ; 2 bits    ; 336 LEs       ; 34 LEs               ; 302 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector2                 ;
-; 253:1              ; 2 bits    ; 336 LEs       ; 34 LEs               ; 302 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector13                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                                                       ;
++-------------------------------------------------------------------------+-------------------------------------------------------------------+------+
+; Register Name                                                           ; Megafunction                                                      ; Type ;
++-------------------------------------------------------------------------+-------------------------------------------------------------------+------+
+; sharedMemory:memory_instance|memory:cpu_memory_instance|contents[0..15] ; sharedMemory:memory_instance|memory:cpu_memory_instance|ram_rtl_0 ; RAM  ;
++-------------------------------------------------------------------------+-------------------------------------------------------------------+------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentCommandIndex[3]                                     ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByteIndex[0] ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |doodle_jump|cpu:cpu_instance|register:program_counter|contents[1]                                                                        ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentBitIndex[0]  ;
+; 12:1               ; 6 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[1]      ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftRight1                                                                                ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftLeft2                                                                                 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftLeft0                                                                                 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftLeft0                                                                                 ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftRight0                                                                                ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 24 LEs               ; 6 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|control_unit:control_unit_instance|Mux5                                                                     ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|mux4:register_file_input_mux|selection[2]                                                                   ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep.011                                            ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|Mux3                                                                   ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|Mux20                                                                  ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentStep.0001    ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|Selector9           ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 8 LEs                ; 14 LEs                 ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|Selector11          ;
+; 250:1              ; 2 bits    ; 332 LEs       ; 36 LEs               ; 296 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector5                                                                                  ;
+; 252:1              ; 2 bits    ; 336 LEs       ; 36 LEs               ; 300 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector10                                                                                 ;
+; 252:1              ; 2 bits    ; 336 LEs       ; 34 LEs               ; 302 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector2                                                                                  ;
+; 253:1              ; 2 bits    ; 336 LEs       ; 34 LEs               ; 302 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector14                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0|altsyncram_0pe1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                   ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                    ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------+
@@ -493,15 +780,194 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: memory:memory_instance ;
-+----------------+---------------+------------------------------------+
-; Parameter Name ; Value         ; Type                               ;
-+----------------+---------------+------------------------------------+
-; DATA_WIDTH     ; 16            ; Signed Integer                     ;
-; INIT_FILE      ; init_mem.text ; String                             ;
-+----------------+---------------+------------------------------------+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sharedMemory:memory_instance ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; DATA_WIDTH     ; 16    ; Signed Integer                                   ;
+; NUM_RECTS      ; 32    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sharedMemory:memory_instance|memory:cpu_memory_instance ;
++----------------+-------------------+-----------------------------------------------------------------+
+; Parameter Name ; Value             ; Type                                                            ;
++----------------+-------------------+-----------------------------------------------------------------+
+; DATA_WIDTH     ; 16                ; Signed Integer                                                  ;
+; ADDR_WIDTH     ; 10                ; Signed Integer                                                  ;
+; INIT_FILE      ; cpu/init_mem.text ; String                                                          ;
++----------------+-------------------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen ;
++----------------+-------+----------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                               ;
++----------------+-------+----------------------------------------------------------------------------------------------------+
+; BASE_FREQUENCY ; 55    ; Signed Integer                                                                                     ;
++----------------+-------+----------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0 ;
++------------------------------------+--------------------------------------+---------------------------------------------------+
+; Parameter Name                     ; Value                                ; Type                                              ;
++------------------------------------+--------------------------------------+---------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                    ; Untyped                                           ;
+; AUTO_CARRY_CHAINS                  ; ON                                   ; AUTO_CARRY                                        ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                  ; IGNORE_CARRY                                      ;
+; AUTO_CASCADE_CHAINS                ; ON                                   ; AUTO_CASCADE                                      ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                  ; IGNORE_CASCADE                                    ;
+; WIDTH_BYTEENA                      ; 1                                    ; Untyped                                           ;
+; OPERATION_MODE                     ; SINGLE_PORT                          ; Untyped                                           ;
+; WIDTH_A                            ; 16                                   ; Untyped                                           ;
+; WIDTHAD_A                          ; 10                                   ; Untyped                                           ;
+; NUMWORDS_A                         ; 1024                                 ; Untyped                                           ;
+; OUTDATA_REG_A                      ; UNREGISTERED                         ; Untyped                                           ;
+; ADDRESS_ACLR_A                     ; NONE                                 ; Untyped                                           ;
+; OUTDATA_ACLR_A                     ; NONE                                 ; Untyped                                           ;
+; WRCONTROL_ACLR_A                   ; NONE                                 ; Untyped                                           ;
+; INDATA_ACLR_A                      ; NONE                                 ; Untyped                                           ;
+; BYTEENA_ACLR_A                     ; NONE                                 ; Untyped                                           ;
+; WIDTH_B                            ; 1                                    ; Untyped                                           ;
+; WIDTHAD_B                          ; 1                                    ; Untyped                                           ;
+; NUMWORDS_B                         ; 1                                    ; Untyped                                           ;
+; INDATA_REG_B                       ; CLOCK1                               ; Untyped                                           ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                               ; Untyped                                           ;
+; RDCONTROL_REG_B                    ; CLOCK1                               ; Untyped                                           ;
+; ADDRESS_REG_B                      ; CLOCK1                               ; Untyped                                           ;
+; OUTDATA_REG_B                      ; UNREGISTERED                         ; Untyped                                           ;
+; BYTEENA_REG_B                      ; CLOCK1                               ; Untyped                                           ;
+; INDATA_ACLR_B                      ; NONE                                 ; Untyped                                           ;
+; WRCONTROL_ACLR_B                   ; NONE                                 ; Untyped                                           ;
+; ADDRESS_ACLR_B                     ; NONE                                 ; Untyped                                           ;
+; OUTDATA_ACLR_B                     ; NONE                                 ; Untyped                                           ;
+; RDCONTROL_ACLR_B                   ; NONE                                 ; Untyped                                           ;
+; BYTEENA_ACLR_B                     ; NONE                                 ; Untyped                                           ;
+; WIDTH_BYTEENA_A                    ; 1                                    ; Untyped                                           ;
+; WIDTH_BYTEENA_B                    ; 1                                    ; Untyped                                           ;
+; RAM_BLOCK_TYPE                     ; AUTO                                 ; Untyped                                           ;
+; BYTE_SIZE                          ; 8                                    ; Untyped                                           ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                            ; Untyped                                           ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                 ; Untyped                                           ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                 ; Untyped                                           ;
+; INIT_FILE                          ; db/lab1.ram0_memory_16436850.hdl.mif ; Untyped                                           ;
+; INIT_FILE_LAYOUT                   ; PORT_A                               ; Untyped                                           ;
+; MAXIMUM_DEPTH                      ; 0                                    ; Untyped                                           ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                               ; Untyped                                           ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                               ; Untyped                                           ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                               ; Untyped                                           ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                               ; Untyped                                           ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                      ; Untyped                                           ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                      ; Untyped                                           ;
+; ENABLE_ECC                         ; FALSE                                ; Untyped                                           ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                ; Untyped                                           ;
+; WIDTH_ECCSTATUS                    ; 3                                    ; Untyped                                           ;
+; DEVICE_FAMILY                      ; Cyclone V                            ; Untyped                                           ;
+; CBXI_PARAMETER                     ; altsyncram_0pe1                      ; Untyped                                           ;
++------------------------------------+--------------------------------------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sharedMemory:memory_instance|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                ;
++------------------------+----------------+-----------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                             ;
+; LPM_WIDTHD             ; 2              ; Untyped                                             ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
+; LPM_PIPELINE           ; 0              ; Untyped                                             ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                             ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                             ;
+; CBXI_PARAMETER         ; lpm_divide_2am ; Untyped                                             ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                             ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                             ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                        ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                      ;
++------------------------+----------------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sharedMemory:memory_instance|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                ;
++------------------------+----------------+-----------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                             ;
+; LPM_WIDTHD             ; 2              ; Untyped                                             ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
+; LPM_PIPELINE           ; 0              ; Untyped                                             ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                             ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                             ;
+; CBXI_PARAMETER         ; lpm_divide_52m ; Untyped                                             ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                             ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                             ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                        ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                      ;
++------------------------+----------------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                         ;
++-------------------------------------------+------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                        ;
++-------------------------------------------+------------------------------------------------------------------------------+
+; Number of entity instances                ; 1                                                                            ;
+; Entity Instance                           ; sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0 ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                                  ;
+;     -- WIDTH_A                            ; 16                                                                           ;
+;     -- NUMWORDS_A                         ; 1024                                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                 ;
+;     -- WIDTH_B                            ; 1                                                                            ;
+;     -- NUMWORDS_B                         ; 1                                                                            ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                    ;
++-------------------------------------------+------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "audio_unit:audio_unit_instance|audio_output:dac_driver"                                                                                            ;
++-------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                      ;
++-------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; pitch[7..6] ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
+; drum_toggle ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance" ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                   ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------+
+; done ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                       ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "audio_unit:audio_unit_instance"                                                                                                                                                        ;
++-------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                                                          ;
++-------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; pitch       ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (6 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; pitch[5..2] ; Input ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; drum        ; Input ; Info     ; Stuck at GND                                                                                                                                                                     ;
++-------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -529,37 +995,40 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 16780                       ;
-;     CLR               ; 4                           ;
-;     CLR SCLR          ; 10                          ;
-;     ENA               ; 16384                       ;
-;     ENA CLR           ; 293                         ;
+; arriav_ff             ; 2031                        ;
+;     CLR               ; 13                          ;
+;     CLR SCLR          ; 18                          ;
+;     ENA               ; 1566                        ;
+;     ENA CLR           ; 299                         ;
 ;     ENA CLR SCLR      ; 10                          ;
-;     ENA SCLR SLD      ; 16                          ;
-;     SCLR              ; 12                          ;
-;     plain             ; 51                          ;
+;     ENA SCLR          ; 5                           ;
+;     ENA SLD           ; 3                           ;
+;     SCLR              ; 44                          ;
+;     plain             ; 73                          ;
 ; arriav_io_obuf        ; 6                           ;
-; arriav_lcell_comb     ; 7724                        ;
-;     arith             ; 122                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 45                          ;
-;         2 data inputs ; 26                          ;
-;         4 data inputs ; 17                          ;
+; arriav_lcell_comb     ; 3698                        ;
+;     arith             ; 1229                        ;
+;         0 data inputs ; 14                          ;
+;         1 data inputs ; 604                         ;
+;         2 data inputs ; 530                         ;
+;         3 data inputs ; 24                          ;
+;         4 data inputs ; 25                          ;
 ;         5 data inputs ; 32                          ;
-;     extend            ; 15                          ;
-;         7 data inputs ; 15                          ;
-;     normal            ; 7587                        ;
+;     extend            ; 10                          ;
+;         7 data inputs ; 10                          ;
+;     normal            ; 2459                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 119                         ;
-;         2 data inputs ; 37                          ;
-;         3 data inputs ; 1092                        ;
-;         4 data inputs ; 147                         ;
-;         5 data inputs ; 177                         ;
-;         6 data inputs ; 6014                        ;
+;         1 data inputs ; 432                         ;
+;         2 data inputs ; 61                          ;
+;         3 data inputs ; 129                         ;
+;         4 data inputs ; 480                         ;
+;         5 data inputs ; 676                         ;
+;         6 data inputs ; 680                         ;
 ; boundary_port         ; 177                         ;
+; stratixv_ram_block    ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.20                       ;
-; Average LUT depth     ; 5.84                        ;
+; Max LUT depth         ; 11.60                       ;
+; Average LUT depth     ; 7.62                        ;
 +-----------------------+-----------------------------+
 
 
@@ -568,7 +1037,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:27     ;
+; Top            ; 00:00:11     ;
 +----------------+--------------+
 
 
@@ -578,10 +1047,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Mar 23 15:50:34 2026
+    Info: Processing started: Thu Mar 26 14:13:30 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v
+    Info (12023): Found entity 1: audio_unit File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator.v
+    Info (12023): Found entity 1: audio_configurator File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v
+    Info (12023): Found entity 1: audio_configurator_select File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 1
+Info (12021): Found 3 design units, including 3 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v
+    Info (12023): Found entity 1: audio_output File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 1
+    Info (12023): Found entity 2: note_generator File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 72
+    Info (12023): Found entity 3: drum_generator File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 101
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/tb_audio_configurator.v
+    Info (12023): Found entity 1: tb_audio_configurator File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/tb_audio_configurator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v
+    Info (12023): Found entity 1: memory File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v Line: 1
+Warning (10463): Verilog HDL Declaration warning at sharedMemory.v(84): "inside" is SystemVerilog-2005 keyword File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 84
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v
+    Info (12023): Found entity 1: sharedMemory File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v
     Info (12023): Found entity 1: playerMemory File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/tileMemory.v
@@ -598,8 +1084,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/u
     Info (12023): Found entity 1: mux4 File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux4.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux2.v
     Info (12023): Found entity 1: mux2 File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux2.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/memory.v
-    Info (12023): Found entity 1: memory File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/memory.v Line: 1
+Warning (12019): Can't analyze file -- file ../Verilog/Doodle Jump/cpu/memory.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v
     Info (12023): Found entity 1: instruction_decoder File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v
@@ -627,7 +1112,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/u
     Info (12023): Found entity 1: tb_doodle File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/tb_doodle.v Line: 3
 Warning (10236): Verilog HDL Implicit Net warning at doodle_jump.v(46): created implicit net for "reset" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 46
 Info (12127): Elaborating entity "doodle_jump" for the top level hierarchy
-Warning (10034): Output port "leds" at doodle_jump.v(9) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+Warning (10034): Output port "leds[9..3]" at doodle_jump.v(9) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
 Warning (10034): Output port "hex2" at doodle_jump.v(14) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 14
 Warning (10034): Output port "hex3" at doodle_jump.v(15) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 15
 Warning (10034): Output port "hex4" at doodle_jump.v(16) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
@@ -660,26 +1145,90 @@ Info (12128): Elaborating entity "control_unit" for hierarchy "cpu:cpu_instance|
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(56): incomplete case statement has no default case item File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 56
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(76): incomplete case statement has no default case item File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 76
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(41): incomplete case statement has no default case item File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 41
-Info (12128): Elaborating entity "memory" for hierarchy "memory:memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 120
-Warning (10036): Verilog HDL or VHDL warning at memory.v(42): object "idx" assigned a value but never read File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/memory.v Line: 42
-Warning (10850): Verilog HDL warning at memory.v(26): number of words (20) in memory file does not match the number of elements in the address range [0:1023] File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/memory.v Line: 26
-Warning (10230): Verilog HDL assignment warning at memory.v(160): truncated value with size 32 to match size of target (10) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/memory.v Line: 160
-Warning (10230): Verilog HDL assignment warning at memory.v(164): truncated value with size 32 to match size of target (10) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/memory.v Line: 164
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "memory:memory_instance|ram" is uninferred due to asynchronous read logic File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/memory.v Line: 23
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/u1462567/Desktop/ece3710/Quartus Project/db/lab1.ram0_memory_acf65643.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "i2c_clock" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 20
-    Warning (13040): bidirectional pin "i2c_data" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 21
-    Warning (13040): bidirectional pin "audio_masterClock" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 22
-    Warning (13040): bidirectional pin "audio_leftRightClock" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 23
-    Warning (13040): bidirectional pin "audio_bitClock" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 24
-    Warning (13040): bidirectional pin "audio_data" has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 25
+Info (12128): Elaborating entity "sharedMemory" for hierarchy "sharedMemory:memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 120
+Warning (10230): Verilog HDL assignment warning at sharedMemory.v(60): truncated value with size 32 to match size of target (5) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 60
+Warning (10230): Verilog HDL assignment warning at sharedMemory.v(63): truncated value with size 32 to match size of target (2) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 63
+Warning (10230): Verilog HDL assignment warning at sharedMemory.v(124): truncated value with size 32 to match size of target (16) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 124
+Warning (10230): Verilog HDL assignment warning at sharedMemory.v(127): truncated value with size 32 to match size of target (16) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 127
+Info (12128): Elaborating entity "memory" for hierarchy "sharedMemory:memory_instance|memory:cpu_memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 46
+Warning (10850): Verilog HDL warning at memory.v(18): number of words (52) in memory file does not match the number of elements in the address range [0:1023] File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v Line: 18
+Info (12128): Elaborating entity "audio_unit" for hierarchy "audio_unit:audio_unit_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 142
+Info (12128): Elaborating entity "audio_configurator_select" for hierarchy "audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v Line: 38
+Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(124): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 124
+Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(125): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 125
+Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(126): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 126
+Warning (10230): Verilog HDL assignment warning at audio_configurator_select.v(128): truncated value with size 32 to match size of target (4) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 128
+Info (12128): Elaborating entity "i2c_controller" for hierarchy "audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 94
+Info (10264): Verilog HDL Case Statement information at i2c_controller.v(64): all case item expressions in this case statement are onehot File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v Line: 64
+Warning (10230): Verilog HDL assignment warning at i2c_controller.v(98): truncated value with size 32 to match size of target (3) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v Line: 98
+Warning (10230): Verilog HDL assignment warning at i2c_controller.v(100): truncated value with size 32 to match size of target (4) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v Line: 100
+Info (10264): Verilog HDL Case Statement information at i2c_controller.v(147): all case item expressions in this case statement are onehot File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v Line: 147
+Info (12128): Elaborating entity "audio_output" for hierarchy "audio_unit:audio_unit_instance|audio_output:dac_driver" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v Line: 49
+Info (12128): Elaborating entity "note_generator" for hierarchy "audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 33
+Info (12128): Elaborating entity "drum_generator" for hierarchy "audio_unit:audio_unit_instance|audio_output:dac_driver|drum_generator:drum_gen" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 42
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "sharedMemory:memory_instance|memory:cpu_memory_instance|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/lab1.ram0_memory_16436850.hdl.mif
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sharedMemory:memory_instance|Div0" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 60
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sharedMemory:memory_instance|Mod0" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 63
+Info (12130): Elaborated megafunction instantiation "sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/lab1.ram0_memory_16436850.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0pe1.tdf
+    Info (12023): Found entity 1: altsyncram_0pe1 File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_0pe1.tdf Line: 28
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/u1462567/Desktop/ece3710/Quartus Project/db/lab1.ram0_memory_16436850.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /usr/local/quartus/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/u1462567/Desktop/ece3710/Quartus Project/db/lab1.ram0_memory_16436850.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /usr/local/quartus/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12130): Elaborated megafunction instantiation "sharedMemory:memory_instance|lpm_divide:Div0" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 60
+Info (12133): Instantiated megafunction "sharedMemory:memory_instance|lpm_divide:Div0" with the following parameter: File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 60
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "2"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_2am.tdf
+    Info (12023): Found entity 1: lpm_divide_2am File: /home/u1462567/Desktop/ece3710/Quartus Project/db/lpm_divide_2am.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_8kh File: /home/u1462567/Desktop/ece3710/Quartus Project/db/sign_div_unsign_8kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_mse.tdf
+    Info (12023): Found entity 1: alt_u_div_mse File: /home/u1462567/Desktop/ece3710/Quartus Project/db/alt_u_div_mse.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "sharedMemory:memory_instance|lpm_divide:Mod0" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 63
+Info (12133): Instantiated megafunction "sharedMemory:memory_instance|lpm_divide:Mod0" with the following parameter: File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 63
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "2"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_52m.tdf
+    Info (12023): Found entity 1: lpm_divide_52m File: /home/u1462567/Desktop/ece3710/Quartus Project/db/lpm_divide_52m.tdf Line: 25
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "audio_masterClock" and its non-tri-state driver. File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "audio_leftRightClock" and its non-tri-state driver. File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 23
+    Warning (13035): Inserted always-enabled tri-state buffer between "audio_bitClock" and its non-tri-state driver. File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 24
+    Warning (13035): Inserted always-enabled tri-state buffer between "audio_data" and its non-tri-state driver. File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 25
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "audio_masterClock~synth" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 22
+    Warning (13010): Node "audio_leftRightClock~synth" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 23
+    Warning (13010): Node "audio_bitClock~synth" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 24
+    Warning (13010): Node "audio_data~synth" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 25
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "leds[0]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "leds[1]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "leds[2]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
     Warning (13410): Pin "leds[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
     Warning (13410): Pin "leds[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
     Warning (13410): Pin "leds[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
@@ -732,28 +1281,22 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "programStateRegisterContentsOutput[14]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
     Warning (13410): Pin "programStateRegisterContentsOutput[15]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file /home/u1462567/Desktop/ece3710/Quartus Project/output_files/lab1.map.smsg
+Info (17049): 27 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "push_buttons[1]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 10
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "push_buttons[2]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 10
     Warning (15610): No output dependent on input pin "push_buttons[3]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 10
-Info (21057): Implemented 24477 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5330 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 156 output pins
     Info (21060): Implemented 6 bidirectional pins
-    Info (21061): Implemented 24300 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 97 warnings
-    Info: Peak virtual memory: 573 megabytes
-    Info: Processing ended: Mon Mar 23 15:51:11 2026
-    Info: Elapsed time: 00:00:37
-    Info: Total CPU time (on all processors): 00:00:43
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in /home/u1462567/Desktop/ece3710/Quartus Project/output_files/lab1.map.smsg.
+    Info (21061): Implemented 5137 logic cells
+    Info (21064): Implemented 16 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 106 warnings
+    Info: Peak virtual memory: 491 megabytes
+    Info: Processing ended: Thu Mar 26 14:13:50 2026
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:26
 
 
