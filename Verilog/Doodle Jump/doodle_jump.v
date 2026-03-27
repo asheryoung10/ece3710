@@ -46,6 +46,8 @@ module doodle_jump #(
 assign reset = ~push_buttons[0];
 assign hex0 = switches[6:0];
 assign hex1 = switches [9:7];
+wire [15:0] player_x;
+wire [15:0] player_y;
 
 wire [9:0] vgaPixelX;
 wire [9:0] vgaPixelY;
@@ -62,8 +64,8 @@ vga vga_instance (
 	.r(vga_red),
 	.g(vga_green),
 	.b(vga_blue),
-	.playerX(switches[5:0]),
-	.playerY(0),
+	.playerX(player_x),
+	.playerY(player_y),
 	.playerAnimationIndex(switches[9:6]),
 	.pixelX(vgaPixelX),
 	.pixelY(vgaPixelY),
@@ -97,6 +99,7 @@ cpu cpu_instance (
    .controlUnitNextState(controlUnitNextState)
 );
 
+
 sharedMemory 
 #(
     .DATA_WIDTH(DATA_WIDTH)
@@ -115,7 +118,10 @@ memory_instance
 	 .vgaY(vgaPixelY),
 	 .r(rectR),
 	 .g(rectG),
-	 .b(rectB)
+	 .b(rectB),
+	 
+	 .player_x(player_x),
+	 .player_y(player_y)
 	 
 );
 
