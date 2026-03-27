@@ -1,7 +1,7 @@
 module sharedMemory
 #(
     parameter DATA_WIDTH = 16,
-    parameter NUM_RECTS  = 32
+    parameter NUM_RECTS  = 4
 )
 (
     input clock,
@@ -14,7 +14,9 @@ module sharedMemory
     input [9:0] vgaY,
     output reg [7:0] r,
     output reg [7:0] g,
-    output reg [7:0] b
+    output reg [7:0] b,
+	 output reg [15:0] player_x,
+		output reg [15:0] player_y
 );
 
 // --------------------------------------------------
@@ -51,6 +53,24 @@ cpu_memory_instance
 reg [15:0] rect_x  [0:NUM_RECTS-1];
 reg [15:0] rect_y  [0:NUM_RECTS-1];
 reg [15:0] rect_wh [0:NUM_RECTS-1];
+
+
+
+always@(posedge clock) begin
+	if(writeEnable) begin
+		if(readWriteAddress[14]) begin
+			// TODO CHANGE THIS CUZ IT WRITE TO TOO MUCH
+			if(readWriteAddress[0]) begin
+				player_x <= writeData; 
+			end else begin
+				player_y <= writeData;
+			end
+		end
+	end
+end
+
+
+
 
 // Decode index
 wire [$clog2(TOTAL_REGS)-1:0] regIndex;

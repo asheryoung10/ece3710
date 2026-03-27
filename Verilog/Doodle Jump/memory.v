@@ -2,7 +2,7 @@ module memory
 #(
     parameter DATA_WIDTH = 16,
     parameter ADDR_WIDTH = 10,
-    parameter INIT_FILE = "init_mem.text"
+    parameter INIT_FILE = "cpu/init_mem.text"
 )
 (
     input clock,
