@@ -1,7 +1,10 @@
+from pathlib import Path
+import sys
+
 from assembler import assembleProgram
 
 
-program_source = """
+DEFAULT_PROGRAM_SOURCE = """
 MOVI 0x01, R0
 LSHI 15, R0
 MOVI 100, R1
@@ -22,4 +25,11 @@ WAIT
 """
 
 
-print(assembleProgram(program_source))
+def load_program_source():
+    if len(sys.argv) > 1:
+        return Path(sys.argv[1]).read_text()
+
+    return DEFAULT_PROGRAM_SOURCE
+
+
+print(assembleProgram(load_program_source()))
