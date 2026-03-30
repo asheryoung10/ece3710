@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module audio_configurator_select (
     input wire systemClock,
     input wire reset,
