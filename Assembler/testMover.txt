@@ -1,0 +1,49 @@
+loop:
+// -------- LEFT BUTTON --------
+MOVI 0x04, R0        // mask for left
+AND R15, R0
+CMPI 0, R0
+BNE doLeft           // if pressed → go set to 0
+
+// -------- RIGHT BUTTON --------
+MOVI 0x02, R0        // mask for right (assuming bit 3)
+AND R15, R0
+CMPI 0, R0
+BNE doRight          // if pressed → move right
+
+BUC loop             // nothing pressed
+
+
+// -------- LEFT: set position = 0 --------
+doLeft:
+MOVI 0x01, R0
+LSHI 15, R0          // R0 = rect base addr
+MOVI 0x00, R1        // position = 0
+STOR R1, R0
+BUC loop
+
+
+// -------- RIGHT: increment position --------
+doRight:
+MOVI 0x01, R0
+LSHI 15, R0          // R0 = rect base addr
+
+LOAD R1, R0          // get current position
+ADDI 0x01, R1        // move right
+STOR R1, R0
+
+// -------- WAIT FOR VSYNC HIGH --------
+waitVsyncHigh:
+MOVI 0x01, R2        // mask for vsync (adjust if needed)
+AND R15, R2
+CMPI 0, R2
+BEQ waitVsyncHigh    // stay until vsync == 1
+
+// -------- WAIT FOR VSYNC LOW --------
+waitVsyncLow:
+MOVI 0x01, R2
+AND R15, R2
+CMPI 0, R2
+BNE waitVsyncLow     // stay until vsync == 0
+
+BUC loop

@@ -14,11 +14,7 @@ module register_file
     input [ADDR_WIDTH-1:0] readAddressB,
 
     output [DATA_WIDTH-1:0] contentsA,
-    output [DATA_WIDTH-1:0] contentsB,
-	 
-	 input wire leftButton,
-	 input wire rightButton,
-	 input wire vsync
+    output [DATA_WIDTH-1:0] contentsB
 );
 
 reg [DATA_WIDTH-1:0] registers [(2**ADDR_WIDTH)-1:0];
@@ -34,13 +30,7 @@ begin
     end
 end
 
-wire [15:0] reg15input;
-assign reg15input = {12'd0,leftButton, rightButton, vsync};
-
-assign contentsA = 4'd15 == readAddressA ? reg15input : registers[readAddressA];
-assign contentsB = 4'd15 == readAddressB ? reg15input : registers[readAddressB];
-
-
-
+assign contentsA = registers[readAddressA];
+assign contentsB = registers[readAddressB];
 
 endmodule

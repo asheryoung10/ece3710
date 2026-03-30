@@ -19,7 +19,11 @@ module cpu
 	output memoryWriteEnable,
 	output [MEMORY_ADDR_WIDTH-1:0] memoryReadWriteAddress,
 	output [DATA_WIDTH-1:0] registerFileContentsB,
-	input [DATA_WIDTH-1:0] memoryContents
+	input [DATA_WIDTH-1:0] memoryContents,
+	
+	input wire leftButton,
+	input wire rightButton,
+	input wire vsync
 );
 
 //
@@ -98,7 +102,10 @@ register_file_instance
     .readAddressB(registerFileReadAddressB),
     // Outputs
     .contentsA(registerFileContentsA),
-    .contentsB(registerFileContentsB)
+    .contentsB(registerFileContentsB),
+	 .leftButton(leftButton),
+	 .rightButton(rightButton),
+	 .vsync(vsync)
 );
 
 

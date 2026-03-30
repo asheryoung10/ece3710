@@ -80,14 +80,14 @@ CHIP  "lab1"  ASSIGNED TO AN: 5CSEMA5F31C6
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 GND                          : A2        : gnd    :                   :         :           :                
-instructionRegisterContentsOutput[3] : A3        : output : 2.5 V             :         : 8A        : N              
-aluResultOutput[1]           : A4        : output : 2.5 V             :         : 8A        : N              
-instructionRegisterContentsOutput[13] : A5        : output : 2.5 V             :         : 8A        : N              
-aluResultOutput[2]           : A6        : output : 2.5 V             :         : 8A        : N              
+controlUnitNextState[1]      : A3        : output : 2.5 V             :         : 8A        : N              
+instructionRegisterContentsOutput[14] : A4        : output : 2.5 V             :         : 8A        : N              
+instructionRegisterContentsOutput[1] : A5        : output : 2.5 V             :         : 8A        : N              
+instructionRegisterContentsOutput[6] : A6        : output : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : A7        : power  :                   : 2.5V    : 8A        :                
-programStateRegisterContentsOutput[3] : A8        : output : 2.5 V             :         : 8A        : N              
-controlUnitNextState[1]      : A9        : output : 2.5 V             :         : 8A        : N              
-programStateRegisterContentsOutput[0] : A10       : output : 2.5 V             :         : 8A        : N              
+instructionRegisterContentsOutput[12] : A8        : output : 2.5 V             :         : 8A        : N              
+instructionRegisterContentsOutput[15] : A9        : output : 2.5 V             :         : 8A        : N              
+programStateRegisterContentsOutput[2] : A10       : output : 2.5 V             :         : 8A        : N              
 vga_clock                    : A11       : output : 2.5 V             :         : 8A        : Y              
 GND                          : A12       : gnd    :                   :         :           :                
 vga_red[0]                   : A13       : output : 2.5 V             :         : 8A        : Y              
@@ -118,11 +118,11 @@ VCCA_FPLL                    : AA8       : power  :                   : 2.5V    
 GND                          : AA9       : gnd    :                   :         :           :                
 VCCPD3A                      : AA10      : power  :                   : 2.5V    : 3A        :                
 GND                          : AA11      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA12      :        :                   :         : 3A        :                
-aluResultOutput[12]          : AA13      : output : 2.5 V             :         : 3B        : N              
+programStateRegisterContentsOutput[11] : AA12      : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA13      :        :                   :         : 3B        :                
 push_buttons[0]              : AA14      : input  : 2.5 V             :         : 3B        : Y              
 push_buttons[1]              : AA15      : input  : 2.5 V             :         : 3B        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA16      :        :                   :         : 4A        :                
+aluResultOutput[7]           : AA16      : output : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AA17      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA18      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA19      :        :                   :         : 4A        :                
@@ -149,11 +149,11 @@ TDO                          : AB9       : output :                   :         
 VCCPGM                       : AB10      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
 VCC_AUX                      : AB11      : power  :                   : 2.5V    :           :                
 switches[0]                  : AB12      : input  : 2.5 V             :         : 3A        : Y              
-aluResultOutput[8]           : AB13      : output : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB13      :        :                   :         : 3B        :                
 VCCIO3B                      : AB14      : power  :                   : 2.5V    : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB15      :        :                   :         : 3B        :                
+aluFlagsOutput[4]            : AB15      : output : 2.5 V             :         : 3B        : N              
 VCC_AUX                      : AB16      : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB17      :        :                   :         : 4A        :                
+aluResultOutput[2]           : AB17      : output : 2.5 V             :         : 4A        : N              
 VCCPD3B4A                    : AB18      : power  :                   : 2.5V    : 3B, 4A    :                
 GND                          : AB19      : gnd    :                   :         :           :                
 VCCPD3B4A                    : AB20      : power  :                   : 2.5V    : 3B, 4A    :                
@@ -180,7 +180,7 @@ VCCPD3A                      : AC10      : power  :                   : 2.5V    
 VCCIO3A                      : AC11      : power  :                   : 2.5V    : 3A        :                
 switches[1]                  : AC12      : input  : 2.5 V             :         : 3A        : Y              
 VCCPD3B4A                    : AC13      : power  :                   : 2.5V    : 3B, 4A    :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC14      :        :                   :         : 3B        :                
+aluResultOutput[6]           : AC14      : output : 2.5 V             :         : 3B        : N              
 VCCPD3B4A                    : AC15      : power  :                   : 2.5V    : 3B, 4A    :                
 GND                          : AC16      : gnd    :                   :         :           :                
 VCCPD3B4A                    : AC17      : power  :                   : 2.5V    : 3B, 4A    :                
@@ -188,7 +188,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AC18      :        :                   :      
 VCCPD3B4A                    : AC19      : power  :                   : 2.5V    : 3B, 4A    :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC20      :        :                   :         : 4A        :                
 VCCIO4A                      : AC21      : power  :                   : 2.5V    : 4A        :                
-programStateRegisterContentsOutput[7] : AC22      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC22      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC23      :        :                   :         : 4A        :                
 VREFB5AN0                    : AC24      : power  :                   :         : 5A        :                
 hex3[3]                      : AC25      : output : 2.5 V             :         : 5A        : Y              
@@ -216,11 +216,11 @@ VCCPD3B4A                    : AD16      : power  :                   : 2.5V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD17      :        :                   :         : 4A        :                
 VCCIO4A                      : AD18      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD19      :        :                   :         : 4A        :                
-programStateRegisterContentsOutput[9] : AD20      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD20      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD21      :        :                   :         : 4A        :                
 VCC_AUX                      : AD22      : power  :                   : 2.5V    :           :                
 GND                          : AD23      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD24      :        :                   :         : 4A        :                
+programStateRegisterContentsOutput[5] : AD24      : output : 2.5 V             :         : 4A        : N              
 hex3[2]                      : AD25      : output : 2.5 V             :         : 5A        : Y              
 hex3[0]                      : AD26      : output : 2.5 V             :         : 5A        : Y              
 hex1[6]                      : AD27      : output : 2.5 V             :         : 5A        : Y              
@@ -239,18 +239,18 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AE9       :        :                   :      
 GND                          : AE10      : gnd    :                   :         :           :                
 switches[6]                  : AE11      : input  : 2.5 V             :         : 3A        : Y              
 switches[9]                  : AE12      : input  : 2.5 V             :         : 3A        : Y              
-aluResultOutput[3]           : AE13      : output : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE13      :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE14      :        :                   :         : 3B        :                
 VCCIO3B                      : AE15      : power  :                   : 2.5V    : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE16      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE17      :        :                   :         : 4A        :                
+aluFlagsOutput[2]            : AE17      : output : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE18      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE19      :        :                   :         : 4A        :                
+programStateRegisterContentsOutput[7] : AE19      : output : 2.5 V             :         : 4A        : N              
 GND                          : AE20      : gnd    :                   :         :           :                
 VCCPD3B4A                    : AE21      : power  :                   : 2.5V    : 3B, 4A    :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE22      :        :                   :         : 4A        :                
-programStateRegisterContentsOutput[11] : AE23      : output : 2.5 V             :         : 4A        : N              
-programStateRegisterContentsOutput[12] : AE24      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE23      :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE24      :        :                   :         : 4A        :                
 VCCIO4A                      : AE25      : power  :                   : 2.5V    : 4A        :                
 hex0[0]                      : AE26      : output : 2.5 V             :         : 5A        : Y              
 hex0[1]                      : AE27      : output : 2.5 V             :         : 5A        : Y              
@@ -260,19 +260,19 @@ VCCIO5B                      : AE30      : power  :                   : 2.5V    
 GND                          : AF1       : gnd    :                   :         :           :                
 GND                          : AF2       : gnd    :                   :         :           :                
 GND                          : AF3       : gnd    :                   :         :           :                
-aluResultOutput[4]           : AF4       : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF4       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF5       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF6       :        :                   :         : 3A        :                
 VCCIO3A                      : AF7       : power  :                   : 2.5V    : 3A        :                
-programCounterContentsOutput[7] : AF8       : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF8       :        :                   :         : 3A        :                
 switches[2]                  : AF9       : input  : 2.5 V             :         : 3A        : Y              
 switches[3]                  : AF10      : input  : 2.5 V             :         : 3A        : Y              
-programCounterContentsOutput[6] : AF11      : output : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF11      :        :                   :         : 3B        :                
 GND                          : AF12      : gnd    :                   :         :           :                
-aluResultOutput[15]          : AF13      : output : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF13      :        :                   :         : 3B        :                
 systemClock50MHz             : AF14      : input  : 2.5 V             :         : 3B        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF15      :        :                   :         : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF16      :        :                   :         : 4A        :                
+controlUnitState[0]          : AF15      : output : 2.5 V             :         : 3B        : N              
+programStateRegisterContentsOutput[9] : AF16      : output : 2.5 V             :         : 4A        : N              
 GND                          : AF17      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF18      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF19      :        :                   :         : 4A        :                
@@ -288,50 +288,50 @@ hex0[4]                      : AF28      : output : 2.5 V             :         
 hex1[4]                      : AF29      : output : 2.5 V             :         : 5A        : Y              
 hex1[5]                      : AF30      : output : 2.5 V             :         : 5A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG1       :        :                   :         : 3A        :                
-programCounterContentsOutput[10] : AG2       : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG2       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG3       :        :                   :         : 3A        :                
 VCCIO3A                      : AG4       : power  :                   : 2.5V    : 3A        :                
-programCounterContentsOutput[11] : AG5       : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG5       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG6       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG7       :        :                   :         : 3A        :                
-controlUnitState[1]          : AG8       : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG8       :        :                   :         : 3A        :                
 GND                          : AG9       : gnd    :                   :         :           :                
-programCounterContentsOutput[12] : AG10      : output : 2.5 V             :         : 3B        : N              
-aluResultOutput[6]           : AG11      : output : 2.5 V             :         : 3B        : N              
-controlUnitState[2]          : AG12      : output : 2.5 V             :         : 3B        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG13      :        :                   :         : 3B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG10      :        :                   :         : 3B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG11      :        :                   :         : 3B        :                
+aluResultOutput[9]           : AG12      : output : 2.5 V             :         : 3B        : N              
+programStateRegisterContentsOutput[6] : AG13      : output : 2.5 V             :         : 3B        : N              
 GND                          : AG14      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG15      :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG16      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG17      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG18      :        :                   :         : 4A        :                
+programStateRegisterContentsOutput[4] : AG17      : output : 2.5 V             :         : 4A        : N              
+controlUnitNextState[2]      : AG18      : output : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AG19      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG20      :        :                   :         : 4A        :                
-programStateRegisterContentsOutput[14] : AG21      : output : 2.5 V             :         : 4A        : N              
+programStateRegisterContentsOutput[13] : AG21      : output : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG22      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG23      :        :                   :         : 4A        :                
 GND                          : AG24      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG25      :        :                   :         : 4A        :                
-programStateRegisterContentsOutput[13] : AG26      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG26      :        :                   :         : 4A        :                
 hex0[3]                      : AG27      : output : 2.5 V             :         : 5A        : Y              
 hex0[5]                      : AG28      : output : 2.5 V             :         : 5A        : Y              
 VCCIO5A                      : AG29      : power  :                   : 2.5V    : 5A        :                
 hex1[3]                      : AG30      : output : 2.5 V             :         : 5A        : Y              
 GND                          : AH1       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH2       :        :                   :         : 3A        :                
-programCounterContentsOutput[13] : AH3       : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH3       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH4       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH5       :        :                   :         : 3A        :                
 GND                          : AH6       : gnd    :                   :         :           :                
-programStateRegisterContentsOutput[8] : AH7       : output : 2.5 V             :         : 3B        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH8       :        :                   :         : 3B        :                
+programCounterContentsOutput[4] : AH7       : output : 2.5 V             :         : 3B        : N              
+programCounterContentsOutput[11] : AH8       : output : 2.5 V             :         : 3B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH9       :        :                   :         : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH10      :        :                   :         : 3B        :                
+aluResultOutput[12]          : AH10      : output : 2.5 V             :         : 3B        : N              
 GND                          : AH11      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH12      :        :                   :         : 3B        :                
-aluFlagsOutput[1]            : AH13      : output : 2.5 V             :         : 3B        : N              
-aluFlagsOutput[2]            : AH14      : output : 2.5 V             :         : 3B        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH15      :        :                   :         : 3B        :                
+programCounterContentsOutput[15] : AH12      : output : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH13      :        :                   :         : 3B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH14      :        :                   :         : 3B        :                
+instructionRegisterContentsOutput[13] : AH15      : output : 2.5 V             :         : 3B        : N              
 VCCIO4A                      : AH16      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH17      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH18      :        :                   :         : 4A        :                
@@ -340,27 +340,27 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AH20      :        :                   :      
 GND                          : AH21      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH22      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH23      :        :                   :         : 4A        :                
-programStateRegisterContentsOutput[10] : AH24      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH24      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH25      :        :                   :         : 4A        :                
 VCCIO4A                      : AH26      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH27      :        :                   :         : 4A        :                
 hex0[6]                      : AH28      : output : 2.5 V             :         : 5A        : Y              
 hex1[1]                      : AH29      : output : 2.5 V             :         : 5A        : Y              
 hex1[2]                      : AH30      : output : 2.5 V             :         : 5A        : Y              
-programCounterContentsOutput[5] : AJ1       : output : 2.5 V             :         : 3A        : N              
-programCounterContentsOutput[9] : AJ2       : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ1       :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ2       :        :                   :         : 3A        :                
 GND                          : AJ3       : gnd    :                   :         :           :                
-aluResultOutput[0]           : AJ4       : output : 2.5 V             :         : 3B        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ5       :        :                   :         : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ6       :        :                   :         : 3B        :                
-programStateRegisterContentsOutput[5] : AJ7       : output : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ4       :        :                   :         : 3B        :                
+programCounterContentsOutput[7] : AJ5       : output : 2.5 V             :         : 3B        : N              
+aluResultOutput[14]          : AJ6       : output : 2.5 V             :         : 3B        : N              
+aluResultOutput[13]          : AJ7       : output : 2.5 V             :         : 3B        : N              
 VCCIO3B                      : AJ8       : power  :                   : 2.5V    : 3B        :                
-aluFlagsOutput[0]            : AJ9       : output : 2.5 V             :         : 3B        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ10      :        :                   :         : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ11      :        :                   :         : 3B        :                
-aluFlagsOutput[3]            : AJ12      : output : 2.5 V             :         : 3B        : N              
+aluResultOutput[15]          : AJ9       : output : 2.5 V             :         : 3B        : N              
+programStateRegisterContentsOutput[15] : AJ10      : output : 2.5 V             :         : 3B        : N              
+programCounterContentsOutput[14] : AJ11      : output : 2.5 V             :         : 3B        : N              
+programCounterContentsOutput[10] : AJ12      : output : 2.5 V             :         : 3B        : N              
 VCCIO3B                      : AJ13      : power  :                   : 2.5V    : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ14      :        :                   :         : 3B        :                
+programCounterContentsOutput[6] : AJ14      : output : 2.5 V             :         : 3B        : N              
 VREFB3BN0                    : AJ15      : power  :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ16      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ17      :        :                   :         : 4A        :                
@@ -373,46 +373,46 @@ VCCIO4A                      : AJ23      : power  :                   : 2.5V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ24      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ25      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ26      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ27      :        :                   :         : 4A        :                
+programStateRegisterContentsOutput[10] : AJ27      : output : 2.5 V             :         : 4A        : N              
 GND                          : AJ28      : gnd    :                   :         :           :                
 hex1[0]                      : AJ29      : output : 2.5 V             :         : 5A        : Y              
 GND                          : AJ30      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK2       :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK3       :        :                   :         : 3B        :                
-programCounterContentsOutput[15] : AK4       : output : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK4       :        :                   :         : 3B        :                
 GND                          : AK5       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK6       :        :                   :         : 3B        :                
-programStateRegisterContentsOutput[4] : AK7       : output : 2.5 V             :         : 3B        : N              
+programStateRegisterContentsOutput[0] : AK6       : output : 2.5 V             :         : 3B        : N              
+aluResultOutput[5]           : AK7       : output : 2.5 V             :         : 3B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK8       :        :                   :         : 3B        :                
-aluFlagsOutput[4]            : AK9       : output : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK9       :        :                   :         : 3B        :                
 VCCIO3B                      : AK10      : power  :                   : 2.5V    : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK11      :        :                   :         : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK12      :        :                   :         : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK13      :        :                   :         : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK14      :        :                   :         : 3B        :                
+aluResultOutput[3]           : AK11      : output : 2.5 V             :         : 3B        : N              
+programCounterContentsOutput[13] : AK12      : output : 2.5 V             :         : 3B        : N              
+programStateRegisterContentsOutput[1] : AK13      : output : 2.5 V             :         : 3B        : N              
+aluFlagsOutput[1]            : AK14      : output : 2.5 V             :         : 3B        : N              
 GND                          : AK15      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK16      :        :                   :         : 4A        :                
 VREFB4AN0                    : AK17      : power  :                   :         : 4A        :                
-programStateRegisterContentsOutput[15] : AK18      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK18      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK19      :        :                   :         : 4A        :                
 VCCIO4A                      : AK20      : power  :                   : 2.5V    : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK21      :        :                   :         : 4A        :                
+programStateRegisterContentsOutput[8] : AK21      : output : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK22      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK23      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK24      :        :                   :         : 4A        :                
+programStateRegisterContentsOutput[14] : AK24      : output : 2.5 V             :         : 4A        : N              
 GND                          : AK25      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK26      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK27      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK28      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK29      :        :                   :         : 4A        :                
-instructionRegisterContentsOutput[15] : B1        : output : 2.5 V             :         : 8A        : N              
-instructionRegisterContentsOutput[4] : B2        : output : 2.5 V             :         : 8A        : N              
-aluResultOutput[9]           : B3        : output : 2.5 V             :         : 8A        : N              
+instructionRegisterContentsOutput[3] : B1        : output : 2.5 V             :         : 8A        : N              
+instructionRegisterContentsOutput[11] : B2        : output : 2.5 V             :         : 8A        : N              
+controlUnitState[1]          : B3        : output : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : B4        : power  :                   : 2.5V    : 8A        :                
-aluResultOutput[11]          : B5        : output : 2.5 V             :         : 8A        : N              
-instructionRegisterContentsOutput[11] : B6        : output : 2.5 V             :         : 8A        : N              
-controlUnitNextState[2]      : B7        : output : 2.5 V             :         : 8A        : N              
-programStateRegisterContentsOutput[1] : B8        : output : 2.5 V             :         : 8A        : N              
+instructionRegisterContentsOutput[2] : B5        : output : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B6        :        :                   :         : 8A        :                
+programCounterContentsOutput[0] : B7        : output : 2.5 V             :         : 8A        : N              
+programCounterContentsOutput[1] : B8        : output : 2.5 V             :         : 8A        : N              
 GND                          : B9        : gnd    :                   :         :           :                
 VREFB8AN0                    : B10       : power  :                   :         : 8A        :                
 vga_hs                       : B11       : output : 2.5 V             :         : 8A        : Y              
@@ -436,14 +436,14 @@ HPS_TDO                      : B28       :        :                   :         
 GND                          : B29       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B30       :        :                   :         : 6A        :                
 GND                          : C1        : gnd    :                   :         :           :                
-programCounterContentsOutput[8] : C2        : output : 2.5 V             :         : 8A        : N              
-instructionRegisterContentsOutput[8] : C3        : output : 2.5 V             :         : 8A        : N              
-instructionRegisterContentsOutput[10] : C4        : output : 2.5 V             :         : 8A        : N              
-instructionRegisterContentsOutput[6] : C5        : output : 2.5 V             :         : 8A        : N              
+programCounterContentsOutput[2] : C2        : output : 2.5 V             :         : 8A        : N              
+programStateRegisterContentsOutput[3] : C3        : output : 2.5 V             :         : 8A        : N              
+programCounterContentsOutput[3] : C4        : output : 2.5 V             :         : 8A        : N              
+aluFlagsOutput[3]            : C5        : output : 2.5 V             :         : 8A        : N              
 GND                          : C6        : gnd    :                   :         :           :                
-aluResultOutput[10]          : C7        : output : 2.5 V             :         : 8A        : N              
-instructionRegisterContentsOutput[5] : C8        : output : 2.5 V             :         : 8A        : N              
-instructionRegisterContentsOutput[1] : C9        : output : 2.5 V             :         : 8A        : N              
+instructionRegisterContentsOutput[0] : C7        : output : 2.5 V             :         : 8A        : N              
+instructionRegisterContentsOutput[7] : C8        : output : 2.5 V             :         : 8A        : N              
+instructionRegisterContentsOutput[9] : C9        : output : 2.5 V             :         : 8A        : N              
 vga_sync_n                   : C10       : output : 2.5 V             :         : 8A        : Y              
 VCCIO8A                      : C11       : power  :                   : 2.5V    : 8A        :                
 vga_red[4]                   : C12       : output : 2.5 V             :         : 8A        : Y              
@@ -465,16 +465,16 @@ HPS_nRST                     : C27       :        :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : C28       :        :                   :         : 6A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C29       :        :                   :         : 6A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C30       :        :                   :         : 6A        :                
-programCounterContentsOutput[0] : D1        : output : 2.5 V             :         : 8A        : N              
-instructionRegisterContentsOutput[2] : D2        : output : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D1        :        :                   :         : 8A        :                
+aluResultOutput[1]           : D2        : output : 2.5 V             :         : 8A        : N              
 GND                          : D3        : gnd    :                   :         :           :                
-instructionRegisterContentsOutput[0] : D4        : output : 2.5 V             :         : 8A        : N              
-instructionRegisterContentsOutput[7] : D5        : output : 2.5 V             :         : 8A        : N              
-aluResultOutput[5]           : D6        : output : 2.5 V             :         : 8A        : N              
-aluResultOutput[7]           : D7        : output : 2.5 V             :         : 8A        : N              
+controlUnitState[2]          : D4        : output : 2.5 V             :         : 8A        : N              
+aluResultOutput[4]           : D5        : output : 2.5 V             :         : 8A        : N              
+controlUnitNextState[0]      : D6        : output : 2.5 V             :         : 8A        : N              
+programCounterContentsOutput[9] : D7        : output : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : D8        : power  :                   : 2.5V    : 8A        :                
-aluResultOutput[13]          : D9        : output : 2.5 V             :         : 8A        : N              
-controlUnitNextState[0]      : D10       : output : 2.5 V             :         : 8A        : N              
+instructionRegisterContentsOutput[5] : D9        : output : 2.5 V             :         : 8A        : N              
+programCounterContentsOutput[5] : D10       : output : 2.5 V             :         : 8A        : N              
 vga_vs                       : D11       : output : 2.5 V             :         : 8A        : Y              
 vga_red[5]                   : D12       : output : 2.5 V             :         : 8A        : Y              
 GND                          : D13       : gnd    :                   :         :           :                
@@ -495,15 +495,15 @@ HPS_RZQ_0                    : D27       :        :                   :         
 VCCIO6A_HPS                  : D28       : power  :                   : 2.5V    : 6A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D29       :        :                   :         : 6A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D30       :        :                   :         : 6A        :                
-programStateRegisterContentsOutput[6] : E1        : output : 2.5 V             :         : 8A        : N              
-aluResultOutput[14]          : E2        : output : 2.5 V             :         : 8A        : N              
-programCounterContentsOutput[3] : E3        : output : 2.5 V             :         : 8A        : N              
-programCounterContentsOutput[14] : E4        : output : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E1        :        :                   :         : 8A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E2        :        :                   :         : 8A        :                
+programCounterContentsOutput[8] : E3        : output : 2.5 V             :         : 8A        : N              
+instructionRegisterContentsOutput[4] : E4        : output : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : E5        : power  :                   : 2.5V    : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E6        :        :                   :         : 8A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :         : 8A        :                
-instructionRegisterContentsOutput[12] : E8        : output : 2.5 V             :         : 8A        : N              
-instructionRegisterContentsOutput[14] : E9        : output : 2.5 V             :         : 8A        : N              
+programStateRegisterContentsOutput[12] : E7        : output : 2.5 V             :         : 8A        : N              
+aluFlagsOutput[0]            : E8        : output : 2.5 V             :         : 8A        : N              
+instructionRegisterContentsOutput[8] : E9        : output : 2.5 V             :         : 8A        : N              
 GND                          : E10       : gnd    :                   :         :           :                
 vga_green[7]                 : E11       : output : 2.5 V             :         : 8A        : Y              
 vga_red[6]                   : E12       : output : 2.5 V             :         : 8A        : Y              
@@ -533,7 +533,7 @@ GND                          : F5        : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : F6        :        :                   :         : 8A        :                
 GND                          : F7        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F8        :        :                   :         : 8A        :                
-programCounterContentsOutput[2] : F9        : output : 2.5 V             :         : 8A        : N              
+aluResultOutput[8]           : F9        : output : 2.5 V             :         : 8A        : N              
 vga_blank_n                  : F10       : output : 2.5 V             :         : 8A        : Y              
 vga_green[6]                 : F11       : output : 2.5 V             :         : 8A        : Y              
 VCCIO8A                      : F12       : power  :                   : 2.5V    : 8A        :                
@@ -562,7 +562,7 @@ GND                          : G4        : gnd    :                   :         
 nCE                          : G5        :        :                   :         : 9A        :                
 MSEL2                        : G6        :        :                   :         : 9A        :                
 audio_masterClock            : G7        : bidir  : 2.5 V             :         : 8A        : Y              
-instructionRegisterContentsOutput[9] : G8        : output : 2.5 V             :         : 8A        : N              
+instructionRegisterContentsOutput[10] : G8        : output : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : G9        : power  :                   : 2.5V    : 8A        :                
 vga_green[3]                 : G10       : output : 2.5 V             :         : 8A        : Y              
 vga_green[4]                 : G11       : output : 2.5 V             :         : 8A        : Y              
@@ -599,7 +599,7 @@ GND                          : H11       : gnd    :                   :         
 vga_green[2]                 : H12       : output : 2.5 V             :         : 8A        : Y              
 vga_blue[2]                  : H13       : output : 2.5 V             :         : 8A        : Y              
 vga_blue[4]                  : H14       : output : 2.5 V             :         : 8A        : Y              
-programStateRegisterContentsOutput[2] : H15       : output : 2.5 V             :         : 8A        : N              
+programCounterContentsOutput[12] : H15       : output : 2.5 V             :         : 8A        : N              
 VCCIO7D_HPS                  : H16       : power  :                   : 2.5V    : 7D        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H17       :        :                   :         : 7C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H18       :        :                   :         : 7B        :                
@@ -651,14 +651,14 @@ DNU                          : K3        :        :                   :         
 DNU                          : K4        :        :                   :         :           :                
 GND                          : K5        : gnd    :                   :         :           :                
 MSEL1                        : K6        :        :                   :         : 9A        :                
-programCounterContentsOutput[4] : K7        : output : 2.5 V             :         : 8A        : N              
-programCounterContentsOutput[1] : K8        : output : 2.5 V             :         : 8A        : N              
+aluResultOutput[10]          : K7        : output : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K8        :        :                   :         : 8A        :                
 VCCA_FPLL                    : K9        : power  :                   : 2.5V    :           :                
 GND                          : K10       : gnd    :                   :         :           :                
 VCCPD8A                      : K11       : power  :                   : 2.5V    : 8A        :                
 i2c_data                     : K12       : bidir  : 2.5 V             :         : 8A        : Y              
 VCCPD8A                      : K13       : power  :                   : 2.5V    : 8A        :                
-controlUnitState[0]          : K14       : output : 2.5 V             :         : 8A        : N              
+aluResultOutput[11]          : K14       : output : 2.5 V             :         : 8A        : N              
 GND                          : K15       : gnd    :                   :         :           :                
 VCCPD7D_HPS                  : K16       : power  :                   : 2.5V    : 7D        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K17       :        :                   :         : 7B        :                
@@ -970,7 +970,7 @@ VCCA_FPLL                    : Y22       : power  :                   : 2.5V    
 hex4[1]                      : Y23       : output : 2.5 V             :         : 5A        : Y              
 hex4[2]                      : Y24       : output : 2.5 V             :         : 5A        : Y              
 GND                          : Y25       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y26       :        :                   :         : 5B        :                
+aluResultOutput[0]           : Y26       : output : 2.5 V             :         : 5B        : N              
 hex5[2]                      : Y27       : output : 2.5 V             :         : 5B        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y28       :        :                   :         : 6B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y29       :        :                   :         : 6B        :                

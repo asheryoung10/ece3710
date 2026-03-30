@@ -488,6 +488,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "push_buttons[2]",
+					"strict" : false
+				},
+				{
+					"name" : "push_buttons[3]",
+					"strict" : false
+				},
+				{
 					"name" : "push_buttons[0]",
 					"strict" : false
 				},

@@ -96,7 +96,10 @@ cpu cpu_instance (
    .aluResultOutput(aluResultOutput),
    .aluFlagsOutput(aluFlagsOutput),
    .controlUnitState(controlUnitState),
-   .controlUnitNextState(controlUnitNextState)
+   .controlUnitNextState(controlUnitNextState),
+	.leftButton(push_buttons[3]),
+	.rightButton(push_buttons[2]),
+	.vsync(vga_vs)
 );
 
 
