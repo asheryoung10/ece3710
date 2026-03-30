@@ -1,0 +1,24 @@
+// Label test program for the assembler.
+// Writes 3, 2, 1 to memory starting at address 0x8000, then halts.
+// Exercises:
+// - forward label branches
+// - backward label branches
+// - inline labels
+// - standalone labels
+// - shorthand BUC and raw BCOND syntax
+
+BUC start
+skip_me: WAIT
+
+start: MOVI 0x01, R0
+LSHI 15, R0
+MOV R0, R2
+MOVI 0x03, R1
+
+loop:
+STOR R1, R2
+ADDI 1, R2
+SUBI 1, R1
+BCOND NE, loop
+
+done: WAIT
