@@ -1,2 +1,2 @@
 -f soc.f
-sim/tb_mmio_decode.sv
+sim/tb_mmio_decode.v

@@ -1,6 +1,6 @@
 IVERILOG ?= iverilog
 VVP ?= vvp
-IVERILOG_FLAGS := -g2005-sv -Wall -I rtl/common
+IVERILOG_FLAGS := -g2005 -Wall -I rtl/common
 
 .PHONY: test test-cpu test-mmio test-soc clean
 

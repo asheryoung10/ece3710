@@ -1,2 +1,2 @@
 -f soc.f
-sim/tb_doodle_soc.sv
+sim/tb_doodle_soc.v
