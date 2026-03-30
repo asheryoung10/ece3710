@@ -9,6 +9,7 @@ module sharedMemory
     input [15:0] writeData,
     input [15:0] readWriteAddress,
     output [15:0] contents,
+	 
 
     input [9:0] vgaX,
     input [9:0] vgaY,
@@ -16,7 +17,7 @@ module sharedMemory
     output reg [7:0] g,
     output reg [7:0] b,
 	 output reg [15:0] player_x,
-		output reg [15:0] player_y
+	 output reg [15:0] player_y
 );
 
 // --------------------------------------------------
@@ -68,7 +69,6 @@ always@(posedge clock) begin
 		end
 	end
 end
-
 
 
 

@@ -1,24 +1,29 @@
-// Label test program for the assembler.
-// Writes 3, 2, 1 to memory starting at address 0x8000, then halts.
-// Exercises:
-// - forward label branches
-// - backward label branches
-// - inline labels
-// - standalone labels
-// - shorthand BUC and raw BCOND syntax
+MOVI 0x01, R0 // Puts address of first rectangle into r0.
+LSHI 15, R0   // Puts address of first rectangle into r0.
+ADDI 0x01, R0 // get y pos
+MOVI 0x01, R1
+LSHI 5, R1
+STOR R1, R0
 
-BUC start
-skip_me: WAIT
 
-start: MOVI 0x01, R0
-LSHI 15, R0
-MOV R0, R2
-MOVI 0x03, R1
+
 
 loop:
-STOR R1, R2
-ADDI 1, R2
-SUBI 1, R1
-BCOND NE, loop
+//(left, right, vsync)
 
-done: WAIT
+MOVI 0x04, R0 // Mask for left
+AND R15, R0   // R0 is nonezero if left is down
+CMPI 0, R0
+BNE leftDown	      // Branch if down
+BUC leftNotDown
+leftDown:
+MOVI 0xf, R1	// left is down
+BUC leftDone
+leftNotDown:
+MOVI 0x0, R1 //left is not down
+BUC leftDone
+leftDone:
+MOVI 0x01, R0 // Puts address of first rectangle into r0.
+LSHI 15, R0   // Puts address of first rectangle into r0.
+STOR R1, R0
+BUC loop
