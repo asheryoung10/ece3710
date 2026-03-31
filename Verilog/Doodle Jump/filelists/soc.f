@@ -16,8 +16,8 @@ rtl/video/platform_renderer.v
 rtl/video/player_renderer.v
 rtl/video/video_compositor.v
 rtl/video/vga_subsystem.v
-audio/i2c_controller.v
-audio/audio_configurator_select.v
+rtl/audio/i2c_controller.v
+rtl/audio/audio_configurator_select.v
 rtl/audio/simple_audio_output.v
 rtl/audio/audio_subsystem.v
 rtl/top/doodle_jump_top.v

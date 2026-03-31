@@ -1,0 +1,8 @@
+# Doodle Jump simulation outputs
+Verilog/Doodle Jump/build/
+Verilog/Doodle Jump/archive/generated/
+
+# Quartus generated databases and outputs
+Quartus Project/db/
+Quartus Project/incremental_db/
+Quartus Project/output_files/

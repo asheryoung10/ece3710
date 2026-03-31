@@ -1,1 +1,0 @@
-Warning (10268): Verilog HDL information at memory.v(47): always construct contains both blocking and non-blocking assignments File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/memory.v Line: 47

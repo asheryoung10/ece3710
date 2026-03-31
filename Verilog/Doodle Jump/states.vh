@@ -1,6 +1,0 @@
-localparam FETCH_INSTRUCTION_FROM_MEMORY     = 3'd1;
-localparam LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER     = 3'd2;
-localparam DECODE_INSTRUCTION = 3'd3;
-localparam EXECUTE_LOAD_INSTRUCTION = 3'd5;
-localparam NOTHING_STATE = 3'd6;
-localparam MOVE_STATE = 3'd7;
