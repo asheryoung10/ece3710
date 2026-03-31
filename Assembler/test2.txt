@@ -1,0 +1,13 @@
+loop:
+MOVI 0x1, R0
+LSHI 15, R0
+MOVI 0x0, R1
+STOR R1, R0
+
+MOVI 0x1, R0
+LSHI 15, R0
+ADDI 0x6, R0
+MOVI 0x0, R1
+STOR R1, R0
+
+BUC loop
