@@ -45,7 +45,7 @@ cpu_memory_instance
     .writeEnable(enableCPUWrite),
     .writeData(writeData),
     .readWriteAddress(readWriteAddress[9:0]),
-    .contents(contents)
+    .contents(rect_or_contents)
 );
 
 // --------------------------------------------------
@@ -54,8 +54,6 @@ cpu_memory_instance
 reg [15:0] rect_x  [0:NUM_RECTS-1];
 reg [15:0] rect_y  [0:NUM_RECTS-1];
 reg [15:0] rect_wh [0:NUM_RECTS-1];
-
-
 
 always@(posedge clock) begin
 	if(writeEnable) begin
@@ -81,6 +79,12 @@ assign rectIndex = regIndex / REGS_PER_RECT;
 
 wire [1:0] fieldIndex;
 assign fieldIndex = regIndex % REGS_PER_RECT;
+
+// assigns rect_data to one of the rectangle position variables
+wire [15:0] rect_data = (fieldIndex == 0) ? rect_x[rectIndex] : (fieldIndex == 1) ? rect_y[rectIndex] : rect_wh[rectIndex];
+
+// If RectAccess true, override memory and output selected rect_data instead
+assign contents = isRectAccess ? rect_data : rect_or_contents; 
 
 // Write logic (loop-based, scalable)
 integer i;
@@ -144,7 +148,7 @@ initial begin
         rect_x[i] = (i * (SCREEN_W / NUM_RECTS));
 
         // Stagger Y so they aren’t all in a line
-        rect_y[i] = (i * 40) % SCREEN_H;
+         rect_y[i] = (i * 40) % SCREEN_H;
 
         // Fixed size (safe so they stay on screen)
         rect_wh[i] = {8'd50, 8'd30}; // width=50, height=30
