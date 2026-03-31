@@ -24,6 +24,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name SEARCH_PATH "../Verilog/Doodle Jump/rtl/common"
+set_global_assignment -name SEARCH_PATH "../Verilog/Doodle Jump"
 set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
 
 set_location_assignment PIN_A13 -to vga_red[0]
@@ -129,6 +130,16 @@ set_location_assignment PIN_AD10 -to switches[8]
 set_location_assignment PIN_AE12 -to switches[9]
 set_location_assignment PIN_AF14 -to systemClock50MHz
 
+
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+
+set_global_assignment -name SIP_FILE testpll.sip
+set_global_assignment -name SOURCE_FILE testpll.cmp
+set_global_assignment -name SDC_FILE lab1.out.sdc
+set_global_assignment -name QIP_FILE testpll.qip
+set_global_assignment -name VERILOG_FILE testpll.v
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/rtl/common/program_rom.v"
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/rtl/common/sync_ram.v"
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/rtl/common/hex_decoder.v"
@@ -154,7 +165,4 @@ set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/rtl/video/vga_s
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/rtl/top/doodle_jump_top.v"
 set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/doodle_jump.v"
 
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
