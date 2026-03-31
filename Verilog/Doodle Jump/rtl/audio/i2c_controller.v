@@ -14,18 +14,21 @@ module i2c_controller (
     inout wire i2c_data
 );
 
+// Control the open-drain I2C lines by selectively pulling them low.
 reg pullClockLow;
 reg pullDataLow;
 
 assign i2c_clock = pullClockLow ? 1'b0 : 1'bz;
 assign i2c_data = pullDataLow ? 1'b0 : 1'bz;
 
+// Enumerate the major phases of the I2C byte transmission FSM.
 localparam IDLE_STATE = 0;
 localparam START_STATE = 1;
 localparam SEND_BIT_STATE = 2;
 localparam ACK_STATE = 3;
 localparam STOP_STATE = 4;
 
+// Buffer the outgoing bytes and track the current transfer position.
 reg [7:0] savedAddressByte;
 reg [7:0] savedFirstByte;
 reg [7:0] savedSecondByte;
@@ -36,6 +39,7 @@ reg [3:0] currentStep;
 reg [3:0] currentBitIndex;
 reg [2:0] currentByteIndex;
 
+// Sequence the start, byte, ACK, and stop phases of each I2C write.
 always @(posedge clock or posedge reset) begin
     if (reset) begin
         currentState <= IDLE_STATE;
@@ -44,6 +48,7 @@ always @(posedge clock or posedge reset) begin
         done <= 0;
     end else begin
         case (currentState)
+            // Wait for a new three-byte transfer request from the caller.
             IDLE_STATE: begin
                 if (sendMessage) begin
                     currentState <= START_STATE;
@@ -60,6 +65,7 @@ always @(posedge clock or posedge reset) begin
                     pullDataLow <= 0;
                 end
             end
+            // Issue the I2C start condition before shifting out the address byte.
             START_STATE: begin
                 case (currentStep)
                     0: begin
@@ -79,6 +85,7 @@ always @(posedge clock or posedge reset) begin
                     end
                 endcase
             end
+            // Shift the current byte out one bit at a time on the data line.
             SEND_BIT_STATE: begin
                 case (currentStep)
                     0: begin
@@ -106,6 +113,7 @@ always @(posedge clock or posedge reset) begin
                     end
                 endcase
             end
+            // Release the data line and sample the slave ACK bit.
             ACK_STATE: begin
                 case (currentStep)
                     0: begin
@@ -142,6 +150,7 @@ always @(posedge clock or posedge reset) begin
                     end
                 endcase
             end
+            // Release the lines to complete the I2C stop condition.
             STOP_STATE: begin
                 case (currentStep)
                     0: begin

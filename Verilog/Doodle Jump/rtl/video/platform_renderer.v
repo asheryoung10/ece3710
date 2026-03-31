@@ -13,6 +13,7 @@ module platform_renderer (
     output reg active
 );
 
+// Unpack each platform descriptor and track its visible dimensions.
 integer index;
 reg [15:0] platform_x_word;
 reg [15:0] platform_y_word;
@@ -20,6 +21,7 @@ reg [15:0] platform_wh_word;
 reg [7:0] width;
 reg [7:0] height;
 
+// Light the platform layer whenever the current pixel falls inside any platform.
 always @(*) begin
     active = 1'b0;
     red = 8'd0;

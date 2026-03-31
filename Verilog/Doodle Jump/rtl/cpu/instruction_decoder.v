@@ -13,14 +13,17 @@ module instruction_decoder (
     output reg [15:0] next_program_counter
 );
 
+// Track whether the current branch or jump condition is satisfied.
 reg condition_met;
 
+// Decode register fields, immediate values, and next-PC behavior.
 always @(*) begin
     register_address_a = instruction[3:0];
     register_address_b = instruction[11:8];
     immediate = {{8{instruction[7]}}, instruction[7:0]};
     opcode = {instruction[15:12], instruction[7:4]};
 
+    // Evaluate the requested condition code against the program-state flags.
     case (instruction[11:8])
         `DJ_COND_EQ: condition_met = program_state[`DJ_Z_INDEX];
         `DJ_COND_NE: condition_met = ~program_state[`DJ_Z_INDEX];
@@ -40,6 +43,7 @@ always @(*) begin
         default: condition_met = 1'b0;
     endcase
 
+    // Choose the next program counter for branches, jumps, or sequential flow.
     casez (opcode)
         `DJ_OP_BCOND: begin
             if (condition_met)

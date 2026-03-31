@@ -1,16 +1,19 @@
 `ifndef DOODLE_JUMP_ISA_DEFS_VH
 `define DOODLE_JUMP_ISA_DEFS_VH
 
+// Define the core-wide data-path and register file widths.
 `define DJ_DATA_WIDTH 16
 `define DJ_ADDR_WIDTH 16
 `define DJ_REGISTER_COUNT 16
 `define DJ_PSR_WIDTH 5
 
+// Define the control-unit state encodings.
 `define DJ_CU_FETCH 2'd0
 `define DJ_CU_LOAD_IR 2'd1
 `define DJ_CU_EXECUTE 2'd2
 `define DJ_CU_LOAD_MEM 2'd3
 
+// Define the supported ALU, move, load/store, and control opcodes.
 `define DJ_OP_ADD   8'b0000_0101
 `define DJ_OP_ADDI  8'b0101_zzzz
 `define DJ_OP_ADDU  8'b0000_0110
@@ -39,6 +42,7 @@
 `define DJ_OP_BCOND 8'b1100_zzzz
 `define DJ_OP_JCOND 8'b0100_1100
 
+// Define the branch and jump condition selector encodings.
 `define DJ_COND_EQ 4'b0000
 `define DJ_COND_NE 4'b0001
 `define DJ_COND_CS 4'b0010
@@ -55,6 +59,7 @@
 `define DJ_COND_GE 4'b1101
 `define DJ_COND_UC 4'b1110
 
+// Define the program-state register flag bit positions.
 `define DJ_N_INDEX 0
 `define DJ_Z_INDEX 1
 `define DJ_F_INDEX 2

@@ -12,24 +12,29 @@ module video_timing (
     output reg [9:0] pixel_y
 );
 
+// Define the horizontal timing parameters for 640x480 VGA.
 localparam H_SYNC = 10'd96;
 localparam H_BACK_PORCH = 10'd48;
 localparam H_DISPLAY = 10'd640;
 localparam H_FRONT_PORCH = 10'd16;
 localparam H_TOTAL = 10'd800;
 
+// Define the vertical timing parameters for 640x480 VGA.
 localparam V_SYNC = 10'd2;
 localparam V_BACK_PORCH = 10'd33;
 localparam V_DISPLAY = 10'd480;
 localparam V_FRONT_PORCH = 10'd10;
 localparam V_TOTAL = 10'd525;
 
+// Track the divided pixel clock and the horizontal and vertical counters.
 reg clk_div2;
 reg [9:0] hcount;
 reg [9:0] vcount;
 
+// Expose the divided clock as the outgoing VGA pixel clock.
 assign pixel_clk = clk_div2;
 
+// Divide the 50 MHz board clock down to the 25 MHz pixel clock.
 always @(posedge clk_50mhz or posedge rst) begin
     if (rst)
         clk_div2 <= 1'b0;
@@ -37,6 +42,7 @@ always @(posedge clk_50mhz or posedge rst) begin
         clk_div2 <= ~clk_div2;
 end
 
+// Advance the horizontal and vertical scan counters on each pixel tick.
 always @(posedge pixel_clk or posedge rst) begin
     if (rst) begin
         hcount <= 10'd0;
@@ -52,6 +58,7 @@ always @(posedge pixel_clk or posedge rst) begin
     end
 end
 
+// Derive sync pulses, blanking, and visible pixel coordinates from the counters.
 always @(*) begin
     hsync = ~(hcount < H_SYNC);
     vsync = ~(vcount < V_SYNC);

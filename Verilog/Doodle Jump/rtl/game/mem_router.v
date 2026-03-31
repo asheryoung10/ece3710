@@ -31,6 +31,7 @@ module mem_router #
     output wire [7:0] audio_pitch
 );
 
+// Track the selected memory-map region and readback buses.
 reg rom_selected;
 reg ram_selected;
 reg game_selected;
@@ -43,6 +44,7 @@ wire [15:0] game_read_data;
 wire [15:0] audio_read_data;
 reg [15:0] io_read_data;
 
+// Provide the CPU with synchronous instruction ROM reads.
 program_rom #(
     .INIT_FILE(ROM_INIT_FILE)
 ) program_rom_instance (
@@ -51,6 +53,7 @@ program_rom #(
     .rdata(rom_read_data)
 );
 
+// Provide writable data memory for the CPU RAM region.
 sync_ram data_ram_instance (
     .clk(clk),
     .we(ram_selected && write_enable),
@@ -59,6 +62,7 @@ sync_ram data_ram_instance (
     .rdata(ram_read_data)
 );
 
+// Expose player, platform, and score state as MMIO registers.
 game_regs game_regs_instance (
     .clk(clk),
     .rst(rst),
@@ -75,6 +79,7 @@ game_regs game_regs_instance (
     .score_status(score_status)
 );
 
+// Expose audio control and status registers on the MMIO bus.
 audio_regs audio_regs_instance (
     .clk(clk),
     .rst(rst),
@@ -94,6 +99,7 @@ audio_regs audio_regs_instance (
     .pitch(audio_pitch)
 );
 
+// Decode the address map and mux the selected read data source.
 always @(*) begin
     rom_selected = (address >= `DJ_ROM_BASE_ADDR) && (address <= `DJ_ROM_LAST_ADDR);
     ram_selected = (address >= `DJ_RAM_BASE_ADDR) && (address <= `DJ_RAM_LAST_ADDR);
@@ -105,6 +111,7 @@ always @(*) begin
     audio_selected = (address >= `DJ_AUDIO_CONTROL_ADDR) && (address <= `DJ_AUDIO_DEBUG_ADDR);
     io_selected = (address == `DJ_BUTTONS_ADDR) || (address == `DJ_SWITCHES_ADDR);
 
+    // Format synchronized button and switch inputs as 16-bit MMIO reads.
     if (address == `DJ_BUTTONS_ADDR)
         io_read_data = {12'd0, push_buttons};
     else if (address == `DJ_SWITCHES_ADDR)
@@ -112,6 +119,7 @@ always @(*) begin
     else
         io_read_data = 16'h0000;
 
+    // Return the read data from the highest-priority selected region.
     case (1'b1)
         rom_selected: read_data = rom_read_data;
         ram_selected: read_data = ram_read_data;

@@ -17,12 +17,14 @@ module game_regs (
     output reg [15:0] score_status
 );
 
+// Store the player, platform, and score state exposed over MMIO.
 reg [15:0] platform_x_mem[0:`DJ_NUM_PLATFORMS-1];
 reg [15:0] platform_y_mem[0:`DJ_NUM_PLATFORMS-1];
 reg [15:0] platform_wh_mem[0:`DJ_NUM_PLATFORMS-1];
 integer index;
 genvar flatten_index;
 
+// Flatten the per-platform memories onto the packed renderer buses.
 generate
     for (flatten_index = 0; flatten_index < `DJ_NUM_PLATFORMS; flatten_index = flatten_index + 1) begin : flatten_platform_buses
         assign platform_x_bus[(flatten_index*16)+15:(flatten_index*16)] = platform_x_mem[flatten_index];
@@ -31,6 +33,7 @@ generate
     end
 endgenerate
 
+// Reset the game state defaults and capture CPU writes into the MMIO registers.
 always @(posedge clk or posedge rst) begin
     if (rst) begin
         player_x <= `DJ_PLAYER_DEFAULT_X;
@@ -64,6 +67,7 @@ always @(posedge clk or posedge rst) begin
     end
 end
 
+// Return the addressed player, score, or platform register value.
 always @(address or player_x or player_y or score_status or
          platform_x_mem[0] or platform_x_mem[1] or platform_x_mem[2] or platform_x_mem[3] or
          platform_y_mem[0] or platform_y_mem[1] or platform_y_mem[2] or platform_y_mem[3] or

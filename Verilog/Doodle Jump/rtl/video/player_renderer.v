@@ -13,9 +13,11 @@ module player_renderer (
     output reg active
 );
 
+// Track whether the current pixel lands inside the player body or eyes.
 reg inside_body;
 reg inside_eye;
 
+// Render the player body and eye pixels from the MMIO position registers.
 always @(*) begin
     inside_body = (pixel_x >= player_x[9:0]) &&
                   (pixel_x < (player_x[9:0] + `DJ_PLAYER_WIDTH)) &&

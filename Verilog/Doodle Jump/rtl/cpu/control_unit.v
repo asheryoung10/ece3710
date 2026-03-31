@@ -15,6 +15,7 @@ module control_unit (
     output reg alu_select_immediate
 );
 
+// Generate the per-state control signals for fetch, execute, and memory cycles.
 always @(*) begin
     next_state = `DJ_CU_FETCH;
     memory_write_enable = 1'b0;
@@ -27,20 +28,24 @@ always @(*) begin
     alu_select_immediate = 1'b0;
 
     case (state)
+        // Advance from the fetch state into instruction capture.
         `DJ_CU_FETCH: begin
             next_state = `DJ_CU_LOAD_IR;
         end
 
+        // Latch the fetched instruction before entering execute.
         `DJ_CU_LOAD_IR: begin
             instruction_register_write_enable = 1'b1;
             next_state = `DJ_CU_EXECUTE;
         end
 
+        // Decode the opcode and drive the main execute-cycle controls.
         `DJ_CU_EXECUTE: begin
             program_counter_write_enable = 1'b1;
             next_state = `DJ_CU_FETCH;
 
             casez (opcode)
+                // Write ALU results back and update flags for arithmetic and logic ops.
                 `DJ_OP_ADD,
                 `DJ_OP_ADDI,
                 `DJ_OP_ADDU,
@@ -63,26 +68,31 @@ always @(*) begin
                     program_state_write_enable = 1'b1;
                 end
 
+                // Update flags only for compare instructions.
                 `DJ_OP_CMP,
                 `DJ_OP_CMPI: begin
                     program_state_write_enable = 1'b1;
                 end
 
+                // Start a memory read by switching the address source and stalling.
                 `DJ_OP_LOAD: begin
                     use_register_address = 1'b1;
                     next_state = `DJ_CU_LOAD_MEM;
                 end
 
+                // Issue a memory write using the register-based address.
                 `DJ_OP_STOR: begin
                     use_register_address = 1'b1;
                     memory_write_enable = 1'b1;
                 end
 
+                // Forward an existing register value into the destination register.
                 `DJ_OP_MOV: begin
                     register_file_write_enable = 1'b1;
                     register_file_write_select = 2'b01;
                 end
 
+                // Forward the decoded immediate into the destination register.
                 `DJ_OP_MOVI: begin
                     register_file_write_enable = 1'b1;
                     register_file_write_select = 2'b10;
@@ -93,6 +103,7 @@ always @(*) begin
             endcase
 
             casez (opcode)
+                // Select the sign-extended immediate as the ALU A input when required.
                 `DJ_OP_ADDI,
                 `DJ_OP_ADDUI,
                 `DJ_OP_ADDCI,
@@ -109,6 +120,7 @@ always @(*) begin
             endcase
         end
 
+        // Complete a pending memory load by writing the bus data back.
         `DJ_CU_LOAD_MEM: begin
             register_file_write_enable = 1'b1;
             register_file_write_select = 2'b11;

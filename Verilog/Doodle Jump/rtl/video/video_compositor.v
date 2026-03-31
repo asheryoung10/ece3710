@@ -18,6 +18,7 @@ module video_compositor (
     output reg [7:0] blue
 );
 
+// Apply blanking and then layer player over platforms over background.
 always @(*) begin
     if (!display_active) begin
         red = 8'd0;

@@ -27,6 +27,7 @@ wire audio_drum_toggle;
 wire [3:0] audio_selected_command;
 wire [7:0] audio_pitch;
 
+// Instantiate the memory router with a compact ROM image for MMIO tests.
 mem_router #(
     .ROM_INIT_FILE("mem/cpu_smoke.memh")
 ) dut (
@@ -55,8 +56,10 @@ mem_router #(
     .audio_pitch(audio_pitch)
 );
 
+// Generate the simulation clock used by the MMIO register block.
 always #5 clk = ~clk;
 
+// Perform a single write transaction on the memory-mapped interface.
 task write_word;
     input [15:0] addr;
     input [15:0] value;
@@ -70,6 +73,7 @@ task write_word;
     end
 endtask
 
+// Reset the DUT, exercise MMIO paths, and check the expected readback behavior.
 initial begin
     clk = 1'b0;
     rst = 1'b1;
@@ -86,6 +90,7 @@ initial begin
     repeat (2) @(negedge clk);
     rst = 1'b0;
 
+    // Verify direct game register writes and reads.
     write_word(`DJ_PLAYER_X_ADDR, 16'd111);
     address = `DJ_PLAYER_X_ADDR;
     #1;
@@ -94,6 +99,7 @@ initial begin
         $finish;
     end
 
+    // Verify platform register addressing across the packed platform window.
     write_word(`DJ_PLATFORM_BASE_ADDR + (16'd2 * `DJ_PLATFORM_WORDS) + 16'd1, 16'd222);
     address = `DJ_PLATFORM_BASE_ADDR + (16'd2 * `DJ_PLATFORM_WORDS) + 16'd1;
     #1;
@@ -102,6 +108,7 @@ initial begin
         $finish;
     end
 
+    // Verify audio register writes update the exported control signals.
     write_word(`DJ_AUDIO_PITCH_ADDR, 16'd77);
     address = `DJ_AUDIO_PITCH_ADDR;
     #1;
@@ -123,6 +130,7 @@ initial begin
         $finish;
     end
 
+    // Verify the configure request handshake clears after acknowledgement.
     audio_configure_ack = 1'b1;
     @(negedge clk);
     audio_configure_ack = 1'b0;
@@ -132,6 +140,7 @@ initial begin
         $finish;
     end
 
+    // Verify synchronized board inputs read back through the MMIO map.
     address = `DJ_BUTTONS_ADDR;
     #1;
     if (read_data[3:0] !== push_buttons) begin

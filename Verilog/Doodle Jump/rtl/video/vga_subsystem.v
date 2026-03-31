@@ -19,6 +19,7 @@ module vga_subsystem (
     output wire [7:0] vga_blue
 );
 
+// Declare the pixel coordinates and per-layer color buses.
 wire display_active;
 wire [9:0] pixel_x;
 wire [9:0] pixel_y;
@@ -37,6 +38,7 @@ wire [7:0] player_green;
 wire [7:0] player_blue;
 wire player_active;
 
+// Generate VGA timing, blanking, and visible pixel coordinates.
 video_timing video_timing_instance (
     .clk_50mhz(clk_50mhz),
     .rst(rst),
@@ -49,6 +51,7 @@ video_timing video_timing_instance (
     .pixel_y(pixel_y)
 );
 
+// Render the background layer directly from the pixel coordinates.
 background_renderer background_renderer_instance (
     .pixel_x(pixel_x),
     .pixel_y(pixel_y),
@@ -57,6 +60,7 @@ background_renderer background_renderer_instance (
     .blue(background_blue)
 );
 
+// Render the platform layer from the packed platform buses.
 platform_renderer platform_renderer_instance (
     .pixel_x(pixel_x),
     .pixel_y(pixel_y),
@@ -69,6 +73,7 @@ platform_renderer platform_renderer_instance (
     .active(platform_active)
 );
 
+// Render the player layer from the live game state.
 player_renderer player_renderer_instance (
     .pixel_x(pixel_x),
     .pixel_y(pixel_y),
@@ -81,6 +86,7 @@ player_renderer player_renderer_instance (
     .active(player_active)
 );
 
+// Composite the visible layers into the final VGA color outputs.
 video_compositor video_compositor_instance (
     .display_active(display_active),
     .background_red(background_red),

@@ -20,8 +20,10 @@ module audio_regs (
     output reg [7:0] pitch
 );
 
+// Mirror the most recent audio register write for debug readback.
 reg [15:0] debug_shadow;
 
+// Reset the audio control state and capture MMIO writes from the CPU.
 always @(posedge clk or posedge rst) begin
     if (rst) begin
         configure_request <= 1'b0;
@@ -58,6 +60,7 @@ always @(posedge clk or posedge rst) begin
     end
 end
 
+// Return the selected audio control, pitch, status, or debug register value.
 always @(*) begin
     case (address)
         `DJ_AUDIO_CONTROL_ADDR: read_data = {8'd0, selected_command, configure_request, drum_toggle, enable_output};

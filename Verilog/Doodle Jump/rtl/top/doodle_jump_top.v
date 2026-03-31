@@ -35,6 +35,7 @@ module doodle_jump_top (
     output wire [2:0] controlUnitNextState
 );
 
+// Declare synchronized inputs and the shared CPU memory bus.
 wire rst;
 wire [3:0] synced_buttons;
 wire [9:0] synced_switches;
@@ -61,8 +62,10 @@ wire audio_busy;
 wire audio_done;
 wire audio_error;
 
+// Treat push button 0 as an active-low system reset.
 assign rst = ~push_buttons[0];
 
+// Synchronize the external button inputs into the system clock domain.
 input_synchronizer #(
     .WIDTH(4)
 ) button_synchronizer (
@@ -72,6 +75,7 @@ input_synchronizer #(
     .sync_out(synced_buttons)
 );
 
+// Synchronize the external switch inputs into the system clock domain.
 input_synchronizer #(
     .WIDTH(10)
 ) switch_synchronizer (
@@ -81,6 +85,7 @@ input_synchronizer #(
     .sync_out(synced_switches)
 );
 
+// Instantiate the CPU core that drives the shared memory interface.
 cpu_core cpu_core_instance (
     .clk(systemClock50MHz),
     .rst(rst),
@@ -97,6 +102,7 @@ cpu_core cpu_core_instance (
     .control_next_state_output(controlUnitNextState)
 );
 
+// Route CPU memory accesses into ROM, RAM, game registers, audio, and inputs.
 mem_router mem_router_instance (
     .clk(systemClock50MHz),
     .rst(rst),
@@ -123,6 +129,7 @@ mem_router mem_router_instance (
     .audio_pitch(audio_pitch)
 );
 
+// Generate the VGA pixel stream from the current game state.
 vga_subsystem vga_subsystem_instance (
     .clk_50mhz(systemClock50MHz),
     .rst(rst),
@@ -141,6 +148,7 @@ vga_subsystem vga_subsystem_instance (
     .vga_blue(vga_blue)
 );
 
+// Generate audio clocks, codec configuration traffic, and output samples.
 audio_subsystem audio_subsystem_instance (
     .clk_50mhz(systemClock50MHz),
     .rst(rst),
@@ -161,6 +169,7 @@ audio_subsystem audio_subsystem_instance (
     .audio_data(audio_data)
 );
 
+// Decode the score value onto the first four seven-segment displays.
 hex_decoder hex0_decoder (
     .value(score_status[3:0]),
     .segments(hex0)
@@ -181,6 +190,7 @@ hex_decoder hex3_decoder (
     .segments(hex3)
 );
 
+// Decode player position debug values onto the remaining displays.
 hex_decoder hex4_decoder (
     .value(player_x[3:0]),
     .segments(hex4)
@@ -191,6 +201,7 @@ hex_decoder hex5_decoder (
     .segments(hex5)
 );
 
+// Drive LEDs with live system status and hold VGA sync inactive.
 always @(*) begin
     leds = {audio_selected_command, audio_error, audio_done, audio_busy, controlUnitState};
     vga_sync_n = 1'b0;

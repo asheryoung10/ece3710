@@ -29,6 +29,7 @@ wire audio_drum_toggle;
 wire [3:0] audio_selected_command;
 wire [7:0] audio_pitch;
 
+// Instantiate the CPU under test and expose its debug signals.
 cpu_core cpu_core_instance (
     .clk(clk),
     .rst(rst),
@@ -45,6 +46,7 @@ cpu_core cpu_core_instance (
     .control_next_state_output(control_next_state_output)
 );
 
+// Attach the CPU to the real memory map with the smoke-test ROM image.
 mem_router #(
     .ROM_INIT_FILE("mem/cpu_smoke.memh")
 ) mem_router_instance (
@@ -73,8 +75,10 @@ mem_router #(
     .audio_pitch(audio_pitch)
 );
 
+// Generate the simulation clock for the CPU and memory system.
 always #5 clk = ~clk;
 
+// Reset the design, let the ROM program run, and check key state updates.
 initial begin
     clk = 1'b0;
     rst = 1'b1;

@@ -12,6 +12,7 @@ module simple_audio_output (
     output reg aud_dacdat
 );
 
+// Track audio clock dividers, waveform state, and serialized sample data.
 reg [1:0] master_divider;
 reg [7:0] serial_divider;
 reg [15:0] current_sample;
@@ -21,11 +22,13 @@ reg [15:0] tone_limit;
 reg [15:0] lfsr;
 wire [4:0] bit_index;
 
+// Derive the external audio clocks and serializer bit index from the counters.
 assign aud_xck = master_divider[1];
 assign aud_bclk = serial_divider[2];
 assign aud_daclrck = serial_divider[7];
 assign bit_index = serial_divider[6:2];
 
+// Convert the pitch register into a tone period limit.
 always @(*) begin
     if ({8'd0, pitch} >= 16'd252)
         tone_limit = 16'd16;
@@ -33,6 +36,7 @@ always @(*) begin
         tone_limit = 16'd1024 - ({8'd0, pitch} << 2);
 end
 
+// Generate the master clock divider from the 50 MHz source.
 always @(posedge clk_50mhz or posedge rst) begin
     if (rst)
         master_divider <= 2'b00;
@@ -40,6 +44,7 @@ always @(posedge clk_50mhz or posedge rst) begin
         master_divider <= master_divider + 2'd1;
 end
 
+// Generate the serial audio timing from the divided master clock.
 always @(posedge aud_xck or posedge rst) begin
     if (rst)
         serial_divider <= 8'd0;
@@ -47,6 +52,7 @@ always @(posedge aud_xck or posedge rst) begin
         serial_divider <= serial_divider + 8'd1;
 end
 
+// Produce either silence, drum noise, or a square-wave sample each audio frame.
 always @(posedge aud_daclrck or posedge rst) begin
     if (rst) begin
         current_sample <= 16'h0000;
@@ -75,6 +81,7 @@ always @(posedge aud_daclrck or posedge rst) begin
     end
 end
 
+// Shift the current sample out on the falling edges of the bit clock.
 always @(negedge aud_bclk or posedge rst) begin
     if (rst)
         aud_dacdat <= 1'b0;

@@ -22,6 +22,7 @@ module cpu_core #
     output wire [2:0] control_next_state_output
 );
 
+// Declare the controller, decoder, datapath, and writeback signals.
 reg [1:0] state;
 wire [1:0] next_state;
 
@@ -45,6 +46,7 @@ wire [15:0] alu_input_a;
 wire [4:0] alu_flags;
 wire [15:0] alu_result;
 
+// Instantiate the general-purpose register file.
 register_file register_file_instance (
     .clk(clk),
     .rst(rst),
@@ -57,6 +59,7 @@ register_file register_file_instance (
     .read_data_b(register_data_b)
 );
 
+// Decode the current instruction into operands, opcode, and next-PC data.
 instruction_decoder instruction_decoder_instance (
     .instruction(instruction_register_contents),
     .program_counter(program_counter_contents),
@@ -69,6 +72,7 @@ instruction_decoder instruction_decoder_instance (
     .next_program_counter(next_program_counter)
 );
 
+// Evaluate the selected ALU operation for the current operands.
 alu alu_instance (
     .a(alu_input_a),
     .b(register_data_b),
@@ -78,6 +82,7 @@ alu alu_instance (
     .result(alu_result)
 );
 
+// Generate the control signals for the current pipeline state.
 control_unit control_unit_instance (
     .state(state),
     .opcode(opcode),
@@ -92,6 +97,7 @@ control_unit control_unit_instance (
     .alu_select_immediate(alu_select_immediate)
 );
 
+// Drive the simple combinational datapath connections and debug outputs.
 assign alu_input_a = alu_select_immediate ? immediate : register_data_a;
 assign memory_address = use_register_address ? register_data_a : program_counter_contents;
 assign memory_write_data = register_data_b;
@@ -100,6 +106,7 @@ assign alu_flags_output = alu_flags;
 assign control_state_output = {1'b0, state};
 assign control_next_state_output = {1'b0, next_state};
 
+// Select which data source is written back into the destination register.
 always @(*) begin
     case (register_file_write_select)
         2'b00: register_file_write_data = alu_result;
@@ -110,6 +117,7 @@ always @(*) begin
     endcase
 end
 
+// Advance the CPU state machine and latch architected registers.
 always @(posedge clk or posedge rst) begin
     if (rst) begin
         state <= `DJ_CU_FETCH;

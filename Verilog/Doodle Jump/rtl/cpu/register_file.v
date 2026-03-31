@@ -18,9 +18,11 @@ module register_file #
     output wire [DATA_WIDTH-1:0] read_data_b
 );
 
+// Store the architectural register state and reset loop index.
 reg [DATA_WIDTH-1:0] registers[0:(1 << ADDR_WIDTH) - 1];
 integer index;
 
+// Clear the register bank on reset and commit synchronous writes.
 always @(posedge clk or posedge rst) begin
     if (rst) begin
         for (index = 0; index < (1 << ADDR_WIDTH); index = index + 1) begin
@@ -31,6 +33,7 @@ always @(posedge clk or posedge rst) begin
     end
 end
 
+// Expose the selected source register values combinationally.
 assign read_data_a = registers[read_address_a];
 assign read_data_b = registers[read_address_b];
 

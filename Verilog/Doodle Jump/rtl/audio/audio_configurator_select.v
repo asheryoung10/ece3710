@@ -12,9 +12,11 @@ module audio_configurator_select (
     inout wire i2c_data
 );
 
+// Store the codec configuration commands that can be selected over MMIO.
 reg [23:0] commands[16:0];
 localparam commandCount = 1;
 
+// Preload the configuration command table used by the I2C sequencer.
 initial begin
     // Reset Address: 7'b0001111 Data: RESET
     commands[0] = {8'b00110100, 8'b00111110, 8'b00000000};
@@ -49,9 +51,11 @@ initial begin
     commands[16] = {8'b00110100, 8'b00010000, 8'b00001100};
 end
 
+// Divide the system clock down to the slower controller clock.
 reg [7:0] clk_divider_count;
 reg i2c_clk_reg;
 
+// Generate the internal I2C controller clock from the faster system clock.
 always @(posedge systemClock or posedge reset) begin
     if (reset) begin
         clk_divider_count <= 8'd0;
@@ -66,17 +70,21 @@ always @(posedge systemClock or posedge reset) begin
     end
 end
 
+// Expose the divided clock to the byte-level I2C controller.
 wire controllerClock;
 assign controllerClock = i2c_clk_reg;
 
+// Hold the command bytes presented to the lower-level I2C controller.
 reg sendMessage;
 reg [7:0] addressByte;
 reg [7:0] firstByte;
 reg [7:0] secondByte;
 
+// Observe the lower-level controller handshake signals.
 wire controllerBusy;
 wire controllerDone;
 
+// Instantiate the byte-level I2C transmitter.
 i2c_controller i2c_controller_instance (
     .clock(controllerClock),
     .reset(reset),
@@ -94,11 +102,13 @@ i2c_controller i2c_controller_instance (
 localparam IDLE_STATE = 0;
 localparam SEND_COMMAND_STATE = 1;
 
+// Track the active command, FSM state, and byte-send progress.
 reg [3:0] currentCommandIndex;
 reg [2:0] currentState;
 reg [2:0] currentStep;
 reg [15:0] delay;
 
+// Step through command setup, message launch, and controller completion.
 always @(posedge controllerClock or posedge reset) begin
     if (reset) begin
         currentCommandIndex <= 0;
@@ -107,6 +117,7 @@ always @(posedge controllerClock or posedge reset) begin
         done <= 0;
     end else begin
         case (currentState)
+            // Wait for a new configuration request from the audio subsystem.
             IDLE_STATE: begin
                 if (configure) begin
                     busy <= 1;
@@ -118,6 +129,7 @@ always @(posedge controllerClock or posedge reset) begin
                     done <= 0;
                 end
             end
+            // Load the selected command and launch the three-byte I2C transfer.
             SEND_COMMAND_STATE: begin
                 case (currentStep)
                     0: begin
@@ -127,15 +139,18 @@ always @(posedge controllerClock or posedge reset) begin
                         currentStep <= 1;
                         currentCommandIndex <= currentCommandIndex + 1;
                     end
+                    // Pulse the lower-level controller to begin transmission.
                     1: begin
                         sendMessage <= 1;
                         currentStep <= 2;
                     end
+                    // Wait for the lower-level controller to acknowledge the start.
                     2: begin
                         sendMessage <= 0;
                         if (controllerBusy)
                             currentStep <= 3;
                     end
+                    // Finish once the lower-level controller returns to idle.
                     3: begin
                         if (controllerBusy) begin
                             currentStep <= 3;

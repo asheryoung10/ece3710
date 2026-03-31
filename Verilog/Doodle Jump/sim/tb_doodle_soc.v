@@ -34,6 +34,7 @@ wire [4:0] aluFlagsOutput;
 wire [2:0] controlUnitState;
 wire [2:0] controlUnitNextState;
 
+// Instantiate the full board wrapper to exercise the integrated SoC.
 doodle_jump dut (
     .systemClock50MHz(systemClock50MHz),
     .switches(switches),
@@ -68,8 +69,10 @@ doodle_jump dut (
     .controlUnitNextState(controlUnitNextState)
 );
 
+// Generate the 50 MHz simulation clock used by the top-level design.
 always #10 systemClock50MHz = ~systemClock50MHz;
 
+// Reset the SoC, let it run, and verify a few integrated outputs.
 initial begin
     systemClock50MHz = 1'b0;
     switches = 10'h180;

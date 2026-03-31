@@ -37,6 +37,7 @@ module doodle_jump #(
     output [2:0] controlUnitNextState
 );
 
+    // Forward the board-facing pins into the integrated top-level system.
     doodle_jump_top doodle_jump_top_instance (
         .systemClock50MHz(systemClock50MHz),
         .switches(switches),

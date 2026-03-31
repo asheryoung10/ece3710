@@ -20,11 +20,13 @@ module audio_subsystem (
     output wire audio_data
 );
 
+// Track whether a configuration request has been handed to the codec sequencer.
 reg configure_active;
 wire busy_internal;
 wire done_internal;
 wire error_internal;
 
+// Convert CPU configure requests into a one-shot start pulse for the codec setup path.
 always @(posedge clk_50mhz or posedge rst) begin
     if (rst) begin
         configure_active <= 1'b0;
@@ -41,6 +43,7 @@ always @(posedge clk_50mhz or posedge rst) begin
     end
 end
 
+// Instantiate the I2C codec configuration sequencer.
 audio_configurator_select audio_configurator_select_instance (
     .systemClock(clk_50mhz),
     .reset(rst),
@@ -53,6 +56,7 @@ audio_configurator_select audio_configurator_select_instance (
     .i2c_data(i2c_data)
 );
 
+// Instantiate the live audio sample and clock generator.
 simple_audio_output simple_audio_output_instance (
     .clk_50mhz(clk_50mhz),
     .rst(rst),
@@ -65,6 +69,7 @@ simple_audio_output simple_audio_output_instance (
     .aud_dacdat(audio_data)
 );
 
+// Forward the internal codec status signals to the top-level outputs.
 always @(*) begin
     busy = busy_internal;
     done = done_internal;

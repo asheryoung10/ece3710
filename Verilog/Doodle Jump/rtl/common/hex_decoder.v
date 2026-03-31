@@ -5,6 +5,7 @@ module hex_decoder (
     output reg [6:0] segments
 );
 
+// Decode each hexadecimal digit into an active-low seven-segment pattern.
 always @(*) begin
     case (value)
         4'h0: segments = 7'b1000000;

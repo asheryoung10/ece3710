@@ -8,6 +8,7 @@ module background_renderer (
     output reg [7:0] blue
 );
 
+// Paint a checkerboard-style background from the current pixel coordinates.
 always @(*) begin
     if (((pixel_x / 32) + (pixel_y / 32)) % 2 == 0) begin
         red = 8'd24;
