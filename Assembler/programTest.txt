@@ -27,3 +27,5 @@ MOVI 0x01, R0 // Puts address of first rectangle into r0.
 LSHI 15, R0   // Puts address of first rectangle into r0.
 STOR R1, R0
 BUC loop
+
+
