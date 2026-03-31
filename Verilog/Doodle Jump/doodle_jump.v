@@ -97,9 +97,10 @@ cpu cpu_instance (
    .aluFlagsOutput(aluFlagsOutput),
    .controlUnitState(controlUnitState),
    .controlUnitNextState(controlUnitNextState),
-	.leftButton(push_buttons[3]),
-	.rightButton(push_buttons[2]),
-	.vsync(vga_vs)
+	.leftButton(~push_buttons[3]),
+	.rightButton(~push_buttons[2]),
+	.vsync(vga_vs),
+	.R3(leds)
 );
 
 
@@ -144,9 +145,9 @@ audio_unit audio_unit_instance (
 	.AUD_BCLK(audio_bitClock),
 	.AUD_DACLRCK(audio_leftRightClock),
 	.AUD_DACDAT(audio_data),
-	.error(leds[0]),
-	.busy(leds[2]),
-	.done(leds[1])
+	.error(),
+	.busy(),
+	.done()
 	
 );
 
