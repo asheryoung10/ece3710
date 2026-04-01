@@ -23,7 +23,9 @@ module cpu
 	
 	input wire leftButton,
 	input wire rightButton,
-	input wire vsync
+	input wire vsync,
+	
+	output wire [15:0] R3
 );
 
 //
@@ -105,7 +107,8 @@ register_file_instance
     .contentsB(registerFileContentsB),
 	 .leftButton(leftButton),
 	 .rightButton(rightButton),
-	 .vsync(vsync)
+	 .vsync(vsync),
+	 .R3(R3)
 );
 
 

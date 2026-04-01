@@ -23,6 +23,7 @@ vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doo
 vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v}
 vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v}
 vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v}
 
 vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v}
 vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v}

@@ -18,7 +18,9 @@ module register_file
 	 
 	 input wire leftButton,
 	 input wire rightButton,
-	 input wire vsync
+	 input wire vsync,
+	 
+	 output wire [15:0] R3
 );
 
 reg [DATA_WIDTH-1:0] registers [(2**ADDR_WIDTH)-1:0];
@@ -39,7 +41,7 @@ assign reg15input = {12'd0,leftButton, rightButton, vsync};
 
 assign contentsA = 4'd15 == readAddressA ? reg15input : registers[readAddressA];
 assign contentsB = 4'd15 == readAddressB ? reg15input : registers[readAddressB];
-
+assign R3 = registers[4'd3];
 
 
 

@@ -1,5 +1,5 @@
 Flow report for lab1
-Mon Mar 30 16:21:12 2026
+Mon Mar 30 19:35:30 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Mon Mar 30 16:21:12 2026          ;
+; Flow Status                     ; Successful - Mon Mar 30 19:35:30 2026          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; lab1                                           ;
 ; Top-level Entity Name           ; doodle_jump                                    ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEMA5F31C6                                   ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 1,085 / 32,070 ( 3 % )                         ;
-; Total registers                 ; 760                                            ;
+; Logic utilization (in ALMs)     ; 1,134 / 32,070 ( 4 % )                         ;
+; Total registers                 ; 751                                            ;
 ; Total pins                      ; 177 / 457 ( 39 % )                             ;
 ; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 409,600 / 4,065,280 ( 10 % )                   ;
+; Total block memory bits         ; 394,240 / 4,065,280 ( 10 % )                   ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                                 ;
 ; Total HSSI RX PCSs              ; 0                                              ;
 ; Total HSSI PMA RX Deserializers ; 0                                              ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/30/2026 16:18:59 ;
+; Start date & time ; 03/30/2026 19:33:12 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab1                ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+--------------------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                            ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+--------------------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 123719793384753.177490913924281                  ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 123719793384753.177492079221721                  ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                               ; --            ; --          ; tb_i2c_controller                 ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                               ; --            ; --          ; tb_doodle                         ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                               ; --            ; --          ; tb_audio_configurator             ;
@@ -155,12 +155,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:28     ; 1.0                     ; 484 MB              ; 00:00:35                           ;
-; Fitter               ; 00:01:20     ; 1.1                     ; 1887 MB             ; 00:02:19                           ;
-; Assembler            ; 00:00:06     ; 1.0                     ; 540 MB              ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:11     ; 1.9                     ; 881 MB              ; 00:00:16                           ;
+; Analysis & Synthesis ; 00:00:30     ; 1.0                     ; 478 MB              ; 00:00:36                           ;
+; Fitter               ; 00:01:24     ; 1.1                     ; 1898 MB             ; 00:02:26                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 524 MB              ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:10     ; 1.9                     ; 885 MB              ; 00:00:17                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 685 MB              ; 00:00:01                           ;
-; Total                ; 00:02:06     ; --                      ; --                  ; 00:03:17                           ;
+; Total                ; 00:02:11     ; --                      ; --                  ; 00:03:26                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

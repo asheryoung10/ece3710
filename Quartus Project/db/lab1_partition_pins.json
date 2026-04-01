@@ -16,6 +16,34 @@
 					"strict" : false
 				},
 				{
+					"name" : "leds[3]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[4]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[5]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[6]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[7]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[8]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[9]",
+					"strict" : false
+				},
+				{
 					"name" : "hex0[0]",
 					"strict" : false
 				},
@@ -496,15 +524,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "systemClock50MHz",
+					"strict" : false
+				},
+				{
 					"name" : "push_buttons[0]",
 					"strict" : false
 				},
 				{
 					"name" : "push_buttons[1]",
-					"strict" : false
-				},
-				{
-					"name" : "systemClock50MHz",
 					"strict" : false
 				}
 			]

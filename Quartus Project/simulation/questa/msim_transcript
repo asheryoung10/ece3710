@@ -28,27 +28,27 @@
 # 
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:09 on Mar 27,2026
+# Start time: 19:35:40 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v 
 # -- Compiling module audio_unit
 # 
 # Top level modules:
 # 	audio_unit
-# End time: 14:32:09 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:40 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:09 on Mar 27,2026
+# Start time: 19:35:40 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v 
 # -- Compiling module audio_configurator_select
 # 
 # Top level modules:
 # 	audio_configurator_select
-# End time: 14:32:09 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:40 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:09 on Mar 27,2026
+# Start time: 19:35:40 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v 
 # -- Compiling module audio_output
 # -- Compiling module note_generator
@@ -56,393 +56,403 @@
 # 
 # Top level modules:
 # 	audio_output
-# End time: 14:32:10 on Mar 27,2026, Elapsed time: 0:00:01
+# End time: 19:35:40 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:10 on Mar 27,2026
+# Start time: 19:35:40 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v 
 # -- Compiling module memory
 # 
 # Top level modules:
 # 	memory
-# End time: 14:32:10 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:40 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:10 on Mar 27,2026
+# Start time: 19:35:40 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v 
 # -- Compiling module sharedMemory
 # 
 # Top level modules:
 # 	sharedMemory
-# End time: 14:32:10 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:40 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:10 on Mar 27,2026
+# Start time: 19:35:40 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v 
 # -- Compiling module playerMemory
 # 
 # Top level modules:
 # 	playerMemory
-# End time: 14:32:10 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/tileMemory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:10 on Mar 27,2026
+# Start time: 19:35:41 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/tileMemory.v 
 # -- Compiling module tileMemory
 # 
 # Top level modules:
 # 	tileMemory
-# End time: 14:32:10 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register_file.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:10 on Mar 27,2026
+# Start time: 19:35:41 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register_file.v 
 # -- Compiling module register_file
 # 
 # Top level modules:
 # 	register_file
-# End time: 14:32:10 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:10 on Mar 27,2026
+# Start time: 19:35:41 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register.v 
 # -- Compiling module register
 # 
 # Top level modules:
 # 	register
-# End time: 14:32:10 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux4.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:10 on Mar 27,2026
+# Start time: 19:35:41 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux4.v 
 # -- Compiling module mux4
 # 
 # Top level modules:
 # 	mux4
-# End time: 14:32:11 on Mar 27,2026, Elapsed time: 0:00:01
+# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux2.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:11 on Mar 27,2026
+# Start time: 19:35:41 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux2.v 
 # -- Compiling module mux2
 # 
 # Top level modules:
 # 	mux2
-# End time: 14:32:11 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:11 on Mar 27,2026
+# Start time: 19:35:41 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v 
 # -- Compiling module cpu
 # 
 # Top level modules:
 # 	cpu
-# End time: 14:32:11 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:11 on Mar 27,2026
+# Start time: 19:35:41 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v 
 # -- Compiling module i2c_controller
 # 
 # Top level modules:
 # 	i2c_controller
-# End time: 14:32:11 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:11 on Mar 27,2026
+# Start time: 19:35:41 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v 
 # -- Compiling module vga
 # 
 # Top level modules:
 # 	vga
-# End time: 14:32:11 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:42 on Mar 30,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:11 on Mar 27,2026
+# Start time: 19:35:42 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v 
 # -- Compiling module doodle_jump
 # 
 # Top level modules:
 # 	doodle_jump
-# End time: 14:32:11 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:42 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:11 on Mar 27,2026
+# Start time: 19:35:42 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v 
 # -- Compiling module instruction_decoder
 # 
 # Top level modules:
 # 	instruction_decoder
-# End time: 14:32:11 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:42 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:11 on Mar 27,2026
+# Start time: 19:35:42 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v 
 # -- Compiling module control_unit
 # 
 # Top level modules:
 # 	control_unit
-# End time: 14:32:11 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:42 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:11 on Mar 27,2026
+# Start time: 19:35:42 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 14:32:12 on Mar 27,2026, Elapsed time: 0:00:01
+# End time: 19:35:42 on Mar 30,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 19:35:42 on Mar 30,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v 
+# -- Compiling module glyph_rom
+# 
+# Top level modules:
+# 	glyph_rom
+# End time: 19:35:42 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:12 on Mar 27,2026
+# Start time: 19:35:42 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 14:32:12 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:43 on Mar 30,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:12 on Mar 27,2026
+# Start time: 19:35:43 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v 
 # -- Compiling module control_unit
 # 
 # Top level modules:
 # 	control_unit
-# End time: 14:32:12 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:43 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:12 on Mar 27,2026
+# Start time: 19:35:43 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v 
 # -- Compiling module cpu
 # 
 # Top level modules:
 # 	cpu
-# End time: 14:32:12 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:43 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:12 on Mar 27,2026
+# Start time: 19:35:43 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v 
 # -- Compiling module instruction_decoder
 # 
 # Top level modules:
 # 	instruction_decoder
-# End time: 14:32:12 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:43 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:12 on Mar 27,2026
+# Start time: 19:35:43 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v 
 # -- Compiling module mux2
 # 
 # Top level modules:
 # 	mux2
-# End time: 14:32:12 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:43 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:12 on Mar 27,2026
+# Start time: 19:35:43 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v 
 # -- Compiling module mux4
 # 
 # Top level modules:
 # 	mux4
-# End time: 14:32:12 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:43 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:12 on Mar 27,2026
+# Start time: 19:35:43 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v 
 # -- Compiling module register
 # 
 # Top level modules:
 # 	register
-# End time: 14:32:12 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:44 on Mar 30,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:12 on Mar 27,2026
+# Start time: 19:35:44 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v 
 # -- Compiling module register_file
 # 
 # Top level modules:
 # 	register_file
-# End time: 14:32:13 on Mar 27,2026, Elapsed time: 0:00:01
+# End time: 19:35:44 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:13 on Mar 27,2026
+# Start time: 19:35:44 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v 
 # -- Compiling module top
 # 
 # Top level modules:
 # 	top
-# End time: 14:32:13 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:44 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:13 on Mar 27,2026
+# Start time: 19:35:44 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v 
 # -- Compiling module block_mover
 # 
 # Top level modules:
 # 	block_mover
-# End time: 14:32:13 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:44 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:13 on Mar 27,2026
+# Start time: 19:35:44 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v 
 # -- Compiling module clk_divider
 # 
 # Top level modules:
 # 	clk_divider
-# End time: 14:32:13 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:44 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:13 on Mar 27,2026
+# Start time: 19:35:44 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v 
 # -- Compiling module hard_coded_bitgen
 # 
 # Top level modules:
 # 	hard_coded_bitgen
-# End time: 14:32:13 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:44 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:13 on Mar 27,2026
+# Start time: 19:35:44 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v 
 # -- Compiling module vga
 # 
 # Top level modules:
 # 	vga
-# End time: 14:32:13 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:44 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:13 on Mar 27,2026
+# Start time: 19:35:44 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v 
 # -- Compiling module playerMemory
 # 
 # Top level modules:
 # 	playerMemory
-# End time: 14:32:13 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:13 on Mar 27,2026
+# Start time: 19:35:45 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v 
 # -- Compiling module tb_hard_coded_vga
 # 
 # Top level modules:
 # 	tb_hard_coded_vga
-# End time: 14:32:13 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:13 on Mar 27,2026
+# Start time: 19:35:45 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v 
 # -- Compiling module tileMemory
 # 
 # Top level modules:
 # 	tileMemory
-# End time: 14:32:14 on Mar 27,2026, Elapsed time: 0:00:01
+# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:14 on Mar 27,2026
+# Start time: 19:35:45 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v 
 # -- Compiling module doodle_jump
 # 
 # Top level modules:
 # 	doodle_jump
-# End time: 14:32:14 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:14 on Mar 27,2026
+# Start time: 19:35:45 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v 
 # -- Compiling module tb_i2c_controller
 # 
 # Top level modules:
 # 	tb_i2c_controller
-# End time: 14:32:14 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:14 on Mar 27,2026
+# Start time: 19:35:45 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v 
 # -- Compiling module i2c_controller
 # 
 # Top level modules:
 # 	i2c_controller
-# End time: 14:32:14 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:14 on Mar 27,2026
+# Start time: 19:35:45 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v 
 # -- Compiling module tb_doodle
 # 
 # Top level modules:
 # 	tb_doodle
-# End time: 14:32:14 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/tb_cpu.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:14 on Mar 27,2026
+# Start time: 19:35:45 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/tb_cpu.v 
 # -- Compiling module tb_cpu
 # 
 # Top level modules:
 # 	tb_cpu
-# End time: 14:32:14 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:14 on Mar 27,2026
+# Start time: 19:35:45 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v 
 # -- Compiling module sharedMemory
 # 
 # Top level modules:
 # 	sharedMemory
-# End time: 14:32:14 on Mar 27,2026, Elapsed time: 0:00:00
+# End time: 19:35:46 on Mar 30,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:32:14 on Mar 27,2026
+# Start time: 19:35:46 on Mar 30,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v 
 # -- Compiling module memory
 # 
 # Top level modules:
 # 	memory
-# End time: 14:32:15 on Mar 27,2026, Elapsed time: 0:00:01
+# End time: 19:35:46 on Mar 30,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_doodle
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_doodle 
-# Start time: 14:32:15 on Mar 27,2026
+# Start time: 19:35:46 on Mar 30,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Warning: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v(34): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 31, found 10.
@@ -477,6 +487,7 @@
 # Loading work.vga(fast)
 # Loading work.tileMemory(fast)
 # Loading work.playerMemory(fast)
+# Loading work.glyph_rom(fast)
 # Loading work.cpu(fast)
 # Loading work.register_file(fast)
 # Loading work.alu(fast)
@@ -494,14 +505,22 @@
 # Loading work.audio_output(fast)
 # Loading work.note_generator(fast)
 # Loading work.drum_generator(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (10) does not match connection size (6) for port 'playerX'. The port definition is at: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v(6).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/vga_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v Line: 55
-# ** Warning: (vsim-3015) [PCDPC] - Port size (10) does not match connection size (32) for port 'playerY'. The port definition is at: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v(7).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/vga_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v Line: 55
+# ** Warning: (vsim-3015) [PCDPC] - Port size (10) does not match connection size (16) for port 'playerX'. The port definition is at: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/vga_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v Line: 57
+# ** Warning: (vsim-3015) [PCDPC] - Port size (10) does not match connection size (16) for port 'playerY'. The port definition is at: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v(7).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/vga_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v Line: 57
+# ** Warning: (vsim-3015) [PCDPC] - Port size (14) does not match connection size (32) for port 'addr'. The port definition is at: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v(19).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/vga_instance/playerMem_inst/glyph_rom_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v Line: 24
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (24) for port 'q'. The port definition is at: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/vga_instance/playerMem_inst/glyph_rom_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v Line: 24
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (10) for port 'R3'. The port definition is at: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v(28).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/cpu_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v Line: 84
 # ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (5) for port 'writeData'. The port definition is at: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/cpu_instance/program_state_register File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v Line: 139
+#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/cpu_instance/program_state_register File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v Line: 149
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (1) for port 'contents'. The port definition is at: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v(12).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/memory_instance/cpu_memory_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v Line: 42
 # ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (8) for port 'pitch'. The port definition is at: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v(5).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/audio_unit_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v Line: 122
+#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/audio_unit_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v Line: 132
 # 
 # add wave *
 # view structure
@@ -509,6 +528,9 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
+# ** Warning: (vsim-7) Failed to open readmem file "cpu/init_mem.text" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v(18)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/memory_instance/cpu_memory_instance
 # 
 # 
 # 
@@ -533,11 +555,11 @@
 # registerFile[15] = 0000
 # 
 # Memory:
-# memory[0] = d001
-# memory[1] = 800f
-# memory[2] = d100
-# memory[3] = 4140
-# memory[4] = 0000
+# memory[0] = xxxx
+# memory[1] = xxxx
+# memory[2] = xxxx
+# memory[3] = xxxx
+# memory[4] = xxxx
 # memory[5] = xxxx
 # memory[6] = xxxx
 # memory[7] = xxxx
@@ -583,330 +605,10 @@
 # memory[47] = xxxx
 # 
 # Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
-# Time=10000 | IR=0000 | DecInst=0000| DecRsrc=0 | DecRdest=0 | DecodedImmediate=0000 | DecodedOpcode=00 | PC=0000 | PSR=0000 | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=0 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=0000 | NextPC: 0001 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0000 | MemoryContents: d001| WriteContents: 0000
-# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
-# Time=20000 | IR=0000 | DecInst=0000| DecRsrc=0 | DecRdest=0 | DecodedImmediate=0000 | DecodedOpcode=00 | PC=0000 | PSR=0000 | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=0 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=0000 | NextPC: 0001 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0000 | MemoryContents: d001| WriteContents: 0000
-# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
-# Time=30000 | IR=d001 | DecInst=d001| DecRsrc=1 | DecRdest=0 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0000 | PSR=0000 | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=208 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=0 | RegFile_WriteData=0001 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=2 | PSR=0000 | NextPC: 0001 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0000 | MemoryContents: d001| WriteContents: 0000
-# 
-# 
-# 
-# 
-# CONTENTS AFTER PREVIOUS INSTRUCTION
-# RegisterFile:
-# registerFile[0] = 0001
-# registerFile[1] = 0000
-# registerFile[2] = 0000
-# registerFile[3] = 0000
-# registerFile[4] = 0000
-# registerFile[5] = 0000
-# registerFile[6] = 0000
-# registerFile[7] = 0000
-# registerFile[8] = 0000
-# registerFile[9] = 0000
-# registerFile[10] = 0000
-# registerFile[11] = 0000
-# registerFile[12] = 0000
-# registerFile[13] = 0000
-# registerFile[14] = 0000
-# registerFile[15] = 0000
-# 
-# Memory:
-# memory[0] = d001
-# memory[1] = 800f
-# memory[2] = d100
-# memory[3] = 4140
-# memory[4] = 0000
-# memory[5] = xxxx
-# memory[6] = xxxx
-# memory[7] = xxxx
-# memory[8] = xxxx
-# memory[9] = xxxx
-# memory[10] = xxxx
-# memory[11] = xxxx
-# memory[12] = xxxx
-# memory[13] = xxxx
-# memory[14] = xxxx
-# memory[15] = xxxx
-# memory[16] = xxxx
-# memory[17] = xxxx
-# memory[18] = xxxx
-# memory[19] = xxxx
-# memory[20] = xxxx
-# memory[21] = xxxx
-# memory[22] = xxxx
-# memory[23] = xxxx
-# memory[24] = xxxx
-# memory[25] = xxxx
-# memory[26] = xxxx
-# memory[27] = xxxx
-# memory[28] = xxxx
-# memory[29] = xxxx
-# memory[30] = xxxx
-# memory[31] = xxxx
-# memory[32] = xxxx
-# memory[33] = xxxx
-# memory[34] = xxxx
-# memory[35] = xxxx
-# memory[36] = xxxx
-# memory[37] = xxxx
-# memory[38] = xxxx
-# memory[39] = xxxx
-# memory[40] = xxxx
-# memory[41] = xxxx
-# memory[42] = xxxx
-# memory[43] = xxxx
-# memory[44] = xxxx
-# memory[45] = xxxx
-# memory[46] = xxxx
-# memory[47] = xxxx
-# 
-# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
-# Time=40000 | IR=d001 | DecInst=d001| DecRsrc=1 | DecRdest=0 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0001 | PSR=0000 | ALU select Imm=0| ALURes=0001 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=208 | ALU_A=0000 | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0001 | RegFile_ReadA=0000 | RegFile_ReadB=0001 | RegFileSel=0 | PSR=0000 | NextPC: 0002 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0001 | MemoryContents: d001| WriteContents: 0001
-# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
-# Time=50000 | IR=d001 | DecInst=d001| DecRsrc=1 | DecRdest=0 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0001 | PSR=0000 | ALU select Imm=0| ALURes=0001 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=208 | ALU_A=0000 | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0001 | RegFile_ReadA=0000 | RegFile_ReadB=0001 | RegFileSel=0 | PSR=0000 | NextPC: 0002 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0001 | MemoryContents: 800f| WriteContents: 0001
-# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
-# Time=60000 | IR=800f | DecInst=800f| DecRsrc=f | DecRdest=0 | DecodedImmediate=000f | DecodedOpcode=80 | PC=0001 | PSR=0000 | ALU select Imm=1| ALURes=8000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=128 | ALU_A=000f | ALU_B=0001 | RegFile_WriteEn=1 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=0000 | RegFile_ReadB=0001 | RegFileSel=0 | PSR=0000 | NextPC: 0002 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0001 | MemoryContents: 800f| WriteContents: 0001
-# 
-# 
-# 
-# 
-# CONTENTS AFTER PREVIOUS INSTRUCTION
-# RegisterFile:
-# registerFile[0] = 8000
-# registerFile[1] = 0000
-# registerFile[2] = 0000
-# registerFile[3] = 0000
-# registerFile[4] = 0000
-# registerFile[5] = 0000
-# registerFile[6] = 0000
-# registerFile[7] = 0000
-# registerFile[8] = 0000
-# registerFile[9] = 0000
-# registerFile[10] = 0000
-# registerFile[11] = 0000
-# registerFile[12] = 0000
-# registerFile[13] = 0000
-# registerFile[14] = 0000
-# registerFile[15] = 0000
-# 
-# Memory:
-# memory[0] = d001
-# memory[1] = 800f
-# memory[2] = d100
-# memory[3] = 4140
-# memory[4] = 0000
-# memory[5] = xxxx
-# memory[6] = xxxx
-# memory[7] = xxxx
-# memory[8] = xxxx
-# memory[9] = xxxx
-# memory[10] = xxxx
-# memory[11] = xxxx
-# memory[12] = xxxx
-# memory[13] = xxxx
-# memory[14] = xxxx
-# memory[15] = xxxx
-# memory[16] = xxxx
-# memory[17] = xxxx
-# memory[18] = xxxx
-# memory[19] = xxxx
-# memory[20] = xxxx
-# memory[21] = xxxx
-# memory[22] = xxxx
-# memory[23] = xxxx
-# memory[24] = xxxx
-# memory[25] = xxxx
-# memory[26] = xxxx
-# memory[27] = xxxx
-# memory[28] = xxxx
-# memory[29] = xxxx
-# memory[30] = xxxx
-# memory[31] = xxxx
-# memory[32] = xxxx
-# memory[33] = xxxx
-# memory[34] = xxxx
-# memory[35] = xxxx
-# memory[36] = xxxx
-# memory[37] = xxxx
-# memory[38] = xxxx
-# memory[39] = xxxx
-# memory[40] = xxxx
-# memory[41] = xxxx
-# memory[42] = xxxx
-# memory[43] = xxxx
-# memory[44] = xxxx
-# memory[45] = xxxx
-# memory[46] = xxxx
-# memory[47] = xxxx
-# 
-# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
-# Time=70000 | IR=800f | DecInst=800f| DecRsrc=f | DecRdest=0 | DecodedImmediate=000f | DecodedOpcode=80 | PC=0002 | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=128 | ALU_A=0000 | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=0000 | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 0003 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0002 | MemoryContents: 800f| WriteContents: 8000
-# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
-# Time=80000 | IR=800f | DecInst=800f| DecRsrc=f | DecRdest=0 | DecodedImmediate=000f | DecodedOpcode=80 | PC=0002 | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=128 | ALU_A=0000 | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=0000 | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 0003 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0002 | MemoryContents: d100| WriteContents: 8000
-# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
-# Time=90000 | IR=d100 | DecInst=d100| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0000 | DecodedOpcode=d0 | PC=0002 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=208 | ALU_A=8000 | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=1 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=2 | PSR=zzXX | NextPC: 0003 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0002 | MemoryContents: d100| WriteContents: 0000
-# 
-# 
-# 
-# 
-# CONTENTS AFTER PREVIOUS INSTRUCTION
-# RegisterFile:
-# registerFile[0] = 8000
-# registerFile[1] = 0000
-# registerFile[2] = 0000
-# registerFile[3] = 0000
-# registerFile[4] = 0000
-# registerFile[5] = 0000
-# registerFile[6] = 0000
-# registerFile[7] = 0000
-# registerFile[8] = 0000
-# registerFile[9] = 0000
-# registerFile[10] = 0000
-# registerFile[11] = 0000
-# registerFile[12] = 0000
-# registerFile[13] = 0000
-# registerFile[14] = 0000
-# registerFile[15] = 0000
-# 
-# Memory:
-# memory[0] = d001
-# memory[1] = 800f
-# memory[2] = d100
-# memory[3] = 4140
-# memory[4] = 0000
-# memory[5] = xxxx
-# memory[6] = xxxx
-# memory[7] = xxxx
-# memory[8] = xxxx
-# memory[9] = xxxx
-# memory[10] = xxxx
-# memory[11] = xxxx
-# memory[12] = xxxx
-# memory[13] = xxxx
-# memory[14] = xxxx
-# memory[15] = xxxx
-# memory[16] = xxxx
-# memory[17] = xxxx
-# memory[18] = xxxx
-# memory[19] = xxxx
-# memory[20] = xxxx
-# memory[21] = xxxx
-# memory[22] = xxxx
-# memory[23] = xxxx
-# memory[24] = xxxx
-# memory[25] = xxxx
-# memory[26] = xxxx
-# memory[27] = xxxx
-# memory[28] = xxxx
-# memory[29] = xxxx
-# memory[30] = xxxx
-# memory[31] = xxxx
-# memory[32] = xxxx
-# memory[33] = xxxx
-# memory[34] = xxxx
-# memory[35] = xxxx
-# memory[36] = xxxx
-# memory[37] = xxxx
-# memory[38] = xxxx
-# memory[39] = xxxx
-# memory[40] = xxxx
-# memory[41] = xxxx
-# memory[42] = xxxx
-# memory[43] = xxxx
-# memory[44] = xxxx
-# memory[45] = xxxx
-# memory[46] = xxxx
-# memory[47] = xxxx
-# 
-# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
-# Time=100000 | IR=d100 | DecInst=d100| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0000 | DecodedOpcode=d0 | PC=0003 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=208 | ALU_A=8000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0004 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0003 | MemoryContents: d100| WriteContents: 0000
-# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
-# Time=110000 | IR=d100 | DecInst=d100| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0000 | DecodedOpcode=d0 | PC=0003 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=208 | ALU_A=8000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0004 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0003 | MemoryContents: 4140| WriteContents: 0000
-# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
-# Time=120000 | IR=4140 | DecInst=4140| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0040 | DecodedOpcode=44 | PC=0003 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=68 | ALU_A=8000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0004 | WriteEnableMemory: 1 | MemoryReadWriteAddress: 8000 | MemoryContents: 4140| WriteContents: 0000
-# 
-# 
-# 
-# 
-# CONTENTS AFTER PREVIOUS INSTRUCTION
-# RegisterFile:
-# registerFile[0] = 8000
-# registerFile[1] = 0000
-# registerFile[2] = 0000
-# registerFile[3] = 0000
-# registerFile[4] = 0000
-# registerFile[5] = 0000
-# registerFile[6] = 0000
-# registerFile[7] = 0000
-# registerFile[8] = 0000
-# registerFile[9] = 0000
-# registerFile[10] = 0000
-# registerFile[11] = 0000
-# registerFile[12] = 0000
-# registerFile[13] = 0000
-# registerFile[14] = 0000
-# registerFile[15] = 0000
-# 
-# Memory:
-# memory[0] = d001
-# memory[1] = 800f
-# memory[2] = d100
-# memory[3] = 4140
-# memory[4] = 0000
-# memory[5] = xxxx
-# memory[6] = xxxx
-# memory[7] = xxxx
-# memory[8] = xxxx
-# memory[9] = xxxx
-# memory[10] = xxxx
-# memory[11] = xxxx
-# memory[12] = xxxx
-# memory[13] = xxxx
-# memory[14] = xxxx
-# memory[15] = xxxx
-# memory[16] = xxxx
-# memory[17] = xxxx
-# memory[18] = xxxx
-# memory[19] = xxxx
-# memory[20] = xxxx
-# memory[21] = xxxx
-# memory[22] = xxxx
-# memory[23] = xxxx
-# memory[24] = xxxx
-# memory[25] = xxxx
-# memory[26] = xxxx
-# memory[27] = xxxx
-# memory[28] = xxxx
-# memory[29] = xxxx
-# memory[30] = xxxx
-# memory[31] = xxxx
-# memory[32] = xxxx
-# memory[33] = xxxx
-# memory[34] = xxxx
-# memory[35] = xxxx
-# memory[36] = xxxx
-# memory[37] = xxxx
-# memory[38] = xxxx
-# memory[39] = xxxx
-# memory[40] = xxxx
-# memory[41] = xxxx
-# memory[42] = xxxx
-# memory[43] = xxxx
-# memory[44] = xxxx
-# memory[45] = xxxx
-# memory[46] = xxxx
-# memory[47] = xxxx
-# 
-# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
-# Time=130000 | IR=4140 | DecInst=4140| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0040 | DecodedOpcode=44 | PC=0004 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=68 | ALU_A=8000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0005 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0004 | MemoryContents: d001| WriteContents: 0000
-# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
-# Time=140000 | IR=4140 | DecInst=4140| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0040 | DecodedOpcode=44 | PC=0004 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=68 | ALU_A=8000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0005 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0004 | MemoryContents: 0000| WriteContents: 0000
-# Current State = DECODE_INSTRUCTION						Next State = NOTHING_STATE
-# Time=150000 | IR=0000 | DecInst=0000| DecRsrc=0 | DecRdest=0 | DecodedImmediate=0000 | DecodedOpcode=00 | PC=0004 | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=6 | ALUOpcode=0 | ALU_A=8000 | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=8000 | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 0005 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0004 | MemoryContents: 0000| WriteContents: 8000
-# ** Note: $finish    : /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v(235)
-#    Time: 160 ns  Iteration: 0  Instance: /tb_doodle
+# Time=10000 | IR=0000 | DecInst=0000| DecRsrc=0 | DecRdest=0 | DecodedImmediate=0000 | DecodedOpcode=00 | PC=0000 | PSR=0000 | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=0 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=0000 | NextPC: 0001 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0000 | MemoryContents: 000X| WriteContents: 0000 | SharedMemoryContents: &h    X
+# ** Note: $finish    : /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v(243)
+#    Time: 20 ns  Iteration: 0  Instance: /tb_doodle
 # 1
-# Break in Module tb_doodle at /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v line 235
-# End time: 14:33:58 on Mar 27,2026, Elapsed time: 0:01:43
-# Errors: 0, Warnings: 29
+# Break in Module tb_doodle at /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v line 243
+# End time: 19:37:39 on Mar 30,2026, Elapsed time: 0:01:53
+# Errors: 0, Warnings: 34
