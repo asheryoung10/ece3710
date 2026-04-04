@@ -1,0 +1,57 @@
+BEGIN 1:memory:fast:work
+    ram :  1:tb_doodle:fast:work
+END 
+BEGIN 1:alu:fast:work
+    B :  1:tb_doodle:fast:work
+    A :  1:tb_doodle:fast:work
+END 
+BEGIN 1:register_file:fast:work
+    writeData :  1:tb_doodle:fast:work
+    contentsB :  1:tb_doodle:fast:work
+    contentsA :  1:tb_doodle:fast:work
+    registers :  1:tb_doodle:fast:work
+    writeAddress :  1:tb_doodle:fast:work
+    writeEnable :  1:tb_doodle:fast:work
+END 
+BEGIN 1:register:fast__1:work
+    contents :  1:tb_doodle:fast:work
+END 
+BEGIN 1:doodle_jump:fast:work
+    registerFileContentsB :  1:tb_doodle:fast:work
+    memoryReadWriteAddress :  1:tb_doodle:fast:work
+    memoryWriteEnable :  1:tb_doodle:fast:work
+    memoryContents :  1:tb_doodle:fast:work
+END 
+BEGIN 1:sharedMemory:fast:work
+    rect_data :  1:tb_doodle:fast:work
+    contentsCPU :  1:tb_doodle:fast:work
+    contentsPlayer :  1:tb_doodle:fast:work
+    isPlayerAccess :  1:tb_doodle:fast:work
+    contents :  1:tb_doodle:fast:work
+    contentsRect :  1:tb_doodle:fast:work
+    isRectAccess :  1:tb_doodle:fast:work
+END 
+BEGIN 1:mux4:fast:work
+    select :  1:tb_doodle:fast:work
+END 
+BEGIN 1:control_unit:fast:work
+    aluSelectImmediate :  1:tb_doodle:fast:work
+END 
+BEGIN 1:instruction_decoder:fast:work
+    registerAddressA :  1:tb_doodle:fast:work
+    immediate :  1:tb_doodle:fast:work
+    instruction :  1:tb_doodle:fast:work
+    registerAddressB :  1:tb_doodle:fast:work
+    nextProgramCounter :  1:tb_doodle:fast:work
+    aluOpcode :  1:tb_doodle:fast:work
+END 
+BEGIN 1:cpu:fast:work
+    programStateRegisterContentsOutput :  1:tb_doodle:fast:work
+    instructionRegisterContentsOutput :  1:tb_doodle:fast:work
+    aluResultOutput :  1:tb_doodle:fast:work
+    controlUnitState :  1:tb_doodle:fast:work
+    programCounterContentsOutput :  1:tb_doodle:fast:work
+    memorySelectReadWriteAddress :  1:tb_doodle:fast:work
+    aluFlagsOutput :  1:tb_doodle:fast:work
+    controlUnitNextState :  1:tb_doodle:fast:work
+END 

@@ -81,7 +81,7 @@ localparam MOVE_STATE = 3'd7;
     task print_cpu_state;
         begin
             $display(
-    "Time=%0t | IR=%h | DecInst=%h| DecRsrc=%h | DecRdest=%h | DecodedImmediate=%h | DecodedOpcode=%h | PC=%h | PSR=%h | ALU select Imm=%h| ALURes=%h | ALUFlags=%b | CU_State=%0d | CU_Next=%0d | ALUOpcode=%0d | ALU_A=%h | ALU_B=%h | RegFile_WriteEn=%b | RegFile_WriteAddr=%0d | RegFile_WriteData=%h | RegFile_ReadA=%h | RegFile_ReadB=%h | RegFileSel=%h | PSR=%h | NextPC: %h | WriteEnableMemory: %h | MemoryReadWriteAddress: %h | MemoryContents: %h| WriteContents: %h | firstRectX: %h | contentsShared: %h | contentsSharedCPU: %h | contentsSharedRect: %h | contentsSharedPlayer: %h",
+    "Time=%0t | IR=%h | DecInst=%h| DecRsrc=%h | DecRdest=%h | DecodedImmediate=%h | DecodedOpcode=%h | PC=%h | PSR=%h | ALU select Imm=%h| ALURes=%h | ALUFlags=%b | CU_State=%0d | CU_Next=%0d | ALUOpcode=%0d | ALU_A=%h | ALU_B=%h | RegFile_WriteEn=%b | RegFile_WriteAddr=%0d | RegFile_WriteData=%h | RegFile_ReadA=%h | RegFile_ReadB=%h | RegFileSel=%h | PSR=%h | NextPC: %h | WriteEnableMemory: %h | MemoryReadWriteAddress: %h | MemoryContents: %h| WriteContents: %h | firstRectX: %h | contentsShared: %h | contentsSharedCPU: %h | contentsSharedRect: %h | contentsSharedPlayer: %h| isRectAccess: %h| isPlayerAccess: %h | memorySelReadWrite: %h",
     $time,
     uut.cpu_instance.instructionRegisterContentsOutput,
 	 uut.cpu_instance.instruction_decoder_instance.instruction,
@@ -115,7 +115,11 @@ localparam MOVE_STATE = 3'd7;
 	 uut.memory_instance.contents,
 	 	 uut.memory_instance.contentsCPU,
 	 uut.memory_instance.contentsRect,
-	 uut.memory_instance.contentsPlayer
+	 uut.memory_instance.contentsPlayer,
+	 uut.memory_instance.isRectAccess,
+	 uut.memory_instance.isPlayerAccess,
+	 	 uut.cpu_instance.memorySelectReadWriteAddress
+
 );
         end
     endtask
@@ -212,7 +216,7 @@ integer i = 0;
 
         // Apply reset
         apply_reset();
-		  push_buttons = 4'b0001;
+		  push_buttons = 4'b1101;
 			running = 1;
         // Run for a few cycles and print state
 		  

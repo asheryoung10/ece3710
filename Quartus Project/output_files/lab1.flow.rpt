@@ -1,6 +1,6 @@
 Flow report for lab1
-Fri Apr  3 18:28:23 2026
-Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Fri Apr  3 19:49:59 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
 ---------------------
@@ -21,46 +21,46 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2024  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions 
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Intel Program License 
-Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
 
 
 
-+----------------------------------------------------------------------------------+
-; Flow Summary                                                                     ;
-+---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Fri Apr  3 18:28:23 2026          ;
-; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name                   ; lab1                                           ;
-; Top-level Entity Name           ; doodle_jump                                    ;
-; Family                          ; Cyclone V                                      ;
-; Device                          ; 5CSEMA5F31C6                                   ;
-; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 2,225 / 32,070 ( 7 % )                         ;
-; Total registers                 ; 1629                                           ;
-; Total pins                      ; 177 / 457 ( 39 % )                             ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 409,600 / 4,065,280 ( 10 % )                   ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                                 ;
-; Total HSSI RX PCSs              ; 0                                              ;
-; Total HSSI PMA RX Deserializers ; 0                                              ;
-; Total HSSI TX PCSs              ; 0                                              ;
-; Total HSSI PMA TX Serializers   ; 0                                              ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                                  ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                                  ;
-+---------------------------------+------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Flow Summary                                                                      ;
++---------------------------------+-------------------------------------------------+
+; Flow Status                     ; Successful - Fri Apr  3 19:49:59 2026           ;
+; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                   ; lab1                                            ;
+; Top-level Entity Name           ; doodle_jump                                     ;
+; Family                          ; Cyclone V                                       ;
+; Device                          ; 5CSEMA5F31C6                                    ;
+; Timing Models                   ; Final                                           ;
+; Logic utilization (in ALMs)     ; 2,242 / 32,070 ( 7 % )                          ;
+; Total registers                 ; 1649                                            ;
+; Total pins                      ; 177 / 457 ( 39 % )                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 409,600 / 4,065,280 ( 10 % )                    ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                                  ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0 / 6 ( 0 % )                                   ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                   ;
++---------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/03/2026 18:24:58 ;
+; Start date & time ; 04/03/2026 19:42:44 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab1                ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+--------------------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                            ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+--------------------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 123719793986956.177526229839484                  ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 126017862575399.177526696440624                  ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                               ; --            ; --          ; tb_i2c_controller                 ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                               ; --            ; --          ; tb_doodle                         ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                               ; --            ; --          ; tb_audio_configurator             ;
@@ -92,7 +92,7 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_doodle                                        ; --            ; --          ; eda_simulation                    ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                                      ; --            ; --          ; eda_simulation                    ;
 ; EDA_RUN_TOOL_AUTOMATICALLY           ; Off                                              ; --            ; --          ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (Verilog)                      ; <None>        ; --          ; --                                ;
+; EDA_SIMULATION_TOOL                  ; Questa Altera FPGA (Verilog)                     ; <None>        ; --          ; --                                ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                                  ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/i2c_controller.v         ; --            ; --          ; tb_i2c_controller                 ;
 ; EDA_TEST_BENCH_FILE                  ; ../Verilog/Audio Test 2/tb_i2c_controller.v      ; --            ; --          ; tb_i2c_controller                 ;
@@ -155,26 +155,26 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:36     ; 1.0                     ; 487 MB              ; 00:00:42                           ;
-; Fitter               ; 00:02:19     ; 1.1                     ; 1917 MB             ; 00:03:49                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 530 MB              ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:14     ; 2.2                     ; 922 MB              ; 00:00:25                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 697 MB              ; 00:00:01                           ;
-; Total                ; 00:03:18     ; --                      ; --                  ; 00:05:03                           ;
+; Analysis & Synthesis ; 00:00:20     ; 1.0                     ; 5021 MB             ; 00:00:28                           ;
+; Fitter               ; 00:06:34     ; 1.1                     ; 8091 MB             ; 00:47:29                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 5283 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:09     ; 3.0                     ; 5527 MB             ; 00:00:22                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4801 MB             ; 00:00:01                           ;
+; Total                ; 00:07:10     ; --                      ; --                  ; 00:48:25                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+----------------------+------------------+----------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
-+----------------------+------------------+----------------+------------+----------------+
-; Analysis & Synthesis ; dsl2             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
-; Fitter               ; dsl2             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
-; Assembler            ; dsl2             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
-; Timing Analyzer      ; dsl2             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
-; EDA Netlist Writer   ; dsl2             ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
-+----------------------+------------------+----------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; DESKTOP-JRGJE77  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-JRGJE77  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-JRGJE77  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-JRGJE77  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-JRGJE77  ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------

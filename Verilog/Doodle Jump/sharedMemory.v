@@ -7,7 +7,7 @@ module sharedMemory
     input writeEnable,
     input [15:0] writeData,
     input [15:0] readWriteAddress,
-    output [15:0] contents,
+    output reg [15:0] contents,
 	 
 
     input [9:0] vgaX,
@@ -82,9 +82,15 @@ always @(posedge clock) begin
 	end
 end
 
-// Mux output
-assign contents = isRectAccess ? contentsRect : (isPlayerAccess ? contentsPlayer : contentsCPU);
 
+always @(*) begin
+	if(isRectAccess)
+		contents <= contentsRect;
+	else if(isPlayerAccess)
+		contents <= contentsPlayer;
+	else
+		contents <= contentsCPU;
+end
 // Draw Rectangles
 reg [7:0] width;
 reg [7:0] height;
