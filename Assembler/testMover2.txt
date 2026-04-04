@@ -1,0 +1,175 @@
+// -----------------------------
+// Initialize rectangles on the ground
+// -----------------------------
+MOVI 0x01, R4
+LSHI 15, R4        // R4 = rectangle base
+
+MOVI 0, R5         // i = 0
+
+rect_init_loop:
+    // -----------------
+    // xpos: spread evenly
+    // -----------------
+    MOV R5, R1
+    LSHI 6, R1        // x = i * 16
+    STOR R1, R4
+
+    // -----------------
+    // ypos: ground
+    // -----------------
+    ADDI 1, R4
+    MOVI 27, R1       // ground level (max 8-bit)
+    LSHI 4, R1
+    MOV R5, R2
+    LSHI 2, R2
+    ADD R2, R1
+    STOR R1, R4
+
+    // -----------------
+    // size: 8x8
+    // -----------------
+    ADDI 1, R4
+    MOVI 0x20, R1
+    MOVI 0x60, R2
+    LSHI 8, R2
+    OR R2, R1
+    STOR R1, R4
+
+    // -----------------
+    // color: just use i for variety
+    // -----------------
+    ADDI 1, R4
+    MOV R5, R1
+    ADDI 13, R1
+    LSHI 3, R1
+    ADDI 13, R1
+    LSHI 2, R1
+    ADDI 13, R1
+    STOR R1, R4
+
+    // -----------------
+    // next rectangle
+    // -----------------
+    ADDI 1, R4         // next rect pointer
+    ADDI 1, R5         // i++
+    CMPI 16, R5
+    BLT rect_init_loop
+
+
+player_loop:
+BUC checkCollision
+returnCollision:
+MOVI 1, R11
+BUC collisionDone
+returnNoCollision:
+MOVI 2, R11
+BUC collisionDone
+collisionDone:
+// -----------------------------
+// 1) Apply gravity
+// -----------------------------
+ADDI 1, R14        // velocityY += 1 (gravity)
+
+// -----------------------------
+// 2) Poll input and adjust X velocity
+// -----------------------------
+MOVI 0x02, R0       // right button mask
+AND R15, R0
+CMPI 0, R0
+BNE doRightVel
+
+MOVI 0x04, R0       // left button mask
+AND R15, R0
+CMPI 0, R0
+BNE doLeftVel
+
+MOVI 0x08, R0       // jump button mask
+AND R15, R0
+CMPI 0, R0
+BEQ skipXVel
+
+// Jump pressed → set high upward velocity
+MOVI 0, R10
+SUBI 10, R10
+MOV R10, R14       // velocityY = -10 (upwards)
+BUC skipXVel
+
+doRightVel:
+ADDI 1, R13         // move right → velocityX += 1
+BUC skipXVel
+
+doLeftVel:
+SUBI 1, R13         // move left → velocityX -= 1
+
+skipXVel:
+
+// -----------------------------
+// 3) Update player position
+// -----------------------------
+MOVI 0x03, R0
+LSHI 14, R0          // player X address
+LOAD R1, R0
+ADD R13, R1          // x += velocityX
+STOR R1, R0
+
+ADDI 1, R0           // player Y address
+LOAD R1, R0
+ADD R14, R1          // y += velocityY
+STOR R1, R0
+
+// -----------------------------
+// 4) Wait for vsync
+// -----------------------------
+waitVsyncHigh2:
+MOVI 0x01, R2
+AND R15, R2
+CMPI 0, R2
+BEQ waitVsyncHigh2
+
+waitVsyncLow2:
+MOVI 0x01, R2
+AND R15, R2
+CMPI 0, R2
+BNE waitVsyncLow2
+
+BUC player_loop
+
+checkCollision:
+
+// -----------------------------
+// 1) Load player Y
+// -----------------------------
+MOVI 0x03, R0
+LSHI 14, R0          // player X/Y base address is 0x03 << 14
+ADDI 1, R0           // player Y is at +1
+LOAD R1, R0           // R1 = playerY
+ADDI 64, R1           // R1 = player bottom (playerY + 64)
+
+// -----------------------------
+// 2) Load first rectangle Y
+// -----------------------------
+MOVI 0x01, R2
+LSHI 15, R2           // rectangle base (first rect)
+ADDI 1, R2            // Y is 2nd word
+LOAD R3, R2           // R3 = rectY
+
+// -----------------------------
+// 3) Load first rectangle height
+// -----------------------------
+ADDI 2, R2            // size word (x packed y size)
+LOAD R4, R2
+LSHI 8, R4             // extract width high bits
+MOVI 0xFF, R5
+AND R5, R4             // mask to get height low byte
+ADD R3, R4             // R4 = rectY + rectHeight
+
+// -----------------------------
+// 4) Compare player bottom vs rectangle bottom
+// -----------------------------
+CMPI R1, R4
+BGT returnCollision
+
+// -----------------------------
+// 5) No collision
+// -----------------------------
+BUC returnNoCollision

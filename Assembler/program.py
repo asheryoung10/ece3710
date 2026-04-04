@@ -27,9 +27,24 @@ WAIT
 
 def load_program_source():
     if len(sys.argv) > 1:
-        return Path(sys.argv[1]).read_text()
+        path = Path(sys.argv[1])
+        return path.read_text(), path
+    return DEFAULT_PROGRAM_SOURCE, None
 
-    return DEFAULT_PROGRAM_SOURCE
 
+source, input_path = load_program_source()
+output = assembleProgram(source)
 
-print(assembleProgram(load_program_source()))
+if input_path is not None:
+    output_path = input_path.with_suffix(".bin")
+else:
+    output_path = Path("output.bin")
+
+# If assembleProgram returns bytes, use write_bytes
+# If it returns a string, use write_text
+if isinstance(output, bytes):
+    output_path.write_bytes(output)
+else:
+    output_path.write_text(output)
+
+print(f"Wrote output to {output_path}")
