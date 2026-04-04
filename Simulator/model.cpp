@@ -1,0 +1,405 @@
+#include "model.h"
+#include <algorithm>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <cstring>
+
+
+Model::Model(const std::string& filepath) {
+    memory = new uint16_t[1 << 16];
+    initialize();
+    initMemory(filepath);
+}
+
+Model::Model() {
+    memory = new uint16_t[1 << 16];
+    initialize();
+}
+
+void Model::setLeftButton(bool left) {
+    leftButton = left;
+}
+
+void Model::setRightButton(bool right) {
+    rightButton = right;
+}
+
+void Model::setJumpButton(bool jump) {
+    jumpButton = jump;
+}
+
+void Model::setResetButton(bool reset) {
+    resetButton = reset;
+    tick();
+}
+
+void Model::setVSync(bool vsyncVal) {
+    vsync = vsyncVal;
+}
+
+void Model::initMemory(const std::string& filepath) {
+    memset(memory, 0, (1 << 16) * sizeof(uint16_t));
+    initialize();
+    std::ifstream file(filepath);
+    if (!file) {
+        std::cerr << "Failed to open file: " << filepath << std::endl;
+        return;
+    }
+
+    std::string line;
+    size_t addr = 0; // use size_t to avoid overflow
+
+    while (std::getline(file, line)) {
+        if (addr >= (1 << 16)) break; // stop if memory full
+
+        // Remove whitespace
+        line.erase(std::remove_if(line.begin(), line.end(), ::isspace), line.end());
+
+        if (line.empty()) continue;
+
+        // Parse hex string into uint16_t
+        uint16_t value = 0;
+        std::stringstream ss(line);
+        ss >> std::hex >> value;
+
+        memory[addr++] = value;
+    }
+
+    std::cout << "Loaded " << addr << " words into memory." << std::endl;
+}
+
+Model::Model(const Model& other) {
+    memory = new uint16_t[1 << 16];
+    std::copy(other.memory, other.memory + (1 << 16), memory);
+    std::copy(std::begin(other.registers), std::end(other.registers), std::begin(registers));
+    programCounter = other.programCounter;
+    cFlag = other.cFlag;
+    lFlag = other.lFlag;
+    fFlag = other.fFlag;
+    nFlag = other.nFlag;
+    zFlag = other.zFlag;
+}
+
+Model& Model::operator=(const Model& other) {
+    if (this != &other) { // prevent self-assignment
+        std::copy(other.memory, other.memory + (1 << 16), memory);
+        std::copy(std::begin(other.registers), std::end(other.registers), std::begin(registers));
+        programCounter = other.programCounter;
+        cFlag = other.cFlag;
+        lFlag = other.lFlag;
+        fFlag = other.fFlag;
+        nFlag = other.nFlag;
+        zFlag = other.zFlag;
+    }
+    return *this;
+}
+Model::Rectangle Model::getRectangle(unsigned int index) {
+    Rectangle rectangle = {};
+    uint32_t rectangleOffset = (1<<15) + index*4;
+    rectangle.x = memory[rectangleOffset + 0];
+    rectangle.y = memory[rectangleOffset + 1];
+    rectangle.width  = (memory[rectangleOffset + 2] >> 8) & 0xFF;
+    rectangle.height = memory[rectangleOffset + 2] & 0xFF;
+    rectangle.color = memory[rectangleOffset + 3];
+    return rectangle;
+}
+uint16_t Model::getPlayerX() {
+    return memory[3 << 14];
+}
+uint16_t Model::getPlayerY() {
+    return memory[(3 << 14) + 1];
+}
+void Model::initialize() {
+    for(int i = 0; i < 16; i++ ) registers[i] = 0;
+    programCounter = 0;
+    cFlag = false;
+    lFlag = false;
+    fFlag = false;
+    nFlag = false;
+    zFlag = false;
+    leftButton = false;
+    rightButton = false;
+    jumpButton = false;
+    vsync = false;
+    resetButton = false;
+    for(int i = 0; i < 16; i++) {
+        uint16_t rectOffset = (1<<15) + i*4;
+        memory[rectOffset + 0] = i;
+        memory[rectOffset + 1] = i*32;
+        memory[rectOffset + 2] = 0x2020;
+        memory[rectOffset + 3] = i * 0x1111;
+    }
+}
+
+Model::~Model() {
+    delete[] memory;
+}
+bool Model::tick() {
+    if(resetButton) initialize();
+
+    // LSB is vsync, then right, left, jump buttons
+    registers[15] = (jumpButton << 3) | (leftButton << 2) | (rightButton << 1) | vsync;
+
+    uint16_t instruction = memory[programCounter];
+    uint8_t opcodeUpper = (instruction >> 12);
+    uint8_t opcodeCombined = ((instruction >> 12) << 4) | ((instruction >> 4) & 0x0F);
+    uint8_t immediate = ((instruction << 8) >> 8);
+
+    uint8_t rd = (instruction >> 8) & 0x0F;
+    uint8_t rs = (instruction) & 0x0F;
+    uint16_t A = registers[rs];
+    uint16_t B = registers[rd];
+
+    int16_t sA = static_cast<int16_t>(A);
+    int16_t sB = static_cast<int16_t>(B);
+    int shift_amt;
+
+    switch(opcodeCombined) {
+    case NOP:
+        return false;
+
+    case AND:
+        registers[rd] = B & A;
+        programCounter++;
+        break;
+    case OR:
+        registers[rd] = B | A;
+        programCounter++;
+        break;
+    case XOR:
+        registers[rd] = B ^ A;
+        programCounter++;
+        break;
+    case NOT:
+        registers[rd] = ~A;
+        programCounter++;
+        break;
+
+    case ADD: {
+        int16_t res = sB + sA;
+        registers[rd] = uint16_t(res);
+        zFlag = (res == 0);
+        fFlag = ((sB >= 0 && sA >= 0 && res < 0) || (sB < 0 && sA < 0 && res >= 0));
+        nFlag = sB < sA;
+        cFlag = false;
+        programCounter++;
+        break;
+    }
+
+    case ADDU: {
+        uint32_t res = uint32_t(B) + uint32_t(A);
+        registers[rd] = uint16_t(res);
+        cFlag = res > 0xFFFF;
+        lFlag = B < A;
+        fFlag = false;
+        zFlag = (registers[rd] == 0);
+        nFlag = false;
+        programCounter++;
+        break;
+    }
+
+    case ADDC: {
+        uint32_t res = (cFlag ? 1 : 0) + sB + sA;
+        registers[rd] = uint16_t(res);
+        fFlag = ((sB >= 0 && sA >= 0 && registers[rd] < 0) || (sB < 0 && sA < 0 && registers[rd] >= 0));
+        programCounter++;
+        break;
+    }
+
+    case SUB: {
+        int16_t res = sB - sA;
+        registers[rd] = uint16_t(res);
+        zFlag = (res == 0);
+        fFlag = ((sB >= 0 && sA < 0 && res < 0) || (sB < 0 && sA >= 0 && res >= 0));
+        nFlag = sB < sA;
+        cFlag = false;
+        programCounter++;
+        break;
+    }
+
+    case CMP: {
+        zFlag = (sB == sA);
+        lFlag = B < A;
+        nFlag = sB < sA;
+        programCounter++;
+        break;
+    }
+
+    case LSH: {
+        shift_amt = sA;
+        registers[rd] = (shift_amt >= 0) ? (B << shift_amt) : (B >> -shift_amt);
+        programCounter++;
+        break;
+    }
+
+    case ARSH: {
+        shift_amt = sA;
+        registers[rd] = (shift_amt >= 0) ? (uint16_t(sB) >> shift_amt) : (uint16_t(sB) << -shift_amt);
+        programCounter++;
+        break;
+    }
+
+    case LOAD:
+        registers[rd] = memory[A];
+        programCounter++;
+        break;
+    case STOR:
+        memory[A] = registers[rd];
+        programCounter++;
+        break;
+    case MOV:
+        registers[rd] = A;
+        programCounter++;
+        break;
+    case JCOND: {
+        // Lower 4 bits of instruction = condition
+        bool takeBranch = false;
+
+        switch(rd) {
+        case 0b0000: takeBranch = zFlag; break;          // EQ
+        case 0b0001: takeBranch = !zFlag; break;         // NE
+        case 0b0010: takeBranch = cFlag; break;         // CS
+        case 0b0011: takeBranch = !cFlag; break;        // CC
+        case 0b0100: takeBranch = !lFlag && !zFlag; break; // HI
+        case 0b0101: takeBranch = lFlag || zFlag; break;   // LS
+        case 0b0110: takeBranch = !lFlag && !zFlag; break; // GT (signed)
+        case 0b0111: takeBranch = lFlag || zFlag; break;   // LE (signed)
+        case 0b1000: takeBranch = fFlag; break;         // FS (overflow)
+        case 0b1001: takeBranch = !fFlag; break;        // FC
+        case 0b1010: takeBranch = lFlag; break;         // LO
+        case 0b1011: takeBranch = !lFlag; break;        // HS
+        case 0b1100: takeBranch = nFlag; break;         // LT
+        case 0b1101: takeBranch = !nFlag; break;        // GE
+        case 0b1110: takeBranch = true; break;          // UC (unconditional)
+        default: takeBranch = false; break;
+        }
+
+        if(takeBranch)
+            programCounter = A;
+        else
+            programCounter++;
+
+        break;
+    }
+    default: {
+        A = immediate;
+        int16_t sA = static_cast<int16_t>(immediate);
+        switch(opcodeUpper) {
+        case ADDI_UPPER: {
+            int16_t res = sB + sA;
+            registers[rd] = uint16_t(res);
+            zFlag = (res == 0);
+            fFlag = ((sB >= 0 && sA >= 0 && res < 0) || (sB < 0 && sA < 0 && res >= 0));
+            nFlag = sB < sA;
+            cFlag = false;
+            programCounter++;
+            break;
+        }
+        case ADDUI_UPPER: {
+            uint32_t res = uint32_t(B) + uint32_t(A);
+            registers[rd] = uint16_t(res);
+            cFlag = res > 0xFFFF;
+            lFlag = B < A;
+            fFlag = false;
+            zFlag = (registers[rd] == 0);
+            nFlag = false;
+            programCounter++;
+            break;
+        }
+        case ADDCI_UPPER: {
+            uint32_t res = (cFlag ? 1 : 0) + sB + sA;
+            registers[rd] = uint16_t(res);
+            fFlag = ((sB >= 0 && sA >= 0 && registers[rd] < 0) || (sB < 0 && sA < 0 && registers[rd] >= 0));
+            programCounter++;
+            break;
+        }
+        case SUBI_UPPER: {
+            int16_t res = sB - sA;
+            registers[rd] = uint16_t(res);
+            zFlag = (res == 0);
+            fFlag = ((sB >= 0 && sA < 0 && res < 0) || (sB < 0 && sA >= 0 && res >= 0));
+            nFlag = sB < sA;
+            cFlag = false;
+            programCounter++;
+            break;
+        }
+        case CMPI_UPPER: {
+            zFlag = (sB == sA);
+            lFlag = B < A;
+            nFlag = sB < sA;
+            programCounter++;
+            break;
+        }
+        case MOVI_UPPER:
+            registers[rd] = A;
+            programCounter++;
+            break;
+        case BCOND_UPPER: {
+            // Lower 4 bits of instruction = condition
+            bool takeBranch = false;
+
+            switch(rd) {
+            case 0b0000: takeBranch = zFlag; break;          // EQ
+            case 0b0001: takeBranch = !zFlag; break;         // NE
+            case 0b0010: takeBranch = cFlag; break;         // CS
+            case 0b0011: takeBranch = !cFlag; break;        // CC
+            case 0b0100: takeBranch = !lFlag && !zFlag; break; // HI
+            case 0b0101: takeBranch = lFlag || zFlag; break;   // LS
+            case 0b0110: takeBranch = !lFlag && !zFlag; break; // GT (signed)
+            case 0b0111: takeBranch = lFlag || zFlag; break;   // LE (signed)
+            case 0b1000: takeBranch = fFlag; break;         // FS
+            case 0b1001: takeBranch = !fFlag; break;        // FC
+            case 0b1010: takeBranch = lFlag; break;         // LO
+            case 0b1011: takeBranch = !lFlag; break;        // HS
+            case 0b1100: takeBranch = nFlag; break;         // LT
+            case 0b1101: takeBranch = !nFlag; break;        // GE
+            case 0b1110: takeBranch = true; break;          // UC (unconditional)
+            default: takeBranch = false; break;
+            }
+
+            if(takeBranch) {
+                int16_t branchOffset = static_cast<int8_t>(immediate); // cast preserves sign
+                programCounter = programCounter + branchOffset;
+            }else
+                programCounter++;
+
+            break;
+        }
+
+        case LSH_RSH_ARSH_UPPER: {
+            switch(opcodeCombined & 0b1110) {
+            case 0b0000:
+                registers[rd] = B << (A & 0xF);
+                break;
+            case 0b1000:
+                registers[rd] = B >> (A & 0xF);
+                break;
+            case 0b1010:
+                registers[rd] = B >> (A & 0xF);
+                break;
+            case 0b0010:
+                registers[rd] = uint16_t(int16_t(B) >> (A & 0xF));
+                break;
+            default:
+                std::cout << "Unknown shift opcode" << std::endl;
+                return false;
+            }
+            programCounter++;
+            break;
+        }
+
+        default:
+            std::cout << "Unknown opcode: 0x"
+                      << std::hex << static_cast<int>(opcodeCombined) << std::endl;
+            std::cout << "Instruction: 0x"
+                      << std::hex << static_cast<int>(instruction) << std::endl;
+            std::cout << "Program Counter: 0x"
+                      << programCounter << std::endl;
+            return false;
+        }
+        break;
+    }
+    }
+    return true;
+}
