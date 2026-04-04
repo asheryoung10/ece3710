@@ -81,7 +81,7 @@ localparam MOVE_STATE = 3'd7;
     task print_cpu_state;
         begin
             $display(
-    "Time=%0t | IR=%h | DecInst=%h| DecRsrc=%h | DecRdest=%h | DecodedImmediate=%h | DecodedOpcode=%h | PC=%h | PSR=%h | ALU select Imm=%h| ALURes=%h | ALUFlags=%b | CU_State=%0d | CU_Next=%0d | ALUOpcode=%0d | ALU_A=%h | ALU_B=%h | RegFile_WriteEn=%b | RegFile_WriteAddr=%0d | RegFile_WriteData=%h | RegFile_ReadA=%h | RegFile_ReadB=%h | RegFileSel=%h | PSR=%h | NextPC: %h | WriteEnableMemory: %h | MemoryReadWriteAddress: %h | MemoryContents: %h| WriteContents: %h | firstRectX: %h | contentsShared: %h | contentsSharedCPU: %h | contentsSharedRect: %h | contentsSharedPlayer: %h| isRectAccess: %h| isPlayerAccess: %h | memorySelReadWrite: %h",
+    "Time=%0t | IR=%h | DecInst=%h| DecRsrc=%h | DecRdest=%h | DecodedImmediate=%h | DecodedOpcode=%h | PC=%h | PSR=%b | ALU select Imm=%h| ALURes=%h | ALUFlags=%b | CU_State=%0d | CU_Next=%0d | ALUOpcode=%0d | ALU_A=%h | ALU_B=%h | RegFile_WriteEn=%b | RegFile_WriteAddr=%0d | RegFile_WriteData=%h | RegFile_ReadA=%h | RegFile_ReadB=%h | RegFileSel=%h | PSR=%h | NextPC: %h | WriteEnableMemory: %h | MemoryReadWriteAddress: %h | MemoryContents: %h| WriteContents: %h | firstRectX: %h | contentsShared: %h | contentsSharedCPU: %h | contentsSharedRect: %h | contentsSharedPlayer: %h| isRectAccess: %h| isPlayerAccess: %h | memorySelReadWrite: %h",
     $time,
     uut.cpu_instance.instructionRegisterContentsOutput,
 	 uut.cpu_instance.instruction_decoder_instance.instruction,
@@ -222,7 +222,7 @@ integer i = 0;
 		  
         while (running != 0) begin
 				i = i + 1;
-				if(i == 100) running = 0;
+				if(i == 120) running = 0;
 		  
 				if(controlUnitNextState == NOTHING_STATE) running = 0;
 				if(controlUnitState == NOTHING_STATE) running = 0;
