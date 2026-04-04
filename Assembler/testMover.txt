@@ -1,56 +1,81 @@
 loop:
 
-// -------- RIGHT BUTTON --------
-MOVI 0x02, R0        // mask for right (bit 1)
+// Jump if right button pressed.
+MOVI 0x02, R0 
 AND R15, R0
 CMPI 0, R0
-BNE doRight          // if pressed → move right
+BNE doRight 
 
 
-// -------- LEFT BUTTON --------
-MOVI 0x04, R0        // mask for left (bit 2)
+// Jump if left button pressed.
+MOVI 0x04, R0
 AND R15, R0
 CMPI 0, R0
-BNE doLeft           // if pressed → go set to 0
+BNE doLeft
 
+// Jump if jump button pressed.
+MOVI 0x08, R0
+AND R15, R0
+CMPI 0, R0
+BNE doJump
+
+// Keep polling input if nothing pressed.
 BUC loop
 
 
-// -------- LEFT: set position = 0 --------
 doLeft:
 MOVI 0x01, R0
-LSHI 15, R0          // R0 = rect base addr
-LOAD R1, R0          // get current position
-SUBI 0x1, R1        // move left
+LSHI 15, R0
+MOVI 0x00, R1
 STOR R1, R0
-
+LOAD R1, R0
+MOVI 0x03, R0
+LSHI 15, R0
+MOVI 0x00, R1
+STOR R1, R0
+LOAD R1, R0
+MOV R1, R3
 BUC waitVsyncHigh
 
-// -------- RIGHT: increment position --------
 doRight:
 MOVI 0x01, R0
-LSHI 15, R0          // R0 = rect base addr
-
-LOAD R1, R0          // get current position
-ADDI 0x1, R1        // move right
+LSHI 15, R0
+MOVI 0x0f, R1
 STOR R1, R0
-
+LOAD R1, R0
+MOV R1, R3
+MOVI 0x03, R0
+LSHI 15, R0
+MOVI 0x0f, R1
+STOR R1, R0
 BUC waitVsyncHigh
 
+doJump:
+MOVI 0x01, R0
+LSHI 15, R0
+LOAD R1, R0
+ADDI 0x1, R1
+STOR R1, R0
+MOVI 0x03, R0
+LSHI 15, R0
+MOVI 0x03, R3
+LOAD R1, R0
+ADDI 0x1, R1
+STOR R1, R0
+BUC waitVsyncHigh
 
-// -------- WAIT FOR VSYNC HIGH --------
+// Wait for vsync to go high.
 waitVsyncHigh:
-MOVI 0x01, R2        // mask for vsync (bit 0)
+MOVI 0x01, R2
 AND R15, R2
 CMPI 0, R2
-BEQ waitVsyncHigh    // stay until vsync == 1
+BEQ waitVsyncHigh
 
-// -------- WAIT FOR VSYNC LOW --------
+// Wait for vsync to go low.
 waitVsyncLow:
 MOVI 0x01, R2
 AND R15, R2
 CMPI 0, R2
-BNE waitVsyncLow     // stay until vsync == 0
-ADDI 0x1, R3
+BNE waitVsyncLow 
 
 BUC loop
