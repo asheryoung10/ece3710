@@ -17,6 +17,7 @@
 # 	vdel -lib rtl_work -all
 # }
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is asher@DESKTOP-JRGJE77.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is u1462567@dsl2.
 # vlib rtl_work
 # ** Warning: (vlib-34) Library already exists at "rtl_work".
 # Errors: 0, Warnings: 1
@@ -26,29 +27,49 @@
 # Copying /usr/local/quartus/questa_fse/linux_x86_64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/seven_seg_decoder.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:51:48 on Apr 03,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/seven_seg_decoder.v 
+# -- Compiling module seven_seg_decoder
+# 
+# Top level modules:
+# 	seven_seg_decoder
+# End time: 18:51:48 on Apr 03,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:51:48 on Apr 03,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v 
+# -- Compiling module sixteen_bit_seven_seg
+# 
+# Top level modules:
+# 	sixteen_bit_seven_seg
+# End time: 18:51:48 on Apr 03,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:40 on Mar 30,2026
+# Start time: 18:51:48 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v 
 # -- Compiling module audio_unit
 # 
 # Top level modules:
 # 	audio_unit
-# End time: 19:35:40 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:48 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:40 on Mar 30,2026
+# Start time: 18:51:48 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v 
 # -- Compiling module audio_configurator_select
 # 
 # Top level modules:
 # 	audio_configurator_select
-# End time: 19:35:40 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:49 on Apr 03,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:40 on Mar 30,2026
+# Start time: 18:51:49 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v 
 # -- Compiling module audio_output
 # -- Compiling module note_generator
@@ -56,404 +77,404 @@
 # 
 # Top level modules:
 # 	audio_output
-# End time: 19:35:40 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:49 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:40 on Mar 30,2026
+# Start time: 18:51:49 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v 
 # -- Compiling module memory
 # 
 # Top level modules:
 # 	memory
-# End time: 19:35:40 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:49 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:40 on Mar 30,2026
+# Start time: 18:51:49 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v 
 # -- Compiling module sharedMemory
 # 
 # Top level modules:
 # 	sharedMemory
-# End time: 19:35:40 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:49 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:40 on Mar 30,2026
+# Start time: 18:51:49 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v 
 # -- Compiling module playerMemory
 # 
 # Top level modules:
 # 	playerMemory
-# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:01
+# End time: 18:51:49 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/tileMemory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:41 on Mar 30,2026
+# Start time: 18:51:49 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/tileMemory.v 
 # -- Compiling module tileMemory
 # 
 # Top level modules:
 # 	tileMemory
-# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:49 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register_file.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:41 on Mar 30,2026
+# Start time: 18:51:49 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register_file.v 
 # -- Compiling module register_file
 # 
 # Top level modules:
 # 	register_file
-# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:49 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:41 on Mar 30,2026
+# Start time: 18:51:49 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register.v 
 # -- Compiling module register
 # 
 # Top level modules:
 # 	register
-# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:50 on Apr 03,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux4.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:41 on Mar 30,2026
+# Start time: 18:51:50 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux4.v 
 # -- Compiling module mux4
 # 
 # Top level modules:
 # 	mux4
-# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:50 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux2.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:41 on Mar 30,2026
+# Start time: 18:51:50 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux2.v 
 # -- Compiling module mux2
 # 
 # Top level modules:
 # 	mux2
-# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:50 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:41 on Mar 30,2026
+# Start time: 18:51:50 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v 
 # -- Compiling module cpu
 # 
 # Top level modules:
 # 	cpu
-# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:50 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:41 on Mar 30,2026
+# Start time: 18:51:50 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v 
 # -- Compiling module i2c_controller
 # 
 # Top level modules:
 # 	i2c_controller
-# End time: 19:35:41 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:50 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:41 on Mar 30,2026
+# Start time: 18:51:50 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v 
 # -- Compiling module vga
 # 
 # Top level modules:
 # 	vga
-# End time: 19:35:42 on Mar 30,2026, Elapsed time: 0:00:01
+# End time: 18:51:50 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:42 on Mar 30,2026
+# Start time: 18:51:50 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v 
 # -- Compiling module doodle_jump
 # 
 # Top level modules:
 # 	doodle_jump
-# End time: 19:35:42 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:50 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:42 on Mar 30,2026
+# Start time: 18:51:50 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v 
 # -- Compiling module instruction_decoder
 # 
 # Top level modules:
 # 	instruction_decoder
-# End time: 19:35:42 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:51 on Apr 03,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:42 on Mar 30,2026
+# Start time: 18:51:51 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v 
 # -- Compiling module control_unit
 # 
 # Top level modules:
 # 	control_unit
-# End time: 19:35:42 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:51 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:42 on Mar 30,2026
+# Start time: 18:51:51 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 19:35:42 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:51 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:42 on Mar 30,2026
+# Start time: 18:51:51 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v 
 # -- Compiling module glyph_rom
 # 
 # Top level modules:
 # 	glyph_rom
-# End time: 19:35:42 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:51 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:42 on Mar 30,2026
+# Start time: 18:51:51 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 19:35:43 on Mar 30,2026, Elapsed time: 0:00:01
+# End time: 18:51:51 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:43 on Mar 30,2026
+# Start time: 18:51:51 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v 
 # -- Compiling module control_unit
 # 
 # Top level modules:
 # 	control_unit
-# End time: 19:35:43 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:51 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:43 on Mar 30,2026
+# Start time: 18:51:51 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v 
 # -- Compiling module cpu
 # 
 # Top level modules:
 # 	cpu
-# End time: 19:35:43 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:52 on Apr 03,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:43 on Mar 30,2026
+# Start time: 18:51:52 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v 
 # -- Compiling module instruction_decoder
 # 
 # Top level modules:
 # 	instruction_decoder
-# End time: 19:35:43 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:52 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:43 on Mar 30,2026
+# Start time: 18:51:52 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v 
 # -- Compiling module mux2
 # 
 # Top level modules:
 # 	mux2
-# End time: 19:35:43 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:52 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:43 on Mar 30,2026
+# Start time: 18:51:52 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v 
 # -- Compiling module mux4
 # 
 # Top level modules:
 # 	mux4
-# End time: 19:35:43 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:52 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:43 on Mar 30,2026
+# Start time: 18:51:52 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v 
 # -- Compiling module register
 # 
 # Top level modules:
 # 	register
-# End time: 19:35:44 on Mar 30,2026, Elapsed time: 0:00:01
+# End time: 18:51:52 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:44 on Mar 30,2026
+# Start time: 18:51:52 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v 
 # -- Compiling module register_file
 # 
 # Top level modules:
 # 	register_file
-# End time: 19:35:44 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:52 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:44 on Mar 30,2026
+# Start time: 18:51:52 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v 
 # -- Compiling module top
 # 
 # Top level modules:
 # 	top
-# End time: 19:35:44 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:52 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:44 on Mar 30,2026
+# Start time: 18:51:52 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v 
 # -- Compiling module block_mover
 # 
 # Top level modules:
 # 	block_mover
-# End time: 19:35:44 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:52 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:44 on Mar 30,2026
+# Start time: 18:51:53 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v 
 # -- Compiling module clk_divider
 # 
 # Top level modules:
 # 	clk_divider
-# End time: 19:35:44 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:53 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:44 on Mar 30,2026
+# Start time: 18:51:53 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v 
 # -- Compiling module hard_coded_bitgen
 # 
 # Top level modules:
 # 	hard_coded_bitgen
-# End time: 19:35:44 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:53 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:44 on Mar 30,2026
+# Start time: 18:51:53 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v 
 # -- Compiling module vga
 # 
 # Top level modules:
 # 	vga
-# End time: 19:35:44 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:53 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:44 on Mar 30,2026
+# Start time: 18:51:53 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v 
 # -- Compiling module playerMemory
 # 
 # Top level modules:
 # 	playerMemory
-# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:01
+# End time: 18:51:53 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:45 on Mar 30,2026
+# Start time: 18:51:53 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v 
 # -- Compiling module tb_hard_coded_vga
 # 
 # Top level modules:
 # 	tb_hard_coded_vga
-# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:53 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/vga {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:45 on Mar 30,2026
+# Start time: 18:51:53 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v 
 # -- Compiling module tileMemory
 # 
 # Top level modules:
 # 	tileMemory
-# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:53 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:45 on Mar 30,2026
+# Start time: 18:51:54 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v 
 # -- Compiling module doodle_jump
 # 
 # Top level modules:
 # 	doodle_jump
-# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:54 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:45 on Mar 30,2026
+# Start time: 18:51:54 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v 
 # -- Compiling module tb_i2c_controller
 # 
 # Top level modules:
 # 	tb_i2c_controller
-# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:54 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:45 on Mar 30,2026
+# Start time: 18:51:54 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v 
 # -- Compiling module i2c_controller
 # 
 # Top level modules:
 # 	i2c_controller
-# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:54 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:45 on Mar 30,2026
+# Start time: 18:51:54 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v 
 # -- Compiling module tb_doodle
 # 
 # Top level modules:
 # 	tb_doodle
-# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:54 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump/cpu {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/tb_cpu.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:45 on Mar 30,2026
+# Start time: 18:51:54 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/tb_cpu.v 
 # -- Compiling module tb_cpu
 # 
 # Top level modules:
 # 	tb_cpu
-# End time: 19:35:45 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:54 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:45 on Mar 30,2026
+# Start time: 18:51:54 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v 
 # -- Compiling module sharedMemory
 # 
 # Top level modules:
 # 	sharedMemory
-# End time: 19:35:46 on Mar 30,2026, Elapsed time: 0:00:01
+# End time: 18:51:54 on Apr 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Quartus\ Project/../Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:35:46 on Mar 30,2026
+# Start time: 18:51:54 on Apr 03,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump" /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v 
 # -- Compiling module memory
 # 
 # Top level modules:
 # 	memory
-# End time: 19:35:46 on Mar 30,2026, Elapsed time: 0:00:00
+# End time: 18:51:55 on Apr 03,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_doodle
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_doodle 
-# Start time: 19:35:46 on Mar 30,2026
-# ** Note: (vsim-3812) Design is being optimized...
+# Start time: 18:51:55 on Apr 03,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Warning: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v(34): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 31, found 10.
 # ** Warning: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v(34): (vopt-2718) [TFMPC] - Missing connection for port 'vga_blue'.
@@ -477,11 +498,7 @@
 # ** Warning: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v(34): (vopt-2718) [TFMPC] - Missing connection for port 'hex1'.
 # ** Warning: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v(34): (vopt-2718) [TFMPC] - Missing connection for port 'hex0'.
 # ** Warning: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v(34): (vopt-2718) [TFMPC] - Missing connection for port 'leds'.
-# ** Note: (vopt-143) Recognized 2 FSMs in module "i2c_controller(fast)".
-# ** Note: (vopt-143) Recognized 2 FSMs in module "audio_configurator_select(fast)".
-# ** Warning: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v(42): (vopt-2685) [TFMPC] - Too few port connections for 'dac_driver'.  Expected 7, found 6.
-# ** Warning: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v(42): (vopt-2718) [TFMPC] - Missing connection for port 'drum_toggle'.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=25.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=23.
 # Loading work.tb_doodle(fast)
 # Loading work.doodle_jump(fast)
 # Loading work.vga(fast)
@@ -505,20 +522,18 @@
 # Loading work.audio_output(fast)
 # Loading work.note_generator(fast)
 # Loading work.drum_generator(fast)
+# Loading work.sixteen_bit_seven_seg(fast)
+# Loading work.seven_seg_decoder(fast)
 # ** Warning: (vsim-3015) [PCDPC] - Port size (10) does not match connection size (16) for port 'playerX'. The port definition is at: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v(6).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/vga_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v Line: 57
+#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/vga_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v Line: 55
 # ** Warning: (vsim-3015) [PCDPC] - Port size (10) does not match connection size (16) for port 'playerY'. The port definition is at: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v(7).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/vga_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v Line: 57
+#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/vga_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v Line: 55
 # ** Warning: (vsim-3015) [PCDPC] - Port size (14) does not match connection size (32) for port 'addr'. The port definition is at: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v(19).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/vga_instance/playerMem_inst/glyph_rom_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v Line: 24
 # ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (24) for port 'q'. The port definition is at: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v(20).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/vga_instance/playerMem_inst/glyph_rom_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v Line: 24
-# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (10) for port 'R3'. The port definition is at: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v(28).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/cpu_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v Line: 84
 # ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (5) for port 'writeData'. The port definition is at: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/cpu_instance/program_state_register File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v Line: 149
-# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (1) for port 'contents'. The port definition is at: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v(12).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/memory_instance/cpu_memory_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v Line: 42
+#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/cpu_instance/program_state_register File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v Line: 151
 # ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (8) for port 'pitch'. The port definition is at: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v(5).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/audio_unit_instance File: /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v Line: 132
 # 
@@ -528,9 +543,6 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Warning: (vsim-7) Failed to open readmem file "cpu/init_mem.text" in read mode.
-# No such file or directory. (errno = ENOENT)    : /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v(18)
-#    Time: 0 ps  Iteration: 0  Instance: /tb_doodle/uut/memory_instance/cpu_memory_instance
 # 
 # 
 # 
@@ -555,60 +567,2594 @@
 # registerFile[15] = 0000
 # 
 # Memory:
-# memory[0] = xxxx
-# memory[1] = xxxx
-# memory[2] = xxxx
-# memory[3] = xxxx
-# memory[4] = xxxx
-# memory[5] = xxxx
-# memory[6] = xxxx
-# memory[7] = xxxx
-# memory[8] = xxxx
-# memory[9] = xxxx
-# memory[10] = xxxx
-# memory[11] = xxxx
-# memory[12] = xxxx
-# memory[13] = xxxx
-# memory[14] = xxxx
-# memory[15] = xxxx
-# memory[16] = xxxx
-# memory[17] = xxxx
-# memory[18] = xxxx
-# memory[19] = xxxx
-# memory[20] = xxxx
-# memory[21] = xxxx
-# memory[22] = xxxx
-# memory[23] = xxxx
-# memory[24] = xxxx
-# memory[25] = xxxx
-# memory[26] = xxxx
-# memory[27] = xxxx
-# memory[28] = xxxx
-# memory[29] = xxxx
-# memory[30] = xxxx
-# memory[31] = xxxx
-# memory[32] = xxxx
-# memory[33] = xxxx
-# memory[34] = xxxx
-# memory[35] = xxxx
-# memory[36] = xxxx
-# memory[37] = xxxx
-# memory[38] = xxxx
-# memory[39] = xxxx
-# memory[40] = xxxx
-# memory[41] = xxxx
-# memory[42] = xxxx
-# memory[43] = xxxx
-# memory[44] = xxxx
-# memory[45] = xxxx
-# memory[46] = xxxx
-# memory[47] = xxxx
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
 # 
 # Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
-# Time=10000 | IR=0000 | DecInst=0000| DecRsrc=0 | DecRdest=0 | DecodedImmediate=0000 | DecodedOpcode=00 | PC=0000 | PSR=0000 | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=0 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=0000 | NextPC: 0001 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0000 | MemoryContents: 000X| WriteContents: 0000 | SharedMemoryContents: &h    X
+# Time=10000 | IR=0000 | DecInst=0000| DecRsrc=0 | DecRdest=0 | DecodedImmediate=0000 | DecodedOpcode=00 | PC=0000 | PSR=0000 | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=0 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=0000 | NextPC: 0001 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0000 | MemoryContents: d002| WriteContents: 0000 | firstRectX: 0000 | contentsShared: d002 | contentsSharedCPU: d002 | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=20000 | IR=0000 | DecInst=0000| DecRsrc=0 | DecRdest=0 | DecodedImmediate=0000 | DecodedOpcode=00 | PC=0000 | PSR=0000 | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=0 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=0000 | NextPC: 0001 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0000 | MemoryContents: d002| WriteContents: 0000 | firstRectX: 0000 | contentsShared: d002 | contentsSharedCPU: d002 | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=30000 | IR=d002 | DecInst=d002| DecRsrc=2 | DecRdest=0 | DecodedImmediate=0002 | DecodedOpcode=d0 | PC=0000 | PSR=0000 | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=208 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=0 | RegFile_WriteData=0002 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=2 | PSR=0000 | NextPC: 0001 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0000 | MemoryContents: d002| WriteContents: 0000 | firstRectX: 0000 | contentsShared: d002 | contentsSharedCPU: d002 | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 0002
+# registerFile[1] = 0000
+# registerFile[2] = 0000
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=40000 | IR=d002 | DecInst=d002| DecRsrc=2 | DecRdest=0 | DecodedImmediate=0002 | DecodedOpcode=d0 | PC=0001 | PSR=0000 | ALU select Imm=0| ALURes=0002 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=208 | ALU_A=0000 | ALU_B=0002 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0002 | RegFile_ReadA=0000 | RegFile_ReadB=0002 | RegFileSel=0 | PSR=0000 | NextPC: 0002 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0001 | MemoryContents: d002| WriteContents: 0002 | firstRectX: 0000 | contentsShared: d002 | contentsSharedCPU: d002 | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=50000 | IR=d002 | DecInst=d002| DecRsrc=2 | DecRdest=0 | DecodedImmediate=0002 | DecodedOpcode=d0 | PC=0001 | PSR=0000 | ALU select Imm=0| ALURes=0002 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=208 | ALU_A=0000 | ALU_B=0002 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0002 | RegFile_ReadA=0000 | RegFile_ReadB=0002 | RegFileSel=0 | PSR=0000 | NextPC: 0002 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0001 | MemoryContents: 001f| WriteContents: 0002 | firstRectX: 0000 | contentsShared: 001f | contentsSharedCPU: 001f | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=60000 | IR=001f | DecInst=001f| DecRsrc=f | DecRdest=0 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0001 | PSR=0000 | ALU select Imm=0| ALURes=0002 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=1 | ALU_A=000e | ALU_B=0002 | RegFile_WriteEn=1 | RegFile_WriteAddr=0 | RegFile_WriteData=0002 | RegFile_ReadA=000e | RegFile_ReadB=0002 | RegFileSel=0 | PSR=0000 | NextPC: 0002 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0001 | MemoryContents: 001f| WriteContents: 0002 | firstRectX: 0000 | contentsShared: 001f | contentsSharedCPU: 001f | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 0002
+# registerFile[1] = 0000
+# registerFile[2] = 0000
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=70000 | IR=001f | DecInst=001f| DecRsrc=f | DecRdest=0 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0002 | PSR=zzXX | ALU select Imm=0| ALURes=0002 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=1 | ALU_A=000e | ALU_B=0002 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0002 | RegFile_ReadA=000e | RegFile_ReadB=0002 | RegFileSel=0 | PSR=zzXX | NextPC: 0003 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0002 | MemoryContents: 001f| WriteContents: 0002 | firstRectX: 0000 | contentsShared: 001f | contentsSharedCPU: 001f | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=80000 | IR=001f | DecInst=001f| DecRsrc=f | DecRdest=0 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0002 | PSR=zzXX | ALU select Imm=0| ALURes=0002 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=1 | ALU_A=000e | ALU_B=0002 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0002 | RegFile_ReadA=000e | RegFile_ReadB=0002 | RegFileSel=0 | PSR=zzXX | NextPC: 0003 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0002 | MemoryContents: b000| WriteContents: 0002 | firstRectX: 0000 | contentsShared: b000 | contentsSharedCPU: b000 | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=90000 | IR=b000 | DecInst=b000| DecRsrc=0 | DecRdest=0 | DecodedImmediate=0000 | DecodedOpcode=b0 | PC=0002 | PSR=zzXX | ALU select Imm=1| ALURes=0000 | ALUFlags=x0x00 | CU_State=3 | CU_Next=1 | ALUOpcode=176 | ALU_A=0000 | ALU_B=0002 | RegFile_WriteEn=1 | RegFile_WriteAddr=0 | RegFile_WriteData=0000 | RegFile_ReadA=0002 | RegFile_ReadB=0002 | RegFileSel=0 | PSR=zzXX | NextPC: 0003 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0002 | MemoryContents: b000| WriteContents: 0002 | firstRectX: 0000 | contentsShared: b000 | contentsSharedCPU: b000 | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 0000
+# registerFile[1] = 0000
+# registerFile[2] = 0000
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=100000 | IR=b000 | DecInst=b000| DecRsrc=0 | DecRdest=0 | DecodedImmediate=0000 | DecodedOpcode=b0 | PC=0003 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=x0x10 | CU_State=1 | CU_Next=2 | ALUOpcode=176 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0004 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0003 | MemoryContents: b000| WriteContents: 0000 | firstRectX: 0000 | contentsShared: b000 | contentsSharedCPU: b000 | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=110000 | IR=b000 | DecInst=b000| DecRsrc=0 | DecRdest=0 | DecodedImmediate=0000 | DecodedOpcode=b0 | PC=0003 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=x0x10 | CU_State=2 | CU_Next=3 | ALUOpcode=176 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0004 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0003 | MemoryContents: c116| WriteContents: 0000 | firstRectX: 0000 | contentsShared: c116 | contentsSharedCPU: c116 | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=120000 | IR=c116 | DecInst=c116| DecRsrc=6 | DecRdest=1 | DecodedImmediate=0016 | DecodedOpcode=c1 | PC=0003 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=193 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0019 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0003 | MemoryContents: c116| WriteContents: 0000 | firstRectX: 0000 | contentsShared: c116 | contentsSharedCPU: c116 | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 0000
+# registerFile[1] = 0000
+# registerFile[2] = 0000
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=130000 | IR=c116 | DecInst=c116| DecRsrc=6 | DecRdest=1 | DecodedImmediate=0016 | DecodedOpcode=c1 | PC=0019 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=193 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 002f | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0019 | MemoryContents: c116| WriteContents: 0000 | firstRectX: 0000 | contentsShared: c116 | contentsSharedCPU: c116 | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=140000 | IR=c116 | DecInst=c116| DecRsrc=6 | DecRdest=1 | DecodedImmediate=0016 | DecodedOpcode=c1 | PC=0019 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=193 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 002f | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0019 | MemoryContents: d001| WriteContents: 0000 | firstRectX: 0000 | contentsShared: d001 | contentsSharedCPU: d001 | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=150000 | IR=d001 | DecInst=d001| DecRsrc=1 | DecRdest=0 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0019 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=208 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=0 | RegFile_WriteData=0001 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=2 | PSR=zzXX | NextPC: 001a | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0019 | MemoryContents: d001| WriteContents: 0000 | firstRectX: 0000 | contentsShared: d001 | contentsSharedCPU: d001 | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 0001
+# registerFile[1] = 0000
+# registerFile[2] = 0000
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=160000 | IR=d001 | DecInst=d001| DecRsrc=1 | DecRdest=0 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=001a | PSR=zzXX | ALU select Imm=0| ALURes=0001 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=208 | ALU_A=0000 | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0001 | RegFile_ReadA=0000 | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 001b | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001a | MemoryContents: d001| WriteContents: 0001 | firstRectX: 0000 | contentsShared: d001 | contentsSharedCPU: d001 | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=170000 | IR=d001 | DecInst=d001| DecRsrc=1 | DecRdest=0 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=001a | PSR=zzXX | ALU select Imm=0| ALURes=0001 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=208 | ALU_A=0000 | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0001 | RegFile_ReadA=0000 | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 001b | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001a | MemoryContents: 800f| WriteContents: 0001 | firstRectX: 0000 | contentsShared: 800f | contentsSharedCPU: 800f | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=180000 | IR=800f | DecInst=800f| DecRsrc=f | DecRdest=0 | DecodedImmediate=000f | DecodedOpcode=80 | PC=001a | PSR=zzXX | ALU select Imm=1| ALURes=8000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=128 | ALU_A=000f | ALU_B=0001 | RegFile_WriteEn=1 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=000e | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 001b | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001a | MemoryContents: 800f| WriteContents: 0001 | firstRectX: 0000 | contentsShared: 800f | contentsSharedCPU: 800f | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 0000
+# registerFile[2] = 0000
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=190000 | IR=800f | DecInst=800f| DecRsrc=f | DecRdest=0 | DecodedImmediate=000f | DecodedOpcode=80 | PC=001b | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=128 | ALU_A=000e | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 001c | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001b | MemoryContents: 800f| WriteContents: 8000 | firstRectX: 0000 | contentsShared: 800f | contentsSharedCPU: 800f | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=200000 | IR=800f | DecInst=800f| DecRsrc=f | DecRdest=0 | DecodedImmediate=000f | DecodedOpcode=80 | PC=001b | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=128 | ALU_A=000e | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 001c | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001b | MemoryContents: d10f| WriteContents: 8000 | firstRectX: 0000 | contentsShared: d10f | contentsSharedCPU: d10f | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=210000 | IR=d10f | DecInst=d10f| DecRsrc=f | DecRdest=1 | DecodedImmediate=000f | DecodedOpcode=d0 | PC=001b | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=208 | ALU_A=000e | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=1 | RegFile_WriteData=000f | RegFile_ReadA=000e | RegFile_ReadB=0000 | RegFileSel=2 | PSR=zzXX | NextPC: 001c | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001b | MemoryContents: d10f| WriteContents: 0000 | firstRectX: 0000 | contentsShared: d10f | contentsSharedCPU: d10f | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=220000 | IR=d10f | DecInst=d10f| DecRsrc=f | DecRdest=1 | DecodedImmediate=000f | DecodedOpcode=d0 | PC=001c | PSR=zzXX | ALU select Imm=0| ALURes=000f | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=208 | ALU_A=000e | ALU_B=000f | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=000f | RegFile_ReadA=000e | RegFile_ReadB=000f | RegFileSel=0 | PSR=zzXX | NextPC: 001d | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001c | MemoryContents: d10f| WriteContents: 000f | firstRectX: 0000 | contentsShared: d10f | contentsSharedCPU: d10f | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=230000 | IR=d10f | DecInst=d10f| DecRsrc=f | DecRdest=1 | DecodedImmediate=000f | DecodedOpcode=d0 | PC=001c | PSR=zzXX | ALU select Imm=0| ALURes=000f | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=208 | ALU_A=000e | ALU_B=000f | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=000f | RegFile_ReadA=000e | RegFile_ReadB=000f | RegFileSel=0 | PSR=zzXX | NextPC: 001d | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001c | MemoryContents: 4140| WriteContents: 000f | firstRectX: 0000 | contentsShared: 4140 | contentsSharedCPU: 4140 | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=240000 | IR=4140 | DecInst=4140| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0040 | DecodedOpcode=44 | PC=001c | PSR=zzXX | ALU select Imm=0| ALURes=000f | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=68 | ALU_A=8000 | ALU_B=000f | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=000f | RegFile_ReadA=8000 | RegFile_ReadB=000f | RegFileSel=0 | PSR=zzXX | NextPC: 001d | WriteEnableMemory: 1 | MemoryReadWriteAddress: 8000 | MemoryContents: xxxx| WriteContents: 000f | firstRectX: 0000 | contentsShared: xxxx | contentsSharedCPU: 4140 | contentsSharedRect: xxxx | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=250000 | IR=4140 | DecInst=4140| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0040 | DecodedOpcode=44 | PC=001d | PSR=zzXX | ALU select Imm=0| ALURes=000f | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=68 | ALU_A=8000 | ALU_B=000f | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=000f | RegFile_ReadA=8000 | RegFile_ReadB=000f | RegFileSel=0 | PSR=zzXX | NextPC: 001e | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001d | MemoryContents: d002| WriteContents: 000f | firstRectX: 000f | contentsShared: d002 | contentsSharedCPU: d002 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=260000 | IR=4140 | DecInst=4140| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0040 | DecodedOpcode=44 | PC=001d | PSR=zzXX | ALU select Imm=0| ALURes=000f | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=68 | ALU_A=8000 | ALU_B=000f | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=000f | RegFile_ReadA=8000 | RegFile_ReadB=000f | RegFileSel=0 | PSR=zzXX | NextPC: 001e | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001d | MemoryContents: 4100| WriteContents: 000f | firstRectX: 000f | contentsShared: 4100 | contentsSharedCPU: 4100 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = EXECUTE_LOAD_INSTRUCTION
+# Time=270000 | IR=4100 | DecInst=4100| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0000 | DecodedOpcode=40 | PC=001d | PSR=zzXX | ALU select Imm=0| ALURes=000f | ALUFlags=xxx0x | CU_State=3 | CU_Next=5 | ALUOpcode=64 | ALU_A=8000 | ALU_B=000f | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=000f | RegFile_ReadA=8000 | RegFile_ReadB=000f | RegFileSel=0 | PSR=zzXX | NextPC: 001e | WriteEnableMemory: 0 | MemoryReadWriteAddress: 8000 | MemoryContents: 000f| WriteContents: 000f | firstRectX: 000f | contentsShared: 000f | contentsSharedCPU: 4100 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = EXECUTE_LOAD_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=280000 | IR=4100 | DecInst=4100| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0000 | DecodedOpcode=40 | PC=001e | PSR=zzXX | ALU select Imm=0| ALURes=000f | ALUFlags=xxx0x | CU_State=5 | CU_Next=1 | ALUOpcode=64 | ALU_A=8000 | ALU_B=000f | RegFile_WriteEn=1 | RegFile_WriteAddr=1 | RegFile_WriteData=d002 | RegFile_ReadA=8000 | RegFile_ReadB=000f | RegFileSel=3 | PSR=zzXX | NextPC: 001f | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001e | MemoryContents: d002| WriteContents: 000f | firstRectX: 000f | contentsShared: d002 | contentsSharedCPU: d002 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = d002
+# registerFile[2] = 0000
+# registerFile[3] = 0000
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=290000 | IR=4100 | DecInst=4100| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0000 | DecodedOpcode=40 | PC=001e | PSR=zzXX | ALU select Imm=0| ALURes=d002 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=64 | ALU_A=8000 | ALU_B=d002 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=d002 | RegFile_ReadA=8000 | RegFile_ReadB=d002 | RegFileSel=0 | PSR=zzXX | NextPC: 001f | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001e | MemoryContents: 03d1| WriteContents: d002 | firstRectX: 000f | contentsShared: 03d1 | contentsSharedCPU: 03d1 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=300000 | IR=4100 | DecInst=4100| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0000 | DecodedOpcode=40 | PC=001e | PSR=zzXX | ALU select Imm=0| ALURes=d002 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=64 | ALU_A=8000 | ALU_B=d002 | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=d002 | RegFile_ReadA=8000 | RegFile_ReadB=d002 | RegFileSel=0 | PSR=zzXX | NextPC: 001f | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001e | MemoryContents: 03d1| WriteContents: d002 | firstRectX: 000f | contentsShared: 03d1 | contentsSharedCPU: 03d1 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=310000 | IR=03d1 | DecInst=03d1| DecRsrc=1 | DecRdest=3 | DecodedImmediate=ffd1 | DecodedOpcode=0d | PC=001e | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=13 | ALU_A=d002 | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=3 | RegFile_WriteData=d002 | RegFile_ReadA=d002 | RegFile_ReadB=0000 | RegFileSel=1 | PSR=zzXX | NextPC: 001f | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001e | MemoryContents: 03d1| WriteContents: 0000 | firstRectX: 000f | contentsShared: 03d1 | contentsSharedCPU: 03d1 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = d002
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=320000 | IR=03d1 | DecInst=03d1| DecRsrc=1 | DecRdest=3 | DecodedImmediate=ffd1 | DecodedOpcode=0d | PC=001f | PSR=zzXX | ALU select Imm=0| ALURes=d002 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=13 | ALU_A=d002 | ALU_B=d002 | RegFile_WriteEn=0 | RegFile_WriteAddr=3 | RegFile_WriteData=d002 | RegFile_ReadA=d002 | RegFile_ReadB=d002 | RegFileSel=0 | PSR=zzXX | NextPC: 0020 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001f | MemoryContents: 03d1| WriteContents: d002 | firstRectX: 000f | contentsShared: 03d1 | contentsSharedCPU: 03d1 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=330000 | IR=03d1 | DecInst=03d1| DecRsrc=1 | DecRdest=3 | DecodedImmediate=ffd1 | DecodedOpcode=0d | PC=001f | PSR=zzXX | ALU select Imm=0| ALURes=d002 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=13 | ALU_A=d002 | ALU_B=d002 | RegFile_WriteEn=0 | RegFile_WriteAddr=3 | RegFile_WriteData=d002 | RegFile_ReadA=d002 | RegFile_ReadB=d002 | RegFileSel=0 | PSR=zzXX | NextPC: 0020 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001f | MemoryContents: d003| WriteContents: d002 | firstRectX: 000f | contentsShared: d003 | contentsSharedCPU: d003 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=340000 | IR=d003 | DecInst=d003| DecRsrc=3 | DecRdest=0 | DecodedImmediate=0003 | DecodedOpcode=d0 | PC=001f | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=208 | ALU_A=d002 | ALU_B=8000 | RegFile_WriteEn=1 | RegFile_WriteAddr=0 | RegFile_WriteData=0003 | RegFile_ReadA=d002 | RegFile_ReadB=8000 | RegFileSel=2 | PSR=zzXX | NextPC: 0020 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 001f | MemoryContents: d003| WriteContents: 8000 | firstRectX: 000f | contentsShared: d003 | contentsSharedCPU: d003 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 0003
+# registerFile[1] = d002
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=350000 | IR=d003 | DecInst=d003| DecRsrc=3 | DecRdest=0 | DecodedImmediate=0003 | DecodedOpcode=d0 | PC=0020 | PSR=zzXX | ALU select Imm=0| ALURes=0003 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=208 | ALU_A=d002 | ALU_B=0003 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0003 | RegFile_ReadA=d002 | RegFile_ReadB=0003 | RegFileSel=0 | PSR=zzXX | NextPC: 0021 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0020 | MemoryContents: d003| WriteContents: 0003 | firstRectX: 000f | contentsShared: d003 | contentsSharedCPU: d003 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=360000 | IR=d003 | DecInst=d003| DecRsrc=3 | DecRdest=0 | DecodedImmediate=0003 | DecodedOpcode=d0 | PC=0020 | PSR=zzXX | ALU select Imm=0| ALURes=0003 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=208 | ALU_A=d002 | ALU_B=0003 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0003 | RegFile_ReadA=d002 | RegFile_ReadB=0003 | RegFileSel=0 | PSR=zzXX | NextPC: 0021 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0020 | MemoryContents: 800f| WriteContents: 0003 | firstRectX: 000f | contentsShared: 800f | contentsSharedCPU: 800f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=370000 | IR=800f | DecInst=800f| DecRsrc=f | DecRdest=0 | DecodedImmediate=000f | DecodedOpcode=80 | PC=0020 | PSR=zzXX | ALU select Imm=1| ALURes=8000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=128 | ALU_A=000f | ALU_B=0003 | RegFile_WriteEn=1 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=000e | RegFile_ReadB=0003 | RegFileSel=0 | PSR=zzXX | NextPC: 0021 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0020 | MemoryContents: 800f| WriteContents: 0003 | firstRectX: 000f | contentsShared: 800f | contentsSharedCPU: 800f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = d002
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=380000 | IR=800f | DecInst=800f| DecRsrc=f | DecRdest=0 | DecodedImmediate=000f | DecodedOpcode=80 | PC=0021 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=128 | ALU_A=000e | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 0022 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0021 | MemoryContents: 800f| WriteContents: 8000 | firstRectX: 000f | contentsShared: 800f | contentsSharedCPU: 800f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=390000 | IR=800f | DecInst=800f| DecRsrc=f | DecRdest=0 | DecodedImmediate=000f | DecodedOpcode=80 | PC=0021 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=128 | ALU_A=000e | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 0022 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0021 | MemoryContents: d10f| WriteContents: 8000 | firstRectX: 000f | contentsShared: d10f | contentsSharedCPU: d10f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=400000 | IR=d10f | DecInst=d10f| DecRsrc=f | DecRdest=1 | DecodedImmediate=000f | DecodedOpcode=d0 | PC=0021 | PSR=zzXX | ALU select Imm=0| ALURes=d002 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=208 | ALU_A=000e | ALU_B=d002 | RegFile_WriteEn=1 | RegFile_WriteAddr=1 | RegFile_WriteData=000f | RegFile_ReadA=000e | RegFile_ReadB=d002 | RegFileSel=2 | PSR=zzXX | NextPC: 0022 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0021 | MemoryContents: d10f| WriteContents: d002 | firstRectX: 000f | contentsShared: d10f | contentsSharedCPU: d10f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=410000 | IR=d10f | DecInst=d10f| DecRsrc=f | DecRdest=1 | DecodedImmediate=000f | DecodedOpcode=d0 | PC=0022 | PSR=zzXX | ALU select Imm=0| ALURes=000f | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=208 | ALU_A=000e | ALU_B=000f | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=000f | RegFile_ReadA=000e | RegFile_ReadB=000f | RegFileSel=0 | PSR=zzXX | NextPC: 0023 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0022 | MemoryContents: d10f| WriteContents: 000f | firstRectX: 000f | contentsShared: d10f | contentsSharedCPU: d10f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=420000 | IR=d10f | DecInst=d10f| DecRsrc=f | DecRdest=1 | DecodedImmediate=000f | DecodedOpcode=d0 | PC=0022 | PSR=zzXX | ALU select Imm=0| ALURes=000f | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=208 | ALU_A=000e | ALU_B=000f | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=000f | RegFile_ReadA=000e | RegFile_ReadB=000f | RegFileSel=0 | PSR=zzXX | NextPC: 0023 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0022 | MemoryContents: 4140| WriteContents: 000f | firstRectX: 000f | contentsShared: 4140 | contentsSharedCPU: 4140 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=430000 | IR=4140 | DecInst=4140| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0040 | DecodedOpcode=44 | PC=0022 | PSR=zzXX | ALU select Imm=0| ALURes=000f | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=68 | ALU_A=8000 | ALU_B=000f | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=000f | RegFile_ReadA=8000 | RegFile_ReadB=000f | RegFileSel=0 | PSR=zzXX | NextPC: 0023 | WriteEnableMemory: 1 | MemoryReadWriteAddress: 8000 | MemoryContents: 000f| WriteContents: 000f | firstRectX: 000f | contentsShared: 000f | contentsSharedCPU: 4140 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=440000 | IR=4140 | DecInst=4140| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0040 | DecodedOpcode=44 | PC=0023 | PSR=zzXX | ALU select Imm=0| ALURes=000f | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=68 | ALU_A=8000 | ALU_B=000f | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=000f | RegFile_ReadA=8000 | RegFile_ReadB=000f | RegFileSel=0 | PSR=zzXX | NextPC: 0024 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0023 | MemoryContents: d002| WriteContents: 000f | firstRectX: 000f | contentsShared: d002 | contentsSharedCPU: d002 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=450000 | IR=4140 | DecInst=4140| DecRsrc=0 | DecRdest=1 | DecodedImmediate=0040 | DecodedOpcode=44 | PC=0023 | PSR=zzXX | ALU select Imm=0| ALURes=000f | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=68 | ALU_A=8000 | ALU_B=000f | RegFile_WriteEn=0 | RegFile_WriteAddr=1 | RegFile_WriteData=000f | RegFile_ReadA=8000 | RegFile_ReadB=000f | RegFileSel=0 | PSR=zzXX | NextPC: 0024 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0023 | MemoryContents: ce0d| WriteContents: 000f | firstRectX: 000f | contentsShared: ce0d | contentsSharedCPU: ce0d | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=460000 | IR=ce0d | DecInst=ce0d| DecRsrc=d | DecRdest=e | DecodedImmediate=000d | DecodedOpcode=c0 | PC=0023 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=192 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=14 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0030 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0023 | MemoryContents: ce0d| WriteContents: 0000 | firstRectX: 000f | contentsShared: ce0d | contentsSharedCPU: ce0d | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=470000 | IR=ce0d | DecInst=ce0d| DecRsrc=d | DecRdest=e | DecodedImmediate=000d | DecodedOpcode=c0 | PC=0030 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=192 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=14 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 003d | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0030 | MemoryContents: ce0d| WriteContents: 0000 | firstRectX: 000f | contentsShared: ce0d | contentsSharedCPU: ce0d | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=480000 | IR=ce0d | DecInst=ce0d| DecRsrc=d | DecRdest=e | DecodedImmediate=000d | DecodedOpcode=c0 | PC=0030 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=192 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=14 | RegFile_WriteData=0000 | RegFile_ReadA=0000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 003d | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0030 | MemoryContents: d201| WriteContents: 0000 | firstRectX: 000f | contentsShared: d201 | contentsSharedCPU: d201 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=490000 | IR=d201 | DecInst=d201| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0030 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=208 | ALU_A=000f | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0001 | RegFile_ReadA=000f | RegFile_ReadB=0000 | RegFileSel=2 | PSR=zzXX | NextPC: 0031 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0030 | MemoryContents: d201| WriteContents: 0000 | firstRectX: 000f | contentsShared: d201 | contentsSharedCPU: d201 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0001
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=500000 | IR=d201 | DecInst=d201| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0031 | PSR=zzXX | ALU select Imm=0| ALURes=0001 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=208 | ALU_A=000f | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0001 | RegFile_ReadA=000f | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 0032 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0031 | MemoryContents: d201| WriteContents: 0001 | firstRectX: 000f | contentsShared: d201 | contentsSharedCPU: d201 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=510000 | IR=d201 | DecInst=d201| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0031 | PSR=zzXX | ALU select Imm=0| ALURes=0001 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=208 | ALU_A=000f | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0001 | RegFile_ReadA=000f | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 0032 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0031 | MemoryContents: 021f| WriteContents: 0001 | firstRectX: 000f | contentsShared: 021f | contentsSharedCPU: 021f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=520000 | IR=021f | DecInst=021f| DecRsrc=f | DecRdest=2 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0031 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=1 | ALU_A=000e | ALU_B=0001 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 0032 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0031 | MemoryContents: 021f| WriteContents: 0001 | firstRectX: 000f | contentsShared: 021f | contentsSharedCPU: 021f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=530000 | IR=021f | DecInst=021f| DecRsrc=f | DecRdest=2 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0032 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=1 | ALU_A=000e | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0033 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0032 | MemoryContents: 021f| WriteContents: 0000 | firstRectX: 000f | contentsShared: 021f | contentsSharedCPU: 021f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=540000 | IR=021f | DecInst=021f| DecRsrc=f | DecRdest=2 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0032 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=1 | ALU_A=000e | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0033 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0032 | MemoryContents: b200| WriteContents: 0000 | firstRectX: 000f | contentsShared: b200 | contentsSharedCPU: b200 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=550000 | IR=b200 | DecInst=b200| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0000 | DecodedOpcode=b0 | PC=0032 | PSR=zzXX | ALU select Imm=1| ALURes=0000 | ALUFlags=x0x10 | CU_State=3 | CU_Next=1 | ALUOpcode=176 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0033 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0032 | MemoryContents: b200| WriteContents: 0000 | firstRectX: 000f | contentsShared: b200 | contentsSharedCPU: b200 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=560000 | IR=b200 | DecInst=b200| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0000 | DecodedOpcode=b0 | PC=0033 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=x1x00 | CU_State=1 | CU_Next=2 | ALUOpcode=176 | ALU_A=8000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0034 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0033 | MemoryContents: b200| WriteContents: 0000 | firstRectX: 000f | contentsShared: b200 | contentsSharedCPU: b200 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=570000 | IR=b200 | DecInst=b200| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0000 | DecodedOpcode=b0 | PC=0033 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=x1x00 | CU_State=2 | CU_Next=3 | ALUOpcode=176 | ALU_A=8000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0034 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0033 | MemoryContents: c0fd| WriteContents: 0000 | firstRectX: 000f | contentsShared: c0fd | contentsSharedCPU: c0fd | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=580000 | IR=c0fd | DecInst=c0fd| DecRsrc=d | DecRdest=0 | DecodedImmediate=fffd | DecodedOpcode=cf | PC=0033 | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=207 | ALU_A=0000 | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=0000 | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 0030 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0033 | MemoryContents: c0fd| WriteContents: 8000 | firstRectX: 000f | contentsShared: c0fd | contentsSharedCPU: c0fd | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=590000 | IR=c0fd | DecInst=c0fd| DecRsrc=d | DecRdest=0 | DecodedImmediate=fffd | DecodedOpcode=cf | PC=0030 | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=207 | ALU_A=0000 | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=0000 | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 002d | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0030 | MemoryContents: c0fd| WriteContents: 8000 | firstRectX: 000f | contentsShared: c0fd | contentsSharedCPU: c0fd | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=600000 | IR=c0fd | DecInst=c0fd| DecRsrc=d | DecRdest=0 | DecodedImmediate=fffd | DecodedOpcode=cf | PC=0030 | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=207 | ALU_A=0000 | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=0000 | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 002d | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0030 | MemoryContents: d201| WriteContents: 8000 | firstRectX: 000f | contentsShared: d201 | contentsSharedCPU: d201 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=610000 | IR=d201 | DecInst=d201| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0030 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=208 | ALU_A=000f | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0001 | RegFile_ReadA=000f | RegFile_ReadB=0000 | RegFileSel=2 | PSR=zzXX | NextPC: 0031 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0030 | MemoryContents: d201| WriteContents: 0000 | firstRectX: 000f | contentsShared: d201 | contentsSharedCPU: d201 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0001
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=620000 | IR=d201 | DecInst=d201| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0031 | PSR=zzXX | ALU select Imm=0| ALURes=0001 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=208 | ALU_A=000f | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0001 | RegFile_ReadA=000f | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 0032 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0031 | MemoryContents: d201| WriteContents: 0001 | firstRectX: 000f | contentsShared: d201 | contentsSharedCPU: d201 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=630000 | IR=d201 | DecInst=d201| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0031 | PSR=zzXX | ALU select Imm=0| ALURes=0001 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=208 | ALU_A=000f | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0001 | RegFile_ReadA=000f | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 0032 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0031 | MemoryContents: 021f| WriteContents: 0001 | firstRectX: 000f | contentsShared: 021f | contentsSharedCPU: 021f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=640000 | IR=021f | DecInst=021f| DecRsrc=f | DecRdest=2 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0031 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=1 | ALU_A=000e | ALU_B=0001 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 0032 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0031 | MemoryContents: 021f| WriteContents: 0001 | firstRectX: 000f | contentsShared: 021f | contentsSharedCPU: 021f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=650000 | IR=021f | DecInst=021f| DecRsrc=f | DecRdest=2 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0032 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=1 | ALU_A=000e | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0033 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0032 | MemoryContents: 021f| WriteContents: 0000 | firstRectX: 000f | contentsShared: 021f | contentsSharedCPU: 021f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=660000 | IR=021f | DecInst=021f| DecRsrc=f | DecRdest=2 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0032 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=1 | ALU_A=000e | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0033 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0032 | MemoryContents: b200| WriteContents: 0000 | firstRectX: 000f | contentsShared: b200 | contentsSharedCPU: b200 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=670000 | IR=b200 | DecInst=b200| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0000 | DecodedOpcode=b0 | PC=0032 | PSR=zzXX | ALU select Imm=1| ALURes=0000 | ALUFlags=x0x10 | CU_State=3 | CU_Next=1 | ALUOpcode=176 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0033 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0032 | MemoryContents: b200| WriteContents: 0000 | firstRectX: 000f | contentsShared: b200 | contentsSharedCPU: b200 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=680000 | IR=b200 | DecInst=b200| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0000 | DecodedOpcode=b0 | PC=0033 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=x1x00 | CU_State=1 | CU_Next=2 | ALUOpcode=176 | ALU_A=8000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0034 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0033 | MemoryContents: b200| WriteContents: 0000 | firstRectX: 000f | contentsShared: b200 | contentsSharedCPU: b200 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=690000 | IR=b200 | DecInst=b200| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0000 | DecodedOpcode=b0 | PC=0033 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=x1x00 | CU_State=2 | CU_Next=3 | ALUOpcode=176 | ALU_A=8000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0034 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0033 | MemoryContents: c0fd| WriteContents: 0000 | firstRectX: 000f | contentsShared: c0fd | contentsSharedCPU: c0fd | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=700000 | IR=c0fd | DecInst=c0fd| DecRsrc=d | DecRdest=0 | DecodedImmediate=fffd | DecodedOpcode=cf | PC=0033 | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=207 | ALU_A=0000 | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=0000 | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 0030 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0033 | MemoryContents: c0fd| WriteContents: 8000 | firstRectX: 000f | contentsShared: c0fd | contentsSharedCPU: c0fd | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=710000 | IR=c0fd | DecInst=c0fd| DecRsrc=d | DecRdest=0 | DecodedImmediate=fffd | DecodedOpcode=cf | PC=0030 | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=207 | ALU_A=0000 | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=0000 | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 002d | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0030 | MemoryContents: c0fd| WriteContents: 8000 | firstRectX: 000f | contentsShared: c0fd | contentsSharedCPU: c0fd | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=720000 | IR=c0fd | DecInst=c0fd| DecRsrc=d | DecRdest=0 | DecodedImmediate=fffd | DecodedOpcode=cf | PC=0030 | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=207 | ALU_A=0000 | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=0000 | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 002d | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0030 | MemoryContents: d201| WriteContents: 8000 | firstRectX: 000f | contentsShared: d201 | contentsSharedCPU: d201 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=730000 | IR=d201 | DecInst=d201| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0030 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=208 | ALU_A=000f | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0001 | RegFile_ReadA=000f | RegFile_ReadB=0000 | RegFileSel=2 | PSR=zzXX | NextPC: 0031 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0030 | MemoryContents: d201| WriteContents: 0000 | firstRectX: 000f | contentsShared: d201 | contentsSharedCPU: d201 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0001
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=740000 | IR=d201 | DecInst=d201| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0031 | PSR=zzXX | ALU select Imm=0| ALURes=0001 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=208 | ALU_A=000f | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0001 | RegFile_ReadA=000f | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 0032 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0031 | MemoryContents: d201| WriteContents: 0001 | firstRectX: 000f | contentsShared: d201 | contentsSharedCPU: d201 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=750000 | IR=d201 | DecInst=d201| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0031 | PSR=zzXX | ALU select Imm=0| ALURes=0001 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=208 | ALU_A=000f | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0001 | RegFile_ReadA=000f | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 0032 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0031 | MemoryContents: 021f| WriteContents: 0001 | firstRectX: 000f | contentsShared: 021f | contentsSharedCPU: 021f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=760000 | IR=021f | DecInst=021f| DecRsrc=f | DecRdest=2 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0031 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=1 | ALU_A=000e | ALU_B=0001 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 0032 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0031 | MemoryContents: 021f| WriteContents: 0001 | firstRectX: 000f | contentsShared: 021f | contentsSharedCPU: 021f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=770000 | IR=021f | DecInst=021f| DecRsrc=f | DecRdest=2 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0032 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=1 | ALU_A=000e | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0033 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0032 | MemoryContents: 021f| WriteContents: 0000 | firstRectX: 000f | contentsShared: 021f | contentsSharedCPU: 021f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=780000 | IR=021f | DecInst=021f| DecRsrc=f | DecRdest=2 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0032 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=1 | ALU_A=000e | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0033 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0032 | MemoryContents: b200| WriteContents: 0000 | firstRectX: 000f | contentsShared: b200 | contentsSharedCPU: b200 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=790000 | IR=b200 | DecInst=b200| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0000 | DecodedOpcode=b0 | PC=0032 | PSR=zzXX | ALU select Imm=1| ALURes=0000 | ALUFlags=x0x10 | CU_State=3 | CU_Next=1 | ALUOpcode=176 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0033 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0032 | MemoryContents: b200| WriteContents: 0000 | firstRectX: 000f | contentsShared: b200 | contentsSharedCPU: b200 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=800000 | IR=b200 | DecInst=b200| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0000 | DecodedOpcode=b0 | PC=0033 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=x1x00 | CU_State=1 | CU_Next=2 | ALUOpcode=176 | ALU_A=8000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0034 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0033 | MemoryContents: b200| WriteContents: 0000 | firstRectX: 000f | contentsShared: b200 | contentsSharedCPU: b200 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=810000 | IR=b200 | DecInst=b200| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0000 | DecodedOpcode=b0 | PC=0033 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=x1x00 | CU_State=2 | CU_Next=3 | ALUOpcode=176 | ALU_A=8000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0034 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0033 | MemoryContents: c0fd| WriteContents: 0000 | firstRectX: 000f | contentsShared: c0fd | contentsSharedCPU: c0fd | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=820000 | IR=c0fd | DecInst=c0fd| DecRsrc=d | DecRdest=0 | DecodedImmediate=fffd | DecodedOpcode=cf | PC=0033 | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=207 | ALU_A=0000 | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=0000 | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 0030 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0033 | MemoryContents: c0fd| WriteContents: 8000 | firstRectX: 000f | contentsShared: c0fd | contentsSharedCPU: c0fd | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=830000 | IR=c0fd | DecInst=c0fd| DecRsrc=d | DecRdest=0 | DecodedImmediate=fffd | DecodedOpcode=cf | PC=0030 | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=207 | ALU_A=0000 | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=0000 | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 002d | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0030 | MemoryContents: c0fd| WriteContents: 8000 | firstRectX: 000f | contentsShared: c0fd | contentsSharedCPU: c0fd | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=840000 | IR=c0fd | DecInst=c0fd| DecRsrc=d | DecRdest=0 | DecodedImmediate=fffd | DecodedOpcode=cf | PC=0030 | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=207 | ALU_A=0000 | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=0000 | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 002d | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0030 | MemoryContents: d201| WriteContents: 8000 | firstRectX: 000f | contentsShared: d201 | contentsSharedCPU: d201 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=850000 | IR=d201 | DecInst=d201| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0030 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=208 | ALU_A=000f | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0001 | RegFile_ReadA=000f | RegFile_ReadB=0000 | RegFileSel=2 | PSR=zzXX | NextPC: 0031 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0030 | MemoryContents: d201| WriteContents: 0000 | firstRectX: 000f | contentsShared: d201 | contentsSharedCPU: d201 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0001
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=860000 | IR=d201 | DecInst=d201| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0031 | PSR=zzXX | ALU select Imm=0| ALURes=0001 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=208 | ALU_A=000f | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0001 | RegFile_ReadA=000f | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 0032 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0031 | MemoryContents: d201| WriteContents: 0001 | firstRectX: 000f | contentsShared: d201 | contentsSharedCPU: d201 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=870000 | IR=d201 | DecInst=d201| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0031 | PSR=zzXX | ALU select Imm=0| ALURes=0001 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=208 | ALU_A=000f | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0001 | RegFile_ReadA=000f | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 0032 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0031 | MemoryContents: 021f| WriteContents: 0001 | firstRectX: 000f | contentsShared: 021f | contentsSharedCPU: 021f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=880000 | IR=021f | DecInst=021f| DecRsrc=f | DecRdest=2 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0031 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=1 | ALU_A=000e | ALU_B=0001 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 0032 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0031 | MemoryContents: 021f| WriteContents: 0001 | firstRectX: 000f | contentsShared: 021f | contentsSharedCPU: 021f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=890000 | IR=021f | DecInst=021f| DecRsrc=f | DecRdest=2 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0032 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=1 | ALU_A=000e | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0033 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0032 | MemoryContents: 021f| WriteContents: 0000 | firstRectX: 000f | contentsShared: 021f | contentsSharedCPU: 021f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=900000 | IR=021f | DecInst=021f| DecRsrc=f | DecRdest=2 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0032 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=1 | ALU_A=000e | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0033 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0032 | MemoryContents: b200| WriteContents: 0000 | firstRectX: 000f | contentsShared: b200 | contentsSharedCPU: b200 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=910000 | IR=b200 | DecInst=b200| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0000 | DecodedOpcode=b0 | PC=0032 | PSR=zzXX | ALU select Imm=1| ALURes=0000 | ALUFlags=x0x10 | CU_State=3 | CU_Next=1 | ALUOpcode=176 | ALU_A=0000 | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0033 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0032 | MemoryContents: b200| WriteContents: 0000 | firstRectX: 000f | contentsShared: b200 | contentsSharedCPU: b200 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=920000 | IR=b200 | DecInst=b200| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0000 | DecodedOpcode=b0 | PC=0033 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=x1x00 | CU_State=1 | CU_Next=2 | ALUOpcode=176 | ALU_A=8000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0034 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0033 | MemoryContents: b200| WriteContents: 0000 | firstRectX: 000f | contentsShared: b200 | contentsSharedCPU: b200 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=930000 | IR=b200 | DecInst=b200| DecRsrc=0 | DecRdest=2 | DecodedImmediate=0000 | DecodedOpcode=b0 | PC=0033 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=x1x00 | CU_State=2 | CU_Next=3 | ALUOpcode=176 | ALU_A=8000 | ALU_B=0000 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=8000 | RegFile_ReadB=0000 | RegFileSel=0 | PSR=zzXX | NextPC: 0034 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0033 | MemoryContents: c0fd| WriteContents: 0000 | firstRectX: 000f | contentsShared: c0fd | contentsSharedCPU: c0fd | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=940000 | IR=c0fd | DecInst=c0fd| DecRsrc=d | DecRdest=0 | DecodedImmediate=fffd | DecodedOpcode=cf | PC=0033 | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=207 | ALU_A=0000 | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=0000 | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 0030 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0033 | MemoryContents: c0fd| WriteContents: 8000 | firstRectX: 000f | contentsShared: c0fd | contentsSharedCPU: c0fd | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0000
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=950000 | IR=c0fd | DecInst=c0fd| DecRsrc=d | DecRdest=0 | DecodedImmediate=fffd | DecodedOpcode=cf | PC=0030 | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=207 | ALU_A=0000 | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=0000 | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 002d | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0030 | MemoryContents: c0fd| WriteContents: 8000 | firstRectX: 000f | contentsShared: c0fd | contentsSharedCPU: c0fd | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=960000 | IR=c0fd | DecInst=c0fd| DecRsrc=d | DecRdest=0 | DecodedImmediate=fffd | DecodedOpcode=cf | PC=0030 | PSR=zzXX | ALU select Imm=0| ALURes=8000 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=207 | ALU_A=0000 | ALU_B=8000 | RegFile_WriteEn=0 | RegFile_WriteAddr=0 | RegFile_WriteData=8000 | RegFile_ReadA=0000 | RegFile_ReadB=8000 | RegFileSel=0 | PSR=zzXX | NextPC: 002d | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0030 | MemoryContents: d201| WriteContents: 8000 | firstRectX: 000f | contentsShared: d201 | contentsSharedCPU: d201 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=970000 | IR=d201 | DecInst=d201| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0030 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=208 | ALU_A=000f | ALU_B=0000 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0001 | RegFile_ReadA=000f | RegFile_ReadB=0000 | RegFileSel=2 | PSR=zzXX | NextPC: 0031 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0030 | MemoryContents: d201| WriteContents: 0000 | firstRectX: 000f | contentsShared: d201 | contentsSharedCPU: d201 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# 
+# 
+# 
+# 
+# CONTENTS AFTER PREVIOUS INSTRUCTION
+# RegisterFile:
+# registerFile[0] = 8000
+# registerFile[1] = 000f
+# registerFile[2] = 0001
+# registerFile[3] = d002
+# registerFile[4] = 0000
+# registerFile[5] = 0000
+# registerFile[6] = 0000
+# registerFile[7] = 0000
+# registerFile[8] = 0000
+# registerFile[9] = 0000
+# registerFile[10] = 0000
+# registerFile[11] = 0000
+# registerFile[12] = 0000
+# registerFile[13] = 0000
+# registerFile[14] = 0000
+# registerFile[15] = 0000
+# 
+# Memory:
+# memory[0] = d002
+# memory[1] = 001f
+# memory[2] = b000
+# memory[3] = c116
+# memory[4] = d004
+# memory[5] = 001f
+# memory[6] = b000
+# memory[7] = c106
+# memory[8] = d008
+# memory[9] = 001f
+# memory[10] = b000
+# memory[11] = c119
+# memory[12] = cef4
+# memory[13] = d001
+# memory[14] = 800f
+# memory[15] = d100
+# memory[16] = 4140
+# memory[17] = 4100
+# memory[18] = d003
+# memory[19] = 800f
+# memory[20] = d100
+# memory[21] = 4140
+# memory[22] = 4100
+# memory[23] = 03d1
+# memory[24] = ce18
+# memory[25] = d001
+# memory[26] = 800f
+# memory[27] = d10f
+# memory[28] = 4140
+# memory[29] = 4100
+# memory[30] = 03d1
+# memory[31] = d003
+# memory[32] = 800f
+# memory[33] = d10f
+# memory[34] = 4140
+# memory[35] = ce0d
+# memory[36] = d001
+# memory[37] = 800f
+# memory[38] = 4100
+# memory[39] = 5101
+# memory[40] = 4140
+# memory[41] = d003
+# memory[42] = 800f
+# memory[43] = d303
+# memory[44] = 4100
+# memory[45] = 5101
+# memory[46] = 4140
+# memory[47] = ce01
+# 
+# Current State = FETCH_INSTRUCTION_FROM_MEMORY						Next State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER
+# Time=980000 | IR=d201 | DecInst=d201| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0031 | PSR=zzXX | ALU select Imm=0| ALURes=0001 | ALUFlags=xxx0x | CU_State=1 | CU_Next=2 | ALUOpcode=208 | ALU_A=000f | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0001 | RegFile_ReadA=000f | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 0032 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0031 | MemoryContents: d201| WriteContents: 0001 | firstRectX: 000f | contentsShared: d201 | contentsSharedCPU: d201 | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER						Next State = DECODE_INSTRUCTION
+# Time=990000 | IR=d201 | DecInst=d201| DecRsrc=1 | DecRdest=2 | DecodedImmediate=0001 | DecodedOpcode=d0 | PC=0031 | PSR=zzXX | ALU select Imm=0| ALURes=0001 | ALUFlags=xxx0x | CU_State=2 | CU_Next=3 | ALUOpcode=208 | ALU_A=000f | ALU_B=0001 | RegFile_WriteEn=0 | RegFile_WriteAddr=2 | RegFile_WriteData=0001 | RegFile_ReadA=000f | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 0032 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0031 | MemoryContents: 021f| WriteContents: 0001 | firstRectX: 000f | contentsShared: 021f | contentsSharedCPU: 021f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
+# Current State = DECODE_INSTRUCTION						Next State = FETCH_INSTRUCTION_FROM_MEMORY
+# Time=1000000 | IR=021f | DecInst=021f| DecRsrc=f | DecRdest=2 | DecodedImmediate=001f | DecodedOpcode=01 | PC=0031 | PSR=zzXX | ALU select Imm=0| ALURes=0000 | ALUFlags=xxx0x | CU_State=3 | CU_Next=1 | ALUOpcode=1 | ALU_A=000e | ALU_B=0001 | RegFile_WriteEn=1 | RegFile_WriteAddr=2 | RegFile_WriteData=0000 | RegFile_ReadA=000e | RegFile_ReadB=0001 | RegFileSel=0 | PSR=zzXX | NextPC: 0032 | WriteEnableMemory: 0 | MemoryReadWriteAddress: 0031 | MemoryContents: 021f| WriteContents: 0001 | firstRectX: 000f | contentsShared: 021f | contentsSharedCPU: 021f | contentsSharedRect: 000f | contentsSharedPlayer: xxxx
 # ** Note: $finish    : /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v(243)
-#    Time: 20 ns  Iteration: 0  Instance: /tb_doodle
+#    Time: 1010 ns  Iteration: 0  Instance: /tb_doodle
 # 1
 # Break in Module tb_doodle at /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v line 243
-# End time: 19:37:39 on Mar 30,2026, Elapsed time: 0:01:53
-# Errors: 0, Warnings: 34
+# End time: 18:54:51 on Apr 03,2026, Elapsed time: 0:02:56
+# Errors: 0, Warnings: 29

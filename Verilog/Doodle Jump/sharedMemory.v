@@ -1,7 +1,6 @@
 module sharedMemory
 #(
-    parameter DATA_WIDTH = 16,
-    parameter NUM_RECTS  = 4
+	parameter DATA_WIDTH = 16
 )
 (
     input clock,
@@ -17,23 +16,25 @@ module sharedMemory
     output reg [7:0] g,
     output reg [7:0] b,
 	 output reg [15:0] player_x,
-	 output reg [15:0] player_y
+	 output reg [15:0] player_y,
+	 output wire [15:0] audio_pitch
 );
 
-// --------------------------------------------------
-// Derived constants
-// --------------------------------------------------
-localparam REGS_PER_RECT = 3;
-localparam TOTAL_REGS    = NUM_RECTS * REGS_PER_RECT;
 
-// --------------------------------------------------
-// BRAM (normal memory)
-// --------------------------------------------------
-wire isRectAccess;
-assign isRectAccess = readWriteAddress[15] && (readWriteAddress[4:0] < TOTAL_REGS);
 
-wire enableCPUWrite;
-assign enableCPUWrite = writeEnable && !isRectAccess;
+wire isRectAccess; assign isRectAccess = readWriteAddress[15:6] == 10'b1000000000;
+wire isPlayerAccess; assign isPlayerAccess= readWriteAddress[15:1] == 15'b110000000000000;
+wire isMemoryAccess; assign isMemoryAccess = !isRectAccess && !isPlayerAccess;
+wire enableRectWrite; assign enableRectWrite = writeEnable && isRectAccess;
+wire enablePlayerWrite; assign enablePlayerWrite = writeEnable && isPlayerAccess;
+wire enableCPUWrite; assign enableCPUWrite = writeEnable && isMemoryAccess;
+wire [15:0] contentsCPU;
+reg [15:0] contentsPlayer;
+reg [15:0] contentsRect;
+assign audio_pitch = 0;
+
+
+// CPU Memory
 memory 
 #(
     .DATA_WIDTH(DATA_WIDTH),
@@ -45,115 +46,99 @@ cpu_memory_instance
     .writeEnable(enableCPUWrite),
     .writeData(writeData),
     .readWriteAddress(readWriteAddress[9:0]),
-    .contents(rect_or_contents)
+    .contents(contentsCPU)
 );
 
-// --------------------------------------------------
-// Rectangle RegistersNUM_RECTS
-// --------------------------------------------------
-reg [15:0] rect_x  [0:NUM_RECTS-1];
-reg [15:0] rect_y  [0:NUM_RECTS-1];
-reg [15:0] rect_wh [0:NUM_RECTS-1];
-
+// Player Memory
 always@(posedge clock) begin
-	if(writeEnable) begin
-		if(readWriteAddress[14]) begin
-			// TODO CHANGE THIS CUZ IT WRITE TO TOO MUCH
+	if(enablePlayerWrite) begin
 			if(readWriteAddress[0]) begin
-				player_x <= writeData; 
+				player_x <= writeData;
+				contentsPlayer <= writeData;
 			end else begin
 				player_y <= writeData;
+				contentsPlayer <= writeData;
 			end
+	end else begin
+		if(readWriteAddress[0]) begin
+			contentsPlayer <= player_x;
+		end else begin
+			 contentsPlayer <= player_y;
 		end
 	end
 end
 
-
-
-// Decode index
-wire [$clog2(TOTAL_REGS)-1:0] regIndex;
-assign regIndex = readWriteAddress[$clog2(TOTAL_REGS)-1:0];
-
-wire [$clog2(NUM_RECTS)-1:0] rectIndex;
-assign rectIndex = regIndex / REGS_PER_RECT;
-
-wire [1:0] fieldIndex;
-assign fieldIndex = regIndex % REGS_PER_RECT;
-
-// assigns rect_data to one of the rectangle position variables
-wire [15:0] rect_data = (fieldIndex == 0) ? rect_x[rectIndex] : (fieldIndex == 1) ? rect_y[rectIndex] : rect_wh[rectIndex];
-
-// If RectAccess true, override memory and output selected rect_data instead
-assign contents = isRectAccess ? rect_data : rect_or_contents; 
-
-// Write logic (loop-based, scalable)
-integer i;
+// Shared Memory
+reg [15:0] rect_data  [0:63]; // 16 rects, each 4 registers.
+wire [5:0] rect_index = readWriteAddress[5:0];
 always @(posedge clock) begin
-    if (writeEnable && isRectAccess) begin
-        for (i = 0; i < NUM_RECTS; i = i + 1) begin
-            if (rectIndex == i) begin
-                case (fieldIndex)
-                    0: rect_x[i]  <= writeData;
-                    1: rect_y[i]  <= writeData;
-                    2: rect_wh[i] <= writeData;
-                endcase
-            end
-        end
-    end
+	if(isRectAccess) begin
+			if(enableRectWrite) begin
+				rect_data[rect_index] <= writeData;
+				contentsRect <= writeData;
+			end else begin
+				contentsRect <= rect_data[rect_index];
+			end
+	end
 end
 
-// --------------------------------------------------
-// VGA Rectangle Rendering
-// --------------------------------------------------
-reg inside;
+// Mux output
+assign contents = isRectAccess ? contentsRect : (isPlayerAccess ? contentsPlayer : contentsCPU);
+
+// Draw Rectangles
 reg [7:0] width;
 reg [7:0] height;
 
+reg [15:0] x;
+reg [15:0] y;
+reg [15:0] wh;
+reg [15:0] color;
+integer i;
 always @(*) begin
-    inside = 0;
 
-    for (i = 0; i < NUM_RECTS; i = i + 1) begin
-        width  = rect_wh[i][15:8];
-        height = rect_wh[i][7:0];
+    r = 8'h00;
+    g = 8'h00;
+    b = 8'h00;
+
+    for (i = 0; i < 16; i = i + 1) begin
+        x     = rect_data[i*4 + 0];
+        y     = rect_data[i*4 + 1];
+        wh    = rect_data[i*4 + 2];
+        color = rect_data[i*4 + 3];
+
+        width  = wh[15:8];
+        height = wh[7:0];
 
         if (
-            (vgaX >= rect_x[i]) &&
-            (vgaX < rect_x[i] + width) &&
-            (vgaY >= rect_y[i]) &&
-            (vgaY < rect_y[i] + height)
+            (vgaX >= x) &&
+            (vgaX < x + width) &&
+            (vgaY >= y) &&
+            (vgaY < y + height)
         ) begin
-            inside = 1;
+            r = {color[15:11], 3'b000};
+            g = {color[10:5],  2'b00};
+            b = {color[4:0],   3'b000};
         end
     end
-
-    if (inside) begin
-        r = 8'hFF;
-        g = 8'hFF;
-        b = 8'hFF;
-    end else begin
-        r = 8'h00;
-        g = 8'h00;
-        b = 8'h00;
-    end
 end
 
-
-
+// Give rectangels initial positions.
 localparam SCREEN_W = 640;
 localparam SCREEN_H = 480;
-
 initial begin
-    for (i = 0; i < NUM_RECTS; i = i + 1) begin
-        // Spread X across screen
-        rect_x[i] = (i * (SCREEN_W / NUM_RECTS));
+    for (i = 0; i < 16; i = i + 1) begin
+        rect_data[i*4 + 0] = (i * (SCREEN_W / 16));
+        rect_data[i*4 + 1] = (i * 40) % SCREEN_H;
+        rect_data[i*4 + 2] = {8'd50, 8'd30};
 
-        // Stagger Y so they aren’t all in a line
-         rect_y[i] = (i * 40) % SCREEN_H;
-
-        // Fixed size (safe so they stay on screen)
-        rect_wh[i] = {8'd50, 8'd30}; // width=50, height=30
+        // simple varying colors
+        case (i)
+            0: rect_data[i*4 + 3] = 16'hF800; // red
+            1: rect_data[i*4 + 3] = 16'h07E0; // green
+            2: rect_data[i*4 + 3] = 16'h001F; // blue
+            3: rect_data[i*4 + 3] = 16'hFFE0; // yellow
+            default: rect_data[i*4 + 3] = 16'hFFFF; // white
+        endcase
     end
 end
-
-
 endmodule

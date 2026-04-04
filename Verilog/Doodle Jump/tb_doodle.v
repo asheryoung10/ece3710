@@ -81,7 +81,7 @@ localparam MOVE_STATE = 3'd7;
     task print_cpu_state;
         begin
             $display(
-    "Time=%0t | IR=%h | DecInst=%h| DecRsrc=%h | DecRdest=%h | DecodedImmediate=%h | DecodedOpcode=%h | PC=%h | PSR=%h | ALU select Imm=%h| ALURes=%h | ALUFlags=%b | CU_State=%0d | CU_Next=%0d | ALUOpcode=%0d | ALU_A=%h | ALU_B=%h | RegFile_WriteEn=%b | RegFile_WriteAddr=%0d | RegFile_WriteData=%h | RegFile_ReadA=%h | RegFile_ReadB=%h | RegFileSel=%h | PSR=%h | NextPC: %h | WriteEnableMemory: %h | MemoryReadWriteAddress: %h | MemoryContents: %h| WriteContents: %h",
+    "Time=%0t | IR=%h | DecInst=%h| DecRsrc=%h | DecRdest=%h | DecodedImmediate=%h | DecodedOpcode=%h | PC=%h | PSR=%h | ALU select Imm=%h| ALURes=%h | ALUFlags=%b | CU_State=%0d | CU_Next=%0d | ALUOpcode=%0d | ALU_A=%h | ALU_B=%h | RegFile_WriteEn=%b | RegFile_WriteAddr=%0d | RegFile_WriteData=%h | RegFile_ReadA=%h | RegFile_ReadB=%h | RegFileSel=%h | PSR=%h | NextPC: %h | WriteEnableMemory: %h | MemoryReadWriteAddress: %h | MemoryContents: %h| WriteContents: %h | firstRectX: %h | contentsShared: %h | contentsSharedCPU: %h | contentsSharedRect: %h | contentsSharedPlayer: %h",
     $time,
     uut.cpu_instance.instructionRegisterContentsOutput,
 	 uut.cpu_instance.instruction_decoder_instance.instruction,
@@ -110,7 +110,12 @@ localparam MOVE_STATE = 3'd7;
 	 uut.memoryWriteEnable,
 	 uut.memoryReadWriteAddress,
 	 uut.memoryContents,
-	 uut.registerFileContentsB
+	 uut.registerFileContentsB,
+	 uut.memory_instance.rect_data[0],
+	 uut.memory_instance.contents,
+	 	 uut.memory_instance.contentsCPU,
+	 uut.memory_instance.contentsRect,
+	 uut.memory_instance.contentsPlayer
 );
         end
     endtask
@@ -193,7 +198,7 @@ task print_state;
     end
 endtask
 
-
+integer i = 0;
     // ==================================================
     // Testbench stimulus
     // ==================================================
@@ -203,14 +208,17 @@ endtask
         reset = 0;
 		  
 		  switches = 10'b0;
-		  push_buttons = 4'b1111;
+		  
 
         // Apply reset
         apply_reset();
+		  push_buttons = 4'b0001;
 			running = 1;
         // Run for a few cycles and print state
-        while (running != 0) begin
 		  
+        while (running != 0) begin
+				i = i + 1;
+				if(i == 100) running = 0;
 		  
 				if(controlUnitNextState == NOTHING_STATE) running = 0;
 				if(controlUnitState == NOTHING_STATE) running = 0;

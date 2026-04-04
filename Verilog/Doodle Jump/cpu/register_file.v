@@ -18,6 +18,7 @@ module register_file
 	 
 	 input wire leftButton,
 	 input wire rightButton,
+	 input wire jumpButton,
 	 input wire vsync,
 	 
 	 output wire [15:0] R3
@@ -37,7 +38,7 @@ begin
 end
 
 wire [15:0] reg15input;
-assign reg15input = {12'd0,leftButton, rightButton, vsync};
+assign reg15input = {11'd0,jumpButton, leftButton, rightButton, vsync};
 
 assign contentsA = 4'd15 == readAddressA ? reg15input : registers[readAddressA];
 assign contentsB = 4'd15 == readAddressB ? reg15input : registers[readAddressB];

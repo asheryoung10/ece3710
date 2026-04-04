@@ -44,8 +44,6 @@ module doodle_jump #(
 	output [2:0] controlUnitNextState
 );
 assign reset = ~push_buttons[0];
-assign hex0 = switches[6:0];
-assign hex1 = switches [9:7];
 wire [15:0] player_x;
 wire [15:0] player_y;
 
@@ -81,6 +79,7 @@ wire memoryWriteEnable;
 wire [MEMORY_ADDR_WIDTH-1:0] memoryReadWriteAddress;
 wire [DATA_WIDTH-1:0] registerFileContentsB;
 wire [DATA_WIDTH-1:0] memoryContents;
+wire [DATA_WIDTH-1:0] register3;
 cpu cpu_instance (
 	.clock(systemClock50MHz),
 	.reset(reset),
@@ -99,8 +98,9 @@ cpu cpu_instance (
    .controlUnitNextState(controlUnitNextState),
 	.leftButton(~push_buttons[3]),
 	.rightButton(~push_buttons[2]),
+	.jumpButton(~push_buttons[1]),
 	.vsync(vga_vs),
-	.R3(leds)
+	.R3(register3)
 );
 
 
@@ -150,5 +150,13 @@ audio_unit audio_unit_instance (
 	.done()
 	
 );
+
+    sixteen_bit_seven_seg segDriver (
+        .value(register3), 
+        .hex0(hex0),     
+        .hex1(hex1),
+        .hex2(hex2),
+        .hex3(hex3)
+    );
 
 endmodule

@@ -5,6 +5,8 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/seven_seg_decoder.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v}
 vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v}
 vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v}
 vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v}
