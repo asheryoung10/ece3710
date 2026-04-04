@@ -87,6 +87,7 @@ always @(*) begin
         EXECUTE_LOAD_INSTRUCTION: begin
             registerFileWriteEnable = 1'b1;
             registerFileSelectInput = 2'b11;
+				memorySelectReadWriteAddress = 1'b1;
 				nextState = FETCH_INSTRUCTION_FROM_MEMORY;
         end
         NOTHING_STATE: begin
