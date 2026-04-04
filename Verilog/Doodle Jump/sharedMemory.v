@@ -53,17 +53,18 @@ cpu_memory_instance
 always@(posedge clock) begin
 	if(enablePlayerWrite) begin
 			if(readWriteAddress[0]) begin
-				player_x <= writeData;
+				player_y <= writeData;
 				contentsPlayer <= writeData;
 			end else begin
-				player_y <= writeData;
+				player_x <= writeData;
 				contentsPlayer <= writeData;
 			end
 	end else begin
 		if(readWriteAddress[0]) begin
-			contentsPlayer <= player_x;
+			contentsPlayer <= player_y;
 		end else begin
-			 contentsPlayer <= player_y;
+			contentsPlayer <= player_x;
+			 
 		end
 	end
 end

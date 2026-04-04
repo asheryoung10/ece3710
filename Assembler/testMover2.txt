@@ -1,6 +1,9 @@
 // -----------------------------
 // Initialize rectangles on the ground
 // -----------------------------
+// Test mov and movi
+MOVI 15 R5
+MOV R5 R4
 MOVI 0x01, R4
 LSHI 15, R4        // R4 = rectangle base
 
@@ -19,7 +22,7 @@ rect_init_loop:
     // -----------------
     ADDI 1, R4
     MOVI 27, R1       // ground level (max 8-bit)
-    LSHI 4, R1
+    LSHI 3, R1
     MOV R5, R2
     LSHI 2, R2
     ADD R2, R1
@@ -53,13 +56,14 @@ rect_init_loop:
     ADDI 1, R4         // next rect pointer
     ADDI 1, R5         // i++
     CMPI 16, R5
-    BLT rect_init_loop
+    BNE rect_init_loop
 
 
 player_loop:
 BUC checkCollision
 returnCollision:
-MOVI 1, R11
+MOVI 0, R14
+BUC skip
 BUC collisionDone
 returnNoCollision:
 MOVI 2, R11
@@ -68,7 +72,11 @@ collisionDone:
 // -----------------------------
 // 1) Apply gravity
 // -----------------------------
+CMPI 3, R14
+BLT skip
 ADDI 1, R14        // velocityY += 1 (gravity)
+skip:
+
 
 // -----------------------------
 // 2) Poll input and adjust X velocity
@@ -135,7 +143,7 @@ BNE waitVsyncLow2
 BUC player_loop
 
 checkCollision:
-
+//BUC returnCollision
 // -----------------------------
 // 1) Load player Y
 // -----------------------------
@@ -156,18 +164,22 @@ LOAD R3, R2           // R3 = rectY
 // -----------------------------
 // 3) Load first rectangle height
 // -----------------------------
-ADDI 2, R2            // size word (x packed y size)
+ADDI 1, R2            // size word (x packed y size)
 LOAD R4, R2
-LSHI 8, R4             // extract width high bits
-MOVI 0xFF, R5
+MOVI 0x0F, R5
+LSHI 4, R5
+MOVI 0x0F, R6
+OR R6, R5
 AND R5, R4             // mask to get height low byte
 ADD R3, R4             // R4 = rectY + rectHeight
 
 // -----------------------------
 // 4) Compare player bottom vs rectangle bottom
 // -----------------------------
-CMPI R1, R4
-BGT returnCollision
+MOV R1, R8
+MOV r4, R9
+CMP R1, R4
+BHI returnCollision
 
 // -----------------------------
 // 5) No collision

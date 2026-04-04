@@ -74,8 +74,7 @@ MainWindow::~MainWindow()
 // Load memory from file
 void MainWindow::loadFileIntoModel()
 {
-    model.initMemory("C:\\Users\\asher\\Desktop\\SchoolWork\\ece3710\\Assembler\\testMover2.bin");
-    return;
+
     QString filePath = QFileDialog::getOpenFileName(this,
                                                     tr("Open Memory File"), "",
                                                     tr("Binary Files (*.bin);;All Files (*)"));

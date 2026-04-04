@@ -256,25 +256,24 @@ bool Model::tick() {
         // Lower 4 bits of instruction = condition
         bool takeBranch = false;
 
-        switch(rd) {
-        case 0b0000: takeBranch = zFlag; break;          // EQ
-        case 0b0001: takeBranch = !zFlag; break;         // NE
-        case 0b0010: takeBranch = cFlag; break;         // CS
-        case 0b0011: takeBranch = !cFlag; break;        // CC
-        case 0b0100: takeBranch = !lFlag && !zFlag; break; // HI
-        case 0b0101: takeBranch = lFlag || zFlag; break;   // LS
-        case 0b0110: takeBranch = !lFlag && !zFlag; break; // GT (signed)
-        case 0b0111: takeBranch = lFlag || zFlag; break;   // LE (signed)
-        case 0b1000: takeBranch = fFlag; break;         // FS (overflow)
-        case 0b1001: takeBranch = !fFlag; break;        // FC
-        case 0b1010: takeBranch = lFlag; break;         // LO
-        case 0b1011: takeBranch = !lFlag; break;        // HS
-        case 0b1100: takeBranch = nFlag; break;         // LT
-        case 0b1101: takeBranch = !nFlag; break;        // GE
-        case 0b1110: takeBranch = true; break;          // UC (unconditional)
-        default: takeBranch = false; break;
-        }
-
+switch (rd) {
+    case 0b0000: takeBranch = zFlag; break;            // EQ (Zero flag)
+    case 0b0001: takeBranch = !zFlag; break;           // NE (Not Zero)
+    case 0b0010: takeBranch = cFlag; break;            // CS (Carry Set)
+    case 0b0011: takeBranch = !cFlag; break;           // CC (Carry Clear)
+    case 0b0100: takeBranch = lFlag; break;  // HI (Higher - no lower and no zero)
+    case 0b0101: takeBranch = !lFlag; break;   // LS (Lower or zero)
+    case 0b0110: takeBranch = nFlag ; break;  // GT (Greater than - signed)
+    case 0b0111: takeBranch = !nFlag; break;   // LE (Less than or equal - signed)
+    case 0b1000: takeBranch = fFlag; break;            // FS (Flag Set)
+    case 0b1001: takeBranch = !fFlag; break;           // FC (Flag Clear)
+    case 0b1010: takeBranch = !lFlag && !zFlag; break;            // LO (Lower - signed)
+    case 0b1011: takeBranch = lFlag || zFlag; break;   // HS (Higher or same - signed)
+    case 0b1100: takeBranch = !nFlag && !zFlag; break;  // LT (Less Than - signed, both N and Z must be 0)
+    case 0b1101: takeBranch = nFlag || zFlag; break;   // GE (Greater or equal - signed, either N or Z must be 1)
+    case 0b1110: takeBranch = true; break;             // UC (Unconditional)
+    default: takeBranch = false; break;                // Default (no branch)
+}
         if(takeBranch)
             programCounter = A;
         else
@@ -284,7 +283,7 @@ bool Model::tick() {
     }
     default: {
         A = immediate;
-        int16_t sA = static_cast<int16_t>(immediate);
+        int16_t sA = static_cast<int16_t>(static_cast<int8_t>(immediate));
         switch(opcodeUpper) {
         case ADDI_UPPER: {
             int16_t res = sB + sA;
@@ -332,32 +331,31 @@ bool Model::tick() {
             break;
         }
         case MOVI_UPPER:
-            registers[rd] = A;
+            registers[rd] = sA;
             programCounter++;
             break;
         case BCOND_UPPER: {
             // Lower 4 bits of instruction = condition
             bool takeBranch = false;
 
-            switch(rd) {
-            case 0b0000: takeBranch = zFlag; break;          // EQ
-            case 0b0001: takeBranch = !zFlag; break;         // NE
-            case 0b0010: takeBranch = cFlag; break;         // CS
-            case 0b0011: takeBranch = !cFlag; break;        // CC
-            case 0b0100: takeBranch = !lFlag && !zFlag; break; // HI
-            case 0b0101: takeBranch = lFlag || zFlag; break;   // LS
-            case 0b0110: takeBranch = !lFlag && !zFlag; break; // GT (signed)
-            case 0b0111: takeBranch = lFlag || zFlag; break;   // LE (signed)
-            case 0b1000: takeBranch = fFlag; break;         // FS
-            case 0b1001: takeBranch = !fFlag; break;        // FC
-            case 0b1010: takeBranch = lFlag; break;         // LO
-            case 0b1011: takeBranch = !lFlag; break;        // HS
-            case 0b1100: takeBranch = nFlag; break;         // LT
-            case 0b1101: takeBranch = !nFlag; break;        // GE
-            case 0b1110: takeBranch = true; break;          // UC (unconditional)
-            default: takeBranch = false; break;
-            }
-
+switch (rd) {
+    case 0b0000: takeBranch = zFlag; break;            // EQ (Zero flag)
+    case 0b0001: takeBranch = !zFlag; break;           // NE (Not Zero)
+    case 0b0010: takeBranch = cFlag; break;            // CS (Carry Set)
+    case 0b0011: takeBranch = !cFlag; break;           // CC (Carry Clear)
+    case 0b0100: takeBranch = lFlag; break;  // HI (Higher - no lower and no zero)
+    case 0b0101: takeBranch = !lFlag; break;   // LS (Lower or zero)
+    case 0b0110: takeBranch = nFlag ; break;  // GT (Greater than - signed)
+    case 0b0111: takeBranch = !nFlag; break;   // LE (Less than or equal - signed)
+    case 0b1000: takeBranch = fFlag; break;            // FS (Flag Set)
+    case 0b1001: takeBranch = !fFlag; break;           // FC (Flag Clear)
+    case 0b1010: takeBranch = !lFlag && !zFlag; break;            // LO (Lower - signed)
+    case 0b1011: takeBranch = lFlag || zFlag; break;   // HS (Higher or same - signed)
+    case 0b1100: takeBranch = !nFlag && !zFlag; break;  // LT (Less Than - signed, both N and Z must be 0)
+    case 0b1101: takeBranch = nFlag || zFlag; break;   // GE (Greater or equal - signed, either N or Z must be 1)
+    case 0b1110: takeBranch = true; break;             // UC (Unconditional)
+    default: takeBranch = false; break;                // Default (no branch)
+}
             if(takeBranch) {
                 int16_t branchOffset = static_cast<int8_t>(immediate); // cast preserves sign
                 programCounter = programCounter + branchOffset;

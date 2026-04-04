@@ -54,7 +54,12 @@ always @(*) begin
             programCounterWriteEnable = 1'b1;
             // Choose next state
             casex (aluOpcode)
-                ADD, ADDI, ADDUI, ADDC, ADDCI, SUB, SUBI, CMP, CMPI, AND, OR, XOR, NOT, LSH, LSHI, RSH, RSHI, ARSH, ARSHI: begin
+					CMP, CMPI: begin
+							registerFileWriteEnable = 1'b0;
+						  programStateRegisterWriteEnable = 1'b1;
+                    nextState = FETCH_INSTRUCTION_FROM_MEMORY;
+					end
+                ADD, ADDI, ADDUI, ADDC, ADDCI, SUB, SUBI,  AND, OR, XOR, NOT, LSH, LSHI, RSH, RSHI, ARSH, ARSHI: begin
                     registerFileWriteEnable = 1'b1;
 						  programStateRegisterWriteEnable = 1'b1;
                     nextState = FETCH_INSTRUCTION_FROM_MEMORY;

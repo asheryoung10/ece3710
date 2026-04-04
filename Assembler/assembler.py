@@ -586,3 +586,5 @@ def assembleProgram(source):
             _wrap_line_error(program_instruction.line_number, exc)
 
     return "\n".join(assembled_lines)
+    
+print(assembleInstruction("MOVI -10, R13"))
