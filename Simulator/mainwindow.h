@@ -26,12 +26,20 @@ private:
     Ui::MainWindow *ui;
     Model model;
     QTimer* cpuTimer;
+    std::string filepath;
+    bool isPlaying = false;
     void updateMemoryViewPartial();
     void loadFileIntoModel();
-    void startSimulation();
+    void pausePlaySimulation();
     void pauseSimulation();
+    void playSimulation();
+    void slidersChanged();
+    void reloadSimulation();
     void stepModel();
     void updateViews();
     void tickModel();
+protected:
+    void keyPressEvent(QKeyEvent *event) override;
+    void keyReleaseEvent(QKeyEvent *event) override;
 };
 #endif // MAINWINDOW_H
