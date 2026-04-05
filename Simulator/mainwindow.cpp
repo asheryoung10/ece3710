@@ -7,6 +7,7 @@
 #include <QHeaderView>
 #include <QScrollBar>
 #include <QThread>
+#include <QKeyEvent>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -21,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Load memory file
     connect(ui->loadButton, &QPushButton::clicked, this, &MainWindow::loadFileIntoModel);
+    ui->reloadButton->setEnabled(false);
 
     // Input buttons
     connect(ui->leftButton, &QPushButton::pressed,  this, [this]{ model.setLeftButton(true); });
@@ -37,8 +39,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Step / play / pause
     connect(ui->stepButton, &QPushButton::clicked, this, &MainWindow::stepModel);
-    connect(ui->playButton, &QPushButton::clicked, this, &MainWindow::startSimulation);
-    connect(ui->pauseButton, &QPushButton::clicked, this, &MainWindow::pauseSimulation);
+    connect(ui->playButton, &QPushButton::clicked, this, &MainWindow::pausePlaySimulation);
+    connect(ui->reloadButton, &QPushButton::clicked, this, &MainWindow::reloadSimulation);
 
     // Setup memory model: 65536 rows, 1 column
     memoryModelQt = new QStandardItemModel(65536, 1, this);
@@ -61,8 +63,19 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Connect VGA view if needed
     ui->vgaView->setModel(&model);
+    connect(ui->stepAmount,&QSlider::valueChanged,  this, &MainWindow::slidersChanged);
+    connect(ui->frameDelay,&QSlider::valueChanged, this, &MainWindow::slidersChanged);
+    ui->leftButton->setFocusPolicy(Qt::NoFocus);
+    ui->rightButton->setFocusPolicy(Qt::NoFocus);
+    ui->jumpButton->setFocusPolicy(Qt::NoFocus);
+    ui->resetButton->setFocusPolicy(Qt::NoFocus);
+    ui->playButton->setFocusPolicy(Qt::NoFocus);
+    ui->stepButton->setFocusPolicy(Qt::NoFocus);
+    ui->loadButton->setFocusPolicy(Qt::NoFocus);
+    ui->reloadButton->setFocusPolicy(Qt::NoFocus);
 
     // Initial UI update
+    slidersChanged();
     updateViews();
 }
 
@@ -71,10 +84,22 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::slidersChanged() {
+    ui->stepButton->setText(QString("Step %1").arg(ui->stepAmount->value()));
+
+    if (isPlaying) {
+        ui->playButton->setText("Pause");
+    } else {
+        ui->playButton->setText(QString("Play %1 ms").arg(ui->frameDelay->value()));
+    }
+}
+void MainWindow::reloadSimulation() {
+    model.initMemory(filepath);
+    pauseSimulation();
+}
 // Load memory from file
 void MainWindow::loadFileIntoModel()
 {
-
     QString filePath = QFileDialog::getOpenFileName(this,
                                                     tr("Open Memory File"), "",
                                                     tr("Binary Files (*.bin);;All Files (*)"));
@@ -84,6 +109,9 @@ void MainWindow::loadFileIntoModel()
         model.initMemory(filePath.toStdString());
         QMessageBox::information(this, tr("Memory Loaded"),
                                  tr("Memory successfully loaded from:\n%1").arg(filePath));
+        filepath = filePath.toStdString();
+        ui->reloadButton->setEnabled(true);
+        pauseSimulation();
         updateViews();
     } catch (const std::exception& e) {
         QMessageBox::critical(this, tr("Error"), tr("Failed to load file:\n%1").arg(e.what()));
@@ -101,17 +129,27 @@ void MainWindow::stepModel()
 }
 
 // Start continuous simulation
-void MainWindow::startSimulation()
+void MainWindow::pausePlaySimulation()
 {
-    cpuTimer->start();
+    if(isPlaying) {
+        pauseSimulation();
+       }else {
+        playSimulation();
+     }
 }
+void MainWindow::playSimulation() {
+       isPlaying = true;
+    slidersChanged();
+        cpuTimer->start();
 
-// Pause simulation
-void MainWindow::pauseSimulation()
-{
-    cpuTimer->stop();
 }
+void MainWindow::pauseSimulation() {
+     cpuTimer->stop();
+        ui->playButton->setText("Play");
+        isPlaying = false;
+     slidersChanged();
 
+}
 // Timer slot: tick CPU
 void MainWindow::tickModel()
 {
@@ -170,4 +208,43 @@ void MainWindow::updateViews()
         );
 
     ui->vgaView->update();
+}
+
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    if (event->isAutoRepeat()) return;
+
+    switch (event->key()) {
+    case Qt::Key_A:
+        model.setLeftButton(true);
+        break;
+    case Qt::Key_D:
+        model.setRightButton(true);
+        break;
+    case Qt::Key_Space:
+        model.setJumpButton(true);
+        break;
+    default:
+        QMainWindow::keyPressEvent(event);
+    }
+}
+
+void MainWindow::keyReleaseEvent(QKeyEvent *event)
+{
+    if (event->isAutoRepeat()) return;
+
+    switch (event->key()) {
+    case Qt::Key_A:
+        model.setLeftButton(false);
+        break;
+    case Qt::Key_D:
+        model.setRightButton(false);
+        break;
+    case Qt::Key_Space:
+        model.setJumpButton(false);
+        break;
+    default:
+        QMainWindow::keyReleaseEvent(event);
+    }
 }
