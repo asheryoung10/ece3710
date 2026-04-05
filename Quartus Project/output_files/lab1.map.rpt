@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab1
-Sat Apr  4 22:56:22 2026
+Sat Apr  4 23:27:54 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -80,7 +80,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Apr  4 22:56:22 2026          ;
+; Analysis & Synthesis Status     ; Successful - Sat Apr  4 23:27:54 2026          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; lab1                                           ;
 ; Top-level Entity Name           ; doodle_jump                                    ;
@@ -201,7 +201,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
@@ -261,14 +261,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 5654                   ;
+; Estimate of Logic utilization (ALMs needed) ; 5467                   ;
 ;                                             ;                        ;
-; Combinational ALUT usage for logic          ; 9687                   ;
+; Combinational ALUT usage for logic          ; 9267                   ;
 ;     -- 7 input functions                    ; 39                     ;
 ;     -- 6 input functions                    ; 1480                   ;
 ;     -- 5 input functions                    ; 1248                   ;
 ;     -- 4 input functions                    ; 712                    ;
-;     -- <=3 input functions                  ; 6208                   ;
+;     -- <=3 input functions                  ; 5788                   ;
 ;                                             ;                        ;
 ; Dedicated logic registers                   ; 1615                   ;
 ;                                             ;                        ;
@@ -280,8 +280,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                        ;
 ; Maximum fan-out node                        ; systemClock50MHz~input ;
 ; Maximum fan-out                             ; 1411                   ;
-; Total fan-out                               ; 39302                  ;
-; Average fan-out                             ; 3.35                   ;
+; Total fan-out                               ; 38882                  ;
+; Average fan-out                             ; 3.44                   ;
 +---------------------------------------------+------------------------+
 
 
@@ -290,7 +290,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                     ; Entity Name               ; Library Name ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |doodle_jump                                             ; 9687 (0)            ; 1615 (0)                  ; 409600            ; 0          ; 177  ; 0            ; |doodle_jump                                                                                                                                            ; doodle_jump               ; work         ;
+; |doodle_jump                                             ; 9267 (0)            ; 1615 (0)                  ; 409600            ; 0          ; 177  ; 0            ; |doodle_jump                                                                                                                                            ; doodle_jump               ; work         ;
 ;    |audio_unit:audio_unit_instance|                      ; 151 (1)             ; 123 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance                                                                                                             ; audio_unit                ; work         ;
 ;       |audio_configurator_select:i2c_conf|               ; 90 (34)             ; 69 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf                                                                          ; audio_configurator_select ; work         ;
 ;          |i2c_controller:i2c_controller_instance|        ; 56 (56)             ; 38 (38)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance                                   ; i2c_controller            ; work         ;
@@ -307,7 +307,7 @@ https://fpgasoftware.intel.com/eula.
 ;       |register:program_counter|                         ; 3 (3)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:program_counter                                                                                                  ; register                  ; work         ;
 ;       |register:program_state_register|                  ; 0 (0)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:program_state_register                                                                                           ; register                  ; work         ;
 ;       |register_file:register_file_instance|             ; 204 (204)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance                                                                                      ; register_file             ; work         ;
-;    |sharedMemory:memory_instance|                        ; 8480 (8480)         ; 1088 (1088)               ; 16384             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance                                                                                                               ; sharedMemory              ; work         ;
+;    |sharedMemory:memory_instance|                        ; 8060 (8060)         ; 1088 (1088)               ; 16384             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance                                                                                                               ; sharedMemory              ; work         ;
 ;       |memory:cpu_memory_instance|                       ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|memory:cpu_memory_instance                                                                                    ; memory                    ; work         ;
 ;          |altsyncram:ram_rtl_0|                          ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0                                                               ; altsyncram                ; work         ;
 ;             |altsyncram_0pe1:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0|altsyncram_0pe1:auto_generated                                ; altsyncram_0pe1           ; work         ;
@@ -514,108 +514,8 @@ Encoding Type:  One-Hot
 ; Inverted Register                                            ; Fan out ;
 +--------------------------------------------------------------+---------+
 ; cpu:cpu_instance|control_unit:control_unit_instance|state[0] ; 11      ;
-; sharedMemory:memory_instance|rect_data[55][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[47][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[39][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[31][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[35][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[38][2]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[38][1]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[38][9]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[38][13]               ; 3       ;
-; sharedMemory:memory_instance|rect_data[38][12]               ; 3       ;
-; sharedMemory:memory_instance|rect_data[38][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[38][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[37][8]                ; 6       ;
-; sharedMemory:memory_instance|rect_data[37][6]                ; 5       ;
-; sharedMemory:memory_instance|rect_data[37][5]                ; 5       ;
-; sharedMemory:memory_instance|rect_data[37][3]                ; 5       ;
-; sharedMemory:memory_instance|rect_data[36][8]                ; 6       ;
-; sharedMemory:memory_instance|rect_data[36][6]                ; 5       ;
-; sharedMemory:memory_instance|rect_data[36][5]                ; 5       ;
-; sharedMemory:memory_instance|rect_data[36][3]                ; 5       ;
-; sharedMemory:memory_instance|rect_data[34][2]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[34][1]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[34][9]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[34][13]               ; 3       ;
-; sharedMemory:memory_instance|rect_data[34][12]               ; 3       ;
-; sharedMemory:memory_instance|rect_data[34][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[34][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[33][8]                ; 6       ;
-; sharedMemory:memory_instance|rect_data[33][6]                ; 5       ;
-; sharedMemory:memory_instance|rect_data[32][8]                ; 6       ;
-; sharedMemory:memory_instance|rect_data[32][6]                ; 5       ;
-; sharedMemory:memory_instance|rect_data[42][2]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[42][1]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[42][9]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[42][13]               ; 3       ;
-; sharedMemory:memory_instance|rect_data[42][12]               ; 3       ;
-; sharedMemory:memory_instance|rect_data[42][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[42][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[41][8]                ; 6       ;
-; sharedMemory:memory_instance|rect_data[41][7]                ; 5       ;
-; sharedMemory:memory_instance|rect_data[41][4]                ; 5       ;
-; sharedMemory:memory_instance|rect_data[40][8]                ; 6       ;
-; sharedMemory:memory_instance|rect_data[40][7]                ; 5       ;
-; sharedMemory:memory_instance|rect_data[40][4]                ; 5       ;
-; sharedMemory:memory_instance|rect_data[43][10]               ; 3       ;
-; sharedMemory:memory_instance|rect_data[43][4]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[43][3]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[43][2]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[43][1]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[43][0]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[43][15]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[43][14]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[43][13]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[43][12]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[43][11]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[43][9]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[43][8]                ; 5       ;
-; sharedMemory:memory_instance|rect_data[43][7]                ; 6       ;
-; sharedMemory:memory_instance|rect_data[43][6]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[43][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[39][10]               ; 3       ;
-; sharedMemory:memory_instance|rect_data[39][4]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[39][3]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[39][2]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[39][1]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[39][0]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[39][15]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[39][14]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[39][13]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[39][12]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[39][11]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[39][9]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[39][8]                ; 5       ;
-; sharedMemory:memory_instance|rect_data[39][7]                ; 6       ;
-; sharedMemory:memory_instance|rect_data[39][6]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[35][10]               ; 3       ;
-; sharedMemory:memory_instance|rect_data[35][4]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[35][3]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[35][2]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[35][1]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[35][0]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[35][15]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[35][14]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[35][13]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[35][12]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[35][11]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[35][9]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[35][8]                ; 5       ;
-; sharedMemory:memory_instance|rect_data[35][7]                ; 6       ;
-; sharedMemory:memory_instance|rect_data[35][6]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[31][10]               ; 3       ;
-; sharedMemory:memory_instance|rect_data[31][4]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[31][3]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[31][2]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[31][1]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[31][0]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[31][15]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[31][14]               ; 4       ;
-; sharedMemory:memory_instance|rect_data[31][13]               ; 4       ;
-; Total number of inverted registers = 421*                    ;         ;
+; Total number of inverted registers = 1                       ;         ;
 +--------------------------------------------------------------+---------+
-* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1091,7 +991,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 56                          ;
 ;     plain             ; 112                         ;
 ; arriav_io_obuf        ; 6                           ;
-; arriav_lcell_comb     ; 9694                        ;
+; arriav_lcell_comb     ; 9274                        ;
 ;     arith             ; 5160                        ;
 ;         0 data inputs ; 246                         ;
 ;         1 data inputs ; 2684                        ;
@@ -1101,9 +1001,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs ; 66                          ;
 ;     extend            ; 39                          ;
 ;         7 data inputs ; 39                          ;
-;     normal            ; 4166                        ;
+;     normal            ; 3746                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 433                         ;
+;         1 data inputs ; 13                          ;
 ;         2 data inputs ; 293                         ;
 ;         3 data inputs ; 221                         ;
 ;         4 data inputs ; 556                         ;
@@ -1118,7 +1018,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 64                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 26.40                       ;
-; Average LUT depth     ; 18.89                       ;
+; Average LUT depth     ; 19.29                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1127,7 +1027,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:31     ;
+; Top            ; 00:00:30     ;
 +----------------+--------------+
 
 
@@ -1137,7 +1037,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Sat Apr  4 22:55:20 2026
+    Info: Processing started: Sat Apr  4 23:26:53 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1244,10 +1144,8 @@ Warning (10270): Verilog HDL Case Statement warning at control_unit.v(41): incom
 Info (12128): Elaborating entity "sharedMemory" for hierarchy "sharedMemory:memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 130
 Warning (10240): Verilog HDL Always Construct warning at sharedMemory.v(117): inferring latch(es) for variable "edge_dx", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 117
 Warning (10240): Verilog HDL Always Construct warning at sharedMemory.v(117): inferring latch(es) for variable "edge_dy", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 117
-Warning (10230): Verilog HDL assignment warning at sharedMemory.v(214): truncated value with size 32 to match size of target (16) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 214
-Warning (10230): Verilog HDL assignment warning at sharedMemory.v(215): truncated value with size 32 to match size of target (16) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 215
 Info (12128): Elaborating entity "memory" for hierarchy "sharedMemory:memory_instance|memory:cpu_memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 50
-Warning (10850): Verilog HDL warning at memory.v(18): number of words (147) in memory file does not match the number of elements in the address range [0:1023] File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v Line: 18
+Warning (10850): Verilog HDL warning at memory.v(18): number of words (157) in memory file does not match the number of elements in the address range [0:1023] File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v Line: 18
 Info (12128): Elaborating entity "audio_unit" for hierarchy "audio_unit:audio_unit_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 152
 Info (12128): Elaborating entity "audio_configurator_select" for hierarchy "audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v Line: 38
 Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(124): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 124
@@ -1401,10 +1299,10 @@ Info (21057): Implemented 10895 device resources after synthesis - the final res
     Info (21060): Implemented 6 bidirectional pins
     Info (21061): Implemented 10654 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 109 warnings
-    Info: Peak virtual memory: 532 megabytes
-    Info: Processing ended: Sat Apr  4 22:56:22 2026
-    Info: Elapsed time: 00:01:02
-    Info: Total CPU time (on all processors): 00:01:07
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 107 warnings
+    Info: Peak virtual memory: 531 megabytes
+    Info: Processing ended: Sat Apr  4 23:27:54 2026
+    Info: Elapsed time: 00:01:01
+    Info: Total CPU time (on all processors): 00:01:06
 
 
