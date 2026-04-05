@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab1
-Sat Apr  4 17:19:08 2026
+Sat Apr  4 22:56:22 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -80,13 +80,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Apr  4 17:19:07 2026          ;
+; Analysis & Synthesis Status     ; Successful - Sat Apr  4 22:56:22 2026          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; lab1                                           ;
 ; Top-level Entity Name           ; doodle_jump                                    ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 1603                                           ;
+; Total registers                 ; 1615                                           ;
 ; Total pins                      ; 177                                            ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 409,600                                        ;
@@ -201,7 +201,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
@@ -261,16 +261,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 2269                   ;
+; Estimate of Logic utilization (ALMs needed) ; 5654                   ;
 ;                                             ;                        ;
-; Combinational ALUT usage for logic          ; 3280                   ;
-;     -- 7 input functions                    ; 18                     ;
-;     -- 6 input functions                    ; 1138                   ;
-;     -- 5 input functions                    ; 467                    ;
-;     -- 4 input functions                    ; 342                    ;
-;     -- <=3 input functions                  ; 1315                   ;
+; Combinational ALUT usage for logic          ; 9687                   ;
+;     -- 7 input functions                    ; 39                     ;
+;     -- 6 input functions                    ; 1480                   ;
+;     -- 5 input functions                    ; 1248                   ;
+;     -- 4 input functions                    ; 712                    ;
+;     -- <=3 input functions                  ; 6208                   ;
 ;                                             ;                        ;
-; Dedicated logic registers                   ; 1603                   ;
+; Dedicated logic registers                   ; 1615                   ;
 ;                                             ;                        ;
 ; I/O pins                                    ; 177                    ;
 ; Total MLAB memory bits                      ; 0                      ;
@@ -280,8 +280,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                        ;
 ; Maximum fan-out node                        ; systemClock50MHz~input ;
 ; Maximum fan-out                             ; 1411                   ;
-; Total fan-out                               ; 19591                  ;
-; Average fan-out                             ; 3.69                   ;
+; Total fan-out                               ; 39302                  ;
+; Average fan-out                             ; 3.35                   ;
 +---------------------------------------------+------------------------+
 
 
@@ -290,24 +290,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                     ; Entity Name               ; Library Name ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |doodle_jump                                             ; 3280 (0)            ; 1603 (0)                  ; 409600            ; 0          ; 177  ; 0            ; |doodle_jump                                                                                                                                            ; doodle_jump               ; work         ;
+; |doodle_jump                                             ; 9687 (0)            ; 1615 (0)                  ; 409600            ; 0          ; 177  ; 0            ; |doodle_jump                                                                                                                                            ; doodle_jump               ; work         ;
 ;    |audio_unit:audio_unit_instance|                      ; 151 (1)             ; 123 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance                                                                                                             ; audio_unit                ; work         ;
 ;       |audio_configurator_select:i2c_conf|               ; 90 (34)             ; 69 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf                                                                          ; audio_configurator_select ; work         ;
 ;          |i2c_controller:i2c_controller_instance|        ; 56 (56)             ; 38 (38)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance                                   ; i2c_controller            ; work         ;
 ;       |audio_output:dac_driver|                          ; 60 (11)             ; 54 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_output:dac_driver                                                                                     ; audio_output              ; work         ;
 ;          |note_generator:note_gen|                       ; 49 (49)             ; 42 (42)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen                                                             ; note_generator            ; work         ;
-;    |cpu:cpu_instance|                                    ; 827 (0)             ; 296 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance                                                                                                                           ; cpu                       ; work         ;
-;       |alu:alu_instance|                                 ; 479 (479)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|alu:alu_instance                                                                                                          ; alu                       ; work         ;
+;    |cpu:cpu_instance|                                    ; 782 (0)             ; 296 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance                                                                                                                           ; cpu                       ; work         ;
+;       |alu:alu_instance|                                 ; 446 (446)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|alu:alu_instance                                                                                                          ; alu                       ; work         ;
 ;       |control_unit:control_unit_instance|               ; 27 (27)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|control_unit:control_unit_instance                                                                                        ; control_unit              ; work         ;
 ;       |instruction_decoder:instruction_decoder_instance| ; 53 (53)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|instruction_decoder:instruction_decoder_instance                                                                          ; instruction_decoder       ; work         ;
-;       |mux2:alu_input_mux|                               ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux2:alu_input_mux                                                                                                        ; mux2                      ; work         ;
+;       |mux2:alu_input_mux|                               ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux2:alu_input_mux                                                                                                        ; mux2                      ; work         ;
 ;       |mux2:memory_select_read_write_address_mux|        ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux2:memory_select_read_write_address_mux                                                                                 ; mux2                      ; work         ;
-;       |mux4:register_file_input_mux|                     ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux4:register_file_input_mux                                                                                              ; mux4                      ; work         ;
+;       |mux4:register_file_input_mux|                     ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux4:register_file_input_mux                                                                                              ; mux4                      ; work         ;
 ;       |register:instruction_register|                    ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:instruction_register                                                                                             ; register                  ; work         ;
 ;       |register:program_counter|                         ; 3 (3)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:program_counter                                                                                                  ; register                  ; work         ;
 ;       |register:program_state_register|                  ; 0 (0)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:program_state_register                                                                                           ; register                  ; work         ;
-;       |register_file:register_file_instance|             ; 214 (214)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance                                                                                      ; register_file             ; work         ;
-;    |sharedMemory:memory_instance|                        ; 2063 (2063)         ; 1088 (1088)               ; 16384             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance                                                                                                               ; sharedMemory              ; work         ;
+;       |register_file:register_file_instance|             ; 204 (204)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance                                                                                      ; register_file             ; work         ;
+;    |sharedMemory:memory_instance|                        ; 8480 (8480)         ; 1088 (1088)               ; 16384             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance                                                                                                               ; sharedMemory              ; work         ;
 ;       |memory:cpu_memory_instance|                       ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|memory:cpu_memory_instance                                                                                    ; memory                    ; work         ;
 ;          |altsyncram:ram_rtl_0|                          ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0                                                               ; altsyncram                ; work         ;
 ;             |altsyncram_0pe1:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0|altsyncram_0pe1:auto_generated                                ; altsyncram_0pe1           ; work         ;
@@ -316,13 +316,13 @@ https://fpgasoftware.intel.com/eula.
 ;       |seven_seg_decoder:dec1|                           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|sixteen_bit_seven_seg:segDriver|seven_seg_decoder:dec1                                                                                     ; seven_seg_decoder         ; work         ;
 ;       |seven_seg_decoder:dec2|                           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|sixteen_bit_seven_seg:segDriver|seven_seg_decoder:dec2                                                                                     ; seven_seg_decoder         ; work         ;
 ;       |seven_seg_decoder:dec3|                           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|sixteen_bit_seven_seg:segDriver|seven_seg_decoder:dec3                                                                                     ; seven_seg_decoder         ; work         ;
-;    |vga:vga_instance|                                    ; 211 (142)           ; 96 (45)                   ; 393216            ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance                                                                                                                           ; vga                       ; work         ;
+;    |vga:vga_instance|                                    ; 246 (166)           ; 108 (45)                  ; 393216            ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance                                                                                                                           ; vga                       ; work         ;
 ;       |playerMemory:playerMem_inst|                      ; 68 (44)             ; 49 (48)                   ; 393216            ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|playerMemory:playerMem_inst                                                                                               ; playerMemory              ; work         ;
 ;          |glyph_rom:glyph_rom_instance|                  ; 24 (0)              ; 1 (0)                     ; 393216            ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance                                                                  ; glyph_rom                 ; work         ;
 ;             |altsyncram:rom_rtl_0|                       ; 24 (0)              ; 1 (0)                     ; 393216            ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0                                             ; altsyncram                ; work         ;
 ;                |altsyncram_m5d1:auto_generated|          ; 24 (0)              ; 1 (1)                     ; 393216            ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated              ; altsyncram_m5d1           ; work         ;
 ;                   |mux_2hb:mux2|                         ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|mux_2hb:mux2 ; mux_2hb                   ; work         ;
-;       |tileMemory:tileMem_inst|                          ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|tileMemory:tileMem_inst                                                                                                   ; tileMemory                ; work         ;
+;       |tileMemory:tileMem_inst|                          ; 12 (12)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|tileMemory:tileMem_inst                                                                                                   ; tileMemory                ; work         ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -394,8 +394,12 @@ Encoding Type:  One-Hot
 +--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|drum_generator:drum_gen|drum_sample[0..15]                              ; Lost fanout                                                                                             ;
 ; cpu:cpu_instance|register:program_state_register|contents[5..15]                                                               ; Stuck at GND due to stuck port data_in                                                                  ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[0..7]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
-; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[0..7]                                                                     ; Stuck at GND due to stuck port data_in                                                                  ;
+; vga:vga_instance|tileMemory:tileMem_inst|b_next[6]                                                                             ; Stuck at VCC due to stuck port data_in                                                                  ;
+; vga:vga_instance|tileMemory:tileMem_inst|g_next[6]                                                                             ; Stuck at VCC due to stuck port data_in                                                                  ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[5,7]                                                                           ; Stuck at VCC due to stuck port data_in                                                                  ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[6]                                                                        ; Stuck at VCC due to stuck port data_in                                                                  ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[6]                                                                        ; Stuck at VCC due to stuck port data_in                                                                  ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[5,7]                                                                      ; Stuck at VCC due to stuck port data_in                                                                  ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[6,7]                                             ; Stuck at GND due to stuck port data_in                                                                  ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[4,5]                                             ; Stuck at VCC due to stuck port data_in                                                                  ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[3]                                               ; Stuck at GND due to stuck port data_in                                                                  ;
@@ -411,11 +415,23 @@ Encoding Type:  One-Hot
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[6,7]   ; Stuck at GND due to stuck port data_in                                                                  ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedSecondByte[6]    ; Stuck at GND due to stuck port data_in                                                                  ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen|note_data[1..15]                                ; Merged with audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen|note_data[0] ;
-; vga:vga_instance|tileMemory:tileMem_inst|g_next[0..7]                                                                          ; Merged with vga:vga_instance|tileMemory:tileMem_inst|b_next[0]                                          ;
-; vga:vga_instance|tileMemory:tileMem_inst|b_next[1..7]                                                                          ; Merged with vga:vga_instance|tileMemory:tileMem_inst|b_next[0]                                          ;
-; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[0..7]                                                                     ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[0]                                     ;
-; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[1..7]                                                                     ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[0]                                     ;
+; vga:vga_instance|tileMemory:tileMem_inst|g_next[1]                                                                             ; Merged with vga:vga_instance|tileMemory:tileMem_inst|b_next[1]                                          ;
+; vga:vga_instance|tileMemory:tileMem_inst|g_next[2]                                                                             ; Merged with vga:vga_instance|tileMemory:tileMem_inst|b_next[3]                                          ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[0,1]                                                                           ; Merged with vga:vga_instance|tileMemory:tileMem_inst|b_next[4]                                          ;
+; vga:vga_instance|tileMemory:tileMem_inst|b_next[7]                                                                             ; Merged with vga:vga_instance|tileMemory:tileMem_inst|b_next[4]                                          ;
+; vga:vga_instance|tileMemory:tileMem_inst|g_next[7]                                                                             ; Merged with vga:vga_instance|tileMemory:tileMem_inst|b_next[4]                                          ;
+; vga:vga_instance|tileMemory:tileMem_inst|g_next[4]                                                                             ; Merged with vga:vga_instance|tileMemory:tileMem_inst|g_next[0]                                          ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[4]                                                                             ; Merged with vga:vga_instance|tileMemory:tileMem_inst|g_next[0]                                          ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[3,6]                                                                           ; Merged with vga:vga_instance|tileMemory:tileMem_inst|g_next[5]                                          ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|final_audio_data[1..15]                                                 ; Merged with audio_unit:audio_unit_instance|audio_output:dac_driver|final_audio_data[0]                  ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[1]                                                                        ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[1]                                     ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[2]                                                                        ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[3]                                     ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[0,1]                                                                      ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[4]                                     ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[7]                                                                        ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[4]                                     ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[7]                                                                        ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[4]                                     ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[4]                                                                        ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[0]                                     ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[4]                                                                        ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[0]                                     ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[3,6]                                                                      ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[5]                                     ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen|tone_limit[9..31]                               ; Stuck at GND due to stuck port data_in                                                                  ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[6]        ; Stuck at GND due to stuck port data_in                                                                  ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep~6                                                ; Lost fanout                                                                                             ;
@@ -429,7 +445,13 @@ Encoding Type:  One-Hot
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentState~10       ; Lost fanout                                                                                             ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentState~12       ; Lost fanout                                                                                             ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep.010                                              ; Lost fanout                                                                                             ;
-; Total Number of Removed Registers = 160                                                                                        ;                                                                                                         ;
+; vga:vga_instance|tileMemory:tileMem_inst|g_next[3]                                                                             ; Merged with vga:vga_instance|tileMemory:tileMem_inst|g_next[0]                                          ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[3]                                                                        ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[0]                                     ;
+; vga:vga_instance|tileMemory:tileMem_inst|b_next[0]                                                                             ; Merged with vga:vga_instance|tileMemory:tileMem_inst|b_next[3]                                          ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[0]                                                                        ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[3]                                     ;
+; vga:vga_instance|tileMemory:tileMem_inst|b_next[2]                                                                             ; Merged with vga:vga_instance|tileMemory:tileMem_inst|r_next[2]                                          ;
+; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[2]                                                                        ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[2]                                     ;
+; Total Number of Removed Registers = 148                                                                                        ;                                                                                                         ;
 +--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 
 
@@ -440,41 +462,33 @@ Encoding Type:  One-Hot
 +----------------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[6] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[6], ;
 ;                                                                                  ; due to stuck port data_in ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[6]       ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|secondByte[6]  ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedSecondByte[6]   ;
+; vga:vga_instance|tileMemory:tileMem_inst|b_next[6]                               ; Stuck at VCC              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[6]                                                                       ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[0]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[0]                                                                       ;
+; vga:vga_instance|tileMemory:tileMem_inst|g_next[6]                               ; Stuck at VCC              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[6]                                                                       ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|firstByte[6]   ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[6]    ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[5]                               ; Stuck at VCC              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[5]                                                                       ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|firstByte[7]   ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[7]    ;
-;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[0] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[0]  ;
-;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[1] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[1]  ;
-;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[2] ; Stuck at VCC              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[2]  ;
-;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[3] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[3]  ;
-;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[4] ; Stuck at VCC              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[4]  ;
-;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[5] ; Stuck at VCC              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[5]  ;
+; vga:vga_instance|tileMemory:tileMem_inst|r_next[7]                               ; Stuck at VCC              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[7]                                                                       ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[7] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[7]  ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[7]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[7]                                                                       ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[5] ; Stuck at VCC              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[5]  ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[6]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[6]                                                                       ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[4] ; Stuck at VCC              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[4]  ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[5]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[5]                                                                       ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[3] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[3]  ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[4]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[4]                                                                       ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[2] ; Stuck at VCC              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[2]  ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[3]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[3]                                                                       ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[1] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[1]  ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[2]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[2]                                                                       ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|addressByte[0] ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedAddressByte[0]  ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
-; vga:vga_instance|tileMemory:tileMem_inst|r_next[1]                               ; Stuck at GND              ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[1]                                                                       ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|firstByte[7]   ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[7]    ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|firstByte[6]   ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedFirstByte[6]    ;
+;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|secondByte[6]  ; Stuck at GND              ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|savedSecondByte[6]   ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                                                               ;
 +----------------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
@@ -484,7 +498,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1603  ;
+; Total registers                              ; 1615  ;
 ; Number of registers using Synchronous Clear  ; 89    ;
 ; Number of registers using Synchronous Load   ; 19    ;
 ; Number of registers using Asynchronous Clear ; 337   ;
@@ -499,106 +513,106 @@ Encoding Type:  One-Hot
 +--------------------------------------------------------------+---------+
 ; Inverted Register                                            ; Fan out ;
 +--------------------------------------------------------------+---------+
-; cpu:cpu_instance|control_unit:control_unit_instance|state[0] ; 12      ;
-; sharedMemory:memory_instance|rect_data[55][11]               ; 2       ;
-; sharedMemory:memory_instance|rect_data[51][11]               ; 2       ;
-; sharedMemory:memory_instance|rect_data[43][11]               ; 2       ;
-; sharedMemory:memory_instance|rect_data[39][11]               ; 2       ;
-; sharedMemory:memory_instance|rect_data[31][11]               ; 2       ;
-; sharedMemory:memory_instance|rect_data[35][11]               ; 2       ;
-; sharedMemory:memory_instance|rect_data[32][8]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[32][6]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[33][8]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[33][6]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[36][8]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[36][6]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[36][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[36][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[37][8]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[37][6]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[37][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[37][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[40][8]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[40][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[40][7]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[41][8]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[41][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[41][7]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[47][11]               ; 2       ;
-; sharedMemory:memory_instance|rect_data[44][7]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[44][5]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[44][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[44][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[44][8]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[45][8]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[45][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[45][7]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[45][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[45][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[48][5]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[48][7]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[48][6]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[48][8]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[52][9]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[52][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[53][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[53][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[60][9]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[60][6]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[60][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[60][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[61][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[61][6]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[61][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[61][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[56][9]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[56][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[56][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[57][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[57][6]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[28][8]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[28][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[28][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[29][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[29][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[29][8]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[23][11]               ; 2       ;
-; sharedMemory:memory_instance|rect_data[19][11]               ; 2       ;
-; sharedMemory:memory_instance|rect_data[4][5]                 ; 4       ;
-; sharedMemory:memory_instance|rect_data[4][3]                 ; 3       ;
-; sharedMemory:memory_instance|rect_data[5][5]                 ; 4       ;
-; sharedMemory:memory_instance|rect_data[5][3]                 ; 3       ;
-; sharedMemory:memory_instance|rect_data[8][4]                 ; 3       ;
-; sharedMemory:memory_instance|rect_data[8][6]                 ; 4       ;
-; sharedMemory:memory_instance|rect_data[9][4]                 ; 3       ;
-; sharedMemory:memory_instance|rect_data[9][6]                 ; 4       ;
-; sharedMemory:memory_instance|rect_data[12][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[12][6]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[12][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[12][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[13][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[13][6]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[13][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[13][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[3][11]                ; 2       ;
-; sharedMemory:memory_instance|rect_data[15][11]               ; 2       ;
-; sharedMemory:memory_instance|rect_data[16][7]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[16][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[17][7]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[17][5]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[20][7]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[20][6]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[20][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[21][7]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[21][6]                ; 4       ;
-; sharedMemory:memory_instance|rect_data[21][3]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[24][7]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[24][6]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[24][5]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[24][4]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[25][7]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[25][6]                ; 3       ;
-; sharedMemory:memory_instance|rect_data[25][5]                ; 3       ;
+; cpu:cpu_instance|control_unit:control_unit_instance|state[0] ; 11      ;
+; sharedMemory:memory_instance|rect_data[55][5]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[47][5]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[39][5]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[31][5]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[35][5]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[38][2]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[38][1]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[38][9]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[38][13]               ; 3       ;
+; sharedMemory:memory_instance|rect_data[38][12]               ; 3       ;
+; sharedMemory:memory_instance|rect_data[38][4]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[38][3]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[37][8]                ; 6       ;
+; sharedMemory:memory_instance|rect_data[37][6]                ; 5       ;
+; sharedMemory:memory_instance|rect_data[37][5]                ; 5       ;
+; sharedMemory:memory_instance|rect_data[37][3]                ; 5       ;
+; sharedMemory:memory_instance|rect_data[36][8]                ; 6       ;
+; sharedMemory:memory_instance|rect_data[36][6]                ; 5       ;
+; sharedMemory:memory_instance|rect_data[36][5]                ; 5       ;
+; sharedMemory:memory_instance|rect_data[36][3]                ; 5       ;
+; sharedMemory:memory_instance|rect_data[34][2]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[34][1]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[34][9]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[34][13]               ; 3       ;
+; sharedMemory:memory_instance|rect_data[34][12]               ; 3       ;
+; sharedMemory:memory_instance|rect_data[34][4]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[34][3]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[33][8]                ; 6       ;
+; sharedMemory:memory_instance|rect_data[33][6]                ; 5       ;
+; sharedMemory:memory_instance|rect_data[32][8]                ; 6       ;
+; sharedMemory:memory_instance|rect_data[32][6]                ; 5       ;
+; sharedMemory:memory_instance|rect_data[42][2]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[42][1]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[42][9]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[42][13]               ; 3       ;
+; sharedMemory:memory_instance|rect_data[42][12]               ; 3       ;
+; sharedMemory:memory_instance|rect_data[42][4]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[42][3]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[41][8]                ; 6       ;
+; sharedMemory:memory_instance|rect_data[41][7]                ; 5       ;
+; sharedMemory:memory_instance|rect_data[41][4]                ; 5       ;
+; sharedMemory:memory_instance|rect_data[40][8]                ; 6       ;
+; sharedMemory:memory_instance|rect_data[40][7]                ; 5       ;
+; sharedMemory:memory_instance|rect_data[40][4]                ; 5       ;
+; sharedMemory:memory_instance|rect_data[43][10]               ; 3       ;
+; sharedMemory:memory_instance|rect_data[43][4]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[43][3]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[43][2]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[43][1]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[43][0]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[43][15]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[43][14]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[43][13]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[43][12]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[43][11]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[43][9]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[43][8]                ; 5       ;
+; sharedMemory:memory_instance|rect_data[43][7]                ; 6       ;
+; sharedMemory:memory_instance|rect_data[43][6]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[43][5]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[39][10]               ; 3       ;
+; sharedMemory:memory_instance|rect_data[39][4]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[39][3]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[39][2]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[39][1]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[39][0]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[39][15]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[39][14]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[39][13]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[39][12]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[39][11]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[39][9]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[39][8]                ; 5       ;
+; sharedMemory:memory_instance|rect_data[39][7]                ; 6       ;
+; sharedMemory:memory_instance|rect_data[39][6]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[35][10]               ; 3       ;
+; sharedMemory:memory_instance|rect_data[35][4]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[35][3]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[35][2]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[35][1]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[35][0]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[35][15]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[35][14]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[35][13]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[35][12]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[35][11]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[35][9]                ; 3       ;
+; sharedMemory:memory_instance|rect_data[35][8]                ; 5       ;
+; sharedMemory:memory_instance|rect_data[35][7]                ; 6       ;
+; sharedMemory:memory_instance|rect_data[35][6]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[31][10]               ; 3       ;
+; sharedMemory:memory_instance|rect_data[31][4]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[31][3]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[31][2]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[31][1]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[31][0]                ; 4       ;
+; sharedMemory:memory_instance|rect_data[31][15]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[31][14]               ; 4       ;
+; sharedMemory:memory_instance|rect_data[31][13]               ; 4       ;
 ; Total number of inverted registers = 421*                    ;         ;
 +--------------------------------------------------------------+---------+
 * Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
@@ -619,34 +633,38 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentCommandIndex[0]                                     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |doodle_jump|sharedMemory:memory_instance|contentsPlayer[9]                                                                               ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByteIndex[1] ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |doodle_jump|cpu:cpu_instance|register:program_counter|contents[7]                                                                        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentCommandIndex[3]                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |doodle_jump|sharedMemory:memory_instance|contentsPlayer[13]                                                                              ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |doodle_jump|vga:vga_instance|tileMemory:tileMem_inst|g_next[5]                                                                           ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByteIndex[2] ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |doodle_jump|cpu:cpu_instance|register:program_counter|contents[2]                                                                        ;
 ; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentBitIndex[1]  ;
-; 65:1               ; 16 bits   ; 688 LEs       ; 672 LEs              ; 16 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|contentsRect[13]                                                                                ;
-; 12:1               ; 6 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[2]      ;
+; 65:1               ; 16 bits   ; 688 LEs       ; 672 LEs              ; 16 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|contentsRect[14]                                                                                ;
+; 12:1               ; 6 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[5]      ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftRight1                                                                                ;
 ; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftLeft2                                                                                 ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftLeft0                                                                                 ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftRight0                                                                                ;
-; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftRight0                                                                                ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|contents[7]                                                                                     ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 28 LEs               ; 7 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|control_unit:control_unit_instance|Mux5                                                                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftLeft0                                                                                 ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftLeft0                                                                                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|contents[12]                                                                                    ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 28 LEs               ; 7 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|control_unit:control_unit_instance|Mux2                                                                     ;
 ; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|mux4:register_file_input_mux|selection[10]                                                                  ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep.001                                            ;
-; 17:1               ; 12 bits   ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|contentsA[10]                                                          ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|contentsA[3]                                                           ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|contentsB[0]                                                           ;
-; 17:1               ; 12 bits   ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|contentsB[10]                                                          ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentStep.0001    ;
-; 10:1               ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|Selector10          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep.000                                            ;
+; 17:1               ; 12 bits   ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|contentsA[14]                                                          ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|contentsA[0]                                                           ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|contentsB[1]                                                           ;
+; 17:1               ; 12 bits   ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|contentsB[12]                                                          ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentStep.0010    ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|Selector12          ;
 ; 17:1               ; 2 bits    ; 22 LEs        ; 8 LEs                ; 14 LEs                 ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|Selector11          ;
-; 17:1               ; 16 bits   ; 176 LEs       ; 176 LEs              ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|g[4]                                                                                            ;
-; 250:1              ; 2 bits    ; 332 LEs       ; 36 LEs               ; 296 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector5                                                                                  ;
+; 250:1              ; 2 bits    ; 332 LEs       ; 36 LEs               ; 296 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector6                                                                                  ;
 ; 252:1              ; 2 bits    ; 336 LEs       ; 36 LEs               ; 300 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector9                                                                                  ;
-; 252:1              ; 2 bits    ; 336 LEs       ; 34 LEs               ; 302 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector2                                                                                  ;
-; 253:1              ; 2 bits    ; 336 LEs       ; 34 LEs               ; 302 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector14                                                                                 ;
+; 252:1              ; 2 bits    ; 336 LEs       ; 34 LEs               ; 302 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector1                                                                                  ;
+; 253:1              ; 2 bits    ; 336 LEs       ; 34 LEs               ; 302 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector13                                                                                 ;
+; 49:1               ; 3 bits    ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|g[1]                                                                                            ;
+; 65:1               ; 9 bits    ; 387 LEs       ; 387 LEs              ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|b[5]                                                                                            ;
+; 49:1               ; 3 bits    ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|g[6]                                                                                            ;
+; 65:1               ; 2 bits    ; 86 LEs        ; 86 LEs               ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|b[7]                                                                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1062,7 +1080,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 1603                        ;
+; arriav_ff             ; 1615                        ;
 ;     CLR               ; 10                          ;
 ;     CLR SCLR          ; 18                          ;
 ;     ENA               ; 1086                        ;
@@ -1071,35 +1089,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 5                           ;
 ;     ENA SLD           ; 19                          ;
 ;     SCLR              ; 56                          ;
-;     plain             ; 100                         ;
+;     plain             ; 112                         ;
 ; arriav_io_obuf        ; 6                           ;
-; arriav_lcell_comb     ; 3287                        ;
-;     arith             ; 684                         ;
-;         0 data inputs ; 4                           ;
-;         1 data inputs ; 348                         ;
-;         2 data inputs ; 273                         ;
-;         3 data inputs ; 5                           ;
-;         4 data inputs ; 21                          ;
-;         5 data inputs ; 33                          ;
-;     extend            ; 18                          ;
-;         7 data inputs ; 18                          ;
-;     normal            ; 2576                        ;
+; arriav_lcell_comb     ; 9694                        ;
+;     arith             ; 5160                        ;
+;         0 data inputs ; 246                         ;
+;         1 data inputs ; 2684                        ;
+;         2 data inputs ; 1521                        ;
+;         3 data inputs ; 490                         ;
+;         4 data inputs ; 153                         ;
+;         5 data inputs ; 66                          ;
+;     extend            ; 39                          ;
+;         7 data inputs ; 39                          ;
+;     normal            ; 4166                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 433                         ;
-;         2 data inputs ; 144                         ;
-;         3 data inputs ; 108                         ;
-;         4 data inputs ; 318                         ;
-;         5 data inputs ; 434                         ;
-;         6 data inputs ; 1138                        ;
-;     shared            ; 9                           ;
+;         2 data inputs ; 293                         ;
+;         3 data inputs ; 221                         ;
+;         4 data inputs ; 556                         ;
+;         5 data inputs ; 1182                        ;
+;         6 data inputs ; 1480                        ;
+;     shared            ; 329                         ;
 ;         0 data inputs ; 1                           ;
+;         2 data inputs ; 320                         ;
 ;         3 data inputs ; 5                           ;
 ;         4 data inputs ; 3                           ;
 ; boundary_port         ; 177                         ;
 ; stratixv_ram_block    ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 13.00                       ;
-; Average LUT depth     ; 8.33                        ;
+; Max LUT depth         ; 26.40                       ;
+; Average LUT depth     ; 18.89                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1108,7 +1127,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:14     ;
+; Top            ; 00:00:31     ;
 +----------------+--------------+
 
 
@@ -1118,7 +1137,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Sat Apr  4 17:18:32 2026
+    Info: Processing started: Sat Apr  4 22:55:20 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1223,10 +1242,12 @@ Warning (10270): Verilog HDL Case Statement warning at control_unit.v(56): incom
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(81): incomplete case statement has no default case item File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 81
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(41): incomplete case statement has no default case item File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 41
 Info (12128): Elaborating entity "sharedMemory" for hierarchy "sharedMemory:memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 130
-Warning (10230): Verilog HDL assignment warning at sharedMemory.v(137): truncated value with size 32 to match size of target (16) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 137
-Warning (10230): Verilog HDL assignment warning at sharedMemory.v(138): truncated value with size 32 to match size of target (16) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 138
+Warning (10240): Verilog HDL Always Construct warning at sharedMemory.v(117): inferring latch(es) for variable "edge_dx", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 117
+Warning (10240): Verilog HDL Always Construct warning at sharedMemory.v(117): inferring latch(es) for variable "edge_dy", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 117
+Warning (10230): Verilog HDL assignment warning at sharedMemory.v(214): truncated value with size 32 to match size of target (16) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 214
+Warning (10230): Verilog HDL assignment warning at sharedMemory.v(215): truncated value with size 32 to match size of target (16) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 215
 Info (12128): Elaborating entity "memory" for hierarchy "sharedMemory:memory_instance|memory:cpu_memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 50
-Warning (10850): Verilog HDL warning at memory.v(18): number of words (104) in memory file does not match the number of elements in the address range [0:1023] File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v Line: 18
+Warning (10850): Verilog HDL warning at memory.v(18): number of words (147) in memory file does not match the number of elements in the address range [0:1023] File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v Line: 18
 Info (12128): Elaborating entity "audio_unit" for hierarchy "audio_unit:audio_unit_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 152
 Info (12128): Elaborating entity "audio_configurator_select" for hierarchy "audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v Line: 38
 Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(124): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 124
@@ -1374,16 +1395,16 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "switches[3]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 8
     Warning (15610): No output dependent on input pin "switches[4]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 8
     Warning (15610): No output dependent on input pin "switches[5]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 8
-Info (21057): Implemented 4483 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 10895 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 156 output pins
     Info (21060): Implemented 6 bidirectional pins
-    Info (21061): Implemented 4242 logic cells
+    Info (21061): Implemented 10654 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 107 warnings
-    Info: Peak virtual memory: 494 megabytes
-    Info: Processing ended: Sat Apr  4 17:19:08 2026
-    Info: Elapsed time: 00:00:36
-    Info: Total CPU time (on all processors): 00:00:41
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 109 warnings
+    Info: Peak virtual memory: 532 megabytes
+    Info: Processing ended: Sat Apr  4 22:56:22 2026
+    Info: Elapsed time: 00:01:02
+    Info: Total CPU time (on all processors): 00:01:07
 
 
