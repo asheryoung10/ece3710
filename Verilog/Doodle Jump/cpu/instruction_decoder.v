@@ -14,6 +14,10 @@ module instruction_decoder (
     output [7:0] aluOpcode,
 	output reg [15:0] nextProgramCounter
 );
+// Next Program Counter Logic
+`include "opcodes.vh"
+`include "conditions.vh"
+`include "indicesPSR.vh"
 reg [3:0] addressTarget;
 reg [15:0] programCounterPlusOne;
 assign registerAddressA = instruction[3:0];
@@ -30,10 +34,7 @@ always @(posedge clock) begin
 	end
 end
 
-// Next Program Counter Logic
-`include "opcodes.vh"
-`include "conditions.vh"
-`include "indicesPSR.vh"
+
 reg conditionMet;
 always @(*) begin
     conditionMet = 1'b0;

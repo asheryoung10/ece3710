@@ -1,7 +1,7 @@
 module memory
 #(
     parameter DATA_WIDTH = 16,
-    parameter ADDR_WIDTH = 10,
+    parameter ADDR_WIDTH = 12,
     parameter INIT_FILE = "program.txt"
 )
 (
@@ -13,8 +13,14 @@ module memory
 );
 
 reg [DATA_WIDTH-1:0] ram[(2**ADDR_WIDTH)-1:0];
-
+ integer i;
 initial begin
+   
+
+    // Zero out the entire memory array first
+    for (i = 0; i < 2**ADDR_WIDTH; i = i + 1) begin
+        ram[i] = 16'b0;  // Set all memory locations to zero initially
+    end
     $readmemh(INIT_FILE, ram);
 end
 

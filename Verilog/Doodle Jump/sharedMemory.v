@@ -38,14 +38,14 @@ assign audio_pitch = 0;
 memory 
 #(
     .DATA_WIDTH(DATA_WIDTH),
-    .ADDR_WIDTH(10)
+    .ADDR_WIDTH(12)
 )
 cpu_memory_instance
 (
     .clock(clock),
     .writeEnable(enableCPUWrite),
     .writeData(writeData),
-    .readWriteAddress(readWriteAddress[9:0]),
+    .readWriteAddress(readWriteAddress),
     .contents(contentsCPU)
 );
 

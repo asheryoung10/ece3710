@@ -10,6 +10,7 @@
 #include <QKeyEvent>
 #include <QRegularExpression>
 #include <QTextBlock>
+#include <QTextStream>
 
 QString MainWindow::currentFileShown;
 int MainWindow::currentLineShown = -1;
