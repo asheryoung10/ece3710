@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->jumpAddress->setValue(32768);
 
     // Initialize CPU timer
     cpuTimer = new QTimer(this);
@@ -41,6 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->resetButton, &QPushButton::pressed,  this, [this]{ model.setResetButton(true); });
     connect(ui->resetButton, &QPushButton::released, this, [this]{ model.setResetButton(false); });
+    connect(ui->jumptoAddressButton, &QPushButton::pressed, this, [this]{ this->jumpAddress(); });
 
     // Step / play / pause
     connect(ui->stepButton, &QPushButton::clicked, this, &MainWindow::stepModel);
@@ -267,6 +269,17 @@ void MainWindow::updateMemoryViewPartial()
     }
 }
 
+void MainWindow::jumpAddress() {
+    int targetRow = ui->jumpAddress->value();
+    ui->memoryView->scrollTo(memoryModelQt->index(targetRow, 0),
+                             QAbstractItemView::PositionAtTop);
+
+    // Optionally, select the row so it's highlighted
+    ui->memoryView->selectionModel()->select(
+        memoryModelQt->index(targetRow, 0),
+        QItemSelectionModel::ClearAndSelect | QItemSelectionModel::Rows
+        );
+}
 void MainWindow::updateViews()
 {
     // -------------------

@@ -5,7 +5,6 @@
 VGAView::VGAView(QWidget *parent)
     : QWidget(parent)
 {
-    setMinimumSize(640, 480);
 }
 
 void VGAView::setModel(Model* model) {

@@ -1,0 +1,50 @@
+Operand Types:
+R 4bits
+I (two forms: ) upper4bit and lower4bit or just 5bits (both froms are twos complement)
+Instruction Names and Format
+ADD R, R     
+ADDI, I, R
+SUB R, R
+SUBI I, R
+CMP R, R
+CMPI I, R
+AND R, R
+OR R, R
+XOR R, R
+NOT R, R
+LSH R, R
+LSHI I, R
+ASH R, R
+ASHI I, R
+MOV R, R
+MOVI I, R
+LOAD R, R
+STOR R, R
+Bcond C, I
+Jcond C, R
+JAL R, R
+READ R
+
+Conditions and their binary format:
+EQ 0000
+NE 0001
+GE 1101
+HI 0100
+LS 0101
+LO 1010
+HS 1011
+GT 0110
+LE 0111
+FS 1000
+FC 1001
+LT 1100
+UC 1110
+
+INsturction binary format:
+add: SUB, CMP, AND, OR, XOR, MOV
+upcodeupper secondoperand upcodelower firstoperand
+I variants:
+upcodeupper secondoperand immediatehigh immediatelow
+
+lshi and rshi
+upcodeupper secondoperand upcodeloweronly3bits 5 bit twos complement shift

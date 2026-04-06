@@ -81,21 +81,21 @@ afterJump:
     // Clamp X velocity
     // -----------------------------
 clampXVel:
-    CMPI 3 R2
+    CMPI 5 R2
     GOIF LT &maxRight
     GOIF UC &checkLeftClamp
 
 maxRight:
-    MOVI 3 R2
+    MOVI 5 R2
     GOIF UC &storeX
 
 checkLeftClamp:
-    CMPI -3 R2
+    CMPI -5 R2
     GOIF GT &maxLeft
     GOIF UC &storeX
 
 maxLeft:
-    MOVI -3 R2
+    MOVI -5 R2
 
 storeX:
     // -----------------------------

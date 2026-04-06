@@ -387,9 +387,24 @@ switch (rd) {
 
         case LSH_RSH_ARSH_UPPER: {
             switch(opcodeCombined & 0b1110) {
-            case 0b0000:
-                registers[rd] = B << (A & 0xF);
+            case 0b0000: {
+                // Step 1: get lower 5 bits
+                uint16_t bits5 = A & 0x1F;  // mask lower 5 bits
+
+                // Step 2: interpret as signed 5-bit 2's complement
+                int8_t shiftAmount = bits5;       // copy to signed 8-bit
+                if (shiftAmount & 0x10) {         // if highest bit (bit 4) is 1
+                    shiftAmount |= 0xE0;          // sign extend to 8 bits (fill upper 3 bits with 1)
+                }
+
+                // Step 3: shift B
+                if (shiftAmount >= 0) {
+                    registers[rd] = B << shiftAmount;
+                } else {
+                    registers[rd] = B >> (-shiftAmount);
+                }
                 break;
+            }
             case 0b1000:
                 registers[rd] = B >> (A & 0xF);
                 break;
