@@ -1,8 +1,12 @@
 module instruction_decoder (
+	input wire clock,
+	 input wire instructionAsImmediate,
     input [15:0] instruction,
 	input [15:0] programCounter,
     input [15:0] programStateRegisterContents,
     input [15:0] registerFileContentsA,
+	 	 input wire savePreviousInstructionTargetRegIndex,
+
 	 
     output [3:0] registerAddressA,
     output [3:0] registerAddressB,
@@ -10,12 +14,21 @@ module instruction_decoder (
     output [7:0] aluOpcode,
 	output reg [15:0] nextProgramCounter
 );
-
+reg [3:0] addressTarget;
+reg [15:0] programCounterPlusOne;
 assign registerAddressA = instruction[3:0];
-assign registerAddressB = instruction[11:8];
-assign immediate = {{8{instruction[7]}}, instruction[7:0]};
+assign registerAddressB = (instructionAsImmediate) ? addressTarget : instruction[11:8];
 assign aluOpcode = {instruction[15:12], instruction[7:4]};
+assign immediate = (instructionAsImmediate) ? instruction : ((aluOpcode == JAL) ? programCounterPlusOne : {{8{instruction[7]}}, instruction[7:0]});
 
+
+always @(posedge clock) begin
+	if(aluOpcode == READ) begin
+		if(savePreviousInstructionTargetRegIndex) begin
+			addressTarget = registerAddressB;
+		end
+	end
+end
 
 // Next Program Counter Logic
 `include "opcodes.vh"
@@ -45,7 +58,12 @@ always @(*) begin
     endcase
 end
 always @(*) begin
+		programCounterPlusOne = programCounter+1;
        casex(aluOpcode)
+		  JAL: begin
+				nextProgramCounter = registerFileContentsA;
+		  
+		  end
         BCOND: begin
             if(conditionMet)
                 nextProgramCounter = programCounter + immediate;

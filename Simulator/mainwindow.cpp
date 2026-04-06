@@ -74,6 +74,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->frameDelay,&QSlider::valueChanged, this, &MainWindow::slidersChanged);
     connect(ui->vsyncCheckBox,&QCheckBox::clicked, this, &MainWindow::setVsync);
     ui->leftButton->setFocusPolicy(Qt::NoFocus);
+    ui->onlyViewCheck->setFocusPolicy(Qt::NoFocus);
     ui->rightButton->setFocusPolicy(Qt::NoFocus);
     ui->jumpButton->setFocusPolicy(Qt::NoFocus);
     ui->resetButton->setFocusPolicy(Qt::NoFocus);
@@ -87,6 +88,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->sourceView->setReadOnly(true);  // QTextBrowser or QTextEdit
     ui->sourceView->setFont(QFont("Courier", 10)); // monospaced for code
     ui->sourceView->setLineWrapMode(QTextEdit::NoWrap); // prevent wrapping
+    ui->splitter->setSizes({1000,1000});
+    ui->splitter_2->setSizes({1000,1000});
 
     // Initial UI update
     slidersChanged();
@@ -282,6 +285,9 @@ void MainWindow::jumpAddress() {
 }
 void MainWindow::updateViews()
 {
+
+    ui->vgaView->update();
+    if(ui->onlyViewCheck->isChecked()) return;
     // -------------------
     // Update registers
     // -------------------
@@ -342,7 +348,6 @@ void MainWindow::updateViews()
     // -------------------
     // Update VGA view
     // -------------------
-    ui->vgaView->update();
 }
 
 

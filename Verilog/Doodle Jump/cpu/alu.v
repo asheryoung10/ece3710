@@ -83,9 +83,10 @@ module alu
 
             // Shifts
             LSH, LSHI: begin
-                shift_amt = $signed(A);
-                sa = (shift_amt >= 0) ? shift_amt : -shift_amt;
-                Result = (shift_amt >= 0) ? (B << sa) : (B >> sa);
+                // Extract lower 5 bits and sign-extend
+					shift_amt = $signed({{11{A[4]}}, A[4:0]});  // replicate the sign bit 11 times to make 16-bit signed
+					sa = (shift_amt >= 0) ? shift_amt : -shift_amt;
+					Result = (shift_amt >= 0) ? (B << sa) : (B >> sa);
             end
             RSH, RSHI: begin
                 shift_amt = A;
