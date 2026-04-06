@@ -219,8 +219,8 @@ end
 //        rect_data[i*4 + 0] = (i * (SCREEN_W / 16));
 //        rect_data[i*4 + 1] = (i * 40) % SCREEN_H;
 //        rect_data[i*4 + 2] = {8'd50, 8'd30};
-
-        // simple varying colors
+//
+//        // simple varying colors
 //        case (i)
 //            0: rect_data[i*4 + 3] = 16'hF800; // red
 //            1: rect_data[i*4 + 3] = 16'h07E0; // green

@@ -227,11 +227,23 @@ void MainWindow::pauseSimulation() {
 // Timer slot: tick CPU
 void MainWindow::tickModel()
 {
-    for (int i = 0; i < ui->instructionsPerFrame->value(); ++i)
+    for (int i = 0; i < ui->instructionsPerFrame->value(); ++i) {
+	if(model.programCounter == ui->jumpAddress->value()) {
+		pauseSimulation();
+		return;
+	}
         model.tick();
+    }
+    	
     setVsyncOn();
-    for (int i = 0; i < 10; ++i)
+    for (int i = 0; i < 10; ++i) {
+	if(model.programCounter == ui->jumpAddress->value()) {
+		pauseSimulation();
+		return;
+	}
         model.tick();
+	
+    }
     setVsyncOff();
     cpuTimer->setInterval(ui->frameDelay->value());
     updateViews();

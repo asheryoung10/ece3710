@@ -110,7 +110,7 @@ always @(*) begin
 							savePreviousInstructionTargetRegIndex = 1;
 						 end
 					endcase
-		
+					
 					// Setup next state
 					casex (aluOpcode)
 						 ADDI, ADDUI, ADDCI, SUBI, CMPI, LSHI, RSHI, ARSHI: aluSelectImmediate = 1'b1;

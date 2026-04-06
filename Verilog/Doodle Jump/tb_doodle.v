@@ -165,6 +165,17 @@ task dumpMemory;
     end
 endtask
 
+task dumpMemoryRects;
+    integer i;
+    begin
+        $display("Memory:");
+        for (i = 0; i < 16*4; i = i + 1) begin
+            $display("memory[%0d] = %h", i, uut.memory_instance.rect_data[i]);
+        end
+        $display(""); // blank line for readability
+    end
+endtask
+
 // ==================================================
 // Task to print Control Unit State Name
 // ==================================================
@@ -258,7 +269,7 @@ integer i = 0;
 					$display("\n\n\n");
 					$display("CONTENTS AFTER PREVIOUS INSTRUCTION");
 					dumpRegisterFile();
-					//dumpMemory();
+					dumpMemoryRects();
 				end
 				print_state();
 				print_cpu_state();
@@ -267,7 +278,7 @@ integer i = 0;
 				
             
         end
-
+		
         $finish;
     end
 
