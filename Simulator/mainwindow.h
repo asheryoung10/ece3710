@@ -38,6 +38,22 @@ private:
     void stepModel();
     void updateViews();
     void tickModel();
+    void setVsyncOff();
+    void setVsyncOn();
+    void setVsync(bool on);
+    struct SourceInfo {
+        QString file;   // filename
+        int line;       // 1-based line number
+    };
+    static QString currentFileShown;
+    static int currentLineShown;
+
+
+    QMap<uint16_t, SourceInfo> pcToSource;        // PC -> file + line
+
+    void parsePCMappingAndLoadSources(const QString &binFilePath);
+    QMap<QString, QStringList> fileToLines;       // filename -> lines in file
+    QString currentSourceFile;                    // currently displayed file
 protected:
     void keyPressEvent(QKeyEvent *event) override;
     void keyReleaseEvent(QKeyEvent *event) override;

@@ -121,6 +121,8 @@ void Model::initialize() {
     leftButton = false;
     rightButton = false;
     jumpButton = false;
+    readReg = 0;
+    readNextCycle = false;
     vsync = false;
     resetButton = false;
     for(int i = 0; i < 16; i++) {
@@ -137,6 +139,7 @@ Model::~Model() {
 }
 bool Model::tick() {
     if(resetButton) initialize();
+    
 
     // LSB is vsync, then right, left, jump buttons
     registers[15] = (jumpButton << 3) | (leftButton << 2) | (rightButton << 1) | vsync;
@@ -146,6 +149,12 @@ bool Model::tick() {
     uint8_t opcodeCombined = ((instruction >> 12) << 4) | ((instruction >> 4) & 0x0F);
     uint8_t immediate = ((instruction << 8) >> 8);
 
+    if(readNextCycle) {
+        registers[readReg] = instruction;        
+        readNextCycle = false;
+        programCounter++;
+        return true;
+    }
     uint8_t rd = (instruction >> 8) & 0x0F;
     uint8_t rs = (instruction) & 0x0F;
     uint16_t A = registers[rs];
@@ -156,6 +165,10 @@ bool Model::tick() {
     int shift_amt;
 
     switch(opcodeCombined) {
+    case JAL:
+        registers[rd] = programCounter+1;
+        programCounter = A;
+        break;
     case NOP:
         return false;
 
@@ -279,6 +292,13 @@ switch (rd) {
         else
             programCounter++;
 
+        break;
+    }
+
+    case READ: {
+        readReg = rd;
+        readNextCycle = true;
+        programCounter++;
         break;
     }
     default: {
