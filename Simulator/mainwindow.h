@@ -41,6 +41,7 @@ private:
     void setVsyncOff();
     void setVsyncOn();
     void setVsync(bool on);
+    void jumpAddress();
     struct SourceInfo {
         QString file;   // filename
         int line;       // 1-based line number
