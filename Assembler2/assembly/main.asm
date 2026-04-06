@@ -5,19 +5,19 @@ READ R12
 JAL R13 R12 // Jump to main
 WAIT
 
-// #include "initRects.asm"
+#include "initRects.asm"
 // Store player velocityx and velocitty at addresses 1024 and 1025
- #include "applyInputGravityVelocity.asm"
-// #include "clampPlayerInBounds.asm"
-// #include "colorCollision.asm"
+#include "applyInputGravityVelocity.asm"
+#include "clampPlayerInBounds.asm"
+#include "colorCollision.asm"
 
 main:
     SUBI 1 R14   // Make room for one on the stack
     STOR R13 R14 // Store return address on stack
 
-    //READ R12
-    //&initRects
-    //JAL R13 R12
+    READ R12
+    &initRects
+    JAL R13 R12
 
     mainGameLoop:
 
@@ -25,13 +25,13 @@ main:
         &applyInputGravityVelocity
         JAL R13 R12
 
-	//READ R12
-	//&clampPlayerInBounds
-	//JAL R13 R12
+        READ R12
+        &clampPlayerInBounds
+        JAL R13 R12
 
-	//READ R12 
-	//&colorCollision
-	//JAL R13 R12
+        READ R12 
+        &colorCollision
+        JAL R13 R12
 
         READ R12
         &waitVsync

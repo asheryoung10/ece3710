@@ -60,6 +60,10 @@ always @(*) begin
 end
 always @(*) begin
 		programCounterPlusOne = programCounter+1;
+		if(instructionAsImmediate) begin
+			nextProgramCounter = programCounter +1;
+		end else
+		begin
        casex(aluOpcode)
 		  JAL: begin
 				nextProgramCounter = registerFileContentsA;
@@ -84,6 +88,7 @@ always @(*) begin
         end
 
     endcase
+	 end
 end
 
 endmodule
