@@ -8,6 +8,7 @@ module sharedMemory
     input [15:0] writeData,
     input [15:0] readWriteAddress,
     output reg [15:0] contents,
+	 input reset,
 	 
 
     input [9:0] vgaX,
@@ -51,6 +52,10 @@ cpu_memory_instance
 
 // Player Memory
 always@(posedge clock) begin
+	if(reset) begin
+	player_x <= 0;
+	player_y <= 0;
+	end else
 	if(enablePlayerWrite) begin
 			if(readWriteAddress[0]) begin
 				player_y <= writeData;

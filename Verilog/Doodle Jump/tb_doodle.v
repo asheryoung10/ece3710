@@ -80,17 +80,31 @@ localparam MOVE_STATE = 3'd7;
     // ==================================================
 task print_cpu_state;
     begin
-	 $display("\nPC: %d, IR %h",
+	 $display("\t PC: %d, IR %h, PSR %b",
 	 uut.cpu_instance.programCounterContents,
-	 uut.cpu_instance.instructionRegisterContents
+	 uut.cpu_instance.instructionRegisterContents,
+	 uut.cpu_instance.programStateRegisterContents[4:0]
 	 );
-	 $display("\t Register File: WE: %d, WA: %d, RAA: %d, RAB: %d, A: %d, B: %d",
+
+	 $display("\t Instruction Decoder: Inst: %h, regAindex: %d, regBindex: %d, nextPC: %d, contentsA: %d, ALUcode: %d, instAsIm: %d, savePrevious: %d",
+	 uut.cpu_instance.instruction_decoder_instance.instruction,
+	 uut.cpu_instance.instruction_decoder_instance.registerAddressA,
+	 uut.cpu_instance.instruction_decoder_instance.registerAddressB,
+	 uut.cpu_instance.instruction_decoder_instance.nextProgramCounter,
+	 uut.cpu_instance.instruction_decoder_instance.registerFileContentsA,
+	 uut.cpu_instance.instruction_decoder_instance.aluOpcode,
+	 uut.cpu_instance.instruction_decoder_instance.instructionAsImmediate,
+	 uut.cpu_instance.instruction_decoder_instance.savePreviousInstructionTargetRegIndex,
+
+	 );
+	 $display("\t Register File: WE: %d, WA: %d, RAA: %d, RAB: %d, A: %d, B: %d, R15Input: %d",
 	 uut.cpu_instance.register_file_instance.writeEnable,
 	 uut.cpu_instance.register_file_instance.writeAddress,
 	 uut.cpu_instance.register_file_instance.readAddressA,
 	 uut.cpu_instance.register_file_instance.readAddressB,
 	 uut.cpu_instance.register_file_instance.contentsA,
-	 uut.cpu_instance.register_file_instance.contentsB
+	 uut.cpu_instance.register_file_instance.contentsB,
+	 uut.cpu_instance.register_file_instance.reg15input
 	 );
 	 $display("\t Shared Memory: WE: %d, WD: %d, RWA: %d, Contents: %d, cCPU: %d, cPlay: %d, cRect: %d, aCPU: %d, aPlay: %d, aRect: %d",
 	 uut.memory_instance.writeEnable,
@@ -104,6 +118,26 @@ task print_cpu_state;
 	 uut.memory_instance.isPlayerAccess,
 	 uut.memory_instance.isRectAccess
 	 );
+	 $display("\t ALU: A: %d, B: %d, Result: %d, Flags: %d, Opcode: %d",
+	 uut.cpu_instance.alu_instance.A,
+	 uut.cpu_instance.alu_instance.B,
+	 uut.cpu_instance.alu_instance.Result,
+	 uut.cpu_instance.alu_instance.Flags,
+	 uut.cpu_instance.alu_instance.Opcode,
+	 );
+	 
+	 $display("\t Control Unit: ALUsel: %d, MemorySel: %d, MW: %d, RFW: %d, RFsel: %d, IRW: %d, saveForRead: %d, useReadImm: %d",
+	 	uut.cpu_instance.control_unit_instance.aluSelectImmediate,
+		uut.cpu_instance.control_unit_instance.memorySelectReadWriteAddress,
+		uut.cpu_instance.control_unit_instance.memoryWriteEnable,
+		uut.cpu_instance.control_unit_instance.registerFileWriteEnable,
+	 	uut.cpu_instance.control_unit_instance.registerFileSelectInput,
+		uut.cpu_instance.control_unit_instance.instructionRegisterWriteEnable,
+		uut.cpu_instance.control_unit_instance.savePreviousInstructionTargetRegIndex,
+		uut.cpu_instance.control_unit_instance.instructionAsImmediate,
+	 );
+	 
+	 
 
 	end
 endtask
@@ -200,7 +234,7 @@ integer i = 0;
 
         // Apply reset
         apply_reset();
-		  push_buttons = 4'b1101;
+		  push_buttons = 4'b1111;
 			running = 1;
         // Run for a few cycles and print state
 		  
@@ -224,7 +258,7 @@ integer i = 0;
 					$display("\n\n\n");
 					$display("CONTENTS AFTER PREVIOUS INSTRUCTION");
 					dumpRegisterFile();
-					dumpMemory();
+					//dumpMemory();
 				end
 				print_state();
 				print_cpu_state();

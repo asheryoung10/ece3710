@@ -117,7 +117,7 @@ memory_instance
     .readWriteAddress(memoryReadWriteAddress),
     // Outputs
     .contents(memoryContents),
-	 
+	 .reset(reset),
 	 .vgaX(vgaPixelX),
 	 .vgaY(vgaPixelY),
 	 .r(rectR),

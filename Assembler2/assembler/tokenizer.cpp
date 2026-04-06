@@ -52,6 +52,8 @@ std::vector<std::vector<Token>> tokenizeFileInternal(const std::string& filename
     size_t lineNum = 1;
 
     while(std::getline(file, line)) {
+        if (!line.empty() && line.back() == '\r')
+            line.pop_back();
         // Ignore anything in the line after a comment
         size_t commentPos = line.find("//");
         if(commentPos != std::string::npos) line = line.substr(0,commentPos);
