@@ -35,6 +35,10 @@ colorCollision:
     0x1111 // white for collision
     GOIF UC &colorCollisionApplied
     colorCollisionYes:
+    READ R7
+    1025  // address of player y velocity
+    MOVI -15 R8
+    STOR R8 R7
     READ R3 // R3 holds color
     0xcccc // white for collision
     colorCollisionApplied:

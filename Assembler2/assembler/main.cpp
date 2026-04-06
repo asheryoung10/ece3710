@@ -43,8 +43,8 @@ void writeHexToFile(const std::vector<std::string>& hexForm, const std::string& 
     std::cout << "Wrote " << hexForm.size() << " instructions to " << filename << std::endl;
 }
 
-int main() {
-    std::vector<std::vector<Token>> lines = tokenizeFile("main.asm");
+int main(int argc, char* argv[]) {
+    std::vector<std::vector<Token>> lines = tokenizeFile(argv[1]);
     seperateLinesContainingMultipleInstructions(lines);
     std::vector<Instruction> instructions = preprocessLabels(lines);
     validateInstructions(instructions);

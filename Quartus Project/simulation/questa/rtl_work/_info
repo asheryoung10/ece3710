@@ -1,31 +1,9 @@
 m255
 K4
 z2
-Z0 !s12c _opt2
+Z0 !s12c _opt3
 Z1 !s99 nomlopt
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-Z2 !s12c _opt1
-R1
-R0
-R1
-R2
-R1
-R0
-R1
-Z3 !s12c _opt3
-R1
-R0
+Z2 !s12c _opt2
 R1
 R2
 R1
@@ -41,45 +19,17 @@ R2
 R1
 R2
 R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
 R2
 R1
 R2
 R1
 R2
 R1
-R2
+Z3 !s12c _opt1
 R1
 R2
 R1
-R2
-R1
-R2
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R2
-R1
-R2
-R1
-R2
+R3
 R1
 R2
 R1
@@ -87,27 +37,19 @@ R0
 R1
 R2
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
+R3
 R1
 R2
 R1
@@ -121,277 +63,19 @@ R2
 R1
 R3
 R1
-R0
+R3
 R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R0
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R0
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
+R3
 R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R0
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
-R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
 R2
-R1
-R0
 R1
 R2
 R1
@@ -403,144 +87,470 @@ R2
 R1
 R3
 R1
+R3
+R1
+R3
+R1
+R3
+R1
+R2
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
 R0
 R1
+R2
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R2
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R2
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R2
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R2
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
 R0
 R1
 R2
 R1
 R2
 R1
-R2
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
 R1
 R2
 R1
-R2
+R3
 R1
-R0
+R3
 R1
-R2
+R3
 R1
-R2
-R1
-R2
-R1
-R2
+R3
 R1
 !s11f MIXED_VERSIONS
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
-R2
+R3
 R1
 !s12c _opt
 R1
@@ -559,80 +569,89 @@ Vd80aThUmg5g?f0aEN9`cj2
 04 6 4 work tb_alu fast 0
 =1-fc349769a683-6971a53e-fd-1db0
 R1
-Z5 !s12f OEM100
-Z6 !s12b OEM100
+!s12f OEM100
+Z5 !s12b OEM100
 !s124 OEM10U2 
-Z7 !s135 nogc
-Z8 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work +acc
-Z9 tCvgOpt 0 defaultOptions 1107585188
+!s135 nogc
+Z6 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work +acc
+tCvgOpt 0 defaultOptions 1107585188
 n@_opt
-Z10 OL;O;2025.2;82
+OL;O;2025.2;82
 R4
 T_opt1
 !s110 1775503391
 VOdiRoT<06FL]gMTD`jL9M3
-Z11 04 9 4 work tb_doodle fast 0
+Z7 04 9 4 work tb_doodle fast 0
 =1-7085c2561d31-69d4081f-660b2-53e7a
 R1
+R5
+Z8 !s124 OEM10U30 
 R6
-Z12 !s124 OEM10U30 
-R8
-tCvgOpt 0
+Z9 tCvgOpt 0
 n@_opt1
-OL;O;2023.3;77
+Z10 OL;O;2023.3;77
 R4
 T_opt2
-!i145 1
-!i144 0
-!s110 1775507685
-VX8h8Bai8X9RAZYTcaQOb21
-R11
-=1-58cdc97f8135-69d418e5-48-a794
+!s110 1775511726
+V1D6:Cna>R660Z;[[NHcVJ0
+R7
+=1-7085c2561d31-69d428ae-81092-81ca7
 R1
 R5
-R6
-R12
-R7
 R8
+R6
 R9
 n@_opt2
 R10
+R4
+T_opt3
+!s110 1775511790
+VAUTaH8A_nbP4X3iHXmJRC3
+R7
+=1-7085c2561d31-69d428ee-12131-8314b
+R1
+R5
+R8
+R6
+R9
+n@_opt3
+R10
 valu
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v
-!s110 1775507675
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v
+Z11 !s110 1775511785
 !i10b 1
-!s100 Gi[2M0W3<^hbN8g3a;XGO1
-IOCnUc74CKPGzk]Dz`>P<I1
-Z13 dC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/simulation/questa
-w1775486186
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v
-Z14 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/opcodes.vh
-Z15 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/states.vh
+!s100 dRk[gzizfkb8M>3_>d51h1
+I6gcDHh:R;e2FdcdPOR6md3
+Z12 d/home/u1462567/Desktop/ece3710/Quartus Project/simulation/questa
+Z13 w1775508781
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v
+Z14 F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/opcodes.vh
+Z15 F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/states.vh
 !i122 21
 L0 1 144
 Z16 VDg1SIo80bB@j0V0VzS_@n1
-Z17 OL;L;2025.2;82
+Z17 OL;L;2023.3;77
 r1
 !s85 0
 31
-!s108 1775507675.000000
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/states.vh|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/opcodes.vh|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v|
+!s108 1775511784.000000
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/states.vh|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/opcodes.vh|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/alu.v|
 !i113 0
-Z18 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z19 !s92 -work work {+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z20 tCvgOpt 0 defaultOptions 1085333592
+Z18 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z19 !s92 -vlog01compat -work work {+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R9
 vaudio_configurator
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator.v
-Z21 !s110 1775507684
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator.v
+Z20 !s110 1775511789
 !i10b 1
-!s100 WP4ejCK8MOYYEBNji?]AE0
-I8mUG]kXGVTnIi:CI6J<Da0
+!s100 h<QRG`iNAHhKgPi5g9cd^0
+IMTeAM268JKH_n@CNO`nlg1
+R12
 R13
-Z22 w1775484099
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator.v
 !i122 51
 L0 1 150
 R16
@@ -640,23 +659,23 @@ R17
 r1
 !s85 0
 31
-!s108 1775507684.000000
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator.v|
+Z21 !s108 1775511789.000000
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator.v|
 !i113 0
 R18
-Z23 !s92 -work work {+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R20
+Z22 !s92 -vlog01compat -work work {+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R9
 vaudio_configurator_select
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator_select.v
-R21
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator_select.v
+R20
 !i10b 1
-!s100 e]o74SE4kT3AEKRh>;dA20
-I]kV`D<lX9OSLcaN:R6J@Y0
+!s100 CB<[55d<Uj:dCiQl>gh>c0
+I_f`9ERmK7]mF4jMfL>BA50
+R12
 R13
-R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator_select.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator_select.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator_select.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator_select.v
 !i122 50
 L0 1 155
 R16
@@ -664,23 +683,23 @@ R17
 r1
 !s85 0
 31
-Z24 !s108 1775507683.000000
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator_select.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator_select.v|
+R21
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator_select.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_configurator_select.v|
 !i113 0
 R18
-R23
-R20
-vaudio_output
-Z25 2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_output.v
-Z26 !s110 1775507683
-!i10b 1
-!s100 10IKBH1R13`=;CSo;d2PT2
-IZOco8d5iQ50;I8`Z<STB>3
-R13
 R22
-Z27 8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_output.v
-Z28 FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_output.v
+R9
+vaudio_output
+Z23 2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_output.v
+R20
+!i10b 1
+!s100 TCl6>_>:;mg@]liS1E[<J2
+IhWCZGYBDiAGQ7lUb1RYiP2
+R12
+R13
+Z24 8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_output.v
+Z25 F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_output.v
 !i122 49
 L0 1 69
 R16
@@ -688,23 +707,23 @@ R17
 r1
 !s85 0
 31
-R24
-Z29 !s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_output.v|
-Z30 !s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_output.v|
+R21
+Z26 !s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_output.v|
+Z27 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/audio_output.v|
 !i113 0
 R18
-R23
-R20
-vaudio_unit
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/top.v
-R26
-!i10b 1
-!s100 gCHl9_MQ05i[Ol^<FKC;j0
-IRJP41afbc8FRcUK9cbh:Z3
-R13
 R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/top.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/top.v
+R9
+vaudio_unit
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/top.v
+R20
+!i10b 1
+!s100 9fHX_^ZlhnJI;[PVOGn_22
+IRk:hidDOO>7b]Sj4<Hnn23
+R12
+R13
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/top.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/top.v
 !i122 47
 L0 1 51
 R16
@@ -712,23 +731,23 @@ R17
 r1
 !s85 0
 31
-R24
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/top.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/top.v|
+R21
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/top.v|
 !i113 0
 R18
-R23
-R20
-vblock_mover
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v
-Z31 !s110 1775507678
-!i10b 1
-!s100 Na`=WO2JBIIMo<onGV1n^3
-I3`NaQG]M^NhfLa3RPjPI_1
-R13
 R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v
+R9
+vblock_mover
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v
+Z28 !s110 1775511786
+!i10b 1
+!s100 =KizfLQ0k9V5k53[[hgAB0
+I3moVVzL?kjmEVL]>C4PYO2
+R12
+R13
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v
 !i122 30
 L0 1 40
 R16
@@ -736,23 +755,23 @@ R17
 r1
 !s85 0
 31
-Z32 !s108 1775507678.000000
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v|
+Z29 !s108 1775511786.000000
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/block_mover.v|
 !i113 0
 R18
-Z33 !s92 -work work {+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R20
+Z30 !s92 -vlog01compat -work work {+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R9
 vclk_divider
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v
-R31
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v
+R28
 !i10b 1
-!s100 lc]c;UFjeUz_afcDdYH9f2
-I50WcVO4QHoc[2C263S7O93
+!s100 b3jlBUU5VPh_P9`Kmd7ij1
+IcCGZOIIjf`bL]W]i]`:?81
+R12
 R13
-R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v
 !i122 31
 L0 1 17
 R16
@@ -760,23 +779,23 @@ R17
 r1
 !s85 0
 31
-R32
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v|
+R29
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/clk_divider.v|
 !i113 0
 R18
-R33
-R20
+R30
+R9
 vcontrol_unit
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v
-Z34 !s110 1775507676
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v
+R11
 !i10b 1
-!s100 Foj2Kfg;0O?a:L=9MUPSS1
-IW^k7]=cbOl;8cVF0=ZS=V2
+!s100 _PVKTHOTzaEg2l<<PWaeJ2
+I4LW[b2>Y>M8n94UD?@ZbK0
+R12
 R13
-Z35 w1775503790
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v
 R14
 R15
 !i122 22
@@ -786,23 +805,23 @@ R17
 r1
 !s85 0
 31
-Z36 !s108 1775507676.000000
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/states.vh|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/opcodes.vh|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v|
+Z31 !s108 1775511785.000000
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/states.vh|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/opcodes.vh|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/control_unit.v|
 !i113 0
 R18
 R19
-R20
+R9
 vcpu
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v
-R34
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v
+R11
 !i10b 1
-!s100 <<BNf=T5BOS4bi;_6KMYn2
-IKAa7T33W44]6A83d:R1E91
+!s100 Rg:?l72IQP<efdJ=GPV253
+I<io9L?2XhF245WIm><Rmi2
+R12
 R13
-w1775488533
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v
 !i122 23
 L0 1 282
 R16
@@ -810,23 +829,23 @@ R17
 r1
 !s85 0
 31
-R36
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v|
+R31
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/cpu.v|
 !i113 0
 R18
 R19
-R20
+R9
 vdoodle_jump
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v
-Z37 !s110 1775507680
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v
+Z32 !s110 1775511788
 !i10b 1
-!s100 D>9U@CZ<EYDUhb>Y3g=lE0
-I6X<k4=_H0Nz`hO]3zhg<m3
+!s100 hf8<Hg;ZKXfeCknWX<m453
+IB]YV5^BjmgAW`IAIXo=cZ0
+R12
 R13
-w1775507303
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v
 !i122 37
 L0 1 162
 R16
@@ -834,23 +853,23 @@ R17
 r1
 !s85 0
 31
-Z38 !s108 1775507680.000000
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v|
+Z33 !s108 1775511787.000000
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/doodle_jump.v|
 !i113 0
 R18
-Z39 !s92 -work work {+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R20
+Z34 !s92 -vlog01compat -work work {+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R9
 vdrum_generator
-R25
-R26
+R23
+R20
 !i10b 1
-!s100 o5Q]kEoT=c@I1038?a2LP1
-IVO@k[@]bM5XEXZD]Efo8H3
+!s100 [dzo[@2f6WC7WJV[AJeXA1
+IRkZWU7P=f>NP03`WhAR^O1
+R12
 R13
-R22
-R27
-R28
+R24
+R25
 !i122 49
 L0 101 21
 R16
@@ -858,23 +877,23 @@ R17
 r1
 !s85 0
 31
-R24
-R29
-R30
+R21
+R26
+R27
 !i113 0
 R18
-R23
-R20
-vglyph_rom
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/glyph_rom.v
-Z40 !s110 1775507682
-!i10b 1
-!s100 BaaB_H:4QL_jW6gX^@5Oi1
-ID]?TT;Ym6GYQjjXJ5ZQg20
-R13
 R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/glyph_rom.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/glyph_rom.v
+R9
+vglyph_rom
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/glyph_rom.v
+R20
+!i10b 1
+!s100 1A58]Eg;ho?@DVkjDiTLf0
+I8e>_kSAEBDeoAbCJYU23g3
+R12
+R13
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/glyph_rom.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/glyph_rom.v
 !i122 46
 L0 14 20
 R16
@@ -882,23 +901,23 @@ R17
 r1
 !s85 0
 31
-Z41 !s108 1775507682.000000
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/glyph_rom.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/glyph_rom.v|
+R21
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/glyph_rom.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/glyph_rom.v|
 !i113 0
 R18
-R33
-R20
+R30
+R9
 vhard_coded_bitgen
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v
-R31
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v
+R28
 !i10b 1
-!s100 5`2cS67?oP[L4j@C]VOYX1
-IzFZB?3PKQAg?BX<51EE421
+!s100 ?:P>Fa<]E;Pji:d6z<lUC0
+IU^_26InOU18d2f?RS40Qi0
+R12
 R13
-R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v
 !i122 32
 L0 1 67
 R16
@@ -906,23 +925,23 @@ R17
 r1
 !s85 0
 31
-R32
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v|
+R29
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_bitgen.v|
 !i113 0
 R18
-R33
-R20
+R30
+R9
 vi2c_controller
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v
-R37
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v
+R32
 !i10b 1
-!s100 cCY0gk6U@>bbiFz[ZV[KM1
-IOME2H[GoMn9Fb1g<0JB6=1
+!s100 fQGB35aOFd7@LiPbO91LT3
+IeH8V70klnj[AlH`=WFFz70
+R12
 R13
-R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v
 !i122 39
 L0 1 167
 R16
@@ -930,26 +949,26 @@ R17
 r1
 !s85 0
 31
-R38
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v|
+Z35 !s108 1775511788.000000
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/i2c_controller.v|
 !i113 0
 R18
-R23
-R20
+R22
+R9
 vinstruction_decoder
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v
-R34
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v
+R11
 !i10b 1
-!s100 54d[62PZQGnOG<5OS^@[T2
-InK8:;mN52n7EZJKbQcAah0
+!s100 fm]4U4n_B[MFNN6Q]RUfk1
+I9V1]=jK7oPYT8d1>Of1LW1
+R12
 R13
-w1775507655
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v
 R14
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/conditions.vh
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/indicesPSR.vh
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/conditions.vh
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/indicesPSR.vh
 !i122 24
 L0 1 142
 R16
@@ -957,23 +976,23 @@ R17
 r1
 !s85 0
 31
-R36
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/indicesPSR.vh|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/conditions.vh|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/opcodes.vh|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v|
+R31
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/indicesPSR.vh|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/conditions.vh|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/opcodes.vh|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/instruction_decoder.v|
 !i113 0
 R18
 R19
-R20
+R9
 vmemory
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v
-R40
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v
+R32
 !i10b 1
-!s100 UM>L;jdlF0C8DU;]d^kD93
-IolLBcK;_WbMfla9SGHNWR0
+!s100 6LDT:k2BTJh7RTVl4XHcU3
+ISiNoTkG32k4nBR?jF;GXe3
+R12
 R13
-R35
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v
 !i122 43
 L0 1 37
 R16
@@ -981,23 +1000,23 @@ R17
 r1
 !s85 0
 31
-Z42 !s108 1775507681.000000
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v|
+R35
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/memory.v|
 !i113 0
 R18
-R39
-R20
+R34
+R9
 vmux2
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v
-Z43 !s110 1775507677
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v
+R11
 !i10b 1
-!s100 F^P4461fIaNQW01O`hCKk0
-IY980ZC9indMGF2b^HN7GY2
+!s100 bz>L];5=oQ;`EC]QQLOD51
+I1d:YhiOm4h3TSTOA@=ABH1
+R12
 R13
-R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v
 !i122 25
 L0 1 14
 R16
@@ -1005,23 +1024,23 @@ R17
 r1
 !s85 0
 31
-R36
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v|
+R31
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux2.v|
 !i113 0
 R18
 R19
-R20
+R9
 vmux4
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v
-R43
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v
+R28
 !i10b 1
-!s100 ocNIIGmeUTJD25e?RBGjc2
-IQQV4bnjOb0mRzjDlAbXcN1
+!s100 A3lUVkB]6iQ9i0`;Z?4JO3
+IBB>QmcV]j=aB8jTeFK@a40
+R12
 R13
-R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v
 !i122 26
 L0 1 20
 R16
@@ -1029,23 +1048,23 @@ R17
 r1
 !s85 0
 31
-Z44 !s108 1775507677.000000
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v|
+R31
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/mux4.v|
 !i113 0
 R18
 R19
-R20
+R9
 vnote_generator
-R25
-R26
+R23
+R20
 !i10b 1
-!s100 SIhPbY?UNg1EjHd_i^i4A2
-IoD`JJ]ajVdZi_zSlz]<^O0
+!s100 lngMjJDb518OW<7D`1gX=2
+IF6BlRnVX2fdXD?jL1j[?]3
+R12
 R13
-R22
-R27
-R28
+R24
+R25
 !i122 49
 L0 72 27
 R16
@@ -1053,23 +1072,23 @@ R17
 r1
 !s85 0
 31
-R24
-R29
-R30
+R21
+R26
+R27
 !i113 0
 R18
-R23
-R20
-vplayerMemory
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v
-Z45 !s110 1775507679
-!i10b 1
-!s100 QZ@m1_@<AOcbQ[0U4HCZ`2
-IA^A`W^A_:D5S21<TcEoVX2
-R13
 R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v
+R9
+vplayerMemory
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v
+Z36 !s110 1775511787
+!i10b 1
+!s100 JW]H;Z4YFfaoM;@Y@O:193
+IZ7O@m:WU>nbog6A]K<zY61
+R12
+R13
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v
 !i122 34
 L0 1 57
 R16
@@ -1077,24 +1096,24 @@ R17
 r1
 !s85 0
 31
-Z46 !s108 1775507679.000000
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v|
+R33
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/playerMemory.v|
 !i113 0
 R18
-R33
-R20
+R30
+R9
 nplayer@memory
 vregister
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v
-R43
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v
+R28
 !i10b 1
-!s100 hZ>3?W8fI?C]oAR1^ZmG=1
-IMFkNA75kTKV2WPI<OkQ7n2
+!s100 WXZcAcJI?Xk9_k>Kmc4XR2
+I8C>J<]CGmFD]6QB=h0Im91
+R12
 R13
-R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v
 !i122 27
 L0 1 21
 R16
@@ -1102,23 +1121,23 @@ R17
 r1
 !s85 0
 31
-R44
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v|
+R29
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register.v|
 !i113 0
 R18
 R19
-R20
+R9
 vregister_file
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v
-R43
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v
+R28
 !i10b 1
-!s100 BYX?KjQfkTjXiUlG[4_g=1
-IIC4hNkX7DKL?lA5FUeJI62
+!s100 D2lRUNR<FOHH15C>5F2OM2
+I?>c?PeD67LP:Zl`g2iaV42
+R12
 R13
-R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v
 !i122 28
 L0 1 49
 R16
@@ -1126,23 +1145,23 @@ R17
 r1
 !s85 0
 31
-R44
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v|
+R29
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/register_file.v|
 !i113 0
 R18
 R19
-R20
+R9
 vseven_seg_decoder
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/seven_seg_decoder.v
-R40
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/seven_seg_decoder.v
+R20
 !i10b 1
-!s100 6U2dVQ]dDWPI>f_oLD5mL3
-IRzDjEMKN2Q?Rm32^c<Ydk2
+!s100 T<OJV1XTG`Qh?2YoFP=An0
+IYfQg37GEThDWXlnIbZS0F0
+R12
 R13
-R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/seven_seg_decoder.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/seven_seg_decoder.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/seven_seg_decoder.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/seven_seg_decoder.v
 !i122 45
 L0 1 28
 R16
@@ -1150,23 +1169,23 @@ R17
 r1
 !s85 0
 31
-R41
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/seven_seg_decoder.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/seven_seg_decoder.v|
+R21
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/seven_seg_decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/seven_seg_decoder.v|
 !i113 0
 R18
-R39
-R20
+R34
+R9
 vsharedMemory
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v
-Z47 !s110 1775507681
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v
+R32
 !i10b 1
-!s100 =i0Si`W2YTUg=_7azZB7W2
-IG;=X^?VH9cNK=4FclleDV0
-R13
-w1775507369
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v
+!s100 c<PcObhWoMC5Mk]c@>omP2
+IWXCC@1fbK7NcYKcR2KYad2
+R12
+w1775511712
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v
 !i122 42
 L0 1 233
 R16
@@ -1174,24 +1193,24 @@ R17
 r1
 !s85 0
 31
-R42
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v|
+R35
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sharedMemory.v|
 !i113 0
 R18
-R39
-R20
+R34
+R9
 nshared@memory
 vsixteen_bit_seven_seg
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v
-R40
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v
+R20
 !i10b 1
-!s100 DjQ=07eAgkcfEdQZ`EB882
-I>6AE54I9HE8kK8@D6V:913
+!s100 KLZ2[UMAF1z=ih0mdVo6?0
+IL;]=`4e9IeYgBag]5Z9[?3
+R12
 R13
-R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v
 !i122 44
 L0 1 30
 R16
@@ -1199,23 +1218,23 @@ R17
 r1
 !s85 0
 31
-R41
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v|
+R35
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v|
 !i113 0
 R18
-R39
-R20
+R34
+R9
 vtb_audio_configurator
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_audio_configurator.v
-R26
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_audio_configurator.v
+R20
 !i10b 1
-!s100 :ThaPSAPl4WnI<`<[C1L>0
-IRP:;:7N`nHaVGiMmAa9?I3
+!s100 RQ]P`i_oQN>7TAl0ZZcHa0
+IOlhgRKTBHQ<GMhFWOo6N40
+R12
 R13
-R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_audio_configurator.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_audio_configurator.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_audio_configurator.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_audio_configurator.v
 !i122 48
 L0 1 60
 R16
@@ -1223,23 +1242,23 @@ R17
 r1
 !s85 0
 31
-R24
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_audio_configurator.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_audio_configurator.v|
+R21
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_audio_configurator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_audio_configurator.v|
 !i113 0
 R18
-R23
-R20
-vtb_cpu
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/tb_cpu.v
-R47
-!i10b 1
-!s100 EA0>`lQa=DF=O4RC``]5z3
-ImRbi8NW1]IUnzQ3bGlJQ21
-R13
 R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/tb_cpu.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/tb_cpu.v
+R9
+vtb_cpu
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/tb_cpu.v
+R32
+!i10b 1
+!s100 K@1AW>N=GYKMfB86[7jLo2
+IQAdDZQ9;PNj7K3BI4B]Sb3
+R12
+R13
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/tb_cpu.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/tb_cpu.v
 R15
 !i122 41
 L0 3 218
@@ -1248,47 +1267,47 @@ R17
 r1
 !s85 0
 31
-R42
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/states.vh|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/tb_cpu.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/tb_cpu.v|
+R35
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/states.vh|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/tb_cpu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/tb_cpu.v|
 !i113 0
 R18
 R19
-R20
+R9
 vtb_doodle
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v
-R47
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v
+R32
 !i10b 1
-!s100 UID[ggD1^gd=MEIFA^@NQ2
-I>Kd5KomK:QYgEh?b=UoSU1
-R13
-w1775507111
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v
+!s100 Z31@TRGJKga[JBeM`Tc4<3
+Iogl`Ci_lZGKgFdReZ8ajB3
+R12
+w1775511624
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v
 !i122 40
-L0 3 272
+L0 3 283
 R16
 R17
 r1
 !s85 0
 31
-R42
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v|
+R35
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/tb_doodle.v|
 !i113 0
 R18
-R39
-R20
+R34
+R9
 vtb_hard_coded_vga
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v
-R45
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v
+R36
 !i10b 1
-!s100 1M6k1U[iOH]nFPkk4ddXk1
-IKhi^FRlgS2mE]MeTQid>60
+!s100 ]M^nR`M;eV7SNAWg<WESb3
+ITLI8_F2b3j4nMl4Hf`E231
+R12
 R13
-R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v
 !i122 35
 L0 2 31
 R16
@@ -1296,23 +1315,23 @@ R17
 r1
 !s85 0
 31
-R46
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v|
+R33
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tb_hard_coded_vga.v|
 !i113 0
 R18
-R33
-R20
+R30
+R9
 vtb_i2c_controller
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v
-R37
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v
+R32
 !i10b 1
-!s100 A6ZoT2oN5zX<g_aJ:bGZM3
-Ij>3=0QO=6neRc_Q;CTOF;3
+!s100 G5HBURc<ZE79JbJJAC<L03
+IOa__=QKEOHl^B5@TXLWaP2
+R12
 R13
-R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v
 !i122 38
 L0 1 83
 R16
@@ -1320,23 +1339,23 @@ R17
 r1
 !s85 0
 31
-R38
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v|
+R35
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/audio/tb_i2c_controller.v|
 !i113 0
 R18
-R23
-R20
-vtileMemory
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v
-R37
-!i10b 1
-!s100 j8M62CPGd]aJMoC0d5nV:0
-I9F6_FcAZF@[UEL<aS>0in2
-R13
 R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v
+R9
+vtileMemory
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v
+R36
+!i10b 1
+!s100 J8SUE2MAXR]fL]f`_SGQJ2
+IEJD;OiWT;BW?4?Nm^JFZS2
+R12
+R13
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v
 !i122 36
 L0 2 50
 R16
@@ -1344,24 +1363,24 @@ R17
 r1
 !s85 0
 31
-R46
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v|
+R33
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/tileMemory.v|
 !i113 0
 R18
-R33
-R20
+R30
+R9
 ntile@memory
 vtop
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v
-R31
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v
+R28
 !i10b 1
-!s100 kIG7ReRkC0g<C^;X0:NP[3
-I26Z`6kPagEj<feR??YC7c2
+!s100 6OIDCci6S0lckTbSn36E@3
+I;9>hg24=cmLH0jeKFRViC2
+R12
 R13
-R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v
 !i122 29
 L0 1 18
 R16
@@ -1369,23 +1388,23 @@ R17
 r1
 !s85 0
 31
-R32
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v|
+R29
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/cpu/top.v|
 !i113 0
 R18
 R19
-R20
+R9
 vvga
-2C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v
-R45
+2/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v
+R36
 !i10b 1
-!s100 INQQCTjXdom02b2Ri`M3k0
-I:Pj<T21o>GJQ]?o[7df=53
+!s100 <AgF29edgF[>K11cdzH3R0
+IjNSo3jO<<Dd[8b0;8Qh6H0
+R12
 R13
-R22
-8C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v
-FC:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v
+8/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v
+F/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v
 !i122 33
 L0 2 162
 R16
@@ -1393,10 +1412,10 @@ R17
 r1
 !s85 0
 31
-R46
-!s107 C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v|
-!s90 -reportprogress|300|-work|work|+incdir+C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v|
+R29
+!s107 /home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga|/home/u1462567/Desktop/ece3710/Quartus Project/../Verilog/Doodle Jump/vga/hard_coded_vga.v|
 !i113 0
 R18
-R33
-R20
+R30
+R9

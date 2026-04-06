@@ -1,6 +1,6 @@
 Analysis & Synthesis report for lab1
-Mon Apr  6 13:38:20 2026
-Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Mon Apr  6 15:59:58 2026
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
 ---------------------
@@ -62,44 +62,44 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2025  Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
-the Altera IP License Agreement, or other applicable license
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
-Altera and sold by Altera or its authorized distributors.  Please
-refer to the Altera Software License Subscription Agreements 
-on the Quartus Prime software download page.
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Apr  6 13:38:20 2026           ;
-; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
-; Revision Name                   ; lab1                                            ;
-; Top-level Entity Name           ; doodle_jump                                     ;
-; Family                          ; Cyclone V                                       ;
-; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 1620                                            ;
-; Total pins                      ; 177                                             ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 458,752                                         ;
-; Total DSP Blocks                ; 0                                               ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0                                               ;
-; Total DLLs                      ; 0                                               ;
-+---------------------------------+-------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Apr  6 15:59:58 2026          ;
+; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                   ; lab1                                           ;
+; Top-level Entity Name           ; doodle_jump                                    ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 1620                                           ;
+; Total pins                      ; 177                                            ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 458,752                                        ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -195,72 +195,67 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
-;     Processor 7            ;   0.0%      ;
-;     Processor 8            ;   0.0%      ;
-;     Processors 9-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                  ;
-+---------------------------------------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                                                ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                      ; Library ;
-+---------------------------------------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------------------------+---------+
-; ../Verilog/Doodle Jump/seven_seg_decoder.v                                      ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/seven_seg_decoder.v                 ;         ;
-; ../Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v                          ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v     ;         ;
-; ../Verilog/Doodle Jump/audio/top.v                                              ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/top.v                         ;         ;
-; ../Verilog/Doodle Jump/audio/audio_configurator_select.v                        ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v   ;         ;
-; ../Verilog/Doodle Jump/audio/audio_output.v                                     ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/audio_output.v                ;         ;
-; ../Verilog/Doodle Jump/memory.v                                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/memory.v                            ;         ;
-; ../Verilog/Doodle Jump/sharedMemory.v                                           ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/sharedMemory.v                      ;         ;
-; ../Verilog/Doodle Jump/vga/playerMemory.v                                       ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/playerMemory.v                  ;         ;
-; ../Verilog/Doodle Jump/vga/tileMemory.v                                         ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/tileMemory.v                    ;         ;
-; ../Verilog/Doodle Jump/cpu/register_file.v                                      ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/register_file.v                 ;         ;
-; ../Verilog/Doodle Jump/cpu/register.v                                           ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/register.v                      ;         ;
-; ../Verilog/Doodle Jump/cpu/mux4.v                                               ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/mux4.v                          ;         ;
-; ../Verilog/Doodle Jump/cpu/mux2.v                                               ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/mux2.v                          ;         ;
-; ../Verilog/Doodle Jump/cpu/instruction_decoder.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v           ;         ;
-; ../Verilog/Doodle Jump/cpu/cpu.v                                                ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/cpu.v                           ;         ;
-; ../Verilog/Doodle Jump/cpu/control_unit.v                                       ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/control_unit.v                  ;         ;
-; ../Verilog/Doodle Jump/cpu/alu.v                                                ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/alu.v                           ;         ;
-; ../Verilog/Doodle Jump/audio/i2c_controller.v                                   ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v              ;         ;
-; ../Verilog/Doodle Jump/vga/hard_coded_vga.v                                     ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v                ;         ;
-; ../Verilog/Doodle Jump/doodle_jump.v                                            ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v                       ;         ;
-; ../Verilog/Doodle Jump/vga/glyph_rom.v                                          ; yes             ; User Verilog HDL File                                 ; C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v                     ;         ;
-; /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/states.vh       ; yes             ; Auto-Found Unspecified File                           ; /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/states.vh                         ;         ;
-; /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/opcodes.vh      ; yes             ; Auto-Found Unspecified File                           ; /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/opcodes.vh                        ;         ;
-; /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/vga/playerglyph.hex ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/vga/playerglyph.hex                   ;         ;
-; /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/indicespsr.vh   ; yes             ; Auto-Found Unspecified File                           ; /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/indicespsr.vh                     ;         ;
-; /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/conditions.vh   ; yes             ; Auto-Found Unspecified File                           ; /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/conditions.vh                     ;         ;
-; altsyncram.tdf                                                                  ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altsyncram.tdf                             ;         ;
-; stratix_ram_block.inc                                                           ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                      ;         ;
-; lpm_mux.inc                                                                     ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mux.inc                                ;         ;
-; lpm_decode.inc                                                                  ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_decode.inc                             ;         ;
-; aglobal251.inc                                                                  ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/aglobal251.inc                             ;         ;
-; a_rdenreg.inc                                                                   ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/a_rdenreg.inc                              ;         ;
-; altrom.inc                                                                      ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altrom.inc                                 ;         ;
-; altram.inc                                                                      ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altram.inc                                 ;         ;
-; altdpram.inc                                                                    ; yes             ; Megafunction                                          ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altdpram.inc                               ;         ;
-; db/altsyncram_1re1.tdf                                                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_1re1.tdf                  ;         ;
-; db/lab1.ram0_memory_1643682f.hdl.mif                                            ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/lab1.ram0_memory_1643682f.hdl.mif    ;         ;
-; db/altsyncram_m5d1.tdf                                                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf                  ;         ;
-; db/lab1.ram0_glyph_rom_7ca142c7.hdl.mif                                         ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/lab1.ram0_glyph_rom_7ca142c7.hdl.mif ;         ;
-; db/decode_u0a.tdf                                                               ; yes             ; Auto-Generated Megafunction                           ; C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/decode_u0a.tdf                       ;         ;
-; db/mux_2hb.tdf                                                                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/mux_2hb.tdf                          ;         ;
-+---------------------------------------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                              ;
++------------------------------------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                       ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                           ; Library ;
++------------------------------------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+---------+
+; ../Verilog/Doodle Jump/seven_seg_decoder.v                             ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/seven_seg_decoder.v                 ;         ;
+; ../Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v                 ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v     ;         ;
+; ../Verilog/Doodle Jump/audio/top.v                                     ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v                         ;         ;
+; ../Verilog/Doodle Jump/audio/audio_configurator_select.v               ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v   ;         ;
+; ../Verilog/Doodle Jump/audio/audio_output.v                            ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v                ;         ;
+; ../Verilog/Doodle Jump/memory.v                                        ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v                            ;         ;
+; ../Verilog/Doodle Jump/sharedMemory.v                                  ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v                      ;         ;
+; ../Verilog/Doodle Jump/vga/playerMemory.v                              ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v                  ;         ;
+; ../Verilog/Doodle Jump/vga/tileMemory.v                                ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/tileMemory.v                    ;         ;
+; ../Verilog/Doodle Jump/cpu/register_file.v                             ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register_file.v                 ;         ;
+; ../Verilog/Doodle Jump/cpu/register.v                                  ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register.v                      ;         ;
+; ../Verilog/Doodle Jump/cpu/mux4.v                                      ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux4.v                          ;         ;
+; ../Verilog/Doodle Jump/cpu/mux2.v                                      ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux2.v                          ;         ;
+; ../Verilog/Doodle Jump/cpu/instruction_decoder.v                       ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v           ;         ;
+; ../Verilog/Doodle Jump/cpu/cpu.v                                       ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v                           ;         ;
+; ../Verilog/Doodle Jump/cpu/control_unit.v                              ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v                  ;         ;
+; ../Verilog/Doodle Jump/cpu/alu.v                                       ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v                           ;         ;
+; ../Verilog/Doodle Jump/audio/i2c_controller.v                          ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v              ;         ;
+; ../Verilog/Doodle Jump/vga/hard_coded_vga.v                            ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v                ;         ;
+; ../Verilog/Doodle Jump/doodle_jump.v                                   ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v                       ;         ;
+; ../Verilog/Doodle Jump/vga/glyph_rom.v                                 ; yes             ; User Verilog HDL File                                 ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v                     ;         ;
+; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/states.vh       ; yes             ; Auto-Found Unspecified File                           ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/states.vh                       ;         ;
+; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/opcodes.vh      ; yes             ; Auto-Found Unspecified File                           ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/opcodes.vh                      ;         ;
+; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerGlyph.hex ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerGlyph.hex                 ;         ;
+; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/indicesPSR.vh   ; yes             ; Auto-Found Unspecified File                           ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/indicesPSR.vh                   ;         ;
+; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/conditions.vh   ; yes             ; Auto-Found Unspecified File                           ; /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/conditions.vh                   ;         ;
+; altsyncram.tdf                                                         ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/altsyncram.tdf                      ;         ;
+; stratix_ram_block.inc                                                  ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/stratix_ram_block.inc               ;         ;
+; lpm_mux.inc                                                            ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/lpm_mux.inc                         ;         ;
+; lpm_decode.inc                                                         ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/lpm_decode.inc                      ;         ;
+; aglobal231.inc                                                         ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/aglobal231.inc                      ;         ;
+; a_rdenreg.inc                                                          ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/a_rdenreg.inc                       ;         ;
+; altrom.inc                                                             ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/altrom.inc                          ;         ;
+; altram.inc                                                             ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/altram.inc                          ;         ;
+; altdpram.inc                                                           ; yes             ; Megafunction                                          ; /usr/local/quartus/quartus/libraries/megafunctions/altdpram.inc                        ;         ;
+; db/altsyncram_1re1.tdf                                                 ; yes             ; Auto-Generated Megafunction                           ; /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_1re1.tdf                  ;         ;
+; db/lab1.ram0_memory_1643682f.hdl.mif                                   ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/u1462567/Desktop/ece3710/Quartus Project/db/lab1.ram0_memory_1643682f.hdl.mif    ;         ;
+; db/altsyncram_m5d1.tdf                                                 ; yes             ; Auto-Generated Megafunction                           ; /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf                  ;         ;
+; db/lab1.ram0_glyph_rom_7ca142c7.hdl.mif                                ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/u1462567/Desktop/ece3710/Quartus Project/db/lab1.ram0_glyph_rom_7ca142c7.hdl.mif ;         ;
+; db/decode_u0a.tdf                                                      ; yes             ; Auto-Generated Megafunction                           ; /home/u1462567/Desktop/ece3710/Quartus Project/db/decode_u0a.tdf                       ;         ;
+; db/mux_2hb.tdf                                                         ; yes             ; Auto-Generated Megafunction                           ; /home/u1462567/Desktop/ece3710/Quartus Project/db/mux_2hb.tdf                          ;         ;
++------------------------------------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------------+
@@ -268,14 +263,14 @@ on the Quartus Prime software download page.
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 5492                   ;
+; Estimate of Logic utilization (ALMs needed) ; 5483                   ;
 ;                                             ;                        ;
-; Combinational ALUT usage for logic          ; 9326                   ;
-;     -- 7 input functions                    ; 26                     ;
-;     -- 6 input functions                    ; 1484                   ;
-;     -- 5 input functions                    ; 1289                   ;
-;     -- 4 input functions                    ; 745                    ;
-;     -- <=3 input functions                  ; 5782                   ;
+; Combinational ALUT usage for logic          ; 9316                   ;
+;     -- 7 input functions                    ; 19                     ;
+;     -- 6 input functions                    ; 1483                   ;
+;     -- 5 input functions                    ; 1296                   ;
+;     -- 4 input functions                    ; 741                    ;
+;     -- <=3 input functions                  ; 5777                   ;
 ;                                             ;                        ;
 ; Dedicated logic registers                   ; 1620                   ;
 ;                                             ;                        ;
@@ -287,7 +282,7 @@ on the Quartus Prime software download page.
 ;                                             ;                        ;
 ; Maximum fan-out node                        ; systemClock50MHz~input ;
 ; Maximum fan-out                             ; 1416                   ;
-; Total fan-out                               ; 39201                  ;
+; Total fan-out                               ; 39199                  ;
 ; Average fan-out                             ; 3.45                   ;
 +---------------------------------------------+------------------------+
 
@@ -297,24 +292,24 @@ on the Quartus Prime software download page.
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                     ; Entity Name               ; Library Name ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |doodle_jump                                             ; 9326 (0)            ; 1620 (0)                  ; 458752            ; 0          ; 177  ; 0            ; |doodle_jump                                                                                                                                            ; doodle_jump               ; work         ;
+; |doodle_jump                                             ; 9316 (0)            ; 1620 (0)                  ; 458752            ; 0          ; 177  ; 0            ; |doodle_jump                                                                                                                                            ; doodle_jump               ; work         ;
 ;    |audio_unit:audio_unit_instance|                      ; 151 (1)             ; 123 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance                                                                                                             ; audio_unit                ; work         ;
 ;       |audio_configurator_select:i2c_conf|               ; 90 (34)             ; 69 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf                                                                          ; audio_configurator_select ; work         ;
 ;          |i2c_controller:i2c_controller_instance|        ; 56 (56)             ; 38 (38)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance                                   ; i2c_controller            ; work         ;
 ;       |audio_output:dac_driver|                          ; 60 (11)             ; 54 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_output:dac_driver                                                                                     ; audio_output              ; work         ;
 ;          |note_generator:note_gen|                       ; 49 (49)             ; 42 (42)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen                                                             ; note_generator            ; work         ;
-;    |cpu:cpu_instance|                                    ; 879 (0)             ; 301 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance                                                                                                                           ; cpu                       ; work         ;
+;    |cpu:cpu_instance|                                    ; 880 (0)             ; 301 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance                                                                                                                           ; cpu                       ; work         ;
 ;       |alu:alu_instance|                                 ; 486 (486)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|alu:alu_instance                                                                                                          ; alu                       ; work         ;
 ;       |control_unit:control_unit_instance|               ; 33 (33)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|control_unit:control_unit_instance                                                                                        ; control_unit              ; work         ;
 ;       |instruction_decoder:instruction_decoder_instance| ; 82 (82)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|instruction_decoder:instruction_decoder_instance                                                                          ; instruction_decoder       ; work         ;
 ;       |mux2:alu_input_mux|                               ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux2:alu_input_mux                                                                                                        ; mux2                      ; work         ;
-;       |mux2:memory_select_read_write_address_mux|        ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux2:memory_select_read_write_address_mux                                                                                 ; mux2                      ; work         ;
+;       |mux2:memory_select_read_write_address_mux|        ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux2:memory_select_read_write_address_mux                                                                                 ; mux2                      ; work         ;
 ;       |mux4:register_file_input_mux|                     ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux4:register_file_input_mux                                                                                              ; mux4                      ; work         ;
 ;       |register:instruction_register|                    ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:instruction_register                                                                                             ; register                  ; work         ;
 ;       |register:program_counter|                         ; 3 (3)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:program_counter                                                                                                  ; register                  ; work         ;
 ;       |register:program_state_register|                  ; 0 (0)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:program_state_register                                                                                           ; register                  ; work         ;
 ;       |register_file:register_file_instance|             ; 214 (214)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance                                                                                      ; register_file             ; work         ;
-;    |sharedMemory:memory_instance|                        ; 8019 (8019)         ; 1088 (1088)               ; 65536             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance                                                                                                               ; sharedMemory              ; work         ;
+;    |sharedMemory:memory_instance|                        ; 8011 (8011)         ; 1088 (1088)               ; 65536             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance                                                                                                               ; sharedMemory              ; work         ;
 ;       |memory:cpu_memory_instance|                       ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|memory:cpu_memory_instance                                                                                    ; memory                    ; work         ;
 ;          |altsyncram:ram_rtl_0|                          ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0                                                               ; altsyncram                ; work         ;
 ;             |altsyncram_1re1:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0|altsyncram_1re1:auto_generated                                ; altsyncram_1re1           ; work         ;
@@ -323,7 +318,7 @@ on the Quartus Prime software download page.
 ;       |seven_seg_decoder:dec1|                           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|sixteen_bit_seven_seg:segDriver|seven_seg_decoder:dec1                                                                                     ; seven_seg_decoder         ; work         ;
 ;       |seven_seg_decoder:dec2|                           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|sixteen_bit_seven_seg:segDriver|seven_seg_decoder:dec2                                                                                     ; seven_seg_decoder         ; work         ;
 ;       |seven_seg_decoder:dec3|                           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|sixteen_bit_seven_seg:segDriver|seven_seg_decoder:dec3                                                                                     ; seven_seg_decoder         ; work         ;
-;    |vga:vga_instance|                                    ; 249 (169)           ; 108 (45)                  ; 393216            ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance                                                                                                                           ; vga                       ; work         ;
+;    |vga:vga_instance|                                    ; 246 (166)           ; 108 (45)                  ; 393216            ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance                                                                                                                           ; vga                       ; work         ;
 ;       |playerMemory:playerMem_inst|                      ; 68 (44)             ; 49 (48)                   ; 393216            ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|playerMemory:playerMem_inst                                                                                               ; playerMemory              ; work         ;
 ;          |glyph_rom:glyph_rom_instance|                  ; 24 (0)              ; 1 (0)                     ; 393216            ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance                                                                  ; glyph_rom                 ; work         ;
 ;             |altsyncram:rom_rtl_0|                       ; 24 (0)              ; 1 (0)                     ; 393216            ; 0          ; 0    ; 0            ; |doodle_jump|vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0                                             ; altsyncram                ; work         ;
@@ -517,11 +512,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 1620  ;
-; Number of registers using Synchronous Clear  ; 89    ;
+; Number of registers using Synchronous Clear  ; 121   ;
 ; Number of registers using Synchronous Load   ; 19    ;
 ; Number of registers using Asynchronous Clear ; 338   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1424  ;
+; Number of registers using Clock Enable       ; 1440  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -551,36 +546,38 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentCommandIndex[1]                                     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |doodle_jump|sharedMemory:memory_instance|contentsPlayer[0]                                                                               ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |doodle_jump|vga:vga_instance|tileMemory:tileMem_inst|g_next[5]                                                                           ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByteIndex[1] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentCommandIndex[3]                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |doodle_jump|sharedMemory:memory_instance|contentsPlayer[1]                                                                               ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|player_x[10]                                                                                    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|player_y[0]                                                                                     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |doodle_jump|vga:vga_instance|tileMemory:tileMem_inst|b_next[2]                                                                           ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByteIndex[2] ;
 ; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentBitIndex[2]  ;
-; 65:1               ; 16 bits   ; 688 LEs       ; 672 LEs              ; 16 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|contentsRect[4]                                                                                 ;
-; 12:1               ; 6 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[1]      ;
-; 243:1              ; 16 bits   ; 2592 LEs      ; 32 LEs               ; 2560 LEs               ; Yes        ; |doodle_jump|cpu:cpu_instance|register:program_counter|contents[0]                                                                        ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|control_unit:control_unit_instance|memoryWriteEnable                                                        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|instruction_decoder:instruction_decoder_instance|immediate[13]                                              ;
+; 65:1               ; 16 bits   ; 688 LEs       ; 672 LEs              ; 16 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|contentsRect[12]                                                                                ;
+; 12:1               ; 6 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[3]      ;
+; 244:1              ; 16 bits   ; 2592 LEs      ; 32 LEs               ; 2560 LEs               ; Yes        ; |doodle_jump|cpu:cpu_instance|register:program_counter|contents[8]                                                                        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|control_unit:control_unit_instance|savePreviousInstructionTargetRegIndex                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|instruction_decoder:instruction_decoder_instance|immediate[14]                                              ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftRight0                                                                                ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftLeft0                                                                                 ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftLeft2                                                                                 ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|contents[5]                                                                                     ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|mux4:register_file_input_mux|selection[9]                                                                   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|contents[7]                                                                                     ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|mux4:register_file_input_mux|selection[8]                                                                   ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep.011                                            ;
 ; 9:1                ; 6 bits    ; 36 LEs        ; 30 LEs               ; 6 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|control_unit:control_unit_instance|Mux1                                                                     ;
 ; 17:1               ; 12 bits   ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|contentsA[12]                                                          ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|contentsA[2]                                                           ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|contentsA[0]                                                           ;
 ; 17:1               ; 4 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|contentsB[0]                                                           ;
-; 17:1               ; 12 bits   ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|contentsB[4]                                                           ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentStep.0010    ;
-; 10:1               ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|Selector12          ;
-; 17:1               ; 2 bits    ; 22 LEs        ; 8 LEs                ; 14 LEs                 ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|Selector11          ;
-; 246:1              ; 2 bits    ; 328 LEs       ; 32 LEs               ; 296 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector6                                                                                  ;
+; 17:1               ; 12 bits   ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance|contentsB[9]                                                           ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentStep.0001    ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|Selector9           ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 8 LEs                ; 14 LEs                 ; No         ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|Selector13          ;
+; 246:1              ; 2 bits    ; 328 LEs       ; 32 LEs               ; 296 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector5                                                                                  ;
 ; 251:1              ; 2 bits    ; 334 LEs       ; 36 LEs               ; 298 LEs                ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|Selector9                                                                                  ;
 ; 49:1               ; 3 bits    ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|b[2]                                                                                            ;
-; 65:1               ; 9 bits    ; 387 LEs       ; 387 LEs              ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|b[4]                                                                                            ;
-; 49:1               ; 3 bits    ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|g[5]                                                                                            ;
-; 65:1               ; 2 bits    ; 86 LEs        ; 86 LEs               ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|b[7]                                                                                            ;
+; 65:1               ; 9 bits    ; 387 LEs       ; 387 LEs              ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|r[6]                                                                                            ;
+; 49:1               ; 3 bits    ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|g[4]                                                                                            ;
+; 65:1               ; 2 bits    ; 86 LEs        ; 86 LEs               ; 0 LEs                  ; No         ; |doodle_jump|sharedMemory:memory_instance|r[7]                                                                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1008,15 +1005,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; arriav_ff             ; 1620                        ;
 ;     CLR               ; 10                          ;
 ;     CLR SCLR          ; 18                          ;
-;     ENA               ; 1090                        ;
+;     ENA               ; 1074                        ;
 ;     ENA CLR           ; 300                         ;
 ;     ENA CLR SCLR      ; 10                          ;
-;     ENA SCLR          ; 5                           ;
+;     ENA SCLR          ; 37                          ;
 ;     ENA SLD           ; 19                          ;
 ;     SCLR              ; 56                          ;
-;     plain             ; 112                         ;
+;     plain             ; 96                          ;
 ; arriav_io_obuf        ; 6                           ;
-; arriav_lcell_comb     ; 9333                        ;
+; arriav_lcell_comb     ; 9323                        ;
 ;     arith             ; 5159                        ;
 ;         0 data inputs ; 246                         ;
 ;         1 data inputs ; 2684                        ;
@@ -1024,16 +1021,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 490                         ;
 ;         4 data inputs ; 151                         ;
 ;         5 data inputs ; 79                          ;
-;     extend            ; 26                          ;
-;         7 data inputs ; 26                          ;
-;     normal            ; 3819                        ;
+;     extend            ; 19                          ;
+;         7 data inputs ; 19                          ;
+;     normal            ; 3816                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 13                          ;
-;         2 data inputs ; 285                         ;
-;         3 data inputs ; 235                         ;
-;         4 data inputs ; 591                         ;
-;         5 data inputs ; 1210                        ;
-;         6 data inputs ; 1484                        ;
+;         2 data inputs ; 284                         ;
+;         3 data inputs ; 231                         ;
+;         4 data inputs ; 587                         ;
+;         5 data inputs ; 1217                        ;
+;         6 data inputs ; 1483                        ;
 ;     shared            ; 329                         ;
 ;         0 data inputs ; 1                           ;
 ;         2 data inputs ; 320                         ;
@@ -1043,7 +1040,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 64                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 28.40                       ;
-; Average LUT depth     ; 19.28                       ;
+; Average LUT depth     ; 19.27                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1052,7 +1049,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:28     ;
+; Top            ; 00:00:30     ;
 +----------------+--------------+
 
 
@@ -1061,135 +1058,136 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Mon Apr  6 13:37:25 2026
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Mon Apr  6 15:58:59 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/seven_seg_decoder.v
-    Info (12023): Found entity 1: seven_seg_decoder File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/seven_seg_decoder.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/sixteen_bit_seven_seg_decoder.v
-    Info (12023): Found entity 1: sixteen_bit_seven_seg File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/audio/top.v
-    Info (12023): Found entity 1: audio_unit File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/top.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/audio/audio_configurator.v
-    Info (12023): Found entity 1: audio_configurator File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/audio_configurator.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/audio/audio_configurator_select.v
-    Info (12023): Found entity 1: audio_configurator_select File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 1
-Info (12021): Found 3 design units, including 3 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/audio/audio_output.v
-    Info (12023): Found entity 1: audio_output File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 1
-    Info (12023): Found entity 2: note_generator File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 72
-    Info (12023): Found entity 3: drum_generator File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 101
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/audio/tb_audio_configurator.v
-    Info (12023): Found entity 1: tb_audio_configurator File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/tb_audio_configurator.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/memory.v
-    Info (12023): Found entity 1: memory File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/memory.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/sharedmemory.v
-    Info (12023): Found entity 1: sharedMemory File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/vga/playermemory.v
-    Info (12023): Found entity 1: playerMemory File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/playerMemory.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/vga/tilememory.v
-    Info (12023): Found entity 1: tileMemory File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/tileMemory.v Line: 2
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/top.v
-    Info (12023): Found entity 1: top File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/top.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/tb_cpu.v
-    Info (12023): Found entity 1: tb_cpu File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/tb_cpu.v Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/register_file.v
-    Info (12023): Found entity 1: register_file File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/register_file.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/register.v
-    Info (12023): Found entity 1: register File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/register.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/mux4.v
-    Info (12023): Found entity 1: mux4 File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/mux4.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/mux2.v
-    Info (12023): Found entity 1: mux2 File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/mux2.v Line: 1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/seven_seg_decoder.v
+    Info (12023): Found entity 1: seven_seg_decoder File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/seven_seg_decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v
+    Info (12023): Found entity 1: sixteen_bit_seven_seg File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v
+    Info (12023): Found entity 1: audio_unit File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator.v
+    Info (12023): Found entity 1: audio_configurator File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v
+    Info (12023): Found entity 1: audio_configurator_select File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 1
+Info (12021): Found 3 design units, including 3 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v
+    Info (12023): Found entity 1: audio_output File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 1
+    Info (12023): Found entity 2: note_generator File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 72
+    Info (12023): Found entity 3: drum_generator File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 101
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/tb_audio_configurator.v
+    Info (12023): Found entity 1: tb_audio_configurator File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/tb_audio_configurator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v
+    Info (12023): Found entity 1: memory File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v
+    Info (12023): Found entity 1: sharedMemory File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v
+    Info (12023): Found entity 1: playerMemory File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/tileMemory.v
+    Info (12023): Found entity 1: tileMemory File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/tileMemory.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/top.v
+    Info (12023): Found entity 1: top File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/tb_cpu.v
+    Info (12023): Found entity 1: tb_cpu File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/tb_cpu.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register_file.v
+    Info (12023): Found entity 1: register_file File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register_file.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register.v
+    Info (12023): Found entity 1: register File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux4.v
+    Info (12023): Found entity 1: mux4 File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux4.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux2.v
+    Info (12023): Found entity 1: mux2 File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/mux2.v Line: 1
 Warning (12019): Can't analyze file -- file ../Verilog/Doodle Jump/cpu/memory.v is missing
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/instruction_decoder.v
-    Info (12023): Found entity 1: instruction_decoder File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/cpu.v
-    Info (12023): Found entity 1: cpu File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/control_unit.v
-    Info (12023): Found entity 1: control_unit File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/cpu/alu.v
-    Info (12023): Found entity 1: alu File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/alu.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/audio/tb_i2c_controller.v
-    Info (12023): Found entity 1: tb_i2c_controller File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/tb_i2c_controller.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/audio/i2c_controller.v
-    Info (12023): Found entity 1: i2c_controller File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/vga/block_mover.v
-    Info (12023): Found entity 1: block_mover File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/block_mover.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/vga/clk_divider.v
-    Info (12023): Found entity 1: clk_divider File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/clk_divider.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/vga/hard_coded_bitgen.v
-    Info (12023): Found entity 1: hard_coded_bitgen File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/hard_coded_bitgen.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/vga/hard_coded_vga.v
-    Info (12023): Found entity 1: vga File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v
+    Info (12023): Found entity 1: instruction_decoder File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v
+    Info (12023): Found entity 1: cpu File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v
+    Info (12023): Found entity 1: control_unit File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v
+    Info (12023): Found entity 1: alu File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/tb_i2c_controller.v
+    Info (12023): Found entity 1: tb_i2c_controller File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/tb_i2c_controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v
+    Info (12023): Found entity 1: i2c_controller File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/block_mover.v
+    Info (12023): Found entity 1: block_mover File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/block_mover.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/clk_divider.v
+    Info (12023): Found entity 1: clk_divider File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/clk_divider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_bitgen.v
+    Info (12023): Found entity 1: hard_coded_bitgen File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_bitgen.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v
+    Info (12023): Found entity 1: vga File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 2
 Warning (12019): Can't analyze file -- file ../Verilog/Doodle Jump/vga/vga_controller.v is missing
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/doodle_jump.v
-    Info (12023): Found entity 1: doodle_jump File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/tb_doodle.v
-    Info (12023): Found entity 1: tb_doodle File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/tb_doodle.v Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /users/asher/desktop/schoolwork/ece3710/verilog/doodle jump/vga/glyph_rom.v
-    Info (12023): Found entity 1: glyph_rom File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v Line: 14
-Warning (10236): Verilog HDL Implicit Net warning at doodle_jump.v(46): created implicit net for "reset" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 46
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v
+    Info (12023): Found entity 1: doodle_jump File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/tb_doodle.v
+    Info (12023): Found entity 1: tb_doodle File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/tb_doodle.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v
+    Info (12023): Found entity 1: glyph_rom File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v Line: 14
+Warning (10236): Verilog HDL Implicit Net warning at doodle_jump.v(46): created implicit net for "reset" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 46
 Info (12127): Elaborating entity "doodle_jump" for the top level hierarchy
-Warning (10034): Output port "leds" at doodle_jump.v(9) has no driver File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-Warning (10034): Output port "hex4" at doodle_jump.v(16) has no driver File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
-Warning (10034): Output port "hex5" at doodle_jump.v(17) has no driver File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
-Warning (10034): Output port "vga_sync_n" at doodle_jump.v(31) has no driver File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 31
-Info (12128): Elaborating entity "vga" for hierarchy "vga:vga_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 73
-Warning (10230): Verilog HDL assignment warning at hard_coded_vga.v(67): truncated value with size 32 to match size of target (10) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 67
-Warning (10230): Verilog HDL assignment warning at hard_coded_vga.v(69): truncated value with size 32 to match size of target (10) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 69
-Info (12128): Elaborating entity "tileMemory" for hierarchy "vga:vga_instance|tileMemory:tileMem_inst" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 110
-Info (12128): Elaborating entity "playerMemory" for hierarchy "vga:vga_instance|playerMemory:playerMem_inst" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 127
-Info (12128): Elaborating entity "glyph_rom" for hierarchy "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/playerMemory.v Line: 32
-Warning (10030): Net "rom.data_a" at glyph_rom.v(23) has no driver or initial value, using a default initial value '0' File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v Line: 23
-Warning (10030): Net "rom.waddr_a" at glyph_rom.v(23) has no driver or initial value, using a default initial value '0' File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v Line: 23
-Warning (10030): Net "rom.we_a" at glyph_rom.v(23) has no driver or initial value, using a default initial value '0' File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v Line: 23
-Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 104
-Info (12128): Elaborating entity "register_file" for hierarchy "cpu:cpu_instance|register_file:register_file_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 116
-Warning (10240): Verilog HDL Always Construct warning at register_file.v(30): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/register_file.v Line: 30
-Info (12128): Elaborating entity "alu" for hierarchy "cpu:cpu_instance|alu:alu_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 132
-Warning (10230): Verilog HDL assignment warning at alu.v(88): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/alu.v Line: 88
-Warning (10764): Verilog HDL warning at alu.v(93): converting signed shift amount to unsigned File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/alu.v Line: 93
-Warning (10764): Verilog HDL warning at alu.v(97): converting signed shift amount to unsigned File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/alu.v Line: 97
-Warning (10240): Verilog HDL Always Construct warning at alu.v(25): inferring latch(es) for variable "negA", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/alu.v Line: 25
-Warning (10240): Verilog HDL Always Construct warning at alu.v(25): inferring latch(es) for variable "shift_amt", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/alu.v Line: 25
-Warning (10240): Verilog HDL Always Construct warning at alu.v(25): inferring latch(es) for variable "sa", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/alu.v Line: 25
-Info (12128): Elaborating entity "register" for hierarchy "cpu:cpu_instance|register:instruction_register" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 147
-Info (12128): Elaborating entity "instruction_decoder" for hierarchy "cpu:cpu_instance|instruction_decoder:instruction_decoder_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 195
-Warning (10230): Verilog HDL assignment warning at instruction_decoder.v(62): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v Line: 62
-Warning (10230): Verilog HDL assignment warning at instruction_decoder.v(72): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v Line: 72
-Warning (10230): Verilog HDL assignment warning at instruction_decoder.v(79): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v Line: 79
-Warning (10230): Verilog HDL assignment warning at instruction_decoder.v(83): truncated value with size 32 to match size of target (16) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v Line: 83
-Info (12128): Elaborating entity "mux2" for hierarchy "cpu:cpu_instance|mux2:alu_input_mux" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 214
-Info (12128): Elaborating entity "mux4" for hierarchy "cpu:cpu_instance|mux4:register_file_input_mux" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 244
-Info (12128): Elaborating entity "control_unit" for hierarchy "cpu:cpu_instance|control_unit:control_unit_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 270
-Warning (10270): Verilog HDL Case Statement warning at control_unit.v(80): incomplete case statement has no default case item File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 80
-Warning (10270): Verilog HDL Case Statement warning at control_unit.v(115): incomplete case statement has no default case item File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 115
-Warning (10270): Verilog HDL Case Statement warning at control_unit.v(58): incomplete case statement has no default case item File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 58
-Warning (10240): Verilog HDL Always Construct warning at control_unit.v(42): inferring latch(es) for variable "currentIsRead", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 42
-Info (10041): Inferred latch for "currentIsRead" at control_unit.v(42) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 42
-Info (12128): Elaborating entity "sharedMemory" for hierarchy "sharedMemory:memory_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 130
-Warning (10240): Verilog HDL Always Construct warning at sharedMemory.v(117): inferring latch(es) for variable "edge_dx", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 117
-Warning (10240): Verilog HDL Always Construct warning at sharedMemory.v(117): inferring latch(es) for variable "edge_dy", which holds its previous value in one or more paths through the always construct File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 117
-Info (12128): Elaborating entity "memory" for hierarchy "sharedMemory:memory_instance|memory:cpu_memory_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 50
-Warning (10850): Verilog HDL warning at memory.v(24): number of words (96) in memory file does not match the number of elements in the address range [0:4095] File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/memory.v Line: 24
-Info (12128): Elaborating entity "audio_unit" for hierarchy "audio_unit:audio_unit_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 152
-Info (12128): Elaborating entity "audio_configurator_select" for hierarchy "audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/top.v Line: 38
-Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(124): index expression is not wide enough to address all of the elements in the array File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 124
-Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(125): index expression is not wide enough to address all of the elements in the array File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 125
-Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(126): index expression is not wide enough to address all of the elements in the array File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 126
-Warning (10230): Verilog HDL assignment warning at audio_configurator_select.v(128): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 128
-Info (12128): Elaborating entity "i2c_controller" for hierarchy "audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 94
-Info (10264): Verilog HDL Case Statement information at i2c_controller.v(64): all case item expressions in this case statement are onehot File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v Line: 64
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(98): truncated value with size 32 to match size of target (3) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v Line: 98
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(100): truncated value with size 32 to match size of target (4) File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v Line: 100
-Info (10264): Verilog HDL Case Statement information at i2c_controller.v(147): all case item expressions in this case statement are onehot File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v Line: 147
-Info (12128): Elaborating entity "audio_output" for hierarchy "audio_unit:audio_unit_instance|audio_output:dac_driver" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/top.v Line: 49
-Info (12128): Elaborating entity "note_generator" for hierarchy "audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 33
-Info (12128): Elaborating entity "drum_generator" for hierarchy "audio_unit:audio_unit_instance|audio_output:dac_driver|drum_generator:drum_gen" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 42
-Info (12128): Elaborating entity "sixteen_bit_seven_seg" for hierarchy "sixteen_bit_seven_seg:segDriver" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 160
-Info (12128): Elaborating entity "seven_seg_decoder" for hierarchy "sixteen_bit_seven_seg:segDriver|seven_seg_decoder:dec0" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v Line: 13
+Warning (10034): Output port "leds" at doodle_jump.v(9) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+Warning (10034): Output port "hex4" at doodle_jump.v(16) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+Warning (10034): Output port "hex5" at doodle_jump.v(17) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+Warning (10034): Output port "vga_sync_n" at doodle_jump.v(31) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 31
+Info (12128): Elaborating entity "vga" for hierarchy "vga:vga_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 73
+Warning (10230): Verilog HDL assignment warning at hard_coded_vga.v(67): truncated value with size 32 to match size of target (10) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 67
+Warning (10230): Verilog HDL assignment warning at hard_coded_vga.v(69): truncated value with size 32 to match size of target (10) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 69
+Info (12128): Elaborating entity "tileMemory" for hierarchy "vga:vga_instance|tileMemory:tileMem_inst" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 110
+Info (12128): Elaborating entity "playerMemory" for hierarchy "vga:vga_instance|playerMemory:playerMem_inst" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 127
+Info (12128): Elaborating entity "glyph_rom" for hierarchy "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v Line: 32
+Warning (10030): Net "rom.data_a" at glyph_rom.v(23) has no driver or initial value, using a default initial value '0' File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v Line: 23
+Warning (10030): Net "rom.waddr_a" at glyph_rom.v(23) has no driver or initial value, using a default initial value '0' File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v Line: 23
+Warning (10030): Net "rom.we_a" at glyph_rom.v(23) has no driver or initial value, using a default initial value '0' File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v Line: 23
+Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 104
+Info (12128): Elaborating entity "register_file" for hierarchy "cpu:cpu_instance|register_file:register_file_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 116
+Warning (10240): Verilog HDL Always Construct warning at register_file.v(30): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register_file.v Line: 30
+Info (12128): Elaborating entity "alu" for hierarchy "cpu:cpu_instance|alu:alu_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 132
+Warning (10230): Verilog HDL assignment warning at alu.v(88): truncated value with size 32 to match size of target (4) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v Line: 88
+Warning (10764): Verilog HDL warning at alu.v(93): converting signed shift amount to unsigned File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v Line: 93
+Warning (10764): Verilog HDL warning at alu.v(97): converting signed shift amount to unsigned File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v Line: 97
+Warning (10240): Verilog HDL Always Construct warning at alu.v(25): inferring latch(es) for variable "negA", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v Line: 25
+Warning (10240): Verilog HDL Always Construct warning at alu.v(25): inferring latch(es) for variable "shift_amt", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v Line: 25
+Warning (10240): Verilog HDL Always Construct warning at alu.v(25): inferring latch(es) for variable "sa", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/alu.v Line: 25
+Info (12128): Elaborating entity "register" for hierarchy "cpu:cpu_instance|register:instruction_register" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 147
+Info (12128): Elaborating entity "instruction_decoder" for hierarchy "cpu:cpu_instance|instruction_decoder:instruction_decoder_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 195
+Warning (10230): Verilog HDL assignment warning at instruction_decoder.v(62): truncated value with size 32 to match size of target (16) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v Line: 62
+Warning (10230): Verilog HDL assignment warning at instruction_decoder.v(64): truncated value with size 32 to match size of target (16) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v Line: 64
+Warning (10230): Verilog HDL assignment warning at instruction_decoder.v(76): truncated value with size 32 to match size of target (16) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v Line: 76
+Warning (10230): Verilog HDL assignment warning at instruction_decoder.v(83): truncated value with size 32 to match size of target (16) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v Line: 83
+Warning (10230): Verilog HDL assignment warning at instruction_decoder.v(87): truncated value with size 32 to match size of target (16) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/instruction_decoder.v Line: 87
+Info (12128): Elaborating entity "mux2" for hierarchy "cpu:cpu_instance|mux2:alu_input_mux" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 214
+Info (12128): Elaborating entity "mux4" for hierarchy "cpu:cpu_instance|mux4:register_file_input_mux" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 244
+Info (12128): Elaborating entity "control_unit" for hierarchy "cpu:cpu_instance|control_unit:control_unit_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 270
+Warning (10270): Verilog HDL Case Statement warning at control_unit.v(80): incomplete case statement has no default case item File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 80
+Warning (10270): Verilog HDL Case Statement warning at control_unit.v(115): incomplete case statement has no default case item File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 115
+Warning (10270): Verilog HDL Case Statement warning at control_unit.v(58): incomplete case statement has no default case item File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 58
+Warning (10240): Verilog HDL Always Construct warning at control_unit.v(42): inferring latch(es) for variable "currentIsRead", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 42
+Info (10041): Inferred latch for "currentIsRead" at control_unit.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 42
+Info (12128): Elaborating entity "sharedMemory" for hierarchy "sharedMemory:memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 130
+Warning (10240): Verilog HDL Always Construct warning at sharedMemory.v(122): inferring latch(es) for variable "edge_dx", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 122
+Warning (10240): Verilog HDL Always Construct warning at sharedMemory.v(122): inferring latch(es) for variable "edge_dy", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 122
+Info (12128): Elaborating entity "memory" for hierarchy "sharedMemory:memory_instance|memory:cpu_memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 51
+Warning (10850): Verilog HDL warning at memory.v(24): number of words (548) in memory file does not match the number of elements in the address range [0:4095] File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v Line: 24
+Info (12128): Elaborating entity "audio_unit" for hierarchy "audio_unit:audio_unit_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 152
+Info (12128): Elaborating entity "audio_configurator_select" for hierarchy "audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v Line: 38
+Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(124): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 124
+Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(125): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 125
+Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(126): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 126
+Warning (10230): Verilog HDL assignment warning at audio_configurator_select.v(128): truncated value with size 32 to match size of target (4) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 128
+Info (12128): Elaborating entity "i2c_controller" for hierarchy "audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 94
+Info (10264): Verilog HDL Case Statement information at i2c_controller.v(64): all case item expressions in this case statement are onehot File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v Line: 64
+Warning (10230): Verilog HDL assignment warning at i2c_controller.v(98): truncated value with size 32 to match size of target (3) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v Line: 98
+Warning (10230): Verilog HDL assignment warning at i2c_controller.v(100): truncated value with size 32 to match size of target (4) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v Line: 100
+Info (10264): Verilog HDL Case Statement information at i2c_controller.v(147): all case item expressions in this case statement are onehot File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/i2c_controller.v Line: 147
+Info (12128): Elaborating entity "audio_output" for hierarchy "audio_unit:audio_unit_instance|audio_output:dac_driver" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v Line: 49
+Info (12128): Elaborating entity "note_generator" for hierarchy "audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 33
+Info (12128): Elaborating entity "drum_generator" for hierarchy "audio_unit:audio_unit_instance|audio_output:dac_driver|drum_generator:drum_gen" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 42
+Info (12128): Elaborating entity "sixteen_bit_seven_seg" for hierarchy "sixteen_bit_seven_seg:segDriver" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 160
+Info (12128): Elaborating entity "seven_seg_decoder" for hierarchy "sixteen_bit_seven_seg:segDriver|seven_seg_decoder:dec0" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v Line: 13
 Info (19000): Inferred 2 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "sharedMemory:memory_instance|memory:cpu_memory_instance|ram_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
@@ -1226,7 +1224,7 @@ Info (12133): Instantiated megafunction "sharedMemory:memory_instance|memory:cpu
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
     Info (12134): Parameter "INIT_FILE" = "db/lab1.ram0_memory_1643682f.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_1re1.tdf
-    Info (12023): Found entity 1: altsyncram_1re1 File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_1re1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_1re1 File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_1re1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0"
 Info (12133): Instantiated megafunction "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "ROM"
@@ -1240,97 +1238,97 @@ Info (12133): Instantiated megafunction "vga:vga_instance|playerMemory:playerMem
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
     Info (12134): Parameter "INIT_FILE" = "db/lab1.ram0_glyph_rom_7ca142c7.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m5d1.tdf
-    Info (12023): Found entity 1: altsyncram_m5d1 File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 32
+    Info (12023): Found entity 1: altsyncram_m5d1 File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 32
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_u0a.tdf
-    Info (12023): Found entity 1: decode_u0a File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/decode_u0a.tdf Line: 23
+    Info (12023): Found entity 1: decode_u0a File: /home/u1462567/Desktop/ece3710/Quartus Project/db/decode_u0a.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_2hb.tdf
-    Info (12023): Found entity 1: mux_2hb File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/mux_2hb.tdf Line: 23
+    Info (12023): Found entity 1: mux_2hb File: /home/u1462567/Desktop/ece3710/Quartus Project/db/mux_2hb.tdf Line: 23
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a24" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 546
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a25" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 567
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a26" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 588
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a27" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 609
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a28" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 630
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a29" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 651
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a30" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 672
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a31" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 693
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a56" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1218
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a57" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1239
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a58" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1260
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a59" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1281
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a60" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1302
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a61" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1323
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a62" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1344
-        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a63" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1365
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a24" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 546
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a25" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 567
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a26" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 588
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a27" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 609
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a28" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 630
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a29" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 651
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a30" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 672
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a31" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 693
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a56" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1218
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a57" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1239
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a58" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1260
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a59" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1281
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a60" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1302
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a61" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1323
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a62" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1344
+        Warning (14320): Synthesized away node "vga:vga_instance|playerMemory:playerMem_inst|glyph_rom:glyph_rom_instance|altsyncram:rom_rtl_0|altsyncram_m5d1:auto_generated|ram_block1a63" File: /home/u1462567/Desktop/ece3710/Quartus Project/db/altsyncram_m5d1.tdf Line: 1365
 Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
-    Warning (13035): Inserted always-enabled tri-state buffer between "audio_masterClock" and its non-tri-state driver. File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 22
-    Warning (13035): Inserted always-enabled tri-state buffer between "audio_leftRightClock" and its non-tri-state driver. File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 23
-    Warning (13035): Inserted always-enabled tri-state buffer between "audio_bitClock" and its non-tri-state driver. File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 24
-    Warning (13035): Inserted always-enabled tri-state buffer between "audio_data" and its non-tri-state driver. File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 25
-Warning (13012): Latch cpu:cpu_instance|control_unit:control_unit_instance|currentIsRead has unsafe behavior File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_instance|register:instruction_register|contents[15] File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/register.v Line: 17
+    Warning (13035): Inserted always-enabled tri-state buffer between "audio_masterClock" and its non-tri-state driver. File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "audio_leftRightClock" and its non-tri-state driver. File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 23
+    Warning (13035): Inserted always-enabled tri-state buffer between "audio_bitClock" and its non-tri-state driver. File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 24
+    Warning (13035): Inserted always-enabled tri-state buffer between "audio_data" and its non-tri-state driver. File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 25
+Warning (13012): Latch cpu:cpu_instance|control_unit:control_unit_instance|currentIsRead has unsafe behavior File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_instance|register:instruction_register|contents[15] File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register.v Line: 17
 Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "audio_masterClock~synth" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 22
-    Warning (13010): Node "audio_leftRightClock~synth" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 23
-    Warning (13010): Node "audio_bitClock~synth" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 24
-    Warning (13010): Node "audio_data~synth" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 25
+    Warning (13010): Node "audio_masterClock~synth" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 22
+    Warning (13010): Node "audio_leftRightClock~synth" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 23
+    Warning (13010): Node "audio_bitClock~synth" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 24
+    Warning (13010): Node "audio_data~synth" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 25
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "leds[0]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "leds[1]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "leds[2]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "leds[3]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "leds[4]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "leds[5]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "leds[6]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "leds[7]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "leds[8]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "leds[9]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
-    Warning (13410): Pin "hex4[0]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
-    Warning (13410): Pin "hex4[1]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
-    Warning (13410): Pin "hex4[2]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
-    Warning (13410): Pin "hex4[3]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
-    Warning (13410): Pin "hex4[4]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
-    Warning (13410): Pin "hex4[5]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
-    Warning (13410): Pin "hex4[6]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
-    Warning (13410): Pin "hex5[0]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
-    Warning (13410): Pin "hex5[1]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
-    Warning (13410): Pin "hex5[2]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
-    Warning (13410): Pin "hex5[3]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
-    Warning (13410): Pin "hex5[4]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
-    Warning (13410): Pin "hex5[5]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
-    Warning (13410): Pin "hex5[6]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
-    Warning (13410): Pin "vga_sync_n" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 31
-    Warning (13410): Pin "programStateRegisterContentsOutput[5]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
-    Warning (13410): Pin "programStateRegisterContentsOutput[6]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
-    Warning (13410): Pin "programStateRegisterContentsOutput[7]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
-    Warning (13410): Pin "programStateRegisterContentsOutput[8]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
-    Warning (13410): Pin "programStateRegisterContentsOutput[9]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
-    Warning (13410): Pin "programStateRegisterContentsOutput[10]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
-    Warning (13410): Pin "programStateRegisterContentsOutput[11]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
-    Warning (13410): Pin "programStateRegisterContentsOutput[12]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
-    Warning (13410): Pin "programStateRegisterContentsOutput[13]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
-    Warning (13410): Pin "programStateRegisterContentsOutput[14]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
-    Warning (13410): Pin "programStateRegisterContentsOutput[15]" is stuck at GND File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "leds[0]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[1]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[2]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[7]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[8]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "leds[9]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
+    Warning (13410): Pin "hex4[0]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+    Warning (13410): Pin "hex4[1]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+    Warning (13410): Pin "hex4[2]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+    Warning (13410): Pin "hex4[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+    Warning (13410): Pin "hex4[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+    Warning (13410): Pin "hex4[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+    Warning (13410): Pin "hex4[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
+    Warning (13410): Pin "hex5[0]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+    Warning (13410): Pin "hex5[1]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+    Warning (13410): Pin "hex5[2]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+    Warning (13410): Pin "hex5[3]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+    Warning (13410): Pin "hex5[4]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+    Warning (13410): Pin "hex5[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+    Warning (13410): Pin "hex5[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
+    Warning (13410): Pin "vga_sync_n" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 31
+    Warning (13410): Pin "programStateRegisterContentsOutput[5]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[6]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[7]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[8]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[9]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[10]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[11]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[12]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[13]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[14]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
+    Warning (13410): Pin "programStateRegisterContentsOutput[15]" is stuck at GND File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 39
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 27 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "switches[3]" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 8
-    Warning (15610): No output dependent on input pin "switches[4]" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 8
-    Warning (15610): No output dependent on input pin "switches[5]" File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 8
-Info (21057): Implemented 10959 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "switches[3]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 8
+    Warning (15610): No output dependent on input pin "switches[4]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 8
+    Warning (15610): No output dependent on input pin "switches[5]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 8
+Info (21057): Implemented 10949 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 156 output pins
     Info (21060): Implemented 6 bidirectional pins
-    Info (21061): Implemented 10718 logic cells
+    Info (21061): Implemented 10708 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 109 warnings
-    Info: Peak virtual memory: 13557 megabytes
-    Info: Processing ended: Mon Apr  6 13:38:20 2026
-    Info: Elapsed time: 00:00:55
-    Info: Total CPU time (on all processors): 00:01:04
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 110 warnings
+    Info: Peak virtual memory: 540 megabytes
+    Info: Processing ended: Mon Apr  6 15:59:58 2026
+    Info: Elapsed time: 00:00:59
+    Info: Total CPU time (on all processors): 00:01:05
 
 
