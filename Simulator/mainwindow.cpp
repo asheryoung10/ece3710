@@ -8,6 +8,11 @@
 #include <QScrollBar>
 #include <QThread>
 #include <QKeyEvent>
+#include <QRegularExpression>
+#include <QTextBlock>
+
+QString MainWindow::currentFileShown;
+int MainWindow::currentLineShown = -1;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -65,6 +70,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->vgaView->setModel(&model);
     connect(ui->stepAmount,&QSlider::valueChanged,  this, &MainWindow::slidersChanged);
     connect(ui->frameDelay,&QSlider::valueChanged, this, &MainWindow::slidersChanged);
+    connect(ui->vsyncCheckBox,&QCheckBox::clicked, this, &MainWindow::setVsync);
     ui->leftButton->setFocusPolicy(Qt::NoFocus);
     ui->rightButton->setFocusPolicy(Qt::NoFocus);
     ui->jumpButton->setFocusPolicy(Qt::NoFocus);
@@ -72,7 +78,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->playButton->setFocusPolicy(Qt::NoFocus);
     ui->stepButton->setFocusPolicy(Qt::NoFocus);
     ui->loadButton->setFocusPolicy(Qt::NoFocus);
+    ui->vsyncCheckBox->setFocusPolicy(Qt::NoFocus);
+    ui->sourceView->setFocusPolicy(Qt::NoFocus);
     ui->reloadButton->setFocusPolicy(Qt::NoFocus);
+
+    ui->sourceView->setReadOnly(true);  // QTextBrowser or QTextEdit
+    ui->sourceView->setFont(QFont("Courier", 10)); // monospaced for code
+    ui->sourceView->setLineWrapMode(QTextEdit::NoWrap); // prevent wrapping
 
     // Initial UI update
     slidersChanged();
@@ -95,7 +107,11 @@ void MainWindow::slidersChanged() {
 }
 void MainWindow::reloadSimulation() {
     model.initMemory(filepath);
+    currentFileShown.clear();
+    currentLineShown = -1;
+    parsePCMappingAndLoadSources(QString::fromStdString(filepath));
     pauseSimulation();
+    updateViews();
 }
 // Load memory from file
 void MainWindow::loadFileIntoModel()
@@ -107,6 +123,7 @@ void MainWindow::loadFileIntoModel()
 
     try {
         model.initMemory(filePath.toStdString());
+        parsePCMappingAndLoadSources(filePath);
         QMessageBox::information(this, tr("Memory Loaded"),
                                  tr("Memory successfully loaded from:\n%1").arg(filePath));
         filepath = filePath.toStdString();
@@ -115,6 +132,57 @@ void MainWindow::loadFileIntoModel()
         updateViews();
     } catch (const std::exception& e) {
         QMessageBox::critical(this, tr("Error"), tr("Failed to load file:\n%1").arg(e.what()));
+    }
+}
+
+void MainWindow::parsePCMappingAndLoadSources(const QString &binFilePath)
+{
+    pcToSource.clear();
+    fileToLines.clear();
+
+    QFile file(binFilePath);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+
+    QString baseDir = QFileInfo(file).absolutePath();
+    QTextStream in(&file);
+
+    int pc = 0; // start at program counter 0
+    QRegularExpression rx("^\\s*([0-9A-Fa-f]+)\\s*//\\s*(\\S+)\\s+(\\d+)\\s*$");
+
+    while (!in.atEnd()) {
+        QString line = in.readLine().trimmed();
+        if (line.isEmpty()) continue;
+
+        QRegularExpressionMatch match = rx.match(line);
+        if (!match.hasMatch()) {
+            ++pc;
+            continue;
+        }
+
+        QString filename = match.captured(2);
+        int lineno = match.captured(3).toInt();
+
+        pcToSource[pc] = {filename, lineno};
+
+        // Load the file contents if not already loaded
+        if (!fileToLines.contains(filename)) {
+            QString filePath = QDir(baseDir).filePath(filename);
+            QFile srcFile(filePath);
+            if (!srcFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                ++pc;
+                continue;
+            }
+
+            QTextStream srcIn(&srcFile);
+            QStringList lines;
+            while (!srcIn.atEnd())
+                lines.append(srcIn.readLine());
+
+            fileToLines[filename] = lines;
+        }
+
+        ++pc;
     }
 }
 
@@ -153,15 +221,33 @@ void MainWindow::pauseSimulation() {
 // Timer slot: tick CPU
 void MainWindow::tickModel()
 {
-    constexpr int batchTicks = 256;
-    for (int i = 0; i < batchTicks; ++i)
+    for (int i = 0; i < ui->instructionsPerFrame->value(); ++i)
         model.tick();
-    model.setVSync(true);
+    setVsyncOn();
     for (int i = 0; i < 10; ++i)
         model.tick();
-    model.setVSync(false);
+    setVsyncOff();
     cpuTimer->setInterval(ui->frameDelay->value());
     updateViews();
+}
+
+void MainWindow::setVsyncOn() {
+    ui->vsyncCheckBox->setCheckState(Qt::CheckState::Checked);
+    model.setVSync(true);
+}
+
+void MainWindow::setVsync(bool on) {
+    if(on) {
+        setVsyncOn();
+    }
+    else{
+        setVsyncOff();
+    }
+}
+
+void MainWindow::setVsyncOff() {
+    ui->vsyncCheckBox->setCheckState(Qt::CheckState::Unchecked);
+    model.setVSync(false);
 }
 
 // Update only visible memory rows
@@ -181,22 +267,27 @@ void MainWindow::updateMemoryViewPartial()
     }
 }
 
-// Update all views
 void MainWindow::updateViews()
 {
+    // -------------------
     // Update registers
+    // -------------------
     for (int i = 0; i < 16; ++i) {
         registerModelQt->setItem(i, 0, new QStandardItem(
                                            QString("R%1: %2").arg(i).arg(model.registers[i], 4, 16, QChar('0')).toUpper()
                                            ));
     }
 
+    // -------------------
     // Update only visible memory
+    // -------------------
     updateMemoryViewPartial();
 
+    // -------------------
     // Update PC and flags
+    // -------------------
     ui->programCounter->setText(
-        QString("PC: %1").arg(model.programCounter, 0, 10)
+        QString("PC: %1").arg(model.programCounter, 2, 10).toUpper()
         );
     ui->flags->setText(
         QString("Flags: C=%1 L=%2 F=%3 Z=%4 N=%5")
@@ -207,6 +298,37 @@ void MainWindow::updateViews()
             .arg(model.nFlag)
         );
 
+
+    if (pcToSource.contains(model.programCounter)) {
+        const SourceInfo &src = pcToSource[model.programCounter];
+        const QString &filename = src.file;
+        int lineNo = src.line;
+
+        if (filename != currentFileShown) {
+            // Load new file text
+            if (fileToLines.contains(filename)) {
+                ui->sourceView->setPlainText(fileToLines[filename].join("\n"));
+                currentFileShown = filename;
+            }
+        }
+
+        // Highlight current line if it changed
+        if (lineNo != currentLineShown) {
+            QTextCursor cursor(ui->sourceView->document());
+            int blockIndex = lineNo - 1;
+            if (blockIndex >= 0 && blockIndex < fileToLines[filename].size()) {
+                QTextBlock block = ui->sourceView->document()->findBlockByNumber(blockIndex);
+                cursor.setPosition(block.position());
+                cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+                ui->sourceView->setTextCursor(cursor);
+                ui->sourceView->ensureCursorVisible();
+                currentLineShown = lineNo;
+            }
+        }
+    }
+    // -------------------
+    // Update VGA view
+    // -------------------
     ui->vgaView->update();
 }
 

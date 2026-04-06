@@ -32,6 +32,8 @@ public:
     uint16_t registers[16];
     uint16_t programCounter;
     bool cFlag, lFlag, fFlag, zFlag, nFlag;
+    bool readNextCycle;
+    uint8_t readReg;
 
 private:
     bool leftButton;
@@ -56,6 +58,8 @@ private:
     static constexpr uint8_t STOR  = 0b01000100;
     static constexpr uint8_t MOV   = 0b00001101;
     static constexpr uint8_t JCOND = 0b01001100;
+    static constexpr uint8_t JAL   = 0b01001000;
+    static constexpr uint8_t READ  = 0b00001111;
 
     static constexpr uint8_t ADDI_UPPER  = 0b0101;
     static constexpr uint8_t ADDUI_UPPER = 0b0110;

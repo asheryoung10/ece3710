@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QHBoxLayout" name="horizontalLayout_7">
     <item>
      <widget class="QSplitter" name="splitter">
       <property name="orientation">
@@ -128,6 +128,33 @@
          </layout>
         </item>
         <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Steps Per Play Frame</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="instructionsPerFrame">
+          <property name="minimum">
+           <number>25</number>
+          </property>
+          <property name="maximum">
+           <number>500</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="vsyncCheckBox">
+          <property name="text">
+           <string>Vsync Signal</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
            <widget class="QLabel" name="programCounter">
@@ -153,6 +180,7 @@
         </item>
        </layout>
       </widget>
+      <widget class="QTextBrowser" name="sourceView"/>
      </widget>
     </item>
    </layout>
