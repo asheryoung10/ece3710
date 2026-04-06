@@ -4,118 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "vga_clock",
-					"strict" : false
-				},
-				{
-					"name" : "vga_blank_n",
-					"strict" : false
-				},
-				{
-					"name" : "vga_hs",
-					"strict" : false
-				},
-				{
-					"name" : "vga_vs",
-					"strict" : false
-				},
-				{
-					"name" : "vga_red[0]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_red[1]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_red[2]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_red[3]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_red[4]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_red[5]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_red[6]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_red[7]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_green[0]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_green[1]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_green[2]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_green[3]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_green[4]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_green[5]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_green[6]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_green[7]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_blue[0]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_blue[1]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_blue[2]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_blue[3]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_blue[4]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_blue[5]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_blue[6]",
-					"strict" : false
-				},
-				{
-					"name" : "vga_blue[7]",
-					"strict" : false
-				},
-				{
 					"name" : "instructionRegisterContentsOutput[0]",
 					"strict" : false
 				},
@@ -372,75 +260,287 @@
 					"strict" : false
 				},
 				{
-					"name" : "i2c_clock",
+					"name" : "memoryWriteEnable",
 					"strict" : false
 				},
 				{
-					"name" : "i2c_data",
+					"name" : "memoryReadWriteAddress[0]",
 					"strict" : false
 				},
 				{
-					"name" : "audio_masterClock",
+					"name" : "memoryReadWriteAddress[1]",
 					"strict" : false
 				},
 				{
-					"name" : "audio_leftRightClock",
+					"name" : "memoryReadWriteAddress[2]",
 					"strict" : false
 				},
 				{
-					"name" : "audio_bitClock",
+					"name" : "memoryReadWriteAddress[3]",
 					"strict" : false
 				},
 				{
-					"name" : "audio_data",
+					"name" : "memoryReadWriteAddress[4]",
 					"strict" : false
 				},
 				{
-					"name" : "push_buttons[1]",
+					"name" : "memoryReadWriteAddress[5]",
 					"strict" : false
 				},
 				{
-					"name" : "push_buttons[3]",
+					"name" : "memoryReadWriteAddress[6]",
 					"strict" : false
 				},
 				{
-					"name" : "push_buttons[2]",
+					"name" : "memoryReadWriteAddress[7]",
 					"strict" : false
 				},
 				{
-					"name" : "systemClock50MHz",
+					"name" : "memoryReadWriteAddress[8]",
 					"strict" : false
 				},
 				{
-					"name" : "push_buttons[0]",
+					"name" : "memoryReadWriteAddress[9]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[0]",
+					"name" : "memoryReadWriteAddress[10]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[6]",
+					"name" : "memoryReadWriteAddress[11]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[7]",
+					"name" : "memoryReadWriteAddress[12]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[1]",
+					"name" : "memoryReadWriteAddress[13]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[2]",
+					"name" : "memoryReadWriteAddress[14]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[8]",
+					"name" : "memoryReadWriteAddress[15]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[9]",
+					"name" : "registerFileContentsB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "registerFileContentsB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "registerFileContentsB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "registerFileContentsB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "registerFileContentsB[4]",
+					"strict" : false
+				},
+				{
+					"name" : "registerFileContentsB[5]",
+					"strict" : false
+				},
+				{
+					"name" : "registerFileContentsB[6]",
+					"strict" : false
+				},
+				{
+					"name" : "registerFileContentsB[7]",
+					"strict" : false
+				},
+				{
+					"name" : "registerFileContentsB[8]",
+					"strict" : false
+				},
+				{
+					"name" : "registerFileContentsB[9]",
+					"strict" : false
+				},
+				{
+					"name" : "registerFileContentsB[10]",
+					"strict" : false
+				},
+				{
+					"name" : "registerFileContentsB[11]",
+					"strict" : false
+				},
+				{
+					"name" : "registerFileContentsB[12]",
+					"strict" : false
+				},
+				{
+					"name" : "registerFileContentsB[13]",
+					"strict" : false
+				},
+				{
+					"name" : "registerFileContentsB[14]",
+					"strict" : false
+				},
+				{
+					"name" : "registerFileContentsB[15]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[7]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[8]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[9]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[10]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[11]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[12]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[13]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[14]",
+					"strict" : false
+				},
+				{
+					"name" : "R3[15]",
+					"strict" : false
+				},
+				{
+					"name" : "vsync",
+					"strict" : false
+				},
+				{
+					"name" : "rightButton",
+					"strict" : false
+				},
+				{
+					"name" : "jumpButton",
+					"strict" : false
+				},
+				{
+					"name" : "leftButton",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[1]",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[2]",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[3]",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[4]",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[5]",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[6]",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[7]",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[8]",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[9]",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[10]",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[11]",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[12]",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[13]",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[14]",
+					"strict" : false
+				},
+				{
+					"name" : "memoryContents[15]",
 					"strict" : false
 				}
 			]

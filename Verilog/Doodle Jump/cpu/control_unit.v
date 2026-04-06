@@ -31,6 +31,8 @@ always @(posedge clock or posedge reset) begin
 		if(state == LOAD_INSTRUCTION_INTO_INSTRUCTION_REGISTER) begin
 			if(currentIsRead) begin
 				readNow <= 1;
+			end else begin
+				readNow <= 0;
 			end
 		end
 	end
@@ -49,6 +51,7 @@ always @(*) begin
     programStateRegisterWriteEnable = 1'b0;
     aluSelectImmediate              = 1'b0;
     state                           = state;
+	 instructionAsImmediate = 0;
 	 savePreviousInstructionTargetRegIndex = 0;
     nextState                       = NOTHING_STATE;
 

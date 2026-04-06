@@ -1,104 +1,96 @@
-D50F
-04D5
-D401
-840F
-D500
-01D5
-8106
-4144
-5401
-D11B
-8103
-02D5
-8202
-0152
-4144
-5401
-D120
-D260
-8208
-0122
-4144
-5401
-01D5
-510D
-8103
-510D
-8102
-510D
-4144
-5401
-5501
-B510
-C1E5
-CE36
-DE00
-CE07
-CE03
-DB02
-CE01
-BE03
-CC02
-5E01
-D002
-001F
-B000
-C10D
-D004
-001F
-B000
-C10B
-D008
-001F
-B000
-C008
-DA00
-9A0A
-0EDA
-CE04
-5D01
-CE02
-9D01
-BD0A
-CC02
-CE02
-DD0A
-D9F6
-BDF6
-CC02
-DDF6
-D003
-800E
-4100
-015D
-4140
-5001
-4100
-015E
-4140
-D201
-021F
-B200
-C0FD
-D201
-021F
-B200
-C1FD
-CECB
-D003
-800E
-5001
-4100
-5140
-D201
-820F
-5201
-4302
-5201
-4402
-D5FF
-0415
-0453
-04B1
-C6BC
-CEBE
+0EF0 // main.asm 1
+03FF // main.asm 2
+0CF0 // main.asm 3
+004A // main.asm 4
+4D8C // main.asm 5
+0000 // main.asm 6
+00F0 // applyInputGravityVelocity.asm 10
+0401 // applyInputGravityVelocity.asm 11
+4100 // applyInputGravityVelocity.asm 12
+B103 // applyInputGravityVelocity.asm 17
+C602 // applyInputGravityVelocity.asm 18
+CE02 // applyInputGravityVelocity.asm 19
+5101 // applyInputGravityVelocity.asm 22
+00F0 // applyInputGravityVelocity.asm 25
+0401 // applyInputGravityVelocity.asm 26
+4140 // applyInputGravityVelocity.asm 27
+00F0 // applyInputGravityVelocity.asm 32
+0400 // applyInputGravityVelocity.asm 33
+4200 // applyInputGravityVelocity.asm 34
+D302 // applyInputGravityVelocity.asm 39
+031F // applyInputGravityVelocity.asm 40
+D404 // applyInputGravityVelocity.asm 41
+041F // applyInputGravityVelocity.asm 42
+B300 // applyInputGravityVelocity.asm 46
+C007 // applyInputGravityVelocity.asm 47
+B400 // applyInputGravityVelocity.asm 48
+C003 // applyInputGravityVelocity.asm 49
+D200 // applyInputGravityVelocity.asm 50
+CE06 // applyInputGravityVelocity.asm 51
+D201 // applyInputGravityVelocity.asm 54
+CE04 // applyInputGravityVelocity.asm 55
+B400 // applyInputGravityVelocity.asm 58
+C002 // applyInputGravityVelocity.asm 59
+D2FF // applyInputGravityVelocity.asm 60
+D508 // applyInputGravityVelocity.asm 66
+051F // applyInputGravityVelocity.asm 67
+B500 // applyInputGravityVelocity.asm 68
+C102 // applyInputGravityVelocity.asm 69
+CE06 // applyInputGravityVelocity.asm 70
+D600 // applyInputGravityVelocity.asm 73
+960A // applyInputGravityVelocity.asm 74
+00F0 // applyInputGravityVelocity.asm 75
+0401 // applyInputGravityVelocity.asm 76
+4640 // applyInputGravityVelocity.asm 77
+B205 // applyInputGravityVelocity.asm 84
+CC02 // applyInputGravityVelocity.asm 85
+CE03 // applyInputGravityVelocity.asm 86
+D205 // applyInputGravityVelocity.asm 89
+CE05 // applyInputGravityVelocity.asm 90
+B2FB // applyInputGravityVelocity.asm 93
+C602 // applyInputGravityVelocity.asm 94
+CE02 // applyInputGravityVelocity.asm 95
+D2FB // applyInputGravityVelocity.asm 98
+00F0 // applyInputGravityVelocity.asm 104
+0400 // applyInputGravityVelocity.asm 105
+4240 // applyInputGravityVelocity.asm 106
+00F0 // applyInputGravityVelocity.asm 111
+C000 // applyInputGravityVelocity.asm 112
+4300 // applyInputGravityVelocity.asm 113
+0352 // applyInputGravityVelocity.asm 114
+00F0 // applyInputGravityVelocity.asm 115
+C000 // applyInputGravityVelocity.asm 116
+4340 // applyInputGravityVelocity.asm 117
+00F0 // applyInputGravityVelocity.asm 122
+C001 // applyInputGravityVelocity.asm 123
+4300 // applyInputGravityVelocity.asm 124
+00F0 // applyInputGravityVelocity.asm 126
+0401 // applyInputGravityVelocity.asm 127
+4500 // applyInputGravityVelocity.asm 128
+0355 // applyInputGravityVelocity.asm 130
+00F0 // applyInputGravityVelocity.asm 132
+C001 // applyInputGravityVelocity.asm 133
+4340 // applyInputGravityVelocity.asm 134
+4ECD // applyInputGravityVelocity.asm 136
+9E01 // main.asm 15
+4D4E // main.asm 16
+0CF0 // main.asm 24
+0006 // main.asm 25
+4D8C // main.asm 26
+0CF0 // main.asm 36
+0056 // main.asm 37
+4D8C // main.asm 38
+CEFA // main.asm 40
+4D0E // main.asm 42
+5E01 // main.asm 43
+4ECD // main.asm 44
+D001 // main.asm 50
+001F // main.asm 51
+B000 // main.asm 52
+C0FD // main.asm 53
+D001 // main.asm 55
+001F // main.asm 56
+B001 // main.asm 57
+C0FD // main.asm 58
+5A01 // main.asm 59
+4ECD // main.asm 60
