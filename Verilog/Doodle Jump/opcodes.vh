@@ -26,3 +26,5 @@ localparam MOVI  = 8'b1101_xxxx;
 localparam SCOND  = 8'b010_1101;
 localparam BCOND  = 8'b1100_XXXX;
 localparam JCOND  = 8'b0100_1100;
+localparam JAL    = 8'b0100_1000;
+localparam READ   = 8'b0000_1111;

@@ -41,6 +41,8 @@ module cpu
 
 
 // Inputs
+wire savePreviousInstructionTargetRegIndex;
+wire instructionAsImmediate;
 wire registerFileWriteEnable;
 wire [DATA_WIDTH-1:0] registerFileWriteData;
 wire [3:0] registerFileReadAddressA;
@@ -177,6 +179,9 @@ register
 instruction_decoder instruction_decoder_instance
 (
     // Inputs
+	 .clock(clock),
+	 .savePreviousInstructionTargetRegIndex(savePreviousInstructionTargetRegIndex),
+	 .instructionAsImmediate(instructionAsImmediate),
     .instruction(instructionRegisterContents),
 	.programCounter(programCounterContents),
     .programStateRegisterContents(programStateRegisterContents),
@@ -246,6 +251,8 @@ control_unit control_unit_instance
     .clock(clock),
     .reset(reset),
     .aluOpcode(aluOpcode),
+	 .instructionAsImmediate(instructionAsImmediate),
+	 .savePreviousInstructionTargetRegIndex(savePreviousInstructionTargetRegIndex),
 
     .memoryWriteEnable(memoryWriteEnable),
     .registerFileWriteEnable(registerFileWriteEnable),
