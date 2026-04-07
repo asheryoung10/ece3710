@@ -16,9 +16,21 @@ main:
     SUBI 1 R14   // Make room for one on the stack
     STOR R13 R14 // Store return address on stack
 
+    READ R0
+    12345
+    READ R1
+    1026
+    STOR R0 R1 // seed rng
+
+    mainInit:
     READ R12
     &initRects
     JAL R13 R12
+
+    READ R12
+    &movePlayerToCenter
+    JAL R13 R12
+    
 
     mainGameLoop:
 
@@ -42,6 +54,14 @@ main:
         &waitVsync
         JAL R13 R12
 
+        READ R0
+        0xC001 //y address
+        LOAD R0 R0 //R0 has y pos
+        READ R1
+        400
+        CMP R1 R0 // if player fell 
+        GOIF LT &mainInit
+
         GOIF UC &mainGameLoop
  
     LOAD R13 R14 // Restore return address
@@ -63,3 +83,18 @@ waitVsync:
         GOIF EQ &waitVsyncWaitLow
     ADDI 1 R10
     JCOND UC R13
+
+
+movePlayerToCenter:
+    READ R0
+    0xC000
+    READ R1
+    288
+    STOR R1 R0
+    ADDI 1 R0
+    READ R1
+    208
+    STOR R1 R0
+    JCOND UC R13
+
+

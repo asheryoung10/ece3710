@@ -49,12 +49,16 @@ private:
     static QString currentFileShown;
     static int currentLineShown;
 
+    void advanceModel();
+    void flash();
 
     QMap<uint16_t, SourceInfo> pcToSource;        // PC -> file + line
+    QMap<SourceInfo, uint16_t> sourceToPC;        // PC -> file + line
 
     void parsePCMappingAndLoadSources(const QString &binFilePath);
     QMap<QString, QStringList> fileToLines;       // filename -> lines in file
     QString currentSourceFile;                    // currently displayed file
+    void onSourceCursorChanged();
 protected:
     void keyPressEvent(QKeyEvent *event) override;
     void keyReleaseEvent(QKeyEvent *event) override;
