@@ -211,23 +211,4 @@ always @(*) begin
     end
 end
 
-// Give rectangels initial positions.
-//localparam SCREEN_W = 640;
-//localparam SCREEN_H = 480;
-//initial begin
-//    for (i = 0; i < 16; i = i + 1) begin
-//        rect_data[i*4 + 0] = (i * (SCREEN_W / 16));
-//        rect_data[i*4 + 1] = (i * 40) % SCREEN_H;
-//        rect_data[i*4 + 2] = {8'd50, 8'd30};
-//
-//        // simple varying colors
-//        case (i)
-//            0: rect_data[i*4 + 3] = 16'hF800; // red
-//            1: rect_data[i*4 + 3] = 16'h07E0; // green
-//            2: rect_data[i*4 + 3] = 16'h001F; // blue
-//            3: rect_data[i*4 + 3] = 16'hFFE0; // yellow
-//            default: rect_data[i*4 + 3] = 16'hFFFF; // white
-//        endcase
-//    end
-//end
 endmodule
