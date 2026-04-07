@@ -67,6 +67,7 @@ public:
     QHBoxLayout *horizontalLayout_8;
     QPushButton *jumptoAddressButton;
     QSpinBox *jumpAddress;
+    QSpinBox *breakPoint;
     QTableView *memoryView;
 
     void setupUi(QMainWindow *MainWindow)
@@ -239,6 +240,12 @@ public:
         jumpAddress->setMaximum(65535);
 
         horizontalLayout_8->addWidget(jumpAddress);
+
+        breakPoint = new QSpinBox(layoutWidget);
+        breakPoint->setObjectName("breakPoint");
+        breakPoint->setMaximum(4096);
+
+        horizontalLayout_8->addWidget(breakPoint);
 
 
         verticalLayout_2->addLayout(horizontalLayout_8);

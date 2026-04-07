@@ -4,6 +4,12 @@
 // Input: none
 // Modifies: R0-R6, R12-R14, R15
 colorCollision:
+    READ R0
+    1025
+    LOAD R0 R0
+    CMPI 0 R0
+    JCOND GT R13 //return if we are moving up (negative is up)
+
     SUBI 1 R14 // Make room on stack
     STOR R13 R14 // Save return address on stack
 

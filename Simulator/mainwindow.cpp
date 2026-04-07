@@ -11,6 +11,9 @@
 #include <QRegularExpression>
 #include <QTextBlock>
 #include <QTextStream>
+#include <QPropertyAnimation>
+#include <QAbstractAnimation>
+#include <iostream>
 
 QString MainWindow::currentFileShown;
 int MainWindow::currentLineShown = -1;
@@ -68,6 +71,8 @@ MainWindow::MainWindow(QWidget *parent)
     // Trigger memory update when user scrolls
     connect(ui->memoryView->verticalScrollBar(), &QScrollBar::valueChanged,
             this, &MainWindow::updateMemoryViewPartial);
+    //connect(ui->sourceView, &QTextEdit::cursorPositionChanged,
+     //       this, &MainWindow::onSourceCursorChanged);
 
     // Connect VGA view if needed
     ui->vgaView->setModel(&model);
@@ -78,6 +83,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->onlyViewCheck->setFocusPolicy(Qt::NoFocus);
     ui->rightButton->setFocusPolicy(Qt::NoFocus);
     ui->jumpButton->setFocusPolicy(Qt::NoFocus);
+    ui->breakPoint->setFocusPolicy(Qt::ClickFocus);
     ui->resetButton->setFocusPolicy(Qt::NoFocus);
     ui->playButton->setFocusPolicy(Qt::NoFocus);
     ui->stepButton->setFocusPolicy(Qt::NoFocus);
@@ -97,6 +103,22 @@ MainWindow::MainWindow(QWidget *parent)
     updateViews();
 }
 
+void MainWindow::onSourceCursorChanged()
+{
+    if (currentFileShown.isEmpty()) return;
+
+    QTextCursor cursor = ui->sourceView->textCursor();
+    int line = cursor.blockNumber() + 1; // QTextBlock is 0-based
+    std::cout << line << std::endl;
+    return;
+
+    //if (sourceToPC.contains({currentSourceFile, line}) &&
+     //   sourceToPC[{currentSourceFile, line}].contains(line)) {
+
+        //int pc = sourceToPC[currentFileShown][line];
+        //ui->breakPoint->setValue(pc);
+   // }
+}
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -144,6 +166,7 @@ void MainWindow::loadFileIntoModel()
 void MainWindow::parsePCMappingAndLoadSources(const QString &binFilePath)
 {
     pcToSource.clear();
+    sourceToPC.clear();
     fileToLines.clear();
 
     QFile file(binFilePath);
@@ -196,7 +219,7 @@ void MainWindow::parsePCMappingAndLoadSources(const QString &binFilePath)
 void MainWindow::stepModel()
 {
     for(int i = 0; i < ui->stepAmount->value(); i++) {
-        model.tick();
+        advanceModel();
         updateViews();
         QThread::sleep(1.0/60.0);
     }
@@ -224,25 +247,42 @@ void MainWindow::pauseSimulation() {
      slidersChanged();
 
 }
+
+void MainWindow::advanceModel() {
+    if(model.programCounter == (uint16_t)ui->breakPoint->value()) {
+        flash();
+        pauseSimulation();
+        return;
+    }
+    model.tick();
+
+}
+
+void MainWindow::flash() {
+    QWidget* w = ui->breakPoint;
+
+    QRect start = w->geometry();
+    QRect big   = start.adjusted(-3, -3, 3, 3); // grow by 3px
+
+    QPropertyAnimation* anim = new QPropertyAnimation(w, "geometry");
+    anim->setDuration(150);
+    anim->setKeyValueAt(0.0, start);
+    anim->setKeyValueAt(0.5, big);
+    anim->setKeyValueAt(1.0, start);
+    anim->setEasingCurve(QEasingCurve::OutQuad);
+
+    anim->start(QAbstractAnimation::DeleteWhenStopped);
+}
 // Timer slot: tick CPU
 void MainWindow::tickModel()
 {
     for (int i = 0; i < ui->instructionsPerFrame->value(); ++i) {
-	if(model.programCounter == ui->jumpAddress->value()) {
-		pauseSimulation();
-		return;
-	}
-        model.tick();
+        advanceModel();
     }
     	
     setVsyncOn();
     for (int i = 0; i < 10; ++i) {
-	if(model.programCounter == ui->jumpAddress->value()) {
-		pauseSimulation();
-		return;
-	}
-        model.tick();
-	
+        advanceModel();
     }
     setVsyncOff();
     cpuTimer->setInterval(ui->frameDelay->value());
@@ -298,7 +338,6 @@ void MainWindow::jumpAddress() {
 }
 void MainWindow::updateViews()
 {
-
     ui->vgaView->update();
     if(ui->onlyViewCheck->isChecked()) return;
     // -------------------
