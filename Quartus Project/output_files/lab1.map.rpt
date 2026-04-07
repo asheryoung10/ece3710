@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab1
-Mon Apr  6 15:59:58 2026
+Mon Apr  6 19:03:10 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -82,7 +82,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Apr  6 15:59:58 2026          ;
+; Analysis & Synthesis Status     ; Successful - Mon Apr  6 19:03:09 2026          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; lab1                                           ;
 ; Top-level Entity Name           ; doodle_jump                                    ;
@@ -1049,7 +1049,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:30     ;
+; Top            ; 00:00:27     ;
 +----------------+--------------+
 
 
@@ -1059,7 +1059,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Apr  6 15:58:59 2026
+    Info: Processing started: Mon Apr  6 19:02:14 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1171,7 +1171,7 @@ Info (12128): Elaborating entity "sharedMemory" for hierarchy "sharedMemory:memo
 Warning (10240): Verilog HDL Always Construct warning at sharedMemory.v(122): inferring latch(es) for variable "edge_dx", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 122
 Warning (10240): Verilog HDL Always Construct warning at sharedMemory.v(122): inferring latch(es) for variable "edge_dy", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 122
 Info (12128): Elaborating entity "memory" for hierarchy "sharedMemory:memory_instance|memory:cpu_memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 51
-Warning (10850): Verilog HDL warning at memory.v(24): number of words (548) in memory file does not match the number of elements in the address range [0:4095] File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v Line: 24
+Warning (10850): Verilog HDL warning at memory.v(24): number of words (666) in memory file does not match the number of elements in the address range [0:4095] File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v Line: 24
 Info (12128): Elaborating entity "audio_unit" for hierarchy "audio_unit:audio_unit_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 152
 Info (12128): Elaborating entity "audio_configurator_select" for hierarchy "audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v Line: 38
 Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(124): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 124
@@ -1327,8 +1327,8 @@ Info (21057): Implemented 10949 device resources after synthesis - the final res
     Info (21064): Implemented 64 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 110 warnings
     Info: Peak virtual memory: 540 megabytes
-    Info: Processing ended: Mon Apr  6 15:59:58 2026
-    Info: Elapsed time: 00:00:59
-    Info: Total CPU time (on all processors): 00:01:05
+    Info: Processing ended: Mon Apr  6 19:03:10 2026
+    Info: Elapsed time: 00:00:56
+    Info: Total CPU time (on all processors): 00:01:01
 
 

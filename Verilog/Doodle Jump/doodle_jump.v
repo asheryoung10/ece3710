@@ -47,6 +47,7 @@ assign reset = ~push_buttons[0];
 wire [15:0] player_x;
 wire [15:0] player_y;
 
+
 wire [9:0] vgaPixelX;
 wire [9:0] vgaPixelY;
 wire [7:0] rectR;
