@@ -1,5 +1,5 @@
 Flow report for lab1
-Mon Apr  6 19:07:01 2026
+Mon Apr  6 19:59:16 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Mon Apr  6 19:07:01 2026          ;
+; Flow Status                     ; Successful - Mon Apr  6 19:59:16 2026          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; lab1                                           ;
 ; Top-level Entity Name           ; doodle_jump                                    ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEMA5F31C6                                   ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 5,786 / 32,070 ( 18 % )                        ;
-; Total registers                 ; 1652                                           ;
+; Logic utilization (in ALMs)     ; 5,841 / 32,070 ( 18 % )                        ;
+; Total registers                 ; 1751                                           ;
 ; Total pins                      ; 177 / 457 ( 39 % )                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 458,752 / 4,065,280 ( 11 % )                   ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/06/2026 19:02:15 ;
+; Start date & time ; 04/06/2026 19:54:23 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab1                ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                                    ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 123719793384753.177552373427792                          ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 123719793384753.177552686318121                          ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                       ; --            ; --          ; tb_i2c_controller                 ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                       ; --            ; --          ; tb_doodle                         ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                       ; --            ; --          ; tb_audio_configurator             ;
@@ -163,12 +163,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:54     ; 1.0                     ; 538 MB              ; 00:01:00                           ;
-; Fitter               ; 00:03:12     ; 1.3                     ; 2003 MB             ; 00:05:50                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 575 MB              ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:21     ; 2.6                     ; 1029 MB             ; 00:00:46                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 749 MB              ; 00:00:02                           ;
-; Total                ; 00:04:36     ; --                      ; --                  ; 00:07:45                           ;
+; Analysis & Synthesis ; 00:00:55     ; 1.0                     ; 519 MB              ; 00:01:01                           ;
+; Fitter               ; 00:03:17     ; 1.3                     ; 1997 MB             ; 00:05:51                           ;
+; Assembler            ; 00:00:08     ; 1.0                     ; 575 MB              ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:22     ; 2.6                     ; 1015 MB             ; 00:00:47                           ;
+; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 741 MB              ; 00:00:02                           ;
+; Total                ; 00:04:45     ; --                      ; --                  ; 00:07:48                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

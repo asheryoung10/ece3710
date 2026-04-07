@@ -16,15 +16,22 @@ module sharedMemory
     output reg [7:0] r,
     output reg [7:0] g,
     output reg [7:0] b,
-	 output reg [15:0] player_x,
-	 output reg [15:0] player_y,
-	 output wire [15:0] audio_pitch
+	 output wire [15:0] playerOneX,
+	 output wire [15:0] playerOneY,
+	 output wire [15:0] playerOneAnimationIndex,
+	 output wire [15:0] playerOneBackgroundIndex,
+	 output wire [15:0] playerOnePitchIndex,
+	 output wire [15:0] playerTwoX,
+	 output wire [15:0] playerTwoY,
+	 output wire [15:0] playerTwoAnimationIndex,
+	 output wire [15:0] playerTwoBackgroundIndex,
+	 output wire [15:0] playerTwoPitchIndex
 );
 
 
 
 wire isRectAccess; assign isRectAccess = readWriteAddress[15:6] == 10'b1000000000;
-wire isPlayerAccess; assign isPlayerAccess= readWriteAddress[15:1] == 15'b110000000000000;
+wire isPlayerAccess; assign isPlayerAccess= readWriteAddress[15:3] == 13'b1100000000000;
 wire isMemoryAccess; assign isMemoryAccess = !isRectAccess && !isPlayerAccess;
 wire enableRectWrite; assign enableRectWrite = writeEnable && isRectAccess;
 wire enablePlayerWrite; assign enablePlayerWrite = writeEnable && isPlayerAccess;
@@ -32,7 +39,6 @@ wire enableCPUWrite; assign enableCPUWrite = writeEnable && isMemoryAccess;
 wire [15:0] contentsCPU;
 reg [15:0] contentsPlayer;
 reg [15:0] contentsRect;
-assign audio_pitch = 0;
 
 
 // CPU Memory
@@ -51,28 +57,43 @@ cpu_memory_instance
 );
 
 // Player Memory
+reg [15:0] sharedPlayerRegs  [0:15]; // 16 additional saved regs
 always@(posedge clock) begin
 	if(reset) begin
-	player_x <= 0;
-	player_y <= 0;
+		sharedPlayerRegs[0] <= 0;
+		sharedPlayerRegs[1] <= 0;
+		sharedPlayerRegs[2] <= 0;
+		sharedPlayerRegs[3] <= 0;
+		sharedPlayerRegs[4] <= 0;
+		sharedPlayerRegs[5] <= 0;
+		sharedPlayerRegs[6] <= 0;
+		sharedPlayerRegs[7] <= 0;
+		sharedPlayerRegs[8] <= 0;
+		sharedPlayerRegs[9] <= 0;
+		sharedPlayerRegs[10] <= 0;
+		sharedPlayerRegs[11] <= 0;
+		sharedPlayerRegs[12] <= 0;
+		sharedPlayerRegs[13] <= 0;
+		sharedPlayerRegs[14] <= 0;
+		sharedPlayerRegs[15] <= 0;
 	end else
 	if(enablePlayerWrite) begin
-			if(readWriteAddress[0]) begin
-				player_y <= writeData;
-				contentsPlayer <= writeData;
-			end else begin
-				player_x <= writeData;
-				contentsPlayer <= writeData;
-			end
+			sharedPlayerRegs[readWriteAddress] <= writeData;
+			contentsPlayer <= writeData;
 	end else begin
-		if(readWriteAddress[0]) begin
-			contentsPlayer <= player_y;
-		end else begin
-			contentsPlayer <= player_x;
-			 
-		end
+		contentsPlayer <= sharedPlayerRegs[readWriteAddress];
 	end
 end
+	 assign  playerOneX = sharedPlayerRegs[0];
+	 assign  playerOneY = sharedPlayerRegs[1];
+	 assign  playerOneAnimationIndex = sharedPlayerRegs[2];
+	 assign  playerOneBackgroundIndex = sharedPlayerRegs[3];
+	 assign playerOnePitchIndex = sharedPlayerRegs[4];
+	 assign playerTwoX = sharedPlayerRegs[5];
+	 assign  playerTwoY = sharedPlayerRegs[6];
+	 assign  playerTwoAnimationIndex = sharedPlayerRegs[7];
+	 assign  playerTwoBackgroundIndex = sharedPlayerRegs[8];
+	 assign  playerTwoPitchIndex = sharedPlayerRegs[9];
 
 // Shared Memory
 reg [15:0] rect_data  [0:63]; // 16 rects, each 4 registers.

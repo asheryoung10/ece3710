@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab1
-Mon Apr  6 19:03:10 2026
+Mon Apr  6 19:55:19 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -82,13 +82,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Apr  6 19:03:09 2026          ;
+; Analysis & Synthesis Status     ; Successful - Mon Apr  6 19:55:19 2026          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; lab1                                           ;
 ; Top-level Entity Name           ; doodle_jump                                    ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 1620                                           ;
+; Total registers                 ; 1716                                           ;
 ; Total pins                      ; 177                                            ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 458,752                                        ;
@@ -263,16 +263,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 5483                   ;
+; Estimate of Logic utilization (ALMs needed) ; 5527                   ;
 ;                                             ;                        ;
-; Combinational ALUT usage for logic          ; 9316                   ;
-;     -- 7 input functions                    ; 19                     ;
-;     -- 6 input functions                    ; 1483                   ;
+; Combinational ALUT usage for logic          ; 9366                   ;
+;     -- 7 input functions                    ; 20                     ;
+;     -- 6 input functions                    ; 1509                   ;
 ;     -- 5 input functions                    ; 1296                   ;
-;     -- 4 input functions                    ; 741                    ;
-;     -- <=3 input functions                  ; 5777                   ;
+;     -- 4 input functions                    ; 778                    ;
+;     -- <=3 input functions                  ; 5763                   ;
 ;                                             ;                        ;
-; Dedicated logic registers                   ; 1620                   ;
+; Dedicated logic registers                   ; 1716                   ;
 ;                                             ;                        ;
 ; I/O pins                                    ; 177                    ;
 ; Total MLAB memory bits                      ; 0                      ;
@@ -281,9 +281,9 @@ https://fpgasoftware.intel.com/eula.
 ; Total DSP Blocks                            ; 0                      ;
 ;                                             ;                        ;
 ; Maximum fan-out node                        ; systemClock50MHz~input ;
-; Maximum fan-out                             ; 1416                   ;
-; Total fan-out                               ; 39199                  ;
-; Average fan-out                             ; 3.45                   ;
+; Maximum fan-out                             ; 1512                   ;
+; Total fan-out                               ; 39884                  ;
+; Average fan-out                             ; 3.47                   ;
 +---------------------------------------------+------------------------+
 
 
@@ -292,24 +292,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                     ; Entity Name               ; Library Name ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |doodle_jump                                             ; 9316 (0)            ; 1620 (0)                  ; 458752            ; 0          ; 177  ; 0            ; |doodle_jump                                                                                                                                            ; doodle_jump               ; work         ;
+; |doodle_jump                                             ; 9366 (0)            ; 1716 (0)                  ; 458752            ; 0          ; 177  ; 0            ; |doodle_jump                                                                                                                                            ; doodle_jump               ; work         ;
 ;    |audio_unit:audio_unit_instance|                      ; 151 (1)             ; 123 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance                                                                                                             ; audio_unit                ; work         ;
 ;       |audio_configurator_select:i2c_conf|               ; 90 (34)             ; 69 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf                                                                          ; audio_configurator_select ; work         ;
 ;          |i2c_controller:i2c_controller_instance|        ; 56 (56)             ; 38 (38)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance                                   ; i2c_controller            ; work         ;
 ;       |audio_output:dac_driver|                          ; 60 (11)             ; 54 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_output:dac_driver                                                                                     ; audio_output              ; work         ;
 ;          |note_generator:note_gen|                       ; 49 (49)             ; 42 (42)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen                                                             ; note_generator            ; work         ;
-;    |cpu:cpu_instance|                                    ; 880 (0)             ; 301 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance                                                                                                                           ; cpu                       ; work         ;
+;    |cpu:cpu_instance|                                    ; 876 (0)             ; 301 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance                                                                                                                           ; cpu                       ; work         ;
 ;       |alu:alu_instance|                                 ; 486 (486)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|alu:alu_instance                                                                                                          ; alu                       ; work         ;
-;       |control_unit:control_unit_instance|               ; 33 (33)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|control_unit:control_unit_instance                                                                                        ; control_unit              ; work         ;
+;       |control_unit:control_unit_instance|               ; 35 (35)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|control_unit:control_unit_instance                                                                                        ; control_unit              ; work         ;
 ;       |instruction_decoder:instruction_decoder_instance| ; 82 (82)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|instruction_decoder:instruction_decoder_instance                                                                          ; instruction_decoder       ; work         ;
 ;       |mux2:alu_input_mux|                               ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux2:alu_input_mux                                                                                                        ; mux2                      ; work         ;
-;       |mux2:memory_select_read_write_address_mux|        ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux2:memory_select_read_write_address_mux                                                                                 ; mux2                      ; work         ;
+;       |mux2:memory_select_read_write_address_mux|        ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux2:memory_select_read_write_address_mux                                                                                 ; mux2                      ; work         ;
 ;       |mux4:register_file_input_mux|                     ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|mux4:register_file_input_mux                                                                                              ; mux4                      ; work         ;
 ;       |register:instruction_register|                    ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:instruction_register                                                                                             ; register                  ; work         ;
 ;       |register:program_counter|                         ; 3 (3)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:program_counter                                                                                                  ; register                  ; work         ;
 ;       |register:program_state_register|                  ; 0 (0)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register:program_state_register                                                                                           ; register                  ; work         ;
-;       |register_file:register_file_instance|             ; 214 (214)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance                                                                                      ; register_file             ; work         ;
-;    |sharedMemory:memory_instance|                        ; 8011 (8011)         ; 1088 (1088)               ; 65536             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance                                                                                                               ; sharedMemory              ; work         ;
+;       |register_file:register_file_instance|             ; 210 (210)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |doodle_jump|cpu:cpu_instance|register_file:register_file_instance                                                                                      ; register_file             ; work         ;
+;    |sharedMemory:memory_instance|                        ; 8065 (8065)         ; 1184 (1184)               ; 65536             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance                                                                                                               ; sharedMemory              ; work         ;
 ;       |memory:cpu_memory_instance|                       ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|memory:cpu_memory_instance                                                                                    ; memory                    ; work         ;
 ;          |altsyncram:ram_rtl_0|                          ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0                                                               ; altsyncram                ; work         ;
 ;             |altsyncram_1re1:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |doodle_jump|sharedMemory:memory_instance|memory:cpu_memory_instance|altsyncram:ram_rtl_0|altsyncram_1re1:auto_generated                                ; altsyncram_1re1           ; work         ;
@@ -460,11 +460,139 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentStep.010                                              ; Lost fanout                                                                                             ;
 ; vga:vga_instance|tileMemory:tileMem_inst|g_next[3]                                                                             ; Merged with vga:vga_instance|tileMemory:tileMem_inst|g_next[0]                                          ;
 ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[3]                                                                        ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelG[0]                                     ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][0]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][0]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][0]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][0]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][0]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][0]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][0]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][0]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][1]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][1]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][1]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][1]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][1]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][1]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][1]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][1]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][2]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][2]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][2]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][2]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][2]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][2]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][2]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][2]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][3]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][3]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][3]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][3]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][3]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][3]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][3]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][3]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][4]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][4]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][4]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][4]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][4]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][4]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][4]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][4]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][5]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][5]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][5]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][5]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][5]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][5]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][5]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][5]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][6]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][6]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][6]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][6]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][6]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][6]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][6]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][6]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][7]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][7]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][7]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][7]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][7]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][7]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][7]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][7]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][8]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][8]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][8]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][8]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][8]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][8]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][8]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][8]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][9]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][9]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][9]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][9]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][9]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][9]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][9]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][9]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][10]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][10]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][10]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][10]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][10]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][10]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][10]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][10]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][11]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][11]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][11]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][11]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][11]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][11]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][11]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][11]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][12]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][12]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][12]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][12]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][12]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][12]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][12]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][12]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][13]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][13]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][13]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][13]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][13]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][13]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][13]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][13]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][14]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][14]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][14]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][14]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][14]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][14]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][14]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][14]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[8][15]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[12][15]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[9][15]                                                                           ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[13][15]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[10][15]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[14][15]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[11][15]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
+; sharedMemory:memory_instance|sharedPlayerRegs[15][15]                                                                          ; Stuck at GND due to stuck port data_in                                                                  ;
 ; vga:vga_instance|tileMemory:tileMem_inst|b_next[0]                                                                             ; Merged with vga:vga_instance|tileMemory:tileMem_inst|b_next[3]                                          ;
 ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[0]                                                                        ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[3]                                     ;
 ; vga:vga_instance|tileMemory:tileMem_inst|b_next[2]                                                                             ; Merged with vga:vga_instance|tileMemory:tileMem_inst|r_next[2]                                          ;
 ; vga:vga_instance|tileMemory:tileMem_inst|glyphPixelB[2]                                                                        ; Merged with vga:vga_instance|tileMemory:tileMem_inst|glyphPixelR[2]                                     ;
-; Total Number of Removed Registers = 148                                                                                        ;                                                                                                         ;
+; Total Number of Removed Registers = 276                                                                                        ;                                                                                                         ;
 +--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 
 
@@ -511,12 +639,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1620  ;
-; Number of registers using Synchronous Clear  ; 121   ;
-; Number of registers using Synchronous Load   ; 19    ;
+; Total registers                              ; 1716  ;
+; Number of registers using Synchronous Clear  ; 217   ;
+; Number of registers using Synchronous Load   ; 35    ;
 ; Number of registers using Asynchronous Clear ; 338   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1440  ;
+; Number of registers using Clock Enable       ; 1536  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -546,16 +674,30 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentCommandIndex[3]                                     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |doodle_jump|sharedMemory:memory_instance|contentsPlayer[1]                                                                               ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|player_x[10]                                                                                    ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|player_y[0]                                                                                     ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |doodle_jump|vga:vga_instance|tileMemory:tileMem_inst|b_next[2]                                                                           ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByteIndex[2] ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentBitIndex[2]  ;
-; 65:1               ; 16 bits   ; 688 LEs       ; 672 LEs              ; 16 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|contentsRect[12]                                                                                ;
-; 12:1               ; 6 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[3]      ;
-; 244:1              ; 16 bits   ; 2592 LEs      ; 32 LEs               ; 2560 LEs               ; Yes        ; |doodle_jump|cpu:cpu_instance|register:program_counter|contents[8]                                                                        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|currentCommandIndex[0]                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[0][11]                                                                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[1][4]                                                                          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[2][5]                                                                          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[3][12]                                                                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[4][13]                                                                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[5][5]                                                                          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[6][1]                                                                          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[7][0]                                                                          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[8][10]                                                                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[9][6]                                                                          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[10][6]                                                                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[11][6]                                                                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[12][6]                                                                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[13][3]                                                                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[14][13]                                                                        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|sharedPlayerRegs[15][3]                                                                         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |doodle_jump|vga:vga_instance|tileMemory:tileMem_inst|b_next[5]                                                                           ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByteIndex[1] ;
+; 17:1               ; 16 bits   ; 176 LEs       ; 160 LEs              ; 16 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|contentsPlayer[15]                                                                              ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentBitIndex[3]  ;
+; 65:1               ; 16 bits   ; 688 LEs       ; 672 LEs              ; 16 LEs                 ; Yes        ; |doodle_jump|sharedMemory:memory_instance|contentsRect[14]                                                                                ;
+; 12:1               ; 6 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |doodle_jump|audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_controller:i2c_controller_instance|currentByte[5]      ;
+; 244:1              ; 16 bits   ; 2592 LEs      ; 32 LEs               ; 2560 LEs               ; Yes        ; |doodle_jump|cpu:cpu_instance|register:program_counter|contents[6]                                                                        ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|control_unit:control_unit_instance|savePreviousInstructionTargetRegIndex                                    ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|instruction_decoder:instruction_decoder_instance|immediate[14]                                              ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |doodle_jump|cpu:cpu_instance|alu:alu_instance|ShiftRight0                                                                                ;
@@ -959,13 +1101,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sharedMemory:memory_instance"                                                                                   ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                                                  ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; audio_pitch ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sharedMemory:memory_instance"                                                                                                ;
++--------------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port                     ; Type   ; Severity ; Details                                                                                                  ;
++--------------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; playerOneAnimationIndex  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; playerOneBackgroundIndex ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; playerOnePitchIndex      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; playerTwoX               ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; playerTwoY               ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; playerTwoAnimationIndex  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; playerTwoBackgroundIndex ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; playerTwoPitchIndex      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1002,18 +1151,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 1620                        ;
+; arriav_ff             ; 1716                        ;
 ;     CLR               ; 10                          ;
 ;     CLR SCLR          ; 18                          ;
-;     ENA               ; 1074                        ;
+;     ENA               ; 1058                        ;
 ;     ENA CLR           ; 300                         ;
 ;     ENA CLR SCLR      ; 10                          ;
-;     ENA SCLR          ; 37                          ;
-;     ENA SLD           ; 19                          ;
+;     ENA SCLR          ; 133                         ;
+;     ENA SLD           ; 35                          ;
 ;     SCLR              ; 56                          ;
 ;     plain             ; 96                          ;
 ; arriav_io_obuf        ; 6                           ;
-; arriav_lcell_comb     ; 9323                        ;
+; arriav_lcell_comb     ; 9373                        ;
 ;     arith             ; 5159                        ;
 ;         0 data inputs ; 246                         ;
 ;         1 data inputs ; 2684                        ;
@@ -1021,16 +1170,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 490                         ;
 ;         4 data inputs ; 151                         ;
 ;         5 data inputs ; 79                          ;
-;     extend            ; 19                          ;
-;         7 data inputs ; 19                          ;
-;     normal            ; 3816                        ;
+;     extend            ; 20                          ;
+;         7 data inputs ; 20                          ;
+;     normal            ; 3865                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 13                          ;
 ;         2 data inputs ; 284                         ;
-;         3 data inputs ; 231                         ;
-;         4 data inputs ; 587                         ;
+;         3 data inputs ; 217                         ;
+;         4 data inputs ; 624                         ;
 ;         5 data inputs ; 1217                        ;
-;         6 data inputs ; 1483                        ;
+;         6 data inputs ; 1509                        ;
 ;     shared            ; 329                         ;
 ;         0 data inputs ; 1                           ;
 ;         2 data inputs ; 320                         ;
@@ -1040,7 +1189,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 64                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 28.40                       ;
-; Average LUT depth     ; 19.27                       ;
+; Average LUT depth     ; 19.11                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1049,7 +1198,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:27     ;
+; Top            ; 00:00:28     ;
 +----------------+--------------+
 
 
@@ -1059,7 +1208,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Apr  6 19:02:14 2026
+    Info: Processing started: Mon Apr  6 19:54:23 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1127,13 +1276,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/u
     Info (12023): Found entity 1: tb_doodle File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/tb_doodle.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v
     Info (12023): Found entity 1: glyph_rom File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v Line: 14
+Warning (10236): Verilog HDL Implicit Net warning at sharedMemory.v(42): created implicit net for "audio_pitch" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 42
 Warning (10236): Verilog HDL Implicit Net warning at doodle_jump.v(46): created implicit net for "reset" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 46
 Info (12127): Elaborating entity "doodle_jump" for the top level hierarchy
 Warning (10034): Output port "leds" at doodle_jump.v(9) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 9
 Warning (10034): Output port "hex4" at doodle_jump.v(16) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 16
 Warning (10034): Output port "hex5" at doodle_jump.v(17) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 17
 Warning (10034): Output port "vga_sync_n" at doodle_jump.v(31) has no driver File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 31
-Info (12128): Elaborating entity "vga" for hierarchy "vga:vga_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 73
+Info (12128): Elaborating entity "vga" for hierarchy "vga:vga_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 74
 Warning (10230): Verilog HDL assignment warning at hard_coded_vga.v(67): truncated value with size 32 to match size of target (10) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 67
 Warning (10230): Verilog HDL assignment warning at hard_coded_vga.v(69): truncated value with size 32 to match size of target (10) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 69
 Info (12128): Elaborating entity "tileMemory" for hierarchy "vga:vga_instance|tileMemory:tileMem_inst" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/hard_coded_vga.v Line: 110
@@ -1142,7 +1292,7 @@ Info (12128): Elaborating entity "glyph_rom" for hierarchy "vga:vga_instance|pla
 Warning (10030): Net "rom.data_a" at glyph_rom.v(23) has no driver or initial value, using a default initial value '0' File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v Line: 23
 Warning (10030): Net "rom.waddr_a" at glyph_rom.v(23) has no driver or initial value, using a default initial value '0' File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v Line: 23
 Warning (10030): Net "rom.we_a" at glyph_rom.v(23) has no driver or initial value, using a default initial value '0' File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/glyph_rom.v Line: 23
-Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 104
+Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 105
 Info (12128): Elaborating entity "register_file" for hierarchy "cpu:cpu_instance|register_file:register_file_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 116
 Warning (10240): Verilog HDL Always Construct warning at register_file.v(30): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/register_file.v Line: 30
 Info (12128): Elaborating entity "alu" for hierarchy "cpu:cpu_instance|alu:alu_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/cpu.v Line: 132
@@ -1167,12 +1317,13 @@ Warning (10270): Verilog HDL Case Statement warning at control_unit.v(115): inco
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(58): incomplete case statement has no default case item File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 58
 Warning (10240): Verilog HDL Always Construct warning at control_unit.v(42): inferring latch(es) for variable "currentIsRead", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 42
 Info (10041): Inferred latch for "currentIsRead" at control_unit.v(42) File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 42
-Info (12128): Elaborating entity "sharedMemory" for hierarchy "sharedMemory:memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 130
-Warning (10240): Verilog HDL Always Construct warning at sharedMemory.v(122): inferring latch(es) for variable "edge_dx", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 122
-Warning (10240): Verilog HDL Always Construct warning at sharedMemory.v(122): inferring latch(es) for variable "edge_dy", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 122
-Info (12128): Elaborating entity "memory" for hierarchy "sharedMemory:memory_instance|memory:cpu_memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 51
+Info (12128): Elaborating entity "sharedMemory" for hierarchy "sharedMemory:memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 131
+Warning (10036): Verilog HDL or VHDL warning at sharedMemory.v(42): object "audio_pitch" assigned a value but never read File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 42
+Warning (10240): Verilog HDL Always Construct warning at sharedMemory.v(144): inferring latch(es) for variable "edge_dx", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 144
+Warning (10240): Verilog HDL Always Construct warning at sharedMemory.v(144): inferring latch(es) for variable "edge_dy", which holds its previous value in one or more paths through the always construct File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 144
+Info (12128): Elaborating entity "memory" for hierarchy "sharedMemory:memory_instance|memory:cpu_memory_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sharedMemory.v Line: 58
 Warning (10850): Verilog HDL warning at memory.v(24): number of words (666) in memory file does not match the number of elements in the address range [0:4095] File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/memory.v Line: 24
-Info (12128): Elaborating entity "audio_unit" for hierarchy "audio_unit:audio_unit_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 152
+Info (12128): Elaborating entity "audio_unit" for hierarchy "audio_unit:audio_unit_instance" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 153
 Info (12128): Elaborating entity "audio_configurator_select" for hierarchy "audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v Line: 38
 Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(124): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 124
 Warning (10027): Verilog HDL or VHDL warning at the audio_configurator_select.v(125): index expression is not wide enough to address all of the elements in the array File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_configurator_select.v Line: 125
@@ -1186,7 +1337,7 @@ Info (10264): Verilog HDL Case Statement information at i2c_controller.v(147): a
 Info (12128): Elaborating entity "audio_output" for hierarchy "audio_unit:audio_unit_instance|audio_output:dac_driver" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v Line: 49
 Info (12128): Elaborating entity "note_generator" for hierarchy "audio_unit:audio_unit_instance|audio_output:dac_driver|note_generator:note_gen" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 33
 Info (12128): Elaborating entity "drum_generator" for hierarchy "audio_unit:audio_unit_instance|audio_output:dac_driver|drum_generator:drum_gen" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/audio_output.v Line: 42
-Info (12128): Elaborating entity "sixteen_bit_seven_seg" for hierarchy "sixteen_bit_seven_seg:segDriver" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 160
+Info (12128): Elaborating entity "sixteen_bit_seven_seg" for hierarchy "sixteen_bit_seven_seg:segDriver" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 161
 Info (12128): Elaborating entity "seven_seg_decoder" for hierarchy "sixteen_bit_seven_seg:segDriver|seven_seg_decoder:dec0" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v Line: 13
 Info (19000): Inferred 2 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "sharedMemory:memory_instance|memory:cpu_memory_instance|ram_rtl_0" 
@@ -1319,16 +1470,16 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "switches[3]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 8
     Warning (15610): No output dependent on input pin "switches[4]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 8
     Warning (15610): No output dependent on input pin "switches[5]" File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/doodle_jump.v Line: 8
-Info (21057): Implemented 10949 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 11095 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 156 output pins
     Info (21060): Implemented 6 bidirectional pins
-    Info (21061): Implemented 10708 logic cells
+    Info (21061): Implemented 10854 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 110 warnings
-    Info: Peak virtual memory: 540 megabytes
-    Info: Processing ended: Mon Apr  6 19:03:10 2026
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 112 warnings
+    Info: Peak virtual memory: 529 megabytes
+    Info: Processing ended: Mon Apr  6 19:55:19 2026
     Info: Elapsed time: 00:00:56
-    Info: Total CPU time (on all processors): 00:01:01
+    Info: Total CPU time (on all processors): 00:01:03
 
 

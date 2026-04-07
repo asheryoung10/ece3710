@@ -125,8 +125,8 @@ memory_instance
 	 .g(rectG),
 	 .b(rectB),
 	 
-	 .player_x(player_x),
-	 .player_y(player_y)
+	 .playerOneX(player_x),
+	 .playerOneY(player_y)
 	 
 );
 
