@@ -14,14 +14,19 @@ applyInputGravityVelocity:
     // -----------------------------
     // Apply gravity (cap at 3)
     // -----------------------------
+    MOVI 0 R7
     CMPI 3 R1
     GOIF GT &applyGravity
     GOIF UC &skipGravity
 
 applyGravity:
+    MOVI 1 R7
     ADDI 1 R1
 
 skipGravity:
+    READ R8
+    0xC004
+    STOR R7 R8
     READ R0
     1025
     STOR R1 R0        // store velocityY
@@ -120,7 +125,7 @@ storeX:
     // Update player Y (addr 0xC001)
     // -----------------------------
     READ R0
-    0xC001
+    0xC002
     LOAD R3 R0        // playerY
 
     READ R0
@@ -130,7 +135,7 @@ storeX:
     ADD R5 R3         // playerY += velocityY
 
     READ R0
-    0xC001
+    0xC002
     STOR R3 R0        // store updated playerY
 
     JCOND UC R13      // return

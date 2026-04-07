@@ -50,7 +50,7 @@ clampPlayerInBounds_storeX:
     // -----------------------------
 clampPlayerInBounds_checkY:
     READ R0
-    0xC001
+    0xC002
     LOAD R2 R0            // R2 = playerY
 
     CMPI 0 R2
@@ -84,7 +84,7 @@ clampPlayerInBounds_setYMax:
 
 clampPlayerInBounds_storeY:
     READ R0
-    0xC001
+    0xC002
     STOR R2 R0            // store clamped Y
 
 clampPlayerInBounds_done:

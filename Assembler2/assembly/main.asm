@@ -22,6 +22,11 @@ main:
     1026
     STOR R0 R1 // seed rng
 
+    READ R0
+    0xC006 // player one background index
+    MOVI 0 R1
+    STOR R1 R0 // Store 0 into background index
+
     mainInit:
     READ R12
     &initRects
@@ -55,7 +60,7 @@ main:
         JAL R13 R12
 
         READ R0
-        0xC001 //y address
+        0xC002 //y address
         LOAD R0 R0 //R0 has y pos
         READ R1
         400
@@ -91,7 +96,7 @@ movePlayerToCenter:
     READ R1
     288
     STOR R1 R0
-    ADDI 1 R0
+    ADDI 2 R0
     READ R1
     208
     STOR R1 R0

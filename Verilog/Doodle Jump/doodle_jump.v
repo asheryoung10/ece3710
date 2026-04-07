@@ -53,6 +53,9 @@ wire [9:0] vgaPixelY;
 wire [7:0] rectR;
 wire [7:0] rectG;
 wire [7:0] rectB;
+wire [4:0] animationIndex;
+ wire [15:0] playerOneBackgroundIndex;
+
 vga vga_instance (
 	.clk50(systemClock50MHz),
 	.rstInv(~reset),
@@ -65,7 +68,11 @@ vga vga_instance (
 	.b(vga_blue),
 	.playerX(player_x),
 	.playerY(player_y),
-	.playerAnimationIndex(switches[9:6]),
+	.playerTwoX(switches[9:0]),
+	.playerTwoY(100),
+	.playerTwoAnimationIndex(3),
+	.playerAnimationIndex(animationIndex),
+	.playerOneBackgroundIndex(playerOneBackgroundIndex),
 	.pixelX(vgaPixelX),
 	.pixelY(vgaPixelY),
 	.rectR(rectR),
@@ -124,7 +131,8 @@ memory_instance
 	 .r(rectR),
 	 .g(rectG),
 	 .b(rectB),
-	 
+	 .playerOneAnimationIndex(animationIndex),
+	 .playerOneBackgroundIndex(playerOneBackgroundIndex),
 	 .playerOneX(player_x),
 	 .playerOneY(player_y)
 	 
@@ -134,7 +142,7 @@ audio_unit audio_unit_instance (
 	.CLOCK_50(systemClock50MHz),
 	.RESET_N(~reset),
 	.configure_N(push_buttons[1]),
-	.pitch({{6'b000000}, switches[2:1]}),
+	.pitch({{6'b000000}, animationIndex[1:0]}),
 	.drum(1'b0),
 	.enableOutput(switches[0]),
 	.selectedCommand(switches[9:6]),

@@ -33,9 +33,9 @@ checkOverlap:
     MOV R4 R3
     // Now rect data is in R0 = xpos, R1 = ypos, r2 = width, r3 = height
     READ R4
-    0xC001
+    0xC002
     LOAD R5 R4 // R5 = playerY
-    SUBI 1 R4
+    SUBI 2 R4
     LOAD R4 R4 // R4 = playerX
 
     //AI code here
@@ -113,10 +113,10 @@ checkOverlapLower:
     MOV R4 R3
     // Now rect data is in R0 = xpos, R1 = ypos, r2 = width, r3 = height
     READ R4
-    0xC001
+    0xC002
     LOAD R5 R4 // R5 = playerY
     ADDI 60 R5
-    SUBI 1 R4
+    SUBI 2 R4
     LOAD R4 R4 // R4 = playerX
 
     //AI code here

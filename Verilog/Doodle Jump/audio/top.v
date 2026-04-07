@@ -2,7 +2,7 @@ module audio_unit(
     input  CLOCK_50,     // 50MHz onboard clock
     input  RESET_N,      // Active-low reset (usually a pushbutton)
     input configure_N,
-	 input wire [5:0] pitch,
+	 input wire [7:0] pitch,
 	 input wire drum,
 	 input wire enableOutput,
 	 input wire [3:0] selectedCommand,
@@ -41,7 +41,7 @@ module audio_unit(
     // This generates the actual square wave bitstream.
     audio_output dac_driver (
         .clk_50(CLOCK_50 & enableOutput),
-		  .pitch({{2'b00}, {pitch}}),
+		  .pitch(pitch),
         .aud_xck(AUD_XCK),
         .aud_bclk(AUD_BCLK),
         .aud_daclrck(AUD_DACLRCK),

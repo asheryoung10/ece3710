@@ -106,7 +106,7 @@ task print_cpu_state;
 	 uut.cpu_instance.register_file_instance.contentsB,
 	 uut.cpu_instance.register_file_instance.reg15input
 	 );
-	 $display("\t Shared Memory: WE: %d, WD: %d, RWA: %d, Contents: %d, cCPU: %d, cPlay: %d, cRect: %d, aCPU: %d, aPlay: %d, aRect: %d",
+	 $display("\t Shared Memory: WE: %d, WD: %d, RWA: %d, Contents: %d, cCPU: %d, cPlay: %d, cRect: %d, aCPU: %d, aPlay: %d, aRect: %d, wCPU: %d, wPlay: %d, wRect: %d, Reset: %d",
 	 uut.memory_instance.writeEnable,
 	 uut.memory_instance.writeData,
 	 uut.memory_instance.readWriteAddress,
@@ -116,7 +116,12 @@ task print_cpu_state;
 	 uut.memory_instance.contentsRect,
 	 uut.memory_instance.isMemoryAccess,
 	 uut.memory_instance.isPlayerAccess,
-	 uut.memory_instance.isRectAccess
+	 uut.memory_instance.isRectAccess,
+	 uut.memory_instance.enableCPUWrite,
+	 uut.memory_instance.enablePlayerWrite,
+	 uut.memory_instance.enableRectWrite,
+	 uut.memory_instance.reset
+
 	 );
 	 $display("\t ALU: A: %d, B: %d, Result: %d, Flags: %d, Opcode: %d",
 	 uut.cpu_instance.alu_instance.A,
@@ -160,17 +165,26 @@ task dumpMemory;
         for (i = 0; i < 48; i = i + 1) begin
             $display("memory[%0d] = %h", i, uut.memory_instance.cpu_memory_instance.ram[i]);
         end
-		  $display("%0d", uut.memory_instance.cpu_memory_instance.ram[1025]);
+        $display(""); // blank line for readability
+		  
+    end
+endtask
+task dumpPlayerMemory;
+    integer i;
+    begin
+        $display("Shared Player Memory:");
+		  for (i = 0; i < 16; i = i + 1) begin
+            $display("memory[%0d] = %h", i, uut.memory_instance.sharedPlayerRegs[i]);
+        end
         $display(""); // blank line for readability
     end
 endtask
-
 task dumpMemoryRects;
     integer i;
     begin
-        $display("Memory:");
+        $display("Rectangle Memory:");
         for (i = 0; i < 16*4; i = i + 1) begin
-            $display("memory[%0d] = %h", i, uut.memory_instance.rect_data[i]);
+            $display("Rect[%0d] = %h", i, uut.memory_instance.rect_data[i]);
         end
         $display(""); // blank line for readability
     end
@@ -251,7 +265,7 @@ integer i = 0;
 		  
         while (running != 0) begin
 				i = i + 1;
-				if(i == 190) running = 0;
+				if(i == 180) running = 0;
 		  
 				if(controlUnitNextState == NOTHING_STATE) begin
 			$display("stoped due to nothing state");
@@ -262,13 +276,12 @@ integer i = 0;
 			running = 0;
 			end
 			   if(uut.memory_instance.cpu_memory_instance.ram[0] === 16'hxxxx) running = 0;
-
-				
 				
 			   if(controlUnitState == FETCH_INSTRUCTION_FROM_MEMORY) begin
 					$display("\n\n\n");
 					$display("CONTENTS AFTER PREVIOUS INSTRUCTION");
 					dumpRegisterFile();
+					dumpPlayerMemory();
 					dumpMemoryRects();
 				end
 				print_state();
