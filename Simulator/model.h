@@ -28,6 +28,8 @@ public:
     Rectangle getRectangle(unsigned int index);
     uint16_t getPlayerX();
     uint16_t getPlayerY();
+    uint16_t getPlayerTwoX();
+    uint16_t getPlayerTwoY();
     uint16_t* memory; // 65536 spots.
     uint16_t registers[16];
     uint16_t programCounter;

@@ -4,7 +4,7 @@ lowerPlatforms:
 	SUBI 1 R14 //make room on stack
 	STOR R13 R14 // store return address
 	READ R0 //  Put address of player y into r0
-	0xC001
+	0xC002
 	LOAD R0 R0 // load player y into r0
 
 	MOVI 120 R1
@@ -21,7 +21,7 @@ lowerPlatforms:
 	// MOve player back where they go
 	ADD R1 R2 //player pos back to 60
 	READ R3 //r3 has player address
-	0xC001
+	0xC002
 	STOR R2 R3 //update player postion
 	MOV R1 R0 //r0 is how much to move the platforms by
 
@@ -43,8 +43,16 @@ lowerPlatforms:
 #include "nextRand.asm"
 // R0 is the offset
 offsetAllPlatforms:
-	SUBI 1 R14 //make room on stack
-	STOR R13 R14 //store return aaddress
+    SUBI 1 R14 //make room on stack
+    STOR R13 R14 //store return aaddress
+    READ R1
+    0xC006
+    LOAD R1 R1
+    ADD R0 R1 //add offset to background
+    READ R2
+    0xc006
+    STOR R1 R2 // store new background
+
     MOVI 0 R1 // R1 holds our index
     READ R2
     0x8001 // R2 holds address of ypos

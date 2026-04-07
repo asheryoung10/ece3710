@@ -21,11 +21,13 @@ module sharedMemory
 	 output wire [15:0] playerOneAnimationIndex,
 	 output wire [15:0] playerOneBackgroundIndex,
 	 output wire [15:0] playerOnePitchIndex,
+	 output wire [15:0] playerOneScore,
 	 output wire [15:0] playerTwoX,
 	 output wire [15:0] playerTwoY,
 	 output wire [15:0] playerTwoAnimationIndex,
 	 output wire [15:0] playerTwoBackgroundIndex,
-	 output wire [15:0] playerTwoPitchIndex
+	 output wire [15:0] playerTwoPitchIndex,
+	 output wire [15:0] playerTwoScore
 );
 
 
@@ -78,22 +80,24 @@ always@(posedge clock) begin
 		sharedPlayerRegs[15] <= 0;
 	end else
 	if(enablePlayerWrite) begin
-			sharedPlayerRegs[readWriteAddress] <= writeData;
+			sharedPlayerRegs[readWriteAddress[3:0]] <= writeData;
 			contentsPlayer <= writeData;
 	end else begin
-		contentsPlayer <= sharedPlayerRegs[readWriteAddress];
+		contentsPlayer <= sharedPlayerRegs[readWriteAddress[3:0]];
 	end
 end
 	 assign  playerOneX = sharedPlayerRegs[0];
-	 assign  playerOneY = sharedPlayerRegs[1];
-	 assign  playerOneAnimationIndex = sharedPlayerRegs[2];
-	 assign  playerOneBackgroundIndex = sharedPlayerRegs[3];
-	 assign playerOnePitchIndex = sharedPlayerRegs[4];
-	 assign playerTwoX = sharedPlayerRegs[5];
-	 assign  playerTwoY = sharedPlayerRegs[6];
-	 assign  playerTwoAnimationIndex = sharedPlayerRegs[7];
-	 assign  playerTwoBackgroundIndex = sharedPlayerRegs[8];
+	 assign playerTwoX = sharedPlayerRegs[1];
+	 assign  playerOneY = sharedPlayerRegs[2];
+	 assign  playerTwoY = sharedPlayerRegs[3];
+	 assign  playerOneAnimationIndex = sharedPlayerRegs[4];
+	 assign  playerTwoAnimationIndex = sharedPlayerRegs[5];
+	 assign  playerOneBackgroundIndex = sharedPlayerRegs[6];
+	 assign  playerTwoBackgroundIndex = sharedPlayerRegs[7];
+	 assign playerOnePitchIndex = sharedPlayerRegs[8];
 	 assign  playerTwoPitchIndex = sharedPlayerRegs[9];
+	 assign playerOneScore = sharedPlayerRegs[10];
+	 assign playerTwoScore = sharedPlayerRegs[11];
 
 // Shared Memory
 reg [15:0] rect_data  [0:63]; // 16 rects, each 4 registers.

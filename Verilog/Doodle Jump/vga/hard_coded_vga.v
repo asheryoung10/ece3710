@@ -5,7 +5,11 @@ module vga
     input  wire       rstInv,     // active-low reset
     input  wire [9:0] playerX,    // Player X position in pixels
     input  wire [9:0] playerY,    // Player Y position in pixels
+	 input  wire [9:0] playerTwoX,    // Player X position in pixels
+    input  wire [9:0] playerTwoY,    // Player Y position in pixels
 	 input wire [3:0]  playerAnimationIndex,
+	  input wire [3:0]  playerTwoAnimationIndex,
+	 input wire [15:0] playerOneBackgroundIndex,
     output wire       vga_clk,    // 25 MHz pixel clock
     output wire       vga_blank_n,
     output wire       vga_vs,
@@ -103,7 +107,7 @@ wire [7:0] glyphPixelR, glyphPixelG, glyphPixelB;
 tileMemory tileMem_inst (
     .clk50(clk25),
     .pixelX(pixelX),
-    .pixelY(pixelY),
+    .pixelY(pixelY - ({1'b0, playerOneBackgroundIndex[15:2]})),
     .glyphPixelR(glyphPixelR),
     .glyphPixelG(glyphPixelG),
     .glyphPixelB(glyphPixelB)
@@ -112,7 +116,7 @@ tileMemory tileMem_inst (
 //-----------------------------------------------------------
 // Player Pixel Memory (prefetch next pixel)
 //-----------------------------------------------------------
-wire [7:0] playerPixelR, playerPixelG, playerPixelB;
+wire [7:0] playerOnePixelR, playerOnePixelG, playerOnePixelB;
 
 playerMemory playerMem_inst (
     .clk50(clk25),
@@ -121,41 +125,60 @@ playerMemory playerMem_inst (
     .playerX(playerX),
     .playerY(playerY),
 	 .playerAnimationIndex(playerAnimationIndex),
-    .playerPixelR(playerPixelR),
-    .playerPixelG(playerPixelG),
-    .playerPixelB(playerPixelB)
+    .playerPixelR(playerOnePixelR),
+    .playerPixelG(playerOnePixelG),
+    .playerPixelB(playerOnePixelB)
+);
+wire [7:0] playerTwoPixelR, playerTwoPixelG, playerTwoPixelB;
+
+playerMemory playerMemTwo_inst (
+    .clk50(clk25),
+	 .pixelX(pixelX),
+	 .pixelY(pixelY),
+    .playerX(playerTwoX),
+    .playerY(playerTwoY),
+	 .playerAnimationIndex(playerTwoAnimationIndex),
+    .playerPixelR(playerTwoPixelR),
+    .playerPixelG(playerTwoPixelG),
+    .playerPixelB(playerTwoPixelB)
 );
 
-//-----------------------------------------------------------
-// RGB Output Pipeline: overlay player on tiles
-//-----------------------------------------------------------
+// Check if players' pixels are active
 reg [7:0] r_reg, g_reg, b_reg;
-wire player_active = (playerPixelR != 0) || (playerPixelG != 0) || (playerPixelB != 0);
-wire rect_active   = (rectR != 0)        || (rectG != 0)        || (rectB != 0);
-wire tile_active   = (glyphPixelR != 0)  || (glyphPixelG != 0)  || (glyphPixelB != 0);
-always @(posedge clk25) begin
-    if (player_active) begin
-        r_reg = playerPixelR;
-        g_reg = playerPixelG;
-        b_reg = playerPixelB;
+wire playerOne_active = (playerOnePixelR != 0) || (playerOnePixelG != 0) || (playerOnePixelB != 0);
+wire playerTwo_active = (playerTwoPixelR != 0) || (playerTwoPixelG != 0) || (playerTwoPixelB != 0);
+wire rect_active = (rectR != 0) || (rectG != 0) || (rectB != 0);
+wire tile_active = (glyphPixelR != 0) || (glyphPixelG != 0) || (glyphPixelB != 0);
 
+// Output RGB values based on active pixels
+always @(posedge clk25) begin
+    if (playerOne_active) begin
+        // Player One is active, override RGB with playerOne's colors
+        r_reg = playerOnePixelR;
+        g_reg = playerOnePixelG;
+        b_reg = playerOnePixelB;
+    end else if (playerTwo_active) begin
+        // Player Two is active, override RGB with playerTwo's colors
+        r_reg = playerTwoPixelR;
+        g_reg = playerTwoPixelG;
+        b_reg = playerTwoPixelB;
     end else if (rect_active) begin
+        // Rectangle is active, override RGB with rectangle's colors
         r_reg = rectR;
         g_reg = rectG;
         b_reg = rectB;
-
     end else if (tile_active) begin
+        // Tile is active, override RGB with tile's colors
         r_reg = glyphPixelR;
         g_reg = glyphPixelG;
         b_reg = glyphPixelB;
-
     end else begin
+        // No active pixels, set RGB to black (or whatever default color)
         r_reg = 0;
         g_reg = 0;
         b_reg = 0;
     end
 end
-
 assign r = r_reg;
 assign g = g_reg;
 assign b = b_reg;

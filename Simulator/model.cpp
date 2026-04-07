@@ -108,7 +108,13 @@ uint16_t Model::getPlayerX() {
     return memory[3 << 14];
 }
 uint16_t Model::getPlayerY() {
-    return memory[(3 << 14) + 1];
+    return memory[(3 << 14) + 2];
+}
+uint16_t Model::getPlayerTwoX() {
+    return memory[(3 << 14) +1];
+}
+uint16_t Model::getPlayerTwoY() {
+    return memory[(3 << 14) + 3];
 }
 void Model::initialize() {
     for(int i = 0; i < 16; i++ ) registers[i] = 0;
