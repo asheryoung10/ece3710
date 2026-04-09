@@ -1,3 +1,5 @@
+#define HI(a,b) READ a | b
+%HI(r15,0xFFFF)
 READ R14
 1023    // Stack starts at 1023
 READ R12

@@ -36,14 +36,23 @@ MainWindow::MainWindow(QWidget *parent)
     ui->reloadButton->setEnabled(false);
 
     // Input buttons
-    connect(ui->leftButton, &QPushButton::pressed,  this, [this]{ model.setLeftButton(true); });
-    connect(ui->leftButton, &QPushButton::released, this, [this]{ model.setLeftButton(false); });
+    connect(ui->leftButton, &QPushButton::pressed,  this, [this]{ model.setLeftButtonPlayerOne(true); });
+    connect(ui->leftButton, &QPushButton::released, this, [this]{ model.setLeftButtonPlayerOne(false); });
 
-    connect(ui->rightButton, &QPushButton::pressed,  this, [this]{ model.setRightButton(true); });
-    connect(ui->rightButton, &QPushButton::released, this, [this]{ model.setRightButton(false); });
+    connect(ui->rightButton, &QPushButton::pressed,  this, [this]{ model.setRightButtonPlayerOne(true); });
+    connect(ui->rightButton, &QPushButton::released, this, [this]{ model.setRightButtonPlayerOne(false); });
 
-    connect(ui->jumpButton, &QPushButton::pressed,  this, [this]{ model.setJumpButton(true); });
-    connect(ui->jumpButton, &QPushButton::released, this, [this]{ model.setJumpButton(false); });
+    connect(ui->jumpButton, &QPushButton::pressed,  this, [this]{ model.setJumpButtonPlayerOne(true); });
+    connect(ui->jumpButton, &QPushButton::released, this, [this]{ model.setJumpButtonPlayerOne(false); });
+
+    connect(ui->leftButton2, &QPushButton::pressed,  this, [this]{ model.setLeftButtonPlayerTwo(true); });
+    connect(ui->leftButton2, &QPushButton::released, this, [this]{ model.setLeftButtonPlayerTwo(false); });
+
+    connect(ui->rightButton2, &QPushButton::pressed,  this, [this]{ model.setRightButtonPlayerTwo(true); });
+    connect(ui->rightButton2, &QPushButton::released, this, [this]{ model.setRightButtonPlayerTwo(false); });
+
+    connect(ui->jumpButton2, &QPushButton::pressed,  this, [this]{ model.setJumpButtonPlayerTwo(true); });
+    connect(ui->jumpButton2, &QPushButton::released, this, [this]{ model.setJumpButtonPlayerTwo(false); });
 
     connect(ui->resetButton, &QPushButton::pressed,  this, [this]{ model.setResetButton(true); });
     connect(ui->resetButton, &QPushButton::released, this, [this]{ model.setResetButton(false); });
@@ -82,6 +91,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->vsyncCheckBox,&QCheckBox::clicked, this, &MainWindow::setVsync);
     ui->breakPoint->setValue(10000);
     ui->leftButton->setFocusPolicy(Qt::NoFocus);
+    ui->registerView->setFocusPolicy(Qt::NoFocus);
+    ui->memoryView->setFocusPolicy(Qt::NoFocus);
+    ui->jumpAddress->setFocusPolicy(Qt::NoFocus);
     ui->onlyViewCheck->setFocusPolicy(Qt::NoFocus);
     ui->rightButton->setFocusPolicy(Qt::NoFocus);
     ui->jumpButton->setFocusPolicy(Qt::NoFocus);
@@ -428,13 +440,22 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
     switch (event->key()) {
     case Qt::Key_A:
-        model.setLeftButton(true);
+        model.setLeftButtonPlayerOne(true);
         break;
     case Qt::Key_D:
-        model.setRightButton(true);
+        model.setRightButtonPlayerOne(true);
         break;
-    case Qt::Key_Space:
-        model.setJumpButton(true);
+    case Qt::Key_W:
+        model.setJumpButtonPlayerOne(true);
+        break;
+    case Qt::Key_Left:
+        model.setLeftButtonPlayerTwo(true);
+        break;
+    case Qt::Key_Right:
+        model.setRightButtonPlayerTwo(true);
+        break;
+    case Qt::Key_Up:
+        model.setJumpButtonPlayerTwo(true);
         break;
     default:
         QMainWindow::keyPressEvent(event);
@@ -447,15 +468,24 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event)
 
     switch (event->key()) {
     case Qt::Key_A:
-        model.setLeftButton(false);
+        model.setLeftButtonPlayerOne(false);
         break;
     case Qt::Key_D:
-        model.setRightButton(false);
+        model.setRightButtonPlayerOne(false);
         break;
-    case Qt::Key_Space:
-        model.setJumpButton(false);
+    case Qt::Key_W:
+        model.setJumpButtonPlayerOne(false);
+        break;
+    case Qt::Key_Left:
+        model.setLeftButtonPlayerTwo(false);
+        break;
+    case Qt::Key_Right:
+        model.setRightButtonPlayerTwo(false);
+        break;
+    case Qt::Key_Up:
+        model.setJumpButtonPlayerTwo(false);
         break;
     default:
-        QMainWindow::keyReleaseEvent(event);
+        QMainWindow::keyPressEvent(event);
     }
 }

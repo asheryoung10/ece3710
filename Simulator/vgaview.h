@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "model.h"
+#include <QMouseEvent> // needed for mousePressEvent
 
 class VGAView : public QWidget
 {
@@ -13,6 +14,7 @@ public:
 
 protected:
     void paintEvent(QPaintEvent *event) override;
+    void mousePressEvent(QMouseEvent* event) override;  // <-- add this
 
 private:
     Model* model = nullptr;

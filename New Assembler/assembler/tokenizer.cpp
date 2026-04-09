@@ -34,7 +34,11 @@ std::vector<Token> tokenizeLine(const std::string& line, const std::string& file
     return tokens;
 }
 
-std::vector<std::vector<Token>> tokenizeFileInternal(const std::string& filename, std::unordered_set<std::string>& includedFiles) {
+std::vector<std::vector<Token>> tokenizeFileInternal(
+    const std::string& filename,
+    std::unordered_set<std::string>& includedFiles,
+    std::unordered_map<std::string, Macro>& macros) {
+
     std::vector<std::vector<Token>> tokens;
 
     // If we have already scanned this file, then don't rescan it.
@@ -80,7 +84,7 @@ std::vector<std::vector<Token>> tokenizeFileInternal(const std::string& filename
             size_t quote2 = trimmed.find('"', quote1 + 1);
             if (quote1 != std::string::npos && quote2 != std::string::npos) {
                 std::string includeFile = trimmed.substr(quote1 + 1, quote2 - quote1 - 1);
-                auto includeLines = tokenizeFileInternal(includeFile, includedFiles);
+                auto includeLines = tokenizeFileInternal(includeFile, includedFiles, macros);
                 tokens.insert(tokens.end(), includeLines.begin(), includeLines.end());
             }else {
                 std::cerr << "ERROR: Missing qoutations marks around include filepath." << std::endl;
@@ -89,6 +93,41 @@ std::vector<std::vector<Token>> tokenizeFileInternal(const std::string& filename
                 std::cerr << "\t On line: " << lineNum << std::endl;
                 exit(0);
             }
+            lineNum++;
+            continue;
+        }
+        if (trimmed.rfind("#define", 0) == 0) {
+            // Example: #define name(a, b) ADDI a b
+
+            size_t nameStart = trimmed.find(' ') + 1;
+            size_t parenOpen = trimmed.find('(', nameStart);
+            size_t parenClose = trimmed.find(')', parenOpen);
+
+            std::string macroName = trimmed.substr(nameStart, parenOpen - nameStart);
+
+            // Parse parameters
+            std::vector<std::string> params;
+            std::string paramStr = trimmed.substr(parenOpen + 1, parenClose - parenOpen - 1);
+            std::stringstream ss(paramStr);
+            std::string param;
+
+            while (std::getline(ss, param, ',')) {
+                param.erase(0, param.find_first_not_of(" \t"));
+                param.erase(param.find_last_not_of(" \t") + 1);
+                params.push_back(param);
+            }
+
+            // Parse body (everything after ')')
+            std::string bodyStr = trimmed.substr(parenClose + 1);
+
+            auto bodyTokens = tokenizeLine(bodyStr, filename, lineNum);
+
+            Macro m;
+            m.params = params;
+            m.body.push_back(bodyTokens);
+
+            macros[macroName] = m;
+
             lineNum++;
             continue;
         }
@@ -104,9 +143,87 @@ std::vector<std::vector<Token>> tokenizeFileInternal(const std::string& filename
     return tokens;
 }
 
-std::vector<std::vector<Token>> tokenizeFile(const std::string& filename) {
+std::vector<std::vector<Token>> tokenizeFile(const std::string& filename, std::unordered_map<std::string, Macro>& macros) {
     std::unordered_set<std::string> includedFiles;
-    return tokenizeFileInternal(filename, includedFiles);
+    return tokenizeFileInternal(filename, includedFiles, macros);
+}
+
+void expandMacros(std::vector<std::vector<Token>>& lines,
+                  const std::unordered_map<std::string, Macro>& macros) {
+
+    std::vector<std::vector<Token>> expanded;
+
+    for (auto& line : lines) {
+        if (line.empty()) continue;
+
+        const std::string& first = line[0].text;
+
+        // Check for macro call: %name(...)
+        if (first.size() > 1 && first[0] == '%') {
+
+            std::string call = first.substr(1);
+
+            size_t parenOpen = call.find('(');
+            size_t parenClose = call.find(')');
+
+            if (parenOpen == std::string::npos || parenClose == std::string::npos) {
+                std::cerr << "ERROR: Invalid macro call syntax\n";
+                exit(1);
+            }
+
+            std::string name = call.substr(0, parenOpen);
+
+            if (!macros.count(name)) {
+                std::cerr << "ERROR: Undefined macro: " << name << "\n";
+                exit(1);
+            }
+
+            const Macro& m = macros.at(name);
+
+            // Parse arguments
+            std::vector<std::string> args;
+            std::string argStr = call.substr(parenOpen + 1, parenClose - parenOpen - 1);
+            std::stringstream ss(argStr);
+            std::string arg;
+
+            while (std::getline(ss, arg, ',')) {
+                arg.erase(0, arg.find_first_not_of(" \t"));
+                arg.erase(arg.find_last_not_of(" \t") + 1);
+                args.push_back(arg);
+            }
+
+            if (args.size() != m.params.size()) {
+                std::cerr << "ERROR: Macro argument count mismatch\n";
+                exit(1);
+            }
+
+            // Expand body
+            for (auto bodyLine : m.body) {
+                std::vector<Token> newLine;
+
+                for (auto tok : bodyLine) {
+                    std::string text = tok.text;
+
+                    // Substitute params
+                    for (size_t i = 0; i < m.params.size(); i++) {
+                        if (text == m.params[i]) {
+                            text = args[i];
+                        }
+                    }
+
+                    tok.text = text;
+                    newLine.push_back(tok);
+                }
+
+                expanded.push_back(newLine);
+            }
+
+        } else {
+            expanded.push_back(line);
+        }
+    }
+
+    lines = std::move(expanded);
 }
 void seperateLinesContainingMultipleInstructions(std::vector<std::vector<Token>>& lines) {
     std::vector<std::vector<Token>> expanded;

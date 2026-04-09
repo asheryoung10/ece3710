@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <unordered_map>
 
 
 void printInstructions(const std::vector<Instruction>& instructions) {
@@ -44,7 +45,9 @@ void writeHexToFile(const std::vector<std::string>& hexForm, const std::string& 
 }
 
 int main(int argc, char* argv[]) {
-    std::vector<std::vector<Token>> lines = tokenizeFile(argv[1]);
+    std::unordered_map<std::string, Macro> macros;
+    std::vector<std::vector<Token>> lines = tokenizeFile(argv[1], macros);
+    expandMacros(lines, macros);
     seperateLinesContainingMultipleInstructions(lines);
     std::vector<Instruction> instructions = preprocessLabels(lines);
     validateInstructions(instructions);

@@ -43,6 +43,9 @@ public:
     QPushButton *leftButton;
     QPushButton *rightButton;
     QPushButton *jumpButton;
+    QPushButton *leftButton2;
+    QPushButton *rightButton2;
+    QPushButton *jumpButton2;
     QPushButton *resetButton;
     QTextBrowser *sourceView;
     QWidget *layoutWidget;
@@ -116,6 +119,21 @@ public:
         jumpButton->setObjectName("jumpButton");
 
         horizontalLayout->addWidget(jumpButton);
+
+        leftButton2 = new QPushButton(verticalLayoutWidget);
+        leftButton2->setObjectName("leftButton2");
+
+        horizontalLayout->addWidget(leftButton2);
+
+        rightButton2 = new QPushButton(verticalLayoutWidget);
+        rightButton2->setObjectName("rightButton2");
+
+        horizontalLayout->addWidget(rightButton2);
+
+        jumpButton2 = new QPushButton(verticalLayoutWidget);
+        jumpButton2->setObjectName("jumpButton2");
+
+        horizontalLayout->addWidget(jumpButton2);
 
         resetButton = new QPushButton(verticalLayoutWidget);
         resetButton->setObjectName("resetButton");
@@ -270,9 +288,12 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         onlyViewCheck->setText(QCoreApplication::translate("MainWindow", "Only Update View", nullptr));
-        leftButton->setText(QCoreApplication::translate("MainWindow", "Left", nullptr));
-        rightButton->setText(QCoreApplication::translate("MainWindow", "Right", nullptr));
-        jumpButton->setText(QCoreApplication::translate("MainWindow", "Jump", nullptr));
+        leftButton->setText(QCoreApplication::translate("MainWindow", "LeftP1", nullptr));
+        rightButton->setText(QCoreApplication::translate("MainWindow", "RightP1", nullptr));
+        jumpButton->setText(QCoreApplication::translate("MainWindow", "JumpP1", nullptr));
+        leftButton2->setText(QCoreApplication::translate("MainWindow", "LeftP2", nullptr));
+        rightButton2->setText(QCoreApplication::translate("MainWindow", "RightP2", nullptr));
+        jumpButton2->setText(QCoreApplication::translate("MainWindow", "JumpP2", nullptr));
         resetButton->setText(QCoreApplication::translate("MainWindow", "Reset", nullptr));
         loadButton->setText(QCoreApplication::translate("MainWindow", "Load", nullptr));
         reloadButton->setText(QCoreApplication::translate("MainWindow", "Reload", nullptr));

@@ -20,9 +20,13 @@ public:
     } Rectangle;
 
     bool tick();
-    void setLeftButton(bool leftButton);
-    void setRightButton(bool rightButton);
-    void setJumpButton(bool jumpButton);
+    void setLeftButtonPlayerOne(bool leftButton);
+    void setRightButtonPlayerOne(bool rightButton);
+    void setJumpButtonPlayerOne(bool jumpButton);
+    void setLeftButtonPlayerTwo(bool leftButton);
+    void setRightButtonPlayerTwo(bool rightButton);
+    void setJumpButtonPlayerTwo(bool jumpButton);
+
     void setResetButton(bool resetButton);
     void setVSync(bool vsync);
     Rectangle getRectangle(unsigned int index);
@@ -46,9 +50,13 @@ public:
     uint8_t readReg;
 
 private:
-    bool leftButton;
-    bool rightButton;
-    bool jumpButton;
+    bool leftButtonPlayerOne;
+    bool rightButtonPlayerOne;
+    bool jumpButtonPlayerOne;
+    bool leftButtonPlayerTwo;
+    bool rightButtonPlayerTwo;
+    bool jumpButtonPlayerTwo;
+
     bool resetButton;
     bool vsync;
     void initialize();
