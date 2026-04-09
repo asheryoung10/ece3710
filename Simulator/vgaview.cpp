@@ -53,12 +53,46 @@ void VGAView::paintEvent(QPaintEvent *event)
         vgaPainter.fillRect(rect, qcolor);
     }
 
-    // Draw player as 4x4 white rectangle
-    uint16_t px = model->getPlayerX();
-    uint16_t py = model->getPlayerY();
-    QRect playerRect(static_cast<int>(px), static_cast<int>(py), 64, 64);
-    vgaPainter.fillRect(playerRect, QColor(255, 255, 255, 200));
+    // Player One
+    uint16_t p1x = model->getPlayerOneX();
+    uint16_t p1y = model->getPlayerOneY();
+    uint16_t p1Anim = model->getPlayerOneAnimationIndex();
+    uint16_t p1Score = model->getPlayerOneScore();
+    uint16_t p1Audio = model->getPlayerOneAudioPitch();
+    uint16_t p1Bg = model->getPlayerOneBackgroundIndex();
 
+    // Draw player rectangle
+    QRect playerOneRect(static_cast<int>(p1x), static_cast<int>(p1y), 64, 64);
+    vgaPainter.fillRect(playerOneRect, QColor(255, 255, 255, 200));
+
+    // Draw info above player
+    vgaPainter.setPen(Qt::black);
+    vgaPainter.setFont(QFont("Arial", 10, QFont::Bold));
+    int infoY = static_cast<int>(p1y) - 48; // start above the player
+    vgaPainter.drawText(static_cast<int>(p1x), infoY, QString("Anim: %1").arg(p1Anim));
+    vgaPainter.drawText(static_cast<int>(p1x), infoY + 12, QString("Score: %1").arg(p1Score));
+    vgaPainter.drawText(static_cast<int>(p1x), infoY + 24, QString("Audio: %1").arg(p1Audio));
+    vgaPainter.drawText(static_cast<int>(p1x), infoY + 36, QString("BG: %1").arg(p1Bg));
+
+    // Player Two
+    uint16_t p2x = model->getPlayerTwoX();
+    uint16_t p2y = model->getPlayerTwoY();
+    uint16_t p2Anim = model->getPlayerTwoAnimationIndex();
+    uint16_t p2Score = model->getPlayerTwoScore();
+    uint16_t p2Audio = model->getPlayerTwoAudioPitch();
+    uint16_t p2Bg = model->getPlayerTwoBackgroundIndex();
+
+    // Draw player rectangle
+    QRect playerTwoRect(static_cast<int>(p2x), static_cast<int>(p2y), 64, 64);
+    vgaPainter.fillRect(playerTwoRect, QColor(200, 200, 255, 200));
+
+    // Draw info above player
+    infoY = static_cast<int>(p2y) - 48;
+    vgaPainter.setPen(Qt::black);
+    vgaPainter.drawText(static_cast<int>(p2x), infoY, QString("Anim: %1").arg(p2Anim));
+    vgaPainter.drawText(static_cast<int>(p2x), infoY + 12, QString("Score: %1").arg(p2Score));
+    vgaPainter.drawText(static_cast<int>(p2x), infoY + 24, QString("Audio: %1").arg(p2Audio));
+    vgaPainter.drawText(static_cast<int>(p2x), infoY + 36, QString("BG: %1").arg(p2Bg));
     vgaPainter.end();
 
     // Paint scaled VGA buffer to widget

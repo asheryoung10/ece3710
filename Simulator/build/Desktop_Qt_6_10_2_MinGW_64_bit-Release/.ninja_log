@@ -1,0 +1,20 @@
+# ninja log v7
+7	585	7974063699601630	Simulator_autogen/timestamp	90fde3a2e548a3
+7	585	7974063699601630	Simulator_autogen/mocs_compilation.cpp	90fde3a2e548a3
+7	585	7974063699601630	C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/Desktop_Qt_6_10_2_MinGW_64_bit-Release/Simulator_autogen/timestamp	90fde3a2e548a3
+7	585	7974063699601630	C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/Desktop_Qt_6_10_2_MinGW_64_bit-Release/Simulator_autogen/mocs_compilation.cpp	90fde3a2e548a3
+603	1253	7974063700456798	CMakeFiles/Simulator.dir/model.cpp.obj	1e58513bc29c869e
+593	2359	7974063700356825	CMakeFiles/Simulator.dir/main.cpp.obj	e52b9558ebe68aaa
+589	2375	7974063700316781	CMakeFiles/Simulator.dir/Simulator_autogen/mocs_compilation.cpp.obj	ea03aa91305d4ca
+600	2404	7974063700416827	CMakeFiles/Simulator.dir/vgaview.cpp.obj	b4f490f929c6c3ab
+596	3897	7974063700386797	CMakeFiles/Simulator.dir/mainwindow.cpp.obj	9e7f138c33113ba5
+3898	4035	7974063733403808	Simulator.exe	fb7784a20d5ceb5e
+19	179	7974070197962801	Simulator_autogen/timestamp	90fde3a2e548a3
+19	179	7974070197962801	Simulator_autogen/mocs_compilation.cpp	90fde3a2e548a3
+19	179	7974070197962801	C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/Desktop_Qt_6_10_2_MinGW_64_bit-Release/Simulator_autogen/timestamp	90fde3a2e548a3
+19	179	7974070197962801	C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/Desktop_Qt_6_10_2_MinGW_64_bit-Release/Simulator_autogen/mocs_compilation.cpp	90fde3a2e548a3
+180	239	7974070200083130	Simulator_autogen/EWIEGA46WW/qrc_resource.cpp	ce3218bd73c2aa5a
+180	239	7974070200083130	C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/Desktop_Qt_6_10_2_MinGW_64_bit-Release/Simulator_autogen/EWIEGA46WW/qrc_resource.cpp	ce3218bd73c2aa5a
+243	301	7974070200203122	CMakeFiles/Simulator.dir/Simulator_autogen/EWIEGA46WW/qrc_resource.cpp.obj	3318ecd97e278bc2
+239	3817	7974070200163128	CMakeFiles/Simulator.dir/mainwindow.cpp.obj	9e7f138c33113ba5
+3817	3975	7974070235945485	Simulator.exe	e908d95475239d8d

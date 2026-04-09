@@ -1,77 +1,73 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'vgaview.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.15.3)
+** Created by: The Qt Meta Object Compiler version 69 (Qt 6.10.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include <memory>
 #include "../../../vgaview.h"
-#include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
+
+#include <QtCore/qtmochelpers.h>
+
+#include <memory>
+
+
+#include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'vgaview.h' doesn't include <QObject>."
-#elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.15.3. It"
+#elif Q_MOC_OUTPUT_REVISION != 69
+#error "This file was generated using the moc from 6.10.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
-QT_BEGIN_MOC_NAMESPACE
+#ifndef Q_CONSTINIT
+#define Q_CONSTINIT
+#endif
+
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_VGAView_t {
-    QByteArrayData data[1];
-    char stringdata0[8];
-};
-#define QT_MOC_LITERAL(idx, ofs, len) \
-    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_VGAView_t, stringdata0) + ofs \
-        - idx * sizeof(QByteArrayData)) \
-    )
-static const qt_meta_stringdata_VGAView_t qt_meta_stringdata_VGAView = {
-    {
-QT_MOC_LITERAL(0, 0, 7) // "VGAView"
+QT_WARNING_DISABLE_GCC("-Wuseless-cast")
+namespace {
+struct qt_meta_tag_ZN7VGAViewE_t {};
+} // unnamed namespace
 
-    },
-    "VGAView"
-};
-#undef QT_MOC_LITERAL
-
-static const uint qt_meta_data_VGAView[] = {
-
- // content:
-       8,       // revision
-       0,       // classname
-       0,    0, // classinfo
-       0,    0, // methods
-       0,    0, // properties
-       0,    0, // enums/sets
-       0,    0, // constructors
-       0,       // flags
-       0,       // signalCount
-
-       0        // eod
-};
-
-void VGAView::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+template <> constexpr inline auto VGAView::qt_create_metaobjectdata<qt_meta_tag_ZN7VGAViewE_t>()
 {
-    (void)_o;
-    (void)_id;
-    (void)_c;
-    (void)_a;
-}
+    namespace QMC = QtMocConstants;
+    QtMocHelpers::StringRefStorage qt_stringData {
+        "VGAView"
+    };
 
-QT_INIT_METAOBJECT const QMetaObject VGAView::staticMetaObject = { {
+    QtMocHelpers::UintData qt_methods {
+    };
+    QtMocHelpers::UintData qt_properties {
+    };
+    QtMocHelpers::UintData qt_enums {
+    };
+    return QtMocHelpers::metaObjectData<VGAView, qt_meta_tag_ZN7VGAViewE_t>(QMC::MetaObjectFlag{}, qt_stringData,
+            qt_methods, qt_properties, qt_enums);
+}
+Q_CONSTINIT const QMetaObject VGAView::staticMetaObject = { {
     QMetaObject::SuperData::link<QWidget::staticMetaObject>(),
-    qt_meta_stringdata_VGAView.data,
-    qt_meta_data_VGAView,
+    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN7VGAViewE_t>.stringdata,
+    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN7VGAViewE_t>.data,
     qt_static_metacall,
     nullptr,
+    qt_staticMetaObjectRelocatingContent<qt_meta_tag_ZN7VGAViewE_t>.metaTypes,
     nullptr
 } };
 
+void VGAView::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    auto *_t = static_cast<VGAView *>(_o);
+    (void)_t;
+    (void)_c;
+    (void)_id;
+    (void)_a;
+}
 
 const QMetaObject *VGAView::metaObject() const
 {
@@ -81,7 +77,7 @@ const QMetaObject *VGAView::metaObject() const
 void *VGAView::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_VGAView.stringdata0))
+    if (!strcmp(_clname, qt_staticMetaObjectStaticContent<qt_meta_tag_ZN7VGAViewE_t>.strings))
         return static_cast<void*>(this);
     return QWidget::qt_metacast(_clname);
 }
@@ -92,4 +88,3 @@ int VGAView::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 QT_WARNING_POP
-QT_END_MOC_NAMESPACE

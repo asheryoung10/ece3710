@@ -14,6 +14,7 @@
 #include <QPropertyAnimation>
 #include <QAbstractAnimation>
 #include <iostream>
+#include <QElapsedTimer>
 
 QString MainWindow::currentFileShown;
 int MainWindow::currentLineShown = -1;
@@ -79,6 +80,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->stepAmount,&QSlider::valueChanged,  this, &MainWindow::slidersChanged);
     connect(ui->frameDelay,&QSlider::valueChanged, this, &MainWindow::slidersChanged);
     connect(ui->vsyncCheckBox,&QCheckBox::clicked, this, &MainWindow::setVsync);
+    ui->breakPoint->setValue(10000);
     ui->leftButton->setFocusPolicy(Qt::NoFocus);
     ui->onlyViewCheck->setFocusPolicy(Qt::NoFocus);
     ui->rightButton->setFocusPolicy(Qt::NoFocus);
@@ -97,6 +99,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->sourceView->setLineWrapMode(QTextEdit::NoWrap); // prevent wrapping
     ui->splitter->setSizes({1000,1000});
     ui->splitter_2->setSizes({1000,1000});
+    ui->frameDelay->setValue(8);
+    ui->instructionsPerFrame->setValue(1000);
+    this->setWindowIcon(QIcon(":/data/assets/windowIcon.svg"));
 
     // Initial UI update
     slidersChanged();
@@ -110,15 +115,8 @@ void MainWindow::onSourceCursorChanged()
     QTextCursor cursor = ui->sourceView->textCursor();
     int line = cursor.blockNumber() + 1; // QTextBlock is 0-based
     std::cout << line << std::endl;
-    return;
+    return;}
 
-    //if (sourceToPC.contains({currentSourceFile, line}) &&
-     //   sourceToPC[{currentSourceFile, line}].contains(line)) {
-
-        //int pc = sourceToPC[currentFileShown][line];
-        //ui->breakPoint->setValue(pc);
-   // }
-}
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -145,7 +143,7 @@ void MainWindow::reloadSimulation() {
 void MainWindow::loadFileIntoModel()
 {
     QString filePath = QFileDialog::getOpenFileName(this,
-                                                    tr("Open Memory File"), "",
+                                                    tr("Open Memory File"), "../../",
                                                     tr("Binary Files (*.bin);;All Files (*)"));
     if (filePath.isEmpty()) return;
 
@@ -276,17 +274,45 @@ void MainWindow::flash() {
 // Timer slot: tick CPU
 void MainWindow::tickModel()
 {
+    // Capture the start time for this frame
+    static QElapsedTimer frameTimer;
+    static bool firstCall = true;
+    if (firstCall) {
+        frameTimer.start();
+        firstCall = false;
+    }
+
+    // Target interval (from UI)
+    int targetIntervalMs = ui->frameDelay->value();
+
+    // Advance model for the main instructions
     for (int i = 0; i < ui->instructionsPerFrame->value(); ++i) {
         advanceModel();
     }
-    	
+
+    // Optional extra steps with VSync
     setVsyncOn();
     for (int i = 0; i < 10; ++i) {
         advanceModel();
     }
     setVsyncOff();
-    cpuTimer->setInterval(ui->frameDelay->value());
+
+    // Update views
     updateViews();
+
+    // Compute elapsed time
+    qint64 elapsed = frameTimer.elapsed();
+
+    // Calculate next interval: target minus time taken
+    int nextInterval = targetIntervalMs - static_cast<int>(elapsed);
+    if (nextInterval < 0)
+        nextInterval = 0; // don't allow negative interval
+
+    // Restart timer for next tick
+    frameTimer.restart();
+
+    // Set CPU timer interval for next tick
+    cpuTimer->setInterval(nextInterval);
 }
 
 void MainWindow::setVsyncOn() {
@@ -308,7 +334,6 @@ void MainWindow::setVsyncOff() {
     model.setVSync(false);
 }
 
-// Update only visible memory rows
 void MainWindow::updateMemoryViewPartial()
 {
     if (!ui->memoryView->model()) return;
@@ -319,9 +344,14 @@ void MainWindow::updateMemoryViewPartial()
 
     for (int row = firstRow; row < lastRow; ++row) {
         uint16_t val = model.memory[row];
-        memoryModelQt->setItem(row, 0, new QStandardItem(
-                                           QString("%1").arg(val, 4, 16, QChar('0')).toUpper()
-                                           ));
+
+        // Combine address and value in hex + decimal
+        QString displayText = QString("Addr: 0x%1  Val: %2 (0x%3)")
+                                  .arg(row, 4, 16, QChar('0')).toUpper() // address in hex
+                                  .arg(val)                                // value decimal
+                                  .arg(val, 4, 16, QChar('0')).toUpper(); // value hex
+
+        memoryModelQt->setItem(row, 0, new QStandardItem(displayText));
     }
 }
 
@@ -340,26 +370,18 @@ void MainWindow::updateViews()
 {
     ui->vgaView->update();
     if(ui->onlyViewCheck->isChecked()) return;
-    // -------------------
-    // Update registers
-    // -------------------
+
     for (int i = 0; i < 16; ++i) {
         registerModelQt->setItem(i, 0, new QStandardItem(
                                            QString("R%1: %2").arg(i).arg(model.registers[i], 4, 16, QChar('0')).toUpper()
                                            ));
     }
 
-    // -------------------
-    // Update only visible memory
-    // -------------------
     updateMemoryViewPartial();
 
-    // -------------------
-    // Update PC and flags
-    // -------------------
     ui->programCounter->setText(
         QString("PC: %1").arg(model.programCounter, 2, 10).toUpper()
-        );
+    );
     ui->flags->setText(
         QString("Flags: C=%1 L=%2 F=%3 Z=%4 N=%5")
             .arg(model.cFlag)
@@ -367,7 +389,7 @@ void MainWindow::updateViews()
             .arg(model.fFlag)
             .arg(model.zFlag)
             .arg(model.nFlag)
-        );
+    );
 
 
     if (pcToSource.contains(model.programCounter)) {
@@ -397,9 +419,6 @@ void MainWindow::updateViews()
             }
         }
     }
-    // -------------------
-    // Update VGA view
-    // -------------------
 }
 
 

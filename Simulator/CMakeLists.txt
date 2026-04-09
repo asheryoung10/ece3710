@@ -29,6 +29,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         model.h model.cpp
         vgaview.h vgaview.cpp
+        resource.qrc
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Simulator APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
