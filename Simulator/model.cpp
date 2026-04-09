@@ -17,17 +17,30 @@ Model::Model() {
     initialize();
 }
 
-void Model::setLeftButton(bool left) {
-    leftButton = left;
+void Model::setLeftButtonPlayerOne(bool left) {
+    leftButtonPlayerOne = left;
 }
 
-void Model::setRightButton(bool right) {
-    rightButton = right;
+void Model::setRightButtonPlayerOne(bool right) {
+    rightButtonPlayerOne = right;
 }
 
-void Model::setJumpButton(bool jump) {
-    jumpButton = jump;
+void Model::setJumpButtonPlayerOne(bool jump) {
+    jumpButtonPlayerOne = jump;
 }
+
+void Model::setLeftButtonPlayerTwo(bool left) {
+    leftButtonPlayerTwo = left;
+}
+
+void Model::setRightButtonPlayerTwo(bool right) {
+    rightButtonPlayerTwo = right;
+}
+
+void Model::setJumpButtonPlayerTwo(bool jump) {
+    jumpButtonPlayerTwo = jump;
+}
+
 
 void Model::setResetButton(bool reset) {
     resetButton = reset;
@@ -148,9 +161,12 @@ void Model::initialize() {
     fFlag = false;
     nFlag = false;
     zFlag = false;
-    leftButton = false;
-    rightButton = false;
-    jumpButton = false;
+    leftButtonPlayerOne = false;
+    rightButtonPlayerOne = false;
+    jumpButtonPlayerOne = false;
+    leftButtonPlayerTwo = false;
+    rightButtonPlayerTwo = false;
+    jumpButtonPlayerTwo = false;
     readReg = 0;
     readNextCycle = false;
     vsync = false;
@@ -172,7 +188,7 @@ bool Model::tick() {
     
 
     // LSB is vsync, then right, left, jump buttons
-    registers[15] = (jumpButton << 3) | (leftButton << 2) | (rightButton << 1) | vsync;
+    registers[15] = (jumpButtonPlayerTwo << 6) | (leftButtonPlayerTwo << 5) | (rightButtonPlayerTwo << 4) |(jumpButtonPlayerOne << 3) | (leftButtonPlayerOne << 2) | (rightButtonPlayerOne << 1) | vsync;
 
     uint16_t instruction = memory[programCounter];
     uint8_t opcodeUpper = (instruction >> 12);

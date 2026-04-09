@@ -5,6 +5,8 @@
 VGAView::VGAView(QWidget *parent)
     : QWidget(parent)
 {
+setFocusPolicy(Qt::StrongFocus);
+    setStyleSheet("QWidget:focus { border: 2px solid red; }");
 }
 
 void VGAView::setModel(Model* model) {
@@ -99,4 +101,14 @@ void VGAView::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.fillRect(rect(), Qt::black);
     painter.drawImage(this->rect(), vgaBuffer);
+    if (hasFocus()) {
+        QPen focusPen(Qt::red, 4); // red border, 4 pixels wide
+        painter.setPen(focusPen);
+        painter.drawRect(rect().adjusted(2,2,-2,-2)); // slightly inset
+    }
+}
+
+void VGAView::mousePressEvent(QMouseEvent* event) {
+    setFocus();
+    QWidget::mousePressEvent(event);
 }
