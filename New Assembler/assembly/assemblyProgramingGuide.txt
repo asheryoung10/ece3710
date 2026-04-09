@@ -1,0 +1,98 @@
+Register Guide:
+    R15 gets set to the following: {0, 0, 0, 0, 0, 0, 0, 0, 0, p2Jump, p2Left, p2Right, p1Jump, p1Left, p1Right, vsync}
+        If you want to check for input, like p2Jump, then do this:
+            MOVI 64 R0 // Load 64 into R0 (64 fits in 8bit twos complement immediate value, so no READ neccessary.)
+            AND R15 R0 // Mask input with 64, r0 will have a 1 if p2Jump was pressed
+            CMPI 1 R0  // Compare 1 to R0
+            GOIF EQ &p2Pressed      // Jump to code for pressed
+            GOIF UC &p2NotPressed   // Jump to code for not pressed
+    R14 is the stack pointer, initialize it to 4095 with the first instructions.
+        Example usagePutting data on the stack:
+            Save data on the stack:
+                SUBI 1 R14  // Make room for a regsiter on the stack
+                STOR R0 R14 // Save a register on the stack
+                SUBI 1 R14  // Make room for a regsiter on the stack
+                STOR R13 R14 // Save a register on the stack (r13 is return address, we must save this)
+
+                READ R12    /
+                &someLabel  /   
+                JAL R13 R12 / call someLabel function (R12 and R13 are reserved for this)
+
+                LOAD R13 R14 // Restore register from stack (r13 is return addres, we must restore this)
+                ADDI 1 R14  // Move stack back
+                LOAD R0 R14 // Restore register from stack
+                ADDI 1 R14  // Move stack back to where it was before saving
+    R13 is the return addres, be sure to save this before calling a function.
+        Return from a function like so:
+            JCOND UC R13
+    R12 is reserved for being used to read in labels for calling functions, like shown above.
+        Note: An instruction like:
+            GOIF UC &someLabel
+        Can assemble to either:
+            BCOND UC -25 // Or some other number in range -128 to 127
+        Or
+            READ R12
+            &someLabel
+            JCOND UC R12 // This is because if its too far away we have to use a 16 bit absolute jump.
+        This means R12 is not gaurenteed to be prerved after a GOIF or function call (as a function may use GOIF).
+    R11-R6 // Callee saved registers. If a function uses these registers, then it must save them restore them before returning.
+    R0-R5  // Caller saved registers / temperary registers / parameters / return registers. These can change and can be used as return types.
+
+
+Instruction Guide
+MOV R0 R1 // Copies value of R0 into R1
+MOVI 5 R0 // Copies 5 into R0, any number in range -128 - 127 is allowed.
+
+READ R0 //* Tells cpu to put next instruction value into R0
+0xFFFF  //* Raw data, could be anything, including an instruction
+
+ADDI 1 R0 // Add an immediate (8bit twos complement)
+SUBI 1 R0 // Subtract an immediate (8bit twos complement)
+ADD R0 R1 // R1 = R0 + R1
+SUB R0 R1 // R1 = R0 - R1
+
+CMPI 5 R0 // Sets program flags with result of comparing 5 (any 8bit twos complement) and R0
+GOIF GT &someLabel // Jumps execution to the label, GT is the condition which can be: (GT, LT, HI, Lo, ...)
+// How it works: if you do CMP A B, then GOIF GT &someLabel looks like if(A > B) then jump to someLabel
+
+LSHI 5 R0 // Shifts R0 by twos complement 8 bit immediate, if negative its a right shift.
+LSH R0 R1 // Shifts R1 by R0, if R0 is negative then left shift
+
+AND R0 R1 // R1 = R0 & R1 (bitwise and)
+OR R0 R1 // R1 = R0 & R1 (bitwise and)
+XOR R0 R1 // R1 = R0 & R1 (bitwise and)
+NOT R1 R0 // R0 = ~R1
+
+LOAD R0 R1 // R0 = mem[R1]
+STORE R0 R1 // mem[r1] = R0
+
+//Code for accessing an address:
+READ R0
+0xC000 // address of p1XPos
+MOVI 10 R1
+STORE R1 R0 // p1XPos = 10
+
+// Define a label like this:
+someLabel:
+anotherlabel:
+ADDI 1 R0 // both labels resolve to this instruction address
+
+// Dereference a label like this (gives literal value)
+READ R12 // Read it into R12
+&someLabel
+
+// Use GOIF (psuedoinstruction) to goto a label
+GOIF UC &anotherLabel
+
+// Include a file (copy file contents here):
+#include "filename.asm" // Qoutes are required, file extension can be whatever but has to match what it actually is
+
+// Define a macro
+#define Player1XPosAddress 0xC000
+
+// Define a macro with parameters
+#define anotherAdd(a, b) ADD a b // Do not use these parameter macros/recursive macros, i am not sure if they work
+// then
+anotherAdd(r1, r2)
+// turns into
+ADD r1 r2
