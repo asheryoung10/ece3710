@@ -11,10 +11,10 @@ module playerMemory (
 );
 
 reg [7:0] r_next, g_next, b_next;
-localparam PLAYER_WIDTH = 64;
-localparam PLAYER_HEIGHT = 64;
+localparam PLAYER_WIDTH = 45;
+localparam PLAYER_HEIGHT = 41;
 
-wire [23:0] rom_data;
+wire [31:0] rom_data;
 wire [15:0] relativeToPlayerX;
 wire [15:0] relativeToPlayerY;
 assign relativeToPlayerX = pixelX - playerX;
@@ -25,7 +25,7 @@ glyph_rom glyph_rom_instance(
 	.clk(clk50), 
 	.addr(
 		(playerAnimationIndex * (PLAYER_HEIGHT * PLAYER_WIDTH)) +
-		relativeToPlayerX + 
+		relativeToPlayerX + 1 + 
 		(relativeToPlayerY * PLAYER_WIDTH)
 		),
 	.q(rom_data)
@@ -34,12 +34,12 @@ glyph_rom glyph_rom_instance(
 always @(posedge clk50) begin
     if ((pixelX >= playerX) && (pixelX < playerX + PLAYER_WIDTH) &&
         (pixelY >= playerY) && (pixelY < playerY + PLAYER_HEIGHT)) begin
-		  
         // Change color based on animation index
         // Red fixed, green varies, blue varies for fun
-        r_next <= rom_data[7:0];                     // Red fixed
-        g_next <= rom_data[15:8];  // Green changes with animation index
-        b_next <= rom_data[23:16]; // Blue also changes for effect
+        b_next <= rom_data[7:0];                   
+        g_next <= rom_data[15:8];  
+        r_next <= rom_data[23:16];
+
     end else begin
         r_next <= 8'd0;  // Transparent background
         g_next <= 8'd0;

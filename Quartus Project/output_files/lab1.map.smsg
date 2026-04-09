@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at control_unit.v(24): always construct contains both blocking and non-blocking assignments File: C:/Users/asher/Desktop/SchoolWork/ece3710/Verilog/Doodle Jump/cpu/control_unit.v Line: 24
+Warning (10268): Verilog HDL information at playerMemory.v(36): always construct contains both blocking and non-blocking assignments File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v Line: 36

@@ -228,259 +228,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "instructionRegisterContentsOutput[0]",
+					"name" : "GPIO1_27_latch",
 					"strict" : false
 				},
 				{
-					"name" : "instructionRegisterContentsOutput[1]",
-					"strict" : false
-				},
-				{
-					"name" : "instructionRegisterContentsOutput[2]",
-					"strict" : false
-				},
-				{
-					"name" : "instructionRegisterContentsOutput[3]",
-					"strict" : false
-				},
-				{
-					"name" : "instructionRegisterContentsOutput[4]",
-					"strict" : false
-				},
-				{
-					"name" : "instructionRegisterContentsOutput[5]",
-					"strict" : false
-				},
-				{
-					"name" : "instructionRegisterContentsOutput[6]",
-					"strict" : false
-				},
-				{
-					"name" : "instructionRegisterContentsOutput[7]",
-					"strict" : false
-				},
-				{
-					"name" : "instructionRegisterContentsOutput[8]",
-					"strict" : false
-				},
-				{
-					"name" : "instructionRegisterContentsOutput[9]",
-					"strict" : false
-				},
-				{
-					"name" : "instructionRegisterContentsOutput[10]",
-					"strict" : false
-				},
-				{
-					"name" : "instructionRegisterContentsOutput[11]",
-					"strict" : false
-				},
-				{
-					"name" : "instructionRegisterContentsOutput[12]",
-					"strict" : false
-				},
-				{
-					"name" : "instructionRegisterContentsOutput[13]",
-					"strict" : false
-				},
-				{
-					"name" : "instructionRegisterContentsOutput[14]",
-					"strict" : false
-				},
-				{
-					"name" : "instructionRegisterContentsOutput[15]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[0]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[1]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[2]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[3]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[4]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[5]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[6]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[7]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[8]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[9]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[10]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[11]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[12]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[13]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[14]",
-					"strict" : false
-				},
-				{
-					"name" : "programCounterContentsOutput[15]",
-					"strict" : false
-				},
-				{
-					"name" : "programStateRegisterContentsOutput[0]",
-					"strict" : false
-				},
-				{
-					"name" : "programStateRegisterContentsOutput[1]",
-					"strict" : false
-				},
-				{
-					"name" : "programStateRegisterContentsOutput[2]",
-					"strict" : false
-				},
-				{
-					"name" : "programStateRegisterContentsOutput[3]",
-					"strict" : false
-				},
-				{
-					"name" : "programStateRegisterContentsOutput[4]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[0]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[1]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[2]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[3]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[4]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[5]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[6]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[7]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[8]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[9]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[10]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[11]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[12]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[13]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[14]",
-					"strict" : false
-				},
-				{
-					"name" : "aluResultOutput[15]",
-					"strict" : false
-				},
-				{
-					"name" : "aluFlagsOutput[0]",
-					"strict" : false
-				},
-				{
-					"name" : "aluFlagsOutput[1]",
-					"strict" : false
-				},
-				{
-					"name" : "aluFlagsOutput[2]",
-					"strict" : false
-				},
-				{
-					"name" : "aluFlagsOutput[3]",
-					"strict" : false
-				},
-				{
-					"name" : "aluFlagsOutput[4]",
-					"strict" : false
-				},
-				{
-					"name" : "controlUnitState[0]",
-					"strict" : false
-				},
-				{
-					"name" : "controlUnitState[1]",
-					"strict" : false
-				},
-				{
-					"name" : "controlUnitState[2]",
-					"strict" : false
-				},
-				{
-					"name" : "controlUnitNextState[0]",
-					"strict" : false
-				},
-				{
-					"name" : "controlUnitNextState[1]",
-					"strict" : false
-				},
-				{
-					"name" : "controlUnitNextState[2]",
+					"name" : "GPIO1_26_cpu",
 					"strict" : false
 				},
 				{
@@ -528,11 +280,31 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[9]",
+					"name" : "GPIO1_28_data",
 					"strict" : false
 				},
 				{
-					"name" : "switches[8]",
+					"name" : "switches[0]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[3]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[1]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[2]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[4]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[5]",
 					"strict" : false
 				},
 				{
@@ -544,27 +316,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[5]",
+					"name" : "switches[8]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[4]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[3]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[2]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[1]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[0]",
+					"name" : "switches[9]",
 					"strict" : false
 				}
 			]

@@ -24,3 +24,8 @@ currentState.START_STATE 0 0 1 1 0
 currentState.SEND_BIT_STATE 0 1 0 1 0 
 currentState.ACK_STATE 1 0 0 1 0 
 currentState.STOP_STATE 0 0 0 1 1 
+
+State Machine - |doodle_jump|snes:snes_instance|SNES_Controller:controllerInstance|state
+Name state.READ 
+state.IDLE 0 
+state.READ 1 

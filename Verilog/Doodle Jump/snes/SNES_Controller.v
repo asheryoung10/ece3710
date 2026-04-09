@@ -1,0 +1,68 @@
+module SNES_Controller(
+	input wire fpga_clk,    
+	input wire latch_clk,
+	input wire data,
+	input wire cpu_clk,
+	input wire rst,
+	output reg cpuClk_en,
+	output reg [15:0]buttons_pressed
+);
+ 
+// bit6: left on dpad
+// bit7: right on dpad
+// bit 8: A
+// bit 1: Y
+ 
+localparam IDLE = 2'b00;
+localparam WAIT = 2'b01;
+localparam READ = 2'b10;
+ 
+reg[1:0] state;
+reg [3:0] bitIndex;
+reg cpuClk_prev;
+reg latchClk_prev;
+ 
+// 16 clk pulses for each button after cpu_clk is pulsed
+// each clk pulse is shifted to data wire, where read data wire on falling edge of clock
+always @(posedge fpga_clk) begin
+	if(rst) begin
+		bitIndex <= 0;
+		cpuClk_prev <= 0;
+		latchClk_prev <= 0;
+		buttons_pressed <= 0;
+		cpuClk_en <= 0;
+	end 
+	else begin
+		cpuClk_prev <= cpu_clk;
+		latchClk_prev <= latch_clk;
+ 
+		case(state)
+ 
+			IDLE: begin
+				bitIndex <= 0;
+ 
+				if (!latch_clk && latchClk_prev) begin //pulse has fallen low
+					cpuClk_en <= 1;
+					buttons_pressed[bitIndex] <= data;
+					bitIndex <= bitIndex + 1;
+					state <= READ;
+				end
+			end
+ 
+			READ: begin
+ 
+				if(cpuClk_prev && !cpu_clk) begin // falling edge of SNES controller clock, can now read serial data line
+					buttons_pressed[bitIndex] <= data;
+					bitIndex <= bitIndex + 1;
+					
+					if (bitIndex == 15) begin// have collected all 16 button states, now reset and wait for next cpu_clk pulse
+						state <= IDLE;
+						cpuClk_en <= 0;
+					end
+				end
+			end
+		endcase
+	end
+end
+endmodule	
+ 

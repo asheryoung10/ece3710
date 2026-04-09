@@ -24,6 +24,9 @@ module cpu
 	input wire leftButton,
 	input wire rightButton,
 	input wire jumpButton,
+	input wire leftButtonTwo,
+	input wire rightButtonTwo,
+	input wire jumpButtonTwo,
 	input wire vsync,
 	
 	output wire [15:0] R3
@@ -111,6 +114,9 @@ register_file_instance
 	 .leftButton(leftButton),
 	 .rightButton(rightButton),
 	 .jumpButton(jumpButton),
+	 .leftButtonTwo(leftButtonTwo),
+	 .rightButtonTwo(rightButtonTwo),
+	 .jumpButtonTwo(jumpButtonTwo),
 	 .vsync(vsync),
 	 .R3(R3)
 );
