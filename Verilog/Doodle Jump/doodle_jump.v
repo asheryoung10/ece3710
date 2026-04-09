@@ -33,61 +33,86 @@ module doodle_jump #(
 	output [7:0] vga_green,
 	output [7:0] vga_blue,
 	
-	//cpu debug
-	output [DATA_WIDTH-1:0] instructionRegisterContentsOutput,
-   output [DATA_WIDTH-1:0] programCounterContentsOutput,
-   output [DATA_WIDTH-1:0] programStateRegisterContentsOutput,
-   output [DATA_WIDTH-1:0] aluResultOutput,
-   output [4:0] aluFlagsOutput,
-	 
-	output [2:0] controlUnitState,
-	output [2:0] controlUnitNextState
+
+	input GPIO1_28_data,
+	output GPIO1_27_latch,
+	output GPIO1_26_cpu
 );
+
+// Reset Button
+wire reset; 
 assign reset = ~push_buttons[0];
-wire [15:0] player_x;
-wire [15:0] player_y;
 
+// Player wires
+wire [15:0] p1X;
+wire [15:0] p1Y;
+wire [15:0] p2X;
+wire [15:0] p2Y;
+wire [15:0] p1AnimationIndex;
+wire [15:0] p2AnimationIndex;
+wire [15:0] p1BackgroundIndex;
+wire [15:0] p2BackgroundIndex;
+wire [15:0] p1Score;
+wire [15:0] p2Score;
+wire [15:0] p1PitchIndex;
+wire [15:0] p2PitchIndex;
 
+// VGA wires
 wire [9:0] vgaPixelX;
 wire [9:0] vgaPixelY;
 wire [7:0] rectR;
 wire [7:0] rectG;
 wire [7:0] rectB;
-wire [4:0] animationIndex;
- wire [15:0] playerOneBackgroundIndex;
 
-vga vga_instance (
-	.clk50(systemClock50MHz),
-	.rstInv(~reset),
-	.vga_clk(vga_clock),
-	.vga_blank_n(vga_blank_n),
-	.vga_vs(vga_vs),
-	.vga_hs(vga_hs),
-	.r(vga_red),
-	.g(vga_green),
-	.b(vga_blue),
-	.playerX(player_x),
-	.playerY(player_y),
-	.playerTwoX(switches[9:0]),
-	.playerTwoY(100),
-	.playerTwoAnimationIndex(3),
-	.playerAnimationIndex(animationIndex),
-	.playerOneBackgroundIndex(playerOneBackgroundIndex),
-	.pixelX(vgaPixelX),
-	.pixelY(vgaPixelY),
-	.rectR(rectR),
-	.rectB(rectB),
-	.rectG(rectG)
-);
-
-
-
-
+// Shared memory wires
 wire memoryWriteEnable;
 wire [MEMORY_ADDR_WIDTH-1:0] memoryReadWriteAddress;
 wire [DATA_WIDTH-1:0] registerFileContentsB;
 wire [DATA_WIDTH-1:0] memoryContents;
 wire [DATA_WIDTH-1:0] register3;
+
+// Controller
+wire [15:0] snesButtons;
+
+snes snes_instance (
+	.systemClock50MHz(systemClock50MHz),
+	.leds(),
+	.push_buttons(push_buttons),
+	.GPIO1_28_data(GPIO1_28_data),
+	.GPIO1_27_latch(GPIO1_27_latch),
+	.GPIO1_26_cpu(GPIO1_26_cpu),
+	.buttons(snesButtons)
+);
+
+vga vga_instance (
+	.clk50(systemClock50MHz),
+	.reset(reset),
+	
+	.p1X(p1X),
+	.p1Y(p1Y),
+	.p2X(p2X),
+	.p2Y(p2Y),
+	.p1AnimationIndex(p1AnimationIndex),
+	.p2AnimationIndex(p2AnimationIndex),
+	.p1BackgroundIndex(p1BackgroundIndex),
+	.p2BackgroundIndex(p2BackgroundIndex),
+	
+	.pixelX(vgaPixelX),
+	.pixelY(vgaPixelY),
+	
+	.rectR(rectR),
+	.rectG(rectG),
+	.rectB(rectB),
+	 
+   .vga_clk(vga_clock),
+   .vga_blank_n(vga_blank_n),
+   .vga_vs(vga_vs),
+   .vga_hs(vga_hs),
+   .r(vga_red),
+   .g(vga_green),
+   .b(vga_blue)
+);
+
 cpu cpu_instance (
 	.clock(systemClock50MHz),
 	.reset(reset),
@@ -104,46 +129,52 @@ cpu cpu_instance (
    .aluFlagsOutput(aluFlagsOutput),
    .controlUnitState(controlUnitState),
    .controlUnitNextState(controlUnitNextState),
-	.leftButton(~push_buttons[3]),
-	.rightButton(~push_buttons[2]),
-	.jumpButton(~push_buttons[1]),
+	.leftButton(~push_buttons[3] || ~snesButtons[1] || ~snesButtons[10]),
+	.rightButton(~push_buttons[2] || ~snesButtons[8] || ~snesButtons[11]),
+	.jumpButton(~push_buttons[1] || ~snesButtons[0]),
+	.leftButtonTwo(~snesButtons[6]),
+	.rightButtonTwo(~snesButtons[7]),
+	.jumpButtonTwo(~snesButtons[5]),
 	.vsync(vga_vs),
 	.R3(register3)
 );
 
-
-sharedMemory 
-#(
-    .DATA_WIDTH(DATA_WIDTH)
-)
-memory_instance
+sharedMemory memory_instance
 (
-    // Inputs
     .clock(systemClock50MHz),
+	 .reset(reset),
+	 
     .writeEnable(memoryWriteEnable),
     .writeData(registerFileContentsB),
     .readWriteAddress(memoryReadWriteAddress),
-    // Outputs
     .contents(memoryContents),
-	 .reset(reset),
+	 
 	 .vgaX(vgaPixelX),
 	 .vgaY(vgaPixelY),
 	 .r(rectR),
 	 .g(rectG),
 	 .b(rectB),
-	 .playerOneAnimationIndex(animationIndex),
-	 .playerOneBackgroundIndex(playerOneBackgroundIndex),
-	 .playerOneX(player_x),
-	 .playerOneY(player_y)
 	 
+	 .playerOneX(p1X),
+	 .playerOneY(p1Y),
+	 .playerOneAnimationIndex(p1AnimationIndex),
+	 .playerOneBackgroundIndex(p2BackgroundIndex),
+	 .playerOnePitchIndex(p1PitchIndex),
+	 .playerOneScore(p1Score),
+	 .playerTwoX(p2X),
+	 .playerTwoY(p2Y),
+	 .playerTwoAnimationIndex(p2AnimationIndex),
+	 .playerTwoBackgroundIndex(p2BackgroundIndex),
+	 .playerTwoPitchIndex(p2PitchIndex),
+	 .playerTwoScore(p2Score)
 );
 
 audio_unit audio_unit_instance (
 	.CLOCK_50(systemClock50MHz),
 	.RESET_N(~reset),
 	.configure_N(push_buttons[1]),
-	.pitch({{6'b000000}, animationIndex[1:0]}),
-	.drum(1'b0),
+	.pitch(switches),
+	.drum(push_buttons[3]),
 	.enableOutput(switches[0]),
 	.selectedCommand(switches[9:6]),
 	
@@ -160,12 +191,11 @@ audio_unit audio_unit_instance (
 	
 );
 
-    sixteen_bit_seven_seg segDriver (
+sixteen_bit_seven_seg segDriver (
         .value(register3), 
         .hex0(hex0),     
         .hex1(hex1),
         .hex2(hex2),
         .hex3(hex3)
-    );
-
+ );
 endmodule

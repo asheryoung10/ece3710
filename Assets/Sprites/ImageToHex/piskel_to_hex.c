@@ -31,7 +31,7 @@
 #include <time.h>
 
 /* change filename to match your adjusted piskel header file (see above) */
-#include "anim.h"
+#include "iamge.h"
 
 /* change filename if you want something else */
 #define FILENAME "glyphs.hex"
