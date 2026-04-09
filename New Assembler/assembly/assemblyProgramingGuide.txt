@@ -96,3 +96,50 @@ GOIF UC &anotherLabel
 anotherAdd(r1, r2)
 // turns into
 ADD r1 r2
+
+
+Important Addresses:
+0 - 4095: Reserved for instructions and stack
+
+0xC000 - 0xC00B // Reserved for vga shared player data, like:
+0xC000: playerOneX             – Player One’s horizontal position
+0xC001: playerTwoX             – Player Two’s horizontal position
+0xC002: playerOneY             – Player One’s vertical position
+0xC003: playerTwoY             – Player Two’s vertical position
+0xC004: playerOneAnimationIndex – Player One’s current animation frame
+0xC005: playerTwoAnimationIndex – Player Two’s current animation frame
+0xC006: playerOneBackgroundIndex – Player One’s background layer
+0xC007: playerTwoBackgroundIndex – Player Two’s background layer
+0xC008: playerOnePitchIndex     – Player One’s audio pitch / sound index
+0xC009: playerTwoPitchIndex     – Player Two’s audio pitch / sound index
+0xC00A: playerOneScore          – Player One’s score
+0xC00B: playerTwoScore          – Player Two’s score
+
+
+0x8000 - 0x803F // 64 regs for rectangle data where:
+0x8000: rect0X               – X position of rectangle 0
+0x8001: rect0Y               – Y position of rectangle 0
+0x8002: rect0WidthHeight     – Packed width (upper 8 bits) & height (lower 8 bits)
+0x8003: rect0Color           – 16-bit color: R[15:11], G[10:5], B[4:0]; defaults to Doodle Green if 0x0000
+
+0x8004: rect1X               – X position of rectangle 1
+0x8005: rect1Y               – Y position of rectangle 1
+0x8006: rect1WidthHeight     – Packed width & height
+0x8007: rect1Color           – 16-bit color: R[15:11], G[10:5], B[4:0]
+
+0x8008: rect2X               – X position of rectangle 2
+0x8009: rect2Y               – Y position of rectangle 2
+0x800A: rect2WidthHeight     – Packed width & height
+0x800B: rect2Color           – 16-bit color: R[15:11], G[10:5], B[4:0]
+
+0x800C: rect3X               – X position of rectangle 3
+0x800D: rect3Y               – Y position of rectangle 3
+0x800E: rect3WidthHeight     – Packed width & height
+0x800F: rect3Color           – 16-bit color: R[15:11], G[10:5], B[4:0]
+
+... continue pattern for rect4 → rect15 ...
+
+0x803C: rect15X              – X position of rectangle 15
+0x803D: rect15Y              – Y position of rectangle 15
+0x803E: rect15WidthHeight    – Packed width & height
+0x803F: rect15Color          – 16-bit color: R[15:11], G[10:5], B[4:0]
