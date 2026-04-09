@@ -104,17 +104,41 @@ Model::Rectangle Model::getRectangle(unsigned int index) {
     rectangle.color = memory[rectangleOffset + 3];
     return rectangle;
 }
-uint16_t Model::getPlayerX() {
-    return memory[3 << 14];
+uint16_t Model::getPlayerOneX() {
+    return memory[0xC000];
 }
-uint16_t Model::getPlayerY() {
-    return memory[(3 << 14) + 2];
+uint16_t Model::getPlayerOneY(){
+    return memory[0xC002];
 }
-uint16_t Model::getPlayerTwoX() {
-    return memory[(3 << 14) +1];
+uint16_t Model::getPlayerOneAnimationIndex(){
+    return memory[0xC004];
 }
-uint16_t Model::getPlayerTwoY() {
-    return memory[(3 << 14) + 3];
+uint16_t Model::getPlayerOneScore(){
+    return memory[0xC00a];
+}
+uint16_t Model::getPlayerOneAudioPitch(){
+    return memory[0xC008];
+}
+uint16_t Model::getPlayerOneBackgroundIndex(){
+    return memory[0xC006];
+}
+uint16_t Model::getPlayerTwoX(){
+    return memory[0xC001];
+}
+uint16_t Model::getPlayerTwoY(){
+    return memory[0xC003];
+}
+uint16_t Model::getPlayerTwoAnimationIndex(){
+    return memory[0xC005];
+}
+uint16_t Model::getPlayerTwoScore(){
+    return memory[0xC00b];
+}
+uint16_t Model::getPlayerTwoAudioPitch(){
+    return memory[0xC009];
+}
+uint16_t Model::getPlayerTwoBackgroundIndex(){
+    return memory[0xC007];
 }
 void Model::initialize() {
     for(int i = 0; i < 16; i++ ) registers[i] = 0;

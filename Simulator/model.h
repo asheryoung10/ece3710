@@ -26,10 +26,18 @@ public:
     void setResetButton(bool resetButton);
     void setVSync(bool vsync);
     Rectangle getRectangle(unsigned int index);
-    uint16_t getPlayerX();
-    uint16_t getPlayerY();
+    uint16_t getPlayerOneX();
+    uint16_t getPlayerOneY();
+    uint16_t getPlayerOneAnimationIndex();
+    uint16_t getPlayerOneScore();
+    uint16_t getPlayerOneAudioPitch();
+    uint16_t getPlayerOneBackgroundIndex();
     uint16_t getPlayerTwoX();
     uint16_t getPlayerTwoY();
+    uint16_t getPlayerTwoAnimationIndex();
+    uint16_t getPlayerTwoScore();
+    uint16_t getPlayerTwoAudioPitch();
+    uint16_t getPlayerTwoBackgroundIndex();
     uint16_t* memory; // 65536 spots.
     uint16_t registers[16];
     uint16_t programCounter;
