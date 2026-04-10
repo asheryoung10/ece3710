@@ -16,13 +16,27 @@ module register_file
     output [DATA_WIDTH-1:0] contentsA,
     output [DATA_WIDTH-1:0] contentsB,
 	 
-	 input wire leftButton,
-	 input wire rightButton,
-	 input wire jumpButton,
-	 	 input wire leftButtonTwo,
-	 input wire rightButtonTwo,
-	 input wire jumpButtonTwo,
-	 input wire vsync,
+	input wire p1Left,
+	input wire p1Right,
+	input wire p1Up,
+	input wire p1Down,
+	
+	input wire p2Left,
+	input wire p2Right,
+	input wire p2Up,
+	input wire p2Down,
+	
+	input wire p3Left,
+	input wire p3Right,
+	input wire p3Up,
+	input wire p3Down,
+	
+	input wire p4Left,
+	input wire p4Right,
+	input wire p4Up,
+	input wire p4Down,
+
+	input wire vsync,
 	 
 	 output wire [15:0] R3
 );
@@ -40,11 +54,14 @@ begin
     end
 end
 
-wire [15:0] reg15input;
-assign reg15input = {8'd0,jumpButtonTwo,leftButtonTwo,rightButtonTwo,jumpButton, leftButton, rightButton, vsync};
+wire [15:0] reg15Input;
+wire [15:0] reg11Input;
+assign reg15Input = {p4Down, p4Up, p4Right, p4Left, p3Down, p3Up, p3Right, p3Left, p2Down, p2Up, p2Right, p2Left, p1Down, p1Up, p1Right, p1Left};
+assign reg11Input = {15'b0, vsync};
 
-assign contentsA = 4'd15 == readAddressA ? reg15input : registers[readAddressA];
-assign contentsB = 4'd15 == readAddressB ? reg15input : registers[readAddressB];
+
+assign contentsA = (4'd11 == readAddressA) ? reg11Input : (4'd15 == readAddressA ? reg15Input : registers[readAddressA]);
+assign contentsB = (4'd11 == readAddressB) ? reg11Input : (4'd15 == readAddressB ? reg15Input : registers[readAddressB]);
 assign R3 = registers[4'd3];
 
 

@@ -48,14 +48,22 @@ wire [15:0] p1X;
 wire [15:0] p1Y;
 wire [15:0] p2X;
 wire [15:0] p2Y;
+wire [15:0] p3X;
+wire [15:0] p3Y;
+wire [15:0] p4X;
+wire [15:0] p4Y;
 wire [15:0] p1AnimationIndex;
 wire [15:0] p2AnimationIndex;
-wire [15:0] p1BackgroundIndex;
-wire [15:0] p2BackgroundIndex;
-wire [15:0] p1Score;
-wire [15:0] p2Score;
-wire [15:0] p1PitchIndex;
-wire [15:0] p2PitchIndex;
+wire [15:0] p3AnimationIndex;
+wire [15:0] p4AnimationIndex;
+
+wire [15:0] p1HighlightColor;
+wire [15:0] p2HighlightColor;
+wire [15:0] p3HighlightColor;
+wire [15:0] p4HighlightColor;
+
+wire [15:0] backgroundOffset;
+wire [15:0] audioPitchIndex;
 
 // VGA wires
 wire [9:0] vgaPixelX;
@@ -88,14 +96,27 @@ vga vga_instance (
 	.clk50(systemClock50MHz),
 	.reset(reset),
 	
-	.p1X(p1X),
-	.p1Y(p1Y),
-	.p2X(p2X),
-	.p2Y(p2Y),
-	.p1AnimationIndex(p1AnimationIndex),
-	.p2AnimationIndex(p2AnimationIndex),
-	.p1BackgroundIndex(p1BackgroundIndex),
-	.p2BackgroundIndex(p2BackgroundIndex),
+		.p1X(p1X),
+		.p1Y(p1Y),
+		.p1AnimationIndex(p1AnimationIndex),
+		.p1HighlightColor(p1HighlightColor),
+		
+		.p2X(p2X),
+		.p2Y(p2Y),
+		.p2AnimationIndex(p2AnimationIndex),
+		.p2HighlightColor(p2HighlightColor),
+		
+	   .p3X(p3X),
+		.p3Y(p3Y),
+		.p3AnimationIndex(p3AnimationIndex),
+		.p3HighlightColor(p3HighlightColor),
+		
+		.p4X(p4X),
+		.p4Y(p4Y),
+		.p4AnimationIndex(p4AnimationIndex),
+		.p4HighlightColor(p4HighlightColor),
+		
+		.backgroundOffset(backgroundOffset),
 	
 	.pixelX(vgaPixelX),
 	.pixelY(vgaPixelY),
@@ -122,19 +143,34 @@ cpu cpu_instance (
 	.memoryReadWriteAddress(memoryReadWriteAddress),
 	.memoryContents(memoryContents),
 	
-	.instructionRegisterContentsOutput(instructionRegisterContentsOutput),
-   .programCounterContentsOutput(programCounterContentsOutput),
-   .programStateRegisterContentsOutput(programStateRegisterContentsOutput),
-   .aluResultOutput(aluResultOutput),
-   .aluFlagsOutput(aluFlagsOutput),
-   .controlUnitState(controlUnitState),
-   .controlUnitNextState(controlUnitNextState),
-	.leftButton(~push_buttons[3] || ~snesButtons[1] || ~snesButtons[10]),
-	.rightButton(~push_buttons[2] || ~snesButtons[8] || ~snesButtons[11]),
-	.jumpButton(~push_buttons[1] || ~snesButtons[0]),
-	.leftButtonTwo(~snesButtons[6]),
-	.rightButtonTwo(~snesButtons[7]),
-	.jumpButtonTwo(~snesButtons[5]),
+	.instructionRegisterContentsOutput(),
+   .programCounterContentsOutput(),
+   .programStateRegisterContentsOutput(),
+   .aluResultOutput(),
+   .aluFlagsOutput(),
+   .controlUnitState(),
+   .controlUnitNextState(),
+	
+	.p1Left(switches[9]),
+	.p1Right(switches[8]),
+	.p1Up(switches[7]),
+	.p1Down(switches[6]),
+	
+	.p2Left(switches[5]),
+	.p2Right(switches[4]),
+	.p2Up(switches[3]),
+	.p2Down(switches[2]),
+	
+	.p3Left(~snesButtons[6]),
+	.p3Right(~snesButtons[7]),
+	.p3Up(~snesButtons[5]),
+	.p3Down(~snesButtons[4]),
+	
+	.p4Left(~snesButtons[1]),
+	.p4Right(~snesButtons[8]),
+	.p4Up(~snesButtons[9]),
+	.p4Down(~snesButtons[0]),
+	
 	.vsync(vga_vs),
 	.R3(register3)
 );
@@ -155,18 +191,28 @@ sharedMemory memory_instance
 	 .g(rectG),
 	 .b(rectB),
 	 
-	 .playerOneX(p1X),
-	 .playerOneY(p1Y),
-	 .playerOneAnimationIndex(p1AnimationIndex),
-	 .playerOneBackgroundIndex(p2BackgroundIndex),
-	 .playerOnePitchIndex(p1PitchIndex),
-	 .playerOneScore(p1Score),
-	 .playerTwoX(p2X),
-	 .playerTwoY(p2Y),
-	 .playerTwoAnimationIndex(p2AnimationIndex),
-	 .playerTwoBackgroundIndex(p2BackgroundIndex),
-	 .playerTwoPitchIndex(p2PitchIndex),
-	 .playerTwoScore(p2Score)
+		.p1X(p1X),
+		.p1Y(p1Y),
+		.p1AnimationIndex(p1AnimationIndex),
+		.p1HighlightColor(p1HighlightColor),
+		
+		.p2X(p2X),
+		.p2Y(p2Y),
+		.p2AnimationIndex(p2AnimationIndex),
+		.p2HighlightColor(p2HighlightColor),
+		
+	   .p3X(p3X),
+		.p3Y(p3Y),
+		.p3AnimationIndex(p3AnimationIndex),
+		.p3HighlightColor(p3HighlightColor),
+		
+		.p4X(p4x),
+		.p4Y(p4Y),
+		.p4AnimationIndex(p4AnimationIndex),
+		.p4HighlightColor(p4HighlightColor),
+		
+		.backgroundOffset(backgroundOffset),
+		.audioPitchIndex()
 );
 
 audio_unit audio_unit_instance (

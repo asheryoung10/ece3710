@@ -2,6 +2,7 @@ module playerMemory (
     input  wire       clk50,
     input  wire [9:0] playerX, // sprite position X on screen
     input  wire [9:0] playerY, // sprite position Y on screen
+	 input wire  [15:0] highlightColor,
     input  wire [9:0] pixelX,  // current pixel being fetched
     input  wire [9:0] pixelY,  // current pixel being fetched
     input  wire [3:0] playerAnimationIndex, // animation frame index
@@ -36,9 +37,9 @@ always @(posedge clk50) begin
         (pixelY >= playerY) && (pixelY < playerY + PLAYER_HEIGHT)) begin
         // Change color based on animation index
         // Red fixed, green varies, blue varies for fun
-        b_next <= rom_data[7:0];                   
-        g_next <= rom_data[15:8];  
-        r_next <= rom_data[23:16];
+        b_next <= rom_data[7:0]    + {highlightColor[4:0],   3'b000};                
+        g_next <= rom_data[15:8] + {highlightColor[10:5],  2'b00};  
+        r_next <= rom_data[23:16] + {highlightColor[15:11], 3'b000};
 
     end else begin
         r_next <= 8'd0;  // Transparent background

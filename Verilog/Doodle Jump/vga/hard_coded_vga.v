@@ -3,14 +3,30 @@ module vga
 (
     input  wire       clk50,
     input  wire       reset,
-    input  wire [15:0] p1X,
-    input  wire [15:0] p1Y,
-	 input  wire [15:0] p2X,
-    input  wire [15:0] p2Y,
-	 input wire [15:0]  p1AnimationIndex,
-	 input wire [15:0]  p2AnimationIndex,
-	 input wire [15:0] p1BackgroundIndex,
-	 input wire [15:0] p2BackgroundIndex,
+	 
+	 
+	   input [15:0] p1X,
+		input [15:0] p1Y,
+		input [15:0] p1AnimationIndex,
+		input [15:0] p1HighlightColor,
+		
+		input [15:0] p2X,
+		input [15:0] p2Y,
+		input [15:0] p2AnimationIndex,
+		input [15:0] p2HighlightColor,
+		
+	   input [15:0] p3X,
+		input [15:0] p3Y,
+		input [15:0] p3AnimationIndex,
+		input [15:0] p3HighlightColor,
+		
+		input [15:0] p4X,
+		input [15:0] p4Y,
+		input [15:0] p4AnimationIndex,
+		input [15:0] p4HighlightColor,
+	
+	input [15:0] backgroundOffset,
+	 
 	 input [7:0] rectR,
 	 input [7:0] rectG,
 	 input [7:0] rectB,
@@ -90,7 +106,7 @@ wire [7:0] backGroundR, backGroundG, backGroundB;
 tileMemory tileMem_inst (
     .clk50(clk25),
     .pixelX(pixelX),
-    .pixelY(pixelY - ({1'b0, p1BackgroundIndex[15:2]})),
+    .pixelY(pixelY - ({1'b0, backgroundOffset[15:2]})),
     .glyphPixelR(backGroundR),
     .glyphPixelG(backGroundG),
     .glyphPixelB(backGroundB)
@@ -98,6 +114,8 @@ tileMemory tileMem_inst (
 
 wire [7:0] p1PixelR, p1PixelG, p1PixelB;
 wire [7:0] p2PixelR, p2PixelG, p2PixelB;
+wire [7:0] p3PixelR, p3PixelG, p3PixelB;
+wire [7:0] p4PixelR, p4PixelG, p4PixelB;
 playerMemory p1Memory_inst (
     .clk50(clk25),
 	 .pixelX(pixelX),
@@ -107,7 +125,8 @@ playerMemory p1Memory_inst (
 	 .playerAnimationIndex(p1AnimationIndex),
     .playerPixelR(p1PixelR),
     .playerPixelG(p1PixelG),
-    .playerPixelB(p1PixelB)
+    .playerPixelB(p1PixelB),
+	 .highlightColor(p1HighlightColor)
 );
 playerMemory p2Memory_inst (
     .clk50(clk25),
@@ -118,14 +137,42 @@ playerMemory p2Memory_inst (
 	 .playerAnimationIndex(p2AnimationIndex),
     .playerPixelR(p2PixelR),
     .playerPixelG(p2PixelG),
-    .playerPixelB(p2PixelB)
+    .playerPixelB(p2PixelB),
+	 .highlightColor(p2HighlightColor)
 );
+playerMemory p3Memory_inst (
+    .clk50(clk25),
+	 .pixelX(pixelX),
+	 .pixelY(pixelY),
+    .playerX(p3X),
+    .playerY(p3Y),
+	 .playerAnimationIndex(p3AnimationIndex),
+    .playerPixelR(p3PixelR),
+    .playerPixelG(p3PixelG),
+    .playerPixelB(p3PixelB),
+	 .highlightColor(p3HighlightColor)
+);
+playerMemory p4Memory_inst (
+    .clk50(clk25),
+	 .pixelX(pixelX),
+	 .pixelY(pixelY),
+    .playerX(p4X),
+    .playerY(p4Y),
+	 .playerAnimationIndex(p4AnimationIndex),
+    .playerPixelR(p4PixelR),
+    .playerPixelG(p4PixelG),
+    .playerPixelB(p4PixelB),
+	 .highlightColor(p4HighlightColor)
+);
+
 
 
 
 reg [7:0] r_reg, g_reg, b_reg;
 wire playerOne_active = (p1PixelR != 0) || (p1PixelG != 0) || (p1PixelB != 0);
 wire playerTwo_active = (p2PixelR != 0) || (p2PixelG != 0) || (p2PixelB != 0);
+wire playerThree_active = (p3PixelR != 0) || (p3PixelG != 0) || (p3PixelB != 0);
+wire playerFour_active = (p4PixelR != 0) || (p4PixelG != 0) || (p4PixelB != 0);
 wire rect_active = (rectR != 0) || (rectG != 0) || (rectB != 0);
 wire background_active = (backGroundR != 0) || (backGroundG != 0) || (backGroundB != 0);
 
@@ -138,6 +185,14 @@ always @(posedge clk25) begin
         r_reg = p2PixelR;
         g_reg = p2PixelG;
         b_reg = p2PixelB;
+	 end else if (playerThree_active) begin
+        r_reg = p3PixelR;
+        g_reg = p3PixelG;
+        b_reg = p3PixelB;
+    end else if (playerFour_active) begin
+        r_reg = p4PixelR;
+        g_reg = p4PixelG;
+        b_reg = p4PixelB;
     end else if (rect_active) begin
         r_reg = rectR;
         g_reg = rectG;
