@@ -1,1 +1,0 @@
-Warning (10268): Verilog HDL information at playerMemory.v(36): always construct contains both blocking and non-blocking assignments File: /home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/vga/playerMemory.v Line: 36
