@@ -37,26 +37,19 @@ always @(posedge clk50) begin
         (pixelY >= playerY) && (pixelY < playerY + PLAYER_HEIGHT)) begin
         // Change color based on animation index
         // Red fixed, green varies, blue varies for fun
-		  if(rom_data[7:0] == 0) begin
-		  b_next <= rom_data[7:0];
-		  end else begin
-		          b_next <= rom_data[7:0]    + {highlightColor[4:0],   3'b000};                
-
-		  end
-		   if(rom_data[15:8] == 0) begin
-		  g_next <= rom_data[15:8];
-		  end else begin
-		          g_next <= rom_data[15:8] + {highlightColor[10:5],  2'b00};  
-
-		  end
-		   if(rom_data[23:16] == 0) begin
-		  r_next <= rom_data[23:16];
-		  end else begin
-		          r_next <= rom_data[23:16] + {highlightColor[15:11], 3'b000};
-
-		  end
-
-    end else begin
+		  // Highlight Blue Channel
+			b_next <= (rom_data[7:0] == 0) ? rom_data[7:0] : 
+						 (rom_data[7:0] + highlightColor[4:0] > 8'd255 ? 8'd255 : rom_data[7:0] + highlightColor[4:0]);
+			
+			// Highlight Green Channel
+			g_next <= (rom_data[15:8] == 0) ? rom_data[15:8] : 
+						 (rom_data[15:8] + highlightColor[10:5] > 8'd255 ? 8'd255 : rom_data[15:8] + highlightColor[10:5]);
+			
+			// Highlight Red Channel
+			r_next <= (rom_data[23:16] == 0) ? rom_data[23:16] : 
+						 (rom_data[23:16] + highlightColor[15:11] > 8'd255 ? 8'd255 : rom_data[23:16] + highlightColor[15:11]);
+		
+	end else begin
         r_next <= 8'd0;  // Transparent background
         g_next <= 8'd0;
         b_next <= 8'd0;
