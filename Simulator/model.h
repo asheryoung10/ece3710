@@ -20,28 +20,37 @@ public:
     } Rectangle;
 
     bool tick();
-    void setLeftButtonPlayerOne(bool leftButton);
-    void setRightButtonPlayerOne(bool rightButton);
-    void setJumpButtonPlayerOne(bool jumpButton);
-    void setLeftButtonPlayerTwo(bool leftButton);
-    void setRightButtonPlayerTwo(bool rightButton);
-    void setJumpButtonPlayerTwo(bool jumpButton);
+
+    void setP1Left(bool pressed);
+    void setP1Right(bool pressed);
+    void setP1Up(bool pressed);
+    void setP1Down(bool pressed);
+    void setP2Left(bool pressed);
+    void setP2Right(bool pressed);
+    void setP2Up(bool pressed);
+    void setP2Down(bool pressed);
+    void setP3Left(bool pressed);
+    void setP3Right(bool pressed);
+    void setP3Up(bool pressed);
+    void setP3Down(bool pressed);
+    void setP4Left(bool pressed);
+    void setP4Right(bool pressed);
+    void setP4Up(bool pressed);
+    void setP4Down(bool pressed);
 
     void setResetButton(bool resetButton);
     void setVSync(bool vsync);
     Rectangle getRectangle(unsigned int index);
-    uint16_t getPlayerOneX();
-    uint16_t getPlayerOneY();
-    uint16_t getPlayerOneAnimationIndex();
-    uint16_t getPlayerOneScore();
-    uint16_t getPlayerOneAudioPitch();
-    uint16_t getPlayerOneBackgroundIndex();
-    uint16_t getPlayerTwoX();
-    uint16_t getPlayerTwoY();
-    uint16_t getPlayerTwoAnimationIndex();
-    uint16_t getPlayerTwoScore();
-    uint16_t getPlayerTwoAudioPitch();
-    uint16_t getPlayerTwoBackgroundIndex();
+
+    uint16_t getPlayerX(int playerIndex);
+    uint16_t getPlayerY(int playerIndex);
+    uint16_t getPlayerAnimationIndex(int playerIndex);
+    uint16_t getPlayerHighlightColor(int playerIndex);
+
+    uint16_t getBackgroundOffset();
+    uint16_t getAudioPitchIndex();
+
+
     uint16_t* memory; // 65536 spots.
     uint16_t registers[16];
     uint16_t programCounter;
@@ -50,12 +59,7 @@ public:
     uint8_t readReg;
 
 private:
-    bool leftButtonPlayerOne;
-    bool rightButtonPlayerOne;
-    bool jumpButtonPlayerOne;
-    bool leftButtonPlayerTwo;
-    bool rightButtonPlayerTwo;
-    bool jumpButtonPlayerTwo;
+    bool p1Left, p1Right, p1Up, p1Down, p2Left, p2Right, p2Up, p2Down, p3Left, p3Right, p3Up, p3Down, p4Left, p4Right, p4Up, p4Down;
 
     bool resetButton;
     bool vsync;

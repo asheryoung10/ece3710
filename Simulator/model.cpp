@@ -17,30 +17,25 @@ Model::Model() {
     initialize();
 }
 
-void Model::setLeftButtonPlayerOne(bool left) {
-    leftButtonPlayerOne = left;
-}
+void Model::setP1Left(bool pressed)  { p1Left  = pressed; }
+void Model::setP1Right(bool pressed) { p1Right = pressed; }
+void Model::setP1Up(bool pressed)    { p1Up    = pressed; }
+void Model::setP1Down(bool pressed)  { p1Down  = pressed; }
 
-void Model::setRightButtonPlayerOne(bool right) {
-    rightButtonPlayerOne = right;
-}
+void Model::setP2Left(bool pressed)  { p2Left  = pressed; }
+void Model::setP2Right(bool pressed) { p2Right = pressed; }
+void Model::setP2Up(bool pressed)    { p2Up    = pressed; }
+void Model::setP2Down(bool pressed)  { p2Down  = pressed; }
 
-void Model::setJumpButtonPlayerOne(bool jump) {
-    jumpButtonPlayerOne = jump;
-}
+void Model::setP3Left(bool pressed)  { p3Left  = pressed; }
+void Model::setP3Right(bool pressed) { p3Right = pressed; }
+void Model::setP3Up(bool pressed)    { p3Up    = pressed; }
+void Model::setP3Down(bool pressed)  { p3Down  = pressed; }
 
-void Model::setLeftButtonPlayerTwo(bool left) {
-    leftButtonPlayerTwo = left;
-}
-
-void Model::setRightButtonPlayerTwo(bool right) {
-    rightButtonPlayerTwo = right;
-}
-
-void Model::setJumpButtonPlayerTwo(bool jump) {
-    jumpButtonPlayerTwo = jump;
-}
-
+void Model::setP4Left(bool pressed)  { p4Left  = pressed; }
+void Model::setP4Right(bool pressed) { p4Right = pressed; }
+void Model::setP4Up(bool pressed)    { p4Up    = pressed; }
+void Model::setP4Down(bool pressed)  { p4Down  = pressed; }
 
 void Model::setResetButton(bool reset) {
     resetButton = reset;
@@ -117,42 +112,34 @@ Model::Rectangle Model::getRectangle(unsigned int index) {
     rectangle.color = memory[rectangleOffset + 3];
     return rectangle;
 }
-uint16_t Model::getPlayerOneX() {
-    return memory[0xC000];
+uint16_t Model::getPlayerX(int playerIndex) {
+    uint16_t base = 0xC000 + playerIndex * 4;
+    return memory[base + 0];
 }
-uint16_t Model::getPlayerOneY(){
-    return memory[0xC002];
+
+uint16_t Model::getPlayerY(int playerIndex) {
+    uint16_t base = 0xC000 + playerIndex * 4;
+    return memory[base + 1];
 }
-uint16_t Model::getPlayerOneAnimationIndex(){
-    return memory[0xC004];
+
+uint16_t Model::getPlayerAnimationIndex(int playerIndex) {
+    uint16_t base = 0xC000 + playerIndex * 4;
+    return memory[base + 2];
 }
-uint16_t Model::getPlayerOneScore(){
-    return memory[0xC00a];
+
+uint16_t Model::getPlayerHighlightColor(int playerIndex) {
+    uint16_t base = 0xC000 + playerIndex * 4;
+    return memory[base + 3];
 }
-uint16_t Model::getPlayerOneAudioPitch(){
-    return memory[0xC008];
+
+uint16_t Model::getBackgroundOffset() {
+    return memory[0xC010];
 }
-uint16_t Model::getPlayerOneBackgroundIndex(){
-    return memory[0xC006];
+uint16_t Model::getAudioPitchIndex() {
+    return memory[0xC011];
 }
-uint16_t Model::getPlayerTwoX(){
-    return memory[0xC001];
-}
-uint16_t Model::getPlayerTwoY(){
-    return memory[0xC003];
-}
-uint16_t Model::getPlayerTwoAnimationIndex(){
-    return memory[0xC005];
-}
-uint16_t Model::getPlayerTwoScore(){
-    return memory[0xC00b];
-}
-uint16_t Model::getPlayerTwoAudioPitch(){
-    return memory[0xC009];
-}
-uint16_t Model::getPlayerTwoBackgroundIndex(){
-    return memory[0xC007];
-}
+
+
 void Model::initialize() {
     for(int i = 0; i < 16; i++ ) registers[i] = 0;
     programCounter = 0;
@@ -161,12 +148,25 @@ void Model::initialize() {
     fFlag = false;
     nFlag = false;
     zFlag = false;
-    leftButtonPlayerOne = false;
-    rightButtonPlayerOne = false;
-    jumpButtonPlayerOne = false;
-    leftButtonPlayerTwo = false;
-    rightButtonPlayerTwo = false;
-    jumpButtonPlayerTwo = false;
+    p1Left  = false;
+    p1Right = false;
+    p1Up    = false;
+    p1Down  = false;
+
+    p2Left  = false;
+    p2Right = false;
+    p2Up    = false;
+    p2Down  = false;
+
+    p3Left  = false;
+    p3Right = false;
+    p3Up    = false;
+    p3Down  = false;
+
+    p4Left  = false;
+    p4Right = false;
+    p4Up    = false;
+    p4Down  = false;
     readReg = 0;
     readNextCycle = false;
     vsync = false;
@@ -188,7 +188,27 @@ bool Model::tick() {
     
 
     // LSB is vsync, then right, left, jump buttons
-    registers[15] = (jumpButtonPlayerTwo << 6) | (leftButtonPlayerTwo << 5) | (rightButtonPlayerTwo << 4) |(jumpButtonPlayerOne << 3) | (leftButtonPlayerOne << 2) | (rightButtonPlayerOne << 1) | vsync;
+    registers[15] =
+        (p4Down << 16) |
+        (p4Up   << 15) |
+        (p4Right << 14) |
+        (p4Left<< 13) |
+
+        (p3Down << 12) |
+        (p3Up   << 11) |
+        (p3Right << 10) |
+        (p3Left<<  9) |
+
+        (p2Down <<  8) |
+        (p2Up   <<  7) |
+        (p2Right <<  6) |
+        (p2Left<<  5) |
+
+        (p1Down <<  4) |
+        (p1Up   <<  3) |
+        (p1Right <<  2) |
+        (p1Left<<  1);
+    registers[11] = vsync;
 
     uint16_t instruction = memory[programCounter];
     uint8_t opcodeUpper = (instruction >> 12);
