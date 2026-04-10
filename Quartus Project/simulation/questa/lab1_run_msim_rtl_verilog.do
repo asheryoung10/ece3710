@@ -5,6 +5,10 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/snes {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/snes/SNES_latchGen.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/snes {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/snes/SNES_Controller.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/snes {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/snes/SNES_clkdiv.v}
+vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/snes {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/snes/snes.v}
 vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/seven_seg_decoder.v}
 vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/sixteen_bit_seven_seg_decoder.v}
 vlog -vlog01compat -work work +incdir+/home/u1462567/Desktop/ece3710/Verilog/Doodle\ Jump/audio {/home/u1462567/Desktop/ece3710/Verilog/Doodle Jump/audio/top.v}

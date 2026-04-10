@@ -1,5 +1,5 @@
 Timing Analyzer report for lab1
-Fri Apr 10 14:57:54 2026
+Fri Apr 10 16:38:20 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -102,14 +102,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 2.73        ;
+; Average used               ; 2.87        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  58.0%      ;
-;     Processor 3            ;  57.7%      ;
-;     Processor 4            ;  57.0%      ;
+;     Processor 2            ;  62.9%      ;
+;     Processor 3            ;  62.2%      ;
+;     Processor 4            ;  61.5%      ;
 +----------------------------+-------------+
 
 
@@ -133,12 +133,12 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+-------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                    ; Note ;
 +------------+-----------------+-------------------------------------------------------------------------------+------+
-; 52.1 MHz   ; 52.1 MHz        ; vga:vga_instance|clk25                                                        ;      ;
-; 84.74 MHz  ; 84.74 MHz       ; systemClock50MHz                                                              ;      ;
-; 157.41 MHz ; 157.41 MHz      ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ;      ;
-; 224.72 MHz ; 224.72 MHz      ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ;      ;
-; 266.31 MHz ; 266.31 MHz      ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ;      ;
-; 284.66 MHz ; 284.66 MHz      ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ;      ;
+; 40.23 MHz  ; 40.23 MHz       ; vga:vga_instance|clk25                                                        ;      ;
+; 84.04 MHz  ; 84.04 MHz       ; systemClock50MHz                                                              ;      ;
+; 154.2 MHz  ; 154.2 MHz       ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ;      ;
+; 238.66 MHz ; 238.66 MHz      ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ;      ;
+; 269.11 MHz ; 269.11 MHz      ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ;      ;
+; 316.56 MHz ; 316.56 MHz      ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ;      ;
 +------------+-----------------+-------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -154,29 +154,29 @@ HTML report is unavailable in plain text report export.
 +-------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                         ; Slack   ; End Point TNS ;
 +-------------------------------------------------------------------------------+---------+---------------+
-; vga:vga_instance|clk25                                                        ; -20.464 ; -37040.991    ;
-; systemClock50MHz                                                              ; -10.801 ; -15954.633    ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -5.353  ; -256.082      ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -3.834  ; -182.482      ;
-; push_buttons[0]                                                               ; -3.612  ; -3.612        ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -2.513  ; -16.132       ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -1.729  ; -1.729        ;
+; vga:vga_instance|clk25                                                        ; -26.171 ; -39511.193    ;
+; systemClock50MHz                                                              ; -10.899 ; -26023.786    ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -5.485  ; -257.417      ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -3.950  ; -184.126      ;
+; push_buttons[0]                                                               ; -3.288  ; -3.288        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -2.217  ; -14.018       ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -1.595  ; -1.595        ;
 +-------------------------------------------------------------------------------+---------+---------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Hold Summary                                                                    ;
-+-------------------------------------------------------------------------------+-------+---------------+
-; Clock                                                                         ; Slack ; End Point TNS ;
-+-------------------------------------------------------------------------------+-------+---------------+
-; systemClock50MHz                                                              ; 0.230 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; 0.438 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 0.446 ; 0.000         ;
-; vga:vga_instance|clk25                                                        ; 0.484 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 0.485 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0.590 ; 0.000         ;
-; push_buttons[0]                                                               ; 0.737 ; 0.000         ;
-+-------------------------------------------------------------------------------+-------+---------------+
++--------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Hold Summary                                                                     ;
++-------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                         ; Slack  ; End Point TNS ;
++-------------------------------------------------------------------------------+--------+---------------+
+; systemClock50MHz                                                              ; -0.483 ; -0.483        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 0.272  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0.324  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; 0.431  ; 0.000         ;
+; vga:vga_instance|clk25                                                        ; 0.565  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 0.586  ; 0.000         ;
+; push_buttons[0]                                                               ; 1.051  ; 0.000         ;
++-------------------------------------------------------------------------------+--------+---------------+
 
 
 +--------------------------------------------------------------------------------------------------------+
@@ -184,9 +184,9 @@ HTML report is unavailable in plain text report export.
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -6.781 ; -73.536       ;
-; vga:vga_instance|clk25                                                        ; -6.157 ; -140.349      ;
-; systemClock50MHz                                                              ; -4.557 ; -1413.099     ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -7.119 ; -76.973       ;
+; vga:vga_instance|clk25                                                        ; -6.157 ; -162.614      ;
+; systemClock50MHz                                                              ; -4.586 ; -1411.074     ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -195,9 +195,9 @@ HTML report is unavailable in plain text report export.
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; systemClock50MHz                                                              ; 1.432 ; 0.000         ;
-; vga:vga_instance|clk25                                                        ; 2.882 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 3.566 ; 0.000         ;
+; systemClock50MHz                                                              ; 1.392 ; 0.000         ;
+; vga:vga_instance|clk25                                                        ; 2.811 ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 3.832 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -206,13 +206,13 @@ HTML report is unavailable in plain text report export.
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; systemClock50MHz                                                              ; -2.225 ; -2381.497     ;
-; vga:vga_instance|clk25                                                        ; -2.174 ; -9895.360     ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -0.394 ; -48.183       ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -0.394 ; -36.432       ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -0.394 ; -4.546        ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -0.394 ; -0.643        ;
-; push_buttons[0]                                                               ; -0.043 ; -0.078        ;
+; systemClock50MHz                                                              ; -2.225 ; -2922.875     ;
+; vga:vga_instance|clk25                                                        ; -2.174 ; -9814.946     ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -0.394 ; -44.208       ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -0.394 ; -32.616       ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -0.394 ; -4.089        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -0.394 ; -0.518        ;
+; push_buttons[0]                                                               ; -0.061 ; -0.071        ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -228,12 +228,12 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------+-----------------+-------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                    ; Note ;
 +------------+-----------------+-------------------------------------------------------------------------------+------+
-; 52.85 MHz  ; 52.85 MHz       ; vga:vga_instance|clk25                                                        ;      ;
-; 87.47 MHz  ; 87.47 MHz       ; systemClock50MHz                                                              ;      ;
-; 160.93 MHz ; 160.93 MHz      ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ;      ;
-; 227.27 MHz ; 227.27 MHz      ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ;      ;
-; 268.89 MHz ; 268.89 MHz      ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ;      ;
-; 278.4 MHz  ; 278.4 MHz       ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ;      ;
+; 41.36 MHz  ; 41.36 MHz       ; vga:vga_instance|clk25                                                        ;      ;
+; 86.77 MHz  ; 86.77 MHz       ; systemClock50MHz                                                              ;      ;
+; 157.58 MHz ; 157.58 MHz      ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ;      ;
+; 234.96 MHz ; 234.96 MHz      ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ;      ;
+; 269.91 MHz ; 269.91 MHz      ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ;      ;
+; 315.26 MHz ; 315.26 MHz      ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ;      ;
 +------------+-----------------+-------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -243,29 +243,29 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                         ; Slack   ; End Point TNS ;
 +-------------------------------------------------------------------------------+---------+---------------+
-; vga:vga_instance|clk25                                                        ; -20.441 ; -36666.802    ;
-; systemClock50MHz                                                              ; -10.432 ; -15344.887    ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -5.214  ; -249.227      ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -3.710  ; -177.343      ;
-; push_buttons[0]                                                               ; -3.701  ; -3.701        ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -2.592  ; -16.450       ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -1.700  ; -1.700        ;
+; vga:vga_instance|clk25                                                        ; -25.771 ; -39137.903    ;
+; systemClock50MHz                                                              ; -10.525 ; -25003.512    ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -5.346  ; -249.292      ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -3.913  ; -180.147      ;
+; push_buttons[0]                                                               ; -3.411  ; -3.411        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -2.331  ; -14.719       ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -1.628  ; -1.628        ;
 +-------------------------------------------------------------------------------+---------+---------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Slow 1100mV 0C Model Hold Summary                                                                     ;
-+-------------------------------------------------------------------------------+-------+---------------+
-; Clock                                                                         ; Slack ; End Point TNS ;
-+-------------------------------------------------------------------------------+-------+---------------+
-; systemClock50MHz                                                              ; 0.170 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; 0.439 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 0.459 ; 0.000         ;
-; vga:vga_instance|clk25                                                        ; 0.493 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 0.501 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0.557 ; 0.000         ;
-; push_buttons[0]                                                               ; 0.838 ; 0.000         ;
-+-------------------------------------------------------------------------------+-------+---------------+
++--------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Hold Summary                                                                      ;
++-------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                         ; Slack  ; End Point TNS ;
++-------------------------------------------------------------------------------+--------+---------------+
+; systemClock50MHz                                                              ; -0.633 ; -0.633        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 0.341  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0.361  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; 0.431  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 0.559  ; 0.000         ;
+; vga:vga_instance|clk25                                                        ; 0.560  ; 0.000         ;
+; push_buttons[0]                                                               ; 1.145  ; 0.000         ;
++-------------------------------------------------------------------------------+--------+---------------+
 
 
 +--------------------------------------------------------------------------------------------------------+
@@ -273,9 +273,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -6.714 ; -72.837       ;
-; vga:vga_instance|clk25                                                        ; -6.158 ; -140.516      ;
-; systemClock50MHz                                                              ; -4.349 ; -1347.875     ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -7.043 ; -76.265       ;
+; vga:vga_instance|clk25                                                        ; -6.151 ; -162.777      ;
+; systemClock50MHz                                                              ; -4.373 ; -1346.477     ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -284,9 +284,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; systemClock50MHz                                                              ; 1.345 ; 0.000         ;
-; vga:vga_instance|clk25                                                        ; 3.034 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 3.630 ; 0.000         ;
+; systemClock50MHz                                                              ; 1.329 ; 0.000         ;
+; vga:vga_instance|clk25                                                        ; 2.973 ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 3.917 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -295,13 +295,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; systemClock50MHz                                                              ; -2.225 ; -2436.507     ;
-; vga:vga_instance|clk25                                                        ; -2.174 ; -9875.240     ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -0.394 ; -46.809       ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -0.394 ; -35.889       ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -0.394 ; -4.509        ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -0.394 ; -0.599        ;
-; push_buttons[0]                                                               ; -0.049 ; -0.090        ;
+; systemClock50MHz                                                              ; -2.225 ; -3009.115     ;
+; vga:vga_instance|clk25                                                        ; -2.174 ; -9801.321     ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -0.394 ; -43.812       ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -0.394 ; -32.412       ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -0.394 ; -4.111        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -0.394 ; -0.565        ;
+; push_buttons[0]                                                               ; -0.037 ; -0.037        ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -317,29 +317,29 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                         ; Slack   ; End Point TNS ;
 +-------------------------------------------------------------------------------+---------+---------------+
-; vga:vga_instance|clk25                                                        ; -11.578 ; -20871.151    ;
-; systemClock50MHz                                                              ; -6.458  ; -9253.491     ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -2.804  ; -132.778      ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -2.402  ; -110.775      ;
-; push_buttons[0]                                                               ; -1.854  ; -1.854        ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -1.420  ; -8.396        ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -0.950  ; -0.950        ;
+; vga:vga_instance|clk25                                                        ; -15.291 ; -22411.245    ;
+; systemClock50MHz                                                              ; -6.544  ; -15382.860    ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -2.765  ; -129.478      ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -2.611  ; -115.335      ;
+; push_buttons[0]                                                               ; -1.556  ; -1.556        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -1.245  ; -7.035        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -0.895  ; -0.895        ;
 +-------------------------------------------------------------------------------+---------+---------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Fast 1100mV 85C Model Hold Summary                                                                    ;
-+-------------------------------------------------------------------------------+-------+---------------+
-; Clock                                                                         ; Slack ; End Point TNS ;
-+-------------------------------------------------------------------------------+-------+---------------+
-; systemClock50MHz                                                              ; 0.071 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 0.112 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; 0.163 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 0.166 ; 0.000         ;
-; vga:vga_instance|clk25                                                        ; 0.186 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0.345 ; 0.000         ;
-; push_buttons[0]                                                               ; 0.452 ; 0.000         ;
-+-------------------------------------------------------------------------------+-------+---------------+
++--------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Hold Summary                                                                     ;
++-------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                         ; Slack  ; End Point TNS ;
++-------------------------------------------------------------------------------+--------+---------------+
+; systemClock50MHz                                                              ; -0.374 ; -0.374        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -0.001 ; -0.001        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; 0.160  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0.212  ; 0.000         ;
+; vga:vga_instance|clk25                                                        ; 0.268  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 0.271  ; 0.000         ;
+; push_buttons[0]                                                               ; 0.495  ; 0.000         ;
++-------------------------------------------------------------------------------+--------+---------------+
 
 
 +--------------------------------------------------------------------------------------------------------+
@@ -347,9 +347,9 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -4.049 ; -43.769       ;
-; vga:vga_instance|clk25                                                        ; -3.631 ; -82.537       ;
-; systemClock50MHz                                                              ; -2.772 ; -860.283      ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -4.252 ; -45.948       ;
+; vga:vga_instance|clk25                                                        ; -3.640 ; -96.292       ;
+; systemClock50MHz                                                              ; -2.787 ; -859.124      ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -358,9 +358,9 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; systemClock50MHz                                                              ; 0.722 ; 0.000         ;
-; vga:vga_instance|clk25                                                        ; 1.388 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 1.881 ; 0.000         ;
+; systemClock50MHz                                                              ; 0.715 ; 0.000         ;
+; vga:vga_instance|clk25                                                        ; 1.412 ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 2.040 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -369,13 +369,13 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; vga:vga_instance|clk25                                                        ; -2.174 ; -9685.276     ;
-; systemClock50MHz                                                              ; -2.174 ; -1685.085     ;
-; push_buttons[0]                                                               ; -0.231 ; -0.786        ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -0.056 ; -0.817        ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -0.016 ; -0.270        ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 0.046  ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0.100  ; 0.000         ;
+; vga:vga_instance|clk25                                                        ; -2.174 ; -9628.436     ;
+; systemClock50MHz                                                              ; -2.174 ; -1776.678     ;
+; push_buttons[0]                                                               ; -0.220 ; -0.715        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; 0.047  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 0.055  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0.125  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 0.125  ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -391,13 +391,13 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                         ; Slack   ; End Point TNS ;
 +-------------------------------------------------------------------------------+---------+---------------+
-; vga:vga_instance|clk25                                                        ; -10.567 ; -18796.038    ;
-; systemClock50MHz                                                              ; -5.670  ; -8058.312     ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -2.495  ; -118.031      ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -2.280  ; -105.258      ;
-; push_buttons[0]                                                               ; -1.698  ; -1.698        ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -1.286  ; -7.646        ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -0.863  ; -0.863        ;
+; vga:vga_instance|clk25                                                        ; -13.893 ; -20247.563    ;
+; systemClock50MHz                                                              ; -5.740  ; -13359.992    ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -2.505  ; -110.329      ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -2.492  ; -116.282      ;
+; push_buttons[0]                                                               ; -1.398  ; -1.398        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -1.168  ; -6.632        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -0.807  ; -0.807        ;
 +-------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -406,13 +406,13 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; systemClock50MHz                                                              ; -0.047 ; -0.047        ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 0.103  ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; 0.149  ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 0.151  ; 0.000         ;
-; vga:vga_instance|clk25                                                        ; 0.200  ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0.312  ; 0.000         ;
-; push_buttons[0]                                                               ; 0.434  ; 0.000         ;
+; systemClock50MHz                                                              ; -0.439 ; -0.439        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 0.018  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; 0.145  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0.188  ; 0.000         ;
+; vga:vga_instance|clk25                                                        ; 0.244  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 0.250  ; 0.000         ;
+; push_buttons[0]                                                               ; 0.466  ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -421,9 +421,9 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -3.988 ; -43.215       ;
-; vga:vga_instance|clk25                                                        ; -3.644 ; -82.950       ;
-; systemClock50MHz                                                              ; -2.686 ; -833.549      ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -4.179 ; -45.238       ;
+; vga:vga_instance|clk25                                                        ; -3.644 ; -96.688       ;
+; systemClock50MHz                                                              ; -2.700 ; -832.213      ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -432,9 +432,9 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                         ; Slack ; End Point TNS ;
 +-------------------------------------------------------------------------------+-------+---------------+
-; systemClock50MHz                                                              ; 0.575 ; 0.000         ;
-; vga:vga_instance|clk25                                                        ; 1.460 ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 1.867 ; 0.000         ;
+; systemClock50MHz                                                              ; 0.612 ; 0.000         ;
+; vga:vga_instance|clk25                                                        ; 1.481 ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 2.020 ; 0.000         ;
 +-------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -443,13 +443,13 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                         ; Slack  ; End Point TNS ;
 +-------------------------------------------------------------------------------+--------+---------------+
-; vga:vga_instance|clk25                                                        ; -2.174 ; -9642.191     ;
-; systemClock50MHz                                                              ; -2.174 ; -1684.677     ;
-; push_buttons[0]                                                               ; -0.215 ; -0.744        ;
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -0.011 ; -0.129        ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; 0.028  ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 0.071  ; 0.000         ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0.118  ; 0.000         ;
+; vga:vga_instance|clk25                                                        ; -2.174 ; -9595.184     ;
+; systemClock50MHz                                                              ; -2.174 ; -1774.006     ;
+; push_buttons[0]                                                               ; -0.193 ; -0.591        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; 0.075  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 0.079  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 0.127  ; 0.000         ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0.144  ; 0.000         ;
 +-------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -465,22 +465,22 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------------------------------------------------+------------+--------+-----------+---------+---------------------+
 ; Clock                                                                          ; Setup      ; Hold   ; Recovery  ; Removal ; Minimum Pulse Width ;
 +--------------------------------------------------------------------------------+------------+--------+-----------+---------+---------------------+
-; Worst-case Slack                                                               ; -20.464    ; -0.047 ; -6.781    ; 0.575   ; -2.225              ;
-;  audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -3.834     ; 0.151  ; -6.781    ; 1.867   ; -0.394              ;
-;  audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -1.729     ; 0.312  ; N/A       ; N/A     ; -0.394              ;
-;  audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -5.353     ; 0.149  ; N/A       ; N/A     ; -0.394              ;
-;  audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -2.592     ; 0.103  ; N/A       ; N/A     ; -0.394              ;
-;  push_buttons[0]                                                               ; -3.701     ; 0.434  ; N/A       ; N/A     ; -0.231              ;
-;  systemClock50MHz                                                              ; -10.801    ; -0.047 ; -4.557    ; 0.575   ; -2.225              ;
-;  vga:vga_instance|clk25                                                        ; -20.464    ; 0.186  ; -6.158    ; 1.388   ; -2.174              ;
-; Design-wide TNS                                                                ; -53455.661 ; -0.047 ; -1626.984 ; 0.0     ; -12399.643          ;
-;  audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -182.482   ; 0.000  ; -73.536   ; 0.000   ; -36.432             ;
-;  audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -1.729     ; 0.000  ; N/A       ; N/A     ; -0.643              ;
-;  audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -256.082   ; 0.000  ; N/A       ; N/A     ; -48.183             ;
-;  audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -16.450    ; 0.000  ; N/A       ; N/A     ; -4.546              ;
-;  push_buttons[0]                                                               ; -3.701     ; 0.000  ; N/A       ; N/A     ; -0.786              ;
-;  systemClock50MHz                                                              ; -15954.633 ; -0.047 ; -1413.099 ; 0.000   ; -2436.507           ;
-;  vga:vga_instance|clk25                                                        ; -37040.991 ; 0.000  ; -140.516  ; 0.000   ; -9895.360           ;
+; Worst-case Slack                                                               ; -26.171    ; -0.633 ; -7.119    ; 0.612   ; -2.225              ;
+;  audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -3.950     ; 0.250  ; -7.119    ; 2.020   ; -0.394              ;
+;  audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -1.628     ; 0.188  ; N/A       ; N/A     ; -0.394              ;
+;  audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -5.485     ; 0.145  ; N/A       ; N/A     ; -0.394              ;
+;  audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -2.331     ; -0.001 ; N/A       ; N/A     ; -0.394              ;
+;  push_buttons[0]                                                               ; -3.411     ; 0.466  ; N/A       ; N/A     ; -0.220              ;
+;  systemClock50MHz                                                              ; -10.899    ; -0.633 ; -4.586    ; 0.612   ; -2.225              ;
+;  vga:vga_instance|clk25                                                        ; -26.171    ; 0.244  ; -6.157    ; 1.412   ; -2.174              ;
+; Design-wide TNS                                                                ; -65995.423 ; -0.633 ; -1650.661 ; 0.0     ; -12891.373          ;
+;  audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; -184.126   ; 0.000  ; -76.973   ; 0.000   ; -32.616             ;
+;  audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; -1.628     ; 0.000  ; N/A       ; N/A     ; -0.565              ;
+;  audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; -257.417   ; 0.000  ; N/A       ; N/A     ; -44.208             ;
+;  audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; -14.719    ; -0.001 ; N/A       ; N/A     ; -4.111              ;
+;  push_buttons[0]                                                               ; -3.411     ; 0.000  ; N/A       ; N/A     ; -0.715              ;
+;  systemClock50MHz                                                              ; -26023.786 ; -0.633 ; -1411.074 ; 0.000   ; -3009.115           ;
+;  vga:vga_instance|clk25                                                        ; -39511.193 ; 0.000  ; -162.777  ; 0.000   ; -9814.946           ;
 +--------------------------------------------------------------------------------+------------+--------+-----------+---------+---------------------+
 
 
@@ -1004,12 +1004,12 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+----------+----------+----------+
 ; From Clock                                                                    ; To Clock                                                                      ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+----------+----------+----------+
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 474          ; 0        ; 0        ; 0        ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 471          ; 0        ; 0        ; 0        ;
 ; push_buttons[0]                                                               ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 51           ; 51       ; 0        ; 0        ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0            ; 0        ; 1        ; 1        ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0            ; 0        ; 1        ; 0        ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0            ; 0        ; 4        ; 0        ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; 4685         ; 0        ; 0        ; 0        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; 4668         ; 0        ; 0        ; 0        ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 6            ; 6        ; 0        ; 0        ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 1            ; 1        ; 0        ; 0        ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 29           ; 0        ; 0        ; 0        ;
@@ -1017,8 +1017,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; systemClock50MHz                                                              ; 1            ; 1        ; 0        ; 0        ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; systemClock50MHz                                                              ; 1            ; 1        ; 0        ; 0        ;
 ; push_buttons[0]                                                               ; systemClock50MHz                                                              ; 334          ; 333      ; 0        ; 0        ;
-; systemClock50MHz                                                              ; systemClock50MHz                                                              ; 10965311     ; 0        ; 0        ; 0        ;
-; vga:vga_instance|clk25                                                        ; systemClock50MHz                                                              ; 164566       ; 1        ; 0        ; 0        ;
+; systemClock50MHz                                                              ; systemClock50MHz                                                              ; 12171327     ; 0        ; 0        ; 0        ;
+; vga:vga_instance|clk25                                                        ; systemClock50MHz                                                              ; 178489       ; 1        ; 0        ; 0        ;
 ; systemClock50MHz                                                              ; vga:vga_instance|clk25                                                        ; > 2147483647 ; 0        ; 0        ; 0        ;
 ; vga:vga_instance|clk25                                                        ; vga:vga_instance|clk25                                                        ; > 2147483647 ; 0        ; 0        ; 0        ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+----------+----------+----------+
@@ -1030,12 +1030,12 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+----------+----------+----------+
 ; From Clock                                                                    ; To Clock                                                                      ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+----------+----------+----------+
-; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 474          ; 0        ; 0        ; 0        ;
+; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 471          ; 0        ; 0        ; 0        ;
 ; push_buttons[0]                                                               ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 51           ; 51       ; 0        ; 0        ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0            ; 0        ; 1        ; 1        ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0            ; 0        ; 1        ; 0        ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; 0            ; 0        ; 4        ; 0        ;
-; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; 4685         ; 0        ; 0        ; 0        ;
+; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; 4668         ; 0        ; 0        ; 0        ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]             ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 6            ; 6        ; 0        ; 0        ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]             ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 1            ; 1        ; 0        ; 0        ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; 29           ; 0        ; 0        ; 0        ;
@@ -1043,8 +1043,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; systemClock50MHz                                                              ; 1            ; 1        ; 0        ; 0        ;
 ; audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]          ; systemClock50MHz                                                              ; 1            ; 1        ; 0        ; 0        ;
 ; push_buttons[0]                                                               ; systemClock50MHz                                                              ; 334          ; 333      ; 0        ; 0        ;
-; systemClock50MHz                                                              ; systemClock50MHz                                                              ; 10965311     ; 0        ; 0        ; 0        ;
-; vga:vga_instance|clk25                                                        ; systemClock50MHz                                                              ; 164566       ; 1        ; 0        ; 0        ;
+; systemClock50MHz                                                              ; systemClock50MHz                                                              ; 12171327     ; 0        ; 0        ; 0        ;
+; vga:vga_instance|clk25                                                        ; systemClock50MHz                                                              ; 178489       ; 1        ; 0        ; 0        ;
 ; systemClock50MHz                                                              ; vga:vga_instance|clk25                                                        ; > 2147483647 ; 0        ; 0        ; 0        ;
 ; vga:vga_instance|clk25                                                        ; vga:vga_instance|clk25                                                        ; > 2147483647 ; 0        ; 0        ; 0        ;
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+----------+----------+----------+
@@ -1057,8 +1057,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock      ; To Clock                                                                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------+-------------------------------------------------------------------------------+----------+----------+----------+----------+
 ; push_buttons[0] ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 11       ; 11       ; 0        ; 0        ;
-; push_buttons[0] ; systemClock50MHz                                                              ; 312      ; 312      ; 0        ; 0        ;
-; push_buttons[0] ; vga:vga_instance|clk25                                                        ; 23       ; 23       ; 0        ; 0        ;
+; push_buttons[0] ; systemClock50MHz                                                              ; 311      ; 311      ; 0        ; 0        ;
+; push_buttons[0] ; vga:vga_instance|clk25                                                        ; 27       ; 27       ; 0        ; 0        ;
 +-----------------+-------------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1069,8 +1069,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock      ; To Clock                                                                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------+-------------------------------------------------------------------------------+----------+----------+----------+----------+
 ; push_buttons[0] ; audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg ; 11       ; 11       ; 0        ; 0        ;
-; push_buttons[0] ; systemClock50MHz                                                              ; 312      ; 312      ; 0        ; 0        ;
-; push_buttons[0] ; vga:vga_instance|clk25                                                        ; 23       ; 23       ; 0        ; 0        ;
+; push_buttons[0] ; systemClock50MHz                                                              ; 311      ; 311      ; 0        ; 0        ;
+; push_buttons[0] ; vga:vga_instance|clk25                                                        ; 27       ; 27       ; 0        ; 0        ;
 +-----------------+-------------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1095,7 +1095,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0     ;
 ; Unconstrained Clocks            ; 0     ; 0     ;
 ; Unconstrained Input Ports       ; 13    ; 13    ;
-; Unconstrained Input Port Paths  ; 11333 ; 11333 ;
+; Unconstrained Input Port Paths  ; 20500 ; 20500 ;
 ; Unconstrained Output Ports      ; 64    ; 64    ;
 ; Unconstrained Output Port Paths ; 175   ; 175   ;
 +---------------------------------+-------+-------+
@@ -1308,7 +1308,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Fri Apr 10 14:57:30 2026
+    Info: Processing started: Fri Apr 10 16:37:47 2026
 Info: Command: quartus_sta lab1 -c lab1
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1332,48 +1332,48 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -20.464
+Info (332146): Worst-case setup slack is -26.171
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -20.464          -37040.991 vga:vga_instance|clk25 
-    Info (332119):   -10.801          -15954.633 systemClock50MHz 
-    Info (332119):    -5.353            -256.082 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
-    Info (332119):    -3.834            -182.482 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):    -3.612              -3.612 push_buttons[0] 
-    Info (332119):    -2.513             -16.132 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
-    Info (332119):    -1.729              -1.729 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
-Info (332146): Worst-case hold slack is 0.230
+    Info (332119):   -26.171          -39511.193 vga:vga_instance|clk25 
+    Info (332119):   -10.899          -26023.786 systemClock50MHz 
+    Info (332119):    -5.485            -257.417 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
+    Info (332119):    -3.950            -184.126 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -3.288              -3.288 push_buttons[0] 
+    Info (332119):    -2.217             -14.018 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -1.595              -1.595 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
+Info (332146): Worst-case hold slack is -0.483
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.230               0.000 systemClock50MHz 
-    Info (332119):     0.438               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
-    Info (332119):     0.446               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):     0.484               0.000 vga:vga_instance|clk25 
-    Info (332119):     0.485               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
-    Info (332119):     0.590               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
-    Info (332119):     0.737               0.000 push_buttons[0] 
-Info (332146): Worst-case recovery slack is -6.781
+    Info (332119):    -0.483              -0.483 systemClock50MHz 
+    Info (332119):     0.272               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
+    Info (332119):     0.324               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
+    Info (332119):     0.431               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
+    Info (332119):     0.565               0.000 vga:vga_instance|clk25 
+    Info (332119):     0.586               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     1.051               0.000 push_buttons[0] 
+Info (332146): Worst-case recovery slack is -7.119
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.781             -73.536 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):    -6.157            -140.349 vga:vga_instance|clk25 
-    Info (332119):    -4.557           -1413.099 systemClock50MHz 
-Info (332146): Worst-case removal slack is 1.432
+    Info (332119):    -7.119             -76.973 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -6.157            -162.614 vga:vga_instance|clk25 
+    Info (332119):    -4.586           -1411.074 systemClock50MHz 
+Info (332146): Worst-case removal slack is 1.392
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.432               0.000 systemClock50MHz 
-    Info (332119):     2.882               0.000 vga:vga_instance|clk25 
-    Info (332119):     3.566               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     1.392               0.000 systemClock50MHz 
+    Info (332119):     2.811               0.000 vga:vga_instance|clk25 
+    Info (332119):     3.832               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
 Info (332146): Worst-case minimum pulse width slack is -2.225
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.225           -2381.497 systemClock50MHz 
-    Info (332119):    -2.174           -9895.360 vga:vga_instance|clk25 
-    Info (332119):    -0.394             -48.183 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
-    Info (332119):    -0.394             -36.432 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):    -0.394              -4.546 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
-    Info (332119):    -0.394              -0.643 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
-    Info (332119):    -0.043              -0.078 push_buttons[0] 
+    Info (332119):    -2.225           -2922.875 systemClock50MHz 
+    Info (332119):    -2.174           -9814.946 vga:vga_instance|clk25 
+    Info (332119):    -0.394             -44.208 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
+    Info (332119):    -0.394             -32.616 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -0.394              -4.089 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -0.394              -0.518 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
+    Info (332119):    -0.061              -0.071 push_buttons[0] 
 Info (332114): Report Metastability: Found 48 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Slow 1100mV 0C Model
@@ -1382,48 +1382,48 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -20.441
+Info (332146): Worst-case setup slack is -25.771
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -20.441          -36666.802 vga:vga_instance|clk25 
-    Info (332119):   -10.432          -15344.887 systemClock50MHz 
-    Info (332119):    -5.214            -249.227 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
-    Info (332119):    -3.710            -177.343 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):    -3.701              -3.701 push_buttons[0] 
-    Info (332119):    -2.592             -16.450 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
-    Info (332119):    -1.700              -1.700 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
-Info (332146): Worst-case hold slack is 0.170
+    Info (332119):   -25.771          -39137.903 vga:vga_instance|clk25 
+    Info (332119):   -10.525          -25003.512 systemClock50MHz 
+    Info (332119):    -5.346            -249.292 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
+    Info (332119):    -3.913            -180.147 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -3.411              -3.411 push_buttons[0] 
+    Info (332119):    -2.331             -14.719 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -1.628              -1.628 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
+Info (332146): Worst-case hold slack is -0.633
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.170               0.000 systemClock50MHz 
-    Info (332119):     0.439               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
-    Info (332119):     0.459               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):     0.493               0.000 vga:vga_instance|clk25 
-    Info (332119):     0.501               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
-    Info (332119):     0.557               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
-    Info (332119):     0.838               0.000 push_buttons[0] 
-Info (332146): Worst-case recovery slack is -6.714
+    Info (332119):    -0.633              -0.633 systemClock50MHz 
+    Info (332119):     0.341               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
+    Info (332119):     0.361               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
+    Info (332119):     0.431               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
+    Info (332119):     0.559               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.560               0.000 vga:vga_instance|clk25 
+    Info (332119):     1.145               0.000 push_buttons[0] 
+Info (332146): Worst-case recovery slack is -7.043
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.714             -72.837 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):    -6.158            -140.516 vga:vga_instance|clk25 
-    Info (332119):    -4.349           -1347.875 systemClock50MHz 
-Info (332146): Worst-case removal slack is 1.345
+    Info (332119):    -7.043             -76.265 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -6.151            -162.777 vga:vga_instance|clk25 
+    Info (332119):    -4.373           -1346.477 systemClock50MHz 
+Info (332146): Worst-case removal slack is 1.329
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.345               0.000 systemClock50MHz 
-    Info (332119):     3.034               0.000 vga:vga_instance|clk25 
-    Info (332119):     3.630               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     1.329               0.000 systemClock50MHz 
+    Info (332119):     2.973               0.000 vga:vga_instance|clk25 
+    Info (332119):     3.917               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
 Info (332146): Worst-case minimum pulse width slack is -2.225
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.225           -2436.507 systemClock50MHz 
-    Info (332119):    -2.174           -9875.240 vga:vga_instance|clk25 
-    Info (332119):    -0.394             -46.809 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
-    Info (332119):    -0.394             -35.889 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):    -0.394              -4.509 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
-    Info (332119):    -0.394              -0.599 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
-    Info (332119):    -0.049              -0.090 push_buttons[0] 
+    Info (332119):    -2.225           -3009.115 systemClock50MHz 
+    Info (332119):    -2.174           -9801.321 vga:vga_instance|clk25 
+    Info (332119):    -0.394             -43.812 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
+    Info (332119):    -0.394             -32.412 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -0.394              -4.111 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -0.394              -0.565 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
+    Info (332119):    -0.037              -0.037 push_buttons[0] 
 Info (332114): Report Metastability: Found 48 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV 85C Model
@@ -1432,104 +1432,104 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -11.578
+Info (332146): Worst-case setup slack is -15.291
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -11.578          -20871.151 vga:vga_instance|clk25 
-    Info (332119):    -6.458           -9253.491 systemClock50MHz 
-    Info (332119):    -2.804            -132.778 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
-    Info (332119):    -2.402            -110.775 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):    -1.854              -1.854 push_buttons[0] 
-    Info (332119):    -1.420              -8.396 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
-    Info (332119):    -0.950              -0.950 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
-Info (332146): Worst-case hold slack is 0.071
+    Info (332119):   -15.291          -22411.245 vga:vga_instance|clk25 
+    Info (332119):    -6.544          -15382.860 systemClock50MHz 
+    Info (332119):    -2.765            -129.478 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
+    Info (332119):    -2.611            -115.335 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -1.556              -1.556 push_buttons[0] 
+    Info (332119):    -1.245              -7.035 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -0.895              -0.895 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
+Info (332146): Worst-case hold slack is -0.374
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.071               0.000 systemClock50MHz 
-    Info (332119):     0.112               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
-    Info (332119):     0.163               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
-    Info (332119):     0.166               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):     0.186               0.000 vga:vga_instance|clk25 
-    Info (332119):     0.345               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
-    Info (332119):     0.452               0.000 push_buttons[0] 
-Info (332146): Worst-case recovery slack is -4.049
+    Info (332119):    -0.374              -0.374 systemClock50MHz 
+    Info (332119):    -0.001              -0.001 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
+    Info (332119):     0.160               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
+    Info (332119):     0.212               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
+    Info (332119):     0.268               0.000 vga:vga_instance|clk25 
+    Info (332119):     0.271               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.495               0.000 push_buttons[0] 
+Info (332146): Worst-case recovery slack is -4.252
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.049             -43.769 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):    -3.631             -82.537 vga:vga_instance|clk25 
-    Info (332119):    -2.772            -860.283 systemClock50MHz 
-Info (332146): Worst-case removal slack is 0.722
+    Info (332119):    -4.252             -45.948 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -3.640             -96.292 vga:vga_instance|clk25 
+    Info (332119):    -2.787            -859.124 systemClock50MHz 
+Info (332146): Worst-case removal slack is 0.715
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.722               0.000 systemClock50MHz 
-    Info (332119):     1.388               0.000 vga:vga_instance|clk25 
-    Info (332119):     1.881               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.715               0.000 systemClock50MHz 
+    Info (332119):     1.412               0.000 vga:vga_instance|clk25 
+    Info (332119):     2.040               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174           -9685.276 vga:vga_instance|clk25 
-    Info (332119):    -2.174           -1685.085 systemClock50MHz 
-    Info (332119):    -0.231              -0.786 push_buttons[0] 
-    Info (332119):    -0.056              -0.817 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):    -0.016              -0.270 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
-    Info (332119):     0.046               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
-    Info (332119):     0.100               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
+    Info (332119):    -2.174           -9628.436 vga:vga_instance|clk25 
+    Info (332119):    -2.174           -1776.678 systemClock50MHz 
+    Info (332119):    -0.220              -0.715 push_buttons[0] 
+    Info (332119):     0.047               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
+    Info (332119):     0.055               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.125               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
+    Info (332119):     0.125               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
 Info (332114): Report Metastability: Found 48 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -10.567
+Info (332146): Worst-case setup slack is -13.893
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -10.567          -18796.038 vga:vga_instance|clk25 
-    Info (332119):    -5.670           -8058.312 systemClock50MHz 
-    Info (332119):    -2.495            -118.031 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
-    Info (332119):    -2.280            -105.258 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):    -1.698              -1.698 push_buttons[0] 
-    Info (332119):    -1.286              -7.646 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
-    Info (332119):    -0.863              -0.863 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
-Info (332146): Worst-case hold slack is -0.047
+    Info (332119):   -13.893          -20247.563 vga:vga_instance|clk25 
+    Info (332119):    -5.740          -13359.992 systemClock50MHz 
+    Info (332119):    -2.505            -110.329 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -2.492            -116.282 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
+    Info (332119):    -1.398              -1.398 push_buttons[0] 
+    Info (332119):    -1.168              -6.632 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
+    Info (332119):    -0.807              -0.807 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
+Info (332146): Worst-case hold slack is -0.439
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.047              -0.047 systemClock50MHz 
-    Info (332119):     0.103               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
-    Info (332119):     0.149               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
-    Info (332119):     0.151               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):     0.200               0.000 vga:vga_instance|clk25 
-    Info (332119):     0.312               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
-    Info (332119):     0.434               0.000 push_buttons[0] 
-Info (332146): Worst-case recovery slack is -3.988
+    Info (332119):    -0.439              -0.439 systemClock50MHz 
+    Info (332119):     0.018               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
+    Info (332119):     0.145               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
+    Info (332119):     0.188               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
+    Info (332119):     0.244               0.000 vga:vga_instance|clk25 
+    Info (332119):     0.250               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.466               0.000 push_buttons[0] 
+Info (332146): Worst-case recovery slack is -4.179
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.988             -43.215 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):    -3.644             -82.950 vga:vga_instance|clk25 
-    Info (332119):    -2.686            -833.549 systemClock50MHz 
-Info (332146): Worst-case removal slack is 0.575
+    Info (332119):    -4.179             -45.238 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):    -3.644             -96.688 vga:vga_instance|clk25 
+    Info (332119):    -2.700            -832.213 systemClock50MHz 
+Info (332146): Worst-case removal slack is 0.612
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.575               0.000 systemClock50MHz 
-    Info (332119):     1.460               0.000 vga:vga_instance|clk25 
-    Info (332119):     1.867               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.612               0.000 systemClock50MHz 
+    Info (332119):     1.481               0.000 vga:vga_instance|clk25 
+    Info (332119):     2.020               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174           -9642.191 vga:vga_instance|clk25 
-    Info (332119):    -2.174           -1684.677 systemClock50MHz 
-    Info (332119):    -0.215              -0.744 push_buttons[0] 
-    Info (332119):    -0.011              -0.129 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
-    Info (332119):     0.028               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
-    Info (332119):     0.071               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
-    Info (332119):     0.118               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
+    Info (332119):    -2.174           -9595.184 vga:vga_instance|clk25 
+    Info (332119):    -2.174           -1774.006 systemClock50MHz 
+    Info (332119):    -0.193              -0.591 push_buttons[0] 
+    Info (332119):     0.075               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7] 
+    Info (332119):     0.079               0.000 audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg 
+    Info (332119):     0.127               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1] 
+    Info (332119):     0.144               0.000 audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2] 
 Info (332114): Report Metastability: Found 48 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 1054 megabytes
-    Info: Processing ended: Fri Apr 10 14:57:54 2026
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:54
+    Info: Peak virtual memory: 1159 megabytes
+    Info: Processing ended: Fri Apr 10 16:38:20 2026
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:01:21
 
 
