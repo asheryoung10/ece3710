@@ -1,107 +1,63 @@
-#define HI(a,b) READ a | b
-%HI(r15,0xFFFF)
-READ R14
-1023    // Stack starts at 1023
-READ R12
-&main    // Load address of main into R0    
-JAL R13 R12 // Jump to main
-WAIT
+// Player 1
+READ R0 | 0xC000 | READ R1 | 0x064 | STOR R1 R0
+READ R0 | 0xC001 | READ R1 | 0x064 | STOR R1 R0
+READ R0 | 0xC002 | READ R1 | 0x001 | STOR R1 R0
+READ R0 | 0xC003 | READ R1 | 0xF800 | STOR R1 R0
+// Player 2
+READ R0 | 0xC004 | READ R1 | 0x190 | STOR R1 R0
+READ R0 | 0xC005 | READ R1 | 0x064 | STOR R1 R0
+READ R0 | 0xC006 | READ R1 | 0x002 | STOR R1 R0
+READ R0 | 0xC007 | READ R1 | 0x07E0 | STOR R1 R0
+// Player 3
+READ R0 | 0xC008 | READ R1 | 0x064 | STOR R1 R0
+READ R0 | 0xC009 | READ R1 | 0x12C | STOR R1 R0
+READ R0 | 0xC00A | READ R1 | 0x003 | STOR R1 R0
+READ R0 | 0xC00B | READ R1 | 0x001F | STOR R1 R0
+// Player 4
+READ R0 | 0xC00C | READ R1 | 0x190 | STOR R1 R0
+READ R0 | 0xC00D | READ R1 | 0x12C | STOR R1 R0
+READ R0 | 0xC00E | READ R1 | 0x004 | STOR R1 R0
+READ R0 | 0xC00F | READ R1 | 0xFFFF | STOR R1 R0
 
-#include "initRects.asm"
-// Store player velocityx and velocity at addresses 1024 and 1025
-#include "applyInputGravityVelocity.asm"
-#include "clampPlayerInBounds.asm"
-#include "colorCollision.asm"
-#include "lowerPlatforms.asm"
-
-main:
-    SUBI 1 R14   // Make room for one on the stack
-    STOR R13 R14 // Store return address on stack
-
-    READ R0
-    12345
-    READ R1
-    1026
-    STOR R0 R1 // seed rng
-
-    READ R0
-    0xC006 // player one background index
-    MOVI 0 R1
-    STOR R1 R0 // Store 0 into background index
-
-    mainInit:
-    READ R12
-    &initRects
-    JAL R13 R12
-
-    READ R12
-    &movePlayerToCenter
-    JAL R13 R12
-    
-
-    mainGameLoop:
-
-        READ R12
-        &applyInputGravityVelocity
-        JAL R13 R12
-
-        READ R12
-        &clampPlayerInBounds
-        JAL R13 R12
-
-        READ R12 
-        &colorCollision
-        JAL R13 R12
-        
-        READ R12 
-        &lowerPlatforms
-        JAL R13 R12
-	
-        READ R12
-        &waitVsync
-        JAL R13 R12
-
-        READ R0
-        0xC002 //y address
-        LOAD R0 R0 //R0 has y pos
-        READ R1
-        400
-        CMP R1 R0 // if player fell 
-        GOIF LT &mainInit
-
-        GOIF UC &mainGameLoop
- 
-    LOAD R13 R14 // Restore return address
-    ADDI 1 R14  // Restore stack
-    JCOND UC R13 // return
-
-// Waits for VGA vertical refresh
-// to transition from high to low.
-// Modifies: R0
-waitVsync:
-    MOVI 1 R0
-    AND R15 R0
-    CMPI 0 R0
-    GOIF EQ &waitVsync
-    waitVsyncWaitLow:
-        MOVI 1 R0
-        AND R15 R0
-        CMPI 1 R0
-        GOIF EQ &waitVsyncWaitLow
-    ADDI 1 R10
-    JCOND UC R13
-
-
-movePlayerToCenter:
-    READ R0
-    0xC000
-    READ R1
-    288
-    STOR R1 R0
-    ADDI 2 R0
-    READ R1
-    208
-    STOR R1 R0
-    JCOND UC R13
-
-
+// Rect 0
+READ R0 | 0x8000 | READ R1 | 0x020 | STOR R1 R0
+READ R0 | 0x8001 | READ R1 | 0x020 | STOR R1 R0
+READ R0 | 0x8002 | READ R1 | 0x2014 | STOR R1 R0
+READ R0 | 0x8003 | READ R1 | 0x07E0 | STOR R1 R0
+// Rect 1
+READ R0 | 0x8004 | READ R1 | 0x080 | STOR R1 R0
+READ R0 | 0x8005 | READ R1 | 0x020 | STOR R1 R0
+READ R0 | 0x8006 | READ R1 | 0x1414 | STOR R1 R0
+READ R0 | 0x8007 | READ R1 | 0xF800 | STOR R1 R0
+// Rect 2
+READ R0 | 0x8008 | READ R1 | 0x120 | STOR R1 R0
+READ R0 | 0x8009 | READ R1 | 0x020 | STOR R1 R0
+READ R0 | 0x800A | READ R1 | 0x1414 | STOR R1 R0
+READ R0 | 0x800B | READ R1 | 0x001F | STOR R1 R0
+// Rect 3
+READ R0 | 0x800C | READ R1 | 0x200 | STOR R1 R0
+READ R0 | 0x800D | READ R1 | 0x020 | STOR R1 R0
+READ R0 | 0x800E | READ R1 | 0x0A0A | STOR R1 R0
+READ R0 | 0x800F | READ R1 | 0xFFFF | STOR R1 R0
+// Rect 4
+READ R0 | 0x8040 | READ R1 | 0x030 | STOR R1 R0
+READ R0 | 0x8041 | READ R1 | 0x100 | STOR R1 R0
+READ R0 | 0x8042 | READ R1 | 0x1414 | STOR R1 R0
+READ R0 | 0x8043 | READ R1 | 0xF81F | STOR R1 R0
+// Rect 5
+READ R0 | 0x8044 | READ R1 | 0x120 | STOR R1 R0
+READ R0 | 0x8045 | READ R1 | 0x140 | STOR R1 R0
+READ R0 | 0x8046 | READ R1 | 0x1010 | STOR R1 R0
+READ R0 | 0x8047 | READ R1 | 0x07FF | STOR R1 R0
+// Rect 6
+READ R0 | 0x8048 | READ R1 | 0x300 | STOR R1 R0
+READ R0 | 0x8049 | READ R1 | 0x200 | STOR R1 R0
+READ R0 | 0x804A | READ R1 | 0x0A05 | STOR R1 R0
+READ R0 | 0x804B | READ R1 | 0xFFE0 | STOR R1 R0
+// Rect 7
+READ R0 | 0x804C | READ R1 | 0x050 | STOR R1 R0
+READ R0 | 0x804D | READ R1 | 0x300 | STOR R1 R0
+READ R0 | 0x804E | READ R1 | 0x0F0F | STOR R1 R0
+READ R0 | 0x804F | READ R1 | 0xAAAA | STOR R1 R0
+// Stop
+0000

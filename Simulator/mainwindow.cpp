@@ -35,24 +35,60 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->loadButton, &QPushButton::clicked, this, &MainWindow::loadFileIntoModel);
     ui->reloadButton->setEnabled(false);
 
-    // Input buttons
-    connect(ui->leftButton, &QPushButton::pressed,  this, [this]{ model.setLeftButtonPlayerOne(true); });
-    connect(ui->leftButton, &QPushButton::released, this, [this]{ model.setLeftButtonPlayerOne(false); });
+    // --- Player 1 ---
+    connect(ui->p1Left,  &QPushButton::pressed,  this, [this]{ model.setP1Left(true); });
+    connect(ui->p1Left,  &QPushButton::released, this, [this]{ model.setP1Left(false); });
 
-    connect(ui->rightButton, &QPushButton::pressed,  this, [this]{ model.setRightButtonPlayerOne(true); });
-    connect(ui->rightButton, &QPushButton::released, this, [this]{ model.setRightButtonPlayerOne(false); });
+    connect(ui->p1Right, &QPushButton::pressed,  this, [this]{ model.setP1Right(true); });
+    connect(ui->p1Right, &QPushButton::released, this, [this]{ model.setP1Right(false); });
 
-    connect(ui->jumpButton, &QPushButton::pressed,  this, [this]{ model.setJumpButtonPlayerOne(true); });
-    connect(ui->jumpButton, &QPushButton::released, this, [this]{ model.setJumpButtonPlayerOne(false); });
+    connect(ui->p1Up,    &QPushButton::pressed,  this, [this]{ model.setP1Up(true); });
+    connect(ui->p1Up,    &QPushButton::released, this, [this]{ model.setP1Up(false); });
 
-    connect(ui->leftButton2, &QPushButton::pressed,  this, [this]{ model.setLeftButtonPlayerTwo(true); });
-    connect(ui->leftButton2, &QPushButton::released, this, [this]{ model.setLeftButtonPlayerTwo(false); });
+    connect(ui->p1Down,  &QPushButton::pressed,  this, [this]{ model.setP1Down(true); });
+    connect(ui->p1Down,  &QPushButton::released, this, [this]{ model.setP1Down(false); });
 
-    connect(ui->rightButton2, &QPushButton::pressed,  this, [this]{ model.setRightButtonPlayerTwo(true); });
-    connect(ui->rightButton2, &QPushButton::released, this, [this]{ model.setRightButtonPlayerTwo(false); });
 
-    connect(ui->jumpButton2, &QPushButton::pressed,  this, [this]{ model.setJumpButtonPlayerTwo(true); });
-    connect(ui->jumpButton2, &QPushButton::released, this, [this]{ model.setJumpButtonPlayerTwo(false); });
+    // --- Player 2 ---
+    connect(ui->p2Left,  &QPushButton::pressed,  this, [this]{ model.setP2Left(true); });
+    connect(ui->p2Left,  &QPushButton::released, this, [this]{ model.setP2Left(false); });
+
+    connect(ui->p2Right, &QPushButton::pressed,  this, [this]{ model.setP2Right(true); });
+    connect(ui->p2Right, &QPushButton::released, this, [this]{ model.setP2Right(false); });
+
+    connect(ui->p2Up,    &QPushButton::pressed,  this, [this]{ model.setP2Up(true); });
+    connect(ui->p2Up,    &QPushButton::released, this, [this]{ model.setP2Up(false); });
+
+    connect(ui->p2Down,  &QPushButton::pressed,  this, [this]{ model.setP2Down(true); });
+    connect(ui->p2Down,  &QPushButton::released, this, [this]{ model.setP2Down(false); });
+
+
+    // --- Player 3 ---
+    connect(ui->p3Left,  &QPushButton::pressed,  this, [this]{ model.setP3Left(true); });
+    connect(ui->p3Left,  &QPushButton::released, this, [this]{ model.setP3Left(false); });
+
+    connect(ui->p3Right, &QPushButton::pressed,  this, [this]{ model.setP3Right(true); });
+    connect(ui->p3Right, &QPushButton::released, this, [this]{ model.setP3Right(false); });
+
+    connect(ui->p3Up,    &QPushButton::pressed,  this, [this]{ model.setP3Up(true); });
+    connect(ui->p3Up,    &QPushButton::released, this, [this]{ model.setP3Up(false); });
+
+    connect(ui->p3Down,  &QPushButton::pressed,  this, [this]{ model.setP3Down(true); });
+    connect(ui->p3Down,  &QPushButton::released, this, [this]{ model.setP3Down(false); });
+
+
+    // --- Player 4 ---
+    connect(ui->p4Left,  &QPushButton::pressed,  this, [this]{ model.setP4Left(true); });
+    connect(ui->p4Left,  &QPushButton::released, this, [this]{ model.setP4Left(false); });
+
+    connect(ui->p4Right, &QPushButton::pressed,  this, [this]{ model.setP4Right(true); });
+    connect(ui->p4Right, &QPushButton::released, this, [this]{ model.setP4Right(false); });
+
+    connect(ui->p4Up,    &QPushButton::pressed,  this, [this]{ model.setP4Up(true); });
+    connect(ui->p4Up,    &QPushButton::released, this, [this]{ model.setP4Up(false); });
+
+    connect(ui->p4Down,  &QPushButton::pressed,  this, [this]{ model.setP4Down(true); });
+    connect(ui->p4Down,  &QPushButton::released, this, [this]{ model.setP4Down(false); });;
 
     connect(ui->resetButton, &QPushButton::pressed,  this, [this]{ model.setResetButton(true); });
     connect(ui->resetButton, &QPushButton::released, this, [this]{ model.setResetButton(false); });
@@ -90,13 +126,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->frameDelay,&QSlider::valueChanged, this, &MainWindow::slidersChanged);
     connect(ui->vsyncCheckBox,&QCheckBox::clicked, this, &MainWindow::setVsync);
     ui->breakPoint->setValue(10000);
-    ui->leftButton->setFocusPolicy(Qt::NoFocus);
     ui->registerView->setFocusPolicy(Qt::NoFocus);
     ui->memoryView->setFocusPolicy(Qt::NoFocus);
     ui->jumpAddress->setFocusPolicy(Qt::NoFocus);
     ui->onlyViewCheck->setFocusPolicy(Qt::NoFocus);
-    ui->rightButton->setFocusPolicy(Qt::NoFocus);
-    ui->jumpButton->setFocusPolicy(Qt::NoFocus);
     ui->breakPoint->setFocusPolicy(Qt::ClickFocus);
     ui->resetButton->setFocusPolicy(Qt::NoFocus);
     ui->playButton->setFocusPolicy(Qt::NoFocus);
@@ -105,6 +138,30 @@ MainWindow::MainWindow(QWidget *parent)
     ui->vsyncCheckBox->setFocusPolicy(Qt::NoFocus);
     ui->sourceView->setFocusPolicy(Qt::NoFocus);
     ui->reloadButton->setFocusPolicy(Qt::NoFocus);
+
+    // Player 1
+    ui->p1Left->setFocusPolicy(Qt::NoFocus);
+    ui->p1Right->setFocusPolicy(Qt::NoFocus);
+    ui->p1Up->setFocusPolicy(Qt::NoFocus);
+    ui->p1Down->setFocusPolicy(Qt::NoFocus);
+
+    // Player 2
+    ui->p2Left->setFocusPolicy(Qt::NoFocus);
+    ui->p2Right->setFocusPolicy(Qt::NoFocus); // rename from pushButton_9 if you haven’t
+    ui->p2Up->setFocusPolicy(Qt::NoFocus);
+    ui->p2Down->setFocusPolicy(Qt::NoFocus);
+
+    // Player 3
+    ui->p3Left->setFocusPolicy(Qt::NoFocus);
+    ui->p3Right->setFocusPolicy(Qt::NoFocus);
+    ui->p3Up->setFocusPolicy(Qt::NoFocus);
+    ui->p3Down->setFocusPolicy(Qt::NoFocus);
+
+    // Player 4
+    ui->p4Left->setFocusPolicy(Qt::NoFocus);
+    ui->p4Right->setFocusPolicy(Qt::NoFocus);
+    ui->p4Up->setFocusPolicy(Qt::NoFocus);
+    ui->p4Down->setFocusPolicy(Qt::NoFocus);
 
     ui->sourceView->setReadOnly(true);  // QTextBrowser or QTextEdit
     ui->sourceView->setFont(QFont("Courier", 10)); // monospaced for code
@@ -439,24 +496,63 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     if (event->isAutoRepeat()) return;
 
     switch (event->key()) {
+
+    // --- Player 1 (WASD) ---
     case Qt::Key_A:
-        model.setLeftButtonPlayerOne(true);
+        model.setP1Left(true);
         break;
     case Qt::Key_D:
-        model.setRightButtonPlayerOne(true);
+        model.setP1Right(true);
         break;
     case Qt::Key_W:
-        model.setJumpButtonPlayerOne(true);
+        model.setP1Up(true);
         break;
+    case Qt::Key_S:
+        model.setP1Down(true);
+        break;
+
+    // --- Player 2 (Arrow Keys) ---
     case Qt::Key_Left:
-        model.setLeftButtonPlayerTwo(true);
+        model.setP2Left(true);
         break;
     case Qt::Key_Right:
-        model.setRightButtonPlayerTwo(true);
+        model.setP2Right(true);
         break;
     case Qt::Key_Up:
-        model.setJumpButtonPlayerTwo(true);
+        model.setP2Up(true);
         break;
+    case Qt::Key_Down:
+        model.setP2Down(true);
+        break;
+
+    // --- Player 3 (IJKL) ---
+    case Qt::Key_J:
+        model.setP3Left(true);
+        break;
+    case Qt::Key_L:
+        model.setP3Right(true);
+        break;
+    case Qt::Key_I:
+        model.setP3Up(true);
+        break;
+    case Qt::Key_K:
+        model.setP3Down(true);
+        break;
+
+    // --- Player 4 (Numpad) ---
+    case Qt::Key_4:
+        model.setP4Left(true);
+        break;
+    case Qt::Key_6:
+        model.setP4Right(true);
+        break;
+    case Qt::Key_8:
+        model.setP4Up(true);
+        break;
+    case Qt::Key_5:
+        model.setP4Down(true);
+        break;
+
     default:
         QMainWindow::keyPressEvent(event);
     }
@@ -467,25 +563,64 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event)
     if (event->isAutoRepeat()) return;
 
     switch (event->key()) {
+
+    // --- Player 1 (WASD) ---
     case Qt::Key_A:
-        model.setLeftButtonPlayerOne(false);
+        model.setP1Left(false);
         break;
     case Qt::Key_D:
-        model.setRightButtonPlayerOne(false);
+        model.setP1Right(false);
         break;
     case Qt::Key_W:
-        model.setJumpButtonPlayerOne(false);
+        model.setP1Up(false);
         break;
+    case Qt::Key_S:
+        model.setP1Down(false);
+        break;
+
+    // --- Player 2 (Arrow Keys) ---
     case Qt::Key_Left:
-        model.setLeftButtonPlayerTwo(false);
+        model.setP2Left(false);
         break;
     case Qt::Key_Right:
-        model.setRightButtonPlayerTwo(false);
+        model.setP2Right(false);
         break;
     case Qt::Key_Up:
-        model.setJumpButtonPlayerTwo(false);
+        model.setP2Up(false);
         break;
+    case Qt::Key_Down:
+        model.setP2Down(false);
+        break;
+
+    // --- Player 3 (IJKL) ---
+    case Qt::Key_J:
+        model.setP3Left(false);
+        break;
+    case Qt::Key_L:
+        model.setP3Right(false);
+        break;
+    case Qt::Key_I:
+        model.setP3Up(false);
+        break;
+    case Qt::Key_K:
+        model.setP3Down(false);
+        break;
+
+    // --- Player 4 (Numpad) ---
+    case Qt::Key_4:
+        model.setP4Left(false);
+        break;
+    case Qt::Key_6:
+        model.setP4Right(false);
+        break;
+    case Qt::Key_8:
+        model.setP4Up(false);
+        break;
+    case Qt::Key_5:
+        model.setP4Down(false);
+        break;
+
     default:
-        QMainWindow::keyPressEvent(event);
+        QMainWindow::keyReleaseEvent(event);
     }
 }

@@ -1,5 +1,5 @@
 Register Guide:
-    R15 gets set to the following: {0, 0, 0, 0, 0, 0, 0, 0, 0, p2Jump, p2Left, p2Right, p1Jump, p1Left, p1Right, vsync}
+    R15 gets set to the following: {p4Down, p4Up, p4Right, p4Left, p3Down, p3Up, p3Right, p3Left, p2Down, p2Up, p2Right, p2Left, p1Down, p1Up, p1Right, p1Left};
         If you want to check for input, like p2Jump, then do this:
             MOVI 64 R0 // Load 64 into R0 (64 fits in 8bit twos complement immediate value, so no READ neccessary.)
             AND R15 R0 // Mask input with 64, r0 will have a 1 if p2Jump was pressed
@@ -35,7 +35,8 @@ Register Guide:
             &someLabel
             JCOND UC R12 // This is because if its too far away we have to use a 16 bit absolute jump.
         This means R12 is not gaurenteed to be prerved after a GOIF or function call (as a function may use GOIF).
-    R11-R6 // Callee saved registers. If a function uses these registers, then it must save them restore them before returning.
+    R11 vsync
+    R10-R6 // Callee saved registers. If a function uses these registers, then it must save them restore them before returning.
     R0-R5  // Caller saved registers / temperary registers / parameters / return registers. These can change and can be used as return types.
 
 
