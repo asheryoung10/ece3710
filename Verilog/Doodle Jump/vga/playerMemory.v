@@ -40,15 +40,15 @@ always @(posedge clk50) begin
 		  // Highlight Blue Channel
 			b_next <= (rom_data[7:0] == 0) ? rom_data[7:0] : 
 						 (rom_data[7:0] + highlightColor[4:0] > 8'd255 ? 8'd255 : rom_data[7:0] + highlightColor[4:0]);
-			
+ 
 			// Highlight Green Channel
 			g_next <= (rom_data[15:8] == 0) ? rom_data[15:8] : 
 						 (rom_data[15:8] + highlightColor[10:5] > 8'd255 ? 8'd255 : rom_data[15:8] + highlightColor[10:5]);
-			
+ 
 			// Highlight Red Channel
 			r_next <= (rom_data[23:16] == 0) ? rom_data[23:16] : 
 						 (rom_data[23:16] + highlightColor[15:11] > 8'd255 ? 8'd255 : rom_data[23:16] + highlightColor[15:11]);
-		
+ 
 	end else begin
         r_next <= 8'd0;  // Transparent background
         g_next <= 8'd0;

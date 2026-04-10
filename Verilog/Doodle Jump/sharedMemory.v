@@ -44,7 +44,7 @@ module sharedMemory
 
 
 wire isRectAccess; assign isRectAccess = readWriteAddress[15:7] == 9'b100000000;
-wire isPlayerAccess; assign isPlayerAccess= readWriteAddress[15:3] == 13'b1100000000000;
+wire isPlayerAccess; assign isPlayerAccess= readWriteAddress[15:5] == 11'b11000000000;
 wire isMemoryAccess; assign isMemoryAccess = !isRectAccess && !isPlayerAccess;
 wire enableRectWrite; assign enableRectWrite = writeEnable && isRectAccess;
 wire enablePlayerWrite; assign enablePlayerWrite = writeEnable && isPlayerAccess;
@@ -93,10 +93,10 @@ always@(posedge clock) begin
 		sharedPlayerRegs[17] <= 0;
 	end else
 	if(enablePlayerWrite) begin
-			sharedPlayerRegs[readWriteAddress[5:0]] <= writeData;
+			sharedPlayerRegs[readWriteAddress[4:0]] <= writeData;
 			contentsPlayer <= writeData;
 	end else begin
-		contentsPlayer <= sharedPlayerRegs[readWriteAddress[5:0]];
+		contentsPlayer <= sharedPlayerRegs[readWriteAddress[4:0]];
 	end
 end
 
