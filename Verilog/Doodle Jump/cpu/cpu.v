@@ -21,12 +21,26 @@ module cpu
 	output [DATA_WIDTH-1:0] registerFileContentsB,
 	input [DATA_WIDTH-1:0] memoryContents,
 	
-	input wire leftButton,
-	input wire rightButton,
-	input wire jumpButton,
-	input wire leftButtonTwo,
-	input wire rightButtonTwo,
-	input wire jumpButtonTwo,
+	input wire p1Left,
+	input wire p1Right,
+	input wire p1Up,
+	input wire p1Down,
+	
+	input wire p2Left,
+	input wire p2Right,
+	input wire p2Up,
+	input wire p2Down,
+	
+	input wire p3Left,
+	input wire p3Right,
+	input wire p3Up,
+	input wire p3Down,
+	
+	input wire p4Left,
+	input wire p4Right,
+	input wire p4Up,
+	input wire p4Down,
+
 	input wire vsync,
 	
 	output wire [15:0] R3
@@ -111,12 +125,28 @@ register_file_instance
     // Outputs
     .contentsA(registerFileContentsA),
     .contentsB(registerFileContentsB),
-	 .leftButton(leftButton),
-	 .rightButton(rightButton),
-	 .jumpButton(jumpButton),
-	 .leftButtonTwo(leftButtonTwo),
-	 .rightButtonTwo(rightButtonTwo),
-	 .jumpButtonTwo(jumpButtonTwo),
+	
+	.p1Left(p1Left),
+	.p1Right(p1Right),
+	.p1Up(p1Up),
+	.p1Down(p1Down),
+	
+	.p2Left(p2Left),
+	.p2Right(p2Right),
+	.p2Up(p2Up),
+	.p2Down(p2Down),
+	
+	.p3Left(p3Left),
+	.p3Right(p3Right),
+	.p3Up(p3Up),
+	.p3Down(p3Down),
+	
+	.p4Left(p4Left),
+	.p4Right(p4Right),
+	.p4Up(p4Up),
+	.p4Down(p4Down),
+	
+	
 	 .vsync(vsync),
 	 .R3(R3)
 );

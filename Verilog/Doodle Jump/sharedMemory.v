@@ -3,36 +3,47 @@ module sharedMemory
 	parameter DATA_WIDTH = 16
 )
 (
-    input clock,
-    input writeEnable,
-    input [15:0] writeData,
-    input [15:0] readWriteAddress,
-    output reg [15:0] contents,
-	 input reset,
+		input clock,
+		input writeEnable,
+		input [15:0] writeData,
+		input [15:0] readWriteAddress,
+		output reg [15:0] contents,
+		input reset,
 	 
 
-    input [9:0] vgaX,
-    input [9:0] vgaY,
-    output reg [7:0] r,
-    output reg [7:0] g,
-    output reg [7:0] b,
-	 output wire [15:0] playerOneX,
-	 output wire [15:0] playerOneY,
-	 output wire [15:0] playerOneAnimationIndex,
-	 output wire [15:0] playerOneBackgroundIndex,
-	 output wire [15:0] playerOnePitchIndex,
-	 output wire [15:0] playerOneScore,
-	 output wire [15:0] playerTwoX,
-	 output wire [15:0] playerTwoY,
-	 output wire [15:0] playerTwoAnimationIndex,
-	 output wire [15:0] playerTwoBackgroundIndex,
-	 output wire [15:0] playerTwoPitchIndex,
-	 output wire [15:0] playerTwoScore
+		input [9:0] vgaX,
+		input [9:0] vgaY,
+		output reg [7:0] r,
+		output reg [7:0] g,
+		output reg [7:0] b,
+
+	   output [15:0] p1X,
+		output [15:0] p1Y,
+		output [15:0] p1AnimationIndex,
+		output [15:0] p1HighlightColor,
+		
+		output [15:0] p2X,
+		output [15:0] p2Y,
+		output [15:0] p2AnimationIndex,
+		output [15:0] p2HighlightColor,
+		
+	   output [15:0] p3X,
+		output [15:0] p3Y,
+		output [15:0] p3AnimationIndex,
+		output [15:0] p3HighlightColor,
+		
+		output [15:0] p4X,
+		output [15:0] p4Y,
+		output [15:0] p4AnimationIndex,
+		output [15:0] p4HighlightColor,
+		
+		output [15:0] backgroundOffset,
+		output [15:0] audioPitchIndex
 );
 
 
 
-wire isRectAccess; assign isRectAccess = readWriteAddress[15:6] == 10'b1000000000;
+wire isRectAccess; assign isRectAccess = readWriteAddress[15:7] == 9'b100000000;
 wire isPlayerAccess; assign isPlayerAccess= readWriteAddress[15:3] == 13'b1100000000000;
 wire isMemoryAccess; assign isMemoryAccess = !isRectAccess && !isPlayerAccess;
 wire enableRectWrite; assign enableRectWrite = writeEnable && isRectAccess;
@@ -47,7 +58,7 @@ reg [15:0] contentsRect;
 memory 
 #(
     .DATA_WIDTH(DATA_WIDTH),
-    .ADDR_WIDTH(12)
+    .ADDR_WIDTH(13)
 )
 cpu_memory_instance
 (
@@ -59,7 +70,7 @@ cpu_memory_instance
 );
 
 // Player Memory
-reg [15:0] sharedPlayerRegs  [0:15]; // 16 additional saved regs
+reg [15:0] sharedPlayerRegs  [0:17]; // 16 additional saved regs
 always@(posedge clock) begin
 	if(reset) begin
 		sharedPlayerRegs[0] <= 0;
@@ -78,30 +89,47 @@ always@(posedge clock) begin
 		sharedPlayerRegs[13] <= 0;
 		sharedPlayerRegs[14] <= 0;
 		sharedPlayerRegs[15] <= 0;
+		sharedPlayerRegs[16] <= 0;
+		sharedPlayerRegs[17] <= 0;
 	end else
 	if(enablePlayerWrite) begin
 			sharedPlayerRegs[readWriteAddress[3:0]] <= writeData;
 			contentsPlayer <= writeData;
 	end else begin
-		contentsPlayer <= sharedPlayerRegs[readWriteAddress[3:0]];
+		contentsPlayer <= sharedPlayerRegs[readWriteAddress[5:0]];
 	end
 end
-	 assign  playerOneX = sharedPlayerRegs[0];
-	 assign playerTwoX = sharedPlayerRegs[1];
-	 assign  playerOneY = sharedPlayerRegs[2];
-	 assign  playerTwoY = sharedPlayerRegs[3];
-	 assign  playerOneAnimationIndex = sharedPlayerRegs[4];
-	 assign  playerTwoAnimationIndex = sharedPlayerRegs[5];
-	 assign  playerOneBackgroundIndex = sharedPlayerRegs[6];
-	 assign  playerTwoBackgroundIndex = sharedPlayerRegs[7];
-	 assign playerOnePitchIndex = sharedPlayerRegs[8];
-	 assign  playerTwoPitchIndex = sharedPlayerRegs[9];
-	 assign playerOneScore = sharedPlayerRegs[10];
-	 assign playerTwoScore = sharedPlayerRegs[11];
+
+assign p1X = sharedPlayerRegs[0];
+assign p1Y = sharedPlayerRegs[1];
+assign p1AnimationIndex = sharedPlayerRegs[2];
+assign p1HighlightColor = sharedPlayerRegs[3];
+
+assign p2X = sharedPlayerRegs[3];
+assign p2Y = sharedPlayerRegs[4];
+assign p2AnimationIndex = sharedPlayerRegs[6];
+assign p2HighlightColor = sharedPlayerRegs[7];
+
+assign p3X = sharedPlayerRegs[8];
+assign p3Y = sharedPlayerRegs[9];
+assign p3AnimationIndex = sharedPlayerRegs[10];
+assign p3HighlightColor = sharedPlayerRegs[11];
+
+assign p4X = sharedPlayerRegs[12];
+assign p4Y = sharedPlayerRegs[13];
+assign p4AnimationIndex = sharedPlayerRegs[14];
+assign p4HighlightColor = sharedPlayerRegs[15];
+
+assign backgroundOffset = sharedPlayerRegs[16];
+assign audioPitchIndex = sharedPlayerRegs[17];
+
+
+
+
 
 // Shared Memory
-reg [15:0] rect_data  [0:63]; // 16 rects, each 4 registers.
-wire [5:0] rect_index = readWriteAddress[5:0];
+reg [15:0] rect_data  [0:255]; // 16 rects, each 4 registers.
+wire [6:0] rect_index = readWriteAddress[5:0];
 always @(posedge clock) begin
 	if(isRectAccess) begin
 			if(enableRectWrite) begin
@@ -140,7 +168,6 @@ integer edge_dx;
 integer edge_dy;
  
 localparam integer CORNER_RADIUS = 3;
-localparam [15:0] DOODLE_GREEN = 16'h3666; // soft green fill
  
 always @(*) begin
     // Transparent/black default so the background layer can show through.
@@ -148,7 +175,7 @@ always @(*) begin
     g = 8'h00;
     b = 8'h00;
  
-    for (i = 0; i < 16; i = i + 1) begin
+    for (i = 0; i < 64; i = i + 1) begin
         x     = rect_data[i*4 + 0];
         y     = rect_data[i*4 + 1];
         wh    = rect_data[i*4 + 2];
@@ -157,16 +184,11 @@ always @(*) begin
         width  = wh[15:8];
         height = wh[7:0];
  
-        // Use the stored color if the CPU writes one, otherwise default to a Doodle-style green.
-        if (color == 16'h0000) begin
-            base_r = {DOODLE_GREEN[15:11], 3'b000};
-            base_g = {DOODLE_GREEN[10:5],  2'b00};
-            base_b = {DOODLE_GREEN[4:0],   3'b000};
-        end else begin
+       
             base_r = {color[15:11], 3'b000};
             base_g = {color[10:5],  2'b00};
             base_b = {color[4:0],   3'b000};
-        end
+        
  
         inside_platform =
             (vgaX >= x) &&
