@@ -19,45 +19,98 @@ READ R0 | 0xC00D | READ R1 | 0x12C | STOR R1 R0
 READ R0 | 0xC00E | READ R1 | 0x004 | STOR R1 R0
 READ R0 | 0xC00F | READ R1 | 0xFFFF | STOR R1 R0
 
-// Rect 0
-READ R0 | 0x8000 | READ R1 | 0x020 | STOR R1 R0
-READ R0 | 0x8001 | READ R1 | 0x020 | STOR R1 R0
-READ R0 | 0x8002 | READ R1 | 0x2014 | STOR R1 R0
-READ R0 | 0x8003 | READ R1 | 0x07E0 | STOR R1 R0
-// Rect 1
-READ R0 | 0x8004 | READ R1 | 0x080 | STOR R1 R0
-READ R0 | 0x8005 | READ R1 | 0x020 | STOR R1 R0
-READ R0 | 0x8006 | READ R1 | 0x1414 | STOR R1 R0
-READ R0 | 0x8007 | READ R1 | 0xF800 | STOR R1 R0
-// Rect 2
-READ R0 | 0x8008 | READ R1 | 0x120 | STOR R1 R0
-READ R0 | 0x8009 | READ R1 | 0x020 | STOR R1 R0
-READ R0 | 0x800A | READ R1 | 0x1414 | STOR R1 R0
-READ R0 | 0x800B | READ R1 | 0x001F | STOR R1 R0
-// Rect 3
-READ R0 | 0x800C | READ R1 | 0x200 | STOR R1 R0
-READ R0 | 0x800D | READ R1 | 0x020 | STOR R1 R0
-READ R0 | 0x800E | READ R1 | 0x0A0A | STOR R1 R0
-READ R0 | 0x800F | READ R1 | 0xFFFF | STOR R1 R0
-// Rect 4
-READ R0 | 0x8040 | READ R1 | 0x030 | STOR R1 R0
-READ R0 | 0x8041 | READ R1 | 0x100 | STOR R1 R0
-READ R0 | 0x8042 | READ R1 | 0x1414 | STOR R1 R0
-READ R0 | 0x8043 | READ R1 | 0xF81F | STOR R1 R0
-// Rect 5
-READ R0 | 0x8044 | READ R1 | 0x120 | STOR R1 R0
-READ R0 | 0x8045 | READ R1 | 0x140 | STOR R1 R0
-READ R0 | 0x8046 | READ R1 | 0x1010 | STOR R1 R0
-READ R0 | 0x8047 | READ R1 | 0x07FF | STOR R1 R0
-// Rect 6
-READ R0 | 0x8048 | READ R1 | 0x300 | STOR R1 R0
-READ R0 | 0x8049 | READ R1 | 0x200 | STOR R1 R0
-READ R0 | 0x804A | READ R1 | 0x0A05 | STOR R1 R0
-READ R0 | 0x804B | READ R1 | 0xFFE0 | STOR R1 R0
-// Rect 7
-READ R0 | 0x804C | READ R1 | 0x050 | STOR R1 R0
-READ R0 | 0x804D | READ R1 | 0x300 | STOR R1 R0
-READ R0 | 0x804E | READ R1 | 0x0F0F | STOR R1 R0
-READ R0 | 0x804F | READ R1 | 0xAAAA | STOR R1 R0
+// i = 0
+MOVI 0 R0
+
+// x = 0
+MOVI 0 R2
+
+// y = 0
+MOVI 0 R3
+
+// col = 0
+MOVI 0 R5
+
+
+loopStart:
+
+// if i == 64 exit
+MOVI 64 R1
+CMPI 64 R0
+GOIF EQ &done
+
+// -------------------------
+// addr = 0x8000 + (i * 4)
+// -------------------------
+MOV R0 R1
+LSHI 2 R1
+
+READ R4
+0x8000
+ADD R4 R1              // R1 = base address for rect i
+
+// -------------------------
+// STOR X
+// -------------------------
+STOR R2 R1
+ADDI 1 R1
+
+// -------------------------
+// STOR Y
+// -------------------------
+STOR R3 R1
+ADDI 1 R1
+
+// -------------------------
+// width/height = 16x16 => 0x1010
+// -------------------------
+MOVI 16 R4
+LSHI 8 R4
+MOVI 16 R6
+OR R4 R6
+
+STOR R6 R1
+ADDI 1 R1
+
+// -------------------------
+// color = (i<<5) | (i<<10)
+// -------------------------
+MOV R0 R4
+LSHI 5 R4
+
+MOV R0 R6
+LSHI 10 R6
+
+OR R4 R6
+
+STOR R6 R1
+
+// -------------------------
+// X += 16
+// -------------------------
+ADDI 16 R2
+
+// col++
+ADDI 1 R5
+
+// if col == 16 -> new row
+MOVI 16 R6
+CMPI 16 R5
+GOIF NE &skipRowReset
+
+// reset column + x, increment y
+MOVI 0 R5
+MOVI 0 R2
+ADDI 16 R3
+
+skipRowReset:
+
+// i++
+ADDI 1 R0
+
+GOIF UC &loopStart
+
+
+done:
 // Stop
 0000

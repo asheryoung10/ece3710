@@ -426,11 +426,11 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "Simulator_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "Simulator_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "Simulator_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "Simulator::@6890427a1f51a3e7e1df",

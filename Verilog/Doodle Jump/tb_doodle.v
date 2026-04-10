@@ -34,15 +34,9 @@ localparam MOVE_STATE = 3'd7;
 	  doodle_jump uut(
 		.systemClock50MHz(clock),
 		.switches(switches),
-		.push_buttons(push_buttons),
-	        //.reset(reset),
-		.instructionRegisterContentsOutput(instructionRegisterContentsOutput),
-		.programCounterContentsOutput(programCounterContentsOutput),
-		.programStateRegisterContentsOutput(programStateRegisterContentsOutput),
-      .aluResultOutput(aluResultOutput),
-      .aluFlagsOutput(aluFlagsOutput),
-      .controlUnitState(controlUnitState),
-      .controlUnitNextState(controlUnitNextState)
+		.push_buttons(push_buttons)
+	      //.rese[t(reset),
+
 	
 );
 
@@ -104,7 +98,7 @@ task print_cpu_state;
 	 uut.cpu_instance.register_file_instance.readAddressB,
 	 uut.cpu_instance.register_file_instance.contentsA,
 	 uut.cpu_instance.register_file_instance.contentsB,
-	 uut.cpu_instance.register_file_instance.reg15input
+	 uut.cpu_instance.register_file_instance.reg15Input
 	 );
 	 $display("\t Shared Memory: WE: %d, WD: %d, RWA: %d, Contents: %d, cCPU: %d, cPlay: %d, cRect: %d, aCPU: %d, aPlay: %d, aRect: %d, wCPU: %d, wPlay: %d, wRect: %d, Reset: %d",
 	 uut.memory_instance.writeEnable,
@@ -173,7 +167,7 @@ task dumpPlayerMemory;
     integer i;
     begin
         $display("Shared Player Memory:");
-		  for (i = 0; i < 16; i = i + 1) begin
+		  for (i = 0; i < 18; i = i + 1) begin
             $display("memory[%0d] = %h", i, uut.memory_instance.sharedPlayerRegs[i]);
         end
         $display(""); // blank line for readability
@@ -198,7 +192,7 @@ task print_state;
 		  
         $write("Current State: ");
 
-        case (controlUnitState)
+        case (uut.cpu_instance.control_unit_instance.nextState)
 
             FETCH_INSTRUCTION_FROM_MEMORY:
                 $write("Fetch Instruction");
@@ -221,7 +215,7 @@ task print_state;
 
         $write(" Next State: ");
 
-        case (controlUnitNextState)
+        case (uut.cpu_instance.control_unit_instance.nextState)
 
             FETCH_INSTRUCTION_FROM_MEMORY:
                 $write("Fetch Instruction");
@@ -238,7 +232,7 @@ task print_state;
             NOTHING_STATE:
                 $write("NOTHING_STATE");
             default:
-                $write("UNKNOWN_STATE (%0d)", controlUnitNextState);
+                $write("UNKNOWN_STATE (%0d)", uut.cpu_instance.control_unit_instance.nextState);
 
         endcase
 
@@ -265,23 +259,26 @@ integer i = 0;
 		  
         while (running != 0) begin
 				i = i + 1;
-				if(i == 180) running = 0;
+				if(i == 100000) running = 0;
 		  
-				if(controlUnitNextState == NOTHING_STATE) begin
+				if(uut.cpu_instance.control_unit_instance.nextState == NOTHING_STATE) begin
 			$display("stoped due to nothing state");
 			running = 0;
 			end
-				if(controlUnitState == NOTHING_STATE) begin
+				if(uut.cpu_instance.control_unit_instance.nextState == NOTHING_STATE) begin
 			$display("stoped due to nothing state");
 			running = 0;
 			end
 			   if(uut.memory_instance.cpu_memory_instance.ram[0] === 16'hxxxx) running = 0;
 				
-			   if(controlUnitState == FETCH_INSTRUCTION_FROM_MEMORY) begin
+			   if(uut.cpu_instance.control_unit_instance.state == FETCH_INSTRUCTION_FROM_MEMORY) begin
 					$display("\n\n\n");
 					$display("CONTENTS AFTER PREVIOUS INSTRUCTION");
 					dumpRegisterFile();
 					dumpPlayerMemory();
+					$display("vgaP1x[%0d] = %h", i, uut.vga_instance.p1X);
+					$display("vgaP1y[%0d] = %h", i, uut.vga_instance.p1Y);
+
 					dumpMemoryRects();
 				end
 				print_state();
