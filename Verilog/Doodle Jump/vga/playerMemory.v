@@ -37,9 +37,24 @@ always @(posedge clk50) begin
         (pixelY >= playerY) && (pixelY < playerY + PLAYER_HEIGHT)) begin
         // Change color based on animation index
         // Red fixed, green varies, blue varies for fun
-        b_next <= rom_data[7:0]    + {highlightColor[4:0],   3'b000};                
-        g_next <= rom_data[15:8] + {highlightColor[10:5],  2'b00};  
-        r_next <= rom_data[23:16] + {highlightColor[15:11], 3'b000};
+		  if(rom_data[7:0] == 0) begin
+		  b_next <= rom_data[7:0];
+		  end else begin
+		          b_next <= rom_data[7:0]    + {highlightColor[4:0],   3'b000};                
+
+		  end
+		   if(rom_data[15:8] == 0) begin
+		  g_next <= rom_data[15:8];
+		  end else begin
+		          g_next <= rom_data[15:8] + {highlightColor[10:5],  2'b00};  
+
+		  end
+		   if(rom_data[23:16] == 0) begin
+		  r_next <= rom_data[23:16];
+		  end else begin
+		          r_next <= rom_data[23:16] + {highlightColor[15:11], 3'b000};
+
+		  end
 
     end else begin
         r_next <= 8'd0;  // Transparent background

@@ -206,7 +206,7 @@ sharedMemory memory_instance
 		.p3AnimationIndex(p3AnimationIndex),
 		.p3HighlightColor(p3HighlightColor),
 		
-		.p4X(p4x),
+		.p4X(p4X),
 		.p4Y(p4Y),
 		.p4AnimationIndex(p4AnimationIndex),
 		.p4HighlightColor(p4HighlightColor),

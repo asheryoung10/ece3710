@@ -93,7 +93,7 @@ always@(posedge clock) begin
 		sharedPlayerRegs[17] <= 0;
 	end else
 	if(enablePlayerWrite) begin
-			sharedPlayerRegs[readWriteAddress[3:0]] <= writeData;
+			sharedPlayerRegs[readWriteAddress[5:0]] <= writeData;
 			contentsPlayer <= writeData;
 	end else begin
 		contentsPlayer <= sharedPlayerRegs[readWriteAddress[5:0]];
@@ -105,8 +105,8 @@ assign p1Y = sharedPlayerRegs[1];
 assign p1AnimationIndex = sharedPlayerRegs[2];
 assign p1HighlightColor = sharedPlayerRegs[3];
 
-assign p2X = sharedPlayerRegs[3];
-assign p2Y = sharedPlayerRegs[4];
+assign p2X = sharedPlayerRegs[4];
+assign p2Y = sharedPlayerRegs[5];
 assign p2AnimationIndex = sharedPlayerRegs[6];
 assign p2HighlightColor = sharedPlayerRegs[7];
 
@@ -129,7 +129,7 @@ assign audioPitchIndex = sharedPlayerRegs[17];
 
 // Shared Memory
 reg [15:0] rect_data  [0:255]; // 16 rects, each 4 registers.
-wire [6:0] rect_index = readWriteAddress[5:0];
+wire [6:0] rect_index = readWriteAddress[6:0];
 always @(posedge clock) begin
 	if(isRectAccess) begin
 			if(enableRectWrite) begin
