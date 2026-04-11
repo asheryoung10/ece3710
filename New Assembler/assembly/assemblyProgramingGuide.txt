@@ -36,7 +36,8 @@ Register Guide:
             JCOND UC R12 // This is because if its too far away we have to use a 16 bit absolute jump.
         This means R12 is not gaurenteed to be prerved after a GOIF or function call (as a function may use GOIF).
     R11 vsync
-    R10-R6 // Callee saved registers. If a function uses these registers, then it must save them restore them before returning.
+    R10 is also reserved for macros and labels like R12
+    R9-R6 // Callee saved registers. If a function uses these registers, then it must save them restore them before returning.
     R0-R5  // Caller saved registers / temperary registers / parameters / return registers. These can change and can be used as return types.
 
 
