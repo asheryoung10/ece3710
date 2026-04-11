@@ -1,16 +1,21 @@
-#include "defines.asm"
-READ R14                    //
-%constGreatestCPUAddress()  // Initialize stack pointer
-READ R12      //
-&mainFunction //
-JAL R13 R12   // Call main function
+
+READ R14    // R14 is the stack pointer
+%greatestCPUAddress  // Initialize stack pointer
+%call(&funcMain)    // Go to main
 WAIT // Execution finished
 
+funcMain:
+    %save(R1l) // Save return address
+    
+    %call(&funcInitMainMenu)
+    
+    funcMainLoop:
+        %call(&funcWaitForVsync)
+        GOIF UC &funcMainLoop
 
-mainFunction:
+    %restore(R11) // Restore return address
+    %return()
 
-    mainFunctionLoop:
-
-
-        GOIF UC &mainFunctionLoop 
-    JCOND UC R13
+#include "defines.asm"
+#include "waitForVsync.asm"
+#include "initMainMenu.asm"

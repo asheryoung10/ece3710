@@ -97,29 +97,64 @@ std::vector<std::vector<Token>> tokenizeFileInternal(
             continue;
         }
         if (trimmed.rfind("#define", 0) == 0) {
-            // Example: #define name(a, b) ADDI a b
 
             size_t nameStart = trimmed.find(' ') + 1;
+
             size_t parenOpen = trimmed.find('(', nameStart);
-            size_t parenClose = trimmed.find(')', parenOpen);
 
-            std::string macroName = trimmed.substr(nameStart, parenOpen - nameStart);
-
-            // Parse parameters
+            std::string macroName;
             std::vector<std::string> params;
-            std::string paramStr = trimmed.substr(parenOpen + 1, parenClose - parenOpen - 1);
-            std::stringstream ss(paramStr);
-            std::string param;
+            std::string bodyStr;
 
-            while (std::getline(ss, param, ',')) {
-                param.erase(0, param.find_first_not_of(" \t"));
-                param.erase(param.find_last_not_of(" \t") + 1);
-                params.push_back(param);
+            // -----------------------------
+            // CASE 1: function-like macro
+            // -----------------------------
+            if (parenOpen != std::string::npos) {
+
+                size_t parenClose = trimmed.find(')', parenOpen);
+                if (parenClose == std::string::npos) {
+                    std::cerr << "ERROR: Missing ')' in macro definition\n";
+                    exit(1);
+                }
+
+                macroName = trimmed.substr(nameStart, parenOpen - nameStart);
+
+                // Parse parameters
+                std::string paramStr =
+                    trimmed.substr(parenOpen + 1, parenClose - parenOpen - 1);
+
+                std::stringstream ss(paramStr);
+                std::string param;
+
+                while (std::getline(ss, param, ',')) {
+                    param.erase(0, param.find_first_not_of(" \t"));
+                    param.erase(param.find_last_not_of(" \t") + 1);
+                    if (!param.empty())
+                        params.push_back(param);
+                }
+
+                // Body after ')'
+                bodyStr = trimmed.substr(parenClose + 1);
             }
 
-            // Parse body (everything after ')')
-            std::string bodyStr = trimmed.substr(parenClose + 1);
+            // -----------------------------
+            // CASE 2: simple macro (no params)
+            // -----------------------------
+            else {
 
+                size_t nameEnd = trimmed.find(' ', nameStart);
+                if (nameEnd == std::string::npos) {
+                    std::cerr << "ERROR: Missing macro body\n";
+                    exit(1);
+                }
+
+                macroName = trimmed.substr(nameStart, nameEnd - nameStart);
+                bodyStr = trimmed.substr(nameEnd + 1);
+            }
+
+            // -----------------------------
+            // Tokenize body
+            // -----------------------------
             auto bodyTokens = tokenizeLine(bodyStr, filename, lineNum);
 
             Macro m;
@@ -128,10 +163,10 @@ std::vector<std::vector<Token>> tokenizeFileInternal(
 
             macros[macroName] = m;
 
+
             lineNum++;
             continue;
         }
-
         auto lineTokens = tokenizeLine(line, filename, lineNum);
         if (!lineTokens.empty()) {
             tokens.push_back(lineTokens);
@@ -166,11 +201,6 @@ void expandMacros(std::vector<std::vector<Token>>& lines,
             size_t parenOpen = call.find('(');
             size_t parenClose = call.find(')');
 
-            if (parenOpen == std::string::npos || parenClose == std::string::npos) {
-                std::cerr << "ERROR: Invalid macro call syntax\n";
-                exit(1);
-            }
-
             std::string name = call.substr(0, parenOpen);
 
             if (!macros.count(name)) {
@@ -185,15 +215,27 @@ void expandMacros(std::vector<std::vector<Token>>& lines,
             std::string argStr = call.substr(parenOpen + 1, parenClose - parenOpen - 1);
             std::stringstream ss(argStr);
             std::string arg;
-
-            while (std::getline(ss, arg, ',')) {
-                arg.erase(0, arg.find_first_not_of(" \t"));
-                arg.erase(arg.find_last_not_of(" \t") + 1);
-                args.push_back(arg);
+            if(parenOpen == std::string::npos || parenClose == std::string::npos) {
+                if(parenOpen != parenClose) {
+                    std::cerr << "ERROR: Invalid macro call syntax\n";
+                    std::cerr << "Text: ";
+                    for(auto& stringLine: line) {
+                        std::cerr << stringLine.text;
+                    }
+                    std::cerr << "\n";
+                    exit(1);
+                }
+            } else {
+                while (std::getline(ss, arg, ',')) {
+                    arg.erase(0, arg.find_first_not_of(" \t"));
+                    arg.erase(arg.find_last_not_of(" \t") + 1);
+                    args.push_back(arg);
+                }
             }
 
             if (args.size() != m.params.size()) {
                 std::cerr << "ERROR: Macro argument count mismatch\n";
+                std::cerr << "For macro: " << call << " Expected: " << m.params.size() << " But got: " << args.size() << std::endl;
                 exit(1);
             }
 
@@ -212,6 +254,9 @@ void expandMacros(std::vector<std::vector<Token>>& lines,
                     }
 
                     tok.text = text;
+                    tok.filename = line[0].filename;
+                    tok.lineNum = line[0].lineNum;
+                    tok.offset = line[0].offset;
                     newLine.push_back(tok);
                 }
 
@@ -328,6 +373,7 @@ std::vector<Instruction> preprocessLabels(const std::vector<std::vector<Token>>&
             inst.tokens = line;
 
             instructions.push_back(inst);
+
 
             // Clear pending labels
             pendingLabels.clear();
@@ -530,6 +576,7 @@ void resolveLabelsAndExpandGoif(std::vector<Instruction>& instructions) {
                     // Use Bcond directly
                     Instruction bcondInst;
                     bcondInst.lineNum = inst.lineNum;
+                    bcondInst.labels = inst.labels;
                     bcondInst.tokens.push_back({ "BCOND", inst.tokens[0].filename, inst.tokens[0].lineNum, inst.tokens[0].offset });
                     bcondInst.tokens.push_back({ cond, inst.tokens[1].filename, inst.tokens[1].lineNum, inst.tokens[1].offset });
                     bcondInst.tokens.push_back({ std::to_string(offset), inst.tokens[2].filename, inst.tokens[2].lineNum, inst.tokens[2].offset });
@@ -542,6 +589,7 @@ void resolveLabelsAndExpandGoif(std::vector<Instruction>& instructions) {
                     // READ R12
                     Instruction readInst;
                     readInst.lineNum = inst.lineNum;
+                    readInst.labels = inst.labels;
                     readInst.tokens.push_back({ "READ", inst.tokens[0].filename, inst.tokens[0].lineNum, inst.tokens[0].offset });
                     readInst.tokens.push_back({ "R12", inst.tokens[0].filename, inst.tokens[0].lineNum, inst.tokens[0].offset });
                     newInstructions.push_back(readInst);
