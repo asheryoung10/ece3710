@@ -1,7 +1,7 @@
 #define playerWidth 45
 #define playerHeight 45
 
-#define greatestCPUAddress 0x8095
+#define greatestCPUAddress 8095
 
 #define playerSharedDataAddress 0xC000
 
@@ -17,7 +17,8 @@
 #define setRectHeight(index, value) MOVI index R12 | LSHI 2 R12 | ADDI 2 R12 | READ R10 | 0x8000 | ADD R10 R12 | SUBI 1 R14 | STOR R12 R14 | LOAD R10 R12 | LSHI -8 R10 | LSHI 8 R10 | READ R12 | value | ADD R12 R10 | LOAD R12 R14 | ADDI 1 R14 | STOR R10 R12
 #define setRectColor(index, value) MOVI index R12 | LSHI 2 R12 | ADDI 3 R12 | READ R10 | 0x8000 | ADD R10 R12 | READ R10 | value | STOR R10 R12
 
-#define maxVelocityX 15
-#define minVelocityX -15
-#define maxVelocityY 15
-#define minVelocityY -15
+
+#define maxVelocityX 30
+#define minVelocityX -30
+#define maxVelocityY 30
+#define minVelocityY -30

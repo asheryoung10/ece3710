@@ -88,6 +88,53 @@ void VGAView::paintEvent(QPaintEvent *event)
             infoY,
             QString("P%1 Anim: %2").arg(i + 1).arg(anim)
             );
+        // ----------------------------
+        // Direction indicator
+        // ----------------------------
+        QPoint center = playerRect.center();
+
+        // Arrow length
+        int len = 15;
+
+        // Direction vector
+        QPoint dir(0, 0);
+
+        switch (anim) {
+        case 0: // circle
+            vgaPainter.setPen(QPen(Qt::black, 2));
+            vgaPainter.drawEllipse(center, 6, 6);
+            break;
+        case 1: dir = QPoint(1, 1); break;   // down-right
+        case 2: dir = QPoint(1, 0); break;   // right
+        case 3: dir = QPoint(1, -1); break;  // up-right
+        case 4: dir = QPoint(0, -1); break;  // up
+        case 5: dir = QPoint(-1, -1); break; // up-left
+        case 6: dir = QPoint(-1, 0); break;  // left
+        case 7: dir = QPoint(-1, 1); break;  // down-left
+        }
+
+        // Draw arrow if not 0
+        if (anim != 0) {
+            // Normalize diagonal so it's not longer
+            if (dir.x() != 0 && dir.y() != 0) {
+                dir /= 1.4142; // approx sqrt(2)
+            }
+
+            QPoint end = center + QPoint(dir.x() * len, dir.y() * len);
+
+            QPen pen(Qt::black, 2);
+            vgaPainter.setPen(pen);
+
+            // Main line
+            vgaPainter.drawLine(center, end);
+
+            // Arrow head
+            QPoint left = end + QPoint(-dir.y() * 5 - dir.x() * 5, dir.x() * 5 - dir.y() * 5);
+            QPoint right = end + QPoint(dir.y() * 5 - dir.x() * 5, -dir.x() * 5 - dir.y() * 5);
+
+            vgaPainter.drawLine(end, left);
+            vgaPainter.drawLine(end, right);
+        }
     }
 
     vgaPainter.end();
