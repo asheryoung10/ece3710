@@ -78,7 +78,7 @@ funcCopyRectData:
     MOVI 0 R1 // i = 0
     READ R2 | &varRectLocalData
 
-    funcCopyPlayerDataLoop:
+    funcCopyRectDataLoop:
 
         LOAD R3 R0
         STOR R3 R2
@@ -87,7 +87,7 @@ funcCopyRectData:
         ADDI 1 R0
         ADDI 1 R1 // i++
         CMPI 32 R1
-        GOIF NE &funcCopyPlayerDataLoop
+        GOIF NE &funcCopyRectDataLoop
     %return
 
 funcApplyUserInput:
@@ -214,10 +214,6 @@ funcPushLocalToShared:
     READ R12 | 298 | SUB R12 R3
     READ R4 | &varLocalDataPlayer1Y | LOAD R4 R4
     READ R12 | 220 | SUB R12 R4
-
-    MOVI 0 R3
-    MOVI 0 R4
-
 
     READ R12 | %backgroundX | STOR R3 R12
     READ R12 | %backgroundY | STOR R4 R12
