@@ -29,15 +29,14 @@ funcJoinLeavePlayers:
         ADDI 1 R5
         STOR R7 R5
         SUBI 1 R5
-
-        READ R10 | 0x0000 // black color if inactive
-
+        READ R10 | 0xFF00
         CMPI 0 R12 | GOIF EQ &funcJoinLeavePlayersPlayerLoopSetColorInactiveSkip
         LOAD R12 R8
-
+        MOV R12 R10
 
         funcJoinLeavePlayersPlayerLoopSetColorInactiveSkip:
-        STOR R12 R9
+
+        STOR R10 R9
 
         funcJoinLeavePlayersPlayerLoopNext:
         ADDI 1 R8
@@ -152,7 +151,7 @@ funcApplyUserInput:
 
         READ R7 | &varButtonPressedThisFrameAddress | LOAD R7 R7 | AND R1 R7 // R7 holds if button was pressed this frame
         CMPI 0 R7 | GOIF EQ &funcApplyUserInputJumpSkip
-        MOVI %minVelocityX R7
+        MOVI %minVelocityY R7
         STOR R7 R2
         
         funcApplyUserInputJumpSkip:

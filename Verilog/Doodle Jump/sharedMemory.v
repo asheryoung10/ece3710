@@ -56,17 +56,18 @@ reg [15:0] contentsRect;
 
 
 // CPU Memory
+localparam addr_width = 12;
 memory 
 #(
     .DATA_WIDTH(DATA_WIDTH),
-    .ADDR_WIDTH(16)
+    .ADDR_WIDTH(addr_width)
 )
 cpu_memory_instance
 (
     .clock(clock),
     .writeEnable(enableCPUWrite),
     .writeData(writeData),
-    .readWriteAddress(readWriteAddress),
+    .readWriteAddress(readWriteAddress[addr_width-1:0]),
     .contents(contentsCPU)
 );
 

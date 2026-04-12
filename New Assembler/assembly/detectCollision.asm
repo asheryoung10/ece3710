@@ -3,6 +3,11 @@ funcDetectAndResolveCollisions:
 
     MOVI 0 R0 // Player index
     funcDetectAndResolveCollisionsPlayerLoop:
+        READ R3 | &varActivePlayersAddress
+        ADD R0 R3
+        LOAD R3 R3
+        CMPI 0 R3 | GOIF EQ &funcDetectAndResolveCollisionsSkipPlayer
+
         MOVI 0 R1 // rect index
         funcDetectAndResolveCollisionsRectLoop:
             %callSave
@@ -16,7 +21,7 @@ funcDetectAndResolveCollisions:
             LSHI 1 R2  // * 2
             OR R2 R7
             ADDI 1 R7 // YVelocity
-            READ R12 | %minVelocityY
+            MOVI 0 R12
             STOR R12 R7
 
             funcDetectAndResolveCollisionsNegative:
@@ -24,6 +29,7 @@ funcDetectAndResolveCollisions:
             CMPI 16 R1
             GOIF NE &funcDetectAndResolveCollisionsRectLoop
 
+        funcDetectAndResolveCollisionsSkipPlayer:
         ADDI 1 R0
         CMPI 4 R0
 
