@@ -79,6 +79,7 @@ wire [MEMORY_ADDR_WIDTH-1:0] memoryReadWriteAddress;
 wire [DATA_WIDTH-1:0] registerFileContentsB;
 wire [DATA_WIDTH-1:0] memoryContents;
 wire [DATA_WIDTH-1:0] register3;
+wire [DATA_WIDTH-1:0] register4;
 
 // Controller
 wire [15:0] snesButtons;
@@ -174,7 +175,8 @@ cpu cpu_instance (
 	.p4Down(~snesButtons[0]),
 	
 	.vsync(vga_vs),
-	.R3(register3)
+	.R3(register3),
+	.R4(register4)
 );
 
 sharedMemory memory_instance
@@ -246,5 +248,13 @@ sixteen_bit_seven_seg segDriver (
         .hex1(hex1),
         .hex2(hex2),
         .hex3(hex3)
+ );
+
+sixteen_bit_seven_seg segDriver_2 (
+        .value(register4), 
+        .hex0(hex4),     
+        .hex1(hex5),
+        .hex2(),
+        .hex3()
  );
 endmodule

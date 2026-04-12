@@ -43,7 +43,8 @@ module cpu
 
 	input wire vsync,
 	
-	output wire [15:0] R3
+	output wire [15:0] R3,
+	output wire [15:0] R4
 );
 
 //
@@ -101,6 +102,7 @@ wire programCounterWriteEnable;
 wire [DATA_WIDTH-1:0] programCounterWriteData;
 // Outputs
 wire [DATA_WIDTH-1:0] programCounterContents;
+assign R4 = programCounterContents;
 
 
 //
