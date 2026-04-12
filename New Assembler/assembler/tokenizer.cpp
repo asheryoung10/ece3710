@@ -191,60 +191,62 @@ void expandMacros(std::vector<std::vector<Token>>& lines,
     for (auto& line : lines) {
         if (line.empty()) continue;
 
-        const std::string& first = line[0].text;
+        std::vector<Token> newLine;
 
-        // Check for macro call: %name(...)
-        if (first.size() > 1 && first[0] == '%') {
+        for (size_t t = 0; t < line.size(); ++t) {
+            const Token& tok = line[t];
 
-            std::string call = first.substr(1);
+            // Check if token is macro
+            if (tok.text.size() > 1 && tok.text[0] == '%') {
 
-            size_t parenOpen = call.find('(');
-            size_t parenClose = call.find(')');
+                std::string call = tok.text.substr(1);
 
-            std::string name = call.substr(0, parenOpen);
+                size_t parenOpen = call.find('(');
+                size_t parenClose = call.find(')');
 
-            if (!macros.count(name)) {
-                std::cerr << "ERROR: Undefined macro: " << name << "\n";
-                exit(1);
-            }
+                std::string name = call.substr(0, parenOpen);
 
-            const Macro& m = macros.at(name);
-
-            // Parse arguments
-            std::vector<std::string> args;
-            std::string argStr = call.substr(parenOpen + 1, parenClose - parenOpen - 1);
-            std::stringstream ss(argStr);
-            std::string arg;
-            if(parenOpen == std::string::npos || parenClose == std::string::npos) {
-                if(parenOpen != parenClose) {
-                    std::cerr << "ERROR: Invalid macro call syntax\n";
-                    std::cerr << "Text: ";
-                    for(auto& stringLine: line) {
-                        std::cerr << stringLine.text;
-                    }
-                    std::cerr << "\n";
+                if (!macros.count(name)) {
+                    std::cerr << "ERROR: Undefined macro: " << name << "\n";
                     exit(1);
                 }
-            } else {
-                while (std::getline(ss, arg, ',')) {
-                    arg.erase(0, arg.find_first_not_of(" \t"));
-                    arg.erase(arg.find_last_not_of(" \t") + 1);
-                    args.push_back(arg);
+
+                const Macro& m = macros.at(name);
+
+                // ----------------------------
+                // Parse arguments
+                // ----------------------------
+                std::vector<std::string> args;
+
+                if (parenOpen != std::string::npos && parenClose != std::string::npos) {
+                    std::string argStr = call.substr(parenOpen + 1, parenClose - parenOpen - 1);
+                    std::stringstream ss(argStr);
+                    std::string arg;
+
+                    while (std::getline(ss, arg, ',')) {
+                        arg.erase(0, arg.find_first_not_of(" \t"));
+                        arg.erase(arg.find_last_not_of(" \t") + 1);
+                        args.push_back(arg);
+                    }
                 }
-            }
 
-            if (args.size() != m.params.size()) {
-                std::cerr << "ERROR: Macro argument count mismatch\n";
-                std::cerr << "For macro: " << call << " Expected: " << m.params.size() << " But got: " << args.size() << std::endl;
-                exit(1);
-            }
+                if (args.size() != m.params.size()) {
+                    std::cerr << "ERROR: Macro argument count mismatch\n";
+                    exit(1);
+                }
 
-            // Expand body
-            for (auto bodyLine : m.body) {
-                std::vector<Token> newLine;
+                // ----------------------------
+                // INLINE EXPANSION
+                // ----------------------------
+                if (m.body.size() != 1) {
+                    std::cerr << "ERROR: Multi-line macro used inline: " << name << "\n";
+                    exit(1);
+                }
 
-                for (auto tok : bodyLine) {
-                    std::string text = tok.text;
+                const auto& bodyLine = m.body[0];
+
+                for (auto bodyTok : bodyLine) {
+                    std::string text = bodyTok.text;
 
                     // Substitute params
                     for (size_t i = 0; i < m.params.size(); i++) {
@@ -253,19 +255,21 @@ void expandMacros(std::vector<std::vector<Token>>& lines,
                         }
                     }
 
-                    tok.text = text;
-                    tok.filename = line[0].filename;
-                    tok.lineNum = line[0].lineNum;
-                    tok.offset = line[0].offset;
-                    newLine.push_back(tok);
+                    bodyTok.text = text;
+                    bodyTok.filename = tok.filename;
+                    bodyTok.lineNum = tok.lineNum;
+                    bodyTok.offset = tok.offset;
+
+                    newLine.push_back(bodyTok);
                 }
 
-                expanded.push_back(newLine);
+            } else {
+                // Normal token
+                newLine.push_back(tok);
             }
-
-        } else {
-            expanded.push_back(line);
         }
+
+        expanded.push_back(newLine);
     }
 
     lines = std::move(expanded);
@@ -458,7 +462,7 @@ void validateInstructions(const std::vector<Instruction>& instructions) {
         {"SUBI",{2,{'I','R'}}}, {"CMP",{2,{'R','R'}}}, {"CMPI",{2,{'I','R'}}},
         {"AND",{2,{'R','R'}}}, {"OR",{2,{'R','R'}}}, {"XOR",{2,{'R','R'}}},
         {"NOT",{2,{'R','R'}}}, {"LSH",{2,{'R','R'}}}, {"LSHI",{2,{'I','R'}}},
-        {"ASH",{2,{'R','R'}}}, {"ASHI",{2,{'I','R'}}}, {"MOV",{2,{'R','R'}}},
+        {"ASH",{2,{'R','R'}}}, {"ASHI",{2,{'I','R'}}}, {"ARSHI",{2,{'I','R'}}},{"MOV",{2,{'R','R'}}},
         {"MOVI",{2,{'I','R'}}}, {"LOAD",{2,{'R','R'}}}, {"STOR",{2,{'R','R'}}},
         {"BCOND",{2,{'C','I'}}}, {"JCOND",{2,{'C','R'}}}, {"JAL",{2,{'R','R'}}},
         {"READ",{1,{'R'}}}, {"GOIF",{2,{'C','L'}}}, {"WAIT", {}}
@@ -484,7 +488,7 @@ void validateInstructions(const std::vector<Instruction>& instructions) {
         // Otherwise, normal instruction validation
         std::string name = inst.tokens[0].text;
         if (!instructionSet.count(name)) {
-            std::cerr << "ERROR: Invalid instruction '" << name << "'\n";
+            std::cerr << "ERROR: Invalid/Unknown instruction '" << name << "'\n";
             std::cerr << "\tFile: " << inst.tokens[0].filename
                       << ", Line: " << inst.tokens[0].lineNum << "\n";
             exit(1);
@@ -668,7 +672,7 @@ void resolveImmediateValues(std::vector<Instruction>& instructions) {
         {"SUBI",{2,{'I','R'}}}, {"CMP",{2,{'R','R'}}}, {"CMPI",{2,{'I','R'}}},
         {"AND",{2,{'R','R'}}}, {"OR",{2,{'R','R'}}}, {"XOR",{2,{'R','R'}}},
         {"NOT",{2,{'R','R'}}}, {"LSH",{2,{'R','R'}}}, {"LSHI",{2,{'I','R'}}},
-        {"ASH",{2,{'R','R'}}}, {"ASHI",{2,{'I','R'}}}, {"MOV",{2,{'R','R'}}},
+        {"ASH",{2,{'R','R'}}}, {"ASHI",{2,{'I','R'}}}, {"ARSHI",{2,{'I','R'}}},{"MOV",{2,{'R','R'}}},
         {"MOVI",{2,{'I','R'}}}, {"LOAD",{2,{'R','R'}}}, {"STOR",{2,{'R','R'}}},
         {"BCOND",{2,{'C','I'}}}, {"JCOND",{2,{'C','R'}}}, {"JAL",{2,{'R','R'}}},
         {"READ",{1,{'R'}}}, {"I",{1,{'I'}}}
@@ -762,7 +766,7 @@ std::unordered_map<std::string,std::pair<uint8_t,uint8_t>> opcodeMap = {
     {"ADD",{0x00,0x05}}, {"ADDI",{0x05,0x00}}, {"SUB",{0x00,0x09}}, {"SUBI",{0x09,0x00}},
     {"CMP",{0x00,0x0B}}, {"CMPI",{0x0B,0x00}}, {"AND",{0x00,0x01}}, {"OR",{0x00,0x02}},
     {"XOR",{0x00,0x03}}, {"NOT",{0x00,0x04}}, {"LSH",{0x08,0x04}}, {"LSHI",{0x08,0x00}},
-    {"RSH",{0x84,0x00}}, {"RSHI",{0x85,0x00}}, {"ARSH",{0x08,0x06}}, {"ARSHI",{0x80,0x02}},
+    {"RSH",{0x84,0x00}}, {"RSHI",{0x85,0x00}}, {"ARSH",{0x08,0x06}}, {"ARSHI",{0x08,0x02}},
     {"NOP",{0x00,0x00}}, {"LOAD",{0x04,0x00}}, {"STOR",{0x04,0x04}}, {"MOV",{0x00,0x0D}},
     {"MOVI",{0x0D,0x00}}, {"SCOND",{0x04,0x0D}}, {"BCOND",{0x0C,0x00}}, {"JCOND",{0x04,0x0C}},
     {"JAL",{0x04,0x08}}, {"READ",{0x00,0x0F}}
@@ -835,7 +839,7 @@ std::vector<std::string> instructionsToHex(const std::vector<Instruction>& instr
         else if(name=="LSHI" || name=="RSHI" || name=="ARSHI") {
             int imm = std::stoi(inst.tokens[1].text);
             uint8_t r = regToVal(inst.tokens[2].text);
-            word = (upper << 12) | (r << 8) | (twosComplement(imm,5) & 0x1F); // <-- FIXED shift
+            word = (upper << 12) | (r << 8) | (lower<<4) | (twosComplement(imm,5) & 0x1F); // <-- FIXED shift
         }else if (name=="BCOND"){
             int imm = std::stoi(inst.tokens[2].text);
             word = (upper << 12) | (condMap[inst.tokens[1].text] << 8) | (twosComplement(imm,8) & 0xFF);

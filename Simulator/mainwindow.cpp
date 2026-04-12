@@ -24,7 +24,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->jumpAddress->setValue(32768);
 
     // Initialize CPU timer
     cpuTimer = new QTimer(this);
@@ -92,7 +91,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->resetButton, &QPushButton::pressed,  this, [this]{ model.setResetButton(true); });
     connect(ui->resetButton, &QPushButton::released, this, [this]{ model.setResetButton(false); });
-    connect(ui->jumptoAddressButton, &QPushButton::pressed, this, [this]{ this->jumpAddress(); });
+    connect(ui->RectJump, &QPushButton::pressed, this, [this]{ this->jumpAddress(32768); });
+    connect(ui->playerJump, &QPushButton::pressed, this, [this]{ this->jumpAddress(49152); });
+    connect(ui->stackJump, &QPushButton::pressed, this, [this]{ this->jumpAddress(model.registers[14]); });
+    connect(ui->refreshViews, &QPushButton::pressed, this, [this]{ this->updateViews(); });
 
     // Step / play / pause
     connect(ui->stepButton, &QPushButton::clicked, this, &MainWindow::stepModel);
@@ -128,7 +130,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->breakPoint->setValue(10000);
     ui->registerView->setFocusPolicy(Qt::NoFocus);
     ui->memoryView->setFocusPolicy(Qt::NoFocus);
-    ui->jumpAddress->setFocusPolicy(Qt::NoFocus);
     ui->onlyViewCheck->setFocusPolicy(Qt::NoFocus);
     ui->breakPoint->setFocusPolicy(Qt::ClickFocus);
     ui->resetButton->setFocusPolicy(Qt::NoFocus);
@@ -286,7 +287,7 @@ void MainWindow::parsePCMappingAndLoadSources(const QString &binFilePath)
 void MainWindow::stepModel()
 {
     for(int i = 0; i < ui->stepAmount->value(); i++) {
-        advanceModel();
+        advanceModel(false);
         updateViews();
         QThread::sleep(1.0/60.0);
     }
@@ -315,8 +316,8 @@ void MainWindow::pauseSimulation() {
 
 }
 
-void MainWindow::advanceModel() {
-    if(model.programCounter == (uint16_t)ui->breakPoint->value()) {
+void MainWindow::advanceModel(bool breakOn) {
+    if(breakOn && ui->breakOn->isChecked() && model.programCounter == (uint16_t)ui->breakPoint->value()) {
         flash();
         pauseSimulation();
         return;
@@ -351,37 +352,27 @@ void MainWindow::tickModel()
         firstCall = false;
     }
 
-    // Target interval (from UI)
-    int targetIntervalMs = ui->frameDelay->value();
 
+    advanceModel(false);
     // Advance model for the main instructions
-    for (int i = 0; i < ui->instructionsPerFrame->value(); ++i) {
-        advanceModel();
+    for (int i = 0; i < ui->instructionsPerFrame->value()-1; ++i) {
+        advanceModel(true);
     }
 
     // Optional extra steps with VSync
     setVsyncOn();
     for (int i = 0; i < 10; ++i) {
-        advanceModel();
+        advanceModel(true);
     }
     setVsyncOff();
 
     // Update views
     updateViews();
 
-    // Compute elapsed time
-    qint64 elapsed = frameTimer.elapsed();
-
-    // Calculate next interval: target minus time taken
-    int nextInterval = targetIntervalMs - static_cast<int>(elapsed);
-    if (nextInterval < 0)
-        nextInterval = 0; // don't allow negative interval
-
     // Restart timer for next tick
-    frameTimer.restart();
 
     // Set CPU timer interval for next tick
-    cpuTimer->setInterval(nextInterval);
+    cpuTimer->setInterval(ui->frameDelay->value());
 }
 
 void MainWindow::setVsyncOn() {
@@ -424,8 +415,7 @@ void MainWindow::updateMemoryViewPartial()
     }
 }
 
-void MainWindow::jumpAddress() {
-    int targetRow = ui->jumpAddress->value();
+void MainWindow::jumpAddress(int targetRow) {
     ui->memoryView->scrollTo(memoryModelQt->index(targetRow, 0),
                              QAbstractItemView::PositionAtTop);
 
@@ -439,10 +429,27 @@ void MainWindow::updateViews()
 {
     ui->vgaView->update();
     if(ui->onlyViewCheck->isChecked()) return;
-
+    if(ui->followPC->isChecked()) {
+        jumpAddress(model.programCounter);
+    }
     for (int i = 0; i < 16; ++i) {
+        uint16_t value = model.registers[i];
+
+        QString hex = QString("%1")
+                          .arg(value, 4, 16, QChar('0'))
+                          .toUpper();
+
+        QString dec = QString::number(value);
+
+        QString bin = QString("%1")
+                          .arg(value, 16, 2, QChar('0'));  // 16-bit binary
+
         registerModelQt->setItem(i, 0, new QStandardItem(
-                                           QString("R%1: %2").arg(i).arg(model.registers[i], 4, 16, QChar('0')).toUpper()
+                                           QString("R%1: HEX=%2 DEC=%3 BIN=%4")
+                                               .arg(i)
+                                               .arg(hex)
+                                               .arg(dec)
+                                               .arg(bin)
                                            ));
     }
 
@@ -452,7 +459,8 @@ void MainWindow::updateViews()
         QString("PC: %1").arg(model.programCounter, 2, 10).toUpper()
     );
     ui->flags->setText(
-        QString("Flags: C=%1 L=%2 F=%3 Z=%4 N=%5")
+        QString("INSTR: %1 Flags: C=%2 L=%3 F=%4 Z=%5 N=%6")
+            .arg(model.memory[model.programCounter], 4,16)
             .arg(model.cFlag)
             .arg(model.lFlag)
             .arg(model.fFlag)

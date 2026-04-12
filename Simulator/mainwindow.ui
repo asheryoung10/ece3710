@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>928</width>
+    <width>1146</width>
     <height>600</height>
    </rect>
   </property>
@@ -35,6 +35,13 @@
             <widget class="QCheckBox" name="onlyViewCheck">
              <property name="text">
               <string>Only Update View</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="refreshViews">
+             <property name="text">
+              <string>Refresh Views</string>
              </property>
             </widget>
            </item>
@@ -286,16 +293,37 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_8">
           <item>
-           <widget class="QPushButton" name="jumptoAddressButton">
+           <widget class="QPushButton" name="stackJump">
             <property name="text">
-             <string>Jump To Address</string>
+             <string>Stack</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QSpinBox" name="jumpAddress">
-            <property name="maximum">
-             <number>65535</number>
+           <widget class="QPushButton" name="RectJump">
+            <property name="text">
+             <string>Rect</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="playerJump">
+            <property name="text">
+             <string>Player</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="followPC">
+            <property name="text">
+             <string>Follow PC</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="breakOn">
+            <property name="text">
+             <string>Break</string>
             </property>
            </widget>
           </item>

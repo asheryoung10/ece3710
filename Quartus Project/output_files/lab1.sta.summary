@@ -1,0 +1,437 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'vga:vga_instance|clk25'
+Slack : -26.800
+TNS   : -40376.173
+
+Type  : Slow 1100mV 85C Model Setup 'systemClock50MHz'
+Slack : -10.665
+TNS   : -51066.116
+
+Type  : Slow 1100mV 85C Model Setup 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]'
+Slack : -5.059
+TNS   : -208.115
+
+Type  : Slow 1100mV 85C Model Setup 'push_buttons[0]'
+Slack : -4.161
+TNS   : -4.161
+
+Type  : Slow 1100mV 85C Model Setup 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : -3.980
+TNS   : -191.135
+
+Type  : Slow 1100mV 85C Model Setup 'audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]'
+Slack : -2.342
+TNS   : -14.811
+
+Type  : Slow 1100mV 85C Model Setup 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]'
+Slack : -1.796
+TNS   : -1.796
+
+Type  : Slow 1100mV 85C Model Hold 'audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]'
+Slack : 0.015
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'systemClock50MHz'
+Slack : 0.231
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]'
+Slack : 0.431
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : 0.560
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'push_buttons[0]'
+Slack : 0.670
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'vga:vga_instance|clk25'
+Slack : 0.671
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]'
+Slack : 0.685
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : -7.008
+TNS   : -74.643
+
+Type  : Slow 1100mV 85C Model Recovery 'vga:vga_instance|clk25'
+Slack : -5.741
+TNS   : -145.427
+
+Type  : Slow 1100mV 85C Model Recovery 'systemClock50MHz'
+Slack : -4.571
+TNS   : -1407.719
+
+Type  : Slow 1100mV 85C Model Removal 'systemClock50MHz'
+Slack : 1.355
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'vga:vga_instance|clk25'
+Slack : 2.270
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : 3.554
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'systemClock50MHz'
+Slack : -2.225
+TNS   : -14186.861
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'vga:vga_instance|clk25'
+Slack : -2.174
+TNS   : -9804.564
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]'
+Slack : -0.394
+TNS   : -44.796
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : -0.394
+TNS   : -35.709
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]'
+Slack : -0.394
+TNS   : -4.919
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]'
+Slack : -0.394
+TNS   : -0.597
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'push_buttons[0]'
+Slack : 0.018
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'vga:vga_instance|clk25'
+Slack : -26.242
+TNS   : -40036.226
+
+Type  : Slow 1100mV 0C Model Setup 'systemClock50MHz'
+Slack : -10.534
+TNS   : -49225.420
+
+Type  : Slow 1100mV 0C Model Setup 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]'
+Slack : -4.877
+TNS   : -200.981
+
+Type  : Slow 1100mV 0C Model Setup 'push_buttons[0]'
+Slack : -4.247
+TNS   : -4.247
+
+Type  : Slow 1100mV 0C Model Setup 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : -3.870
+TNS   : -187.043
+
+Type  : Slow 1100mV 0C Model Setup 'audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]'
+Slack : -2.355
+TNS   : -15.159
+
+Type  : Slow 1100mV 0C Model Setup 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]'
+Slack : -1.713
+TNS   : -1.713
+
+Type  : Slow 1100mV 0C Model Hold 'audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]'
+Slack : 0.135
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'systemClock50MHz'
+Slack : 0.216
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]'
+Slack : 0.426
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : 0.563
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]'
+Slack : 0.607
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'vga:vga_instance|clk25'
+Slack : 0.699
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'push_buttons[0]'
+Slack : 0.738
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : -6.952
+TNS   : -74.062
+
+Type  : Slow 1100mV 0C Model Recovery 'vga:vga_instance|clk25'
+Slack : -5.765
+TNS   : -146.535
+
+Type  : Slow 1100mV 0C Model Recovery 'systemClock50MHz'
+Slack : -4.363
+TNS   : -1345.285
+
+Type  : Slow 1100mV 0C Model Removal 'systemClock50MHz'
+Slack : 1.251
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'vga:vga_instance|clk25'
+Slack : 2.472
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : 3.637
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'systemClock50MHz'
+Slack : -2.225
+TNS   : -14252.967
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'vga:vga_instance|clk25'
+Slack : -2.174
+TNS   : -9786.804
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]'
+Slack : -0.394
+TNS   : -43.843
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : -0.394
+TNS   : -35.401
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]'
+Slack : -0.394
+TNS   : -4.793
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]'
+Slack : -0.394
+TNS   : -0.517
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'push_buttons[0]'
+Slack : 0.008
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'vga:vga_instance|clk25'
+Slack : -15.790
+TNS   : -22748.721
+
+Type  : Fast 1100mV 85C Model Setup 'systemClock50MHz'
+Slack : -6.500
+TNS   : -29813.060
+
+Type  : Fast 1100mV 85C Model Setup 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : -2.606
+TNS   : -120.067
+
+Type  : Fast 1100mV 85C Model Setup 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]'
+Slack : -2.592
+TNS   : -106.054
+
+Type  : Fast 1100mV 85C Model Setup 'push_buttons[0]'
+Slack : -2.120
+TNS   : -2.120
+
+Type  : Fast 1100mV 85C Model Setup 'audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]'
+Slack : -1.217
+TNS   : -6.588
+
+Type  : Fast 1100mV 85C Model Setup 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]'
+Slack : -1.016
+TNS   : -1.016
+
+Type  : Fast 1100mV 85C Model Hold 'audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]'
+Slack : -0.220
+TNS   : -0.670
+
+Type  : Fast 1100mV 85C Model Hold 'systemClock50MHz'
+Slack : 0.133
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]'
+Slack : 0.160
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : 0.197
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'push_buttons[0]'
+Slack : 0.294
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'vga:vga_instance|clk25'
+Slack : 0.326
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]'
+Slack : 0.409
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : -4.195
+TNS   : -44.637
+
+Type  : Fast 1100mV 85C Model Recovery 'vga:vga_instance|clk25'
+Slack : -3.387
+TNS   : -86.292
+
+Type  : Fast 1100mV 85C Model Recovery 'systemClock50MHz'
+Slack : -2.773
+TNS   : -857.035
+
+Type  : Fast 1100mV 85C Model Removal 'systemClock50MHz'
+Slack : 0.715
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'vga:vga_instance|clk25'
+Slack : 1.121
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : 1.878
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'systemClock50MHz'
+Slack : -2.174
+TNS   : -12921.095
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'vga:vga_instance|clk25'
+Slack : -2.174
+TNS   : -9625.176
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'push_buttons[0]'
+Slack : -0.175
+TNS   : -0.351
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : -0.045
+TNS   : -0.682
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]'
+Slack : 0.000
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]'
+Slack : 0.106
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]'
+Slack : 0.128
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'vga:vga_instance|clk25'
+Slack : -14.376
+TNS   : -20582.632
+
+Type  : Fast 1100mV 0C Model Setup 'systemClock50MHz'
+Slack : -5.652
+TNS   : -25804.379
+
+Type  : Fast 1100mV 0C Model Setup 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : -2.471
+TNS   : -114.224
+
+Type  : Fast 1100mV 0C Model Setup 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]'
+Slack : -2.319
+TNS   : -94.465
+
+Type  : Fast 1100mV 0C Model Setup 'push_buttons[0]'
+Slack : -1.948
+TNS   : -1.948
+
+Type  : Fast 1100mV 0C Model Setup 'audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]'
+Slack : -1.133
+TNS   : -6.134
+
+Type  : Fast 1100mV 0C Model Setup 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]'
+Slack : -0.912
+TNS   : -0.912
+
+Type  : Fast 1100mV 0C Model Hold 'audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]'
+Slack : -0.194
+TNS   : -0.514
+
+Type  : Fast 1100mV 0C Model Hold 'systemClock50MHz'
+Slack : 0.043
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]'
+Slack : 0.145
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : 0.173
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'push_buttons[0]'
+Slack : 0.294
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'vga:vga_instance|clk25'
+Slack : 0.305
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]'
+Slack : 0.367
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : -4.133
+TNS   : -44.099
+
+Type  : Fast 1100mV 0C Model Recovery 'vga:vga_instance|clk25'
+Slack : -3.434
+TNS   : -87.827
+
+Type  : Fast 1100mV 0C Model Recovery 'systemClock50MHz'
+Slack : -2.692
+TNS   : -831.078
+
+Type  : Fast 1100mV 0C Model Removal 'systemClock50MHz'
+Slack : 0.573
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'vga:vga_instance|clk25'
+Slack : 1.247
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : 1.873
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'systemClock50MHz'
+Slack : -2.174
+TNS   : -12925.872
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'vga:vga_instance|clk25'
+Slack : -2.174
+TNS   : -9590.903
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'push_buttons[0]'
+Slack : -0.171
+TNS   : -0.367
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_configurator_select:i2c_conf|i2c_clk_reg'
+Slack : 0.003
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[7]'
+Slack : 0.037
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_output:dac_driver|mclk_count[1]'
+Slack : 0.126
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'audio_unit:audio_unit_instance|audio_output:dac_driver|counter[2]'
+Slack : 0.137
+TNS   : 0.000
+
+------------------------------------------------------------

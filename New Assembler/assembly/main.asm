@@ -7,9 +7,10 @@ WAIT // Execution finished
 funcMain:
     %save(R1l) // Save return address
     
-    %call(&funcInitMainMenu)
-    
     funcMainLoop:
+        %call(&funcJoinLeavePlayers) 
+        %call(&funcSendPlayerPositions)
+        READ R12 | &varPreviousButtonStateAddress | STOR R15 R12 // Save previous button state
         %call(&funcWaitForVsync)
         GOIF UC &funcMainLoop
 
@@ -17,5 +18,6 @@ funcMain:
     %return()
 
 #include "defines.asm"
+#include "globalVariables.asm"
 #include "waitForVsync.asm"
-#include "initMainMenu.asm"
+#include "sendPlayerPositions.asm"
