@@ -62,7 +62,8 @@ wire [15:0] p2HighlightColor;
 wire [15:0] p3HighlightColor;
 wire [15:0] p4HighlightColor;
 
-wire [15:0] backgroundOffset;
+wire [15:0] backgroundOffsetX;
+wire [15:0] backgroundOffsetY;
 wire [15:0] audioPitchIndex;
 
 // VGA wires
@@ -116,7 +117,8 @@ vga vga_instance (
 		.p4AnimationIndex(p4AnimationIndex),
 		.p4HighlightColor(p4HighlightColor),
 		
-		.backgroundOffset(backgroundOffset),
+		.backgroundOffsetY(backgroundOffsetY),
+		.backgroundOffsetX(backgroundOffsetX),
 	
 	.pixelX(vgaPixelX),
 	.pixelY(vgaPixelY),
@@ -211,7 +213,8 @@ sharedMemory memory_instance
 		.p4AnimationIndex(p4AnimationIndex),
 		.p4HighlightColor(p4HighlightColor),
 		
-		.backgroundOffset(backgroundOffset),
+		.backgroundOffsetX(backgroundOffsetX),
+		.backgroundOffsetY(backgroundOffsetY),
 		.audioPitchIndex()
 );
 

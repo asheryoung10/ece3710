@@ -25,7 +25,8 @@ module vga
 		input [15:0] p4AnimationIndex,
 		input [15:0] p4HighlightColor,
 	
-	input [15:0] backgroundOffset,
+	input [15:0] backgroundOffsetX,
+	input [15:0] backgroundOffsetY,
 	 
 	 input [7:0] rectR,
 	 input [7:0] rectG,
@@ -105,8 +106,8 @@ assign pixelY = display_area ? (vcount - (V_SYNC + V_BACK_PORCH)) : 10'd0;
 wire [7:0] backGroundR, backGroundG, backGroundB;
 tileMemory tileMem_inst (
     .clk50(clk25),
-    .pixelX(pixelX),
-    .pixelY(pixelY - ({1'b0, backgroundOffset[15:2]})),
+    .pixelX(pixelX - ({1'b0, backgroundOffsetX[15:2]})),
+    .pixelY(pixelY - ({1'b0, backgroundOffsetY[15:2]})),
     .glyphPixelR(backGroundR),
     .glyphPixelG(backGroundG),
     .glyphPixelB(backGroundB)

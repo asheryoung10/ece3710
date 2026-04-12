@@ -4,25 +4,31 @@ READ R14    // R14 is the stack pointer
 WAIT // Execution finished
 
 funcMain:
-    %save(R1l) // Save return address
+    %save(R13) // Save return address
 
     READ R0 | &varSelectionRoomPlayerCopyDataAddress | %call(&funcCopyPlayerData) 
+    READ R0 | &varSelectionRoomInitRectangleCopy8DataAddress | %call(&funcCopyRectData)
     funcMainLoop:
         %call(&funcJoinLeavePlayers) 
         %call(&funcApplyUserInput)
         %call(&funcApplyVelocity)
+
+        %call(&funcDetectAndResolveCollisions)
+
+        %call(&funcPushLocalToShared)
         %call(&funcWaitForVsync)
         %call(&funcUpdateButtonState)
         READ R12 | &varPreviousButtonStateAddress | STOR R15 R12 // Save previous button state
         GOIF UC &funcMainLoop
 
-    %restore(R11) // Restore return address
+    %restore(R13) // Restore return address
     %return()
 
 #include "defines.asm"
 #include "globalVariables.asm"
 #include "waitForVsync.asm"
 #include "sendPlayerPositions.asm"
+#include "detectCollision.asm"
 
 funcUpdateButtonState:
     READ R0 | &varPreviousButtonStateAddress
