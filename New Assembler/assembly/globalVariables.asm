@@ -1,8 +1,8 @@
 varActivePlayersAddress:
-    0000 // p1, Zero if inactive
-    0000 // p2
-    0000 // p3
-    0000 // p4
+    0x0000 // p1, Zero if inactive
+    0x0000 // p2
+    0x0000 // p3
+    0x0000 // p4
 
 varPlayerDefaultColors:
     0xF800 // p1

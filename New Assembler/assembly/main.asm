@@ -49,7 +49,7 @@ funcMain:
         %call(&funcApplyUserInput)
         %call(&funcApplyVelocity)
 
-        //%call(&funcDetectAndResolveCollisions)
+        %call(&funcDetectAndResolveCollisions)
 
         %call(&funcPushLocalToShared)
         %call(&funcWaitForVsync)
