@@ -259,7 +259,7 @@ integer i = 0;
 		  
         while (running != 0) begin
 				i = i + 1;
-				if(i == 100000) running = 0;
+				if(i == 100) running = 0;
 		  
 				if(uut.cpu_instance.control_unit_instance.nextState == NOTHING_STATE) begin
 			$display("stoped due to nothing state");
