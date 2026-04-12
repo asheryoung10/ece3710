@@ -1,7 +1,7 @@
 #define playerWidth 45
 #define playerHeight 45
 
-#define greatestCPUAddress 4000
+#define greatestCPUAddress 2048
 
 #define playerSharedDataAddress 0xC000
 #define rectSharedDataAddress 0x8000
