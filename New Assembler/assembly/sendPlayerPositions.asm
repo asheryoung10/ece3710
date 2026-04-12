@@ -4,50 +4,21 @@ funcJoinLeavePlayers:
     %save(R8)
     %save(R9)
 
-    MOVI 0 R0 // Player index
-    MOVI 8 R1 // Current player 1 down mask
-    READ R4 | &varActivePlayersAddress
-    READ R5 | &varPlayerLocalData
-    READ R6 | 215  // Start x pos
-    READ R7 | 220 // y pos
-    READ R8 | &varPlayerDefaultColors
-    READ R9 | &varPlayerLocalData
-    ADDI 3 R9 // Color
-    
-    funcJoinLeavePlayersPlayerLoop:
-        
-        MOV R1 R3 // R3 = player down mask
-        READ R12  | &varButtonPressedThisFrameAddress | LOAD R12 R12
-        AND R12 R3
-        CMPI 0 R3 | GOIF EQ &funcJoinLeavePlayersPlayerLoopNext //if not pressed this frame do nothing
+    MOVI 0 R0
+    MOVI 8 R9
+    funcJoinLeavePlayersLoop:
+        READ R1 | &varButtonPressedThisFrameAddress | LOAD R1 R1
+        MOV R9 R2 | AND R1 R2 | CMPI 0 R2 | GOIF EQ &funcJoinLeavePlayersLoopContinue
+        READ R1 | &varActivePlayersAddress | ADD R0 R1
+        MOV R1 R2 | LOAD R2 R2
+        NOT R2 R2
+        STOR R2 R1
 
-        LOAD R12 R4
-        NOT R12 R12
-        STOR R12 R4
-        
-        STOR R6 R5
-        ADDI 1 R5
-        STOR R7 R5
-        SUBI 1 R5
-        READ R10 | 0xFF00
-        CMPI 0 R12 | GOIF EQ &funcJoinLeavePlayersPlayerLoopSetColorInactiveSkip
-        LOAD R12 R8
-        MOV R12 R10
-
-        funcJoinLeavePlayersPlayerLoopSetColorInactiveSkip:
-
-        STOR R10 R9
-
-        funcJoinLeavePlayersPlayerLoopNext:
-        ADDI 1 R8
-        ADDI 4 R5
-        ADDI 4 R9
+        funcJoinLeavePlayersLoopContinue:
+        LSHI 4 R9
         ADDI 1 R0
-        ADDI 55 R6 // Space players out
-        ADDI 1 R4
-        LSHI 4 R1
-        CMPI 4 R0
-        GOIF NE &funcJoinLeavePlayersPlayerLoop
+        CMPI 4 R0 | GOIF NE &funcJoinLeavePlayersLoop
+
 
     %restore(R9)
     %restore(R8)
@@ -213,7 +184,7 @@ funcPushLocalToShared:
     READ R12 | 298 | SUB R12 R3
     READ R4 | &varLocalDataPlayer1Y | LOAD R4 R4
     READ R12 | 220 | SUB R12 R4
-    MOVI 0 R3
+    //MOVI 0 R3
     //MOVI 0 R4
 
     READ R12 | %backgroundX | STOR R3 R12
@@ -231,8 +202,8 @@ funcPushLocalToShared:
 
         ADDI 1 R0
         CMPI 4 R0 | GOIF NE &funcPushLocalToSharedPlayerLoop
-        MOVI 0 R0 // i = 0
 
+    MOVI 0 R0 // i = 0
     READ R1 | &varRectLocalData
     READ R2 | %rectSharedDataAddress
     funcPushLocalToSharedRectLoop:
