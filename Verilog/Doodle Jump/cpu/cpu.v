@@ -79,6 +79,7 @@ wire [DATA_WIDTH-1:0] aluResult;
 wire instructionRegisterWriteEnable;
 // Outputs
 wire [DATA_WIDTH-1:0] instructionRegisterContents;
+assign R3 = instructionRegisterContents;
 
 // Inputs
 wire programStateRegisterWriteEnable;
@@ -148,7 +149,7 @@ register_file_instance
 	
 	
 	 .vsync(vsync),
-	 .R3(R3)
+	 .R3()
 );
 
 
