@@ -59,7 +59,7 @@ reg [15:0] contentsRect;
 memory 
 #(
     .DATA_WIDTH(DATA_WIDTH),
-    .ADDR_WIDTH(12)
+    .ADDR_WIDTH(16)
 )
 cpu_memory_instance
 (
