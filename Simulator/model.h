@@ -48,7 +48,8 @@ public:
     uint16_t getPlayerAnimationIndex(int playerIndex);
     uint16_t getPlayerHighlightColor(int playerIndex);
 
-    uint16_t getBackgroundOffset();
+    uint16_t getBackgroundOffsetX();
+    uint16_t getBackgroundOffsetY();
     uint16_t getAudioPitchIndex();
 
 

@@ -144,11 +144,14 @@ uint16_t Model::getPlayerHighlightColor(int playerIndex) {
     return memory[base + 3];
 }
 
-uint16_t Model::getBackgroundOffset() {
+uint16_t Model::getBackgroundOffsetX() {
     return memory[0xC010];
 }
-uint16_t Model::getAudioPitchIndex() {
+uint16_t Model::getBackgroundOffsetY() {
     return memory[0xC011];
+}
+uint16_t Model::getAudioPitchIndex() {
+    return memory[0xC012];
 }
 
 

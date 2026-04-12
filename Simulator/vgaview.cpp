@@ -25,14 +25,31 @@ void VGAView::paintEvent(QPaintEvent *event)
     QPainter vgaPainter(&vgaBuffer);
 
     const int tileSize = 32;
-    for (int y = 0; y < 480; y += tileSize) {
-        for (int x = 0; x < 640; x += tileSize) {
-            bool isWhite = ((x / tileSize) + (y / tileSize)) % 2 == 0;
+
+    int offsetX = model->getBackgroundOffsetX()/4;
+    int offsetY = model->getBackgroundOffsetY()/4;
+
+    int pixelOffsetX = offsetX % tileSize;
+    int pixelOffsetY = offsetY % tileSize;
+
+    for (int y = -tileSize; y < 480 + tileSize; y += tileSize) {
+        for (int x = -tileSize; x < 640 + tileSize; x += tileSize) {
+
+            int tileX = (x + offsetX) / tileSize;
+            int tileY = (y + offsetY) / tileSize;
+
+            bool isWhite = (tileX + tileY) % 2 == 0;
             QColor tileColor = isWhite ? QColor(80, 80, 80) : QColor(50, 50, 50);
-            vgaPainter.fillRect(x, y+model->getBackgroundOffset(), tileSize, tileSize, tileColor);
+
+            vgaPainter.fillRect(
+                x - pixelOffsetX,
+                y - pixelOffsetY,
+                tileSize,
+                tileSize,
+                tileColor
+                );
         }
     }
-
     for (int i = 0; i < 64; ++i) {
         Model::Rectangle r = model->getRectangle(i);
 

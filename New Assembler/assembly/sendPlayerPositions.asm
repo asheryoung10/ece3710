@@ -7,11 +7,11 @@ funcJoinLeavePlayers:
     MOVI 0 R0 // Player index
     MOVI 8 R1 // Current player 1 down mask
     READ R4 | &varActivePlayersAddress
-    READ R5 | %playerSharedDataAddress
+    READ R5 | &varPlayerLocalData
     READ R6 | 215  // Start x pos
     READ R7 | 220 // y pos
     READ R8 | &varPlayerDefaultColors
-    READ R9 | %playerSharedDataAddress
+    READ R9 | &varPlayerLocalData
     ADDI 3 R9 // Color
     
     funcJoinLeavePlayersPlayerLoop:
@@ -59,7 +59,7 @@ funcJoinLeavePlayers:
 // Takes in R0 the address of player data to copy
 funcCopyPlayerData:
     MOVI 0 R1 // i = 0
-    READ R2 | %playerSharedDataAddress
+    READ R2 | &varPlayerLocalData
 
     funcCopyPlayerDataLoop:
 
@@ -73,22 +73,41 @@ funcCopyPlayerData:
         GOIF NE &funcCopyPlayerDataLoop
     %return
 
+// Takes in R0 the address of the rect data to copy
+funcCopyRectData:
+    MOVI 0 R1 // i = 0
+    READ R2 | &varRectLocalData
+
+    funcCopyPlayerDataLoop:
+
+        LOAD R3 R0
+        STOR R3 R2
+
+        ADDI 1 R2
+        ADDI 1 R0
+        ADDI 1 R1 // i++
+        CMPI 32 R1
+        GOIF NE &funcCopyPlayerDataLoop
+    %return
+
 funcApplyUserInput:
 
     MOVI 0 R0 // i = 0
     MOVI 1 R1 // player input mask
     READ R2 | &varPlayerVelocityAddress
     READ R3 | &varActivePlayersAddress
-    READ R4 | %playerSharedDataAddress
+    READ R4 | &varPlayerLocalData
 
     funcApplyUserInputPlayerLoop:
         LOAD R5 R3 | CMPI 0 R5 | GOIF EQ &funcApplyUserInputPlayerLoopContinue // Skip player if inactive
 
         MOVI 0 R8 // Detects if a horizontal input
+
+        // Left Button
         MOVI 0 R6
         MOV R1 R5 | AND R15 R5 | CMPI 0 R5 | GOIF EQ &funcApplyUserInputSkipLeft
-        ADDI -2 R6 // Amount to add
-        MOVI 1 R8
+        SUBI %playerHorizontalIncrement R6 // Amount to add
+        NOT R8  R8
         funcApplyUserInputSkipLeft:
         LOAD R7 R2 | ADD R6 R7
         CMPI %minVelocityX R7 | GOIF LE &funcApplyUserInputSkipClampLeft
@@ -96,12 +115,12 @@ funcApplyUserInput:
         funcApplyUserInputSkipClampLeft:
         STOR R7 R2
 
+        // Right Button
         LSHI 1 R1
-
         MOVI 0 R6
         MOV R1 R5 | AND R15 R5 | CMPI 0 R5 | GOIF EQ &funcApplyUserInputSkipRight
-        ADDI 2 R6 // Amount to add
-        MOVI 1 R8
+        ADDI %playerHorizontalIncrement R6 // Amount to add
+        NOT R8 R8
         funcApplyUserInputSkipRight:
         LOAD R7 R2 | ADD R6 R7
         CMPI %maxVelocityX R7 | GOIF GE &funcApplyUserInputSkipClampRight
@@ -109,8 +128,8 @@ funcApplyUserInput:
         funcApplyUserInputSkipClampRight:
         STOR R7 R2
 
-        CMPI 1 R8 | GOIF EQ &funcApplyUserInputSkipHorizontalFriction
-
+        // Horizontal friction
+        CMPI 0 R8 | GOIF NE &funcApplyUserInputSkipHorizontalFriction
         LOAD R7 R2 // R7 = velocityx
         CMPI 0 R7 | GOIF EQ &funcApplyUserInputSkipHorizontalFriction
         MOVI 1 R8
@@ -120,8 +139,28 @@ funcApplyUserInput:
         ADD R8 R7
         STOR R7 R2
         funcApplyUserInputSkipHorizontalFriction:
-        LSHI -1 R1
 
+        //Gravity:
+        ADDI 1 R2
+        LOAD R7 R2 | ADDI %playerGravityIncrement R7
+        CMPI %maxVelocityY R7 | GOIF GE &funcApplyUserInputSkipGravityClamp
+        MOVI %maxVelocityY R7
+        funcApplyUserInputSkipGravityClamp:
+        STOR R7 R2
+
+        LSHI 1 R1 // Up button
+
+        READ R7 | &varButtonPressedThisFrameAddress | LOAD R7 R7 | AND R1 R7 // R7 holds if button was pressed this frame
+        CMPI 0 R7 | GOIF EQ &funcApplyUserInputJumpSkip
+        MOVI %minVelocityX R7
+        STOR R7 R2
+        
+        funcApplyUserInputJumpSkip:
+
+
+
+        ADDI -1 R2
+        LSHI -2 R1
         funcApplyUserInputPlayerLoopContinue:
         ADDI 2 R2 // step player velocity
         ADDI 1 R3 // step active player
@@ -136,7 +175,7 @@ funcApplyVelocity:
     MOVI 0 R0 // i = 0
     READ R2 | &varPlayerVelocityAddress
     READ R3 | &varActivePlayersAddress
-    READ R4 | %playerSharedDataAddress
+    READ R4 | &varPlayerLocalData
 
     funcApplyVelocityPlayerLoop:
         LOAD R5 R3 | CMPI 0 R5 | GOIF EQ &funcApplyVelocityPlayerLoopContinue // Skip player if inactive
@@ -169,3 +208,42 @@ funcApplyVelocity:
 
     %return
 
+funcPushLocalToShared:
+
+    READ R3 | &varLocalDataPlayer1X | LOAD R3 R3
+    READ R12 | 298 | SUB R12 R3
+    READ R4 | &varLocalDataPlayer1Y | LOAD R4 R4
+    READ R12 | 220 | SUB R12 R4
+    READ R12 | %backgroundX | STOR R3 R12
+    READ R12 | %backgroundY | STOR R4 R12
+    
+    MOVI 0 R0 // i = 0
+    READ R1 | &varPlayerLocalData
+    READ R2 | %playerSharedDataAddress
+    funcPushLocalToSharedPlayerLoop:
+
+        LOAD R12 R1 | SUB R3 R12 | STOR R12 R2 | ADDI 1 R1 | ADDI 1 R2 // send data x
+        LOAD R12 R1 | SUB R4 R12 | STOR R12 R2 | ADDI 1 R1 | ADDI 1 R2 // send data y
+        LOAD R12 R1 | STOR R12 R2 | ADDI 1 R1 | ADDI 1 R2 // send data
+        LOAD R12 R1 | STOR R12 R2 | ADDI 1 R1 | ADDI 1 R2 // send data
+
+        ADDI 1 R0
+        CMPI 4 R0 | GOIF NE &funcPushLocalToSharedPlayerLoop
+        MOVI 0 R0 // i = 0
+
+    READ R1 | &varRectLocalData
+    READ R2 | %rectSharedDataAddress
+    funcPushLocalToSharedRectLoop:
+
+        LOAD R12 R1 | SUB R3 R12  | STOR R12 R2 | ADDI 1 R1 | ADDI 1 R2 // send data x
+        LOAD R12 R1 | SUB R4 R12  | STOR R12 R2 | ADDI 1 R1 | ADDI 1 R2 // send data y
+        LOAD R12 R1 | STOR R12 R2 | ADDI 1 R1 | ADDI 1 R2 // send data
+        LOAD R12 R1 | STOR R12 R2 | ADDI 1 R1 | ADDI 1 R2 // send data
+
+        ADDI 1 R0
+        CMPI 16 R0 | GOIF NE &funcPushLocalToSharedRectLoop
+    
+    %return
+        
+
+    
