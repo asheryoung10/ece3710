@@ -41,7 +41,7 @@ private:
     void setVsyncOff();
     void setVsyncOn();
     void setVsync(bool on);
-    void jumpAddress();
+    void jumpAddress(int jumpAddress);
     struct SourceInfo {
         QString file;   // filename
         int line;       // 1-based line number
@@ -49,7 +49,7 @@ private:
     static QString currentFileShown;
     static int currentLineShown;
 
-    void advanceModel();
+    void advanceModel(bool breakOn);
     void flash();
 
     QMap<uint16_t, SourceInfo> pcToSource;        // PC -> file + line

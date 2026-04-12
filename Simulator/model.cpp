@@ -4,6 +4,7 @@
 #include <fstream>
 #include <sstream>
 #include <cstring>
+#include <QElapsedTimer>
 
 
 Model::Model(const std::string& filepath) {
@@ -43,6 +44,17 @@ void Model::setResetButton(bool reset) {
 }
 
 void Model::setVSync(bool vsyncVal) {
+        if (vsync && !vsyncVal) {
+            // Falling edge = one frame occurred
+
+            qint64 now = vsyncTimer.elapsed();
+            qint64 delta = now - lastFrameMs;
+            lastFrameMs = now;
+
+            if (delta > 0) {
+                fps = 1000 / delta;  // ms → FPS
+            }
+        }
     vsync = vsyncVal;
 }
 
@@ -141,6 +153,8 @@ uint16_t Model::getAudioPitchIndex() {
 
 
 void Model::initialize() {
+    vsyncTimer.start();
+    lastFrameMs = vsyncTimer.elapsed();
     for(int i = 0; i < 16; i++ ) registers[i] = 0;
     programCounter = 0;
     cFlag = false;
@@ -171,13 +185,6 @@ void Model::initialize() {
     readNextCycle = false;
     vsync = false;
     resetButton = false;
-    for(int i = 0; i < 16; i++) {
-        uint16_t rectOffset = (1<<15) + i*4;
-        memory[rectOffset + 0] = i;
-        memory[rectOffset + 1] = i*32;
-        memory[rectOffset + 2] = 0x2020;
-        memory[rectOffset + 3] = i * 0x1111;
-    }
 }
 
 Model::~Model() {
@@ -189,25 +196,25 @@ bool Model::tick() {
 
     // LSB is vsync, then right, left, jump buttons
     registers[15] =
-        (p4Down << 16) |
-        (p4Up   << 15) |
-        (p4Right << 14) |
-        (p4Left<< 13) |
+        (p4Down << 15) |
+        (p4Up   << 14) |
+        (p4Right << 13) |
+        (p4Left<< 12) |
 
-        (p3Down << 12) |
-        (p3Up   << 11) |
-        (p3Right << 10) |
-        (p3Left<<  9) |
+        (p3Down << 11) |
+        (p3Up   << 10) |
+        (p3Right << 9) |
+        (p3Left<<  8) |
 
-        (p2Down <<  8) |
-        (p2Up   <<  7) |
-        (p2Right <<  6) |
-        (p2Left<<  5) |
+        (p2Down <<  7) |
+        (p2Up   <<  6) |
+        (p2Right <<  5) |
+        (p2Left<<  4) |
 
-        (p1Down <<  4) |
-        (p1Up   <<  3) |
-        (p1Right <<  2) |
-        (p1Left<<  1);
+        (p1Down <<  3) |
+        (p1Up   <<  2) |
+        (p1Right <<  1) |
+        (p1Left<<  0);
     registers[11] = vsync;
 
     uint16_t instruction = memory[programCounter];
@@ -477,9 +484,22 @@ switch (rd) {
             case 0b1010:
                 registers[rd] = B >> (A & 0xF);
                 break;
-            case 0b0010:
-                registers[rd] = uint16_t(int16_t(B) >> (A & 0xF));
+            case 0b0010: {
+                uint16_t bits5 = A & 0x1F;
+
+                // sign-extend 5-bit to 32-bit signed integer
+                int32_t shiftAmount = (bits5 << 27) >> 27;
+
+                int32_t value = static_cast<int16_t>(registers[rd]);
+
+                if (shiftAmount >= 0) {
+                    registers[rd] = static_cast<uint16_t>(value << shiftAmount);
+                } else {
+                    registers[rd] = static_cast<uint16_t>(value >> (-shiftAmount)); // arithmetic right shift
+                }
+
                 break;
+            }
             default:
                 std::cout << "Unknown shift opcode" << std::endl;
                 return false;

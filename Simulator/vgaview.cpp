@@ -24,21 +24,15 @@ void VGAView::paintEvent(QPaintEvent *event)
 
     QPainter vgaPainter(&vgaBuffer);
 
-    // ----------------------------
-    // Checkerboard background
-    // ----------------------------
     const int tileSize = 32;
     for (int y = 0; y < 480; y += tileSize) {
         for (int x = 0; x < 640; x += tileSize) {
             bool isWhite = ((x / tileSize) + (y / tileSize)) % 2 == 0;
             QColor tileColor = isWhite ? QColor(80, 80, 80) : QColor(50, 50, 50);
-            vgaPainter.fillRect(x, y, tileSize, tileSize, tileColor);
+            vgaPainter.fillRect(x, y+model->getBackgroundOffset(), tileSize, tileSize, tileColor);
         }
     }
 
-    // ----------------------------
-    // Draw rectangles (unchanged)
-    // ----------------------------
     for (int i = 0; i < 64; ++i) {
         Model::Rectangle r = model->getRectangle(i);
 
@@ -57,9 +51,6 @@ void VGAView::paintEvent(QPaintEvent *event)
         vgaPainter.fillRect(rect, QColor(rC, gC, bC));
     }
 
-    // ----------------------------
-    // Draw players (NEW SYSTEM)
-    // ----------------------------
     const int PLAYER_COUNT = 4;
 
     for (int i = 0; i < PLAYER_COUNT; ++i) {
@@ -90,7 +81,7 @@ void VGAView::paintEvent(QPaintEvent *event)
         vgaPainter.setPen(Qt::black);
         vgaPainter.setFont(QFont("Arial", 10, QFont::Bold));
 
-        int infoY = static_cast<int>(y) - 36;
+        int infoY = static_cast<int>(y)-5;
 
         vgaPainter.drawText(
             static_cast<int>(x),
@@ -100,13 +91,27 @@ void VGAView::paintEvent(QPaintEvent *event)
     }
 
     vgaPainter.end();
-
-    // ----------------------------
-    // Present buffer
-    // ----------------------------
     QPainter painter(this);
     painter.fillRect(rect(), Qt::black);
-    painter.drawImage(this->rect(), vgaBuffer);
+
+    // original VGA size
+    QSize vgaSize = vgaBuffer.size();
+    QSize widgetSize = this->size();
+
+    // scale preserving aspect ratio
+    QSize scaledSize = vgaSize;
+    scaledSize.scale(widgetSize, Qt::KeepAspectRatio);
+
+    QRect targetRect(QPoint(0, 0), scaledSize);
+    targetRect.moveCenter(rect().center());
+
+    // draw centered, scaled VGA buffer
+    painter.drawImage(targetRect, vgaBuffer);
+    painter.setPen(Qt::white);
+    painter.setFont(QFont("Arial", 10, QFont::Bold));
+
+     painter.drawText(10, 20, QString("FPS: %1").arg(model->fps));
+
 
     if (hasFocus()) {
         QPen focusPen(Qt::red, 4);

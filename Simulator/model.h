@@ -2,6 +2,7 @@
 #define MODEL_H
 #include <stdint.h>
 #include <string>
+#include <QElapsedTimer>
 
 class Model
 {
@@ -57,6 +58,9 @@ public:
     bool cFlag, lFlag, fFlag, zFlag, nFlag;
     bool readNextCycle;
     uint8_t readReg;
+    QElapsedTimer vsyncTimer;
+    qint64 lastFrameMs = 0;
+    float fps;
 
 private:
     bool p1Left, p1Right, p1Up, p1Down, p2Left, p2Right, p2Up, p2Down, p3Left, p3Right, p3Up, p3Down, p4Left, p4Right, p4Up, p4Down;
