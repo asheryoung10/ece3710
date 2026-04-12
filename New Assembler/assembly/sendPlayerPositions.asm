@@ -214,6 +214,11 @@ funcPushLocalToShared:
     READ R12 | 298 | SUB R12 R3
     READ R4 | &varLocalDataPlayer1Y | LOAD R4 R4
     READ R12 | 220 | SUB R12 R4
+
+    MOVI 0 R3
+    MOVI 0 R4
+
+
     READ R12 | %backgroundX | STOR R3 R12
     READ R12 | %backgroundY | STOR R4 R12
     

@@ -57,6 +57,7 @@ C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/Desktop_Qt_6_10_2_MSVC
   C:/Program\ Files/Microsoft\ Visual\ Studio/2022/Community/VC/Tools/MSVC/14.44.35207/include/version \
   C:/Program\ Files/Microsoft\ Visual\ Studio/2022/Community/VC/Tools/MSVC/14.44.35207/include/yvals.h \
   C:/Program\ Files/Microsoft\ Visual\ Studio/2022/Community/VC/Tools/MSVC/14.44.35207/include/yvals_core.h \
+  C:/Qt/6.10.2/msvc2022_arm64/include/QtCore/QElapsedTimer \
   C:/Qt/6.10.2/msvc2022_arm64/include/QtCore/QTimer \
   C:/Qt/6.10.2/msvc2022_arm64/include/QtCore/q17memory.h \
   C:/Qt/6.10.2/msvc2022_arm64/include/QtCore/q20functional.h \
@@ -100,6 +101,7 @@ C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/Desktop_Qt_6_10_2_MSVC
   C:/Qt/6.10.2/msvc2022_arm64/include/QtCore/qdatastream.h \
   C:/Qt/6.10.2/msvc2022_arm64/include/QtCore/qdeadlinetimer.h \
   C:/Qt/6.10.2/msvc2022_arm64/include/QtCore/qdebug.h \
+  C:/Qt/6.10.2/msvc2022_arm64/include/QtCore/qelapsedtimer.h \
   C:/Qt/6.10.2/msvc2022_arm64/include/QtCore/qendian.h \
   C:/Qt/6.10.2/msvc2022_arm64/include/QtCore/qeventloop.h \
   C:/Qt/6.10.2/msvc2022_arm64/include/QtCore/qexceptionhandling.h \

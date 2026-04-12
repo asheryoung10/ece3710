@@ -40,6 +40,7 @@ public:
     VGAView *vgaView;
     QHBoxLayout *horizontalLayout;
     QCheckBox *onlyViewCheck;
+    QPushButton *refreshViews;
     QPushButton *resetButton;
     QHBoxLayout *horizontalLayout_10;
     QPushButton *p1Left;
@@ -79,8 +80,11 @@ public:
     QLabel *flags;
     QTableView *registerView;
     QHBoxLayout *horizontalLayout_8;
-    QPushButton *jumptoAddressButton;
-    QSpinBox *jumpAddress;
+    QPushButton *stackJump;
+    QPushButton *RectJump;
+    QPushButton *playerJump;
+    QCheckBox *followPC;
+    QCheckBox *breakOn;
     QSpinBox *breakPoint;
     QTableView *memoryView;
 
@@ -88,7 +92,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(928, 600);
+        MainWindow->resize(1305, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         horizontalLayout_7 = new QHBoxLayout(centralwidget);
@@ -115,6 +119,11 @@ public:
         onlyViewCheck->setObjectName("onlyViewCheck");
 
         horizontalLayout->addWidget(onlyViewCheck);
+
+        refreshViews = new QPushButton(verticalLayoutWidget);
+        refreshViews->setObjectName("refreshViews");
+
+        horizontalLayout->addWidget(refreshViews);
 
         resetButton = new QPushButton(verticalLayoutWidget);
         resetButton->setObjectName("resetButton");
@@ -282,7 +291,7 @@ public:
         instructionsPerFrame = new QSlider(layoutWidget);
         instructionsPerFrame->setObjectName("instructionsPerFrame");
         instructionsPerFrame->setMinimum(25);
-        instructionsPerFrame->setMaximum(500);
+        instructionsPerFrame->setMaximum(100000);
         instructionsPerFrame->setOrientation(Qt::Orientation::Horizontal);
 
         verticalLayout_2->addWidget(instructionsPerFrame);
@@ -314,16 +323,30 @@ public:
 
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName("horizontalLayout_8");
-        jumptoAddressButton = new QPushButton(layoutWidget);
-        jumptoAddressButton->setObjectName("jumptoAddressButton");
+        stackJump = new QPushButton(layoutWidget);
+        stackJump->setObjectName("stackJump");
 
-        horizontalLayout_8->addWidget(jumptoAddressButton);
+        horizontalLayout_8->addWidget(stackJump);
 
-        jumpAddress = new QSpinBox(layoutWidget);
-        jumpAddress->setObjectName("jumpAddress");
-        jumpAddress->setMaximum(65535);
+        RectJump = new QPushButton(layoutWidget);
+        RectJump->setObjectName("RectJump");
 
-        horizontalLayout_8->addWidget(jumpAddress);
+        horizontalLayout_8->addWidget(RectJump);
+
+        playerJump = new QPushButton(layoutWidget);
+        playerJump->setObjectName("playerJump");
+
+        horizontalLayout_8->addWidget(playerJump);
+
+        followPC = new QCheckBox(layoutWidget);
+        followPC->setObjectName("followPC");
+
+        horizontalLayout_8->addWidget(followPC);
+
+        breakOn = new QCheckBox(layoutWidget);
+        breakOn->setObjectName("breakOn");
+
+        horizontalLayout_8->addWidget(breakOn);
 
         breakPoint = new QSpinBox(layoutWidget);
         breakPoint->setObjectName("breakPoint");
@@ -354,6 +377,7 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         onlyViewCheck->setText(QCoreApplication::translate("MainWindow", "Only Update View", nullptr));
+        refreshViews->setText(QCoreApplication::translate("MainWindow", "Refresh Views", nullptr));
         resetButton->setText(QCoreApplication::translate("MainWindow", "Reset", nullptr));
         p1Left->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
         p1Up->setText(QCoreApplication::translate("MainWindow", "^", nullptr));
@@ -379,7 +403,11 @@ public:
         vsyncCheckBox->setText(QCoreApplication::translate("MainWindow", "Vsync Signal", nullptr));
         programCounter->setText(QCoreApplication::translate("MainWindow", "Program Counter: ", nullptr));
         flags->setText(QCoreApplication::translate("MainWindow", "Flags: ", nullptr));
-        jumptoAddressButton->setText(QCoreApplication::translate("MainWindow", "Jump To Address", nullptr));
+        stackJump->setText(QCoreApplication::translate("MainWindow", "Stack", nullptr));
+        RectJump->setText(QCoreApplication::translate("MainWindow", "Rect", nullptr));
+        playerJump->setText(QCoreApplication::translate("MainWindow", "Player", nullptr));
+        followPC->setText(QCoreApplication::translate("MainWindow", "Follow PC", nullptr));
+        breakOn->setText(QCoreApplication::translate("MainWindow", "Break", nullptr));
     } // retranslateUi
 
 };
