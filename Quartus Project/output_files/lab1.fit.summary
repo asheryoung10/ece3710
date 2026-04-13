@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sun Apr 12 12:16:07 2026
-Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Fitter Status : Successful - Mon Apr 13 10:28:13 2026
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : lab1
 Top-level Entity Name : doodle_jump
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 10,784 / 32,070 ( 34 % )
-Total registers : 3157
+Logic utilization (in ALMs) : 10,900 / 32,070 ( 34 % )
+Total registers : 3162
 Total pins : 105 / 457 ( 23 % )
 Total virtual pins : 0
 Total block memory bits : 1,638,400 / 4,065,280 ( 40 % )

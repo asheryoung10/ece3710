@@ -5,7 +5,7 @@ WAIT
 
 #include "macros.asm"
 #include "variables.asm"
-#include "pushLocalDataToshared.asm"
+#include "pushLocalDataToShared.asm"
 #include "copyInitializeData.asm"
 #include "updateButtonState.asm"
 #include "pollAndTogglePlayerActiveState.asm"
@@ -27,7 +27,7 @@ funcMain:
         %call(&funcPollAndTogglePlayerActiveState)
         %call(&funcApplyUserInput)
         %call(&funcApplyVelocity)
-        %call(&detectAndResolveCollisions)
+        //%call(&detectAndResolveCollisions)
 
         %call(&funcPushLocalDataToShared)
         %call(&funcWaitForVsync)

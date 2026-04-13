@@ -76,19 +76,19 @@ varSelectionRoomRectInitializationDataAddress:
     50 // rect 6 x
     300 // y
     0xA020 // wh
-    0000 // col
+    1 // col
     430 // rect 6 x
     300 // y
     0xA020 // wh
-    0000 // col 
+    1 // col 
     150 // rect 7 x
     150 // y
     0xA020 // wh
-    0000 // col 
+    1 // col 
     330 // rect 8 x
     150 // y
     0xA020 // wh
-    0000 // col 
+    1 // col 
 // 4 words
 varPlayerDefaultColors:
     0xF800 // p1

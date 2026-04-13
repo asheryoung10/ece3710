@@ -116,6 +116,62 @@
 					"strict" : false
 				},
 				{
+					"name" : "hex4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5[6]",
+					"strict" : false
+				},
+				{
 					"name" : "vga_clock",
 					"strict" : false
 				},
@@ -260,11 +316,27 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[9]",
+					"name" : "switches[2]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[5]",
+					"name" : "switches[3]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[4]",
+					"strict" : false
+				},
+				{
+					"name" : "systemClock50MHz",
+					"strict" : false
+				},
+				{
+					"name" : "push_buttons[0]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[9]",
 					"strict" : false
 				},
 				{
@@ -280,23 +352,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[4]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[2]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[3]",
-					"strict" : false
-				},
-				{
-					"name" : "systemClock50MHz",
-					"strict" : false
-				},
-				{
-					"name" : "push_buttons[0]",
+					"name" : "switches[5]",
 					"strict" : false
 				},
 				{
