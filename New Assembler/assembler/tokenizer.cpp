@@ -818,7 +818,7 @@ std::vector<std::string> instructionsToHex(const std::vector<Instruction>& instr
 
 
         if(name=="ADD" || name=="SUB" || name=="CMP" || name=="AND" || name=="OR" ||
-           name=="XOR" || name=="NOT" || name=="MOV" ) {
+           name=="XOR" || name=="NOT" || name=="MOV" || name=="LSH" ) {
             uint8_t r1 = regToVal(inst.tokens[1].text); // first operand
             uint8_t r2 = regToVal(inst.tokens[2].text); // second operand
             word = (upper << 12) | (r2 << 8) | (lower << 4) | r1;  // <-- FIXED lower opcode placement

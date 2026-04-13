@@ -29,6 +29,7 @@ localparam MOVE_STATE = 3'd7;
     wire [2:0] controlUnitState;
     wire [2:0] controlUnitNextState;
 
+
     // Instantiate the CPU
 
 	  doodle_jump uut(
@@ -240,6 +241,7 @@ task print_state;
 endtask
 
 integer i = 0;
+integer j = 0;
     // ==================================================
     // Testbench stimulus
     // ==================================================
@@ -254,37 +256,60 @@ integer i = 0;
         // Apply reset
         apply_reset();
 		  push_buttons = 4'b1111;
+		  switches = 9'b100100000;
 			running = 1;
         // Run for a few cycles and print state
 		  
         while (running != 0) begin
 				i = i + 1;
-				if(i == 100) running = 0;
-		  
-				if(uut.cpu_instance.control_unit_instance.nextState == NOTHING_STATE) begin
-			$display("stoped due to nothing state");
-			running = 0;
-			end
-				if(uut.cpu_instance.control_unit_instance.nextState == NOTHING_STATE) begin
-			$display("stoped due to nothing state");
-			running = 0;
-			end
-			   if(uut.memory_instance.cpu_memory_instance.ram[0] === 16'hxxxx) running = 0;
+				if(i == 10000) running = 0;
 				
-			   if(uut.cpu_instance.control_unit_instance.state == FETCH_INSTRUCTION_FROM_MEMORY) begin
-					$display("\n\n\n");
-					$display("CONTENTS AFTER PREVIOUS INSTRUCTION");
-					dumpRegisterFile();
-					dumpPlayerMemory();
-					$display("vgaP1x[%0d] = %h", i, uut.vga_instance.p1X);
-					$display("vgaP1y[%0d] = %h", i, uut.vga_instance.p1Y);
-
-					dumpMemoryRects();
+				for(j=0; j < 10000; j = j + 1) begin
+					pulse_clock(1);
 				end
-				print_state();
-				print_cpu_state();
+				$display("Waiting vsync low");
+
+				while(uut.vga_vs == 0) begin
+								pulse_clock(1);
+
+				end
+				$display("Waiting vsync high");
+
+				while(uut.vga_vs == 1) begin
+								pulse_clock(1);
+
+				end
 				
 				pulse_clock(1);
+				
+				$display("%h",  uut.cpu_instance.programCounterContents );
+				dumpPlayerMemory();
+				
+				
+//				if(uut.cpu_instance.control_unit_instance.nextState == NOTHING_STATE) begin
+//			$display("stoped due to nothing state");
+//			running = 0;
+//			end
+//				if(uut.cpu_instance.control_unit_instance.nextState == NOTHING_STATE) begin
+//			$display("stoped due to nothing state");
+//			running = 0;
+//			end
+//			   if(uut.memory_instance.cpu_memory_instance.ram[0] === 16'hxxxx) running = 0;
+//				
+//			   if(uut.cpu_instance.control_unit_instance.state == FETCH_INSTRUCTION_FROM_MEMORY) begin
+//					$display("\n\n\n");
+//					$display("CONTENTS AFTER PREVIOUS INSTRUCTION");
+//					dumpRegisterFile();
+//					dumpPlayerMemory();
+//					$display("vgaP1x[%0d] = %h", i, uut.vga_instance.p1X);
+//					$display("vgaP1y[%0d] = %h", i, uut.vga_instance.p1Y);
+//
+//					dumpMemoryRects();
+//				end
+//				print_state();
+//				print_cpu_state();
+//				
+//				pulse_clock(1);
 				
             
         end
