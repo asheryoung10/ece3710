@@ -21,10 +21,11 @@ copyRectInitializeData:
     MOV R0 R1 // R1 has address of data to copy
     MOVI 0 R0 // i
     READ R2 | &varLocalRectDataAddress
+    READ R4 | 256
     funcCopyRectInitializeData:
         LOAD R3 R1 | STOR R3 R2 // Retrieve and push data.
         ADDI 1 R1 | ADDI 1 R2 // Increment data pointers.
-        ADDI 1 R0 | CMPI 32 R0 | GOIF NE &funcCopyRectInitializeData
+        ADDI 1 R0 | CMP R4 R0 | GOIF NE &funcCopyRectInitializeData
 
     %restoreRegs 
     %return

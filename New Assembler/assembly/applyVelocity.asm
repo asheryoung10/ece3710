@@ -8,7 +8,7 @@ funcApplyVelocity:
 
         // Update x pos
         LOAD R3 R1 // R3 has player x vel
-        ARSHI -2 R3
+        //ARSHI -2 R3
         LOAD R4 R2 // R4 has player x pos
         ADD R3 R4 // R4 has player x pos + vel
         STOR R4 R2 // Store xpos + vel
@@ -17,7 +17,7 @@ funcApplyVelocity:
 
         // Update y pos
         LOAD R3 R1 // R3 has player x vel
-        ARSHI -2 R3
+        //ARSHI -2 R3
         LOAD R4 R2 // R4 has player x pos
         ADD R3 R4 // R4 has player x pos + vel
         STOR R4 R2 // Store xpos + vel

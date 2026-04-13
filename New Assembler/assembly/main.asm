@@ -27,7 +27,7 @@ funcMain:
         %call(&funcPollAndTogglePlayerActiveState)
         %call(&funcApplyUserInput)
         %call(&funcApplyVelocity)
-        //%call(&detectAndResolveCollisions)
+        %call(&detectAndResolveCollisions)
 
         %call(&funcPushLocalDataToShared)
         %call(&funcWaitForVsync)

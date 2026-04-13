@@ -7,15 +7,15 @@ module snes #(
 	
 	output [9:0] leds,
 	input [3:0] push_buttons,
-	input GPIO1_28_data,
-	output GPIO1_27_latch,
-	output GPIO1_26_cpu,
+	input GPIOX_28_data,
+	output GPIOX_27_latch,
+	output GPIOX_26_cpu,
 	output [15:0]buttons
 );
 // Gray = Vsrc +5V
 // Brown = GND
-// Blue = GPIO1_26_cpuClk
-// Yellow = GPIO1_27_LatchClk
+// Blue = GPIOX_26_cpuClk
+// Yellow = GPIOX_27_latchClk
 // Red = GPIO1_28_Serial Data
 
 //-----Button States --> Actual Button-----
@@ -50,7 +50,7 @@ SNES_Controller controllerInstance
 	(
 		.fpga_clk(systemClock50MHz),
 		.latch_clk(latchClk),
-		.data(GPIO1_28_data),
+		.data(GPIOX_28_data),
 		.cpu_clk(cpuClk),
 		.cpuClk_en(cpuClk_en),
 		.rst(~push_buttons[0]),
@@ -69,6 +69,6 @@ assign leds[8] = button_states[8]; // A
 assign leds[9] = button_states[9]; // X
 assign buttons = button_states;
 
-assign GPIO1_27_latch = latchClk;
-assign GPIO1_26_cpu = cpuClk;
+assign GPIOX_27_latch = latchClk;
+assign GPIOX_26_cpu = cpuClk;
 endmodule

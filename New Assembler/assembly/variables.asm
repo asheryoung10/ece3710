@@ -6,13 +6,13 @@ varCurrentFrameButtonsReleased:
     0x0000
 // 16 words
 varActivePlayersAddress:
-    0x0001
+    0x0000
     0x0000
     0x0000
     0x0000
 // 8 words
 varPlayerVelocityDataAddress:
-    0xFFF0 // p1 x velo
+    0x0000 // p1 x velo
     0x0000 // y velo
     0x0000 // p2 x Velo
     0x0000 // ...
@@ -57,39 +57,328 @@ varSelectionRoomPlayerInitializationDataAddress:
     0x0000 // p4 animation index
     0x0000 // p4 highlight color
 varSelectionRoomRectInitializationDataAddress:
-    0       // rect 1 x
-    448    // y
-    0xA020 // wh
-    0xF800 // col
-    160 // rect 2 x
-    448 // y
-    0xA020 // wh
-    0x001F // col
-    320 // rect 3 x
-    448 // y
-    0xA020 // wh
-    0x07E0 // p3
-    480 // rect 4 x
-    448 // y
-    0xA020 // wh
-    0xFBE0 // p4
-    50 // rect 6 x
-    300 // y
-    0xA020 // wh
-    1 // col
-    430 // rect 6 x
-    300 // y
-    0xA020 // wh
-    1 // col 
-    150 // rect 7 x
-    150 // y
-    0xA020 // wh
-    1 // col 
-    330 // rect 8 x
-    150 // y
-    0xA020 // wh
-    1 // col 
-// 4 words
+0   // rect 1 x
+448 // y
+0xA020 // wh
+0xF800 // col (red)
+
+160 // rect 2 x
+448 // y
+0xA020 // wh
+0x001F // col (blue)
+
+320 // rect 3 x
+448 // y
+0xA020 // wh
+0x07E0 // col (green)
+
+480 // rect 4 x
+448 // y
+0xA020 // wh
+0xFBE0 // col (yellow) 
+
+-70  // rect 5 x
+338  // y
+0xA020 // wh
+0xF81F // col (magenta)
+
+-10  // rect 6 x
+228  // y
+0xA020 // wh
+0x07FF // col (cyan)
+
+70   // rect 7 x
+118  // y
+0xA020 // wh
+0xFFE0 // col (light yellow)
+
+150  // rect 8 x
+8    // y
+0xA020 // wh
+0xFD20 // col (orange)
+
+230  // rect 9 x
+-102 // y
+0xA020 // wh
+0xB81F // col (purple-ish)
+
+310  // rect 10 x
+-212 // y
+0xA020 // wh
+0x03EF // col (teal)
+
+210  // rect 11 x
+-322 // y
+0xA020 // wh
+0xFBE0 // col (light yellow-orange)
+
+90   // rect 12 x
+-432 // y
+0xA020 // wh
+0xF800 // col (red)
+
+-30  // rect 13 x
+-542 // y
+0xA020 // wh
+0x001F // col (blue)
+
+50   // rect 14 x
+-652 // y
+0xA020 // wh
+0x07E0 // col (green)
+
+170  // rect 15 x
+-762 // y
+0xA020 // wh
+0xF81F // col (magenta)
+
+290  // rect 16 x
+-872 // y
+0xA020 // wh
+0xFFE0 // col (yellow)
+
+
+410  // rect 17 x
+-982 // y
+0xA020 // wh
+0xF800 // col (red)
+
+-70  // rect 18 x
+-1092 // y
+0xA020 // wh
+0x001F // col (blue)
+
+150  // rect 19 x
+-1202 // y
+0xA020 // wh
+0x07E0 // col (green)
+
+230  // rect 20 x
+-1312 // y
+0xA020 // wh
+0xFBE0 // col (yellow)
+
+70   // rect 21 x
+-1422 // y
+0xA020 // wh
+0xF81F // col (magenta)
+
+310  // rect 22 x
+-1532 // y
+0xA020 // wh
+0x07FF // col (cyan)
+
+-10  // rect 23 x
+-1642 // y
+0xA020 // wh
+0xFFE0 // col (light yellow)
+
+170  // rect 24 x
+-1752 // y
+0xA020 // wh
+0xFD20 // col (orange)
+
+290  // rect 25 x
+-1862 // y
+0xA020 // wh
+0xB81F // col (purple)
+
+90   // rect 26 x
+-1972 // y
+0xA020 // wh
+0x03EF // col (teal)
+
+210  // rect 27 x
+-2082 // y
+0xA020 // wh
+0xF800 // col (red)
+
+-30  // rect 28 x
+-2192 // y
+0xA020 // wh
+0x001F // col (blue)
+
+150  // rect 29 x
+-2302 // y
+0xA020 // wh
+0x07E0 // col (green)
+
+270  // rect 30 x
+-2412 // y
+0xA020 // wh
+0xFBE0 // col (yellow)
+
+110  // rect 31 x
+-2522 // y
+0xA020 // wh
+0xF81F // col (magenta)
+
+330  // rect 32 x
+-2632 // y
+0xA020 // wh
+0x07FF // col (cyan)
+
+410  // rect 33 x
+-2742 // y
+0xA020 // wh
+0xF800 // col (red)
+
+-70  // rect 34 x
+-2852 // y
+0xA020 // wh
+0x001F // col (blue)
+
+150  // rect 35 x
+-2962 // y
+0xA020 // wh
+0x07E0 // col (green)
+
+230  // rect 36 x
+-3072 // y
+0xA020 // wh
+0xFBE0 // col (yellow)
+
+70   // rect 37 x
+-3182 // y
+0xA020 // wh
+0xF81F // col (magenta)
+
+310  // rect 38 x
+-3292 // y
+0xA020 // wh
+0x07FF // col (cyan)
+
+-10  // rect 39 x
+-3402 // y
+0xA020 // wh
+0xFFE0 // col (light yellow)
+
+170  // rect 40 x
+-3512 // y
+0xA020 // wh
+0xFD20 // col (orange)
+
+290  // rect 41 x
+-3622 // y
+0xA020 // wh
+0xB81F // col (purple)
+
+90   // rect 42 x
+-3732 // y
+0xA020 // wh
+0x03EF // col (teal)
+
+210  // rect 43 x
+-3842 // y
+0xA020 // wh
+0xF800 // col (red)
+
+-30  // rect 44 x
+-3952 // y
+0xA020 // wh
+0x001F // col (blue)
+
+150  // rect 45 x
+-4062 // y
+0xA020 // wh
+0x07E0 // col (green)
+
+270  // rect 46 x
+-4172 // y
+0xA020 // wh
+0xFBE0 // col (yellow)
+
+110  // rect 47 x
+-4282 // y
+0xA020 // wh
+0xF81F // col (magenta)
+
+330  // rect 48 x
+-4392 // y
+0xA020 // wh
+0x07FF // col (cyan)
+
+410  // rect 49 x
+-4502 // y
+0xA020 // wh
+0xF800 // col (red)
+
+-70  // rect 50 x
+-4612 // y
+0xA020 // wh
+0x001F // col (blue)
+
+150  // rect 51 x
+-4722 // y
+0xA020 // wh
+0x07E0 // col (green)
+
+230  // rect 52 x
+-4832 // y
+0xA020 // wh
+0xFBE0 // col (yellow)
+
+70   // rect 53 x
+-4942 // y
+0xA020 // wh
+0xF81F // col (magenta)
+
+310  // rect 54 x
+-5052 // y
+0xA020 // wh
+0x07FF // col (cyan)
+
+-10  // rect 55 x
+-5162 // y
+0xA020 // wh
+0xFFE0 // col (light yellow)
+
+170  // rect 56 x
+-5272 // y
+0xA020 // wh
+0xFD20 // col (orange)
+
+290  // rect 57 x
+-5382 // y
+0xA020 // wh
+0xB81F // col (purple)
+
+90   // rect 58 x
+-5492 // y
+0xA020 // wh
+0x03EF // col (teal)
+
+210  // rect 59 x
+-5602 // y
+0xA020 // wh
+0xF800 // col (red)
+
+-30  // rect 60 x
+-5712 // y
+0xA020 // wh
+0x001F // col (blue)
+
+150  // rect 61 x
+-5822 // y
+0xA020 // wh
+0x07E0 // col (green)
+
+270  // rect 62 x
+-5932 // y
+0xA020 // wh
+0xFBE0 // col (yellow)
+
+110  // rect 63 x
+-6042 // y
+0xA020 // wh
+0xF81F // col (magenta)
+
+330  // rect 64 x
+-6152 // y
+0xA020 // wh
+0x07FF // col (cyan)
+
+   // 4 words
 varPlayerDefaultColors:
     0xF800 // p1
     0x001F // p2

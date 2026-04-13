@@ -34,9 +34,12 @@ module doodle_jump #(
 	output [7:0] vga_blue,
 	
 
-	input GPIO1_28_data,
-	output GPIO1_27_latch,
-	output GPIO1_26_cpu
+	input GPIO1_28_data, 
+	input GPIO0_28_data,
+	output GPIO1_27_latch, 
+	output GPIO1_26_cpu, 
+	output GPIO0_27_latch,
+	output GPIO0_26_cpu
 );
 
 // Reset Button
@@ -81,17 +84,29 @@ wire [DATA_WIDTH-1:0] memoryContents;
 wire [DATA_WIDTH-1:0] register3;
 wire [DATA_WIDTH-1:0] register4;
 
-// Controller
-wire [15:0] snesButtons;
+// Controller (Left Header)
+wire [15:0] snesButtons0;
+// Controller (Right Header)
+wire [15:0] snesButtons1;
 
-snes snes_instance (
+snes snes1_instance (
 	.systemClock50MHz(systemClock50MHz),
 	.leds(),
 	.push_buttons(push_buttons),
-	.GPIO1_28_data(GPIO1_28_data),
-	.GPIO1_27_latch(GPIO1_27_latch),
-	.GPIO1_26_cpu(GPIO1_26_cpu),
-	.buttons(snesButtons)
+	.GPIOX_28_data(GPIO1_28_data),
+	.GPIOX_27_latch(GPIO1_27_latch),
+	.GPIOX_26_cpu(GPIO1_26_cpu),
+	.buttons(snesButtons1)
+);
+
+snes snes0_instance (
+	.systemClock50MHz(systemClock50MHz),
+	.leds(),
+	.push_buttons(push_buttons),
+	.GPIOX_28_data(GPIO0_28_data),
+	.GPIOX_27_latch(GPIO0_27_latch),
+	.GPIOX_26_cpu(GPIO0_26_cpu),
+	.buttons(snesButtons0)
 );
 
 vga vga_instance (
@@ -154,25 +169,25 @@ cpu cpu_instance (
    .controlUnitState(),
    .controlUnitNextState(),
 	
-	.p1Left(switches[9]),
-	.p1Right(switches[8]),
-	.p1Up(switches[7]),
-	.p1Down(switches[6]),
+	.p1Left(~snesButtons0[6]),
+	.p1Right(~snesButtons0[7]),
+	.p1Up(~snesButtons0[4]),
+	.p1Down(~snesButtons0[5]),
 	
-	.p2Left(switches[5]),
-	.p2Right(switches[4]),
-	.p2Up(switches[3]),
-	.p2Down(switches[2]),
+	.p2Left(~snesButtons0[1]),
+	.p2Right(~snesButtons0[8]),
+	.p2Up(~snesButtons0[9]),
+	.p2Down(~snesButtons0[0]),
 	
-	.p3Left(~snesButtons[6]),
-	.p3Right(~snesButtons[7]),
-	.p3Up(~snesButtons[5]),
-	.p3Down(~snesButtons[4]),
+	.p3Left(~snesButtons1[6]),
+	.p3Right(~snesButtons1[7]),
+	.p3Up(~snesButtons1[4]),
+	.p3Down(~snesButtons1[5]),
 	
-	.p4Left(~snesButtons[1]),
-	.p4Right(~snesButtons[8]),
-	.p4Up(~snesButtons[9]),
-	.p4Down(~snesButtons[0]),
+	.p4Left(~snesButtons1[1]),
+	.p4Right(~snesButtons1[8]),
+	.p4Up(~snesButtons1[9]),
+	.p4Down(~snesButtons1[0]),
 	
 	.vsync(vga_vs),
 	.R3(register3),

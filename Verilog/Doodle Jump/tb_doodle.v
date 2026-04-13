@@ -20,6 +20,12 @@ localparam MOVE_STATE = 3'd7;
 	 reg [3:0] push_buttons;
 
     // Outputs
+	  reg [15:0] value;
+	  reg [15:0] localValue;
+	  	  reg [15:0] localPosition;
+
+	  	  reg [15:0] prevSync;
+
     wire [15:0] instructionRegisterContentsOutput;
     wire [15:0] programCounterContentsOutput;
     wire [15:0] programStateRegisterContentsOutput;
@@ -54,6 +60,44 @@ localparam MOVE_STATE = 3'd7;
                 clock = 1'b1;
                 # (CLK_PERIOD/2);
             end
+				
+					if( localPosition != uut.memory_instance.cpu_memory_instance.ram[25]) begin
+						$display("\nLocal Player Position Changed from %h to %h",  localValue, uut.memory_instance.cpu_memory_instance.ram[25]);
+
+						localPosition = uut.memory_instance.cpu_memory_instance.ram[25];
+						$display("Player Y: %d ",  uut.memory_instance.cpu_memory_instance.ram[26] );
+												$display("Player  Velocity X: %d ",  uut.memory_instance.cpu_memory_instance.ram[17] );
+
+						$display("Program Counter: %d \n",  uut.cpu_instance.programCounterContents );
+
+				end
+				
+				
+				
+					if( localValue != uut.memory_instance.cpu_memory_instance.ram[93]) begin
+						localValue = uut.memory_instance.cpu_memory_instance.ram[93];
+						$display("\nRect 0 LOCAL pos Value changed %h",  localValue );
+						$display("Program Counter: %d \n",  uut.cpu_instance.programCounterContents );
+
+				end
+				
+					if( value != uut.memory_instance.rect_data[0]) begin
+						value = uut.memory_instance.rect_data[0];
+						$display("\nRect 0 SHARED pos Value changed %h",  value );
+												$display("\nPlayer local coords %h  %h",  uut.memory_instance.cpu_memory_instance.ram[25], uut.memory_instance.cpu_memory_instance.ram[26]);
+
+						$display("Rect 0 LOCAL pos Value is %h",  uut.memory_instance.cpu_memory_instance.ram[93] );
+
+						$display("Program Counter: %d \n",  uut.cpu_instance.programCounterContents );
+
+				end
+				if(prevSync != uut.vga_vs) begin
+					prevSync = uut.vga_vs;
+											$display("\n Program Counter: %d",  uut.cpu_instance.programCounterContents );
+
+											$display("Prev sync changed to: %h \n",  prevSync );
+
+				end
         end
     endtask
 
@@ -249,9 +293,11 @@ integer j = 0;
         // Initialize
         clock = 0;
         reset = 0;
-		  
+		  value = 16'h0000;
+		  prevSync = 0;
 		  switches = 10'b0;
-		  
+		  localValue = 16'h0000;
+		  localPosition = 16'h0000;
 
         // Apply reset
         apply_reset();
@@ -267,24 +313,10 @@ integer j = 0;
 				for(j=0; j < 10000; j = j + 1) begin
 					pulse_clock(1);
 				end
-				$display("Waiting vsync low");
 
-				while(uut.vga_vs == 0) begin
-								pulse_clock(1);
-
-				end
-				$display("Waiting vsync high");
-
-				while(uut.vga_vs == 1) begin
-								pulse_clock(1);
-
-				end
 				
 				pulse_clock(1);
-				
-				$display("%h",  uut.cpu_instance.programCounterContents );
-				dumpPlayerMemory();
-				
+			
 				
 //				if(uut.cpu_instance.control_unit_instance.nextState == NOTHING_STATE) begin
 //			$display("stoped due to nothing state");
