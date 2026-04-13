@@ -1,9 +1,0 @@
-C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/CMakeFiles/Simulator.dir
-C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/CMakeFiles/edit_cache.dir
-C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/CMakeFiles/rebuild_cache.dir
-C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/CMakeFiles/list_install_components.dir
-C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/CMakeFiles/install.dir
-C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/CMakeFiles/install/local.dir
-C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/CMakeFiles/install/strip.dir
-C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/CMakeFiles/Simulator_autogen_timestamp_deps.dir
-C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/CMakeFiles/Simulator_autogen.dir
