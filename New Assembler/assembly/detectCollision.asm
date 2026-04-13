@@ -2,10 +2,13 @@ detectAndResolveCollisions:
     %saveRegs
 
     MOVI 0 R1 // Player index
+    READ R6 | &varActivePlayersAddress
     READ R3 | &varPlayerVelocityDataAddress
     ADDI 1 R3 // y velocity
 
     detectAndResolveCollisionsPlayerLoop:
+        LOAD R5 R6
+        CMPI 0 R5 | GOIF EQ &detectAndResolveCollisionsPlayerLoopContinue
         MOVI 0 R2 // Rect index
         detectAndResolveCollisionsRectLoop:
 
@@ -24,6 +27,8 @@ detectAndResolveCollisions:
             detectAndResolveCollisionsRectLoopContinue:
             ADDI 1 R2 | CMPI 64 R2 | GOIF NE &detectAndResolveCollisionsRectLoop
 
+        detectAndResolveCollisionsPlayerLoopContinue:
+        ADDI 1 R6 // next active player
         ADDI 2 R3 // Step y velocity
         ADDI 1 R1 | CMPI 4 R1 | GOIF NE &detectAndResolveCollisionsPlayerLoop
 

@@ -2,6 +2,7 @@
 #define MODEL_H
 #include <stdint.h>
 #include <string>
+#include <fstream>
 #include <QElapsedTimer>
 
 class Model
@@ -64,11 +65,27 @@ public:
     float fps;
 
 private:
+    struct TraceEvent {
+        bool valid = false;
+        bool regWrite = false;
+        uint8_t regWriteAddr = 0;
+        uint16_t regWriteValue = 0;
+        bool memWrite = false;
+        uint16_t memWriteAddr = 0;
+        uint16_t memWriteValue = 0;
+    };
+
     bool p1Left, p1Right, p1Up, p1Down, p2Left, p2Right, p2Up, p2Down, p3Left, p3Right, p3Up, p3Down, p4Left, p4Right, p4Up, p4Down;
 
     bool resetButton;
     bool vsync;
+    uint64_t cycleCounter = 0;
+    bool traceEnabled = false;
+    std::ofstream traceFile;
+    std::string traceFilePath;
     void initialize();
+    void configureTraceFile();
+    void writeTraceRow(uint16_t pcBefore, uint16_t instruction, uint8_t opcodeCombined, uint8_t rd, uint8_t rs, int16_t immediateSigned, const TraceEvent& event);
     static constexpr uint8_t NOP   = 0b00000000;
     static constexpr uint8_t AND   = 0b00000001;
     static constexpr uint8_t OR    = 0b00000010;

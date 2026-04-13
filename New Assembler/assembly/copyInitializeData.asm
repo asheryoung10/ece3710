@@ -14,7 +14,7 @@ copyPlayerInitializeData:
     %return
 
 
-// Assumes R0 has addres of data to copy, and that data is 16 words
+// Assumes R0 has addres of data to copy, and that data is 32 words
 copyRectInitializeData:
     %saveRegs 
 

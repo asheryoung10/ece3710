@@ -6,13 +6,13 @@ varCurrentFrameButtonsReleased:
     0x0000
 // 16 words
 varActivePlayersAddress:
-    0x0001
+    0x0000
     0x0000
     0x0000
     0x0000
 // 8 words
 varPlayerVelocityDataAddress:
-    0xFFF0 // p1 x velo
+    0x0000 // p1 x velo
     0x0000 // y velo
     0x0000 // p2 x Velo
     0x0000 // ...
@@ -95,7 +95,7 @@ varPlayerDefaultColors:
     0x001F // p2
     0x07E0 // p3
     0xFBE0 // p4
-// 64 words
+// 256 words
 varLocalRectDataAddress:
     0x0000
     0x0000

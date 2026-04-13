@@ -4,6 +4,8 @@
 #include <fstream>
 #include <sstream>
 #include <cstring>
+#include <cstdlib>
+#include <iomanip>
 #include <QElapsedTimer>
 
 
@@ -188,12 +190,67 @@ void Model::initialize() {
     readNextCycle = false;
     vsync = false;
     resetButton = false;
+    cycleCounter = 0;
+    configureTraceFile();
+}
+
+void Model::configureTraceFile() {
+    if (traceFile.is_open()) {
+        traceFile.close();
+    }
+    traceEnabled = false;
+    traceFilePath.clear();
+
+    const char* envPath = std::getenv("SIM_TRACE_FILE");
+    if (envPath == nullptr || std::strlen(envPath) == 0) {
+        return;
+    }
+
+    traceFilePath = envPath;
+    traceFile.open(traceFilePath, std::ios::out | std::ios::trunc);
+    if (!traceFile.is_open()) {
+        std::cerr << "Failed to open SIM_TRACE_FILE: " << traceFilePath << std::endl;
+        return;
+    }
+
+    traceEnabled = true;
+    traceFile << "cycle,pc,instruction,opcodeCombined,rd,rs,immSigned,regWrite,regWriteAddr,regWriteValue,memWrite,memWriteAddr,memWriteValue,flags\n";
+}
+
+void Model::writeTraceRow(
+    uint16_t pcBefore,
+    uint16_t instruction,
+    uint8_t opcodeCombined,
+    uint8_t rd,
+    uint8_t rs,
+    int16_t immediateSigned,
+    const TraceEvent& event
+) {
+    if (!traceEnabled || !traceFile.is_open()) return;
+
+    traceFile << cycleCounter << ","
+              << std::hex << std::uppercase << std::setfill('0')
+              << "0x" << std::setw(4) << pcBefore << ","
+              << "0x" << std::setw(4) << instruction << ","
+              << "0x" << std::setw(2) << static_cast<unsigned>(opcodeCombined) << ","
+              << "0x" << std::setw(1) << static_cast<unsigned>(rd) << ","
+              << "0x" << std::setw(1) << static_cast<unsigned>(rs) << ","
+              << std::dec << immediateSigned << ","
+              << (event.regWrite ? 1 : 0) << ","
+              << (event.regWrite ? static_cast<int>(event.regWriteAddr) : -1) << ","
+              << (event.regWrite ? static_cast<int>(event.regWriteValue) : -1) << ","
+              << (event.memWrite ? 1 : 0) << ","
+              << (event.memWrite ? static_cast<int>(event.memWriteAddr) : -1) << ","
+              << (event.memWrite ? static_cast<int>(event.memWriteValue) : -1) << ","
+              << "C=" << cFlag << ";L=" << lFlag << ";F=" << fFlag << ";Z=" << zFlag << ";N=" << nFlag
+              << "\n";
 }
 
 Model::~Model() {
     delete[] memory;
 }
 bool Model::tick() {
+    cycleCounter++;
     if(resetButton) initialize();
     
 
@@ -221,18 +278,25 @@ bool Model::tick() {
     registers[11] = vsync;
 
     uint16_t instruction = memory[programCounter];
+    uint16_t pcBefore = programCounter;
     uint8_t opcodeUpper = (instruction >> 12);
     uint8_t opcodeCombined = ((instruction >> 12) << 4) | ((instruction >> 4) & 0x0F);
     uint8_t immediate = ((instruction << 8) >> 8);
+    uint8_t rd = (instruction >> 8) & 0x0F;
+    uint8_t rs = (instruction) & 0x0F;
+    int16_t immediateSigned = static_cast<int16_t>(static_cast<int8_t>(immediate));
+    TraceEvent traceEvent;
 
     if(readNextCycle) {
         registers[readReg] = instruction;        
+        traceEvent.regWrite = true;
+        traceEvent.regWriteAddr = readReg;
+        traceEvent.regWriteValue = instruction;
+        writeTraceRow(pcBefore, instruction, opcodeCombined, rd, rs, immediateSigned, traceEvent);
         readNextCycle = false;
         programCounter++;
         return true;
     }
-    uint8_t rd = (instruction >> 8) & 0x0F;
-    uint8_t rs = (instruction) & 0x0F;
     uint16_t A = registers[rs];
     uint16_t B = registers[rd];
 
@@ -243,6 +307,9 @@ bool Model::tick() {
     switch(opcodeCombined) {
     case JAL:
         registers[rd] = programCounter+1;
+        traceEvent.regWrite = true;
+        traceEvent.regWriteAddr = rd;
+        traceEvent.regWriteValue = registers[rd];
         programCounter = A;
         break;
     case NOP:
@@ -250,24 +317,39 @@ bool Model::tick() {
 
     case AND:
         registers[rd] = B & A;
+        traceEvent.regWrite = true;
+        traceEvent.regWriteAddr = rd;
+        traceEvent.regWriteValue = registers[rd];
         programCounter++;
         break;
     case OR:
         registers[rd] = B | A;
+        traceEvent.regWrite = true;
+        traceEvent.regWriteAddr = rd;
+        traceEvent.regWriteValue = registers[rd];
         programCounter++;
         break;
     case XOR:
         registers[rd] = B ^ A;
+        traceEvent.regWrite = true;
+        traceEvent.regWriteAddr = rd;
+        traceEvent.regWriteValue = registers[rd];
         programCounter++;
         break;
     case NOT:
         registers[rd] = ~A;
+        traceEvent.regWrite = true;
+        traceEvent.regWriteAddr = rd;
+        traceEvent.regWriteValue = registers[rd];
         programCounter++;
         break;
 
     case ADD: {
         int16_t res = sB + sA;
         registers[rd] = uint16_t(res);
+        traceEvent.regWrite = true;
+        traceEvent.regWriteAddr = rd;
+        traceEvent.regWriteValue = registers[rd];
         zFlag = (res == 0);
         fFlag = ((sB >= 0 && sA >= 0 && res < 0) || (sB < 0 && sA < 0 && res >= 0));
         nFlag = sB < sA;
@@ -279,6 +361,9 @@ bool Model::tick() {
     case ADDU: {
         uint32_t res = uint32_t(B) + uint32_t(A);
         registers[rd] = uint16_t(res);
+        traceEvent.regWrite = true;
+        traceEvent.regWriteAddr = rd;
+        traceEvent.regWriteValue = registers[rd];
         cFlag = res > 0xFFFF;
         lFlag = B < A;
         fFlag = false;
@@ -291,6 +376,9 @@ bool Model::tick() {
     case ADDC: {
         uint32_t res = (cFlag ? 1 : 0) + sB + sA;
         registers[rd] = uint16_t(res);
+        traceEvent.regWrite = true;
+        traceEvent.regWriteAddr = rd;
+        traceEvent.regWriteValue = registers[rd];
         fFlag = ((sB >= 0 && sA >= 0 && registers[rd] < 0) || (sB < 0 && sA < 0 && registers[rd] >= 0));
         programCounter++;
         break;
@@ -299,6 +387,9 @@ bool Model::tick() {
     case SUB: {
         int16_t res = sB - sA;
         registers[rd] = uint16_t(res);
+        traceEvent.regWrite = true;
+        traceEvent.regWriteAddr = rd;
+        traceEvent.regWriteValue = registers[rd];
         zFlag = (res == 0);
         fFlag = ((sB >= 0 && sA < 0 && res < 0) || (sB < 0 && sA >= 0 && res >= 0));
         nFlag = sB < sA;
@@ -318,6 +409,9 @@ bool Model::tick() {
     case LSH: {
         shift_amt = sA;
         registers[rd] = (shift_amt >= 0) ? (B << shift_amt) : (B >> -shift_amt);
+        traceEvent.regWrite = true;
+        traceEvent.regWriteAddr = rd;
+        traceEvent.regWriteValue = registers[rd];
         programCounter++;
         break;
     }
@@ -325,20 +419,32 @@ bool Model::tick() {
     case ARSH: {
         shift_amt = sA;
         registers[rd] = (shift_amt >= 0) ? (uint16_t(sB) >> shift_amt) : (uint16_t(sB) << -shift_amt);
+        traceEvent.regWrite = true;
+        traceEvent.regWriteAddr = rd;
+        traceEvent.regWriteValue = registers[rd];
         programCounter++;
         break;
     }
 
     case LOAD:
         registers[rd] = memory[A];
+        traceEvent.regWrite = true;
+        traceEvent.regWriteAddr = rd;
+        traceEvent.regWriteValue = registers[rd];
         programCounter++;
         break;
     case STOR:
         memory[A] = registers[rd];
+        traceEvent.memWrite = true;
+        traceEvent.memWriteAddr = A;
+        traceEvent.memWriteValue = registers[rd];
         programCounter++;
         break;
     case MOV:
         registers[rd] = A;
+        traceEvent.regWrite = true;
+        traceEvent.regWriteAddr = rd;
+        traceEvent.regWriteValue = registers[rd];
         programCounter++;
         break;
     case JCOND: {
@@ -384,6 +490,9 @@ switch (rd) {
         case ADDI_UPPER: {
             int16_t res = sB + sA;
             registers[rd] = uint16_t(res);
+            traceEvent.regWrite = true;
+            traceEvent.regWriteAddr = rd;
+            traceEvent.regWriteValue = registers[rd];
             zFlag = (res == 0);
             fFlag = ((sB >= 0 && sA >= 0 && res < 0) || (sB < 0 && sA < 0 && res >= 0));
             nFlag = sB < sA;
@@ -394,6 +503,9 @@ switch (rd) {
         case ADDUI_UPPER: {
             uint32_t res = uint32_t(B) + uint32_t(A);
             registers[rd] = uint16_t(res);
+            traceEvent.regWrite = true;
+            traceEvent.regWriteAddr = rd;
+            traceEvent.regWriteValue = registers[rd];
             cFlag = res > 0xFFFF;
             lFlag = B < A;
             fFlag = false;
@@ -405,6 +517,9 @@ switch (rd) {
         case ADDCI_UPPER: {
             uint32_t res = (cFlag ? 1 : 0) + sB + sA;
             registers[rd] = uint16_t(res);
+            traceEvent.regWrite = true;
+            traceEvent.regWriteAddr = rd;
+            traceEvent.regWriteValue = registers[rd];
             fFlag = ((sB >= 0 && sA >= 0 && registers[rd] < 0) || (sB < 0 && sA < 0 && registers[rd] >= 0));
             programCounter++;
             break;
@@ -412,6 +527,9 @@ switch (rd) {
         case SUBI_UPPER: {
             int16_t res = sB - sA;
             registers[rd] = uint16_t(res);
+            traceEvent.regWrite = true;
+            traceEvent.regWriteAddr = rd;
+            traceEvent.regWriteValue = registers[rd];
             zFlag = (res == 0);
             fFlag = ((sB >= 0 && sA < 0 && res < 0) || (sB < 0 && sA >= 0 && res >= 0));
             nFlag = sB < sA;
@@ -428,6 +546,9 @@ switch (rd) {
         }
         case MOVI_UPPER:
             registers[rd] = sA;
+            traceEvent.regWrite = true;
+            traceEvent.regWriteAddr = rd;
+            traceEvent.regWriteValue = registers[rd];
             programCounter++;
             break;
         case BCOND_UPPER: {
@@ -479,13 +600,22 @@ switch (rd) {
                 } else {
                     registers[rd] = B >> (-shiftAmount);
                 }
+                traceEvent.regWrite = true;
+                traceEvent.regWriteAddr = rd;
+                traceEvent.regWriteValue = registers[rd];
                 break;
             }
             case 0b1000:
                 registers[rd] = B >> (A & 0xF);
+                traceEvent.regWrite = true;
+                traceEvent.regWriteAddr = rd;
+                traceEvent.regWriteValue = registers[rd];
                 break;
             case 0b1010:
                 registers[rd] = B >> (A & 0xF);
+                traceEvent.regWrite = true;
+                traceEvent.regWriteAddr = rd;
+                traceEvent.regWriteValue = registers[rd];
                 break;
             case 0b0010: {
                 uint16_t bits5 = A & 0x1F;
@@ -500,6 +630,9 @@ switch (rd) {
                 } else {
                     registers[rd] = static_cast<uint16_t>(value >> (-shiftAmount)); // arithmetic right shift
                 }
+                traceEvent.regWrite = true;
+                traceEvent.regWriteAddr = rd;
+                traceEvent.regWriteValue = registers[rd];
 
                 break;
             }
@@ -523,5 +656,6 @@ switch (rd) {
         break;
     }
     }
+    writeTraceRow(pcBefore, instruction, opcodeCombined, rd, rs, immediateSigned, traceEvent);
     return true;
 }

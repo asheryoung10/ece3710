@@ -4,7 +4,10 @@ funcApplyVelocity:
     MOVI 0 R0 // i = 0
     READ R1 | &varPlayerVelocityDataAddress
     READ R2 | &varLocalPlayerDataAddress
+    READ R5 | &varActivePlayersAddress
     funcApplyVelocityPlayerLoop:
+        LOAD R6 R5
+        CMPI 0 R6 | GOIF EQ &funcApplyVelocityPlayerLoopContinue
 
         // Update x pos
         LOAD R3 R1 // R3 has player x vel
@@ -25,7 +28,8 @@ funcApplyVelocity:
         ADDI 3 R2 // step to next player x
         ADDI 1 R1 // step to next player vel x
 
-
+        funcApplyVelocityPlayerLoopContinue:
+        ADDI 1 R5 // next active player
         ADDI 1 R0 | CMPI 4 R0 | GOIF NE &funcApplyVelocityPlayerLoop
 
 

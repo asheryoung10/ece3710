@@ -11,6 +11,8 @@ WAIT
 #include "pollAndTogglePlayerActiveState.asm"
 #include "applyUserInput.asm"
 #include "applyVelocity.asm"
+#include "moveUnusedSelectionRoomBlocks.asm"
+#include "clampPlayersInBounds.asm"
 #include "waitForVsync.asm"
 #include "detectCollision.asm"
 
@@ -27,7 +29,9 @@ funcMain:
         %call(&funcPollAndTogglePlayerActiveState)
         %call(&funcApplyUserInput)
         %call(&funcApplyVelocity)
-        //%call(&detectAndResolveCollisions)
+        %call(&funcMoveUnusedSelectionRoomBlocks)
+        %call(&funcClampPlayersInBounds)
+        %call(&detectAndResolveCollisions)
 
         %call(&funcPushLocalDataToShared)
         %call(&funcWaitForVsync)
