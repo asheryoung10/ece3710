@@ -1,0 +1,14 @@
+# ninja log v7
+7	437	7978235443284494	Simulator_autogen/timestamp	b66db4f5a347a063
+7	437	7978235443284494	Simulator_autogen/mocs_compilation.cpp	b66db4f5a347a063
+7	437	7978235443284494	C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/Desktop_Qt_6_10_2_MSVC2022_ARM64-Debug/Simulator_autogen/timestamp	b66db4f5a347a063
+7	437	7978235443284494	C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/Desktop_Qt_6_10_2_MSVC2022_ARM64-Debug/Simulator_autogen/mocs_compilation.cpp	b66db4f5a347a063
+441	515	7978235444571191	Simulator_autogen/EWIEGA46WW/qrc_resource.cpp	963e4198464e6eba
+441	515	7978235444571191	C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/Desktop_Qt_6_10_2_MSVC2022_ARM64-Debug/Simulator_autogen/EWIEGA46WW/qrc_resource.cpp	963e4198464e6eba
+538	607	7978235444911649	CMakeFiles/Simulator.dir/Simulator_autogen/EWIEGA46WW/qrc_resource.cpp.obj	efbaa65bd3ea615e
+533	1199	7978235444876357	CMakeFiles/Simulator.dir/model.cpp.obj	7f6b3af0404bbe98
+528	1966	7978235444821597	CMakeFiles/Simulator.dir/vgaview.cpp.obj	22a08917ceebb1cc
+519	1988	7978235444736740	CMakeFiles/Simulator.dir/main.cpp.obj	28913386fa6e99c0
+515	2091	7978235444699088	CMakeFiles/Simulator.dir/Simulator_autogen/mocs_compilation.cpp.obj	259b8e1686ab2993
+524	3173	7978235444784448	CMakeFiles/Simulator.dir/mainwindow.cpp.obj	c24171844de0d933
+3173	3561	7978235471273535	Simulator.exe	d3d1eeb9b7a574a8
