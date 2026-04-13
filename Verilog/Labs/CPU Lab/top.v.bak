@@ -1,8 +1,0 @@
-module top
-(
-
-)
-
-cpu cpu_instance();
-
-endmodule

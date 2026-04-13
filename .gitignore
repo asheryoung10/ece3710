@@ -1,0 +1,46 @@
+# =========================
+# Quartus (Intel FPGA) build artifacts
+# =========================
+
+db/
+incremental_db/
+output_files/
+simulation/
+*_sim/
+
+# Quartus project / GUI state
+*.qws
+*.rpt
+*.chg
+*.log
+*.summary
+*.smsg
+*.jdi
+
+# Generated IP / HDL support files
+*.qip
+*.cmp
+*.ppf
+*.bsf
+*.sip
+*.spd
+
+# Backups
+*.bak
+*.orig
+*.tmp
+
+# =========================
+# OS junk (optional but recommended)
+# =========================
+
+Thumbs.db
+.DS_Store
+
+# =========================
+# If you ever add ModelSim/Questa later
+# =========================
+
+transcript
+work/
+vsim.wlf
