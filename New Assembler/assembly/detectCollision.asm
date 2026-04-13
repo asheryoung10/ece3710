@@ -1,204 +1,110 @@
-funcDetectAndResolveCollisions:
-    %save(R13)
+detectAndResolveCollisions:
+    %saveRegs
 
-    MOVI 0 R0 // Player index
-    funcDetectAndResolveCollisionsPlayerLoop:
-        READ R3 | &varActivePlayersAddress
-        ADD R0 R3
-        LOAD R3 R3
-        CMPI 0 R3 | GOIF EQ &funcDetectAndResolveCollisionsSkipPlayer
+    MOVI 0 R1 // Player index
+    READ R3 | &varPlayerVelocityDataAddress
+    ADDI 1 R3 // y velocity
 
-        MOVI 0 R1 // rect index
-        funcDetectAndResolveCollisionsRectLoop:
-            %callSave
-            %call(&funcDetectFeetCollision)
-            MOV R0 R7
-            %callRestore
-            CMPI 1 R7 | GOIF NE &funcDetectAndResolveCollisionsNegative
+    detectAndResolveCollisionsPlayerLoop:
+        MOVI 0 R2 // Rect index
+        detectAndResolveCollisionsRectLoop:
 
-            READ R7 | &varPlayerVelocityAddress
-            MOV R0 R2 // R2 has player index
-            LSHI 1 R2  // * 2
-            OR R2 R7
-            ADDI 1 R7 // YVelocity
-            MOVI 0 R12
-            STOR R12 R7
+            %saveReg(R1)
+            MOV R1 R0 | MOV R2 R1
+            %call(&detectCollision)
+            %restoreReg(R1)
+            CMPI 0 R0 | GOIF EQ &detectAndResolveCollisionsRectLoopContinue
 
-            funcDetectAndResolveCollisionsNegative:
-            ADDI 1 R1 
-            CMPI 16 R1
-            GOIF NE &funcDetectAndResolveCollisionsRectLoop
-
-        funcDetectAndResolveCollisionsSkipPlayer:
-        ADDI 1 R0
-        CMPI 4 R0
-
-    GOIF NE &funcDetectAndResolveCollisionsPlayerLoop
+            // Collision detected, jump player 
+            MOVI 0 R4
+            SUBI %playerJumpIncrement R4
+            STOR R4 R3
 
 
-    %restore(R13)
+            detectAndResolveCollisionsRectLoopContinue:
+            ADDI 1 R2 | CMPI 64 R2 | GOIF NE &detectAndResolveCollisionsRectLoop
+
+        ADDI 2 R3 // Step y velocity
+        ADDI 1 R1 | CMPI 4 R1 | GOIF NE &detectAndResolveCollisionsPlayerLoop
+
+    
+    %restoreRegs
     %return
 
 
-// Input: R0: Player index, R1 Rectangle Index
-// Output: R0 = 0 (no collision), R1 = 1 (collision)
-funcDetectCollision:
-    %save(R6) | %save(R7) | %save(R8) | %save(R9)
+// Assumes R0 has player index, and R1 has rectangle index
+detectCollision:
+    %saveRegs
+    MOV R1 R2 // R2 has rectangle index
 
-    // get player x and y
-    READ R2 | &varPlayerLocalData
-    LSHI 2 R0
-    ADD R0 R2
-    LOAD R0 R2
-    ADDI 1 R2 | LOAD R2 R2
+    // Get player position
+    LSHI 2 R0 // Get player offset
+    READ R1 | &varLocalPlayerDataAddress
+    ADD R0 R1 // R1 has x pos address
+    LOAD R0 R1 // R0 has player x pos
+    ADDI 1 R1 | LOAD R1 R1 // R1 has player y pos
+    // R0: px, R1: py
 
-    // get rectangle x, y, width, height
-    READ R3 | &varRectLocalData
-    LSHI 2 R1
-    ADD R1 R3
-    LOAD R1 R3
-    ADDI 1 R3 | LOAD R4 R3
-    ADDI 1 R3 | LOAD R3 R3
-    READ R12 | 0x00FF | MOV R3 R5 | AND R12 R5
-    LSHI -8 R3
+    // Get rectangle position
+    LSHI 2 R2 // Get rectangle offset
+    READ R5 | &varLocalRectDataAddress
+    ADD R2 R5 // R5 has x pos address
+    LOAD R2 R5 // R2 has rect x pos
+    ADDI 1 R5 | LOAD R3 R5 // R3 has rect y pos
+    ADDI 1 R5 | LOAD R5 R5 // R5 has packed width height
+    MOV R5 R4 | LSHI -8 R4 // R4 has rect width
+    LSHI 8 R5 | LSHI -8 R5 // R5 has rect height
 
-    // constants
-    MOVI 45 R6 // player width
-    MOVI 41 R7 // player height
+    // At this point, R0: px, R1: py, R2: rx, R3: ry, R4: rwidth, R5: rheight
+    // Note player is 45 width 41 height
 
-    // --- check 1: pX < rectX + rectW ---
-    MOV R1 R8
-    ADD R3 R8
-    CMPI 0 R8 // dummy to set flags properly
+    // Get player width and height
+    MOVI 45 R6   // player width
+    MOVI 41 R7   // player height
+
+    // -------------------------
+    // CHECK 1: px < rx + rw
+    // -------------------------
+    MOV R2 R8
+    ADD R4 R8
     CMP R0 R8
-    GOIF GE &funcDetectCollisionNo
+    GOIF GE &detectCollisionNo
 
-    // --- check 2: pX + pW > rectX ---
+    // -------------------------
+    // CHECK 2: px + pw > rx
+    // -------------------------
     MOV R0 R8
     ADD R6 R8
-    CMP R8 R1
-    GOIF LE &funcDetectCollisionNo
+    CMP R8 R2
+    GOIF LE &detectCollisionNo
 
-    // --- check 3: pY < rectY + rectH ---
-    MOV R4 R8
+    // -------------------------
+    // CHECK 3: py < ry + rh
+    // -------------------------
+    MOV R3 R8
     ADD R5 R8
-    CMP R2 R8
-    GOIF GE &funcDetectCollisionNo
+    CMP R1 R8
+    GOIF GE &detectCollisionNo
 
-    // --- check 4: pY + pH > rectY ---
-    MOV R2 R8
+    // -------------------------
+    // CHECK 4: py + ph > ry
+    // -------------------------
+    MOV R1 R8
     ADD R7 R8
-    CMP R8 R4
-    GOIF LE &funcDetectCollisionNo
+    CMP R8 R3
+    GOIF LE &detectCollisionNo
 
-    // collision true
-    MOVI 1 R1
+    // -------------------------
+    // COLLISION TRUE
+    // -------------------------
     MOVI 1 R0
-    GOIF UC &funcDetectCollisionPositive
+    GOIF UC &detectCollisionEnd
 
-funcDetectCollisionNo:
-    MOVI 0 R1
+detectCollisionNo:
     MOVI 0 R0
 
-    GOIF UC &funcDetectCollisionReturn
-
-funcDetectCollisionPositive:
-
-funcDetectCollisionReturn:
-    %restore(R9) | %restore(R8) | %restore(R7) | %restore(R6)
-    %return
-
-
-// Input: R0: Player index, R1 Rectangle Index
-// Output: R0 = 0 (no collision), R1 = 1 (collision)
-funcDetectFeetCollision:
-    %save(R6) | %save(R7) | %save(R8) | %save(R9)
-
-    // -------------------------
-    // Load player x, y
-    // -------------------------
-    READ R2 | &varPlayerLocalData
-    LSHI 2 R0
-    ADD R0 R2
-    LOAD R0 R2          // pX
-    ADDI 1 R2 | LOAD R2 R2   // pY
-
-    // -------------------------
-    // Load rect x, y, w, h
-    // -------------------------
-    READ R3 | &varRectLocalData
-    LSHI 2 R1
-    ADD R1 R3
-    LOAD R1 R3          // rX
-    ADDI 1 R3 | LOAD R4 R3   // rY
-    ADDI 1 R3 | LOAD R3 R3   // packed w/h
-    READ R12 | 0x00FF | MOV R3 R5 | AND R12 R5 // rH
-    LSHI -8 R3                               // rW
-
-    // -------------------------
-    // Player feet box (bottom 10px)
-    // -------------------------
-    MOVI 45 R6      // pW
-    MOVI 10 R7      // pFeetH
-
-    MOV R2 R8
-    MOVI 31 R9      // 41 - 10 = 31
-    ADD R9 R8       // pFeetY in R8
-
-    // -------------------------
-    // Rect head box (top 10px)
-    // -------------------------
-    MOVI 10 R9      // rHeadH = 10
-    // rY already correct for top
-
-    // -------------------------
-    // CHECK 1: pX < rX + rW
-    // -------------------------
-    MOV R1 R10
-    ADD R3 R10
-    CMP R0 R10
-    GOIF GE &funcDetectFeetCollisionNo
-
-    // -------------------------
-    // CHECK 2: pX + pW > rX
-    // -------------------------
-    MOV R0 R10
-    ADD R6 R10
-    CMP R10 R1
-    GOIF LE &funcDetectFeetCollisionNo
-
-    // -------------------------
-    // CHECK 3: pFeetY < rY + 10
-    // -------------------------
-    MOV R4 R10
-    ADD R9 R10
-    CMP R8 R10
-    GOIF GE &funcDetectFeetCollisionNo
-
-    // -------------------------
-    // CHECK 4: pFeetY + 10 > rY
-    // -------------------------
-    MOV R8 R10
-    ADD R7 R10
-    CMP R10 R4
-    GOIF LE &funcDetectFeetCollisionNo
-
-    // -------------------------
-    // collision = true
-    // -------------------------
-    MOVI 1 R1
-    MOVI 1 R0
-    GOIF UC &funcDetectFeetCollisionPositive
-
-funcDetectFeetCollisionNo:
-    MOVI 0 R1
-    MOVI 0 R0
-    GOIF UC &funcDetectFeetCollisionReturn
-
-funcDetectFeetCollisionPositive:
-    MOVI 1 R1
-    MOVI 1 R0
-
-funcDetectFeetCollisionReturn:
-    %restore(R9) | %restore(R8) | %restore(R7) | %restore(R6)
+detectCollisionEnd:
+    MOV R0 R7
+    %restoreRegs
+    MOV R7 R0 // Prevent restore from clearing return signal
     %return
