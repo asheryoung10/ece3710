@@ -9,7 +9,12 @@ funcPushLocalDataToShared:
    ADDI 16 R1
    MOV R5 R7 | MOV R6 R8
    ARSHI -3 R7 | ARSHI -3 R8 // Shift camera position back to original scale for storage in shared data.
-   STOR R7 R1 | ADDI 1 R1 | STOR R8 R1
+   MOVI 0 R0
+   SUB R7 R0
+   STOR R0 R1 | ADDI 1 R1
+   MOVI 0 R0
+   SUB R8 R0
+   STOR R0 R1
 
 
 
