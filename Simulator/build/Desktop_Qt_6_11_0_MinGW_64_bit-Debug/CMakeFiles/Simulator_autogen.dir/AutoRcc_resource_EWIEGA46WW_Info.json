@@ -1,0 +1,25 @@
+{
+	"BUILD_DIR" : "C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/Simulator_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/maxas/Local_Documents/Github/ece3710/Simulator",
+	"CMAKE_SOURCE_DIR" : "C:/Users/maxas/Local_Documents/Github/ece3710/Simulator",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "MinGW Makefiles",
+	"INCLUDE_DIR" : "C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/Simulator_autogen/include",
+	"INPUTS" : 
+	[
+		"C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/assets/windowIcon.svg"
+	],
+	"LOCK_FILE" : "C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/Simulator_autogen.dir/AutoRcc_resource_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "resource" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resource.cpp",
+	"RCC_EXECUTABLE" : "C:/Qt/6.11.0/mingw_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/Simulator_autogen.dir/AutoRcc_resource_EWIEGA46WW_Used.txt",
+	"SOURCE" : "C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/resource.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

@@ -1,5 +1,5 @@
 #define playerVelocityXIncrement 4
-#define playerJumpIncrement 60
+#define playerJumpIncrement 90
 #define playerGravityIncrement 4
 
 #define maxVelocityX 25
