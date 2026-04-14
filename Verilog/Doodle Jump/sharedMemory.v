@@ -170,90 +170,79 @@ reg cut_corner;
 integer i;
 integer edge_dx;
 integer edge_dy;
+wire signed [15:0] svgaX = {6'b0, vgaX};  // zero-extend to 16 bits
+wire signed [15:0] svgaY = {6'b0, vgaY};
  
 localparam integer CORNER_RADIUS = 3;
  
 always @(*) begin
-    // Transparent/black default so the background layer can show through.
     r = 8'h00;
     g = 8'h00;
     b = 8'h00;
- 
+
     for (i = 0; i < 64; i = i + 1) begin
         x     = rect_data[i*4 + 0];
         y     = rect_data[i*4 + 1];
         wh    = rect_data[i*4 + 2];
         color = rect_data[i*4 + 3];
- 
+
         width  = wh[15:8];
         height = wh[7:0];
- 
-       
-            base_r = {color[15:11], 3'b000};
-            base_g = {color[10:5],  2'b00};
-            base_b = {color[4:0],   3'b000};
-        
- 
+
+        base_r = {color[15:11], 3'b000};
+        base_g = {color[10:5],  2'b00};
+        base_b = {color[4:0],   3'b000};
+
         inside_platform =
-            (vgaX >= x) &&
-            (vgaX < x + width) &&
-            (vgaY >= y) &&
-            (vgaY < y + height);
- 
+            (svgaX >= $signed(x)) &&
+            (svgaX <  $signed(x) + $signed({8'b0, width})) &&
+            (svgaY >= $signed(y)) &&
+            (svgaY <  $signed(y) + $signed({8'b0, height}));
+
         cut_corner = 1'b0;
- 
+
         if (inside_platform && (width > (CORNER_RADIUS * 2)) && (height > (CORNER_RADIUS * 2))) begin
-            // Cheap FPGA-friendly rounded corners using simple add/compare logic.
-            // Top-left corner
-            if ((vgaX < x + CORNER_RADIUS) && (vgaY < y + CORNER_RADIUS)) begin
-                edge_dx = vgaX - x;
-                edge_dy = vgaY - y;
+            if ((svgaX < $signed(x) + CORNER_RADIUS) && (svgaY < $signed(y) + CORNER_RADIUS)) begin
+                edge_dx = svgaX - $signed(x);
+                edge_dy = svgaY - $signed(y);
                 if ((edge_dx + edge_dy) < (CORNER_RADIUS - 1))
                     cut_corner = 1'b1;
             end
- 
-            // Top-right corner
-            if ((vgaX >= x + width - CORNER_RADIUS) && (vgaY < y + CORNER_RADIUS)) begin
-                edge_dx = (x + width - 1) - vgaX;
-                edge_dy = vgaY - y;
+
+            if ((svgaX >= $signed(x) + $signed({8'b0, width}) - CORNER_RADIUS) && (svgaY < $signed(y) + CORNER_RADIUS)) begin
+                edge_dx = ($signed(x) + $signed({8'b0, width}) - 1) - svgaX;
+                edge_dy = svgaY - $signed(y);
                 if ((edge_dx + edge_dy) < (CORNER_RADIUS - 1))
                     cut_corner = 1'b1;
             end
- 
-            // Bottom-left corner
-            if ((vgaX < x + CORNER_RADIUS) && (vgaY >= y + height - CORNER_RADIUS)) begin
-                edge_dx = vgaX - x;
-                edge_dy = (y + height - 1) - vgaY;
+
+            if ((svgaX < $signed(x) + CORNER_RADIUS) && (svgaY >= $signed(y) + $signed({8'b0, height}) - CORNER_RADIUS)) begin
+                edge_dx = svgaX - $signed(x);
+                edge_dy = ($signed(y) + $signed({8'b0, height}) - 1) - svgaY;
                 if ((edge_dx + edge_dy) < (CORNER_RADIUS - 1))
                     cut_corner = 1'b1;
             end
- 
-            // Bottom-right corner
-            if ((vgaX >= x + width - CORNER_RADIUS) && (vgaY >= y + height - CORNER_RADIUS)) begin
-                edge_dx = (x + width - 1) - vgaX;
-                edge_dy = (y + height - 1) - vgaY;
+
+            if ((svgaX >= $signed(x) + $signed({8'b0, width}) - CORNER_RADIUS) && (svgaY >= $signed(y) + $signed({8'b0, height}) - CORNER_RADIUS)) begin
+                edge_dx = ($signed(x) + $signed({8'b0, width}) - 1) - svgaX;
+                edge_dy = ($signed(y) + $signed({8'b0, height}) - 1) - svgaY;
                 if ((edge_dx + edge_dy) < (CORNER_RADIUS - 1))
                     cut_corner = 1'b1;
             end
         end
- 
+
         inside_rounded_shape = inside_platform && !cut_corner;
- 
+
         if (inside_rounded_shape) begin
-            // Darker top band to make the platform read more like Doodle Jump.
-            if (vgaY < y + 3) begin
+            if (svgaY < $signed(y) + 3) begin
                 r = base_r >> 1;
                 g = (base_g >> 1) + 8'd40;
                 b = base_b >> 1;
-            end
-            // Slight darker bottom edge for depth.
-            else if (vgaY >= y + height - 2) begin
+            end else if (svgaY >= $signed(y) + $signed({8'b0, height}) - 2) begin
                 r = base_r >> 1;
                 g = base_g >> 1;
                 b = base_b >> 1;
-            end
-            // Main fill.
-            else begin
+            end else begin
                 r = base_r;
                 g = base_g;
                 b = base_b;
