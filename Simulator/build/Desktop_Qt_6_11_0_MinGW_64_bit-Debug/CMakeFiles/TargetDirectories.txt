@@ -1,9 +1,0 @@
-C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/Simulator.dir
-C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
-C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
-C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/install.dir
-C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
-C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
-C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/Simulator_autogen_timestamp_deps.dir
-C:/Users/maxas/Local_Documents/Github/ece3710/Simulator/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/Simulator_autogen.dir
