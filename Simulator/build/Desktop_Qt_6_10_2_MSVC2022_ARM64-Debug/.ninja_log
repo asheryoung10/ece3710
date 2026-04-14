@@ -26,3 +26,10 @@
 505	2292	7979006546996529	CMakeFiles/Simulator.dir/Simulator_autogen/mocs_compilation.cpp.obj	259b8e1686ab2993
 513	3290	7979006547081762	CMakeFiles/Simulator.dir/mainwindow.cpp.obj	c24171844de0d933
 3290	3532	7979006574841220	Simulator.exe	d3d1eeb9b7a574a8
+9	131	7979066335229170	Simulator_autogen/timestamp	b66db4f5a347a063
+9	131	7979066335229170	Simulator_autogen/mocs_compilation.cpp	b66db4f5a347a063
+9	131	7979066335229170	C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/Desktop_Qt_6_10_2_MSVC2022_ARM64-Debug/Simulator_autogen/timestamp	b66db4f5a347a063
+9	131	7979066335229170	C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/Desktop_Qt_6_10_2_MSVC2022_ARM64-Debug/Simulator_autogen/mocs_compilation.cpp	b66db4f5a347a063
+135	1929	7979066336547051	CMakeFiles/Simulator.dir/vgaview.cpp.obj	22a08917ceebb1cc
+131	2876	7979066336505172	CMakeFiles/Simulator.dir/mainwindow.cpp.obj	c24171844de0d933
+2876	3069	7979066363908755	Simulator.exe	d3d1eeb9b7a574a8

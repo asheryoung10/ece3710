@@ -128,7 +128,9 @@ playerMemory p1Memory_inst (
     .playerPixelR(p1PixelR),
     .playerPixelG(p1PixelG),
     .playerPixelB(p1PixelB),
-	 .highlightColor(p1HighlightColor)
+	 .highlightColor(p1HighlightColor),
+	 	 .shrinkHalf(shrinkHalf)
+
 );
 playerMemory p2Memory_inst (
     .clk50(clk25),

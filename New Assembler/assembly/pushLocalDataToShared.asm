@@ -1,8 +1,17 @@
 funcPushLocalDataToShared:
     %saveRegs
+
    
    READ R6 | &varCameraPositionAddress
    LOAD R5 R6 | ADDI 1 R6 | LOAD R6 R6 // R5: camera1x, R6 camera1y
+
+   READ R1 | %sharedPlayerDataAddress
+   ADDI 16 R1
+   MOV R5 R7 | MOV R6 R8
+   ARSHI -3 R7 | ARSHI -3 R8 // Shift camera position back to original scale for storage in shared data.
+   STOR R7 R1 | ADDI 1 R1 | STOR R8 R1
+
+
 
    
 	

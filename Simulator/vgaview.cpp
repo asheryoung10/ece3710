@@ -26,8 +26,8 @@ void VGAView::paintEvent(QPaintEvent *event)
 
     const int tileSize = 32;
 
-    int offsetX = model->getBackgroundOffsetX()/4;
-    int offsetY = model->getBackgroundOffsetY()/4;
+    int offsetX = model->getBackgroundOffsetX();
+    int offsetY = model->getBackgroundOffsetY();
 
     int pixelOffsetX = offsetX % tileSize;
     int pixelOffsetY = offsetY % tileSize;
