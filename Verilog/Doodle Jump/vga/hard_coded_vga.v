@@ -41,7 +41,8 @@ module vga
     output wire       vga_hs,
     output wire [7:0] r,
     output wire [7:0] g,
-    output wire [7:0] b
+    output wire [7:0] b,
+	 input wire shrinkHalf
 );
 
 
@@ -139,7 +140,9 @@ playerMemory p2Memory_inst (
     .playerPixelR(p2PixelR),
     .playerPixelG(p2PixelG),
     .playerPixelB(p2PixelB),
-	 .highlightColor(p2HighlightColor)
+	 .highlightColor(p2HighlightColor),
+	 	 .shrinkHalf(shrinkHalf)
+
 );
 playerMemory p3Memory_inst (
     .clk50(clk25),
@@ -151,7 +154,9 @@ playerMemory p3Memory_inst (
     .playerPixelR(p3PixelR),
     .playerPixelG(p3PixelG),
     .playerPixelB(p3PixelB),
-	 .highlightColor(p3HighlightColor)
+	 .highlightColor(p3HighlightColor),
+	 	 .shrinkHalf(shrinkHalf)
+
 );
 playerMemory p4Memory_inst (
     .clk50(clk25),
@@ -163,7 +168,8 @@ playerMemory p4Memory_inst (
     .playerPixelR(p4PixelR),
     .playerPixelG(p4PixelG),
     .playerPixelB(p4PixelB),
-	 .highlightColor(p4HighlightColor)
+	 .highlightColor(p4HighlightColor),
+	 .shrinkHalf(shrinkHalf)
 );
 
 

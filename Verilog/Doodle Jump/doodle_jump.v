@@ -149,7 +149,8 @@ vga vga_instance (
    .vga_hs(vga_hs),
    .r(vga_red),
    .g(vga_green),
-   .b(vga_blue)
+   .b(vga_blue),
+	.shrinkHalf(switches[9])
 );
 
 cpu cpu_instance (
