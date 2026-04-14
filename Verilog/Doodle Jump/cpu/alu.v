@@ -93,10 +93,16 @@ module alu
                 Result = (shift_amt >= 0) ? (B >> shift_amt) : (B << -shift_amt);
             end
             ARSH, ARSHI: begin
-                    shift_amt = $signed({{11{A[4]}}, A[4:0]});  // replicate the sign bit 11 times to make 16-bit signed
-					sa = (shift_amt >= 0) ? shift_amt : -shift_amt;
-					Result = (shift_amt >= 0) ? (B <<< sa) : (B >>> sa);
-            end
+					 shift_amt = $signed({{11{A[4]}}, A[4:0]});
+				
+					 if (shift_amt >= 0) begin
+						  sa = shift_amt[3:0];        // safe truncate positive
+						  Result = B << sa;
+					 end else begin
+						  sa = (-shift_amt)[3:0];     // safe truncate magnitude
+						  Result = $signed(B) >>> sa;
+					 end
+				end
 
             // NOP and LOAD/STOR
             default: begin

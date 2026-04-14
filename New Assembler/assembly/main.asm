@@ -13,6 +13,7 @@ WAIT
 #include "applyVelocity.asm"
 #include "waitForVsync.asm"
 #include "detectCollision.asm"
+#include "updateCameraPosition.asm"
 
 
 funcMain:
@@ -28,6 +29,7 @@ funcMain:
         %call(&funcApplyUserInput)
         %call(&funcApplyVelocity)
         %call(&detectAndResolveCollisions)
+        %call(&funcUpdateCameraPosition)
 
         %call(&funcPushLocalDataToShared)
         %call(&funcWaitForVsync)

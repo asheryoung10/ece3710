@@ -1,16 +1,10 @@
 funcPushLocalDataToShared:
     %saveRegs
    
-   MOVI 0 R5 | MOVI 0 R6
-   READ R7 | &varActivePlayersAddress | LOAD R7 R7
-   CMPI 0 R7 | GOIF EQ &funcPushLocalDataToSharedSkipFollowP1
+   READ R6 | &varCameraPositionAddress
+   LOAD R5 R6 | ADDI 1 R6 | LOAD R6 R6 // R5: camera1x, R6 camera1y
 
-   READ R6 | &varLocalPlayerDataAddress
-   LOAD R5 R6 | ADDI 1 R6 | LOAD R6 R6 // R5: p1x, R6 p1y
-   READ R7 | 298 | SUB R7 R5
-   READ R7 | 218 | SUB R7 R6
    
-   funcPushLocalDataToSharedSkipFollowP1:
 	
     MOVI 0 R0 // i
     READ R1 | &varLocalPlayerDataAddress

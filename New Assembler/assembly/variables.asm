@@ -1,3 +1,6 @@
+varCameraPositionAddress:
+    0x0000 // x
+    0x0000 // y
 varPreviousFrameButtonState:
     0x0000
 varCurrentFrameButtonsPressed:

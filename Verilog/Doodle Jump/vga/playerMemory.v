@@ -1,7 +1,7 @@
 module playerMemory (
     input  wire       clk50,
-    input  wire [9:0] playerX, // sprite position X on screen
-    input  wire [9:0] playerY, // sprite position Y on screen
+    input  wire [15:0] playerX, // sprite position X on screen
+    input  wire [15:0] playerY, // sprite position Y on screen
 	 input wire  [15:0] highlightColor,
     input  wire [9:0] pixelX,  // current pixel being fetched
     input  wire [9:0] pixelY,  // current pixel being fetched
