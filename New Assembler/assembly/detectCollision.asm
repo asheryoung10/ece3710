@@ -15,7 +15,12 @@ detectAndResolveCollisions:
             %restoreReg(R1)
             CMPI 0 R0 | GOIF EQ &detectAndResolveCollisionsRectLoopContinue
 
-            // Collision detected, jump player 
+            // Only collide if player y velocity is negative
+            MOV R3 R4 // R4 has player velocity address y
+            LOAD R4 R4
+            CMPI 0 R4 | GOIF GT &detectAndResolveCollisionsRectLoopContinue
+
+            // Collision detected, jump player
             MOVI 0 R4
             SUBI %playerJumpIncrement R4
             STOR R4 R3
