@@ -17,6 +17,8 @@ module alu
     // Individual flag bits
     reg cFlag, lFlag, fFlag, zFlag, nFlag;
     integer shift_amt;
+	 integer shift_amt_comp;
+
     reg [3:0] sa;
     reg signed [DATA_WIDTH-1:0] negA;
 
@@ -94,12 +96,12 @@ module alu
             end
             ARSH, ARSHI: begin
 					 shift_amt = $signed({{11{A[4]}}, A[4:0]});
-				
+						shift_amt_comp = - shift_amt;
 					 if (shift_amt >= 0) begin
 						  sa = shift_amt[3:0];        // safe truncate positive
 						  Result = B << sa;
 					 end else begin
-						  sa = (-shift_amt)[3:0];     // safe truncate magnitude
+						  sa = shift_amt_comp[3:0];     // safe truncate magnitude
 						  Result = $signed(B) >>> sa;
 					 end
 				end
