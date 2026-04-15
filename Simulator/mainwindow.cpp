@@ -89,6 +89,92 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->p4Down,  &QPushButton::pressed,  this, [this]{ model.setP4Down(true); });
     connect(ui->p4Down,  &QPushButton::released, this, [this]{ model.setP4Down(false); });;
 
+    auto applyStyle = [](QList<QPushButton*> buttons, const QString& style) {
+        for (QPushButton* b : buttons) {
+            b->setStyleSheet(style);
+        }
+    };
+
+    // --- Player 1 (Red Knight) ---
+    QString p1Style =
+        "QPushButton {"
+        " background-color: #c0392b;"
+        " color: white;"
+        " border-radius: 6px;"
+        " font-weight: bold;"
+        " border: 2px solid rgba(0,0,0,0.2);"
+        "}"
+        "QPushButton:pressed {"
+        " background-color: #922b21;"
+        "}";
+
+    applyStyle({
+                   ui->p1Left,
+                   ui->p1Right,
+                   ui->p1Up,
+                   ui->p1Down
+               }, p1Style);
+
+    // --- Player 2 (Blue Knight) ---
+    QString p2Style =
+        "QPushButton {"
+        " background-color: #2980b9;"
+        " color: white;"
+        " border-radius: 6px;"
+        " font-weight: bold;"
+        " border: 2px solid rgba(0,0,0,0.2);"
+        "}"
+        "QPushButton:pressed {"
+        " background-color: #1f618d;"
+        "}";
+
+    applyStyle({
+                   ui->p2Left,
+                   ui->p2Right,
+                   ui->p2Up,
+                   ui->p2Down
+               }, p2Style);
+
+    // --- Player 3 (Green Knight) ---
+    QString p3Style =
+        "QPushButton {"
+        " background-color: #27ae60;"
+        " color: white;"
+        " border-radius: 6px;"
+        " font-weight: bold;"
+        " border: 2px solid rgba(0,0,0,0.2);"
+        "}"
+        "QPushButton:pressed {"
+        " background-color: #1e8449;"
+        "}";
+
+    applyStyle({
+                   ui->p3Left,
+                   ui->p3Right,
+                   ui->p3Up,
+                   ui->p3Down
+               }, p3Style);
+
+    // --- Player 4 (Orange Knight) ---
+    QString p4Style =
+        "QPushButton {"
+        " background-color: #f39c12;"
+        " color: black;"
+        " border-radius: 6px;"
+        " font-weight: bold;"
+        " border: 2px solid rgba(0,0,0,0.2);"
+        "}"
+        "QPushButton:pressed {"
+        " background-color: #d68910;"
+        "}";
+
+    applyStyle({
+                   ui->p4Left,
+                   ui->p4Right,
+                   ui->p4Up,
+                   ui->p4Down
+               }, p4Style);
+
     connect(ui->resetButton, &QPushButton::pressed,  this, [this]{ model.setResetButton(true); });
     connect(ui->resetButton, &QPushButton::released, this, [this]{ model.setResetButton(false); });
     connect(ui->RectJump, &QPushButton::pressed, this, [this]{ this->jumpAddress(32768); });
@@ -170,7 +256,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->splitter->setSizes({1000,1000});
     ui->splitter_2->setSizes({1000,1000});
     ui->frameDelay->setValue(8);
-    ui->instructionsPerFrame->setValue(1000);
+    ui->instructionsPerFrame->setValue(40000);
+    ui->frameDelay->setValue(14);
+    ui->onlyViewCheck->setChecked(true);
+    ui->stepAmount->setValue(1);
     this->setWindowIcon(QIcon(":/data/assets/windowIcon.svg"));
 
     // Initial UI update
@@ -498,68 +587,92 @@ void MainWindow::updateViews()
     }
 }
 
+#include <QPropertyAnimation>
+#include <QGraphicsOpacityEffect>
+#include <QPushButton>
+
+void MainWindow::flashButton(QPushButton* button)
+{
+    if (!button) return;
+
+    // Ensure effect exists
+    auto *effect = new QGraphicsOpacityEffect(button);
+    button->setGraphicsEffect(effect);
+
+    auto *anim = new QPropertyAnimation(effect, "opacity");
+    anim->setDuration(150);
+    anim->setStartValue(1.0);
+    anim->setKeyValueAt(0.5, 0.3); // flash dim
+    anim->setEndValue(1.0);
+
+    anim->setEasingCurve(QEasingCurve::OutQuad);
+
+    connect(anim, &QPropertyAnimation::finished, anim, &QObject::deleteLater);
+
+    anim->start();
+}
+
+QPushButton* MainWindow::getButtonForKey(int key)
+{
+    switch (key) {
+
+    // Player 1
+    case Qt::Key_A: return ui->p1Left;
+    case Qt::Key_D: return ui->p1Right;
+    case Qt::Key_W: return ui->p1Up;
+    case Qt::Key_S: return ui->p1Down;
+
+    // Player 2
+    case Qt::Key_Left:  return ui->p2Left;
+    case Qt::Key_Right: return ui->p2Right;
+    case Qt::Key_Up:    return ui->p2Up;
+    case Qt::Key_Down:  return ui->p2Down;
+
+    // Player 3
+    case Qt::Key_J: return ui->p3Left;
+    case Qt::Key_L: return ui->p3Right;
+    case Qt::Key_I: return ui->p3Up;
+    case Qt::Key_K: return ui->p3Down;
+
+    // Player 4
+    case Qt::Key_F: return ui->p4Left;
+    case Qt::Key_H: return ui->p4Right;
+    case Qt::Key_T: return ui->p4Up;
+    case Qt::Key_G: return ui->p4Down;
+
+    default:
+        return nullptr;
+    }
+}
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
     if (event->isAutoRepeat()) return;
 
+    QPushButton* btn = getButtonForKey(event->key());
+    if (btn) flashButton(btn);
+
     switch (event->key()) {
 
-    // --- Player 1 (WASD) ---
-    case Qt::Key_A:
-        model.setP1Left(true);
-        break;
-    case Qt::Key_D:
-        model.setP1Right(true);
-        break;
-    case Qt::Key_W:
-        model.setP1Up(true);
-        break;
-    case Qt::Key_S:
-        model.setP1Down(true);
-        break;
+    case Qt::Key_A: model.setP1Left(true); break;
+    case Qt::Key_D: model.setP1Right(true); break;
+    case Qt::Key_W: model.setP1Up(true); break;
+    case Qt::Key_S: model.setP1Down(true); break;
 
-    // --- Player 2 (Arrow Keys) ---
-    case Qt::Key_Left:
-        model.setP2Left(true);
-        break;
-    case Qt::Key_Right:
-        model.setP2Right(true);
-        break;
-    case Qt::Key_Up:
-        model.setP2Up(true);
-        break;
-    case Qt::Key_Down:
-        model.setP2Down(true);
-        break;
+    case Qt::Key_Left:  model.setP2Left(true); break;
+    case Qt::Key_Right: model.setP2Right(true); break;
+    case Qt::Key_Up:    model.setP2Up(true); break;
+    case Qt::Key_Down:  model.setP2Down(true); break;
 
-    // --- Player 3 (IJKL) ---
-    case Qt::Key_J:
-        model.setP3Left(true);
-        break;
-    case Qt::Key_L:
-        model.setP3Right(true);
-        break;
-    case Qt::Key_I:
-        model.setP3Up(true);
-        break;
-    case Qt::Key_K:
-        model.setP3Down(true);
-        break;
+    case Qt::Key_J: model.setP3Left(true); break;
+    case Qt::Key_L: model.setP3Right(true); break;
+    case Qt::Key_I: model.setP3Up(true); break;
+    case Qt::Key_K: model.setP3Down(true); break;
 
-    // --- Player 4 (Numpad) ---
-    case Qt::Key_4:
-        model.setP4Left(true);
-        break;
-    case Qt::Key_6:
-        model.setP4Right(true);
-        break;
-    case Qt::Key_8:
-        model.setP4Up(true);
-        break;
-    case Qt::Key_5:
-        model.setP4Down(true);
-        break;
+    case Qt::Key_F: model.setP4Left(true); break;
+    case Qt::Key_H: model.setP4Right(true); break;
+    case Qt::Key_T: model.setP4Up(true); break;
+    case Qt::Key_G: model.setP4Down(true); break;
 
     default:
         QMainWindow::keyPressEvent(event);
@@ -614,17 +727,16 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event)
         model.setP3Down(false);
         break;
 
-    // --- Player 4 (Numpad) ---
-    case Qt::Key_4:
+    case Qt::Key_F:
         model.setP4Left(false);
         break;
-    case Qt::Key_6:
+    case Qt::Key_H:
         model.setP4Right(false);
         break;
-    case Qt::Key_8:
+    case Qt::Key_T:
         model.setP4Up(false);
         break;
-    case Qt::Key_5:
+    case Qt::Key_G:
         model.setP4Down(false);
         break;
 

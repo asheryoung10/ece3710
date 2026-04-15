@@ -39,7 +39,11 @@ module sharedMemory
 		
 		output [15:0] backgroundOffsetX,
 		output [15:0] backgroundOffsetY,
-		output [15:0] audioPitchIndex
+		output [15:0] audioPitchIndex,
+		output [15:0] p1Scale,
+		output [15:0] p2Scale,
+		output [15:0] p3Scale,
+		output [15:0] p4Scale
 );
 
 
@@ -72,7 +76,7 @@ cpu_memory_instance
 );
 
 // Player Memory
-reg [15:0] sharedPlayerRegs  [0:18]; // 16 additional saved regs
+reg [15:0] sharedPlayerRegs  [0:22]; // 16 additional saved regs
 always@(posedge clock) begin
 	if(reset) begin
 		sharedPlayerRegs[0] <= 0;
@@ -94,6 +98,10 @@ always@(posedge clock) begin
 		sharedPlayerRegs[16] <= 0;
 		sharedPlayerRegs[17] <= 0;
 		sharedPlayerRegs[18] <= 0;
+		sharedPlayerRegs[19] <= 0;
+		sharedPlayerRegs[20] <= 0;
+		sharedPlayerRegs[21] <= 0;
+		sharedPlayerRegs[22] <= 0;
 	end else
 	if(enablePlayerWrite) begin
 			sharedPlayerRegs[readWriteAddress[4:0]] <= writeData;
@@ -126,6 +134,10 @@ assign p4HighlightColor = sharedPlayerRegs[15];
 assign backgroundOffsetX = sharedPlayerRegs[16];
 assign backgroundOffsetY = sharedPlayerRegs[17];
 assign audioPitchIndex = sharedPlayerRegs[18];
+assign p1Scale = sharedPlayerRegs[19];
+assign p2Scale = sharedPlayerRegs[20];
+assign p3Scale = sharedPlayerRegs[21];
+assign p4Scale = sharedPlayerRegs[22];
 
 
 

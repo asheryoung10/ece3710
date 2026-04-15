@@ -83,7 +83,7 @@ always @(*) begin
 							  programStateRegisterWriteEnable = 1'b1;
 							  nextState = FETCH_INSTRUCTION_FROM_MEMORY;
 						end
-						 ADD, ADDI, ADDUI, ADDC, ADDCI, SUB, SUBI,  AND, OR, XOR, NOT, LSH, LSHI, RSH, RSHI, ARSH, ARSHI: begin
+						 MUL, IMUL, ADD, ADDI, ADDUI, ADDC, ADDCI, SUB, SUBI,  AND, OR, XOR, NOT, LSH, LSHI, RSH, RSHI, ARSH, ARSHI: begin
 							  registerFileWriteEnable = 1'b1;
 							  programStateRegisterWriteEnable = 1'b1;
 							  nextState = FETCH_INSTRUCTION_FROM_MEMORY;
@@ -113,7 +113,7 @@ always @(*) begin
 					
 					// Setup next state
 					casex (aluOpcode)
-						 ADDI, ADDUI, ADDCI, SUBI, CMPI, LSHI, RSHI, ARSHI: aluSelectImmediate = 1'b1;
+						 IMUL, ADDI, ADDUI, ADDCI, SUBI, CMPI, LSHI, RSHI, ARSHI: aluSelectImmediate = 1'b1;
 						 MOV:    registerFileSelectInput = 2'b01; // Select Contents A
 						 MOVI:   registerFileSelectInput = 2'b10; // Select Immediate
 						 LOAD:   memorySelectReadWriteAddress = 1'b1;

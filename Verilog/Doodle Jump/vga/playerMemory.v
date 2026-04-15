@@ -6,7 +6,7 @@ module playerMemory (
     input  wire [9:0]  pixelX,
     input  wire [9:0]  pixelY,
     input  wire [3:0]  playerAnimationIndex,
-    input  wire        shrinkHalf,
+    input  wire [15:0] scale,
 
     output reg  [7:0] playerPixelR,
     output reg  [7:0] playerPixelG,
@@ -15,31 +15,34 @@ module playerMemory (
 
 reg [7:0] r_next, g_next, b_next;
 
-localparam PLAYER_WIDTH  = 45;
-localparam PLAYER_HEIGHT = 41;
+localparam PLAYER_WIDTH  = 16;
+localparam PLAYER_HEIGHT = 16;
 
-// Half-size draw region
-wire [15:0] drawWidth  = shrinkHalf ? (PLAYER_WIDTH  >> 1) : PLAYER_WIDTH;
-wire [15:0] drawHeight = shrinkHalf ? (PLAYER_HEIGHT >> 1) : PLAYER_HEIGHT;
+// Scaled draw region
+wire [15:0] drawWidth  = PLAYER_WIDTH  * scale;
+wire [15:0] drawHeight = PLAYER_HEIGHT * scale;
 
-// raw sprite coordinates in screen space
+// Offset from sprite origin
 wire [15:0] rawX = pixelX - playerX;
 wire [15:0] rawY = pixelY - playerY;
 
-// nearest-neighbor downsample (2x shrink)
-wire [15:0] spriteX = shrinkHalf ? (rawX << 1) : rawX;
-wire [15:0] spriteY = shrinkHalf ? (rawY << 1) : rawY;
+// Nearest-neighbor scaling (integer division)
+wire [15:0] spriteX = rawX / scale;
+wire [15:0] spriteY = rawY / scale;
 
-wire [31:0] rom_data;
+// Bounds safety (prevents ROM overflow)
+wire in_bounds =
+    (spriteX < PLAYER_WIDTH) &&
+    (spriteY < PLAYER_HEIGHT);
 
 // ROM lookup
+wire [31:0] rom_data;
+
 glyph_rom glyph_rom_instance(
     .clk(clk50),
     .addr(
         (playerAnimationIndex * (PLAYER_HEIGHT * PLAYER_WIDTH)) +
-        spriteX +
-        1 +
-        (spriteY * PLAYER_WIDTH)
+        (spriteX + (spriteY * PLAYER_WIDTH))
     ),
     .q(rom_data)
 );
@@ -48,7 +51,8 @@ glyph_rom glyph_rom_instance(
 always @(posedge clk50) begin
 
     if ((pixelX >= playerX) && (pixelX < playerX + drawWidth) &&
-        (pixelY >= playerY) && (pixelY < playerY + drawHeight)) begin
+        (pixelY >= playerY) && (pixelY < playerY + drawHeight) &&
+        in_bounds) begin
 
         // Blue channel
         b_next <= (rom_data[7:0] == 0) ? 0 :

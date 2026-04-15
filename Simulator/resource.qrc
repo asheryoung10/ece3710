@@ -2,5 +2,6 @@
     <qresource prefix="/"/>
     <qresource prefix="/data">
         <file>assets/windowIcon.svg</file>
+        <file>assets/monkey.png</file>
     </qresource>
 </RCC>

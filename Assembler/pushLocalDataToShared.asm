@@ -1,6 +1,17 @@
 funcPushLocalDataToShared:
     %saveRegs
 
+
+    MOVI 0 R0 // i = 0;
+    READ R1 | &varLocalPlayerScaleDataAddress
+    READ R2 | %sharedPlayerScaleDataAddress
+
+    funcPushLocalDataToSharedPlayerScaleLoop:
+        MOV R0 R3 | ADD R1 R3 | LOAD R3 R3 // R3 has scale
+        MOV R0 R4 | ADD R2 R4 // R4 has address of shared player scale
+        STOR R3 R4 // store data
+
+        ADDI 1 R0 | CMPI 4 R0 | GOIF NE &funcPushLocalDataToSharedPlayerScaleLoop
    
    READ R6 | &varCameraPositionAddress
    LOAD R5 R6 | ADDI 1 R6 | LOAD R6 R6 // R5: camera1x, R6 camera1y

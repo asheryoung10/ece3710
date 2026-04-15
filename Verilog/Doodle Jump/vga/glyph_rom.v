@@ -24,7 +24,7 @@ reg [(DATA_WIDTH-1):0] rom [((2**ADDR_WIDTH)-1):0];
 
 initial
 begin
-	$readmemh("playerGlyph.hex", rom);
+	$readmemh("monkey.hex", rom);
 end
 
 always @(posedge clk)

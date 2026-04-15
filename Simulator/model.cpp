@@ -154,7 +154,9 @@ uint16_t Model::getAudioPitchIndex() {
     return memory[0xC012];
 }
 
-
+uint16_t Model::getPlayerScale(int playerIndex) {
+return memory[0xC013 + playerIndex];
+}
 void Model::initialize() {
     vsyncTimer.start();
     lastFrameMs = vsyncTimer.elapsed();
@@ -196,7 +198,7 @@ Model::~Model() {
 bool Model::tick() {
     if(resetButton) initialize();
     
-
+    int32_t fullMul;
     // LSB is vsync, then right, left, jump buttons
     registers[15] =
         (p4Down << 15) |
@@ -272,6 +274,25 @@ bool Model::tick() {
         fFlag = ((sB >= 0 && sA >= 0 && res < 0) || (sB < 0 && sA < 0 && res >= 0));
         nFlag = sB < sA;
         cFlag = false;
+        programCounter++;
+        break;
+    }
+
+    case MUL: {
+        fullMul = static_cast<int32_t>(sB) * static_cast<int32_t>(sA);
+        registers[rd] = static_cast<uint16_t>(fullMul);
+
+        zFlag = (registers[rd] == 0);
+        nFlag = (static_cast<int16_t>(registers[rd]) < 0);
+
+        // overflow = upper half not equal sign extension of result
+        int16_t upper = static_cast<int16_t>(fullMul >> 16);
+        int16_t lower = static_cast<int16_t>(registers[rd]);
+
+        fFlag = (upper != (lower < 0 ? -1 : 0));
+        cFlag = fFlag;   // or false if you don't want carry defined
+        lFlag = false;
+
         programCounter++;
         break;
     }
@@ -381,6 +402,25 @@ switch (rd) {
         A = immediate;
         int16_t sA = static_cast<int16_t>(static_cast<int8_t>(immediate));
         switch(opcodeUpper) {
+        case IMUL_UPPER: {
+            int16_t imm = static_cast<int16_t>(static_cast<int8_t>(immediate));
+
+            int32_t fullMul = static_cast<int32_t>(sB) * static_cast<int32_t>(imm);
+            registers[rd] = static_cast<uint16_t>(fullMul);
+
+            zFlag = (registers[rd] == 0);
+            nFlag = (static_cast<int16_t>(registers[rd]) < 0);
+
+            int16_t upper = static_cast<int16_t>(fullMul >> 16);
+            int16_t lower = static_cast<int16_t>(registers[rd]);
+
+            fFlag = (upper != (lower < 0 ? -1 : 0));
+            cFlag = fFlag;
+            lFlag = false;
+
+            programCounter++;
+            break;
+        }
         case ADDI_UPPER: {
             int16_t res = sB + sA;
             registers[rd] = uint16_t(res);

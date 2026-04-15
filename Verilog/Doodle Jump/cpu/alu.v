@@ -18,7 +18,7 @@ module alu
     reg cFlag, lFlag, fFlag, zFlag, nFlag;
     integer shift_amt;
 	 integer shift_amt_comp;
-
+    reg signed [2*DATA_WIDTH-1:0] full_mul;
     reg [3:0] sa;
     reg signed [DATA_WIDTH-1:0] negA;
 
@@ -105,6 +105,20 @@ module alu
 						  Result = $signed(B) >>> sa;
 					 end
 				end
+
+   MUL, IMUL: begin
+    full_mul = $signed(B) * $signed(A);
+    Result = full_mul[DATA_WIDTH-1:0];
+
+    zFlag = (Result == 0);
+    nFlag = Result[DATA_WIDTH-1];
+
+    // overflow = upper bits not equal sign-extension of result
+    cFlag = |(full_mul[2*DATA_WIDTH-1:DATA_WIDTH] != {DATA_WIDTH{Result[DATA_WIDTH-1]}});
+    fFlag = cFlag;
+    lFlag = 1'bx;
+end
+
 
             // NOP and LOAD/STOR
             default: begin

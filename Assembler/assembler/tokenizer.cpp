@@ -458,7 +458,7 @@ void validateInstructions(const std::vector<Instruction>& instructions) {
     // Instruction specification
     struct InstSpec { int numOperands; std::vector<char> types; };
     std::unordered_map<std::string, InstSpec> instructionSet = {
-        {"ADD",{2,{'R','R'}}}, {"ADDI",{2,{'I','R'}}}, {"SUB",{2,{'R','R'}}},
+        {"ADD",{2,{'R','R'}}}, {"ADDI",{2,{'I','R'}}}, {"MUL",{2,{'R','R'}}}, {"MULI",{2,{'I','R'}}}, {"SUB",{2,{'R','R'}}},
         {"SUBI",{2,{'I','R'}}}, {"CMP",{2,{'R','R'}}}, {"CMPI",{2,{'I','R'}}},
         {"AND",{2,{'R','R'}}}, {"OR",{2,{'R','R'}}}, {"XOR",{2,{'R','R'}}},
         {"NOT",{2,{'R','R'}}}, {"LSH",{2,{'R','R'}}}, {"LSHI",{2,{'I','R'}}},
@@ -668,7 +668,7 @@ void resolveImmediateValues(std::vector<Instruction>& instructions) {
     // Instruction specification for immediate positions
     struct InstSpec { int numOperands; std::vector<char> types; };
     std::unordered_map<std::string, InstSpec> instructionSet = {
-        {"ADD",{2,{'R','R'}}}, {"ADDI",{2,{'I','R'}}}, {"SUB",{2,{'R','R'}}},
+        {"ADD",{2,{'R','R'}}}, {"ADDI",{2,{'I','R'}}}, {"MUL",{2,{'R','R'}}}, {"MULI",{2,{'I','R'}}}, {"SUB",{2,{'R','R'}}},
         {"SUBI",{2,{'I','R'}}}, {"CMP",{2,{'R','R'}}}, {"CMPI",{2,{'I','R'}}},
         {"AND",{2,{'R','R'}}}, {"OR",{2,{'R','R'}}}, {"XOR",{2,{'R','R'}}},
         {"NOT",{2,{'R','R'}}}, {"LSH",{2,{'R','R'}}}, {"LSHI",{2,{'I','R'}}},
@@ -763,7 +763,7 @@ std::unordered_map<std::string,uint8_t> condMap = {
 
 // Upper/lower opcode map
 std::unordered_map<std::string,std::pair<uint8_t,uint8_t>> opcodeMap = {
-    {"ADD",{0x00,0x05}}, {"ADDI",{0x05,0x00}}, {"SUB",{0x00,0x09}}, {"SUBI",{0x09,0x00}},
+    {"ADD",{0x00,0x05}}, {"ADDI",{0x05,0x00}}, {"MUL",{0x00,0x0E}}, {"MULI",{0x0E,0x00}}, {"SUB",{0x00,0x09}}, {"SUBI",{0x09,0x00}},
     {"CMP",{0x00,0x0B}}, {"CMPI",{0x0B,0x00}}, {"AND",{0x00,0x01}}, {"OR",{0x00,0x02}},
     {"XOR",{0x00,0x03}}, {"NOT",{0x00,0x04}}, {"LSH",{0x08,0x04}}, {"LSHI",{0x08,0x00}},
     {"RSH",{0x84,0x00}}, {"RSHI",{0x85,0x00}}, {"ARSH",{0x08,0x06}}, {"ARSHI",{0x08,0x02}},
@@ -817,7 +817,7 @@ std::vector<std::string> instructionsToHex(const std::vector<Instruction>& instr
 
 
 
-        if(name=="ADD" || name=="SUB" || name=="CMP" || name=="AND" || name=="OR" ||
+        if(name=="MUL" || name=="ADD" || name=="SUB" || name=="CMP" || name=="AND" || name=="OR" ||
            name=="XOR" || name=="NOT" || name=="MOV" || name=="LSH" ) {
             uint8_t r1 = regToVal(inst.tokens[1].text); // first operand
             uint8_t r2 = regToVal(inst.tokens[2].text); // second operand
@@ -831,7 +831,7 @@ std::vector<std::string> instructionsToHex(const std::vector<Instruction>& instr
             word = (upper << 12) | (r1 << 8) | (lower << 4) | r2;  // <-- FIXED lower opcode placement
    
            }
-        else if(name=="MOVI" || name=="ADDI" || name=="SUBI" || name=="CMPI") {
+        else if(name=="MULI" || name=="MOVI" || name=="ADDI" || name=="SUBI" || name=="CMPI") {
             int imm = std::stoi(inst.tokens[1].text);
             uint8_t r = regToVal(inst.tokens[2].text);
             word = (upper << 12) | (r << 8) | (twosComplement(imm, 8) & 0xFF); // MOVI 4-bit

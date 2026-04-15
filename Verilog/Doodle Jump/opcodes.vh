@@ -28,3 +28,5 @@ localparam BCOND  = 8'b1100_XXXX;
 localparam JCOND  = 8'b0100_1100;
 localparam JAL    = 8'b0100_1000;
 localparam READ   = 8'b0000_1111;
+localparam MUL    = 8'b0000_1110;
+localparam IMUL  = 8'b1110_XXXX;

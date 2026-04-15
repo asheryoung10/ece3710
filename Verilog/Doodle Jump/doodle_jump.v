@@ -69,6 +69,12 @@ wire [15:0] backgroundOffsetX;
 wire [15:0] backgroundOffsetY;
 wire [15:0] audioPitchIndex;
 
+wire [15:0] p1Scale;
+wire [15:0] p2Scale;
+wire [15:0] p3Scale;
+wire [15:0] p4Scale;
+
+
 // VGA wires
 wire [9:0] vgaPixelX;
 wire [9:0] vgaPixelY;
@@ -135,6 +141,12 @@ vga vga_instance (
 		
 		.backgroundOffsetY(backgroundOffsetY),
 		.backgroundOffsetX(backgroundOffsetX),
+
+
+		.p1Scale(p1Scale),
+		.p2Scale(p2Scale),
+		.p3Scale(p3Scale),
+		.p4Scale(p4Scale),
 	
 	.pixelX(vgaPixelX),
 	.pixelY(vgaPixelY),
@@ -233,7 +245,12 @@ sharedMemory memory_instance
 		
 		.backgroundOffsetX(backgroundOffsetX),
 		.backgroundOffsetY(backgroundOffsetY),
-		.audioPitchIndex()
+		.audioPitchIndex(),
+
+		.p1Scale(p1Scale),
+		.p2Scale(p2Scale),
+		.p3Scale(p3Scale),
+		.p4Scale(p4Scale)
 );
 
 audio_unit audio_unit_instance (

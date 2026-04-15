@@ -14,6 +14,7 @@ WAIT
 #include "waitForVsync.asm"
 #include "detectCollision.asm"
 #include "updateCameraPosition.asm"
+#include "updatePlayerAnimations.asm"
 
 
 funcMain:
@@ -29,6 +30,7 @@ funcMain:
         %call(&funcApplyUserInput)
         %call(&funcApplyVelocity)
         %call(&detectAndResolveCollisions)
+        %call(&funcUpdatePlayerAnimations)
         %call(&funcUpdateCameraPosition)
 
         %call(&funcPushLocalDataToShared)

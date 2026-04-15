@@ -23,27 +23,47 @@ void VGAView::paintEvent(QPaintEvent *event)
     vgaBuffer.fill(Qt::black);
 
     QPainter vgaPainter(&vgaBuffer);
-
     const int tileSize = 32;
 
-    int offsetX = model->getBackgroundOffsetX();
-    int offsetY = model->getBackgroundOffsetY();
+    int cameraX = -model->getBackgroundOffsetX();
+    int cameraY = -model->getBackgroundOffsetY();
 
-    int pixelOffsetX = offsetX % tileSize;
-    int pixelOffsetY = offsetY % tileSize;
+    // Screen size
+    const int screenW = 640;
+    const int screenH = 480;
 
-    for (int y = -tileSize; y < 480 + tileSize; y += tileSize) {
-        for (int x = -tileSize; x < 640 + tileSize; x += tileSize) {
+    // Align camera to pixel grid (VERY important for stability)
+    int worldStartX = cameraX;
+    int worldStartY = cameraY;
 
-            int tileX = (x + offsetX) / tileSize;
-            int tileY = (y + offsetY) / tileSize;
+    // Find first visible tile index
+    int startTileX = floor((float)worldStartX / tileSize);
+    int startTileY = floor((float)worldStartY / tileSize);
 
-            bool isWhite = (tileX + tileY) % 2 == 0;
-            QColor tileColor = isWhite ? QColor(80, 80, 80) : QColor(50, 50, 50);
+    // Pixel offset inside tile
+    int offsetX = worldStartX % tileSize;
+    int offsetY = worldStartY % tileSize;
+
+    // Fix negative modulo
+    if (offsetX < 0) offsetX += tileSize;
+    if (offsetY < 0) offsetY += tileSize;
+
+    // Convert back to screen start
+    int startScreenX = -offsetX;
+    int startScreenY = -offsetY;
+
+    for (int y = startScreenY, ty = startTileY; y < screenH + tileSize; y += tileSize, ty++) {
+        for (int x = startScreenX, tx = startTileX; x < screenW + tileSize; x += tileSize, tx++) {
+
+            bool isWhite = ((tx + ty) & 1) == 0;
+
+            QColor tileColor = isWhite
+                                   ? QColor(80, 80, 80)
+                                   : QColor(50, 50, 50);
 
             vgaPainter.fillRect(
-                x - pixelOffsetX,
-                y - pixelOffsetY,
+                x,
+                y,
                 tileSize,
                 tileSize,
                 tileColor
@@ -53,12 +73,12 @@ void VGAView::paintEvent(QPaintEvent *event)
     for (int i = 0; i < 64; ++i) {
         Model::Rectangle r = model->getRectangle(i);
 
-        QRect rect(
-            static_cast<int>(r.x),
-            static_cast<int>(r.y),
-            static_cast<int>(r.width),
-            static_cast<int>(r.height)
-            );
+        int x = (int16_t)r.x;
+        int y = (int16_t)r.y;
+        int w = (int16_t)r.width;
+        int h = (int16_t)r.height;
+
+        QRect rect(x, y, w, h);
 
         uint16_t color = r.color;
         int rC = ((color >> 11) & 0x1F) * 255 / 31;
@@ -67,91 +87,71 @@ void VGAView::paintEvent(QPaintEvent *event)
 
         vgaPainter.fillRect(rect, QColor(rC, gC, bC));
     }
-
     const int PLAYER_COUNT = 4;
 
+    static QImage spriteSheet(":/data/assets/monkey.png");
     for (int i = 0; i < PLAYER_COUNT; ++i) {
         uint16_t x = model->getPlayerX(i);
         uint16_t y = model->getPlayerY(i);
         uint16_t anim = model->getPlayerAnimationIndex(i);
         uint16_t color = model->getPlayerHighlightColor(i);
 
-        QRect playerRect(
-            static_cast<int>(x),
-            static_cast<int>(y),
-            45,
-            41
-            );
+        QRect playerRect(x, y, 16, 16);
 
-        // Convert highlight color (assuming RGB565 like rectangles)
+        // decode RGB565
         int rC = ((color >> 11) & 0x1F) * 255 / 31;
         int gC = ((color >> 5) & 0x3F) * 255 / 63;
         int bC = (color & 0x1F) * 255 / 31;
 
-        QColor qColor(rC, gC, bC, 200);
+        QColor tint(rC, gC, bC);
 
-        vgaPainter.fillRect(playerRect, qColor);
+        int SPRITE_SIZE = 16;
+        int SPRITES_PER_ROW = 6;
 
-        // ----------------------------
-        // Debug info
-        // ----------------------------
+        int sx = (anim % SPRITES_PER_ROW) * SPRITE_SIZE;
+        int sy = (anim / SPRITES_PER_ROW) * SPRITE_SIZE;
+
+        for (int py = 0; py < 16; ++py) {
+            for (int px = 0; px < 16; ++px) {
+
+                QColor src = spriteSheet.pixelColor(sx + px, sy + py);
+
+                // transparency rule: "all 0s"
+                if (src.red() == 0 && src.green() == 0 && src.blue() == 0)
+                    continue;
+
+                // apply tint (simple multiply-style blend)
+                QColor outColor(
+                    (src.red()   * tint.red())   / 255,
+                    (src.green() * tint.green()) / 255,
+                    (src.blue()  * tint.blue())  / 255
+                    );
+
+                vgaPainter.setPen(outColor);
+                int scale = model->getPlayerScale(i);
+                if(scale < 1 || scale > 10) {
+                    //qDebug() << "Scale not right?: " << scale << "\n";
+                }
+                for (int syScale = 0; syScale < scale; ++syScale) {
+                    for (int sxScale = 0; sxScale < scale; ++sxScale) {
+                        vgaPainter.drawPoint(
+                            x + px * scale + sxScale,
+                            y + py * scale + syScale
+                            );
+                    }
+                }
+            }
+        }
+
+        // Debug text
         vgaPainter.setPen(Qt::black);
         vgaPainter.setFont(QFont("Arial", 10, QFont::Bold));
 
-        int infoY = static_cast<int>(y)-5;
-
         vgaPainter.drawText(
-            static_cast<int>(x),
-            infoY,
+            x,
+            y - 5,
             QString("P%1 Anim: %2").arg(i + 1).arg(anim)
             );
-        // ----------------------------
-        // Direction indicator
-        // ----------------------------
-        QPoint center = playerRect.center();
-
-        // Arrow length
-        int len = 15;
-
-        // Direction vector
-        QPoint dir(0, 0);
-
-        switch (anim) {
-        case 0: // circle
-            vgaPainter.setPen(QPen(Qt::black, 2));
-            vgaPainter.drawEllipse(center, 6, 6);
-            break;
-        case 1: dir = QPoint(1, 1); break;   // down-right
-        case 2: dir = QPoint(1, 0); break;   // right
-        case 3: dir = QPoint(1, -1); break;  // up-right
-        case 4: dir = QPoint(0, -1); break;  // up
-        case 5: dir = QPoint(-1, -1); break; // up-left
-        case 6: dir = QPoint(-1, 0); break;  // left
-        case 7: dir = QPoint(-1, 1); break;  // down-left
-        }
-
-        // Draw arrow if not 0
-        if (anim != 0) {
-            // Normalize diagonal so it's not longer
-            if (dir.x() != 0 && dir.y() != 0) {
-                dir /= 1.4142; // approx sqrt(2)
-            }
-
-            QPoint end = center + QPoint(dir.x() * len, dir.y() * len);
-
-            QPen pen(Qt::black, 2);
-            vgaPainter.setPen(pen);
-
-            // Main line
-            vgaPainter.drawLine(center, end);
-
-            // Arrow head
-            QPoint left = end + QPoint(-dir.y() * 5 - dir.x() * 5, dir.x() * 5 - dir.y() * 5);
-            QPoint right = end + QPoint(dir.y() * 5 - dir.x() * 5, -dir.x() * 5 - dir.y() * 5);
-
-            vgaPainter.drawLine(end, left);
-            vgaPainter.drawLine(end, right);
-        }
     }
 
     vgaPainter.end();

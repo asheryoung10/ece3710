@@ -7,11 +7,12 @@
 #define maxVelocityY 25
 #define minVelocityY -25
 
-#define initialStackAddress 2047
+#define initialStackAddress 4095
 #define call(functionName) READ R12 | functionName | JAL R13 R12
 #define return JCOND UC R13
 
 #define sharedPlayerDataAddress 0xC000
+#define sharedPlayerScaleDataAddress 0xC013
 #define sharedRectDataAddress 0x8000
 
 #define saveReg(registerName) SUBI 1 R14 | STOR registerName R14

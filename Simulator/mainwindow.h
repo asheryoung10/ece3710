@@ -5,6 +5,7 @@
 #include <QTimer>
 #include "model.h"
 #include <QStandardItemModel>
+#include <qpushbutton.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,11 +28,14 @@ private:
     Model model;
     QTimer* cpuTimer;
     std::string filepath;
+    QPushButton* getButtonForKey(int key);
     bool isPlaying = false;
     void updateMemoryViewPartial();
     void loadFileIntoModel();
     void pausePlaySimulation();
     void pauseSimulation();
+
+    void flashButton(QPushButton* button);
     void playSimulation();
     void slidersChanged();
     void reloadSimulation();

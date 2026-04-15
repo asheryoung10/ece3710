@@ -45,6 +45,7 @@ public:
 
     uint16_t getPlayerX(int playerIndex);
     uint16_t getPlayerY(int playerIndex);
+    uint16_t getPlayerScale(int playerIndex);
     uint16_t getPlayerAnimationIndex(int playerIndex);
     uint16_t getPlayerHighlightColor(int playerIndex);
 
@@ -87,7 +88,9 @@ private:
     static constexpr uint8_t JCOND = 0b01001100;
     static constexpr uint8_t JAL   = 0b01001000;
     static constexpr uint8_t READ  = 0b00001111;
+    static constexpr uint8_t MUL  = 0b00001110;
 
+    static constexpr uint8_t IMUL_UPPER  = 0b1110;
     static constexpr uint8_t ADDI_UPPER  = 0b0101;
     static constexpr uint8_t ADDUI_UPPER = 0b0110;
     static constexpr uint8_t ADDCI_UPPER = 0b0111;

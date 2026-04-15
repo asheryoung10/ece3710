@@ -24,6 +24,13 @@ module vga
 		input [15:0] p4Y,
 		input [15:0] p4AnimationIndex,
 		input [15:0] p4HighlightColor,
+
+        
+		input [15:0] p1Scale,
+		input [15:0] p2Scale,
+		input [15:0] p3Scale,
+		input [15:0] p4Scale,
+
 	
 	input [15:0] backgroundOffsetX,
 	input [15:0] backgroundOffsetY,
@@ -129,7 +136,7 @@ playerMemory p1Memory_inst (
     .playerPixelG(p1PixelG),
     .playerPixelB(p1PixelB),
 	 .highlightColor(p1HighlightColor),
-	 	 .shrinkHalf(shrinkHalf)
+         .scale(p1Scale)
 
 );
 playerMemory p2Memory_inst (
@@ -143,7 +150,7 @@ playerMemory p2Memory_inst (
     .playerPixelG(p2PixelG),
     .playerPixelB(p2PixelB),
 	 .highlightColor(p2HighlightColor),
-	 	 .shrinkHalf(shrinkHalf)
+         .scale(p2Scale)
 
 );
 playerMemory p3Memory_inst (
@@ -157,7 +164,7 @@ playerMemory p3Memory_inst (
     .playerPixelG(p3PixelG),
     .playerPixelB(p3PixelB),
 	 .highlightColor(p3HighlightColor),
-	 	 .shrinkHalf(shrinkHalf)
+         .scale(p3Scale)
 
 );
 playerMemory p4Memory_inst (
@@ -171,7 +178,7 @@ playerMemory p4Memory_inst (
     .playerPixelG(p4PixelG),
     .playerPixelB(p4PixelB),
 	 .highlightColor(p4HighlightColor),
-	 .shrinkHalf(shrinkHalf)
+     .scale(p4Scale)
 );
 
 

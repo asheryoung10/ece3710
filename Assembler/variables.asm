@@ -1,3 +1,10 @@
+varFrameCount:
+    0x0000
+varPlayerAnimationSubIndices:
+    0x0000 // p1
+    0x0000 // p2
+    0x0000 // p3
+    0x0000 // p4
 varCameraPositionAddress:
     0x0000 // x
     0x0000 // y
@@ -41,6 +48,11 @@ varLocalPlayerDataAddress:
     0x0000
     0x0000
     0x0000
+varLocalPlayerScaleDataAddress:
+    0x0001 // p1
+    0x0002 // p2
+    0x0003 // p3
+    0x0004 // p4
 // 16 words
 varSelectionRoomPlayerInitializationDataAddress:
     0x00D7 // p1 x = 215

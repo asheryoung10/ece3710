@@ -12,5 +12,9 @@ funcWaitForVsync:
         CMPI 1 R0
         GOIF EQ &funcWaitForVsyncLow
 
+    // Increment frame counter
+    READ R0 | &varFrameCount | LOAD R1 R0
+    ADDI 1 R1 | STOR R1 R0
+
     %restoreRegs
     %return
