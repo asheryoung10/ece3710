@@ -1,5 +1,7 @@
 varFrameCount:
     0x0000
+varWorldScaleSize:
+    0x0002
 varPlayerAnimationSubIndices:
     0x0000 // p1
     0x0000 // p2

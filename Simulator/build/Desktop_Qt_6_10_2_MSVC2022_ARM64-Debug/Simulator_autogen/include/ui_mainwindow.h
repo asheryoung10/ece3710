@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -43,35 +44,42 @@ public:
     QPushButton *refreshViews;
     QPushButton *resetButton;
     QHBoxLayout *horizontalLayout_10;
-    QPushButton *p1Left;
-    QPushButton *p1Up;
+    QGridLayout *gridLayout;
     QPushButton *p1Down;
+    QPushButton *p1Left;
     QPushButton *p1Right;
-    QPushButton *p2Left;
-    QPushButton *p2Up;
+    QPushButton *p1Up;
+    QGridLayout *gridLayout_2;
     QPushButton *p2Down;
+    QPushButton *p2Left;
     QPushButton *p2Right;
-    QPushButton *p3Left;
-    QPushButton *p3Up;
-    QPushButton *p3Down;
-    QPushButton *p3Right;
+    QPushButton *p2Up;
+    QGridLayout *gridLayout_3;
     QPushButton *p4Left;
-    QPushButton *p4Up;
+    QPushButton *p3Right;
+    QGridLayout *gridLayout_4;
+    QPushButton *p3Left;
+    QPushButton *p3Down;
+    QPushButton *p3Up;
     QPushButton *p4Down;
     QPushButton *p4Right;
+    QPushButton *p4Up;
     QTextBrowser *sourceView;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_4;
     QPushButton *loadButton;
     QPushButton *reloadButton;
-    QHBoxLayout *horizontalLayout_2;
     QHBoxLayout *horizontalLayout_5;
     QPushButton *stepButton;
     QSlider *stepAmount;
     QHBoxLayout *horizontalLayout_6;
     QPushButton *playButton;
     QSlider *frameDelay;
+    QHBoxLayout *horizontalLayout_2;
+    QCheckBox *breakOn;
+    QSpinBox *breakPoint;
+    QHBoxLayout *horizontalLayout_9;
     QLabel *label;
     QSlider *instructionsPerFrame;
     QCheckBox *vsyncCheckBox;
@@ -84,8 +92,6 @@ public:
     QPushButton *RectJump;
     QPushButton *playerJump;
     QCheckBox *followPC;
-    QCheckBox *breakOn;
-    QSpinBox *breakPoint;
     QTableView *memoryView;
 
     void setupUi(QMainWindow *MainWindow)
@@ -135,85 +141,105 @@ public:
 
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName("horizontalLayout_10");
-        p1Left = new QPushButton(verticalLayoutWidget);
-        p1Left->setObjectName("p1Left");
-
-        horizontalLayout_10->addWidget(p1Left);
-
-        p1Up = new QPushButton(verticalLayoutWidget);
-        p1Up->setObjectName("p1Up");
-
-        horizontalLayout_10->addWidget(p1Up);
-
+        gridLayout = new QGridLayout();
+        gridLayout->setObjectName("gridLayout");
         p1Down = new QPushButton(verticalLayoutWidget);
         p1Down->setObjectName("p1Down");
 
-        horizontalLayout_10->addWidget(p1Down);
+        gridLayout->addWidget(p1Down, 3, 1, 1, 1);
+
+        p1Left = new QPushButton(verticalLayoutWidget);
+        p1Left->setObjectName("p1Left");
+
+        gridLayout->addWidget(p1Left, 3, 0, 1, 1);
 
         p1Right = new QPushButton(verticalLayoutWidget);
         p1Right->setObjectName("p1Right");
 
-        horizontalLayout_10->addWidget(p1Right);
+        gridLayout->addWidget(p1Right, 3, 2, 1, 1);
+
+        p1Up = new QPushButton(verticalLayoutWidget);
+        p1Up->setObjectName("p1Up");
+
+        gridLayout->addWidget(p1Up, 0, 1, 1, 1);
+
+
+        horizontalLayout_10->addLayout(gridLayout);
+
+        gridLayout_2 = new QGridLayout();
+        gridLayout_2->setObjectName("gridLayout_2");
+        p2Down = new QPushButton(verticalLayoutWidget);
+        p2Down->setObjectName("p2Down");
+
+        gridLayout_2->addWidget(p2Down, 1, 1, 1, 1);
 
         p2Left = new QPushButton(verticalLayoutWidget);
         p2Left->setObjectName("p2Left");
 
-        horizontalLayout_10->addWidget(p2Left);
-
-        p2Up = new QPushButton(verticalLayoutWidget);
-        p2Up->setObjectName("p2Up");
-
-        horizontalLayout_10->addWidget(p2Up);
-
-        p2Down = new QPushButton(verticalLayoutWidget);
-        p2Down->setObjectName("p2Down");
-
-        horizontalLayout_10->addWidget(p2Down);
+        gridLayout_2->addWidget(p2Left, 1, 0, 1, 1);
 
         p2Right = new QPushButton(verticalLayoutWidget);
         p2Right->setObjectName("p2Right");
 
-        horizontalLayout_10->addWidget(p2Right);
+        gridLayout_2->addWidget(p2Right, 1, 2, 1, 1);
 
-        p3Left = new QPushButton(verticalLayoutWidget);
-        p3Left->setObjectName("p3Left");
+        p2Up = new QPushButton(verticalLayoutWidget);
+        p2Up->setObjectName("p2Up");
 
-        horizontalLayout_10->addWidget(p3Left);
+        gridLayout_2->addWidget(p2Up, 0, 1, 1, 1);
 
-        p3Up = new QPushButton(verticalLayoutWidget);
-        p3Up->setObjectName("p3Up");
 
-        horizontalLayout_10->addWidget(p3Up);
+        horizontalLayout_10->addLayout(gridLayout_2);
 
-        p3Down = new QPushButton(verticalLayoutWidget);
-        p3Down->setObjectName("p3Down");
+        gridLayout_3 = new QGridLayout();
+        gridLayout_3->setObjectName("gridLayout_3");
+        p4Left = new QPushButton(verticalLayoutWidget);
+        p4Left->setObjectName("p4Left");
 
-        horizontalLayout_10->addWidget(p3Down);
+        gridLayout_3->addWidget(p4Left, 1, 3, 1, 1);
 
         p3Right = new QPushButton(verticalLayoutWidget);
         p3Right->setObjectName("p3Right");
 
-        horizontalLayout_10->addWidget(p3Right);
+        gridLayout_3->addWidget(p3Right, 1, 2, 1, 1);
 
-        p4Left = new QPushButton(verticalLayoutWidget);
-        p4Left->setObjectName("p4Left");
+        gridLayout_4 = new QGridLayout();
+        gridLayout_4->setObjectName("gridLayout_4");
 
-        horizontalLayout_10->addWidget(p4Left);
+        gridLayout_3->addLayout(gridLayout_4, 1, 6, 1, 1);
 
-        p4Up = new QPushButton(verticalLayoutWidget);
-        p4Up->setObjectName("p4Up");
+        p3Left = new QPushButton(verticalLayoutWidget);
+        p3Left->setObjectName("p3Left");
 
-        horizontalLayout_10->addWidget(p4Up);
+        gridLayout_3->addWidget(p3Left, 1, 0, 1, 1);
+
+        p3Down = new QPushButton(verticalLayoutWidget);
+        p3Down->setObjectName("p3Down");
+
+        gridLayout_3->addWidget(p3Down, 1, 1, 1, 1);
+
+        p3Up = new QPushButton(verticalLayoutWidget);
+        p3Up->setObjectName("p3Up");
+
+        gridLayout_3->addWidget(p3Up, 0, 1, 1, 1);
 
         p4Down = new QPushButton(verticalLayoutWidget);
         p4Down->setObjectName("p4Down");
 
-        horizontalLayout_10->addWidget(p4Down);
+        gridLayout_3->addWidget(p4Down, 1, 4, 1, 1);
 
         p4Right = new QPushButton(verticalLayoutWidget);
         p4Right->setObjectName("p4Right");
 
-        horizontalLayout_10->addWidget(p4Right);
+        gridLayout_3->addWidget(p4Right, 1, 5, 1, 1);
+
+        p4Up = new QPushButton(verticalLayoutWidget);
+        p4Up->setObjectName("p4Up");
+
+        gridLayout_3->addWidget(p4Up, 0, 4, 1, 1);
+
+
+        horizontalLayout_10->addLayout(gridLayout_3);
 
 
         verticalLayout->addLayout(horizontalLayout_10);
@@ -242,11 +268,6 @@ public:
 
 
         verticalLayout_2->addLayout(horizontalLayout_4);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
-
-        verticalLayout_2->addLayout(horizontalLayout_2);
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setObjectName("horizontalLayout_5");
@@ -282,6 +303,27 @@ public:
 
 
         verticalLayout_2->addLayout(horizontalLayout_6);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        breakOn = new QCheckBox(layoutWidget);
+        breakOn->setObjectName("breakOn");
+
+        horizontalLayout_2->addWidget(breakOn);
+
+        breakPoint = new QSpinBox(layoutWidget);
+        breakPoint->setObjectName("breakPoint");
+        breakPoint->setMaximum(4096);
+
+        horizontalLayout_2->addWidget(breakPoint);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_2);
+
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setObjectName("horizontalLayout_9");
+
+        verticalLayout_2->addLayout(horizontalLayout_9);
 
         label = new QLabel(layoutWidget);
         label->setObjectName("label");
@@ -343,17 +385,6 @@ public:
 
         horizontalLayout_8->addWidget(followPC);
 
-        breakOn = new QCheckBox(layoutWidget);
-        breakOn->setObjectName("breakOn");
-
-        horizontalLayout_8->addWidget(breakOn);
-
-        breakPoint = new QSpinBox(layoutWidget);
-        breakPoint->setObjectName("breakPoint");
-        breakPoint->setMaximum(4096);
-
-        horizontalLayout_8->addWidget(breakPoint);
-
 
         verticalLayout_2->addLayout(horizontalLayout_8);
 
@@ -379,26 +410,27 @@ public:
         onlyViewCheck->setText(QCoreApplication::translate("MainWindow", "Only Update View", nullptr));
         refreshViews->setText(QCoreApplication::translate("MainWindow", "Refresh Views", nullptr));
         resetButton->setText(QCoreApplication::translate("MainWindow", "Reset", nullptr));
-        p1Left->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
-        p1Up->setText(QCoreApplication::translate("MainWindow", "^", nullptr));
-        p1Down->setText(QCoreApplication::translate("MainWindow", "v", nullptr));
-        p1Right->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
-        p2Left->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
-        p2Up->setText(QCoreApplication::translate("MainWindow", "^", nullptr));
+        p1Down->setText(QCoreApplication::translate("MainWindow", "s", nullptr));
+        p1Left->setText(QCoreApplication::translate("MainWindow", "a", nullptr));
+        p1Right->setText(QCoreApplication::translate("MainWindow", "d", nullptr));
+        p1Up->setText(QCoreApplication::translate("MainWindow", "w", nullptr));
         p2Down->setText(QCoreApplication::translate("MainWindow", "v", nullptr));
+        p2Left->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
         p2Right->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
-        p3Left->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
-        p3Up->setText(QCoreApplication::translate("MainWindow", "^", nullptr));
-        p3Down->setText(QCoreApplication::translate("MainWindow", "v", nullptr));
-        p3Right->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
-        p4Left->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
-        p4Up->setText(QCoreApplication::translate("MainWindow", "^", nullptr));
-        p4Down->setText(QCoreApplication::translate("MainWindow", "v", nullptr));
-        p4Right->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
+        p2Up->setText(QCoreApplication::translate("MainWindow", "^", nullptr));
+        p4Left->setText(QCoreApplication::translate("MainWindow", "F", nullptr));
+        p3Right->setText(QCoreApplication::translate("MainWindow", "l", nullptr));
+        p3Left->setText(QCoreApplication::translate("MainWindow", "j", nullptr));
+        p3Down->setText(QCoreApplication::translate("MainWindow", "k", nullptr));
+        p3Up->setText(QCoreApplication::translate("MainWindow", "i", nullptr));
+        p4Down->setText(QCoreApplication::translate("MainWindow", "G", nullptr));
+        p4Right->setText(QCoreApplication::translate("MainWindow", "H", nullptr));
+        p4Up->setText(QCoreApplication::translate("MainWindow", "T", nullptr));
         loadButton->setText(QCoreApplication::translate("MainWindow", "Load", nullptr));
         reloadButton->setText(QCoreApplication::translate("MainWindow", "Reload", nullptr));
         stepButton->setText(QCoreApplication::translate("MainWindow", "Step", nullptr));
         playButton->setText(QCoreApplication::translate("MainWindow", "Play", nullptr));
+        breakOn->setText(QCoreApplication::translate("MainWindow", "BreakPoints", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Steps Per Play Frame", nullptr));
         vsyncCheckBox->setText(QCoreApplication::translate("MainWindow", "Vsync Signal", nullptr));
         programCounter->setText(QCoreApplication::translate("MainWindow", "Program Counter: ", nullptr));
@@ -407,7 +439,6 @@ public:
         RectJump->setText(QCoreApplication::translate("MainWindow", "Rect", nullptr));
         playerJump->setText(QCoreApplication::translate("MainWindow", "Player", nullptr));
         followPC->setText(QCoreApplication::translate("MainWindow", "Follow PC", nullptr));
-        breakOn->setText(QCoreApplication::translate("MainWindow", "Break", nullptr));
     } // retranslateUi
 
 };

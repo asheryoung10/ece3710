@@ -13,7 +13,7 @@
   */
 module glyph_rom
 // will technically be x40 or x32
-#(parameter DATA_WIDTH=32, ADDR_WIDTH=14)
+#(parameter DATA_WIDTH=32, ADDR_WIDTH=14, parameter ROM_FILE="monkey.hex")
 (
 	input wire                     clk, 
 	input wire [(ADDR_WIDTH-1):0] addr,
@@ -24,7 +24,7 @@ reg [(DATA_WIDTH-1):0] rom [((2**ADDR_WIDTH)-1):0];
 
 initial
 begin
-	$readmemh("monkey.hex", rom);
+	$readmemh(ROM_FILE, rom);
 end
 
 always @(posedge clk)

@@ -31,7 +31,7 @@
 #include <time.h>
 
 /* change filename to match your adjusted piskel header file (see above) */
-#include "monkey.c"
+#include "../sevenSeg.c"
 
 /* change filename if you want something else */
 #define FILENAME "glyphs.hex"

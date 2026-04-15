@@ -2,7 +2,6 @@
 #define playerJumpIncrement 50
 #define playerGravityIncrement 1
 
-
 #define playerFractionalShiftDown -3
 #define playerFractionalShiftUp 3
 

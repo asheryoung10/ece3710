@@ -204,7 +204,7 @@ build Simulator_autogen\timestamp Simulator_autogen\mocs_compilation.cpp | ${cma
 #############################################
 # Custom command for Simulator_autogen\EWIEGA46WW\qrc_resource.cpp
 
-build Simulator_autogen\EWIEGA46WW\qrc_resource.cpp | ${cmake_ninja_workdir}Simulator_autogen\EWIEGA46WW\qrc_resource.cpp: CUSTOM_COMMAND C$:\Users\asher\Desktop\SchoolWork\ece3710\Simulator\resource.qrc CMakeFiles\Simulator_autogen.dir\AutoRcc_resource_EWIEGA46WW_Info.json C$:\Users\asher\Desktop\SchoolWork\ece3710\Simulator\assets\windowIcon.svg C$:\Qt\6.10.2\msvc2022_arm64\bin\rcc.exe C$:\Qt\6.10.2\msvc2022_arm64\bin\rcc.exe || Simulator_autogen Simulator_autogen_timestamp_deps
+build Simulator_autogen\EWIEGA46WW\qrc_resource.cpp | ${cmake_ninja_workdir}Simulator_autogen\EWIEGA46WW\qrc_resource.cpp: CUSTOM_COMMAND C$:\Users\asher\Desktop\SchoolWork\ece3710\Simulator\resource.qrc CMakeFiles\Simulator_autogen.dir\AutoRcc_resource_EWIEGA46WW_Info.json C$:\Users\asher\Desktop\SchoolWork\ece3710\Simulator\assets\monkey.png C$:\Users\asher\Desktop\SchoolWork\ece3710\Simulator\assets\windowIcon.svg C$:\Qt\6.10.2\msvc2022_arm64\bin\rcc.exe C$:\Qt\6.10.2\msvc2022_arm64\bin\rcc.exe || Simulator_autogen Simulator_autogen_timestamp_deps
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\asher\Desktop\SchoolWork\ece3710\Simulator\build\Desktop_Qt_6_10_2_MSVC2022_ARM64-Debug && C:\Qt\Tools\CMake\bin\cmake.exe -E cmake_autorcc C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/Desktop_Qt_6_10_2_MSVC2022_ARM64-Debug/CMakeFiles/Simulator_autogen.dir/AutoRcc_resource_EWIEGA46WW_Info.json Debug"
   DESC = Automatic RCC for resource.qrc
   restat = 1

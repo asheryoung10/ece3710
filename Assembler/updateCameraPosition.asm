@@ -50,8 +50,6 @@ funcUpdateCameraPosition:
 
     ARSHI -2 R5 // Average out the position
     ARSHI -2 R6 // Average out the position
-    READ R7 | 298 | SUB R7 R5
-    READ R7 | 218 | SUB R7 R6
     STOR R5 R0 | ADDI 1 R0 | STOR R6 R0 // Store camera position
 
     %restoreRegs

@@ -31,6 +31,12 @@ module vga
 		input [15:0] p3Scale,
 		input [15:0] p4Scale,
 
+		input [15:0] p1Score,
+		input [15:0] p2Score,
+		input [15:0] p3Score,
+		input [15:0] p4Score,
+
+
 	
 	input [15:0] backgroundOffsetX,
 	input [15:0] backgroundOffsetY,

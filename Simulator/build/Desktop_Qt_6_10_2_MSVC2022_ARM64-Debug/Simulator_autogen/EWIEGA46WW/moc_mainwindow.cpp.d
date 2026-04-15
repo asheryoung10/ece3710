@@ -222,7 +222,9 @@ C:/Users/asher/Desktop/SchoolWork/ece3710/Simulator/build/Desktop_Qt_6_10_2_MSVC
   C:/Qt/6.10.2/msvc2022_arm64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.10.2/msvc2022_arm64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.10.2/msvc2022_arm64/include/QtWidgets/QMainWindow \
+  C:/Qt/6.10.2/msvc2022_arm64/include/QtWidgets/qabstractbutton.h \
   C:/Qt/6.10.2/msvc2022_arm64/include/QtWidgets/qmainwindow.h \
+  C:/Qt/6.10.2/msvc2022_arm64/include/QtWidgets/qpushbutton.h \
   C:/Qt/6.10.2/msvc2022_arm64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.10.2/msvc2022_arm64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.10.2/msvc2022_arm64/include/QtWidgets/qtwidgets-config.h \

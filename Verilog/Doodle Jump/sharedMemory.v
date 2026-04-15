@@ -43,8 +43,16 @@ module sharedMemory
 		output [15:0] p1Scale,
 		output [15:0] p2Scale,
 		output [15:0] p3Scale,
-		output [15:0] p4Scale
+		output [15:0] p4Scale,
+
+		
+		output [15:0] p1Score,
+		output [15:0] p2Score,
+		output [15:0] p3Score,
+		output [15:0] p4Score
+
 );
+
 
 
 
@@ -76,7 +84,7 @@ cpu_memory_instance
 );
 
 // Player Memory
-reg [15:0] sharedPlayerRegs  [0:22]; // 16 additional saved regs
+reg [15:0] sharedPlayerRegs  [0:26]; // 26 additional saved regs
 always@(posedge clock) begin
 	if(reset) begin
 		sharedPlayerRegs[0] <= 0;
@@ -102,6 +110,10 @@ always@(posedge clock) begin
 		sharedPlayerRegs[20] <= 0;
 		sharedPlayerRegs[21] <= 0;
 		sharedPlayerRegs[22] <= 0;
+		sharedPlayerRegs[23] <= 0;
+		sharedPlayerRegs[24] <= 0;
+		sharedPlayerRegs[25] <= 0;
+		sharedPlayerRegs[26] <= 0;
 	end else
 	if(enablePlayerWrite) begin
 			sharedPlayerRegs[readWriteAddress[4:0]] <= writeData;
@@ -138,7 +150,10 @@ assign p1Scale = sharedPlayerRegs[19];
 assign p2Scale = sharedPlayerRegs[20];
 assign p3Scale = sharedPlayerRegs[21];
 assign p4Scale = sharedPlayerRegs[22];
-
+assign p1Score = sharedPlayerRegs[23];
+assign p2Score = sharedPlayerRegs[24];	
+assign p3Score = sharedPlayerRegs[25];
+assign p4Score = sharedPlayerRegs[26];
 
 
 
@@ -167,8 +182,8 @@ always @(*) begin
 		contents <= contentsCPU;
 end
 // Draw Rectangles
-reg [7:0] width;
-reg [7:0] height;
+reg [15:0] width;
+reg [15:0] height;
 reg [15:0] x;
 reg [15:0] y;
 reg [15:0] wh;
