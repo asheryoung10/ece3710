@@ -142,8 +142,8 @@ funcUpdatePlayerAnimationsSubIndices:
 
         READ R5 | &varFrameCount | LOAD R5 R5
         READ R6 | 0x00FF
-        CMPI 40 R4 | GOIF GT &funcUpdatePlayerAnimationsSubIndicesPlayerLoopSlowAnimation
-        LSHI -7 R6 
+        CMPI 30 R4 | GOIF GT &funcUpdatePlayerAnimationsSubIndicesPlayerLoopSlowAnimation
+        LSHI -6 R6 
         funcUpdatePlayerAnimationsSubIndicesPlayerLoopSlowAnimation:
         AND R6 R5
         CMPI 0 R5 | GOIF NE &funcUpdatePlayerAnimationsSubIndicesPlayerLoopContinue

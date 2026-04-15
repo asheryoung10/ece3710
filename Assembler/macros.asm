@@ -1,11 +1,18 @@
-#define playerVelocityXIncrement 4
-#define playerJumpIncrement 60
-#define playerGravityIncrement 4
+#define playerVelocityXIncrement 1
+#define playerJumpIncrement 50
+#define playerGravityIncrement 1
+
+
+#define playerFractionalShiftDown -3
+#define playerFractionalShiftUp 3
+
+#define playerWidth 16
+#define playerHeight 16
 
 #define maxVelocityX 25
 #define minVelocityX -25
-#define maxVelocityY 25
-#define minVelocityY -25
+#define maxVelocityY 20
+#define minVelocityY -50
 
 #define initialStackAddress 4095
 #define call(functionName) READ R12 | functionName | JAL R13 R12

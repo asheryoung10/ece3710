@@ -5,10 +5,23 @@ copyPlayerInitializeData:
     MOV R0 R1 // R1 has address of data to copy
     MOVI 0 R0 // i
     READ R2 | &varLocalPlayerDataAddress
+    READ R4 | &varPlayerFixedPointPositions
+
     funcCopyPlayerInitializeData:
+    
+        LOAD R3 R1 | LSHI %playerFractionalShiftUp R3 | STOR R3 R4 // Retrieve and push data.
+        ADDI 1 R1 | ADDI 1 R2 | ADDI 1 R4 // Increment data pointers.
+
+        LOAD R3 R1 | LSHI %playerFractionalShiftUp R3 | STOR R3 R4 // Retrieve and push data.
+        ADDI 1 R1 | ADDI 1 R2 | ADDI 1 R4 // Increment data pointers.
+
         LOAD R3 R1 | STOR R3 R2 // Retrieve and push data.
         ADDI 1 R1 | ADDI 1 R2 // Increment data pointers.
-        ADDI 1 R0 | CMPI 16 R0 | GOIF NE &funcCopyPlayerInitializeData
+
+        LOAD R3 R1 | STOR R3 R2 // Retrieve and push data.
+        ADDI 1 R1 | ADDI 1 R2 // Increment data pointers.
+
+        ADDI 1 R0 | CMPI 4 R0 | GOIF NE &funcCopyPlayerInitializeData
 
     %restoreRegs 
     %return

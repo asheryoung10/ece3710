@@ -9,6 +9,7 @@ funcPollAndTogglePlayerActiveState:
     MOVI 8 R5 // Down input mask
     READ R7 | &varSelectionRoomPlayerInitializationDataAddress 
     READ R8 | &varPlayerVelocityDataAddress
+    READ R9 | &varPlayerFixedPointPositions
 
     funcPollAndTogglePlayerActiveStateLoop: 
 
@@ -22,8 +23,8 @@ funcPollAndTogglePlayerActiveState:
         // Set inactive
         MOVI 0 R6 | STOR R6 R1
         // Color default
-        LOAD R6 R7 | STOR R6 R2 | ADDI 1 R7 | ADDI 1 R2
-        LOAD R6 R7 | STOR R6 R2 | ADDI 1 R7 | ADDI 1 R2
+        LOAD R6 R7 | LSHI %playerFractionalShiftUp  R6 | STOR R6 R9 | ADDI 1 R7 | ADDI 1 R2 | ADDI 1 R9
+        LOAD R6 R7 | LSHI %playerFractionalShiftUp  R6 | STOR R6 R9 | ADDI 1 R7 | ADDI 1 R2 | SUBI 1 R9
         LOAD R6 R7 | STOR R6 R2 | ADDI 1 R7 | ADDI 1 R2
         LOAD R6 R7 | STOR R6 R2 | SUBI 3 R7 | SUBI 3 R2
         MOVI 0 R6 | STOR R6 R8 | ADDI 1 R8 | STOR R6 r8 | SUBI 1 R8 // Clear velocity
@@ -40,6 +41,7 @@ funcPollAndTogglePlayerActiveState:
 
         funcPollAndTogglePlayerActiveStateLoopContinue:
         LSHI 4 R5 // Step input mask to next player down button
+        ADDI 2 R9
         ADDI 1 R3 // Step player default color
         ADDI 4 R2 // Step local player data
         ADDI 1 R1 // Step active player address

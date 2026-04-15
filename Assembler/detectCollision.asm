@@ -15,6 +15,10 @@ detectAndResolveCollisions:
             %restoreReg(R1)
             CMPI 0 R0 | GOIF EQ &detectAndResolveCollisionsRectLoopContinue
 
+
+            LOAD R4 R3 // R4 has velocity
+            CMPI 0 R4 | GOIF GT &detectAndResolveCollisionsRectLoopContinue
+
             // Collision detected, jump player 
             MOVI 0 R4
             SUBI %playerJumpIncrement R4
@@ -59,8 +63,8 @@ detectCollision:
     // Note player is 45 width 41 height
 
     // Get player width and height
-    MOVI 45 R6   // player width
-    MOVI 41 R7   // player height
+    MOVI 16 R6   // player width
+    MOVI 16 R7   // player height
 
     // -------------------------
     // CHECK 1: px < rx + rw

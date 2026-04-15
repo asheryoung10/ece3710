@@ -14,6 +14,15 @@ varCurrentFrameButtonsPressed:
     0x0000
 varCurrentFrameButtonsReleased:
     0x0000
+varPlayerFixedPointPositions:
+    0x0000 //p1 x
+    0x0000 //p1 y
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
 // 16 words
 varActivePlayersAddress:
     0x0000
@@ -50,9 +59,9 @@ varLocalPlayerDataAddress:
     0x0000
 varLocalPlayerScaleDataAddress:
     0x0001 // p1
-    0x0002 // p2
-    0x0003 // p3
-    0x0004 // p4
+    0x0001 // p2
+    0x0001 // p3
+    0x0001 // p4
 // 16 words
 varSelectionRoomPlayerInitializationDataAddress:
     0x00D7 // p1 x = 215
@@ -92,44 +101,44 @@ varSelectionRoomRectInitializationDataAddress:
 0xA020 // wh
 0xFBE0 // col (yellow) 
 
--70  // rect 5 x
-338  // y
-0xA020 // wh
+-30  // rect 5 x
+346  // y
+0x5010 // wh
 0xF81F // col (magenta)
 
--10  // rect 6 x
-228  // y
-0xA020 // wh
+30   // rect 6 x
+236  // y
+0x5010 // wh
 0x07FF // col (cyan)
 
-70   // rect 7 x
-118  // y
-0xA020 // wh
+110  // rect 7 x
+126  // y
+0x5010 // wh
 0xFFE0 // col (light yellow)
 
-150  // rect 8 x
-8    // y
-0xA020 // wh
+190  // rect 8 x
+16   // y
+0x5010 // wh
 0xFD20 // col (orange)
 
-230  // rect 9 x
--102 // y
-0xA020 // wh
+270  // rect 9 x
+-94  // y
+0x5010 // wh
 0xB81F // col (purple-ish)
 
-310  // rect 10 x
--212 // y
-0xA020 // wh
+350  // rect 10 x
+-204 // y
+0x5010 // wh
 0x03EF // col (teal)
 
-210  // rect 11 x
--322 // y
-0xA020 // wh
+250  // rect 11 x
+-314 // y
+0x5010 // wh
 0xFBE0 // col (light yellow-orange)
 
-90   // rect 12 x
--432 // y
-0xA020 // wh
+130  // rect 12 x
+-424 // y
+0x5010 // wh
 0xF800 // col (red)
 
 -30  // rect 13 x

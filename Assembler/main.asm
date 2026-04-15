@@ -27,13 +27,18 @@ funcMain:
         %call(&funcUpdateButtonState)
 
         %call(&funcPollAndTogglePlayerActiveState)
+
         %call(&funcApplyUserInput)
         %call(&funcApplyVelocity)
+        %call(&funcPushFixedPositionToAbsolute)
+        
         %call(&detectAndResolveCollisions)
         %call(&funcUpdatePlayerAnimations)
-        %call(&funcUpdateCameraPosition)
 
+
+        %call(&funcUpdateCameraPosition)
         %call(&funcPushLocalDataToShared)
+
         %call(&funcWaitForVsync)
         GOIF UC &funcMainLoop
     
