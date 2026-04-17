@@ -5,7 +5,7 @@ module playerMemory (
     input  wire [15:0] highlightColor,
     input  wire [9:0]  pixelX,
     input  wire [9:0]  pixelY,
-    input  wire [3:0]  playerAnimationIndex,
+    input  wire [4:0]  playerAnimationIndex,
     input  wire [15:0] scale,
 
     output reg  [7:0] playerPixelR,
@@ -48,6 +48,11 @@ glyph_rom glyph_rom_instance(
 );
 
 // Pixel generation
+// Expand highlight (zero-padded into upper bits)
+wire [7:0] h_b = {highlightColor[4:0], 3'b000};   // << 3
+wire [7:0] h_g = {highlightColor[10:5], 2'b00};   // << 2 (6-bit channel)
+wire [7:0] h_r = {highlightColor[15:11], 3'b000}; // << 3
+
 always @(posedge clk50) begin
 
     if ((pixelX >= playerX) && (pixelX < playerX + drawWidth) &&
@@ -56,21 +61,21 @@ always @(posedge clk50) begin
 
         // Blue channel
         b_next <= (rom_data[7:0] == 0) ? 0 :
-                  ((rom_data[7:0] + highlightColor[4:0] > 8'd255)
+                  ((rom_data[7:0] + h_b > 8'd255)
                     ? 8'd255
-                    : rom_data[7:0] + highlightColor[4:0]);
+                    : rom_data[7:0] + h_b);
 
         // Green channel
         g_next <= (rom_data[15:8] == 0) ? 0 :
-                  ((rom_data[15:8] + highlightColor[10:5] > 8'd255)
+                  ((rom_data[15:8] + h_g > 8'd255)
                     ? 8'd255
-                    : rom_data[15:8] + highlightColor[10:5]);
+                    : rom_data[15:8] + h_g);
 
         // Red channel
         r_next <= (rom_data[23:16] == 0) ? 0 :
-                  ((rom_data[23:16] + highlightColor[15:11] > 8'd255)
+                  ((rom_data[23:16] + h_r > 8'd255)
                     ? 8'd255
-                    : rom_data[23:16] + highlightColor[15:11]);
+                    : rom_data[23:16] + h_r);
 
     end else begin
         r_next <= 8'd0;
