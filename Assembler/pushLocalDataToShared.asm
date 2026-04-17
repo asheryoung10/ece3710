@@ -17,9 +17,7 @@ funcPushLocalDataToShared:
    READ R6 | &varCameraPositionAddress
    LOAD R5 R6 | ADDI 1 R6 | LOAD R6 R6 // R5: camera1x, R6 camera1y
    MUL R9 R5 | MUL R9 R6 // Scale the camera position by the world scale size.
-    READ R7 | 298 | SUB R7 R5
-    READ R7 | 218 | SUB R7 R6
-
+   
 
    READ R1 | %sharedPlayerDataAddress
    ADDI 16 R1

@@ -89,6 +89,13 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->p4Down,  &QPushButton::pressed,  this, [this]{ model.setP4Down(true); });
     connect(ui->p4Down,  &QPushButton::released, this, [this]{ model.setP4Down(false); });;
 
+    connect(ui->start,  &QPushButton::pressed,  this, [this]{ model.setStartDown(true); });
+    connect(ui->start,  &QPushButton::released, this, [this]{ model.setStartDown(false); });;
+
+        connect(ui->select,  &QPushButton::pressed,  this, [this]{ model.setSelectDown(true); });
+    connect(ui->select,  &QPushButton::released, this, [this]{ model.setSelectDown(false); });;
+
+
     auto applyStyle = [](QList<QPushButton*> buttons, const QString& style) {
         for (QPushButton* b : buttons) {
             b->setStyleSheet(style);

@@ -15,16 +15,22 @@ WAIT
 #include "detectCollision.asm"
 #include "updateCameraPosition.asm"
 #include "updatePlayerAnimations.asm"
+#include "audio.asm"
+#include "updateSelection.asm"
 
 
 funcMain:
     %saveRegs
-
+    funcMainInit:
     READ R0 | &varSelectionRoomPlayerInitializationDataAddress | %call(&copyPlayerInitializeData)
     READ R0 | &varSelectionRoomRectInitializationDataAddress | %call(&copyRectInitializeData)
 
     funcMainLoop:
         %call(&funcUpdateButtonState)
+        %call(&funcUpdateButtonStateOther)
+        
+        //%call(&funcToggleWorldSize)
+        //%call(&funcUpdateAudio)
 
         %call(&funcPollAndTogglePlayerActiveState)
 
@@ -35,6 +41,8 @@ funcMain:
         %call(&detectAndResolveCollisions)
         %call(&funcUpdatePlayerAnimations)
 
+        //%call(&funcUpdateSelection)
+        //CMPI 1 R0 | GOIF EQ &funcMainInit
 
         %call(&funcUpdateCameraPosition)
         %call(&funcPushLocalDataToShared)

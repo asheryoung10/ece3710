@@ -37,6 +37,8 @@ void Model::setP4Left(bool pressed)  { p4Left  = pressed; }
 void Model::setP4Right(bool pressed) { p4Right = pressed; }
 void Model::setP4Up(bool pressed)    { p4Up    = pressed; }
 void Model::setP4Down(bool pressed)  { p4Down  = pressed; }
+void Model::setStartDown(bool pressed)  { start  = pressed; }
+void Model::setSelectDown(bool pressed)  { select  = pressed; }
 
 void Model::setResetButton(bool reset) {
     resetButton = reset;
@@ -186,6 +188,8 @@ void Model::initialize() {
     p4Right = false;
     p4Up    = false;
     p4Down  = false;
+    start = false;
+    select = false;
     readReg = 0;
     readNextCycle = false;
     vsync = false;
@@ -221,6 +225,7 @@ bool Model::tick() {
         (p1Right <<  1) |
         (p1Left<<  0);
     registers[11] = vsync;
+    registers[11] |= (start << 2) | (select << 1);
 
     uint16_t instruction = memory[programCounter];
     uint8_t opcodeUpper = (instruction >> 12);

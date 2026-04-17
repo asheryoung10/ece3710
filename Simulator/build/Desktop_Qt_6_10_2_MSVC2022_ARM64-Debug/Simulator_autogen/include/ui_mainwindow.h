@@ -54,6 +54,7 @@ public:
     QPushButton *p2Left;
     QPushButton *p2Right;
     QPushButton *p2Up;
+    QPushButton *start;
     QGridLayout *gridLayout_3;
     QPushButton *p4Left;
     QPushButton *p3Right;
@@ -64,6 +65,7 @@ public:
     QPushButton *p4Down;
     QPushButton *p4Right;
     QPushButton *p4Up;
+    QPushButton *select;
     QTextBrowser *sourceView;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_2;
@@ -98,7 +100,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1305, 600);
+        MainWindow->resize(1329, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         horizontalLayout_7 = new QHBoxLayout(centralwidget);
@@ -188,6 +190,11 @@ public:
 
         gridLayout_2->addWidget(p2Up, 0, 1, 1, 1);
 
+        start = new QPushButton(verticalLayoutWidget);
+        start->setObjectName("start");
+
+        gridLayout_2->addWidget(start, 0, 2, 1, 1);
+
 
         horizontalLayout_10->addLayout(gridLayout_2);
 
@@ -237,6 +244,11 @@ public:
         p4Up->setObjectName("p4Up");
 
         gridLayout_3->addWidget(p4Up, 0, 4, 1, 1);
+
+        select = new QPushButton(verticalLayoutWidget);
+        select->setObjectName("select");
+
+        gridLayout_3->addWidget(select, 0, 0, 1, 1);
 
 
         horizontalLayout_10->addLayout(gridLayout_3);
@@ -418,6 +430,7 @@ public:
         p2Left->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
         p2Right->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
         p2Up->setText(QCoreApplication::translate("MainWindow", "^", nullptr));
+        start->setText(QCoreApplication::translate("MainWindow", "Start", nullptr));
         p4Left->setText(QCoreApplication::translate("MainWindow", "F", nullptr));
         p3Right->setText(QCoreApplication::translate("MainWindow", "l", nullptr));
         p3Left->setText(QCoreApplication::translate("MainWindow", "j", nullptr));
@@ -426,6 +439,7 @@ public:
         p4Down->setText(QCoreApplication::translate("MainWindow", "G", nullptr));
         p4Right->setText(QCoreApplication::translate("MainWindow", "H", nullptr));
         p4Up->setText(QCoreApplication::translate("MainWindow", "T", nullptr));
+        select->setText(QCoreApplication::translate("MainWindow", "Select", nullptr));
         loadButton->setText(QCoreApplication::translate("MainWindow", "Load", nullptr));
         reloadButton->setText(QCoreApplication::translate("MainWindow", "Reload", nullptr));
         stepButton->setText(QCoreApplication::translate("MainWindow", "Step", nullptr));

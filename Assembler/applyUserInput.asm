@@ -83,8 +83,7 @@ funcApplyUserInput:
         READ R6 | &varCurrentFrameButtonsPressed | LOAD R6 R6
         AND R6 R4 | CMPI 0 R4 | GOIF EQ &funcApplyUserInputSkipJump
 
-        // Jump player
-        %call(&funcChangeWorldsSize) // Change world size to trigger jump in the game code, hacky but it works
+        // Jump Player
         MOVI 0 R4
         SUBI %playerJumpIncrement R4
         STOR R4 R1
@@ -111,12 +110,21 @@ funcChangeWorldsSize:
     // Obtain world size and increment it, set it back to zero if its 5
     READ R0 | &varWorldScaleSize | LOAD R0 R0
     ADDI 1 R0
-    CMPI 5 R0 | GOIF NE &funcChangeWorldsSizeSkipReset
+    CMPI 3 R0 | GOIF NE &funcChangeWorldsSizeSkipReset
     MOVI 1 R0
     funcChangeWorldsSizeSkipReset:
     READ R1 | &varWorldScaleSize
     STOR R0 R1
 
 
+    %restoreRegs
+    %return
+
+funcToggleWorldSize:
+    %saveRegs
+        READ R1 | &varCurrentFrameButtonsPressedOther | LOAD R1 R1
+        MOVI 2 R2 | AND R2 R1 | CMPI 2 R1 | GOIF NE &funcTWSSkipToggle
+        %call(&funcChangeWorldsSize) 
+        funcTWSSkipToggle:
     %restoreRegs
     %return

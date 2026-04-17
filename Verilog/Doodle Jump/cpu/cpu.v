@@ -41,6 +41,8 @@ module cpu
 	input wire p4Up,
 	input wire p4Down,
 
+	input wire start,
+	input wire select,
 	input wire vsync,
 	
 	output wire [15:0] R3,
@@ -149,9 +151,10 @@ register_file_instance
 	.p4Up(p4Up),
 	.p4Down(p4Down),
 	
-	
-	 .vsync(vsync),
-	 .R3()
+    .start(start),
+    .select(select),
+	.vsync(vsync),
+	.R3()
 );
 
 

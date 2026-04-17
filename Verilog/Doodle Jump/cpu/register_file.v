@@ -36,6 +36,9 @@ module register_file
 	input wire p4Up,
 	input wire p4Down,
 
+
+	input wire start,
+	input wire select,
 	input wire vsync,
 	 
 	 output wire [15:0] R3
@@ -57,7 +60,7 @@ end
 wire [15:0] reg15Input;
 wire [15:0] reg11Input;
 assign reg15Input = {p4Down, p4Up, p4Right, p4Left, p3Down, p3Up, p3Right, p3Left, p2Down, p2Up, p2Right, p2Left, p1Down, p1Up, p1Right, p1Left};
-assign reg11Input = {15'b0, vsync};
+assign reg11Input = {13'b0, start, select, vsync};
 
 
 assign contentsA = (4'd11 == readAddressA) ? reg11Input : (4'd15 == readAddressA ? reg15Input : registers[readAddressA]);

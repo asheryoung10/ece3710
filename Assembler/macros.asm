@@ -18,6 +18,7 @@
 #define return JCOND UC R13
 
 #define sharedPlayerDataAddress 0xC000
+#define sharedAudioAddress 0xC012
 #define sharedPlayerScaleDataAddress 0xC013
 #define sharedRectDataAddress 0x8000
 

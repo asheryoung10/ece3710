@@ -50,6 +50,19 @@ funcUpdateCameraPosition:
 
     ARSHI -2 R5 // Average out the position
     ARSHI -2 R6 // Average out the position
+    READ R8 | &varWorldScaleSize | LOAD R8 R8
+    MOVI 0 R9 | SUB R8 R9 | ADDI 1 R9
+
+    READ R7 | 298
+    LSH R9 R7    
+    SUB R7 R5
+
+    READ R7 | 218
+    //MUL R8 R7
+    LSH R9 R7
+
+     SUB R7 R6
+
     STOR R5 R0 | ADDI 1 R0 | STOR R6 R0 // Store camera position
 
     %restoreRegs

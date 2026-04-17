@@ -2,6 +2,15 @@
 copyPlayerInitializeData:
     %saveRegs 
 
+    READ R2 | &varPlayerVelocityDataAddress
+    MOVI 0 R1
+    MOVI 0 R3
+
+    copyPlayerInitializeDataResetLoop:
+        STOR R3 R2 
+        ADDI 1 R2
+        ADDI 1 R1 | CMPI 8 R1 | GOIF NE &copyPlayerInitializeDataResetLoop
+
     MOV R0 R1 // R1 has address of data to copy
     MOVI 0 R0 // i
     READ R2 | &varLocalPlayerDataAddress
@@ -34,7 +43,7 @@ copyRectInitializeData:
     MOV R0 R1 // R1 has address of data to copy
     MOVI 0 R0 // i
     READ R2 | &varLocalRectDataAddress
-    READ R4 | 256
+    READ R4 | 64
     funcCopyRectInitializeData:
         LOAD R3 R1 | STOR R3 R2 // Retrieve and push data.
         ADDI 1 R1 | ADDI 1 R2 // Increment data pointers.

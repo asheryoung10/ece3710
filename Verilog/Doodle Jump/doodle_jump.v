@@ -201,7 +201,9 @@ cpu cpu_instance (
 	.p4Right(~snesButtons1[8]),
 	.p4Up(~snesButtons1[9]),
 	.p4Down(~snesButtons1[0]),
-	
+
+	.start(),
+	.select(),	
 	.vsync(vga_vs),
 	.R3(register3),
 	.R4(register4)

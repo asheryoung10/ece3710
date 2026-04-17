@@ -1,7 +1,14 @@
+varPlayerGameSelection:
+    0x0000 // p1
+    0x0000 // p2
+    0x0000 // p3
+    0x0000 // p4
+varAudioValue:
+    0x0000
 varFrameCount:
     0x0000
 varWorldScaleSize:
-    0x0002
+    0x0001
 varPlayerAnimationSubIndices:
     0x0000 // p1
     0x0000 // p2
@@ -10,6 +17,12 @@ varPlayerAnimationSubIndices:
 varCameraPositionAddress:
     0x0000 // x
     0x0000 // y
+varPreviousFrameButtonStateOther:
+    0x0000
+varCurrentFrameButtonsPressedOther:
+    0x0000
+varCurrentFrameButtonsReleasedOther:
+    0x0000
 varPreviousFrameButtonState:
     0x0000
 varCurrentFrameButtonsPressed:
@@ -65,6 +78,24 @@ varLocalPlayerScaleDataAddress:
     0x0001 // p3
     0x0001 // p4
 // 16 words
+varSecondGamePlayerInitializationDataAddress:
+    0x00D7 // p1 x = 215
+    0x00DC // p1 y = 220
+    0x0000 // p1 animation index
+    0xF800 // p1
+    0x010E // p2 x = 270
+    0x00DC // p2 y = 220
+    0x0000 // p2 animation index
+    0x001F // p2
+    0x0145 // p3 x = 325
+    0x00DC // p3 y = 220
+    0x0000 // p3 animation index
+    0x07E0 // p3
+    0x017C // p4 x = 380
+    0x00DC // p4 y = 220
+    0x0000 // p4 animation index
+    0xFBE0 // p4
+
 varSelectionRoomPlayerInitializationDataAddress:
     0x00D7 // p1 x = 215
     0x00DC // p1 y = 220
@@ -82,327 +113,135 @@ varSelectionRoomPlayerInitializationDataAddress:
     0x00DC // p4 y = 220
     0x0000 // p4 animation index
     0x0000 // p4 highlight color
+
+varSecondGameRectInitializationDataAddress:
+
+0    // rect 1 left half x
+448  // y
+0x5020 // wh (split width)
+0xF800 // col (red)
+
+80   // rect 1 right half x
+448  // y
+0x5020 // wh
+0xF800 // col (red)
+
+160  // rect 2 left half x
+448  // y
+0x5020 // wh
+0x001F // col (blue)
+
+240  // rect 2 right half x
+448  // y
+0x5020 // wh
+0x001F // col (blue)
+
+320  // rect 3 left half x
+448  // y
+0x5020 // wh
+0x07E0 // col (green)
+
+400  // rect 3 right half x
+448  // y
+0x5020 // wh
+0x07E0 // col (green)
+
+480  // rect 4 left half x
+448  // y
+0x5020 // wh
+0xFBE0 // col (yellow)
+
+560  // rect 4 right half x
+448  // y
+0x5020 // wh
+0xFBE0 // col (yellow)
+
+100  // rect 4 right half x
+300  // y
+0x5010 // wh
+0xFFFF // col (white)
+
+200  // rect 4 right half x
+200  // y
+0x5010 // wh
+0xFFFF // col (white)
+
+
+460  // rect 4 right half x
+300  // y
+0x5010 // wh
+0xFFFF // col (white)
+
+360  // rect 4 right half x
+200  // y
+0x5010 // wh
+0xFFFF // col (white)
+
+
+
 varSelectionRoomRectInitializationDataAddress:
-0   // rect 1 x
-448 // y
-0xA020 // wh
+
+0    // rect 1 left half x
+448  // y
+0x5020 // wh (split width)
 0xF800 // col (red)
 
-160 // rect 2 x
-448 // y
-0xA020 // wh
-0x001F // col (blue)
-
-320 // rect 3 x
-448 // y
-0xA020 // wh
-0x07E0 // col (green)
-
-480 // rect 4 x
-448 // y
-0xA020 // wh
-0xFBE0 // col (yellow) 
-
--30  // rect 5 x
-346  // y
-0x5010 // wh
-0xF81F // col (magenta)
-
-30   // rect 6 x
-236  // y
-0x5010 // wh
-0x07FF // col (cyan)
-
-110  // rect 7 x
-126  // y
-0x5010 // wh
-0xFFE0 // col (light yellow)
-
-190  // rect 8 x
-16   // y
-0x5010 // wh
-0xFD20 // col (orange)
-
-270  // rect 9 x
--94  // y
-0x5010 // wh
-0xB81F // col (purple-ish)
-
-350  // rect 10 x
--204 // y
-0x5010 // wh
-0x03EF // col (teal)
-
-250  // rect 11 x
--314 // y
-0x5010 // wh
-0xFBE0 // col (light yellow-orange)
-
-130  // rect 12 x
--424 // y
-0x5010 // wh
+80   // rect 1 right half x
+448  // y
+0x5020 // wh
 0xF800 // col (red)
 
--30  // rect 13 x
--542 // y
-0xA020 // wh
+160  // rect 2 left half x
+448  // y
+0x5020 // wh
 0x001F // col (blue)
 
-50   // rect 14 x
--652 // y
-0xA020 // wh
-0x07E0 // col (green)
-
-170  // rect 15 x
--762 // y
-0xA020 // wh
-0xF81F // col (magenta)
-
-290  // rect 16 x
--872 // y
-0xA020 // wh
-0xFFE0 // col (yellow)
-
-
-410  // rect 17 x
--982 // y
-0xA020 // wh
-0xF800 // col (red)
-
--70  // rect 18 x
--1092 // y
-0xA020 // wh
+240  // rect 2 right half x
+448  // y
+0x5020 // wh
 0x001F // col (blue)
 
-150  // rect 19 x
--1202 // y
-0xA020 // wh
+320  // rect 3 left half x
+448  // y
+0x5020 // wh
 0x07E0 // col (green)
 
-230  // rect 20 x
--1312 // y
-0xA020 // wh
+400  // rect 3 right half x
+448  // y
+0x5020 // wh
+0x07E0 // col (green)
+
+480  // rect 4 left half x
+448  // y
+0x5020 // wh
 0xFBE0 // col (yellow)
 
-70   // rect 21 x
--1422 // y
-0xA020 // wh
-0xF81F // col (magenta)
-
-310  // rect 22 x
--1532 // y
-0xA020 // wh
-0x07FF // col (cyan)
-
--10  // rect 23 x
--1642 // y
-0xA020 // wh
-0xFFE0 // col (light yellow)
-
-170  // rect 24 x
--1752 // y
-0xA020 // wh
-0xFD20 // col (orange)
-
-290  // rect 25 x
--1862 // y
-0xA020 // wh
-0xB81F // col (purple)
-
-90   // rect 26 x
--1972 // y
-0xA020 // wh
-0x03EF // col (teal)
-
-210  // rect 27 x
--2082 // y
-0xA020 // wh
-0xF800 // col (red)
-
--30  // rect 28 x
--2192 // y
-0xA020 // wh
-0x001F // col (blue)
-
-150  // rect 29 x
--2302 // y
-0xA020 // wh
-0x07E0 // col (green)
-
-270  // rect 30 x
--2412 // y
-0xA020 // wh
+560  // rect 4 right half x
+448  // y
+0x5020 // wh
 0xFBE0 // col (yellow)
 
-110  // rect 31 x
--2522 // y
-0xA020 // wh
-0xF81F // col (magenta)
+100  // rect 4 right half x
+300  // y
+0x5020 // wh
+0xFFFF // col (white)
 
-330  // rect 32 x
--2632 // y
-0xA020 // wh
-0x07FF // col (cyan)
+100  // rect 4 right half x
+200  // y
+0x5050 // wh
+0x0101 // col (white)
 
-410  // rect 33 x
--2742 // y
-0xA020 // wh
-0xF800 // col (red)
+460  // rect 4 right half x
+300  // y
+0x5020 // wh
+0xFFFF // col (white)
 
--70  // rect 34 x
--2852 // y
-0xA020 // wh
-0x001F // col (blue)
+460  // rect 4 right half x
+200  // y
+0x5050 // wh
+0x0101 // col (white)
 
-150  // rect 35 x
--2962 // y
-0xA020 // wh
-0x07E0 // col (green)
 
-230  // rect 36 x
--3072 // y
-0xA020 // wh
-0xFBE0 // col (yellow)
-
-70   // rect 37 x
--3182 // y
-0xA020 // wh
-0xF81F // col (magenta)
-
-310  // rect 38 x
--3292 // y
-0xA020 // wh
-0x07FF // col (cyan)
-
--10  // rect 39 x
--3402 // y
-0xA020 // wh
-0xFFE0 // col (light yellow)
-
-170  // rect 40 x
--3512 // y
-0xA020 // wh
-0xFD20 // col (orange)
-
-290  // rect 41 x
--3622 // y
-0xA020 // wh
-0xB81F // col (purple)
-
-90   // rect 42 x
--3732 // y
-0xA020 // wh
-0x03EF // col (teal)
-
-210  // rect 43 x
--3842 // y
-0xA020 // wh
-0xF800 // col (red)
-
--30  // rect 44 x
--3952 // y
-0xA020 // wh
-0x001F // col (blue)
-
-150  // rect 45 x
--4062 // y
-0xA020 // wh
-0x07E0 // col (green)
-
-270  // rect 46 x
--4172 // y
-0xA020 // wh
-0xFBE0 // col (yellow)
-
-110  // rect 47 x
--4282 // y
-0xA020 // wh
-0xF81F // col (magenta)
-
-330  // rect 48 x
--4392 // y
-0xA020 // wh
-0x07FF // col (cyan)
-
-410  // rect 49 x
--4502 // y
-0xA020 // wh
-0xF800 // col (red)
-
--70  // rect 50 x
--4612 // y
-0xA020 // wh
-0x001F // col (blue)
-
-150  // rect 51 x
--4722 // y
-0xA020 // wh
-0x07E0 // col (green)
-
-230  // rect 52 x
--4832 // y
-0xA020 // wh
-0xFBE0 // col (yellow)
-
-70   // rect 53 x
--4942 // y
-0xA020 // wh
-0xF81F // col (magenta)
-
-310  // rect 54 x
--5052 // y
-0xA020 // wh
-0x07FF // col (cyan)
-
--10  // rect 55 x
--5162 // y
-0xA020 // wh
-0xFFE0 // col (light yellow)
-
-170  // rect 56 x
--5272 // y
-0xA020 // wh
-0xFD20 // col (orange)
-
-290  // rect 57 x
--5382 // y
-0xA020 // wh
-0xB81F // col (purple)
-
-90   // rect 58 x
--5492 // y
-0xA020 // wh
-0x03EF // col (teal)
-
-210  // rect 59 x
--5602 // y
-0xA020 // wh
-0xF800 // col (red)
-
--30  // rect 60 x
--5712 // y
-0xA020 // wh
-0x001F // col (blue)
-
-150  // rect 61 x
--5822 // y
-0xA020 // wh
-0x07E0 // col (green)
-
-270  // rect 62 x
--5932 // y
-0xA020 // wh
-0xFBE0 // col (yellow)
-
-110  // rect 63 x
--6042 // y
-0xA020 // wh
-0xF81F // col (magenta)
-
-330  // rect 64 x
--6152 // y
-0xA020 // wh
-0x07FF // col (cyan)
 
    // 4 words
 varPlayerDefaultColors:

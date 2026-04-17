@@ -19,11 +19,25 @@ detectAndResolveCollisions:
             LOAD R4 R3 // R4 has velocity
             CMPI 0 R4 | GOIF GT &detectAndResolveCollisionsRectLoopContinue
 
+            CMPI 9 R2 | GOIF EQ &detectAndResolveCollisionsChooseLevel
+            CMPI 11 R2 | GOIF EQ &detectAndResolveCollisionsChooseLevel
+
+
             // Collision detected, jump player 
             MOVI 0 R4
             SUBI %playerJumpIncrement R4
             STOR R4 R3
 
+            // Increment audio
+            MOVI 10 R4
+            READ R5 | &varAudioValue | STOR R4 R5
+
+            GOIF UC &detectAndResolveCollisionsRectLoopContinue
+
+            detectAndResolveCollisionsChooseLevel:
+            READ R6 | &varPlayerGameSelection
+            ADD R1 R6 // R6 has player selection
+            STOR R2 R6 // store level selection as player selection
 
             detectAndResolveCollisionsRectLoopContinue:
             ADDI 1 R2 | CMPI 64 R2 | GOIF NE &detectAndResolveCollisionsRectLoop

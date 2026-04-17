@@ -38,6 +38,8 @@ public:
     void setP4Right(bool pressed);
     void setP4Up(bool pressed);
     void setP4Down(bool pressed);
+    void setStartDown(bool pressed);
+    void setSelectDown(bool pressed);
 
     void setResetButton(bool resetButton);
     void setVSync(bool vsync);
@@ -65,7 +67,7 @@ public:
     float fps;
 
 private:
-    bool p1Left, p1Right, p1Up, p1Down, p2Left, p2Right, p2Up, p2Down, p3Left, p3Right, p3Up, p3Down, p4Left, p4Right, p4Up, p4Down;
+    bool p1Left, p1Right, p1Up, p1Down, p2Left, p2Right, p2Up, p2Down, p3Left, p3Right, p3Up, p3Down, p4Left, p4Right, p4Up, p4Down, start, select;
 
     bool resetButton;
     bool vsync;
