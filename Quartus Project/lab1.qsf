@@ -45,7 +45,7 @@ set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:10:11  JANUARY 09, 20
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.1 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name EDA_SIMULATION_TOOL "<None>"
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT NONE -section_id eda_simulation
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
@@ -56,7 +56,7 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_ALU
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_ALU -section_id tb_ALU
-set_global_assignment -name EDA_RUN_TOOL_AUTOMATICALLY ON -section_id eda_simulation
+set_global_assignment -name EDA_RUN_TOOL_AUTOMATICALLY OFF -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_hard_coded_vga
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_hard_coded_vga -section_id tb_hard_coded_vga
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_i2c_controller
@@ -247,7 +247,6 @@ set_global_assignment -name VERILOG_FILE "../Verilog/Doodle Jump/vga/glyph_rom.v
 set_location_assignment PIN_AK22 -to GPIO1_26_cpu
 set_location_assignment PIN_AJ22 -to GPIO1_27_latch
 set_location_assignment PIN_AH22 -to GPIO1_28_data
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_28_data
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/snes/top.v" -section_id tb_doodle
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/snes/SNES_latchGen.v" -section_id tb_doodle
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/snes/SNES_Controller.v" -section_id tb_doodle
@@ -258,8 +257,9 @@ set_location_assignment PIN_AE19 -to GPIO0_27_latch
 set_location_assignment PIN_AF20 -to GPIO0_28_data
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/cpu/alu.v" -section_id tb_ALU
 set_global_assignment -name EDA_TEST_BENCH_FILE "../Verilog/Doodle Jump/cpu/tb_ALU.v" -section_id tb_ALU
+set_global_assignment -name SOURCE_FILE db/lab1.cmp.rdb
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name BOARD "DE1-SoC Board"
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_28_data
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

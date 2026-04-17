@@ -252,28 +252,26 @@ sharedMemory memory_instance
 		.p3Scale(p3Scale),
 		.p4Scale(p4Scale)
 );
-
+wire outputOfAudio;
 audio_unit audio_unit_instance (
 	.CLOCK_50(systemClock50MHz),
 	.RESET_N(~reset),
 	.configure_N(push_buttons[1]),
-	.pitch(switches),
-	.drum(push_buttons[3]),
-	.enableOutput(switches[0]),
-	.selectedCommand(switches[9:6]),
-	
+	.pitch(switches[9:2]),
 	.FPGA_I2C_SCLK(i2c_clock),
 	.FPGA_I2C_SDAT(i2c_data),
 	
 	.AUD_XCK(audio_masterClock),
 	.AUD_BCLK(audio_bitClock),
 	.AUD_DACLRCK(audio_leftRightClock),
-	.AUD_DACDAT(audio_data),
+	.AUD_DACDAT(outputOfAudio),
 	.error(),
 	.busy(),
 	.done()
 	
 );
+
+assign audio_data = switches[0] ? outputOfAudio : 0;
 
 sixteen_bit_seven_seg segDriver (
         .value(register3), 

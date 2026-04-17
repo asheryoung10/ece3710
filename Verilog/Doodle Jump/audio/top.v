@@ -24,11 +24,10 @@ module audio_unit(
 
     // 1. Instance: Audio Configuration (I2C)
     // This talks to the chip registers to unmute and power it up.
-    audio_configurator_select i2c_conf (
+    audio_configurator i2c_conf (
         .systemClock(CLOCK_50),
         .reset(~RESET_N),        // Converting active-low to active-high
         .configure(~configure_N),        // Always try to configure on power-up
-		  .selectedCommand(selectedCommand),
         .busy(busy),
         .done(done),
         .encounteredError(error),     // Unused for this simple setup
@@ -40,7 +39,7 @@ module audio_unit(
     // 2. Instance: Audio Output Logic (I2S)
     // This generates the actual square wave bitstream.
     audio_output dac_driver (
-        .clk_50(CLOCK_50 & enableOutput),
+        .clk_50(CLOCK_50),
 		  .pitch(pitch),
         .aud_xck(AUD_XCK),
         .aud_bclk(AUD_BCLK),

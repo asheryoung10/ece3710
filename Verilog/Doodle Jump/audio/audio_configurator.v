@@ -11,26 +11,26 @@ module audio_configurator (
     inout wire i2c_data
 );
 
-reg [23:0] commands[11110018:0];
+reg [23:0] commands[8:0];
 localparam commandCount = 1;
 initial begin
     // Reset Address: 7'b0001111 Data: RESET
     commands[0] = {8'b00110100, 8'b00111110, 8'b00000000};
-	 // Left Line In Address: 7'b0000000, DATA: Simultanous load, Mute, Max Volume
+    // Left Line In Address: 7'b0000000, DATA: Simultaneous load, Mute, Max Volume
     commands[1] = {8'b00110100, 8'b00000001, 8'b10011111};
-	 // Left Headphone Out Address: 7'b0000001, DATA: Simultaneous load, Disable LZCEN, Volume Max
+    // Left Headphone Out Address: 7'b0000001, DATA: Simultaneous load, Disable LZCEN, Volume Max
     commands[2] = {8'b00110100, 8'b00000011, 8'b00000000};
-	 // Analogue Audio Path Controll Address: 7'b0000100, DATA: Select DAC and Mute Mic
+    // Analogue Audio Path Control Address: 7'b0000100, DATA: Select DAC and Mute Mic
     commands[3] = {8'b00110100, 8'b00001000, 8'b00010010};
-	 // Digital Audio Path Address: 7'b0000101, DATA:Disable soft mute 
+    // Digital Audio Path Address: 7'b0000101, DATA: Disable soft mute 
     commands[4] = {8'b00110100, 8'b00001010, 8'b00000000};
-	 // Power down control Address: 7'b0000110, DATA: Powerdown linein, mic, and adc
+    // Power down control Address: 7'b0000110, DATA: Powerdown linein, mic, and adc
     commands[5] = {8'b00110100, 8'b00001100, 8'b00000111};
-	 // Digital Audio Interface Format Address: 7'b0000111, DATA: i2s MSB first left 1 justified
+    // Digital Audio Interface Format Address: 7'b0000111, DATA: i2s MSB first left 1 justified
     commands[6] = {8'b00110100, 8'b00001110, 8'b00000010};
-	 // Sampling Control Address: 7'b0001000, DATA: defaults
+    // Sampling Control Address: 7'b0001000, DATA: defaults
     commands[7] = {8'b00110100, 8'b00010000, 8'b00000000};
-	 // Active Control Address: 7'b0001001, DATA: active
+    // Active Control Address: 7'b0001001, DATA: active
     commands[8] = {8'b00110100, 8'b00010010, 8'b00000001};
 end
 
