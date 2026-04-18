@@ -17,6 +17,8 @@ WAIT
 #include "updatePlayerAnimations.asm"
 #include "audio.asm"
 #include "updateSelection.asm"
+#include "setAllRectangles.asm"
+
 
 
 funcMain:
@@ -25,12 +27,13 @@ funcMain:
     READ R0 | &varSelectionRoomPlayerInitializationDataAddress | %call(&copyPlayerInitializeData)
     READ R0 | &varSelectionRoomRectInitializationDataAddress | %call(&copyRectInitializeData)
 
+    %call(&funcSetAllRectangles)
     funcMainLoop:
         %call(&funcUpdateButtonState)
         %call(&funcUpdateButtonStateOther)
         
-        //%call(&funcToggleWorldSize)
-        //%call(&funcUpdateAudio)
+        %call(&funcToggleWorldSize)
+        %call(&funcUpdateAudio)
 
         %call(&funcPollAndTogglePlayerActiveState)
 
@@ -41,8 +44,8 @@ funcMain:
         %call(&detectAndResolveCollisions)
         %call(&funcUpdatePlayerAnimations)
 
-        //%call(&funcUpdateSelection)
-        //CMPI 1 R0 | GOIF EQ &funcMainInit
+        %call(&funcUpdateSelection)
+        CMPI 1 R0 | GOIF EQ &funcMainInit
 
         %call(&funcUpdateCameraPosition)
         %call(&funcPushLocalDataToShared)
