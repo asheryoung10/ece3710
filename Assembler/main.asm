@@ -19,12 +19,18 @@ WAIT
 #include "updateSelection.asm"
 #include "setAllRectangles.asm"
 #include "updateHighScore.asm"
+#include "resetAllRects.asm"
+#include "setPLayersInactive.asm"
+#include "wait3Seconds.asm"
 
 
 
 funcMain:
     %saveRegs
     funcMainInit:
+    %call(&funcWait3Seconds)
+    %call(&funcSetPlayersInactive)
+    %call(&funcResetAllRects)
     READ R0 | &varSelectionRoomPlayerInitializationDataAddress | %call(&copyPlayerInitializeData)
     READ R0 | &varSelectionRoomRectInitializationDataAddress | %call(&copyRectInitializeData)
 
@@ -42,8 +48,8 @@ funcMain:
         %call(&funcApplyVelocity)
         %call(&funcPushFixedPositionToAbsolute)
         
-        %call(&detectAndResolveCollisions)
         %call(&funcUpdatePlayerAnimations)
+        %call(&detectAndResolveCollisions)
 
         %call(&funcUpdateSelection)
         %call(&funcUpdateHighScore)

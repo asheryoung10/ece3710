@@ -2,8 +2,6 @@
 // Returns random in r7
 funcNextRand:
     %saveRegs
-    SUBI 1 R14
-    STOR R13 R14
 
     // Load state
     READ R1
@@ -29,9 +27,6 @@ funcNextRand:
     READ R1
     &varRandomSeed
     STOR R0 R1
-
-    LOAD R13 R14
-    ADDI 1 R14
 
     MOV R0 R7 // return in r7
     %restoreRegs

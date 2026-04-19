@@ -1,5 +1,6 @@
 #define playerVelocityXIncrement 1
 #define playerJumpIncrement 50
+#define playerJumpHigh 70
 #define playerGravityIncrement 1
 #define playerScoresAddress 0xC017
 

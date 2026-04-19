@@ -107,19 +107,19 @@ varSelectionRoomPlayerInitializationDataAddress:
     0x00D7 // p1 x = 215
     0x00DC // p1 y = 220
     0x0000 // p1 animation index
-    0xF800 // p1
+    0x0000 // p1
     0x010E // p2 x = 270
     0x00DC // p2 y = 220
     0x0000 // p2 animation index
-    0x001F // p2
+    0x0000 // p1
     0x0145 // p3 x = 325
     0x00DC // p3 y = 220
     0x0000 // p3 animation index
-    0x07E0 // p3
+    0x0000 // p1
     0x017C // p4 x = 380
     0x00DC // p4 y = 220
     0x0000 // p4 animation index
-    0xFBE0 // p4
+    0x0000 // p1
 
 varSecondGameRectInitializationDataAddress:
 
@@ -164,7 +164,7 @@ varSecondGameRectInitializationDataAddress:
 0xFBE0 // col (yellow)
 
 100  // rect 4 right half x
-300  // y
+320  // y
 0x5010 // wh
 0xFFFF // col (white)
 
@@ -175,7 +175,7 @@ varSecondGameRectInitializationDataAddress:
 
 
 460  // rect 4 right half x
-300  // y
+320  // y
 0x5010 // wh
 0xFFFF // col (white)
 
@@ -230,21 +230,21 @@ varSelectionRoomRectInitializationDataAddress:
 
 100  // rect 4 right half x
 300  // y
-0x5020 // wh
+0x5010 // wh
 0xFFFF // col (white)
 
 100  // rect 4 right half x
-200  // y
+220  // y
 0x5050 // wh
 0x0101 // col (white)
 
 460  // rect 4 right half x
 300  // y
-0x5020 // wh
+0x5010 // wh
 0xFFFF // col (white)
 
 460  // rect 4 right half x
-200  // y
+220  // y
 0x5050 // wh
 0x0101 // col (white)
 
@@ -450,6 +450,71 @@ varLocalRectDataAddress:
     0x0000
     0x0000
     0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+    0x0000
+varRectType:
     0x0000
     0x0000
     0x0000

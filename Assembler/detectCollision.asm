@@ -7,6 +7,7 @@ detectAndResolveCollisions:
 
     detectAndResolveCollisionsPlayerLoop:
         MOVI 0 R2 // Rect index
+        MOVI 0 R6
         detectAndResolveCollisionsRectLoop:
 
             %saveReg(R1)
@@ -15,17 +16,17 @@ detectAndResolveCollisions:
             %restoreReg(R1)
             CMPI 0 R0 | GOIF EQ &detectAndResolveCollisionsRectLoopContinue
 
+            CMPI 9 R2 | GOIF EQ &detectAndResolveCollisionsChooseLevel
+            CMPI 11 R2 | GOIF EQ &detectAndResolveCollisionsChooseLevel
 
             LOAD R4 R3 // R4 has velocity
             CMPI 0 R4 | GOIF GT &detectAndResolveCollisionsRectLoopContinue
 
-            CMPI 9 R2 | GOIF EQ &detectAndResolveCollisionsChooseLevel
-            CMPI 11 R2 | GOIF EQ &detectAndResolveCollisionsChooseLevel
+         
 
 
-            // Collision detected, jump player 
-            MOVI 0 R4
-            SUBI %playerJumpIncrement R4
+            // Collision detected, make player stop
+            MOVI -1 R4
             STOR R4 R3
 
             // Increment audio
@@ -35,13 +36,28 @@ detectAndResolveCollisions:
             GOIF UC &detectAndResolveCollisionsRectLoopContinue
 
             detectAndResolveCollisionsChooseLevel:
-            READ R6 | &varPlayerGameSelection
-            ADD R1 R6 // R6 has player selection
-            STOR R2 R6 // store level selection as player selection
+            MOVI 1 R6
+            READ R7 | &varPlayerGameSelection
+            ADD R1 R7 // R6 has player selection
+            STOR R2 R7 // store level selection as player selection
+            READ R7 | &varLocalRectDataAddress
+            MOV R2 R8 | LSHI 2 R8
+            ADD R8 R7 | ADDI 3 R7
+            LOAD R12 R7 | ADDI 113 R12 | STOR R12 R7
 
             detectAndResolveCollisionsRectLoopContinue:
             ADDI 1 R2 | CMPI 64 R2 | GOIF NE &detectAndResolveCollisionsRectLoop
 
+        CMPI 1 R6 | GOIF EQ &detectAndResolveCollisionsPlayerLoopContinue
+
+        // Otherwise clear selection
+        READ R7 | &varPlayerGameSelection
+        ADD R1 R7 // R6 has player selection
+        MOVI 0 R8
+        STOR R8 R7 // store level selection as player selection
+
+
+        detectAndResolveCollisionsPlayerLoopContinue:
         ADDI 2 R3 // Step y velocity
         ADDI 1 R1 | CMPI 4 R1 | GOIF NE &detectAndResolveCollisionsPlayerLoop
 

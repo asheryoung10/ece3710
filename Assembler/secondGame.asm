@@ -3,6 +3,7 @@
 #include "secondGameGenerate.asm"
 #include "secondGameKeepPlayersInBounds.asm"
 #include "secondGameCheckFall.asm"
+#include "updateRectColors.asm"
 
 funcSecondGame:
     %saveRegs
@@ -34,6 +35,7 @@ funcSecondGame:
 
         %call(&funcSecondGameKeepPlayersInBounds)
         %call(&funcSecondGameRespawnRects)
+        %call(&funcUpdateRectColors)
 
         %call(&funcSecondGameCheckFall)
         CMPI 1 R7 | GOIF EQ &funcSecondGameReturn

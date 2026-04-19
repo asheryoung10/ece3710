@@ -8,7 +8,7 @@ funcUpdateSelection:
     MOVI 0 R1 // first selection
     MOVI 0 R2 // second selection
     MOVI 0 R3 // player index
-    READ R5 | 0x000F
+    READ R5 | 0x0001
 
     funcUpdateSelectionLoop:
         MOV R0 R4
@@ -21,34 +21,33 @@ funcUpdateSelection:
         GOIF UC &funcUpdateSelectionLoopContinue
 
         funcUpdateSelectionLoop9:
-        ADD R5 R1
+        ADDI 1 R1
         GOIF UC &funcUpdateSelectionLoopContinue
         funcUpdateSelectionLoop11:
-        ADD R5 R2
+        ADDI 1 R2
         GOIF UC &funcUpdateSelectionLoopContinue
 
         funcUpdateSelectionLoopContinue:
         LSHI 4 R5 | ADDI 1 R3 | CMPI 4 R3 | GOIF NE &funcUpdateSelectionLoop
 
 
-    READ R0 | &varLocalRectDataAddress
-    MOVI 9 R9 | LSHI 2 R9 | ADDI 3 R9 | ADD R0 R9 | STOR R1 R9
+    // r7 will have player count
+    %call(&funcGetActivePlayerCount)
 
-    READ R0 | &varLocalRectDataAddress
-    MOVI 11 R9 | LSHI 2 R9 | ADDI 3 R9 | ADD R0 R9 | STOR R2 R9
+    CMPI 0 R7 |  GOIF EQ &funcUpdateSelectionReturn // zer oplayers return
+    
+    CMP R7 R2 | GOIF EQ &funcUpdateSelectionChooseSecond
+    CMPI 1 R7 | GOIF EQ &funcUpdateSelectionReturn
+    CMP R7 R1 | GOIF EQ &funcUpdateSelectionChooseFirst
+    GOIF UC &funcUpdateSelectionReturn
 
-    MOVI 0 R0
-    READ R9 | &varCurrentFrameButtonsPressedOther | LOAD R9 R9
-    MOVI 4 R10 | AND R10 R9 | CMPI 0 R9 | GOIF EQ &funcUpdateSelectionReturn
-    MOVI 1 R0
-
-    CMP R1 R2 | GOIF HI &funcUpdateSelectionChooseFirst
-    GOIF UC &funcUpdateSelectionChooseSecond
 
     funcUpdateSelectionChooseFirst:
+    MOVI 1 R0
     %call(&funcFirstGame)
     GOIF UC &funcUpdateSelectionReturn
     funcUpdateSelectionChooseSecond:
+    MOVI 1 R0
     %call(&funcSecondGame)
     GOIF UC &funcUpdateSelectionReturn
 
@@ -56,4 +55,22 @@ funcUpdateSelection:
     MOV R0 R9
     %restoreRegs
     MOV R9 R0
+    %return
+
+// returns player count in r7
+funcGetActivePlayerCount:
+    %saveRegs
+
+    MOVI 0 R0 
+    READ R1 | &varActivePlayersAddress
+    MOVI 0 R7 // count
+
+    funcGetPlayerCountLoop:
+        LOAD R12 R1 | CMPI 0 R12 | GOIF EQ &funcGetPlayerCountLoopContinue
+        ADDI 1 R7 
+        funcGetPlayerCountLoopContinue:
+        ADDI 1 R1
+        ADDI 1 R0 | CMPI 4 R0 | GOIF NE &funcGetPlayerCountLoop
+
+    %restoreRegs
     %return

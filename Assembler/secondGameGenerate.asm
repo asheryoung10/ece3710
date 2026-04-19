@@ -8,6 +8,8 @@ funcSecondGameGenerate:
     READ R3  | 400  // y
     READ R4 | %defaultRectDimensions
     READ R5 | 0xFFFF
+    READ R6 | &varRectType
+
 
     funcSecondGameGenerateLoop:
 
@@ -22,7 +24,11 @@ funcSecondGameGenerate:
         ADD R7 R3
         ADD R7 R5
 
+        READ R12 | 3
+        AND R7 R12
+        STOR R12 R6
 
+        ADDI 1 R6
         ADDI 4 R0 // Next rectangle
         ADDI 1 R1 | CMPI 64 R1 | GOIF NE &funcSecondGameGenerateLoop
 
@@ -34,7 +40,6 @@ funcSecondGameRespawnRects:
 
     MOVI 0 R0 // rect index 
     READ R1 | &varLocalRectDataAddress
-    READ R4 | 0xFFFF // white
 
     funcSecondGameRespawnRectsLoop:
         LOAD R2 R1 | ADDI 1 R1 // r2 = xpos
@@ -46,10 +51,18 @@ funcSecondGameRespawnRects:
         %call(&funcGetHighestRectPos)
         SUBI 100 R8 // make higher up
         
+        MOV R7 R5
+        %call(&funcNextRand)
+        ARSHI -7 R7
+        ADD R7 R5
 
+        %call(&funcNextRand)
+        ARSHI -9 R7
+        ADD R7 R8
+        %call(&funcNextRand)
 
         READ R12 | %defaultRectDimensions
-        %setRect(R1,R7,R8,R12,R4)
+        %setRect(R1,R5,R8,R12,R7)
 
 
         funcSecondGameRespawnRectsLoopContinue:
