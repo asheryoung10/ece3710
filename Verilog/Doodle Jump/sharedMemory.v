@@ -56,7 +56,7 @@ module sharedMemory
 
 
 
-wire isRectAccess; assign isRectAccess = readWriteAddress[15:7] == 9'b100000000;
+wire isRectAccess; assign isRectAccess = readWriteAddress[15:8] == 8'b10000000;
 wire isPlayerAccess; assign isPlayerAccess= readWriteAddress[15:5] == 11'b11000000000;
 wire isMemoryAccess; assign isMemoryAccess = !isRectAccess && !isPlayerAccess;
 wire enableRectWrite; assign enableRectWrite = writeEnable && isRectAccess;
@@ -160,7 +160,7 @@ assign p4Score = sharedPlayerRegs[26];
 
 // Shared Memory
 reg [15:0] rect_data  [0:255]; // 16 rects, each 4 registers.
-wire [6:0] rect_index = readWriteAddress[6:0];
+wire [7:0] rect_index = readWriteAddress[7:0];
 always @(posedge clock) begin
 	if(isRectAccess) begin
 			if(enableRectWrite) begin

@@ -19,12 +19,17 @@ localparam MOVE_STATE = 3'd7;
 	 reg [9:0] switches;
 	 reg [3:0] push_buttons;
 
-    // Outputs
-	  reg [15:0] value;
-	  reg [15:0] localValue;
-	  	  reg [15:0] localPosition;
+   
+// Outputs / tracked values
 
-	  	  reg [15:0] prevSync;
+reg [15:0] playerColor_local [0:3];
+reg [15:0] playerColor_shared[0:3];
+
+
+// Sync
+reg prevVSync;
+
+
 
     wire [15:0] instructionRegisterContentsOutput;
     wire [15:0] programCounterContentsOutput;
@@ -53,6 +58,8 @@ localparam MOVE_STATE = 3'd7;
     task pulse_clock;
         input integer num_cycles;
         integer i;
+		  				integer p;
+
         begin
             for (i = 0; i < num_cycles; i = i + 1) begin
                 clock = 1'b0;
@@ -60,45 +67,46 @@ localparam MOVE_STATE = 3'd7;
                 clock = 1'b1;
                 # (CLK_PERIOD/2);
             end
+
 				
-					if( localPosition != uut.memory_instance.cpu_memory_instance.ram[25]) begin
-						$display("\nLocal Player Position Changed from %h to %h",  localValue, uut.memory_instance.cpu_memory_instance.ram[25]);
+for (p = 0; p < 4; p = p + 1) begin
+    if (playerColor_local[p]  != uut.memory_instance.cpu_memory_instance.ram[51 + p*4] ||
+        playerColor_shared[p] != uut.memory_instance.sharedPlayerRegs[3 + p*4]) begin
 
-						localPosition = uut.memory_instance.cpu_memory_instance.ram[25];
-						$display("Player Y: %d ",  uut.memory_instance.cpu_memory_instance.ram[26] );
-												$display("Player  Velocity X: %d ",  uut.memory_instance.cpu_memory_instance.ram[17] );
+        $display("\n[PLAYER COLOR UPDATE] Player %0d", p);
 
-						$display("Program Counter: %d \n",  uut.cpu_instance.programCounterContents );
+        $display("LOCAL  : 0x%04h (%0d) -> 0x%04h (%0d)",
+            playerColor_local[p],
+            playerColor_local[p],
+            uut.memory_instance.cpu_memory_instance.ram[51 + p*4],
+            uut.memory_instance.cpu_memory_instance.ram[51 + p*4]);
 
-				end
+        $display("SHARED : 0x%04h (%0d) -> 0x%04h (%0d)",
+            playerColor_shared[p],
+            playerColor_shared[p],
+            uut.memory_instance.sharedPlayerRegs[3 + p*4],
+            uut.memory_instance.sharedPlayerRegs[3 + p*4]);
+
+        $display("PC: %0d\n", uut.cpu_instance.programCounterContents);
+
+        // update stored values
+        playerColor_local[p]  = uut.memory_instance.cpu_memory_instance.ram[51 + p*4];
+        playerColor_shared[p] = uut.memory_instance.sharedPlayerRegs[3 + p*4];
+    end
+end
 				
 				
-				
-					if( localValue != uut.memory_instance.cpu_memory_instance.ram[93]) begin
-						localValue = uut.memory_instance.cpu_memory_instance.ram[93];
-						$display("\nRect 0 LOCAL pos Value changed %h",  localValue );
-						$display("Program Counter: %d \n",  uut.cpu_instance.programCounterContents );
 
-				end
-				
-					if( value != uut.memory_instance.rect_data[0]) begin
-						value = uut.memory_instance.rect_data[0];
-						$display("\nRect 0 SHARED pos Value changed %h",  value );
-												$display("\nPlayer local coords %h  %h",  uut.memory_instance.cpu_memory_instance.ram[25], uut.memory_instance.cpu_memory_instance.ram[26]);
+   
+		  if (prevVSync != uut.vga_vs) begin
+    prevVSync = uut.vga_vs;
 
-						$display("Rect 0 LOCAL pos Value is %h",  uut.memory_instance.cpu_memory_instance.ram[93] );
+    $display("\n[VSYNC EDGE]");
+    $display("VSync: %b", prevVSync);
+    $display("PC: %0d\n", uut.cpu_instance.programCounterContents);
+end
 
-						$display("Program Counter: %d \n",  uut.cpu_instance.programCounterContents );
-
-				end
-				if(prevSync != uut.vga_vs) begin
-					prevSync = uut.vga_vs;
-											$display("\n Program Counter: %d",  uut.cpu_instance.programCounterContents );
-
-											$display("Prev sync changed to: %h \n",  prevSync );
-
-				end
-        end
+     end
     endtask
 
     // ==================================================
@@ -293,16 +301,19 @@ integer j = 0;
         // Initialize
         clock = 0;
         reset = 0;
-		  value = 16'h0000;
-		  prevSync = 0;
-		  switches = 10'b0;
-		  localValue = 16'h0000;
-		  localPosition = 16'h0000;
+ for (i = 0; i < 4; i = i + 1) begin
+        playerColor_local[i]  = 16'd0;
+        playerColor_shared[i] = 16'd0;
+    end
+	 i=0;
 
+// Rectangle fields (CPU memory)
+
+	 prevVSync = 0;
         // Apply reset
         apply_reset();
 		  push_buttons = 4'b1111;
-		  switches = 9'b100100000;
+		  switches = 9'b000000000;
 			running = 1;
         // Run for a few cycles and print state
 		  

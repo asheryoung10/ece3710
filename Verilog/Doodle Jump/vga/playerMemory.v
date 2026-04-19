@@ -27,8 +27,8 @@ wire [15:0] rawX = pixelX - playerX;
 wire [15:0] rawY = pixelY - playerY;
 
 // Nearest-neighbor scaling (integer division)
-wire [15:0] spriteX = rawX / scale;
-wire [15:0] spriteY = rawY / scale;
+wire [15:0] spriteX = rawX / (scale == 0 ? 1 : scale);
+wire [15:0] spriteY = rawY / (scale == 0 ? 1 : scale);
 
 // Bounds safety (prevents ROM overflow)
 wire in_bounds =

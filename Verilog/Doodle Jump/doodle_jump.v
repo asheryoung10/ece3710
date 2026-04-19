@@ -94,6 +94,9 @@ wire [DATA_WIDTH-1:0] register4;
 wire [15:0] snesButtons0;
 // Controller (Right Header)
 wire [15:0] snesButtons1;
+wire vsyncCPU;
+assign vsyncCPU = switches[9] ? ~push_buttons[3] : vga_vs;
+
 
 snes snes1_instance (
 	.systemClock50MHz(systemClock50MHz),
@@ -202,9 +205,9 @@ cpu cpu_instance (
 	.p4Up(~snesButtons1[9]),
 	.p4Down(~snesButtons1[0]),
 
-	.start(),
-	.select(),	
-	.vsync(vga_vs),
+	.start(~snesButtons0[3] | ~snesButtons1[3]),
+	.select(~snesButtons0[2] | ~snesButtons1[2]),	
+	.vsync(vsyncCPU),
 	.R3(register3),
 	.R4(register4)
 );
@@ -247,7 +250,7 @@ sharedMemory memory_instance
 		
 		.backgroundOffsetX(backgroundOffsetX),
 		.backgroundOffsetY(backgroundOffsetY),
-		.audioPitchIndex(),
+		.audioPitchIndex(audioPitchIndex),
 
 		.p1Scale(p1Scale),
 		.p2Scale(p2Scale),
@@ -259,7 +262,7 @@ audio_unit audio_unit_instance (
 	.CLOCK_50(systemClock50MHz),
 	.RESET_N(~reset),
 	.configure_N(push_buttons[1]),
-	.pitch(switches[9:2]),
+	.pitch(audioPitchIndex),
 	.FPGA_I2C_SCLK(i2c_clock),
 	.FPGA_I2C_SDAT(i2c_data),
 	
