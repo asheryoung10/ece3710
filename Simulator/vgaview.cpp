@@ -96,6 +96,7 @@ void VGAView::paintEvent(QPaintEvent *event)
         uint16_t anim = model->getPlayerAnimationIndex(i);
         uint16_t color = model->getPlayerHighlightColor(i);
         uint16_t audio = model->getAudioPitchIndex();
+        uint16_t score = model->getPlayerScore(i);
 
         QRect playerRect(x, y, 16, 16);
 
@@ -151,7 +152,7 @@ void VGAView::paintEvent(QPaintEvent *event)
         vgaPainter.drawText(
             x,
             y - 5,
-            QString("P%1 Anim: %2 Aud: %3").arg(i + 1).arg(anim).arg(audio)
+            QString("P%1 Anim: %2 Aud: %3 Score: %4").arg(i + 1).arg(anim).arg(audio).arg(score)
             );
     }
 

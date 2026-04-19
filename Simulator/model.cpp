@@ -159,6 +159,10 @@ uint16_t Model::getAudioPitchIndex() {
 uint16_t Model::getPlayerScale(int playerIndex) {
 return memory[0xC013 + playerIndex];
 }
+
+uint16_t Model::getPlayerScore(int playerIndex) {
+return memory[0xC017 + playerIndex];
+}
 void Model::initialize() {
     vsyncTimer.start();
     lastFrameMs = vsyncTimer.elapsed();

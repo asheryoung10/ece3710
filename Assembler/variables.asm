@@ -1,3 +1,10 @@
+varRandomSeed:
+    12345
+varBackgroundOffset:
+    0x0000
+    0x0000
+varHighScore:
+    0x0000
 varPlayerGameSelection:
     0x0000 // p1
     0x0000 // p2

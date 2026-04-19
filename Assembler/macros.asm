@@ -1,9 +1,15 @@
 #define playerVelocityXIncrement 1
 #define playerJumpIncrement 50
 #define playerGravityIncrement 1
+#define playerScoresAddress 0xC017
 
 #define playerFractionalShiftDown -3
 #define playerFractionalShiftUp 3
+
+#define defaultRectDimensions 0x5010
+#define defaultRectVerticalSpacing 100
+
+#define fallCutoff 450
 
 #define playerWidth 16
 #define playerHeight 16
@@ -23,6 +29,7 @@
 #define sharedRectDataAddress 0x8000
 
 #define saveReg(registerName) SUBI 1 R14 | STOR registerName R14
+#define setRect(address, xpos, ypos, widthheight, color) STOR xpos address | ADDI 1 address | STOR ypos address | ADDI 1 address | STOR widthheight address | ADDI 1 address | STOR color address | SUBI 3 address
 #define restoreReg(registerName) LOAD registerName R14 | ADDI 1 R14
 
 // Save and restore R0-R6 and R13

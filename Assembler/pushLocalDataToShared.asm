@@ -20,15 +20,19 @@ funcPushLocalDataToShared:
    
 
    READ R1 | %sharedPlayerDataAddress
-   ADDI 16 R1
+   ADDI 16 R1 // background x offset
+   READ R2 | &varBackgroundOffset | MOV R2 R3 | LOAD R2 R2 | ADDI 1 R3 | LOAD R3 R3 // R2=backOffsetx, R3=locakbackOffsetY
+   ARSHI -0 R2 | ARSHI -0 R3 // shift offsets
    MOV R5 R7 | MOV R6 R8
-   ARSHI -3 R7 | ARSHI -3 R8 // Shift camera position back to original scale for storage in shared data.
+   ARSHI -0 R7 | ARSHI -0 R8 // Shift camera position back to original scale for storage in shared data.
    MOVI 0 R0
    SUB R7 R0
-   STOR R0 R1 | ADDI 1 R1
+   ADD R0 R2
+   STOR R2 R1 | ADDI 1 R1
    MOVI 0 R0
    SUB R8 R0
-   STOR R0 R1
+   ADD R0 R3
+   STOR R3 R1
 
 
 

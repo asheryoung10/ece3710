@@ -18,6 +18,7 @@ WAIT
 #include "audio.asm"
 #include "updateSelection.asm"
 #include "setAllRectangles.asm"
+#include "updateHighScore.asm"
 
 
 
@@ -45,6 +46,7 @@ funcMain:
         %call(&funcUpdatePlayerAnimations)
 
         %call(&funcUpdateSelection)
+        %call(&funcUpdateHighScore)
         CMPI 1 R0 | GOIF EQ &funcMainInit
 
         %call(&funcUpdateCameraPosition)

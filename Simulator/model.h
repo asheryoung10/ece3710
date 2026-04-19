@@ -48,6 +48,7 @@ public:
     uint16_t getPlayerX(int playerIndex);
     uint16_t getPlayerY(int playerIndex);
     uint16_t getPlayerScale(int playerIndex);
+    uint16_t getPlayerScore(int playerIndex);
     uint16_t getPlayerAnimationIndex(int playerIndex);
     uint16_t getPlayerHighlightColor(int playerIndex);
 

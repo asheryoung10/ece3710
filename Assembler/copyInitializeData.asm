@@ -43,7 +43,7 @@ copyRectInitializeData:
     MOV R0 R1 // R1 has address of data to copy
     MOVI 0 R0 // i
     READ R2 | &varLocalRectDataAddress
-    READ R4 | 64
+    READ R4 | 48
     funcCopyRectInitializeData:
         LOAD R3 R1 | STOR R3 R2 // Retrieve and push data.
         ADDI 1 R1 | ADDI 1 R2 // Increment data pointers.
