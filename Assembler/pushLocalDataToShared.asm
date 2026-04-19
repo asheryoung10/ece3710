@@ -85,7 +85,7 @@ funcPushLocalDataToShared:
         STOR R3 R2 // Retrieve and push data.
 
         ADDI 1 R1 | ADDI 1 R2 // Increment data pointers.
-        ADDI 1 R0 | CMPI 65 R0 | GOIF NE &funcPushLocalDataToSharedRectLoop
+        ADDI 1 R0 | CMPI 64 R0 | GOIF NE &funcPushLocalDataToSharedRectLoop
     
     %restoreRegs
     %return 

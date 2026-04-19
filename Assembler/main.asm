@@ -27,7 +27,7 @@ funcMain:
     READ R0 | &varSelectionRoomPlayerInitializationDataAddress | %call(&copyPlayerInitializeData)
     READ R0 | &varSelectionRoomRectInitializationDataAddress | %call(&copyRectInitializeData)
 
-    %call(&funcSetAllRectangles)
+    //%call(&funcSetAllRectangles)
     funcMainLoop:
         %call(&funcUpdateButtonState)
         %call(&funcUpdateButtonStateOther)

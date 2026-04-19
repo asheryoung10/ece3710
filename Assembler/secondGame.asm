@@ -23,12 +23,17 @@ funcSecondGame:
         %call(&funcSecondGameDetectAndResolveCollisions)
         %call(&funcUpdatePlayerAnimations)
 
+        READ R0 | &varCurrentFrameButtonsPressedOther | LOAD R0 R0
+        MOVI 4 R1 | AND R1 R0
+        CMPI 4 R0 | GOIF EQ &funcSecondGameReturn
+
+
         %call(&funcUpdateCameraPosition)
         %call(&funcPushLocalDataToShared)
 
         %call(&funcWaitForVsync)
         GOIF UC &funcSecondGameLoopContinue
 
+    funcSecondGameReturn:
     %restoreRegs
-    WAIT
     %return
