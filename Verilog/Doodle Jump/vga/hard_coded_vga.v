@@ -126,6 +126,20 @@ tileMemory tileMem_inst (
     .glyphPixelG(backGroundG),
     .glyphPixelB(backGroundB)
 );
+wire [7:0] scorePixelR, scorePixelG, scorePixelB;
+number3Display num3Instance(
+    .clk50(clk25),
+    .number(p1Score),
+    .baseX(0),
+    .baseY(0),
+    .highlightColor(16'h0FF0),
+    .pixelX(pixelX),
+    .pixelY(pixelY),
+    .scale(4),
+    .pixelR(scorePixelR),
+    .pixelG(scorePixelG),
+    .pixelB(scorePixelB)
+);
 
 wire [7:0] p1PixelR, p1PixelG, p1PixelB;
 wire [7:0] p2PixelR, p2PixelG, p2PixelB;
@@ -142,6 +156,7 @@ playerMemory p1Memory_inst (
     .playerPixelG(p1PixelG),
     .playerPixelB(p1PixelB),
 	 .highlightColor(p1HighlightColor),
+
          .scale(p1Scale)
 
 );
@@ -156,6 +171,7 @@ playerMemory p2Memory_inst (
     .playerPixelG(p2PixelG),
     .playerPixelB(p2PixelB),
 	 .highlightColor(p2HighlightColor),
+
          .scale(p2Scale)
 
 );
@@ -183,7 +199,9 @@ playerMemory p4Memory_inst (
     .playerPixelR(p4PixelR),
     .playerPixelG(p4PixelG),
     .playerPixelB(p4PixelB),
-	 .highlightColor(p4HighlightColor),
+	 //.highlightColor(p4HighlightColor),
+	 .highlightColor(16'hFBE0),
+
      .scale(p4Scale)
 );
 
@@ -191,6 +209,8 @@ playerMemory p4Memory_inst (
 
 
 reg [7:0] r_reg, g_reg, b_reg;
+wire score_active = (scorePixelR != 0) || (scorePixelG != 0) || (scorePixelB != 0);
+
 wire playerOne_active = (p1PixelR != 0) || (p1PixelG != 0) || (p1PixelB != 0);
 wire playerTwo_active = (p2PixelR != 0) || (p2PixelG != 0) || (p2PixelB != 0);
 wire playerThree_active = (p3PixelR != 0) || (p3PixelG != 0) || (p3PixelB != 0);
@@ -199,6 +219,11 @@ wire rect_active = (rectR != 0) || (rectG != 0) || (rectB != 0);
 wire background_active = (backGroundR != 0) || (backGroundG != 0) || (backGroundB != 0);
 
 always @(posedge clk25) begin
+if (score_active) begin
+        r_reg = scorePixelR;
+        g_reg = scorePixelG;
+        b_reg = scorePixelB;
+    end else
     if (playerOne_active) begin
         r_reg = p1PixelR;
         g_reg = p1PixelG;

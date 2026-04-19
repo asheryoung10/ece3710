@@ -16,7 +16,7 @@ reg [7:0] r_next, g_next, b_next;
 //   - a subtle red notebook margin line
 always @(posedge clk50) begin
     // Red notebook margin line.
-    if ((pixelX >= 10'd56) && (pixelX < 10'd58)) begin
+    if ((pixelX >= 10'd63) && (pixelX < 10'd65)) begin
         r_next <= 8'd235;
         g_next <= 8'd110;
         b_next <= 8'd110;

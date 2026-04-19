@@ -74,6 +74,7 @@ wire [15:0] p2Scale;
 wire [15:0] p3Scale;
 wire [15:0] p4Scale;
 
+wire [15:0] p1Score;
 
 // VGA wires
 wire [9:0] vgaPixelX;
@@ -150,6 +151,7 @@ vga vga_instance (
 		.p2Scale(p2Scale),
 		.p3Scale(p3Scale),
 		.p4Scale(p4Scale),
+		.p1Score(p1Score),
 	
 	.pixelX(vgaPixelX),
 	.pixelY(vgaPixelY),
@@ -255,7 +257,8 @@ sharedMemory memory_instance
 		.p1Scale(p1Scale),
 		.p2Scale(p2Scale),
 		.p3Scale(p3Scale),
-		.p4Scale(p4Scale)
+		.p4Scale(p4Scale),
+		.p1Score(p1Score)
 );
 wire outputOfAudio;
 audio_unit audio_unit_instance (
@@ -276,7 +279,7 @@ audio_unit audio_unit_instance (
 	
 );
 
-assign audio_data = switches[0] ? outputOfAudio : 0;
+assign audio_data = switches[0] ? (audioPitchIndex == 0 ? 0 : outputOfAudio) : 0;
 
 sixteen_bit_seven_seg segDriver (
         .value(register3), 

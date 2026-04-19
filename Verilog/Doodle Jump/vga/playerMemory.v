@@ -48,10 +48,16 @@ glyph_rom glyph_rom_instance(
 );
 
 // Pixel generation
-// Expand highlight (zero-padded into upper bits)
-wire [7:0] h_b = {highlightColor[4:0], 3'b000};   // << 3
-wire [7:0] h_g = {highlightColor[10:5], 2'b00};   // << 2 (6-bit channel)
+// Detect if pixel is completely black
+wire pixel_is_black = (rom_data[23:0] == 24'd0);
+wire [7:0] h_b = {highlightColor[4:0], 3'b000}; // << 3 
+wire [7:0] h_g = {highlightColor[10:5], 2'b00}; // << 2 (6-bit channel) 
 wire [7:0] h_r = {highlightColor[15:11], 3'b000}; // << 3
+
+// Force 9-bit sums to detect overflow
+wire [8:0] b_sum = rom_data[7:0]   + h_b;
+wire [8:0] g_sum = rom_data[15:8]  + h_g;
+wire [8:0] r_sum = rom_data[23:16] + h_r;
 
 always @(posedge clk50) begin
 
@@ -59,23 +65,15 @@ always @(posedge clk50) begin
         (pixelY >= playerY) && (pixelY < playerY + drawHeight) &&
         in_bounds) begin
 
-        // Blue channel
-        b_next <= (rom_data[7:0] == 0) ? 0 :
-                  ((rom_data[7:0] + h_b > 8'd255)
-                    ? 8'd255
-                    : rom_data[7:0] + h_b);
-
-        // Green channel
-        g_next <= (rom_data[15:8] == 0) ? 0 :
-                  ((rom_data[15:8] + h_g > 8'd255)
-                    ? 8'd255
-                    : rom_data[15:8] + h_g);
-
-        // Red channel
-        r_next <= (rom_data[23:16] == 0) ? 0 :
-                  ((rom_data[23:16] + h_r > 8'd255)
-                    ? 8'd255
-                    : rom_data[23:16] + h_r);
+        if (pixel_is_black) begin
+            r_next <= 8'd0;
+            g_next <= 8'd0;
+            b_next <= 8'd0;
+        end else begin
+            b_next <= b_sum[8] ? 8'd255 : b_sum[7:0];
+            g_next <= g_sum[8] ? 8'd255 : g_sum[7:0];
+            r_next <= r_sum[8] ? 8'd255 : r_sum[7:0];
+        end
 
     end else begin
         r_next <= 8'd0;

@@ -112,16 +112,16 @@ glyph_rom
     .q(rom0)
 );
 
-glyph_rom  
-#(.DATA_WIDTH(32), .ADDR_WIDTH(14), .ROM_FILE("sevenSeg.hex")) digit_rom1
-(
+glyph_rom 
+#(.DATA_WIDTH(32), .ADDR_WIDTH(14), .ROM_FILE("sevenSeg.hex")) digit_rom1 
+( 
     .clk(clk50),
     .addr(digit1 * (DIGIT_W * DIGIT_H) + (spriteY * DIGIT_W + spriteX)),
     .q(rom1)
 );
 
-glyph_rom  
-#(.DATA_WIDTH(32), .ADDR_WIDTH(14), .ROM_FILE("sevenSeg.hex")) digit_rom2
+glyph_rom 
+#(.DATA_WIDTH(32), .ADDR_WIDTH(14), .ROM_FILE("sevenSeg.hex")) digit_rom2 
 (
     .clk(clk50),
     .addr(digit2 * (DIGIT_W * DIGIT_H) + (spriteY * DIGIT_W + spriteX)),
@@ -150,9 +150,9 @@ always @(*) begin
         pixelB = (rom_data[7:0]   == 0) ? 0 : rom_data[7:0];
 
         // optional highlight
-        pixelR = pixelR + highlightColor[15:11];
-        pixelG = pixelG + highlightColor[10:5];
-        pixelB = pixelB + highlightColor[4:0];
+        //pixelR = pixelR + highlightColor[15:11];
+        //pixelG = pixelG + highlightColor[10:5];
+        //pixelB = pixelB + highlightColor[4:0];
     end
 end
 
