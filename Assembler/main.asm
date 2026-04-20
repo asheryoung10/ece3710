@@ -40,7 +40,7 @@ funcMain:
         %call(&funcUpdateButtonStateOther)
         
         %call(&funcToggleWorldSize)
-        %call(&funcUpdateAudio)
+        %call(&funcClearAudio)
 
         %call(&funcPollAndTogglePlayerActiveState)
 
@@ -56,6 +56,7 @@ funcMain:
         CMPI 1 R0 | GOIF EQ &funcMainInit
 
         %call(&funcUpdateCameraPosition)
+        %call(&funcUpdateSharedScoreHigh)
         %call(&funcPushLocalDataToShared)
 
         %call(&funcWaitForVsync)

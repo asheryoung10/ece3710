@@ -4,13 +4,14 @@
 #include "secondGameKeepPlayersInBounds.asm"
 #include "secondGameCheckFall.asm"
 #include "updateRectColors.asm"
+#include "secondGameApplyUserInput.asm"
 
 funcSecondGame:
     %saveRegs
 
     READ R0 | &varSecondGamePlayerInitializationDataAddress | %call(&copyPlayerInitializeData)
     READ R0 | &varSecondGameRectInitializationDataAddress | %call(&copyRectInitializeData)
-    READ R0 | %playerScoresAddress | MOVI 0 R1 | STOR R1 R0 // reset score
+    READ R0 | &varCurrentScore | MOVI 0 R1 | STOR R1 R0 // reset score
 
     %call(&funcSecondGameGenerate)
     funcSecondGameLoopContinue:
@@ -22,7 +23,7 @@ funcSecondGame:
         %call(&funcToggleWorldSize)
         %call(&funcUpdateAudio)
 
-        %call(&funcApplyUserInput)
+        %call(&funcSecondGameApplyUserInput)
         %call(&funcApplyVelocity)
         %call(&funcPushFixedPositionToAbsolute)
         
@@ -33,15 +34,16 @@ funcSecondGame:
         MOVI 4 R1 | AND R1 R0
         CMPI 4 R0 | GOIF EQ &funcSecondGameReturn
 
+        %call(&funcUpdateRectColors)
         %call(&funcSecondGameKeepPlayersInBounds)
         %call(&funcSecondGameRespawnRects)
-        %call(&funcUpdateRectColors)
 
         %call(&funcSecondGameCheckFall)
         CMPI 1 R7 | GOIF EQ &funcSecondGameReturn
 
 
         %call(&funcUpdateCameraPosition)
+        %call(&funcUpdateSharedScore)
         %call(&funcPushLocalDataToShared)
 
         %call(&funcWaitForVsync)

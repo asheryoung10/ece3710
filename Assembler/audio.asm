@@ -1,3 +1,10 @@
+funcClearAudio:
+    %saveRegs
+    MOVI 0 R1
+    READ R0 | %sharedAudioAddress
+    STOR R1 R0
+    %restoreRegs
+    %return
 
 funcUpdateAudio:
     %saveRegs

@@ -104,12 +104,12 @@ funcDetectPlayerHitCollisions:
         READ R1 | &varActivePlayersAddress
         ADD R0 R1
         LOAD R1 R1
-        CMPI 0 R1 | GOIF EQ &funcDetectPlayerHitCollisionsOuterLoopContinue
+        CMPI 0 R1 | GOIF EQ &funcDetectPlayerHitCollisionsOuterLoopContinue // skip inactive player
 
-        MOV R0 R2
-        ADDI 1 R2 // player B index
+        MOVI 0 R2
 
         funcDetectPlayerHitCollisionsInnerLoop:
+            CMP R0 R2 | GOIF EQ &funcDetectPlayerHitCollisionsOuterLoopContinue
             CMPI 4 R2 | GOIF EQ &funcDetectPlayerHitCollisionsOuterLoopContinue
 
             READ R1 | &varActivePlayersAddress

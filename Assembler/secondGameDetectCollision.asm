@@ -8,6 +8,9 @@ funcSecondGameDetectAndResolveCollisions:
     funcSecondGameDetectAndResolveCollisionsPlayerLoop:
         MOVI 0 R2 // Rect index
         READ R6 | &varRectType
+        READ R4 | &varRectAttribA
+        READ R5 | &varRectAttribB
+
         funcSecondGameDetectAndResolveCollisionsRectLoop:
 
             %saveReg(R1)
@@ -17,32 +20,44 @@ funcSecondGameDetectAndResolveCollisions:
             CMPI 0 R0 | GOIF EQ &funcSecondGameDetectAndResolveCollisionsRectLoopContinue
 
 
-            LOAD R4 R3 // R4 has velocity
-            CMPI 0 R4 | GOIF GT &funcSecondGameDetectAndResolveCollisionsRectLoopContinue
+            LOAD R12 R3 // R12 has velocity
+            CMPI 0 R12 | GOIF GT &funcSecondGameDetectAndResolveCollisionsRectLoopContinue
 
+            // Collision detected, check platform type
             LOAD R12 R6
-            CMPI 3 R12 | GOIF NE &funcSecondGameDetectAndResolveCollisionsRectLoopRegular
+            CMPI 3 R12 | GOIF EQ &funcSecondGameDetectAndResolveCollisionsRectLoopBouncy
+            CMPI 0x30 R12 | GOIF EQ &funcSecondGameDetectAndResolveCollisionsRectLoopBroken
 
-            MOVI 0 R4
-            SUBI %playerJumpHigh R4
-            STOR R4 R3
-
+            //Fall through to default behaviour
+            MOVI 0 R12
+            SUBI %playerJumpIncrement R12
+            STOR R12 R3
             GOIF UC &funcSecondGameDetectAndResolveCollisionsRectLoopAudio
-            // Collision detected, jump player 
-            funcSecondGameDetectAndResolveCollisionsRectLoopRegular:
-            MOVI 0 R4
-            SUBI %playerJumpIncrement R4
-            STOR R4 R3
+
+
+            funcSecondGameDetectAndResolveCollisionsRectLoopBouncy:
+            MOVI 0 R12
+            SUBI %playerJumpHigh R12
+            STOR R12 R3
+            GOIF UC &funcSecondGameDetectAndResolveCollisionsRectLoopAudio
+
+            funcSecondGameDetectAndResolveCollisionsRectLoopBroken:
+            LOAD R12 R4 | ADDI 1 R12 | STOR R12 R4
+            CMPI 2 R12 | GOIF LT &funcSecondGameDetectAndResolveCollisionsRectLoopContinue
+            MOVI 0 R12
+            SUBI %playerJumpIncrement R12
+            STOR R12 R3
+            GOIF UC &funcSecondGameDetectAndResolveCollisionsRectLoopAudio
 
 
             funcSecondGameDetectAndResolveCollisionsRectLoopAudio:
             // Increment audio
-            MOVI 10 R4
-            READ R5 | &varAudioValue | STOR R4 R5
+            MOVI 10 R10
+            READ R12 | &varAudioValue | STOR R10 R12
 
 
             funcSecondGameDetectAndResolveCollisionsRectLoopContinue:
-            ADDI 1 R6
+            ADDI 1 R6 | ADDI 1 R5 | ADDI 1 R4
             ADDI 1 R2 | CMPI 64 R2 | GOIF NE &funcSecondGameDetectAndResolveCollisionsRectLoop
         
         ADDI 2 R3 // Step y velocity

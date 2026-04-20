@@ -26,7 +26,7 @@ funcSecondGameKeepPlayersInBounds:
 
 
     // Update score
-    READ R0 | %playerScoresAddress | LOAD R1 R0
+    READ R0 | &varCurrentScore | LOAD R1 R0
     MOV R1 R2
     SUB R8 R1
     CMP R2 R1 | GOIF GT &funcSecondGameKeepPlayersInBoundsUpdateScoreSkip
@@ -64,12 +64,30 @@ funcSecondGameKeepPlayersInBounds:
 
     MOVI 0 R0 // Rect index
     READ R1 | &varLocalRectDataAddress
+    READ R3 | &varRectAttribA
+    READ R4 | &varRectAttribB
+    READ R5 | &varRectType
 
     funcSecondGameKeepPlayersInBoundsRectLoop:
         LOAD R2 R1 | SUB R7 R2 | STOR R2 R1 // x
         ADDI 1 R1
         LOAD R2 R1 | SUB R8 R2 | STOR R2 R1 // y
         SUBI 1 R1
+
+        READ R10  | 0x80
+        LOAD R12 R5 | CMP R10 R12 | GOIF EQ &funcSecondGameKeepPlayersInBoundsRectMover
+        READ R10  | 0x81
+        LOAD R12 R5 | CMP R10 R12 | GOIF EQ &funcSecondGameKeepPlayersInBoundsRectMover
+        GOIF UC &funcSecondGameKeepPlayersInBoundsRectContinue
+
+        funcSecondGameKeepPlayersInBoundsRectMover:
+        // also shift moving platform positions
+        LOAD R12 R3 | SUB R7 R12 | STOR R12 R3 // x1
+        LOAD R12 R4 | SUB R7 R12 | STOR R12 R4 // x2
+
+
+        funcSecondGameKeepPlayersInBoundsRectContinue:
+        ADDI 1 R3 | ADDI 1 R4 | ADDI 1 R5
         ADDI 4 R1 | ADDI 1 R0 | CMPI 64 R0 | GOIF NE &funcSecondGameKeepPlayersInBoundsRectLoop
 
     READ R0 | &varBackgroundOffset
