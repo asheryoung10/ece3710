@@ -57,7 +57,9 @@ funcUpdateRectColorsBroken:
 
     LOAD R12 R5
     CMPI 0 R12 | GOIF EQ &funcBrokenMint
-    CMPI 1 R12 | GOIF EQ &funcBrokenDamaged
+    CMPI 1 R12 | GOIF EQ &funcBrokenMint
+    CMPI 2 R12 | GOIF EQ &funcBrokenMint
+    CMPI 3 R12 | GOIF EQ &funcBrokenDamaged
 
 // destroy
     MOVI 0 R12

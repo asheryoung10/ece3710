@@ -77,7 +77,7 @@ funcRespawnRect:
     ADD R7 R8
     %call(&funcNextRand)
     READ R12 | %defaultRectDimensions
-    READ R10 | 0xFFFF
+    READ R10 | 0x6200
     %setRect(R1,R5,R8,R12,R10)
 
     MOVI 0 R12

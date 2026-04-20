@@ -43,7 +43,7 @@ funcSecondGameDetectAndResolveCollisions:
 
             funcSecondGameDetectAndResolveCollisionsRectLoopBroken:
             LOAD R12 R4 | ADDI 1 R12 | STOR R12 R4
-            CMPI 2 R12 | GOIF LT &funcSecondGameDetectAndResolveCollisionsRectLoopContinue
+            CMPI 4 R12 | GOIF LT &funcSecondGameDetectAndResolveCollisionsRectLoopContinue
             MOVI 0 R12
             SUBI %playerJumpIncrement R12
             STOR R12 R3
