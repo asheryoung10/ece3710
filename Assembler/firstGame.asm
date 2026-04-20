@@ -3,7 +3,7 @@ funcFirstGame:
     %saveRegs
 
     READ R0 | &varFirstGamePlayerInitializationDataAddress | %call(&copyPlayerInitializeData)
-    READ R0 | &varFirstGameRectInitializationDataAddress | %call(&copyRectInitializeData)
+    READ R0 | &varFirstGameRectInitializationDataAddress | %call(&copyRectInitializeDataBig)
     %call(&funcSecondGameHideInactivePlayers)
 
     funcFirstGameLoopContinue:
@@ -113,3 +113,38 @@ varFirstGameRectInitializationDataAddress:
 200  // y
 0x5010 // wh
 0xFFFF // col (white)
+
+// NEW RECTS
+-10  // rect 4 right half x
+0  // y
+0x0aFF // wh
+0x01 // col (white)
+
+640  // rect 4 right half x
+0  // y
+0x0aFF // wh
+0x01 // col (white)
+
+
+// NEW RECTS
+-10  // rect 4 right half x
+255  // y
+0x0aDF // wh
+0x01 // col (white)
+
+640  // rect 4 right half x
+255 // y
+0x0aDF // wh
+0x01 // col (white)
+
+// NEW RECTS
+0  // rect 4 right half x
+-10  // y
+0xFF0a // wh
+0x01 // col (white)
+
+// NEW RECTS
+385  // rect 4 right half x
+-10  // y
+0xFF0a // wh
+0x01 // col (white)
