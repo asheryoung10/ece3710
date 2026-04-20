@@ -58,7 +58,6 @@ module vga
 	 input wire shrinkHalf
 );
 
-
 reg clk25;
 always @(posedge clk50 or posedge reset) begin
     if (reset) begin
@@ -132,7 +131,7 @@ number3Display num3Instance(
     .number(p1Score),
     .baseX(0),
     .baseY(0),
-    .highlightColor(16'h0FF0),
+    .highlightColor(16'haaaa),
     .pixelX(pixelX),
     .pixelY(pixelY),
     .scale(4),
@@ -199,9 +198,7 @@ playerMemory p4Memory_inst (
     .playerPixelR(p4PixelR),
     .playerPixelG(p4PixelG),
     .playerPixelB(p4PixelB),
-	 //.highlightColor(p4HighlightColor),
-	 .highlightColor(16'hFBE0),
-
+	 .highlightColor(p4HighlightColor),
      .scale(p4Scale)
 );
 

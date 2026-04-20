@@ -22,7 +22,7 @@
 #define maxVelocityY 20
 #define minVelocityY -50
 
-#define initialStackAddress 4095
+#define initialStackAddress 8000
 #define call(functionName) READ R12 | functionName | JAL R13 R12
 #define return JCOND UC R13
 

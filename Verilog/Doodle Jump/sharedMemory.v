@@ -68,7 +68,7 @@ reg [15:0] contentsRect;
 
 
 // CPU Memory
-localparam addr_width = 12;
+localparam addr_width = 13;
 memory 
 #(
     .DATA_WIDTH(DATA_WIDTH),

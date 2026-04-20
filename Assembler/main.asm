@@ -20,7 +20,7 @@ WAIT
 #include "setAllRectangles.asm"
 #include "updateHighScore.asm"
 #include "resetAllRects.asm"
-#include "setPLayersInactive.asm"
+#include "setPlayersInactive.asm"
 #include "wait3Seconds.asm"
 
 

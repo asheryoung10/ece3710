@@ -16,8 +16,8 @@ module number3Display (
 //////////////////////////////
 // Glyph constants
 //////////////////////////////
-localparam DIGIT_W = 5;
-localparam DIGIT_H = 9;
+localparam DIGIT_W = 7;
+localparam DIGIT_H = 11;
 
 wire [15:0] drawW = DIGIT_W * scale;
 wire [15:0] drawH = DIGIT_H * scale;
@@ -105,7 +105,7 @@ wire in_bounds =
 wire [31:0] rom0, rom1, rom2;
 
 glyph_rom 
-#(.DATA_WIDTH(32), .ADDR_WIDTH(14), .ROM_FILE("sevenSeg.hex")) digit_rom0 
+#(.DATA_WIDTH(32), .ADDR_WIDTH(14), .ROM_FILE("wideHex.hex")) digit_rom0 
 (
     .clk(clk50),
     .addr(digit0 * (DIGIT_W * DIGIT_H) + (spriteY * DIGIT_W + spriteX)),
@@ -113,7 +113,7 @@ glyph_rom
 );
 
 glyph_rom 
-#(.DATA_WIDTH(32), .ADDR_WIDTH(14), .ROM_FILE("sevenSeg.hex")) digit_rom1 
+#(.DATA_WIDTH(32), .ADDR_WIDTH(14), .ROM_FILE("wideHex.hex")) digit_rom1 
 ( 
     .clk(clk50),
     .addr(digit1 * (DIGIT_W * DIGIT_H) + (spriteY * DIGIT_W + spriteX)),
@@ -121,7 +121,7 @@ glyph_rom
 );
 
 glyph_rom 
-#(.DATA_WIDTH(32), .ADDR_WIDTH(14), .ROM_FILE("sevenSeg.hex")) digit_rom2 
+#(.DATA_WIDTH(32), .ADDR_WIDTH(14), .ROM_FILE("wideHex.hex")) digit_rom2 
 (
     .clk(clk50),
     .addr(digit2 * (DIGIT_W * DIGIT_H) + (spriteY * DIGIT_W + spriteX)),
@@ -129,7 +129,16 @@ glyph_rom
 );
 
 reg [31:0] rom_data;
+// Expand RGB565 highlightColor to 8-bit channels
 
+wire [7:0] h_r = {highlightColor[15:11], 3'b000}; // 5 → 8 bits
+wire [7:0] h_g = {highlightColor[10:5],  2'b00};  // 6 → 8 bits
+wire [7:0] h_b = {highlightColor[4:0],   3'b000}; // 5 → 8 bits
+            reg [8:0] r_sum;
+            reg [8:0] g_sum;
+            reg [8:0] b_sum;
+
+				
 always @(*) begin
     pixelR = 0;
     pixelG = 0;
@@ -144,15 +153,24 @@ always @(*) begin
             default: rom_data = 0;
         endcase
 
-        // simple colored glyph mapping (same idea as your player)
-        pixelR = (rom_data[23:16] == 0) ? 0 : rom_data[23:16];
-        pixelG = (rom_data[15:8]  == 0) ? 0 : rom_data[15:8];
-        pixelB = (rom_data[7:0]   == 0) ? 0 : rom_data[7:0];
+        // Detect full transparency
+        if (rom_data[23:0] != 24'd0) begin
 
-        // optional highlight
-        //pixelR = pixelR + highlightColor[15:11];
-        //pixelG = pixelG + highlightColor[10:5];
-        //pixelB = pixelB + highlightColor[4:0];
+            // Expand highlight (same as before)
+            // (do this once somewhere if you already have it)
+            // h_r, h_g, h_b assumed 8-bit
+
+            // 9-bit sums to prevent overflow wrap
+
+            r_sum = rom_data[23:16] + h_r;
+            g_sum = rom_data[15:8]  + h_g;
+            b_sum = rom_data[7:0]   + h_b;
+
+            // Saturate
+            pixelR = r_sum[8] ? 8'd255 : r_sum[7:0];
+            pixelG = g_sum[8] ? 8'd255 : g_sum[7:0];
+            pixelB = b_sum[8] ? 8'd255 : b_sum[7:0];
+        end
     end
 end
 
