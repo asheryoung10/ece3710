@@ -22,8 +22,6 @@ detectAndResolveCollisions:
             LOAD R4 R3 // R4 has velocity
             CMPI 0 R4 | GOIF GT &detectAndResolveCollisionsRectLoopContinue
 
-         
-
 
             // Collision detected, make player stop
             MOVI -1 R4

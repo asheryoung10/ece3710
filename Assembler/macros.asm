@@ -4,6 +4,8 @@
 #define playerGravityIncrement 1
 #define playerScoresAddress 0xC017
 
+#define playerHitLaunchDistance 192
+
 #define playerFractionalShiftDown -3
 #define playerFractionalShiftUp 3
 
